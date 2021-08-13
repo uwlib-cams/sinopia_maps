@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sin="http://sinopia.io/vocabulary/">
+    <rdf:Description
+        rdf:about="https://api.stage.sinopia.io/resource/WAU:RT:rda:Work:monograph:test20210804:2">
+        <sin:hasResourceTemplate>sinopia:template:resource</sin:hasResourceTemplate>
+        <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+        <sin:hasResourceId>WAU:RT:rda:Work:monograph:test20210804:2</sin:hasResourceId>
+        <sin:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
+        <rdfs:label>WAU RT rda Work monograph test 2021-08-04</rdfs:label>
+        <sin:hasAuthor>mcm104@uw.edu</sin:hasAuthor>
+        <sin:hasDate>2021-08-04</sin:hasDate>
+        <sin:hasPropertyTemplate rdf:nodeID="P10407_order"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdaregistry.info/Elements/c/C10001">
+        <rdfs:label>work</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="P10407_order">
+        <rdf:first rdf:nodeID="P10407"/>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10407">
+        <rdfs:label>has academic supervisor</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="P10407">
+        <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+        <rdfs:label xml:lang="en">has academic supervisor</rdfs:label>
+        <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10407"/>
+        <sin:hasPropertyAttribute
+            rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+        <sin:hasPropertyAttribute
+            rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
+        <sin:hasLiteralAttributes rdf:nodeID="P10407_literalAttributes"/>
+        <sin:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
+        <sin:hasRemark xml:lang="en">Here's the thing you should know about using this
+            property...pay attention to what you are doing!</sin:hasRemark>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="P10407_literalAttributes">
+        <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+        <sin:hasDefault xml:lang="en">Marty The Supervisor</sin:hasDefault>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyType/resource">
+        <rdfs:label>nested resource</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyAttribute/required">
+        <rdfs:label>required</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyAttribute/ordered">
+        <rdfs:label>ordered</rdfs:label>
+    </rdf:Description>
+</rdf:RDF>
