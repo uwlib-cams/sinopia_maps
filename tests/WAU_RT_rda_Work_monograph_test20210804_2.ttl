@@ -1,0 +1,32 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sin: <http://sinopia.io/vocabulary/> .
+
+<https://api.stage.sinopia.io/resource/WAU:RT:rda:Work:monograph:test20210804:2> a sin:ResourceTemplate ;
+    rdfs:label "WAU RT rda Work monograph test 2021-08-04" ;
+    sin:hasAuthor "mcm104@uw.edu" ;
+    sin:hasClass <http://rdaregistry.info/Elements/c/C10001> ;
+    sin:hasDate "2021-08-04" ;
+    sin:hasPropertyTemplate ( [ a sin:PropertyTemplate ;
+                rdfs:label "has academic supervisor"@en ;
+                sin:hasLiteralAttributes [ a sin:LiteralPropertyTemplate ;
+                        sin:hasDefault "Marty The Supervisor"@en ] ;
+                sin:hasPropertyAttribute <http://sinopia.io/vocabulary/propertyAttribute/ordered>,
+                    <http://sinopia.io/vocabulary/propertyAttribute/required> ;
+                sin:hasPropertyType <http://sinopia.io/vocabulary/propertyType/resource> ;
+                sin:hasPropertyUri <http://rdaregistry.info/Elements/w/P10407> ;
+                sin:hasRemark """Here's the thing you should know about using this
+            property...pay attention to what you are doing!"""@en ] ) ;
+    sin:hasResourceId "WAU:RT:rda:Work:monograph:test20210804:2" ;
+    sin:hasResourceTemplate "sinopia:template:resource" .
+
+<http://rdaregistry.info/Elements/c/C10001> rdfs:label "work" .
+
+<http://rdaregistry.info/Elements/w/P10407> rdfs:label "has academic supervisor" .
+
+<http://sinopia.io/vocabulary/propertyAttribute/ordered> rdfs:label "ordered" .
+
+<http://sinopia.io/vocabulary/propertyAttribute/required> rdfs:label "required" .
+
+<http://sinopia.io/vocabulary/propertyType/resource> rdfs:label "nested resource" .
+

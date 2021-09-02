@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:sin="http://sinopia.io/vocabulary/">
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/WAU:RT:rda_Manifestation:Manifestation:monograph:default">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+      <sin:hasResourceTemplate>sinopia:template:resource</sin:hasResourceTemplate>
+      <sin:hasResourceId>WAU:RT:rda_Manifestation:Manifestation:monograph:default</sin:hasResourceId>
+      <sin:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+      <rdfs:label>WAU RT rda_Manifestation Manifestation monograph default</rdfs:label>
+      <sin:hasAuthor>ries07@uw.edu</sin:hasAuthor>
+      <sin:hasDate>2021-09-01</sin:hasDate>
+      <sin:hasPropertyTemplate rdf:nodeID="P30217_ordering_bnode"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30217">
+      <rdfs:label>has details of base material</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30217_ordering_bnode">
+      <rdf:first rdf:nodeID="P30217_pt_bnode"/>
+      <rdf:rest rdf:nodeID="P30208_ordering_bnode"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30217_pt_bnode">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has details of base material</rdfs:label>
+      <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30217"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30208">
+      <rdfs:label>has base material</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30208_ordering_bnode">
+      <rdf:first rdf:nodeID="P30208_pt_bnode"/>
+      <rdf:rest rdf:nodeID="P30217_ordering_bnode"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30208_pt_bnode">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has base material</rdfs:label>
+      <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30208"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30276">
+      <rdfs:label>has access point for manifestation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30276_ordering_bnode">
+      <rdf:first rdf:nodeID="P30276_pt_bnode"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30276_pt_bnode">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has access point for manifestation</rdfs:label>
+      <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30276"/>
+      <sin:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+   </rdf:Description>
+</rdf:RDF>
