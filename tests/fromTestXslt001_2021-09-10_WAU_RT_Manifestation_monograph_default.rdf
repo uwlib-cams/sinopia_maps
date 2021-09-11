@@ -3,22 +3,34 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:sin="http://sinopia.io/vocabulary/">
-   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/WAU:RT:rda_Manifestation:Manifestation:monograph:default">
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/WAU:RT:Manifestation:monograph:default">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sin:hasResourceTemplate>sinopia:template:resource</sin:hasResourceTemplate>
-      <sin:hasResourceId>WAU:RT:rda_Manifestation:Manifestation:monograph:default</sin:hasResourceId>
+      <sin:hasResourceId>WAU:RT:Manifestation:monograph:default</sin:hasResourceId>
       <sin:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
-      <rdfs:label>WAU RT rda_Manifestation Manifestation monograph default</rdfs:label>
+      <rdfs:label>WAU RT Manifestation monograph default</rdfs:label>
       <sin:hasAuthor>ries07@uw.edu</sin:hasAuthor>
-      <sin:hasDate>2021-09-01</sin:hasDate>
-      <sin:hasPropertyTemplate rdf:nodeID="P30217_ordering_bnode"/>
+      <sin:hasDate>2021-09-10</sin:hasDate>
+      <sin:hasPropertyTemplate rdf:nodeID="P10407_ordering_bnode"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10407">
+      <rdfs:label>has academic supervisor</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P10407_ordering_bnode">
+      <rdf:first rdf:nodeID="P10407_pt_bnode"/>
+      <rdf:rest rdf:nodeID="P10328_ordering_bnode"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P10407_pt_bnode">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has academic supervisor</rdfs:label>
+      <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10407"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30217">
       <rdfs:label>has details of base material</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30217_ordering_bnode">
       <rdf:first rdf:nodeID="P30217_pt_bnode"/>
-      <rdf:rest rdf:nodeID="P30208_ordering_bnode"/>
+      <rdf:rest rdf:nodeID="P30217_ordering_bnode"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30217_pt_bnode">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -30,7 +42,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30208_ordering_bnode">
       <rdf:first rdf:nodeID="P30208_pt_bnode"/>
-      <rdf:rest rdf:nodeID="P30217_ordering_bnode"/>
+      <rdf:rest rdf:nodeID="P30084_ordering_bnode"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30208_pt_bnode">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -42,12 +54,24 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30276_ordering_bnode">
       <rdf:first rdf:nodeID="P30276_pt_bnode"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="P30216_ordering_bnode"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="P30276_pt_bnode">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has access point for manifestation</rdfs:label>
       <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30276"/>
       <sin:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30347">
+      <rdfs:label>has broadcaster person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30347_ordering_bnode">
+      <rdf:first rdf:nodeID="P30347_pt_bnode"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="P30347_pt_bnode">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has broadcaster person</rdfs:label>
+      <sin:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30347"/>
    </rdf:Description>
 </rdf:RDF>
