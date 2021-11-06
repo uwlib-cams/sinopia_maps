@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:sin="http://sinopia.io/vocabulary/">
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/TEST:WAU:RT:Work:monograph:default">
+      <sin:hasResourceTemplate>sinopia:template:resource</sin:hasResourceTemplate>
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+      <sin:hasResourceId>TEST:WAU:RT:Work:monograph:default</sin:hasResourceId>
+      <sin:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
+      <rdfs:label>TEST 2021-09-13WAU RT Work monograph default</rdfs:label>
+      <sin:hasAuthor>mcm104@uw.edu</sin:hasAuthor>
+      <sin:hasDate>2021-09-13</sin:hasDate>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/c/C10001">
+      <rdfs:label>work</rdfs:label>
+   </rdf:Description>
+</rdf:RDF>

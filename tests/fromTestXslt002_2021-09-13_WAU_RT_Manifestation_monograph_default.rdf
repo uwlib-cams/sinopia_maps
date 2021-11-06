@@ -3,14 +3,14 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:sin="http://sinopia.io/vocabulary/">
-   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/WAU:RT:Manifestation:monograph:default">
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/TESTWAU:RT:Manifestation:monograph:default">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sin:hasResourceTemplate>sinopia:template:resource</sin:hasResourceTemplate>
-      <sin:hasResourceId>WAU:RT:Manifestation:monograph:default</sin:hasResourceId>
+      <sin:hasResourceId>TESTWAU:RT:Manifestation:monograph:default</sin:hasResourceId>
       <sin:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
-      <rdfs:label>WAU RT Manifestation monograph default</rdfs:label>
+      <rdfs:label>TEST 2021-09-13WAU RT Manifestation monograph default</rdfs:label>
       <sin:hasAuthor>ries07@uw.edu</sin:hasAuthor>
-      <sin:hasDate>2021-09-10</sin:hasDate>
+      <sin:hasDate>2021-09-13</sin:hasDate>
       <sin:hasPropertyTemplate rdf:nodeID="P10407_ordering_bnode"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10407">
