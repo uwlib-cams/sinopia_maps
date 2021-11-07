@@ -6,4 +6,269 @@
     elementFormDefault="qualified"
     vc:minVersion="1.1">
     
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
+        schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+    
+    <xs:element name="sinopia"/>
+    
+    <!-- **************** sinopia **************** -->
+    
+    <xs:complexType name="sinopia_type">
+        <xs:sequence>
+            <xs:element name="implementationSet" type="implementationSet_type" minOccurs="1"
+                maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- *************** implementationSet *************** -->
+    
+    <xs:complexType name="implementationSet_type">
+        <xs:sequence>
+            <xs:element name="resource" type="resource_type" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="localid_implementationSet" type="localid_attr" use="required"/>
+    </xs:complexType>
+    
+    <!-- REUSE -->
+    <xs:simpleType name="localid_attr">
+        <xs:restriction base="xs:string">
+            <!-- Possible to an XSD mechanism to prevent duplicate values? -->
+            <!-- Possible to provide constraints *and* a default? See map_storage #6 -->
+            <!-- A default in the case of localid_[...] attrs would allow users to enter a "placeholder" localid during source editing 
+                and avoid validation errors; then unique localid values would be added with XSLT or Python after source editing -->
+            <xs:pattern value="\S+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- ************** resource ************** -->
+    
+    <xs:complexType name="resource_type">
+        <xs:sequence>
+            <!-- BMR to-do: Suppressible is in the wrong place I believe for use in generating RTs, should be at the next child level in the storage structure I think -->
+            <xs:element name="suppressible" type="boolean_type" minOccurs="0" maxOccurs="1"/>
+            <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
+            <xs:element name="format" type="format_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="remark" type="lang_string_type" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="sinopia_prop_attributes" type="sinopia_prop_attributes_type"
+                minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:attribute name="mapid_resource" type="mapid_resource_attr" use="required"/>
+    </xs:complexType>
+    
+    <!-- Various mapid_[...] attributes will not be re-usable;
+        many will need regular updates as new propSets/formats/users/ are added -->
+    <xs:simpleType name="mapid_resource_attr">
+        <xs:restriction base="xs:string">
+            <!-- (MAP ID component) -->
+            <!-- For prop sets from RDA Registry, mapid_propSet and mapid_resource values will be redundant 
+            (RDA Work property set properties for use in an RDA Work RT), 
+            but this may not be the case for other vocabularies -->
+            <xs:enumeration value="Work"/>
+            <xs:enumeration value="Expression"/>
+            <xs:enumeration value="Manifestation"/>
+            <!-- Not yet in test storage instance
+            <xs:enumeration value="Item"/>
+            <xs:enumeration value="Agent"/>
+            <xs:enumeration value=""/>
+            add other RDA Entities here
+            -->
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- REUSE -->
+    <xs:complexType name="boolean_type">
+        <xs:attribute name="value" default="false">
+            <xs:simpleType>
+                <xs:restriction base="xs:boolean"/>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="format_type">
+        <xs:attribute name="mapid_format" type="mapid_format_attr" use="required"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="mapid_format_attr">
+        <xs:restriction base="xs:string">
+            <!-- (MAP ID component) -->
+            <!-- mapid enumerations here will need updating -->
+            <xs:enumeration value="monograph"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="user_type">
+        <xs:attribute name="mapid_user" type="mapid_user_attr" use="required"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="mapid_user_attr">
+        <xs:restriction base="xs:string">
+            <!-- (MAP ID component) -->
+            <!-- mapid enumerations here will need updating -->
+            <xs:enumeration value="default"/>
+            <xs:enumeration value="ries07"/>
+            <xs:enumeration value="mcm104"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="form_order_type">
+        <xs:attribute name="value" type="decimal_attr" use="required"/>
+    </xs:complexType>
+    
+    <xs:simpleType name="decimal_attr">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0.0"/>
+            <xs:maxInclusive value="1.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- remark: lang_string_type defined above -->
+    
+    <!-- ************ sinopia_prop_attributes ************ -->
+    
+    <xs:complexType name="sinopia_prop_attributes_type">
+        <xs:sequence>
+            <xs:element name="sinopia_prop_type" type="sinopia_prop_type_type" minOccurs="1"
+                maxOccurs="1"/>
+            <xs:element name="required" type="boolean_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="repeatable" type="boolean_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="ordered" type="boolean_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="sinopia_prop_type_attributes" type="sinopia_prop_type_attributes_type"
+                minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="sinopia_prop_type_type">
+        <xs:attribute name="value">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <!-- Double-check that I'm up on the current Sinopia property type choices! -->
+                    <xs:enumeration value="literal"/>
+                    <xs:enumeration value="uri_or_lookup"/>
+                    <xs:enumeration value="nested_resource"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <!-- required: boolean_type defined above -->
+    <!-- repeatable: boolean_type defined above -->
+    <!-- ordered: boolean_type defined above -->
+    
+    <!-- *********** sinopia_prop_type_attributes *********** -->
+    
+    <xs:complexType name="sinopia_prop_type_attributes_type">
+        <xs:choice>
+            <xs:element name="literal_attributes" type="literal_attributes_type" minOccurs="1"
+                maxOccurs="1"/>
+            <xs:element name="uri_attributes" type="uri_attributes_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="lookup_attributes" type="lookup_attributes_type" minOccurs="1"
+                maxOccurs="1"/>
+            <xs:element name="nested_resource_attributes" type="nested_resource_attributes_type"
+                minOccurs="1" maxOccurs="1"/>
+        </xs:choice>
+    </xs:complexType>
+    
+    <!-- ********** literal_attributes ********** -->
+    
+    <xs:complexType name="literal_attributes_type">
+        <xs:sequence>
+            <xs:element name="default_literal" type="lang_string_type" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- literal_attributes: lang_string_type defined above -->
+    
+    <!-- ********** uri_attributes ********** -->
+    
+    <xs:complexType name="uri_attributes_type">
+        <xs:sequence>
+            <xs:element name="default_uri" type="iri_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="default_uri_label" type="lang_string_type" minOccurs="0" maxOccurs="1"
+            />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- REUSE -->
+    <xs:complexType name="iri_type">
+        <xs:attribute name="iri">
+            <xs:simpleType>
+                <xs:restriction base="xs:anyURI">
+                    <!-- IRI validation pattern -->
+                    <xs:pattern value="https?:\/\/\S*"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <!-- default_uri_label: lang_string_type defined above -->
+    
+    <!-- ********** lookup_attributes ********** -->
+    
+    <xs:complexType name="lookup_attributes_type">
+        <xs:sequence>
+            <xs:element name="authorities" type="authorities_type" minOccurs="1"
+                maxOccurs="unbounded"/>
+            <xs:element name="lookup_default_iri" type="iri_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="lookup_default_iri_label" type="lang_string_type" minOccurs="0"
+                maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- REUSE -->
+    <xs:complexType name="lang_string_type">
+        <!-- Note for future: We'll want to allow for the reuse of textual content from a common file for instructions, examples, etc.
+        So validation may need to allow for tokens/variables/etc. to be provided as values?? -->
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <!-- Use https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry ? -->
+                <xs:attribute ref="xml:lang" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="authorities_type">
+        <xs:sequence>
+            <xs:element name="authority_urn" type="authority_urn_type"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="authority_urn_type">
+        <xs:restriction base="xs:string">
+            <!-- enumerate here -->
+            <!-- Options: Confirm that authorities URNs still come from https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json , grab from there
+                enter all possible options in a test RT and copy URNs -->
+            <xs:enumeration value="urn:ld4p:sinopia"/>
+            <xs:enumeration value="urn:ld4p:sinopia:bibframe:instance"/>
+            <!-- ... lots still to add, starting from the top -->
+            <xs:enumeration value="urn:ld4p:qa:names"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- lookup_default_iri: iri_type defined above -->
+    <!-- lookup_default_iri_label: lang_string_type defined above -->
+    
+    <!-- ********** nested_resource_attributes ********** -->
+    
+    <xs:complexType name="nested_resource_attributes_type">
+        <xs:sequence>
+            <xs:element name="rt_id" type="rt_id_type"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="rt_id_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WAU:rda_Work:Work:monograph:ries07"/>
+            <!-- UPDATING THESE ENUMERATIONS WILL BE VERY DIFFICULT; HOW TO DO THIS?
+            List of enumerations = list of all RT IDs, RT IDs are comprised of mapid_[...] attribute-value combinations -->
+            <!-- the following enumeration is for testing and should be deleted -->
+            <xs:enumeration value="WAU:rda_Agent:Agent:ries07"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- *********** guidance *********** -->
+    
 </xs:schema>
