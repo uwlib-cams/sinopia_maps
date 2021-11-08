@@ -11,8 +11,23 @@
       <rdfs:label>TEST WAU RT Manifestation monograph ries07</rdfs:label>
       <sin:hasAuthor>ries07@uw.edu</sin:hasAuthor>
       <sin:hasDate>2021-11-07</sin:hasDate>
-      <mapstor:prop_label>has groove characteristic</mapstor:prop_label>
-      <mapstor:prop_label>has details of applied material</mapstor:prop_label>
-      <mapstor:prop_label>has access point for manifestation</mapstor:prop_label>
+      <mapstor:prop>
+         <mapstor:prop_label>has groove characteristic</mapstor:prop_label>
+         <mapstor:previous/>
+         <mapstor:form_order>0.000001</mapstor:form_order>
+         <mapstor:next>has base material</mapstor:next>
+      </mapstor:prop>
+      <mapstor:prop>
+         <mapstor:prop_label>has details of applied material</mapstor:prop_label>
+         <mapstor:previous>has access point for manifestation</mapstor:previous>
+         <mapstor:form_order>0.5</mapstor:form_order>
+         <mapstor:next>has details of base material</mapstor:next>
+      </mapstor:prop>
+      <mapstor:prop>
+         <mapstor:prop_label>has access point for manifestation</mapstor:prop_label>
+         <mapstor:previous>has base material</mapstor:previous>
+         <mapstor:form_order>1.0</mapstor:form_order>
+         <mapstor:next>has applied material</mapstor:next>
+      </mapstor:prop>
    </rdf:Description>
 </rdf:RDF>
