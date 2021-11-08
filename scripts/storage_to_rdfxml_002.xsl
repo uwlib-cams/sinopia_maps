@@ -8,7 +8,7 @@
     <xsl:output method="xml" indent="yes"/>
 
     <!-- Import named templates -->
-    <xsl:import href="storage_to_rdfxml_002_named_templates.xsl"/>
+    <xsl:import href="storage_to_rdfxml_002_templates.xsl"/>
    
     <!-- Supply params when invoking XSLT transformation (oXygen scenario, Java command) -->
     <xsl:param name="mapid_institution"/>
