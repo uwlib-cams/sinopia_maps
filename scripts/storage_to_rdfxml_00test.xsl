@@ -7,6 +7,7 @@
     exclude-result-prefixes="xs" version="3.0">
     <xsl:output method="xml" indent="yes"/>
 
+    <!-- might want to pull props from multiple propSets into one MAP at some point... -->
     <xsl:variable name="mapid_resource" select="'^Manifestation$|^Expression$'"/>
     <xsl:variable name="mapid_format" select="'monograph'"/>
     <xsl:variable name="mapid_user" select="'ries07'"/>
@@ -17,6 +18,7 @@
                     collection('../../map_storage/?select=*.xml')/
                     mapstor:propSet/mapstor:prop
                     [mapstor:platformSet/mapstor:sinopia/mapstor:implementationSet/
+                    (: might want to pull props from multiple propSets into one MAP at some point :)
                     mapstor:resource[matches(@mapid_resource, $mapid_resource)]
                     [mapstor:format[@mapid_format = $mapid_format]]
                     [mapstor:user[@mapid_user = $mapid_user]]]">
