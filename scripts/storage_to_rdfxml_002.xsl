@@ -21,7 +21,7 @@
     <xsl:template match="/">
         <!-- BEWARE output file path may not fit your filesystem -->
         <xsl:result-document
-            href="../../uwl_sinopia_maps/tests/fromTestXslt002_{format-date(current-date(), '[Y0001]-[M01]-[D01]')}_{$mapid_institution}_RT_{$mapid_resource}_{$mapid_format}_{$mapid_user}.rdf">
+            href="tests/fromTestXslt002_{format-date(current-date(), '[Y0001]-[M01]-[D01]')}_{$mapid_institution}_RT_{$mapid_resource}_{$mapid_format}_{$mapid_user}.rdf">
             <rdf:RDF>
                 <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/{$rtId}">
                     <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
