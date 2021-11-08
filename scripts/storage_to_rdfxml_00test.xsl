@@ -28,16 +28,17 @@
                     </sin:hasResourceTemplate>
                     <sin:hasResourceId>
                         <xsl:value-of
-                            select="concat('TEST_WAU_RT_RDA_', $mapid_resource, '_', $mapid_format, '_', $mapid_user)"/>
+                            select="concat('TEST_WAU_RT_RDA_', $mapid_resource, '_', $mapid_format, '_', $mapid_user)"
+                        />
                     </sin:hasResourceId>
                     <!-- Call rtHasClass for sin:hasClass value -->
                     <xsl:call-template name="rtHasClass">
                         <xsl:with-param name="mapid_resource" select="$mapid_resource"/>
                     </xsl:call-template>
                     <rdfs:label>
-                        <xsl:value-of
-                            select="
-                            concat('TEST WAU RT ', $mapid_resource, ' ', $mapid_format, ' ', $mapid_user)"/>
+                        <xsl:value-of select="
+                                concat('TEST WAU RT ', $mapid_resource, ' ', $mapid_format, ' ', $mapid_user)"
+                        />
                     </rdfs:label>
                     <!-- Call rtHasAuthor for sin:hasAuthor value -->
                     <xsl:call-template name="rtHasAuthor">
@@ -46,7 +47,7 @@
                     <sin:hasDate>
                         <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
                     </sin:hasDate>
-                    
+
                     <!-- ... -->
 
                     <!-- apply-templates to output PTs -->
@@ -69,11 +70,25 @@
         </xsl:result-document>
     </xsl:template>
 
-    <!-- replace this with a template that actually outputs PTs -->
+    <!-- nope, doesn't work; sort order not reflected when fn:position() is used below -->
     <xsl:template match="mapstor:prop">
-        <mapstor:prop_label>
-            <xsl:value-of select="mapstor:prop_label"/>
-        </mapstor:prop_label>
+        <xsl:variable name="prop_position" select="position()"/>
+        <xsl:element name="mapstor:prop">
+            <mapstor:prop_label>
+                <xsl:value-of select="mapstor:prop_label"/>
+            </mapstor:prop_label>
+            <mapstor:previous>
+                <xsl:value-of select="../mapstor:prop[position() = $prop_position - 1]/mapstor:prop_label"/>
+            </mapstor:previous>
+            <mapstor:form_order>
+                <xsl:value-of select="
+                        mapstor:platformSet/mapstor:sinopia/mapstor:implementationSet/
+                        mapstor:resource/mapstor:form_order/@value"/>
+            </mapstor:form_order>
+            <mapstor:next>
+                <xsl:value-of select="../mapstor:prop[position() = $prop_position + 1]/mapstor:prop_label"/>
+            </mapstor:next>
+        </xsl:element>
     </xsl:template>
 
 </xsl:stylesheet>
