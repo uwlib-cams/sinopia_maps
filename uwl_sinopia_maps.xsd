@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- I'll be honest I don't know why I'm using both targetNamespace and xmlns attrs -->
+<!-- are both targetNamespace and xmlns attrs needed? -->
 <xs:schema targetNamespace="https://uwlib-cams.github.io/uwl_sinopia_maps/"
     xmlns="https://uwlib-cams.github.io/uwl_sinopia_maps/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -16,18 +16,20 @@
     
     <xs:complexType name="maps_type">
         <xs:sequence>
-            <xs:element name="map" type="map_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="rt" type="rt_type" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
-    <xs:complexType name="map_type">
+    <xs:complexType name="rt_type">
         <xs:sequence>
             <!-- need to add cardinality -->
-            <xs:element name="data_source" type="data_source_type"/>
+            <xs:element name="propSet" type="propSet_type" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="resource" type="resource_type"/>
             <xs:element name="format" type="format_type"/>
             <xs:element name="user" type="user_type"/>
+            <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- may wish to add RT-level admin metadata here at some point -->
+            <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
         </xs:sequence>
     </xs:complexType>
     
@@ -35,7 +37,7 @@
     map_storage.xsd, and will require updating in two places. 
     Possible to put in the same place and only update once?? -->
     
-    <xs:simpleType name="data_source_type">
+    <xs:simpleType name="propSet_type">
         <xs:restriction base="xs:string">
             <!-- more enumerations to add later -->
             <xs:enumeration value="rda_Work"/>
@@ -67,6 +69,13 @@
             <xs:enumeration value="ries07"/>
             <xs:enumeration value="mcm104"/>
         </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="author_type">
+        <xs:annotation>
+            <xs:documentation>Provide the email address of an author (or authors, in repeating elements, for the resource template.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string"/>
     </xs:simpleType>
     
 </xs:schema>

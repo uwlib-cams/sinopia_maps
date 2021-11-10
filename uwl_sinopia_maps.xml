@@ -3,10 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:schemaLocation="https://uwlib-cams.github.io/uwl_sinopia_maps/ 
     https://uwlib-cams.github.io/uwl_sinopia_maps/uwl_sinopia_maps.xsd">
-    <map>
-        <data_source>rda_Manifestation</data_source>
+    <rt>
+        <propSet>rda_Manifestation</propSet>
         <resource>Manifestation</resource>
         <format>monograph</format>
         <user>default</user>
-    </map>
+        <author>ries07@uw.edu</author>
+    </rt>
 </maps>
