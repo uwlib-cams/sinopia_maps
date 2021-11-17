@@ -15,6 +15,7 @@
     <xs:element name="maps" type="maps_type"/>
     
     <xs:complexType name="maps_type">
+        <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
         <xs:sequence>
             <xs:element name="rt" type="rt_type" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -29,7 +30,6 @@
             <xs:element name="user" type="user_type"/>
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- may wish to add RT-level admin metadata here at some point -->
-            <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
         </xs:sequence>
     </xs:complexType>
     
@@ -38,33 +38,45 @@
     Possible to put in the same place and only update once?? -->
     
     <xs:simpleType name="propSet_type">
+        <!-- = map_storage.xsd mapid_propSet_attr_type -->
         <xs:restriction base="xs:string">
-            <!-- more enumerations to add later -->
-            <xs:enumeration value="rda_Work"/>
-            <xs:enumeration value="rda_Expression"/>
-            <xs:enumeration value="rda_Manifestation"/>
+            <xs:enumeration value="rdacWork"/>
+            <xs:enumeration value="rdacExpression"/>
+            <xs:enumeration value="rdacManifestation"/>
+            <!-- Not yet in test storage instance
+            <xs:enumeration value="rdacIPropSet"/>
+            <xs:enumeration value="rdacAPropSet"/>
+            <xs:enumeration value=""/>
+            -->
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="resource_type">
+        <!-- = map_storage.xsd > mapid_resource_attr_type -->
         <xs:restriction base="xs:string">
-            <!-- more enumerations to add later -->
-            <xs:enumeration value="Work"/>
-            <xs:enumeration value="Expression"/>
-            <xs:enumeration value="Manifestation"/>
+            <xs:enumeration value="rdacWork"/>
+            <xs:enumeration value="rdacExpression"/>
+            <xs:enumeration value="rdacManifestation"/>
+            <!-- Not yet in test storage instance
+            <xs:enumeration value="rdacItem"/>
+            <xs:enumeration value="rdacAgent"/>
+            <xs:enumeration value=""/>
+            -->
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="format_type">
+        <!-- = map_storage.xsd > format_type -->
         <xs:restriction base="xs:string">
-            <!-- more enumerations to add later? -->
+            <!-- mapid enumerations here will need updating -->
             <xs:enumeration value="monograph"/>
         </xs:restriction>
     </xs:simpleType>
     
     <xs:simpleType name="user_type">
+        <!-- = map_storage.xsd > user_type -->
         <xs:restriction base="xs:string">
-            <!-- more enumerations to add later? -->
+            <!-- enumerations here will need updating -->
             <xs:enumeration value="default"/>
             <xs:enumeration value="ries07"/>
             <xs:enumeration value="mcm104"/>
