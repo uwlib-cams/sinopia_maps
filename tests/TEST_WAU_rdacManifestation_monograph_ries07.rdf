@@ -13,6 +13,22 @@
       <rdfs:label>TEST_WAU_rdacManifestation_monograph_ries07</rdfs:label>
       <sinopia:hasAuthor>ries07@uw.edu</sinopia:hasAuthor>
       <sinopia:hasDate>2021-11-16</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30164_ordering"/>
+      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30164_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30164_order">
+      <rdf:first rdf:nodeID="m_P30164_define"/>
+      <rdf:rest rdf:nodeID="m_P30216_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30216_order">
+      <rdf:first rdf:nodeID="m_P30216_define"/>
+      <rdf:rest rdf:nodeID="m_P30268_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30268_order">
+      <rdf:first rdf:nodeID="m_P30268_define"/>
+      <rdf:rest rdf:nodeID="m_P30276_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30276_order">
+      <rdf:first rdf:nodeID="m_P30276_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
    </rdf:Description>
 </rdf:RDF>
