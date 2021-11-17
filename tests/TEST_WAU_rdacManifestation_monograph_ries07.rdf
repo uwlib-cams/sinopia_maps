@@ -5,14 +5,14 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/">
-   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/TEST:WAU:Manifestation:monograph:default">
+   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/TEST:WAU:rdacManifestation:monograph:ries07">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>TEST:WAU:Manifestation:monograph:default</sinopia:hasResourceId>
-      <rdfs:label>TEST_WAU_Manifestation_monograph_default</rdfs:label>
+      <sinopia:hasResourceId>TEST:WAU:rdacManifestation:monograph:ries07</sinopia:hasResourceId>
+      <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+      <rdfs:label>TEST_WAU_rdacManifestation_monograph_ries07</rdfs:label>
       <sinopia:hasAuthor>ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2021-11-11</sinopia:hasDate>
-      <first_prop_iri/>
-      <sinopia:hasPropertyTemplate/>
+      <sinopia:hasDate>2021-11-16</sinopia:hasDate>
+      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30164_ordering"/>
    </rdf:Description>
 </rdf:RDF>
