@@ -10,7 +10,7 @@
     version="3.0">
     <xsl:output method="xml" indent="yes"/>
 
-    <xsl:include href="storage_to_rdfxml_map_templates.xsl"/>
+    <xsl:include href="storage_to_rdfxml_templates.xsl"/>
 
     <!-- function(s) -->
     <xsl:function name="bmrxml:rda_iri_slug">
@@ -26,22 +26,18 @@
             <xsl:variable name="format" select="uwlsinopia:format"/>
             <xsl:variable name="user" select="uwlsinopia:user"/>
             <xsl:variable name="sorted_property" as="node()*">
-                <!-- I'm thinking about un-wrapping resource, and making it a sibling of format, user, etc...
-                            this would necessitate change to the XPaths here -->
                 <xsl:for-each select="
-                        (: doc XPath will need to change once I'm not using test propSets :)
-                        (: also will need to change if resource is un-wrapped per above :)
-                        (: also doc XPath won't work for pulling from multiple propSets [!] :)
+                        (: [!] fn:document won't work for pulling from multiple propSets,
+                        need fn:collection, etc. [!] 
+                        also doc XPath will need to change once I'm not using test propSets :)
                         document(concat('../../map_storage/test_propSet_', $propSet, '.xml'))/
                         mapstor:propSet/mapstor:prop
-                        [mapstor:platformSet/mapstor:sinopia/mapstor:implementationSet/
-                        mapstor:resource[@mapid_resource = $resource]
-                        [mapstor:format[@mapid_format = $format]]
-                        [mapstor:user[@mapid_user = $user]]]">
+                        [mapstor:sinopia/mapstor:implementationSet
+                        [mapstor:resource/@mapid_resource = $resource]
+                        [mapstor:format = $format]
+                        [mapstor:user = $user]]">
                     <xsl:sort select="
-                            mapstor:platformSet/mapstor:sinopia/mapstor:implementationSet/
-                            (: another XPath that'd need to change if I un-wrap resource :)
-                            mapstor:resource/mapstor:form_order/@value"/>
+                            mapstor:sinopia/mapstor:implementationSet/mapstor:form_order"/>
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
@@ -87,6 +83,7 @@
                     <sinopia:hasDate>
                         <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
                     </sinopia:hasDate>
+                    <!-- [!] RDA-Registry specific stuff here -->
                     <sinopia:hasPropertyTemplate
                         rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_property[position() = 1]/mapstor:prop_iri/@iri),
                         '_ordering')}"

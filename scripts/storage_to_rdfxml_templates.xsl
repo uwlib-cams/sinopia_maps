@@ -12,13 +12,13 @@
         <xsl:param name="resource"/>
         <!-- Take choices here from schema definition for xs:simpleType mapid_resource_attr -->
         <xsl:choose>
-            <xsl:when test="$resource = 'rda_Work'">
+            <xsl:when test="$resource = 'rdacWork'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
             </xsl:when>
-            <xsl:when test="$resource = 'rda_Expression'">
+            <xsl:when test="$resource = 'rdacExpression'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10006"/>
             </xsl:when>
-            <xsl:when test="$resource = 'rda_Manifestation'">
+            <xsl:when test="$resource = 'rdacManifestation'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
             </xsl:when>
             <!-- No sin:hasClass triple in RT may result in error (prevent loading) -->
