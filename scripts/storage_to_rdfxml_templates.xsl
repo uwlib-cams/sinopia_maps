@@ -135,8 +135,8 @@
                             mapstor:sinopia_prop_attributes/mapstor:sinopia_prop_type_attributes/
                             mapstor:literal_attributes/mapstor:default_literal"/>
                     </sinopia:hasDefault>
-                    <!-- to do bring in validation regex see uwl_sinopia_maps #9 -->
-                    <!-- to do bring in other validation selections see uwl_sinopia_maps #8 -->
+                    <!-- to do bring in validation regex see sinopia_maps #9 -->
+                    <!-- to do bring in other validation selections see sinopia_maps #8 -->
                 </rdf:Description>
             </xsl:when>
             <xsl:when test="

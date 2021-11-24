@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
-    xmlns:uwlsinopia="https://uwlib-cams.github.io/uwl_sinopia_maps/"
+    xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/"
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -19,7 +19,7 @@
     </xsl:function>
 
     <xsl:template match="/">
-        <xsl:for-each select="document('../uwl_sinopia_maps.xml')/uwlsinopia:maps/uwlsinopia:rt">
+        <xsl:for-each select="document('../sinopia_maps.xml')/uwlsinopia:maps/uwlsinopia:rt">
             <!-- vars in root template -->
             <xsl:variable name="propSet" select="uwlsinopia:propSet"/>
             <xsl:variable name="resource" select="uwlsinopia:resource"/>
