@@ -1,4 +1,4 @@
-# uwl_sinopia_maps
+# sinopia_maps
 ***Metadata application profiles (resource templates) for use in the Sinopia Linked Data Editor***
 
 
