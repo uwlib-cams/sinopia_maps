@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<maps xmlns="https://uwlib-cams.github.io/uwl_sinopia_maps/" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="https://uwlib-cams.github.io/uwl_sinopia_maps/ 
-    https://uwlib-cams.github.io/uwl_sinopia_maps/uwl_sinopia_maps.xsd">
-    <rt>
-        <propSet>rdacManifestation</propSet>
-        <resource>rdacManifestation</resource>
-        <format>monograph</format>
-        <user>ries07</user>
-        <author>ries07@uw.edu</author>
-    </rt>
-</maps>
+<sinopia_maps xmlns="https://uwlib-cams.github.io/sinopia_maps/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/ 
+    https://uwlib-cams.github.io/sinopia_maps/sinopia_maps.xsd">
+    <rts>
+        <rt>
+            <propSet>rdacManifestation</propSet>
+            <resource>rdacManifestation</resource>
+            <format>monograph</format>
+            <user>ries07</user>
+            <author>Benjamin Riesenberg</author>
+        </rt>
+    </rts>
+</sinopia_maps>

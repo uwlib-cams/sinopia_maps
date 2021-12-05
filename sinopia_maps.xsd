@@ -12,24 +12,33 @@
     <xs:import namespace="http://www.w3.org/2001/XMLSchema"
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
     
-    <xs:element name="maps" type="maps_type"/>
+    <!-- *****ROOT sinopia_maps***** -->
+    <xs:element name="sinopia_maps" type="sinopia_maps_type"/>
     
-    <xs:complexType name="maps_type">
+    <xs:complexType name="sinopia_maps_type">
         <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
         <xs:sequence>
-            <xs:element name="rt" type="rt_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="rts" type="rts_type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="html_profiles" type="html_profiles_type" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- ****rts**** -->
+    <xs:complexType name="rts_type">
+        <xs:sequence>
+            <xs:element name="rt" type="rt_type" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="rt_type">
         <xs:sequence>
-            <!-- need to add cardinality -->
+            <!-- need some kind of ID which can be referenced by html_profile elements -->
             <xs:element name="propSet" type="propSet_type" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="resource" type="resource_type"/>
             <xs:element name="format" type="format_type"/>
             <xs:element name="user" type="user_type"/>
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
-            <!-- may wish to add RT-level admin metadata here at some point -->
+            <!-- may wish to add RT-level admin metadata here at some point, remark would go here in the sinopia_maps.xml instance -->
         </xs:sequence>
     </xs:complexType>
     
@@ -84,10 +93,22 @@
     </xs:simpleType>
     
     <xs:simpleType name="author_type">
+        <!-- tried some annotation, shows up in the editor on mouseover in the sinopia_maps.xml instance -->
         <xs:annotation>
-            <xs:documentation>Provide the email address of an author (or authors, in repeating elements, for the resource template.</xs:documentation>
+            <xs:documentation>Provide the name and/or email address of an author (or authors, in repeating elements) for the resource template.</xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
+    
+    <!-- ****html_profiles**** -->
+    <xs:complexType name="html_profiles_type">
+        <xs:sequence>
+            <xs:element name="html_profile" type="html_profile_type" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="html_profile_type">
+        <!-- html profile elements should "bundle" rts together, using some kind of reference for the rt -->
+    </xs:complexType>
     
 </xs:schema>
