@@ -94,7 +94,7 @@
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
-            <!-- [!] RDA-Registry specific stuff here -->
+            <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
             <sinopia:hasPropertyTemplate
                 rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_property[position() = 1]/mapstor:prop_iri/@iri),
                         '_order')}"/>

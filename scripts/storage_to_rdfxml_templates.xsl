@@ -82,7 +82,7 @@
                 '_define')}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- to do: bring in multiple prop URIs for choose-a-prop -->
+            <!-- to do: bring in multiple prop URIs for choose-a-prop / see #7 -->
             <sinopia:hasPropertyUri rdf:resource="{$sorted_property/mapstor:prop_iri/@iri}"/>
             <xsl:call-template name="pt_hasPropertyType">
                 <xsl:with-param name="sinopia_prop_type" select="
@@ -94,7 +94,15 @@
             <rdfs:label xml:lang="{$sorted_property/mapstor:prop_label/@xml:lang}">
                 <xsl:value-of select="$sorted_property/mapstor:prop_label"/>
             </rdfs:label>
-            <!-- to do bring in required, repeatable, ordered -->
+            <xsl:if test="matches(mapstor:sinopia/mapstor:implementationSet/mapstor:sinopia_prop_attributes/mapstor:required, 'true|1')">
+                <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+            </xsl:if>
+            <xsl:if test="matches(mapstor:sinopia/mapstor:implementationSet/mapstor:sinopia_prop_attributes/mapstor:repeatable, 'true|1')">
+                <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+            </xsl:if>
+            <xsl:if test="matches(mapstor:sinopia/mapstor:implementationSet/mapstor:sinopia_prop_attributes/mapstor:ordered, 'true|1')">
+                <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
+            </xsl:if>
             <xsl:choose>
                 <xsl:when test="
                         $sorted_property/mapstor:sinopia/mapstor:implementationSet/
