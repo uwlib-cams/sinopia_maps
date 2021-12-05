@@ -19,7 +19,7 @@
     </xsl:function>
 
     <xsl:template match="/">
-        <xsl:for-each select="document('../sinopia_maps.xml')/uwlsinopia:maps/uwlsinopia:rt">
+        <xsl:for-each select="document('../sinopia_maps.xml')/uwlsinopia:maps/uwlsinopia:rts/uwlsinopia:rt">
             <!-- vars in root template -->
             <xsl:variable name="propSet" select="uwlsinopia:propSet"/>
             <xsl:variable name="resource" select="uwlsinopia:resource"/>
