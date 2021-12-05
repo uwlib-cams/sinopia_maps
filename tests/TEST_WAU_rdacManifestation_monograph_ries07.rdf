@@ -39,6 +39,8 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30216"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
       <rdfs:label xml:lang="en">has details of applied material</rdfs:label>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
       <sinopia:hasLiteralAttributes rdf:nodeID="m_P30216_literal_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30216_literal_attributes">
@@ -54,6 +56,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30276"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
       <rdfs:label xml:lang="en">has access point for manifestation</rdfs:label>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasLiteralAttributes rdf:nodeID="m_P30276_literal_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30276_literal_attributes">
