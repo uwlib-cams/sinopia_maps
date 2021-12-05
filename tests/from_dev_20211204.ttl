@@ -1,0 +1,39 @@
+@prefix ns1: <http://sinopia.io/vocabulary/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://api.development.sinopia.io/resource/wau:test:20211204:manifestation:literals> a ns1:ResourceTemplate ;
+    rdfs:label "wau test 20211204 manifestation literals"@en ;
+    ns1:hasAuthor "Benjamin Riesenberg"@en ;
+    ns1:hasClass <http://rdaregistry.info/Elements/c/C10007> ;
+    ns1:hasDate "2021-12-04"@en ;
+    ns1:hasPropertyTemplate (
+      [ a ns1:PropertyTemplate ;
+                rdfs:label "has copyright date"@en ;
+                ns1:hasLiteralAttributes
+            [ a ns1:LiteralPropertyTemplate ;
+                        ns1:hasDefault "2020"@en ;
+                          # here's the triple provided since I selected data validation type - EDTF
+                        ns1:hasValidationDataType <http://id.loc.gov/datatypes/edtf/> ] ;
+                ns1:hasPropertyType <http://sinopia.io/vocabulary/propertyType/literal> ;
+                ns1:hasPropertyUri <http://rdaregistry.info/Elements/m/P30007> ]
+      [ a ns1:PropertyTemplate ;
+                rdfs:label "has details of applied material"@en ;
+                ns1:hasLiteralAttributes
+            [ a ns1:LiteralPropertyTemplate ;
+                        ns1:hasDefault "the details of applied material--it really was applied!"@en ] ;
+                ns1:hasPropertyAttribute <http://sinopia.io/vocabulary/propertyAttribute/ordered>,
+                    <http://sinopia.io/vocabulary/propertyAttribute/repeatable> ;
+                ns1:hasPropertyType <http://sinopia.io/vocabulary/propertyType/literal> ;
+                ns1:hasPropertyUri <http://rdaregistry.info/Elements/m/P30216> ]
+      [ a ns1:PropertyTemplate ;
+                rdfs:label "has access point for manifestation"@en ;
+                ns1:hasLiteralAttributes
+            [ a ns1:LiteralPropertyTemplate ;
+                        ns1:hasDefault "this is an access point"@en ] ;
+                ns1:hasPropertyAttribute <http://sinopia.io/vocabulary/propertyAttribute/required> ;
+                ns1:hasPropertyType <http://sinopia.io/vocabulary/propertyType/literal> ;
+                ns1:hasPropertyUri <http://rdaregistry.info/Elements/m/P30276> ] ) ;
+    ns1:hasRemark "confirm RT and PT structure for literal props"@en ;
+    ns1:hasResourceId "wau:test:20211204:manifestation:literals"@en ;
+    ns1:hasResourceTemplate "sinopia:template:resource" .

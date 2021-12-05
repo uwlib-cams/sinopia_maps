@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://sinopia.io/vocabulary/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="https://api.development.sinopia.io/resource/wau:test:20211204:manifestation:literals">
+    <ns1:hasPropertyTemplate rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb1"/>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+    <ns1:hasResourceTemplate>sinopia:template:resource</ns1:hasResourceTemplate>
+    <ns1:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+    <rdfs:label xml:lang="en">wau test 20211204 manifestation literals</rdfs:label>
+    <ns1:hasAuthor xml:lang="en">Benjamin Riesenberg</ns1:hasAuthor>
+    <ns1:hasResourceId xml:lang="en">wau:test:20211204:manifestation:literals</ns1:hasResourceId>
+    <ns1:hasDate xml:lang="en">2021-12-04</ns1:hasDate>
+    <ns1:hasRemark xml:lang="en">confirm RT and PT structure for literal props</ns1:hasRemark>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb5">
+    <ns1:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <rdfs:label xml:lang="en">has details of applied material</rdfs:label>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <ns1:hasLiteralAttributes rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb8"/>
+    <ns1:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
+    <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30216"/>
+    <ns1:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb8">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <ns1:hasDefault xml:lang="en">the details of applied material--it really was applied!</ns1:hasDefault>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb7">
+    <ns1:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <ns1:hasLiteralAttributes rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb9"/>
+    <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30276"/>
+    <rdfs:label xml:lang="en">has access point for manifestation</rdfs:label>
+    <ns1:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb1">
+    <rdf:rest rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb2"/>
+    <rdf:first rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb3"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb9">
+    <ns1:hasDefault xml:lang="en">this is an access point</ns1:hasDefault>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb3">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30007"/>
+    <rdfs:label xml:lang="en">has copyright date</rdfs:label>
+    <ns1:hasLiteralAttributes rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb6"/>
+    <ns1:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyAttribute/ordered">
+    <rdfs:label>ordered</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/datatypes/edtf/">
+    <rdfs:label>Extended Date/Time Format (EDTF)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb2">
+    <rdf:rest rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb4"/>
+    <rdf:first rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb5"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb4">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb7"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb6">
+    <ns1:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <ns1:hasDefault xml:lang="en">2020</ns1:hasDefault>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyType/literal">
+    <rdfs:label>literal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyAttribute/repeatable">
+    <rdfs:label>repeatable</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyAttribute/required">
+    <rdfs:label>required</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

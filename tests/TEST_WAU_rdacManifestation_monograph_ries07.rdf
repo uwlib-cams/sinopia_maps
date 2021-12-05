@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
-         xmlns:uwlsinopia="https://uwlib-cams.github.io/uwl_sinopia_maps/"
+         xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/"
          xmlns:sinopia="http://sinopia.io/vocabulary/"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -11,23 +11,28 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <sinopia:hasResourceId>TEST:WAU:rdacManifestation:monograph:ries07</sinopia:hasResourceId>
       <rdfs:label>TEST WAU rdacManifestation monograph ries07</rdfs:label>
-      <sinopia:hasAuthor>ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2021-11-19</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30164_order"/>
+      <sinopia:hasAuthor>Benjamin Riesenberg</sinopia:hasAuthor>
+      <sinopia:hasDate>2021-12-04</sinopia:hasDate>
+      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30007_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="m_P30164_order">
-      <rdf:first rdf:nodeID="m_P30164_define"/>
+   <rdf:Description rdf:nodeID="m_P30007_order">
+      <rdf:first rdf:nodeID="m_P30007_define"/>
       <rdf:rest rdf:nodeID="m_P30216_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="m_P30164_define">
+   <rdf:Description rdf:nodeID="m_P30007_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30164"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <rdfs:label xml:lang="en">has groove characteristic</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30007"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+      <rdfs:label xml:lang="en">has copyright date</rdfs:label>
+      <sinopia:hasLiteralAttributes rdf:nodeID="m_P30007_literal_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30007_literal_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+      <sinopia:hasDefault xml:lang="zxx">2020</sinopia:hasDefault>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30216_order">
       <rdf:first rdf:nodeID="m_P30216_define"/>
-      <rdf:rest rdf:nodeID="m_P30268_order"/>
+      <rdf:rest rdf:nodeID="m_P30276_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30216_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -39,16 +44,6 @@
    <rdf:Description rdf:nodeID="m_P30216_literal_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
       <sinopia:hasDefault xml:lang="en">the details of applied material--it really was applied!</sinopia:hasDefault>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="m_P30268_order">
-      <rdf:first rdf:nodeID="m_P30268_define"/>
-      <rdf:rest rdf:nodeID="m_P30276_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="m_P30268_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30268"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <rdfs:label xml:lang="en">has related person of manifestation</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30276_order">
       <rdf:first rdf:nodeID="m_P30276_define"/>
