@@ -47,7 +47,7 @@
             </xsl:variable>
             <!-- to do change result-document path for production -->
             <!-- underscores for RT filename, spaces for RT label -->
-            <xsl:result-document href="../tests/{translate($rt_id, ':', '_')}.rdf">
+            <xsl:result-document href="../rdfxml/{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="start_rdf_map">
                         <!-- to do: propSet param will not work as-is for pulling from multiple prop sets -->
