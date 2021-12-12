@@ -1,0 +1,183 @@
+[
+  {
+    "@id": "https://api.development.sinopia.io/resource/TEST:WAU:rdacManifestation:monograph:ries07",
+    "@type": [
+      "http://sinopia.io/vocabulary/ResourceTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthor": [
+      {
+        "@value": "Benjamin Riesenberg"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasClass": [
+      {
+        "@id": "http://rdaregistry.info/Elements/c/C10007"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasDate": [
+      {
+        "@value": "2021-12-11"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyTemplate": [
+      {
+        "@list": [
+          {
+            "@id": "_:Ncd10a7cabfa7430dacc62e0a8a8ee296"
+          },
+          {
+            "@id": "_:N4075a30d56394e35afe52d036660116d"
+          },
+          {
+            "@id": "_:N4b684c09d46c41228fd6f6090698fd73"
+          }
+        ]
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceId": [
+      {
+        "@value": "TEST:WAU:rdacManifestation:monograph:ries07"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceTemplate": [
+      {
+        "@value": "sinopia:template:resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "TEST WAU rdacManifestation monograph ries07"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ncd10a7cabfa7430dacc62e0a8a8ee296",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:N6d8e56db4d3b45d0a0ef876cc9f1046a"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/m/P30007"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has copyright date"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6d8e56db4d3b45d0a0ef876cc9f1046a",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@language": "zxx",
+        "@value": "2020"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4075a30d56394e35afe52d036660116d",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:Nca17d8ad05304ab09347acd5eee01e6b"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      },
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/ordered"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/m/P30216"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has details of applied material"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nca17d8ad05304ab09347acd5eee01e6b",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@language": "en",
+        "@value": "the details of applied material--it really was applied!"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4b684c09d46c41228fd6f6090698fd73",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:Nfa1c0c32ad744b158dacdc3ebfc138fb"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/required"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/m/P30276"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has access point for manifestation"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nfa1c0c32ad744b158dacdc3ebfc138fb",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@language": "en",
+        "@value": "This is an access point"
+      }
+    ]
+  }
+]

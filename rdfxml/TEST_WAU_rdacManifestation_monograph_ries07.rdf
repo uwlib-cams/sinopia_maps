@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
-         xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
+<rdf:RDF xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/"
+         xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/">
+         xmlns:sinopia="http://sinopia.io/vocabulary/"
+         xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/">
    <rdf:Description rdf:about="https://api.development.sinopia.io/resource/TEST:WAU:rdacManifestation:monograph:ries07">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -12,7 +12,7 @@
       <sinopia:hasResourceId>TEST:WAU:rdacManifestation:monograph:ries07</sinopia:hasResourceId>
       <rdfs:label>TEST WAU rdacManifestation monograph ries07</rdfs:label>
       <sinopia:hasAuthor>Benjamin Riesenberg</sinopia:hasAuthor>
-      <sinopia:hasDate>2021-12-04</sinopia:hasDate>
+      <sinopia:hasDate>2021-12-11</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="m_P30007_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30007_order">
