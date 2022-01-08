@@ -28,7 +28,7 @@
             <!-- to do remove 'TEST' in rt_id to output for production -->
             <xsl:variable name="rt_id"
                 select="concat('TEST:WAU:', $resource, ':', $format, ':', $user)"/>
-            <xsl:variable name="sorted_property" as="node()*">
+            <xsl:variable name="sorted_properties" as="node()*">
                 <!-- low-priority to do is gain better understanding of 'as="node()*"' syntax -->
                 <xsl:for-each select="
                         (: [!] fn:document won't work for pulling from multiple propSets,
@@ -56,10 +56,11 @@
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>
-                        <xsl:with-param name="sorted_property" select="$sorted_property"/>
+                        <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
+                    <!-- see storage_to_rdfxml_templates.xsl for pts_start -->
                     <xsl:call-template name="pts_start">
-                        <xsl:with-param name="sorted_property" select="$sorted_property"/>
+                        <xsl:with-param name="sorted_property" select="$sorted_properties"/>
                     </xsl:call-template>
                 </rdf:RDF>
             </xsl:result-document>
@@ -73,7 +74,7 @@
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="rt_id"/>
-        <xsl:param name="sorted_property"/>
+        <xsl:param name="sorted_properties"/>
         <rdf:Description
             rdf:about="{concat('https://api.development.sinopia.io/resource/', $rt_id)}">
             <!-- to do output remark in RT description -->
@@ -97,7 +98,7 @@
             </sinopia:hasDate>
             <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
             <sinopia:hasPropertyTemplate
-                rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_property[position() = 1]/mapstor:prop_iri/@iri),
+                rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/mapstor:prop_iri/@iri),
                         '_order')}"/>
         </rdf:Description>
     </xsl:template>
