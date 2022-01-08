@@ -5,7 +5,7 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
 >
   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/wau:test:20211204:manifestation:literals">
-    <ns1:hasPropertyTemplate rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb1"/>
+    <ns1:hasPropertyTemplate rdf:nodeID="pt1_order"/>
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
     <ns1:hasResourceTemplate>sinopia:template:resource</ns1:hasResourceTemplate>
     <ns1:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
@@ -36,15 +36,15 @@
     <rdfs:label xml:lang="en">has access point for manifestation</rdfs:label>
     <ns1:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb1">
+  <rdf:Description rdf:nodeID="pt1_order">
     <rdf:rest rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb2"/>
-    <rdf:first rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb3"/>
+    <rdf:first rdf:nodeID="pt1_define"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb9">
     <ns1:hasDefault xml:lang="en">this is an access point</ns1:hasDefault>
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="fab6414bbb8f94141a8c159f58e40fa7bb3">
+  <rdf:Description rdf:nodeID="pt1_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30007"/>
     <rdfs:label xml:lang="en">has copyright date</rdfs:label>

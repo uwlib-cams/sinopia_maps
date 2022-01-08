@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://sinopia.io/vocabulary/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:nodeID="pt_2_define">
+    <rdfs:label xml:lang="en">has engraver person</rdfs:label>
+    <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30350"/>
+    <ns1:hasLookupAttributes rdf:nodeID="pt_2_lookup_attributes"/>
+    <ns1:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://api.development.sinopia.io/resource/wau:test:20220107:manifestation:uriorlookup">
+    <ns1:hasRemark xml:lang="en">Here's the RT remark</ns1:hasRemark>
+    <rdfs:label xml:lang="en">wau test 20220107 manifestation uriorlookup</rdfs:label>
+    <ns1:hasPropertyTemplate rdf:nodeID="pt_1_order"/>
+    <ns1:hasResourceTemplate>sinopia:template:resource</ns1:hasResourceTemplate>
+    <ns1:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+    <ns1:hasDate xml:lang="en">2022-01-07</ns1:hasDate>
+    <ns1:hasResourceId xml:lang="en">wau:test:20220107:manifestation:uriorlookup</ns1:hasResourceId>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+    <ns1:hasAuthor xml:lang="en">Benjamin Riesenberg / ries07@uw.edu</ns1:hasAuthor>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pt_1_define">
+    <ns1:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <rdfs:label xml:lang="en">has creator collective agent of manifestation</rdfs:label>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <ns1:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30392"/>
+    <ns1:hasUriAttributes rdf:nodeID="pt_1_uri_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pt_1_uri_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
+    <ns1:hasDefault rdf:resource="http://www.wikidata.org/entity/Q182950"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sinopia.io/vocabulary/propertyType/uri">
+    <rdfs:label>uri or lookup</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.wikidata.org/entity/Q182950">
+    <rdfs:label xml:lang="en">Studio Ghibli</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pt_2_order">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:nodeID="pt_2_define"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pt_1_order">
+    <rdf:first rdf:nodeID="pt_1_define"/>
+    <rdf:rest rdf:nodeID="pt_2_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="urn:ld4p:qa:gettyulan">
+    <rdfs:label>GETTY_ULAN (QA)</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="pt_2_lookup_attributes">
+    <ns1:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+  </rdf:Description>
+</rdf:RDF>
