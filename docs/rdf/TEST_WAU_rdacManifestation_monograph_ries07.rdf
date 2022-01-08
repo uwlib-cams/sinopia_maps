@@ -17,7 +17,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30007_order">
       <rdf:first rdf:nodeID="m_P30007_define"/>
-      <rdf:rest rdf:nodeID="m_P30216_order"/>
+      <rdf:rest rdf:nodeID="m_P30392_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30007_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -29,6 +29,29 @@
    <rdf:Description rdf:nodeID="m_P30007_literal_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
       <sinopia:hasDefault xml:lang="zxx">2020</sinopia:hasDefault>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30392_order">
+      <rdf:first rdf:nodeID="m_P30392_define"/>
+      <rdf:rest rdf:nodeID="m_P30350_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30392_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30392"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <rdfs:label xml:lang="en">has creator collective agent of manifestation</rdfs:label>
+      <sinopia:hasUriAttributes rdf:nodeID="m_P30392_uri_attributes"/>
+   </rdf:Description>
+   <rdf:Description nodeID="m_P30392_uri_attributes"/>
+   <rdf:Description rdf:nodeID="m_P30350_order">
+      <rdf:first rdf:nodeID="m_P30350_define"/>
+      <rdf:rest rdf:nodeID="m_P30216_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30350_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30350"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <rdfs:label xml:lang="en">has engraver person</rdfs:label>
+      <sinopia:hasLookupAttributes rdf:nodeID="m_P30350_lookup_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="m_P30216_order">
       <rdf:first rdf:nodeID="m_P30216_define"/>
