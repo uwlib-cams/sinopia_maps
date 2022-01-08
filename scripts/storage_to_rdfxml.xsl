@@ -46,10 +46,10 @@
                 </xsl:for-each>
             </xsl:variable>
             <!-- to do change result-document path for production -->
-            <!-- underscores for RT filename, spaces for RT label -->
-            <xsl:result-document href="../rdfxml/{translate($rt_id, ':', '_')}.rdf">
+            <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
+            <xsl:result-document href="../docs/rdf/{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
-                    <xsl:call-template name="start_rdf_map">
+                    <xsl:call-template name="rt_start">
                         <!-- to do: propSet param will not work as-is for pulling from multiple prop sets -->
                         <xsl:with-param name="propSet" select="$propSet"/>
                         <xsl:with-param name="resource" select="$resource"/>
@@ -58,7 +58,7 @@
                         <xsl:with-param name="rt_id" select="$rt_id"/>
                         <xsl:with-param name="sorted_property" select="$sorted_property"/>
                     </xsl:call-template>
-                    <xsl:call-template name="property_templates_start">
+                    <xsl:call-template name="pts_start">
                         <xsl:with-param name="sorted_property" select="$sorted_property"/>
                     </xsl:call-template>
                 </rdf:RDF>
@@ -66,7 +66,8 @@
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template name="start_rdf_map">
+    <!-- admin metadata for the RT is output from this template -->
+    <xsl:template name="rt_start">
         <xsl:param name="propSet"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
@@ -75,17 +76,17 @@
         <xsl:param name="sorted_property"/>
         <rdf:Description
             rdf:about="{concat('https://api.development.sinopia.io/resource/', $rt_id)}">
-            <!-- to do: output remark in RT description -->
+            <!-- to do output remark in RT description -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
             <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-            <xsl:call-template name="rt_HasClass">
+            <xsl:call-template name="rt_hasClass">
                 <xsl:with-param name="resource" select="$resource"/>
             </xsl:call-template>
             <sinopia:hasResourceId>
                 <xsl:value-of select="$rt_id"/>
             </sinopia:hasResourceId>
             <rdfs:label>
-                <!-- underscores for RT filename, spaces for RT label -->
+                <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
                 <xsl:value-of select="translate($rt_id, ':', ' ')"/>
             </rdfs:label>
             <sinopia:hasAuthor>
@@ -99,6 +100,24 @@
                 rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_property[position() = 1]/mapstor:prop_iri/@iri),
                         '_order')}"/>
         </rdf:Description>
+    </xsl:template>
+    
+    <xsl:template name="rt_hasClass">
+        <xsl:param name="resource"/>
+        <!-- Take choices here from schema definition for xs:simpleType mapid_resource_attr -->
+        <xsl:choose>
+            <xsl:when test="$resource = 'rdacWork'">
+                <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
+            </xsl:when>
+            <xsl:when test="$resource = 'rdacExpression'">
+                <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10006"/>
+            </xsl:when>
+            <xsl:when test="$resource = 'rdacManifestation'">
+                <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+            </xsl:when>
+            <!-- No sin:hasClass triple in RT may result in error (prevent loading) -->
+            <xsl:otherwise/>
+        </xsl:choose>
     </xsl:template>
 
 </xsl:stylesheet>
