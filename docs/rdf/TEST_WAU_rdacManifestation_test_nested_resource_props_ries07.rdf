@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:maps="https://uwlib-cams.github.io/map_storage/"
+         xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/"
+         xmlns:sinopia="http://sinopia.io/vocabulary/"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/">
+   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/TEST:WAU:rdacManifestation:test_nested_resource_props:ries07">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+      <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
+      <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+      <sinopia:hasResourceId>TEST:WAU:rdacManifestation:test_nested_resource_props:ries07</sinopia:hasResourceId>
+      <rdfs:label>TEST WAU rdacManifestation test_nested_resource_props ries07</rdfs:label>
+      <sinopia:hasAuthor>Benjamin Riesenberg / ries07@uw.edu</sinopia:hasAuthor>
+      <sinopia:hasDate>2022-01-08</sinopia:hasDate>
+      <sinopia:hasPropertyTemplate rdf:nodeID="m_P30329_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30329_order">
+      <rdf:first rdf:nodeID="m_P30329_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30329_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30329"/>
+      <rdfs:label xml:lang="en">has creator agent of manifestation</rdfs:label>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="m_P30329_resource_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="m_P30329_resource_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
+      <sinopia:hasResourceTemplateId rdf:resource="WAU:rdacAgent:rdacAgent:ries07"/>
+   </rdf:Description>
+</rdf:RDF>
