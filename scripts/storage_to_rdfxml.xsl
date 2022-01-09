@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:mapstor="https://uwlib-cams.github.io/map_storage/"
+    xmlns:maps="https://uwlib-cams.github.io/map_storage/"
     xmlns:uwlsinopia="https://uwlib-cams.github.io/sinopia_maps/"
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -19,7 +19,8 @@
     </xsl:function>
 
     <xsl:template match="/">
-        <xsl:for-each select="document('../sinopia_maps.xml')/uwlsinopia:sinopia_maps/uwlsinopia:rts/uwlsinopia:rt">
+        <xsl:for-each
+            select="document('../sinopia_maps.xml')/uwlsinopia:sinopia_maps/uwlsinopia:rts/uwlsinopia:rt">
             <!-- vars in root template -->
             <xsl:variable name="propSet" select="uwlsinopia:propSet"/>
             <xsl:variable name="resource" select="uwlsinopia:resource"/>
@@ -35,13 +36,13 @@
                         need fn:collection, etc. [!] 
                         also doc XPath will need to change once I'm not using test propSets :)
                         document(concat('../../map_storage/test_propSet_', $propSet, '.xml'))/
-                        mapstor:propSet/mapstor:prop
-                        [mapstor:sinopia/mapstor:implementationSet
-                        [mapstor:resource/@mapid_resource = $resource]
-                        [mapstor:format = $format]
-                        [mapstor:user = $user]]">
+                        maps:propSet/maps:prop
+                        [maps:sinopia/maps:implementationSet
+                        [maps:resource/@mapid_resource = $resource]
+                        [maps:format = $format]
+                        [maps:user = $user]]">
                     <xsl:sort select="
-                            mapstor:sinopia/mapstor:implementationSet/mapstor:form_order"/>
+                            maps:sinopia/maps:implementationSet/maps:form_order"/>
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
@@ -67,7 +68,7 @@
         </xsl:for-each>
     </xsl:template>
 
-    <!-- admin metadata for the RT is output from this template -->
+    <!-- *****admin metadata for the RT is output from this template***** -->
     <xsl:template name="rt_start">
         <xsl:param name="propSet"/>
         <xsl:param name="resource"/>
@@ -97,15 +98,15 @@
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
             <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
-            <sinopia:hasPropertyTemplate
-                rdf:nodeID="{concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/mapstor:prop_iri/@iri),
-                        '_order')}"/>
+            <sinopia:hasPropertyTemplate rdf:nodeID="{
+                concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/maps:prop_iri/@iri),
+                '_order')}"/>
         </rdf:Description>
     </xsl:template>
-    
+
     <xsl:template name="rt_hasClass">
         <xsl:param name="resource"/>
-        <!-- Take choices here from schema definition for xs:simpleType mapid_resource_attr -->
+        <!-- these choices = schema definition for xs:simpleType mapid_resource_attr -->
         <xsl:choose>
             <xsl:when test="$resource = 'rdacWork'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
@@ -116,7 +117,7 @@
             <xsl:when test="$resource = 'rdacManifestation'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
             </xsl:when>
-            <!-- No sin:hasClass triple in RT may result in error (prevent loading) -->
+            <!-- No sinopia:hasClass triple in RT may result in error and prevent loading? -->
             <xsl:otherwise/>
         </xsl:choose>
     </xsl:template>
