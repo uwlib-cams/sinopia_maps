@@ -148,7 +148,7 @@
                     $prop/maps:sinopia/maps:implementationSet/
                     maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'uri_or_lookup'">
                 <!-- 'uri or lookup' props might have uri defaults, or lookup defaults... -->
-                <!-- QUESTION: could they have both?? -->
+                <!-- to do / QUESTION: could they have both?? -->
                 <xsl:choose>
                     <xsl:when test="
                             $prop/maps:sinopia/maps:implementationSet/
@@ -215,8 +215,33 @@
                         maps:sinopia_prop_attributes/maps:sinopia_prop_type_attributes/
                         maps:literal_attributes/maps:default_literal"/>
             </sinopia:hasDefault>
+            <!-- bring in validation datatype if one exists -->
+            <xsl:if test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_datatype/text()">
+                <xsl:choose>
+                    <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_datatype = 
+                        'Date and time with or without timezone'">
+                        <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                    </xsl:when>
+                    <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_datatype = 
+                        'Date and time with required timezone'">
+                        <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+                    </xsl:when>
+                    <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_datatype = 
+                        'Extended Date/Time Format (EDTF)'">
+                        <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
+                    </xsl:when>
+                    <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_datatype = 'Integer'">
+                        <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                    </xsl:when>
+                    <xsl:otherwise>ERROR - UNKNOWN VALIDATION DATATYPE PROVIDED</xsl:otherwise>
+                </xsl:choose>
+            </xsl:if>
             <!-- to do bring in validation regex see sinopia_maps #9 -->
-            <!-- to do bring in other validation selections see sinopia_maps #8 -->
         </rdf:Description>
     </xsl:template>
 
@@ -279,8 +304,8 @@
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
-                maps:sinopia_prop_type_attributes/maps:nested_resource_attributes/maps:rt_id">
+                    $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                    maps:sinopia_prop_type_attributes/maps:nested_resource_attributes/maps:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>
