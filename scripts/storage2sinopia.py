@@ -20,15 +20,15 @@ check_directory()
 
 """propSets to RDF/XML"""
 
-import storage2rdfxml
+import _01storage2rdfxml
 
 """Convert RDF/XML to JSON-LD"""
 
-import rdfxml2json
+import _02rdfxml2json
 
 """Edit JSON-LD for upload to Sinopia"""
 
-import edit_json
+import _03editjson
 
 """Post edited JSON-LD to Sinopia"""
 

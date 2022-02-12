@@ -3,7 +3,7 @@ import requests
 
 """Create list of JSON-LD RTs"""
 # add all files to list
-JSONLD_RT_list = os.listdir('..')
+JSONLD_RT_list = os.listdir('../docs/rdf/')
 
 # remove files that are not JSON-LD RTs
 remove_list = []
@@ -25,7 +25,7 @@ for file in JSONLD_RT_list:
     headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
 
     # read JSON-LD from file
-    open_file = open(f'../{file}')
+    open_file = open(f'../docs/rdf/{file}')
     data = open_file.read()
 
     # create RT ID and URI
