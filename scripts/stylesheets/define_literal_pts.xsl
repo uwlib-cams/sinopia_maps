@@ -56,7 +56,14 @@
                     <xsl:otherwise>ERROR - UNKNOWN VALIDATION DATATYPE PROVIDED</xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
-            <!-- to do bring in validation regex if one exists see sinopia_maps #9 -->
+            <!-- output literal property attribute > validation regex if one exists see sinopia_maps #9 -->
+            <xsl:if test="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_regex/text()">
+                <sinopia:hasValidationRegex xml:lang="zxx">
+                    <xsl:value-of select="$prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:validation_regex"/>
+                </sinopia:hasValidationRegex>
+            </xsl:if>
             <!-- output literal property attribute > date default -->
             <xsl:if test="matches($prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:date_default, 'true|1')">
