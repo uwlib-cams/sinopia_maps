@@ -56,9 +56,20 @@
                     <xsl:otherwise>ERROR - UNKNOWN VALIDATION DATATYPE PROVIDED</xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
-            <!-- to do bring in validation regex see sinopia_maps #9 -->
-            <!-- to do output date default PT attribute -->
-            <!-- to do output userID default PT attribute -->
+            <!-- to do bring in validation regex if one exists see sinopia_maps #9 -->
+            <!-- output literal property attribute > date default -->
+            <xsl:if test="matches($prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:date_default, 'true|1')">
+                <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
+                <!-- should I be outputting the rdfs:label triple as well? Will it be missed in the Sinopia UI? -->
+            </xsl:if>
+            <!-- output literal property attribute > user ID default -->
+            <xsl:if test="matches($prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                maps:sinopia_prop_type_attributes/maps:literal_attributes/maps:userId_default, 'true|1')">
+                <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
+                <!-- should I be outputting the rdfs:label triple as well? Will it be missed in the Sinopia UI? -->
+            </xsl:if>
+            <!-- to do bring in language suppressed -->
         </rdf:Description>
     </xsl:template>
     
