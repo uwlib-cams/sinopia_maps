@@ -39,7 +39,13 @@
             <rdfs:label xml:lang="{$prop/maps:prop_label/@xml:lang}">
                 <xsl:value-of select="$prop/maps:prop_label"/>
             </rdfs:label>
-            <!-- assign 'general' PT attributes -->
+            <!-- output top-level/general PT attributes -->
+            <xsl:if test="
+                matches($prop/maps:sinopia/maps:implementationSet/
+                maps:sinopia_prop_attributes/maps:language_suppressed, 'true|1')">
+                <sinopia:hasPropertyAttribute
+                    rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/languageSuppressed"/>
+            </xsl:if>
             <xsl:if test="
                 matches($prop/maps:sinopia/maps:implementationSet/
                 maps:sinopia_prop_attributes/maps:required, 'true|1')">

@@ -76,7 +76,6 @@
                 <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
                 <!-- should I be outputting the rdfs:label triple as well? Will it be missed in the Sinopia UI? -->
             </xsl:if>
-            <!-- to do bring in language suppressed -->
         </rdf:Description>
     </xsl:template>
     
