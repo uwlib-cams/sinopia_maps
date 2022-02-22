@@ -5,14 +5,14 @@
          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
          xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/">
-   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/TEST:WAU:rdacExpression:test_literal_props:ries07">
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/TEST:20220221:WAU:rdacExpression:test_literal_props:ries07">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10006"/>
-      <sinopia:hasResourceId>TEST:WAU:rdacExpression:test_literal_props:ries07</sinopia:hasResourceId>
-      <rdfs:label>TEST WAU rdacExpression test_literal_props ries07</rdfs:label>
+      <sinopia:hasResourceId>TEST:20220221:WAU:rdacExpression:test_literal_props:ries07</sinopia:hasResourceId>
+      <rdfs:label>TEST WAU 20220221 rdacExpression test_literal_props ries07</rdfs:label>
       <sinopia:hasAuthor>Benjamin Riesenberg - ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-02-18</sinopia:hasDate>
+      <sinopia:hasDate>2022-02-21</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="e_P20315_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="e_P20315_order">
