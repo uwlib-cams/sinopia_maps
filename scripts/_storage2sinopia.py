@@ -1,4 +1,5 @@
 from textwrap import dedent
+import sys
 
 def check_directory():
     print(dedent("""Confirm that you are running this script from a terminal open at the following location:
@@ -22,14 +23,16 @@ check_directory()
 
 import s2s01storage2rdfxml
 
+# stop at this point? No need to do more unless loading to Sinopia??
+
 """Convert RDF/XML to JSON-LD"""
 
-import s2s02rdfxml2json
+# import s2s02rdfxml2json
 
 """Edit JSON-LD for upload to Sinopia"""
 
-import s2s03editjson
+# import s2s03editjson
 
 """Post edited JSON-LD to Sinopia"""
 
-# import json_to_sinopia
+# import s2s04...?
