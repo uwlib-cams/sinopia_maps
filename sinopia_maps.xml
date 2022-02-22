@@ -4,26 +4,13 @@
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/ 
     https://uwlib-cams.github.io/sinopia_maps/sinopia_maps.xsd">
     <rts>
+        <!-- ACK can't pull from multiple propSets with current sorted_properties setup -->
         <rt>
-            <propSet>rdacManifestation</propSet>
-            <resource>rdacManifestation</resource>
+            <propSet>rdacExpression</propSet>
+            <resource>rdacExpression</resource>
             <format>test_literal_props</format>
             <user>ries07</user>
-            <author>Benjamin Riesenberg / ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <propSet>rdacManifestation</propSet>
-            <resource>rdacManifestation</resource>
-            <format>test_uri_or_lookup_props</format>
-            <user>ries07</user>
-            <author>Benjamin Riesenberg / ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <propSet>rdacManifestation</propSet>
-            <resource>rdacManifestation</resource>
-            <format>test_nested_resource_props</format>
-            <user>ries07</user>
-            <author>Benjamin Riesenberg / ries07@uw.edu</author>
+            <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
     </rts>
 </sinopia_maps>
