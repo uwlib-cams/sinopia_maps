@@ -32,7 +32,8 @@
     
     <xs:complexType name="rt_type">
         <xs:sequence>
-            <!-- need some kind of ID which can be referenced by html_profile elements -->
+            <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
+            <xs:element name="supressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <xs:element name="propSet" type="propSet_type" minOccurs="1" maxOccurs="unbounded"/>
             <xs:element name="resource" type="resource_type"/>
             <xs:element name="format" type="format_type"/>
