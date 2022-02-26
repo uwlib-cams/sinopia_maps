@@ -10,7 +10,7 @@
     version="3.0">
     <xsl:output method="xml" indent="yes"/>
 
-    <xsl:include href="rt_admin_metadata.xsl"/>
+    <xsl:include href="rt_metadata.xsl"/>
     <xsl:include href="create_ordering.xsl"/>
 
     <xsl:template match="/">
@@ -48,7 +48,7 @@
             <!-- RT NAMING CONVENTIONS: colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:result-document href="../../docs/rdf/{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
-                    <xsl:call-template name="rt_admin_metadata">
+                    <xsl:call-template name="rt_metadata">
                         <!-- to do: propSet param will not work as-is for pulling from multiple prop sets -->
                         <xsl:with-param name="propSet" select="$propSet"/>
                         <xsl:with-param name="resource" select="$resource"/>

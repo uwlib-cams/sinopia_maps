@@ -16,8 +16,8 @@
         <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
     </xsl:function>
     
-    <!-- *****admin metadata for the RT is output from this template***** -->
-    <xsl:template name="rt_admin_metadata">
+    <!-- *****metadata for the RT is output from this template***** -->
+    <xsl:template name="rt_metadata">
         <xsl:param name="propSet"/>
         <xsl:param name="resource"/>
         <xsl:param name="suppressible"/>
@@ -48,7 +48,7 @@
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
             <!-- output resource attribute = suppressible if present -->
-            <xsl:if test="$suppressible = 'true'">
+            <xsl:if test="matches($suppressible, 'true|1')">
                 <sinopia:hasResourceAttribute rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
             </xsl:if>
             <!-- output optional resource classes if present -->
