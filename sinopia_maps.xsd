@@ -33,7 +33,7 @@
     <xs:complexType name="rt_type">
         <xs:sequence>
             <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
-            <xs:element name="propSet" type="propSet_type" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="prop_set" type="prop_set_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
             <xs:element name="resource" type="resource_type"/>
             <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
@@ -50,8 +50,8 @@
     map_storage.xsd, and will require updating in two places. 
     Possible to put in the same place and only update once?? -->
     
-    <xs:simpleType name="propSet_type">
-        <!-- = map_storage.xsd mapid_propSet_attr_type -->
+    <xs:simpleType name="prop_set_type">
+        <!-- = map_storage.xsd mapid_prop_set_attr_type -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="rdacWork"/>
             <xs:enumeration value="rdacExpression"/>
