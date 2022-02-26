@@ -20,6 +20,7 @@
     <xsl:template name="rt_admin_metadata">
         <xsl:param name="propSet"/>
         <xsl:param name="resource"/>
+        <xsl:param name="suppressible"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="rt_id"/>
@@ -45,6 +46,9 @@
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
+            <xsl:if test="$suppressible = 'true'">
+                <sinopia:hasResourceAttribute rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
+            </xsl:if>
             <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
             <sinopia:hasPropertyTemplate rdf:nodeID="{
                 concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/maps:prop_iri/@iri),

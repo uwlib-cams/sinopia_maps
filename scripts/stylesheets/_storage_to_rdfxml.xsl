@@ -52,6 +52,7 @@
                         <!-- to do: propSet param will not work as-is for pulling from multiple prop sets -->
                         <xsl:with-param name="propSet" select="$propSet"/>
                         <xsl:with-param name="resource" select="$resource"/>
+                        <xsl:with-param name="suppressible" select="uwlsinopia:suppressible"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>
