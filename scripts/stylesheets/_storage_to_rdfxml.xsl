@@ -53,6 +53,13 @@
                         <xsl:with-param name="propSet" select="$propSet"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="suppressible" select="uwlsinopia:suppressible"/>
+                        <xsl:with-param name="optional_classes">
+                            <xsl:for-each select="uwlsinopia:optionalClass">
+                                <optionalClass>
+                                    <xsl:value-of select="."/>
+                                </optionalClass>
+                            </xsl:for-each>
+                        </xsl:with-param>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>

@@ -21,6 +21,7 @@
         <xsl:param name="propSet"/>
         <xsl:param name="resource"/>
         <xsl:param name="suppressible"/>
+        <xsl:param name="optional_classes"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="rt_id"/>
@@ -46,8 +47,15 @@
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
+            <!-- output resource attribute = suppressible if present -->
             <xsl:if test="$suppressible = 'true'">
                 <sinopia:hasResourceAttribute rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
+            </xsl:if>
+            <!-- output optional resource classes if present -->
+            <xsl:if test="$optional_classes/node()">
+                <xsl:for-each select="$optional_classes/optionalClass">
+                    <sinopia:hasOptionalClass rdf:resource="{.}"/>
+                </xsl:for-each>
             </xsl:if>
             <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
             <sinopia:hasPropertyTemplate rdf:nodeID="{
