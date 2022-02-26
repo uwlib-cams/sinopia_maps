@@ -2,12 +2,14 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:maps="https://uwlib-cams.github.io/map_storage/"
     xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
     exclude-result-prefixes="xs"
     version="3.0">
     
+    <xsl:include href="multiple_properties.xsl"/>
     <xsl:include href="define_literal_pts.xsl"/>
     <xsl:include href="define_uri_pts.xsl"/>
     <xsl:include href="define_lookup_pts.xsl"/>
@@ -27,8 +29,17 @@
             '_define')}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- to do bring in multiple prop URIs for choose-a-prop / see #7 -->
-            <sinopia:hasPropertyUri rdf:resource="{$prop/maps:prop_iri/@iri}"/>
+            <!-- output property-choice dropdown, or not -->
+            <xsl:choose>
+                <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:multiple_prop/node()">
+                    <xsl:call-template name="multiple_property_iris">
+                        <xsl:with-param name="prop" select="$prop"/>
+                    </xsl:call-template>
+                </xsl:when>
+                <xsl:otherwise>
+                    <sinopia:hasPropertyUri rdf:resource="{$prop/maps:prop_iri/@iri}"/>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:call-template name="pt_hasPropertyType">
                 <xsl:with-param name="sinopia_prop_type" select="
                     $prop/maps:sinopia/maps:implementationSet/
