@@ -36,7 +36,7 @@
             <xs:element name="propSet" type="propSet_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
             <xs:element name="resource" type="resource_type"/>
-            <xs:element name="supressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <!-- may want to further constrain values for optionalClass later... -->
             <xs:element name="optionalClass" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="format" type="format_type"/>

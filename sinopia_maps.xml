@@ -6,11 +6,11 @@
     <rts>
         <!-- ACK can't pull from multiple propSets with current sorted_properties setup -->
         <rt>
-            <supressible>true</supressible>
-            <optionalClass>https://schema.org/Thing</optionalClass>
-            <optionalClass>http://rdaregistry.info/Elements/c/C10013</optionalClass>
             <propSet>rdacExpression</propSet>
             <resource>rdacExpression</resource>
+            <suppressible>true</suppressible>
+            <optionalClass>https://schema.org/Thing</optionalClass>
+            <optionalClass>http://rdaregistry.info/Elements/c/C10013</optionalClass>
             <format>test_literal_props</format>
             <user>ries07</user>
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
