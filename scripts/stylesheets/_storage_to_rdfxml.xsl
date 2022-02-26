@@ -22,8 +22,10 @@
             <xsl:variable name="format" select="uwlsinopia:format"/>
             <xsl:variable name="user" select="uwlsinopia:user"/>
             <!-- to do remove 'TEST' in rt_id to output for production -->
-            <xsl:variable name="rt_id"
-                select="concat('TEST:WAU:', $resource, ':', $format, ':', $user)"/>
+            <xsl:variable name="rt_id" select="
+                    concat('TEST:WAU:',
+                    format-date(current-date(), '[Y0001]-[M01]-[D01]'), ':',
+                    $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <!-- low-priority to do is gain better understanding of 'as="node()*"' syntax -->
                 <xsl:for-each select="
