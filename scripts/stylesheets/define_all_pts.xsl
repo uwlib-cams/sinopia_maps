@@ -31,7 +31,7 @@
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
             <!-- output property-choice dropdown, or not -->
             <xsl:choose>
-                <xsl:when test="$prop/maps:sinopia/maps:implementationSet/maps:multiple_prop/node()">
+                <xsl:when test="$prop/maps:sinopia/maps:implementation_set/maps:multiple_prop/node()">
                     <xsl:call-template name="multiple_property_iris">
                         <xsl:with-param name="prop" select="$prop"/>
                     </xsl:call-template>
@@ -42,35 +42,35 @@
             </xsl:choose>
             <xsl:call-template name="pt_hasPropertyType">
                 <xsl:with-param name="sinopia_prop_type" select="
-                    $prop/maps:sinopia/maps:implementationSet/
+                    $prop/maps:sinopia/maps:implementation_set/
                     maps:sinopia_prop_attributes/maps:sinopia_prop_type"/>
             </xsl:call-template>
-            <!-- NOTE that lang tags will be pulled from sinopia implementationSet as-is to RTs, so
+            <!-- NOTE that lang tags will be pulled from sinopia implementation_set as-is to RTs, so
             **lang tags used in map_storage instances > sinopia should be those from BCP-47** -->
             <rdfs:label xml:lang="{$prop/maps:prop_label/@xml:lang}">
                 <xsl:value-of select="$prop/maps:prop_label"/>
             </rdfs:label>
             <!-- output top-level/general PT attributes -->
             <xsl:if test="
-                matches($prop/maps:sinopia/maps:implementationSet/
+                matches($prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:language_suppressed, 'true|1')">
                 <sinopia:hasPropertyAttribute
                     rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/languageSuppressed"/>
             </xsl:if>
             <xsl:if test="
-                matches($prop/maps:sinopia/maps:implementationSet/
+                matches($prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:required, 'true|1')">
                 <sinopia:hasPropertyAttribute
                     rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
             </xsl:if>
             <xsl:if test="
-                matches($prop/maps:sinopia/maps:implementationSet/
+                matches($prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:repeatable, 'true|1')">
                 <sinopia:hasPropertyAttribute
                     rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
             </xsl:if>
             <xsl:if test="
-                matches($prop/maps:sinopia/maps:implementationSet/
+                matches($prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:ordered, 'true|1')">
                 <sinopia:hasPropertyAttribute
                     rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
@@ -78,10 +78,10 @@
             <!-- test for defaults, output bnodes for defaults by prop type and subtype -->
             <!-- for literal PTs -->
             <xsl:if test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'literal'
                 and
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:literal_attributes/node()">
                 <sinopia:hasLiteralAttributes
                     rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_all($prop/maps:prop_iri/@iri),
@@ -90,13 +90,13 @@
             </xsl:if>
             <!-- for lookup or uri PTs -->
             <xsl:if test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'uri_or_lookup'">
                 <xsl:choose>
                     <!-- for uri PTs -->
                     <xsl:when test="
                         (: BMR QUESTION does node() below test for the uri_attributes node or its child?? :)
-                        $prop/maps:sinopia/maps:implementationSet/
+                        $prop/maps:sinopia/maps:implementation_set/
                         maps:sinopia_prop_attributes/maps:sinopia_prop_type_attributes/maps:uri_attributes/node()">
                         <sinopia:hasUriAttributes
                             rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_all($prop/maps:prop_iri/@iri),
@@ -105,7 +105,7 @@
                     </xsl:when>
                     <!-- for lookup PTs -->
                     <xsl:when test="
-                        $prop/maps:sinopia/maps:implementationSet/
+                        $prop/maps:sinopia/maps:implementation_set/
                         maps:sinopia_prop_attributes/maps:sinopia_prop_type_attributes/maps:lookup_attributes/node()">
                         <sinopia:hasLookupAttributes
                             rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_all($prop/maps:prop_iri/@iri),
@@ -117,10 +117,10 @@
             </xsl:if>
             <!-- for nested-resource PTs -->
             <xsl:if test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'nested_resource'
                 and
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:nested_resource_attributes/node()">
                 <sinopia:hasResourceAttributes
                     rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_all($prop/maps:prop_iri/@iri),
@@ -130,30 +130,30 @@
         <!-- call template to create another bnode to further define (provide defaults, etc.) each prop type -->
         <xsl:choose>
             <xsl:when test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'literal'
                 and
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:literal_attributes/node()">
                 <xsl:call-template name="define_literal_pts">
                     <xsl:with-param name="prop" select="$prop"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:when test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'uri_or_lookup'">
                 <!-- 'uri or lookup' props might have uri defaults, or lookup defaults... -->
                 <!-- to do / QUESTION: could they have both?? -->
                 <xsl:choose>
                     <xsl:when test="
-                        $prop/maps:sinopia/maps:implementationSet/
+                        $prop/maps:sinopia/maps:implementation_set/
                         maps:sinopia_prop_attributes/maps:sinopia_prop_type_attributes/maps:uri_attributes/node()">
                         <xsl:call-template name="define_uri_pts">
                             <xsl:with-param name="prop" select="$prop"/>
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:when test="
-                        $prop/maps:sinopia/maps:implementationSet/
+                        $prop/maps:sinopia/maps:implementation_set/
                         maps:sinopia_prop_attributes/maps:sinopia_prop_type_attributes/maps:lookup_attributes/node()">
                         <xsl:call-template name="define_lookup_pts">
                             <xsl:with-param name="prop" select="$prop"/>
@@ -163,10 +163,10 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="
-                $prop/maps:sinopia/maps:implementationSet/
+                $prop/maps:sinopia/maps:implementation_set/
                 maps:sinopia_prop_attributes/maps:sinopia_prop_type = 'nested_resource'
                 and
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:nested_resource_attributes/node()">
                 <xsl:call-template name="define_nested_resource_pts">
                     <xsl:with-param name="prop" select="$prop"/>
@@ -174,6 +174,12 @@
             </xsl:when>
             <xsl:otherwise/>
         </xsl:choose>
+        <!-- I think labels may be helpful is selecting from dropdown -->
+        <xsl:if test="$prop/maps:sinopia/maps:implementation_set/maps:multiple_prop/node()">
+            <xsl:call-template name="multiple_property_labels">
+                <xsl:with-param name="prop" select="$prop"/>
+            </xsl:call-template>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="pt_hasPropertyType">

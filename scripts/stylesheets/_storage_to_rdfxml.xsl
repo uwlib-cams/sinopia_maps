@@ -6,8 +6,10 @@
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" exclude-result-prefixes="xs"
+    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    exclude-result-prefixes="xs"
     version="3.0">
+    
     <xsl:output method="xml" indent="yes"/>
 
     <xsl:include href="rt_metadata.xsl"/>
@@ -17,7 +19,7 @@
         <xsl:for-each
             select="document('../../sinopia_maps.xml')/uwlsinopia:sinopia_maps/uwlsinopia:rts/uwlsinopia:rt">
             <!-- vars -->
-            <xsl:variable name="propSet" select="uwlsinopia:propSet"/>
+            <xsl:variable name="prop_set" select="uwlsinopia:prop_set"/>
             <xsl:variable name="resource" select="uwlsinopia:resource"/>
             <xsl:variable name="format" select="uwlsinopia:format"/>
             <xsl:variable name="user" select="uwlsinopia:user"/>
@@ -29,18 +31,18 @@
             <xsl:variable name="sorted_properties" as="node()*">
                 <!-- low-priority to do is gain better understanding of 'as="node()*"' syntax -->
                 <xsl:for-each select="
-                        (: [!] fn:document won't work for pulling from multiple propSets,
+                        (: [!] fn:document won't work for pulling from multiple prop_sets,
                         need fn:collection, etc. [!] 
-                        also doc XPath will need to change once I'm not using test propSets :)
-                        (: I'd also rather access propSets via HTTP :)
-                        document(concat('../../../map_storage/test_propSet_', $propSet, '.xml'))/
-                        maps:propSet/maps:prop
-                        [maps:sinopia/maps:implementationSet
+                        also doc XPath will need to change once I'm not using test prop_sets :)
+                        (: I'd also rather access prop_sets via HTTP :)
+                        document(concat('../../../map_storage/test_prop_set_', $prop_set, '.xml'))/
+                        maps:prop_set/maps:prop
+                        [maps:sinopia/maps:implementation_set
                         [maps:resource/@mapid_resource = $resource]
                         [maps:format = $format]
                         [maps:user = $user]]">
                     <xsl:sort select="
-                            maps:sinopia/maps:implementationSet/maps:form_order"/>
+                            maps:sinopia/maps:implementation_set/maps:form_order"/>
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
@@ -49,15 +51,15 @@
             <xsl:result-document href="../../docs/rdf/{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
-                        <!-- to do: propSet param will not work as-is for pulling from multiple prop sets -->
-                        <xsl:with-param name="propSet" select="$propSet"/>
+                        <!-- to do: prop_set param will not work as-is for pulling from multiple prop sets -->
+                        <xsl:with-param name="prop_set" select="$prop_set"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="suppressible" select="uwlsinopia:suppressible"/>
                         <xsl:with-param name="optional_classes">
-                            <xsl:for-each select="uwlsinopia:optionalClass">
-                                <optionalClass>
+                            <xsl:for-each select="uwlsinopia:optional_class">
+                                <optional_class>
                                     <xsl:value-of select="."/>
-                                </optionalClass>
+                                </optional_class>
                             </xsl:for-each>
                         </xsl:with-param>
                         <xsl:with-param name="format" select="$format"/>
@@ -73,5 +75,4 @@
             </xsl:result-document>
         </xsl:for-each>
     </xsl:template>
-
 </xsl:stylesheet>

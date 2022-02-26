@@ -24,22 +24,22 @@
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
             <!-- provide default uri -->
             <sinopia:hasDefault rdf:resource="{
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:uri_attributes/maps:default_uri/@iri}"
             />
         </rdf:Description>
         <!-- if label for default uri is provided in storage instance, output to RT -->
         <xsl:if test="
-            $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+            $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
             maps:sinopia_prop_type_attributes/maps:uri_attributes/maps:default_uri_label">
             <rdf:Description rdf:about="{
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:uri_attributes/maps:default_uri/@iri}">
                 <rdfs:label xml:lang="{
-                    $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                    $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                     maps:sinopia_prop_type_attributes/maps:uri_attributes/maps:default_uri_label/@xml:lang}">
                     <xsl:value-of select="
-                        $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                        $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                         maps:sinopia_prop_type_attributes/maps:uri_attributes/maps:default_uri_label"
                     />
                 </rdfs:label>

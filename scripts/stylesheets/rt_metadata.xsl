@@ -18,7 +18,7 @@
     
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
-        <xsl:param name="propSet"/>
+        <xsl:param name="prop_set"/>
         <xsl:param name="resource"/>
         <xsl:param name="suppressible"/>
         <xsl:param name="optional_classes"/>
@@ -53,11 +53,11 @@
             </xsl:if>
             <!-- output optional resource classes if present -->
             <xsl:if test="$optional_classes/node()">
-                <xsl:for-each select="$optional_classes/optionalClass">
+                <xsl:for-each select="$optional_classes/optional_class">
                     <sinopia:hasOptionalClass rdf:resource="{.}"/>
                 </xsl:for-each>
             </xsl:if>
-            <!-- [!] use of rda_iri_slug is RDA-Registry-specific -->
+            <!-- [!] TO DO use of rda_iri_slug is RDA-Registry-specific, need other choices in future -->
             <sinopia:hasPropertyTemplate rdf:nodeID="{
                 concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/maps:prop_iri/@iri),
                 '_order')}"/>

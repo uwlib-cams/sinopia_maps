@@ -22,7 +22,7 @@
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="
-                $prop/maps:sinopia/maps:implementationSet/maps:sinopia_prop_attributes/
+                $prop/maps:sinopia/maps:implementation_set/maps:sinopia_prop_attributes/
                 maps:sinopia_prop_type_attributes/maps:nested_resource_attributes/maps:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
