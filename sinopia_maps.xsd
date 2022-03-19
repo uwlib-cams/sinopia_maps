@@ -2,6 +2,7 @@
 <!-- are both targetNamespace and xmlns attrs needed? -->
 <xs:schema targetNamespace="https://uwlib-cams.github.io/sinopia_maps/"
     xmlns="https://uwlib-cams.github.io/sinopia_maps/"
+    xmlns:maps="https://uwlib-cams.github.io/map_storage/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
     elementFormDefault="qualified"
@@ -11,6 +12,10 @@
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <xs:import namespace="http://www.w3.org/2001/XMLSchema"
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+    
+    <!-- TESTING HERE -->
+    <xs:import namespace="https://uwlib-cams.github.io/map_storage/" 
+        schemaLocation="https://uwlib-cams.github.io/map_storage/prop_sets.xsd"/>
     
     <!-- *****ROOT sinopia_maps***** -->
     <xs:element name="sinopia_maps" type="sinopia_maps_type"/>
@@ -33,7 +38,7 @@
     <xs:complexType name="rt_type">
         <xs:sequence>
             <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
-            <xs:element name="prop_set" type="prop_set_type" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="prop_set" type="maps:prop_set_label_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
             <xs:element name="resource" type="resource_type"/>
             <!-- RE: suppressible: suppressible RTs must not contain any more than one PT! will produce error in sinopia -->
