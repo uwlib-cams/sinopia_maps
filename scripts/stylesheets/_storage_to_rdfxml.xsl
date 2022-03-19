@@ -7,6 +7,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
     exclude-result-prefixes="xs"
     version="3.0">
     
