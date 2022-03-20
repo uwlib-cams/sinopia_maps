@@ -26,8 +26,8 @@
             <!-- hard-code rdf:type for this node sinopia:LookupPropertyTemplate-->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
             <xsl:for-each select="
-                $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                uwmaps:sinopia_prop_type_attributes/uwmaps:lookup_attributes/uwmaps:authorities/uwmaps:authority_urn">
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                uwsinopia:sinopia_prop_type_attributes/uwsinopia:lookup_attributes/uwsinopia:authorities/uwsinopia:authority_urn">
                 <sinopia:hasAuthority rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>

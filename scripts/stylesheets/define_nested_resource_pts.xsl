@@ -26,8 +26,8 @@
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="
-                $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                uwmaps:sinopia_prop_type_attributes/uwmaps:nested_resource_attributes/uwmaps:rt_id">
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                uwsinopia:sinopia_prop_type_attributes/uwsinopia:nested_resource_attributes/uwsinopia:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>

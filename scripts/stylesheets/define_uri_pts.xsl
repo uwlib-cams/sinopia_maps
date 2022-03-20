@@ -27,23 +27,23 @@
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
             <!-- provide default uri -->
             <sinopia:hasDefault rdf:resource="{
-                $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                uwmaps:sinopia_prop_type_attributes/uwmaps:uri_attributes/uwmaps:default_uri/@iri}"
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}"
             />
         </rdf:Description>
         <!-- if label for default uri is provided in storage instance, output to RT -->
         <xsl:if test="
-            $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-            uwmaps:sinopia_prop_type_attributes/uwmaps:uri_attributes/uwmaps:default_uri_label">
+            $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+            uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label">
             <rdf:Description rdf:about="{
-                $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                uwmaps:sinopia_prop_type_attributes/uwmaps:uri_attributes/uwmaps:default_uri/@iri}">
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}">
                 <rdfs:label xml:lang="{
-                    $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                    uwmaps:sinopia_prop_type_attributes/uwmaps:uri_attributes/uwmaps:default_uri_label/@xml:lang}">
+                    $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                    uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label/@xml:lang}">
                     <xsl:value-of select="
-                        $prop/uwmaps:sinopia/uwmaps:implementation_set/uwmaps:sinopia_prop_attributes/
-                        uwmaps:sinopia_prop_type_attributes/uwmaps:uri_attributes/uwmaps:default_uri_label"
+                        $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
+                        uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label"
                     />
                 </rdfs:label>
             </rdf:Description>
