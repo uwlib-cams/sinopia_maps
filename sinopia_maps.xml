@@ -6,8 +6,8 @@
     <rts>
         <!-- ACK can't pull from multiple propSets with current sorted_properties setup -->
         <rt>
-            <prop_set>rdacExpression</prop_set>
-            <resource>rdacExpression</resource>
+            <prop_set>rdae_p20k</prop_set>
+            <resource>rdaExpression</resource>
             <optional_class>https://schema.org/Thing</optional_class>
             <optional_class>http://rdaregistry.info/Elements/c/C10013</optional_class>
             <format>test_literal_props</format>
