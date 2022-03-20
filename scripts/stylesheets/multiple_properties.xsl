@@ -2,10 +2,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/"
-    xmlns:maps="https://uwlib-cams.github.io/map_storage/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/"
-    xmlns:reg="http://metadataregistry.org/uri/profile/regap/" exclude-result-prefixes="xs"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/"
+    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/"
+    xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
+    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    exclude-result-prefixes="xs"
     version="3.0">
 
     <!-- Store RDA Registry prop files in vars (just a couple for testing; 13 total for implementation later) -->
@@ -16,54 +19,54 @@
     <xsl:template name="multiple_property_iris">
         <xsl:param name="prop"/>
         <!-- determine whether the prop is RDA or some other -->
-        <!-- then get either selected iris (each maps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
+        <!-- then get either selected iris (each uwmaps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
         <xsl:choose>
             <!-- for RDA PTs -->
-            <xsl:when test="starts-with($prop/maps:prop_iri/@iri, 'http://rdaregistry.info')">
+            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info')">
                 <xsl:choose>
                     <!-- when the implementation set contains a list of props, put each in the PT -->
                     <xsl:when test="
-                            $prop/maps:sinopia/maps:implementation_set/
-                            maps:multiple_prop/maps:property/node()">
+                            $prop/uwmaps:sinopia/uwmaps:implementation_set/
+                            uwmaps:multiple_prop/uwmaps:property/node()">
                         <!-- iri for the 'main' property* -->
                         <!-- *that is, the property in the prop_set where the implementation_set has been recorded -->
-                        <sinopia:hasPropertyUri rdf:resource="{$prop/maps:prop_iri/@iri}"/>
+                        <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
                         <xsl:for-each select="
-                                $prop/maps:sinopia/maps:implementation_set/
-                                maps:multiple_prop/maps:property">
+                                $prop/uwmaps:sinopia/uwmaps:implementation_set/
+                                uwmaps:multiple_prop/uwmaps:property">
                             <sinopia:hasPropertyUri rdf:resource="{@property_iri}"/>
                         </xsl:for-each>
                     </xsl:when>
                     <!-- when the implementation set says to to put all subprops in the PT, get these and put them in -->
                     <xsl:when test="
-                            matches($prop/maps:sinopia/maps:implementation_set/
-                            maps:multiple_prop/maps:all_subprops, 'true|1')">
+                            matches($prop/uwmaps:sinopia/uwmaps:implementation_set/
+                            uwmaps:multiple_prop/uwmaps:all_subprops, 'true|1')">
                         <!-- don't forget iri for the 'main' property! -->
-                        <sinopia:hasPropertyUri rdf:resource="{$prop/maps:prop_iri/@iri}"/>
+                        <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
                         <xsl:variable name="rda_set_source">
                             <xsl:choose>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'w')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'w')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacWork']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacWork']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'e')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'e')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacExpression']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacExpression']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'm')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'm')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacManifestation']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacManifestation']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'i')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'i')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacItem']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacItem']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <!-- ... TO DO sources for other RDA element sets -->
@@ -71,7 +74,7 @@
                         </xsl:variable>
                         <xsl:for-each select="
                                 document($rda_set_source)/rdf:RDF/rdf:Description
-                                [rdfs:subPropertyOf/@rdf:resource = $prop/maps:prop_iri/@iri]
+                                [rdfs:subPropertyOf/@rdf:resource = $prop/uwmaps:prop_iri/@iri]
                                 [not(reg:status[@rdf:resource = 'http://metadataregistry.org/uri/RegStatus/1008'])]">
                             <sinopia:hasPropertyUri rdf:resource="{@rdf:about}"/>
                         </xsl:for-each>
@@ -91,25 +94,25 @@
     <xsl:template name="multiple_property_labels">
         <xsl:param name="prop"/>
         <!-- determine whether the prop is RDA or some other -->
-        <!-- then get either selected prop labels (each maps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
+        <!-- then get either selected prop labels (each uwmaps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
         <xsl:choose>
             <!-- for RDA PTs -->
-            <xsl:when test="starts-with($prop/maps:prop_iri/@iri, 'http://rdaregistry.info')">
+            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info')">
                 <xsl:choose>
                     <!-- when the implementation set contains a list of props with labels, put each in the PT -->
                     <xsl:when test="
-                            $prop/maps:sinopia/maps:implementation_set/
-                            maps:multiple_prop/maps:property/node()">
+                            $prop/uwmaps:sinopia/uwmaps:implementation_set/
+                            uwmaps:multiple_prop/uwmaps:property/node()">
                         <!-- label for the 'main' property -->
-                        <rdf:Description rdf:about="{$prop/maps:prop_iri/@iri}">
-                            <rdfs:label xml:lang="{$prop/maps:prop_label/@xml:lang}">
-                                <xsl:value-of select="$prop/maps:prop_label"/>
+                        <rdf:Description rdf:about="{$prop/uwmaps:prop_iri/@iri}">
+                            <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
+                                <xsl:value-of select="$prop/uwmaps:prop_label"/>
                             </rdfs:label>
                         </rdf:Description>
                         <!-- labels for all listed properties -->
                         <xsl:for-each select="
-                                $prop/maps:sinopia/maps:implementation_set/
-                                maps:multiple_prop/maps:property">
+                                $prop/uwmaps:sinopia/uwmaps:implementation_set/
+                                uwmaps:multiple_prop/uwmaps:property">
                             <rdf:Description rdf:about="{@property_iri}">
                                 <rdfs:label xml:lang="{@xml:lang}">
                                     <xsl:value-of select="."/>
@@ -119,12 +122,12 @@
                     </xsl:when>
                     <!-- when the implementation set says to to put all subprops in the PT, get labels for all of these and put them in -->
                     <xsl:when test="
-                            matches($prop/maps:sinopia/maps:implementation_set/
-                            maps:multiple_prop/maps:all_subprops, 'true|1')">
+                            matches($prop/uwmaps:sinopia/uwmaps:implementation_set/
+                            uwmaps:multiple_prop/uwmaps:all_subprops, 'true|1')">
                         <!-- label for the 'main' property -->
-                        <rdf:Description rdf:about="{$prop/maps:prop_iri/@iri}">
-                            <rdfs:label xml:lang="{$prop/maps:prop_label/@xml:lang}">
-                                <xsl:value-of select="$prop/maps:prop_label"/>
+                        <rdf:Description rdf:about="{$prop/uwmaps:prop_iri/@iri}">
+                            <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
+                                <xsl:value-of select="$prop/uwmaps:prop_label"/>
                             </rdfs:label>
                         </rdf:Description>
                         <!-- retrive labels for all subproperties -->
@@ -132,27 +135,27 @@
                         <xsl:variable name="rda_set_source">
                             <xsl:choose>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'w')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'w')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacWork']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacWork']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'e')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'e')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacExpression']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacExpression']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'm')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'm')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacManifestation']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacManifestation']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <xsl:when
-                                    test="starts-with(substring-after($prop/maps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'i')">
+                                    test="starts-with(substring-after($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/'), 'i')">
                                     <xsl:value-of
-                                        select="$get_prop_sets/maps:get_prop_sets/maps:get_set[maps:set_name = 'rdacItem']/maps:set_source"
+                                        select="$get_prop_sets/uwmaps:get_prop_sets/uwmaps:get_set[uwmaps:set_name = 'rdacItem']/uwmaps:set_source"
                                     />
                                 </xsl:when>
                                 <!-- ... TO DO sources for other RDA element sets -->
@@ -160,7 +163,7 @@
                         </xsl:variable>
                         <xsl:for-each select="
                             document($rda_set_source)/rdf:RDF/rdf:Description
-                            [rdfs:subPropertyOf/@rdf:resource = $prop/maps:prop_iri/@iri]
+                            [rdfs:subPropertyOf/@rdf:resource = $prop/uwmaps:prop_iri/@iri]
                             [not(reg:status[@rdf:resource = 'http://metadataregistry.org/uri/RegStatus/1008'])]">
                             <rdf:Description rdf:about="{@rdf:about}">
                                 <rdfs:label xml:lang="en">

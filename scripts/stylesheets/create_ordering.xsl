@@ -2,9 +2,13 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/"
-    xmlns:maps="https://uwlib-cams.github.io/map_storage/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" exclude-result-prefixes="xs"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/"
+    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/"
+    xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
+    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    exclude-result-prefixes="xs"
     version="3.0">
     
     <xsl:include href="define_all_pts.xsl"/>
@@ -22,14 +26,14 @@
         <xsl:for-each select="$sorted_property">
             <xsl:variable name="current_position" select="position()"/>
             <!-- create bnode to order PTs with first, rest -->
-            <rdf:Description rdf:nodeID="{concat(bmrxml:rda_iri_slug_ordering(maps:prop_iri/@iri),
+            <rdf:Description rdf:nodeID="{concat(bmrxml:rda_iri_slug_ordering(uwmaps:prop_iri/@iri),
                 '_order')}">
-                <rdf:first rdf:nodeID="{concat(bmrxml:rda_iri_slug_ordering(maps:prop_iri/@iri),
+                <rdf:first rdf:nodeID="{concat(bmrxml:rda_iri_slug_ordering(uwmaps:prop_iri/@iri),
                     '_define')}"/>
                 <xsl:choose>
                     <xsl:when test="position() != last()">
                         <rdf:rest rdf:nodeID="{concat(
-                            bmrxml:rda_iri_slug_ordering($sorted_property[position() = $current_position + 1]/maps:prop_iri/@iri),
+                            bmrxml:rda_iri_slug_ordering($sorted_property[position() = $current_position + 1]/uwmaps:prop_iri/@iri),
                             '_order')}"/>
                     </xsl:when>
                     <xsl:otherwise>
