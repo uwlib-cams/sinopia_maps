@@ -7,14 +7,40 @@
     elementFormDefault="qualified"
     vc:minVersion="1.1">
     
+    <!-- IMPORT/INCLUDE -->
+    
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
-    
-    <!-- TESTING HERE -->
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
+        schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
     <xs:import namespace="https://uwlib-cams.github.io/map_storage/" 
         schemaLocation="https://uwlib-cams.github.io/map_storage/map_storage.xsd"/>
     
+    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
+    
+    <xs:simpleType name="format_type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="monograph"/>
+            <!-- below are for testing, to do delete from schema later -->
+            <xs:enumeration value="test_literal_props"/>
+            <xs:enumeration value="test_uri_or_lookup_props"/>
+            <xs:enumeration value="test_nested_resource_props"/>
+            <xs:enumeration value="test_all_props"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="user_type">
+        <!-- = map_storage.xsd > user_type -->
+        <xs:restriction base="xs:string">
+            <!-- enumerations here will need updating -->
+            <xs:enumeration value="default"/>
+            <xs:enumeration value="ries07"/>
+            <xs:enumeration value="mcm104"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
     <!-- **************** sinopia **************** -->
+    
     <xs:complexType name="sinopia_type">
         <xs:sequence>
             <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
@@ -23,9 +49,16 @@
     </xs:complexType>
     
     <!-- *************** implementation_set *************** -->
+    
     <xs:complexType name="implementation_set_type">
+        <xs:annotation>
+            <xs:documentation>Each implementation set can be used to store a single set of details for using the given property in Sinopia.</xs:documentation>
+            <xs:documentation>These details can include specifications for whether the property template should prompt entry of a literal vs. an IRI, whether it is repeatable, and so forth.</xs:documentation>
+            <xs:documentation>Each such setting is recorded in an element within the implementation set.</xs:documentation>
+            <xs:documentation>The same implementation set--that is, the same details for implementing a property--can be used in multiple resource templates.</xs:documentation>
+        </xs:annotation>
         <xs:sequence><!-- use all to eliminate ordering requirement? -->
-            <xs:element name="resource" type="resource_type" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="resource" type="uwmaps:resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
             <xs:element name="format" type="format_type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
@@ -37,57 +70,6 @@
         </xs:sequence>
         <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
     </xs:complexType>
-    
-    <xs:complexType name="resource_type">
-        <xs:attribute name="mapid_resource" type="mapid_resource_attr_type" use="required"/>
-    </xs:complexType>
-    
-    <!-- Various mapid_[...] attributes will not be re-usable;
-        many will need regular updates as new prop_sets/formats/users/ are added -->
-    <xs:simpleType name="mapid_resource_attr_type">
-        <!-- = uwl_sinopia_maps.xsd > resource_type -->
-        <xs:restriction base="xs:string">
-            <!-- (MAP ID component) -->
-            <!-- For prop sets from RDA Registry, mapid_prop_set and mapid_resource values will be redundant 
-            (RDA Work property set properties for use in an RDA Work RT), 
-            but this may not be the case for other vocabularies -->
-            <xs:enumeration value="rdacWork"/>
-            <xs:enumeration value="rdacExpression"/>
-            <xs:enumeration value="rdacManifestation"/>
-            <!-- enumeration below for testing -->
-            <xs:enumeration value="testMultiplePropSets"/>
-            <!-- Not yet in test storage instance
-            <xs:enumeration value="rdacItem"/>
-            <xs:enumeration value="rdacAgent"/>
-            <xs:enumeration value=""/>
-            -->
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="format_type">
-        <!-- = uwl_sinopia_maps.xsd > format_type -->
-        <xs:restriction base="xs:string">
-            <!-- (MAP ID component) -->
-            <!-- mapid enumerations here will need updating -->
-            <xs:enumeration value="monograph"/>
-            <!-- below are for testing, to do delete from schema later -->
-            <xs:enumeration value="test_literal_props"/>
-            <xs:enumeration value="test_uri_or_lookup_props"/>
-            <xs:enumeration value="test_nested_resource_props"/>
-            <xs:enumeration value="test_all_props"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="user_type">
-        <!-- = uwl_sinopia_maps.xsd > user_type -->
-        <xs:restriction base="xs:string">
-            <!-- (MAP ID component) -->
-            <!-- mapid enumerations here will need updating -->
-            <xs:enumeration value="default"/>
-            <xs:enumeration value="ries07"/>
-            <xs:enumeration value="mcm104"/>
-        </xs:restriction>
-    </xs:simpleType>
     
     <xs:complexType name="multiple_prop_type">
         <xs:annotation>

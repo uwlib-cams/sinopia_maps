@@ -2,22 +2,22 @@
 <!-- are both targetNamespace and xmlns attrs needed? -->
 <xs:schema targetNamespace="https://uwlib-cams.github.io/sinopia_maps/"
     xmlns="https://uwlib-cams.github.io/sinopia_maps/"
-    xmlns:maps="https://uwlib-cams.github.io/map_storage/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
     elementFormDefault="qualified"
     vc:minVersion="1.1">
     
+    <!-- IMPORT/INCLUDE -->
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <xs:import namespace="http://www.w3.org/2001/XMLSchema"
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
-    
-    <!-- TESTING HERE -->
     <xs:import namespace="https://uwlib-cams.github.io/map_storage/" 
-        schemaLocation="https://uwlib-cams.github.io/map_storage/prop_sets.xsd"/>
+        schemaLocation="https://uwlib-cams.github.io/map_storage/map_storage.xsd"/>
+    <xs:include schemaLocation="uwsinopia.xsd"/>
     
-    <!-- *****ROOT sinopia_maps***** -->
+    <!-- ***** sinopia_maps***** -->
     <xs:element name="sinopia_maps" type="sinopia_maps_type"/>
     
     <xs:complexType name="sinopia_maps_type">
@@ -28,7 +28,7 @@
         </xs:sequence>
     </xs:complexType>
     
-    <!-- ****rts**** -->
+    <!-- **** rts **** -->
     <xs:complexType name="rts_type">
         <xs:sequence>
             <xs:element name="rt" type="rt_type" minOccurs="1" maxOccurs="unbounded"/>
@@ -38,9 +38,9 @@
     <xs:complexType name="rt_type">
         <xs:sequence>
             <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
-            <xs:element name="prop_set" type="maps:prop_set_label_type" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="prop_set" type="uwmaps:prop_set_label_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
-            <xs:element name="resource" type="resource_type"/>
+            <xs:element name="resource" type="uwmaps:resource_label_type"/>
             <!-- RE: suppressible: suppressible RTs must not contain any more than one PT! will produce error in sinopia -->
             <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <!-- may want to further constrain values for optional_class later... -->
@@ -52,61 +52,6 @@
         </xs:sequence>
     </xs:complexType>
     
-    <!-- enumerations for data_source, resource, format, and user will be duplicative of enumerations in
-    map_storage.xsd, and will require updating in two places. 
-    Possible to put in the same place and only update once?? -->
-    
-    <xs:simpleType name="prop_set_type">
-        <!-- = map_storage.xsd mapid_prop_set_attr_type -->
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="rdacWork"/>
-            <xs:enumeration value="rdacExpression"/>
-            <xs:enumeration value="rdacManifestation"/>
-            <!-- Not yet in test storage instance
-            <xs:enumeration value="rdacIPropSet"/>
-            <xs:enumeration value="rdacAPropSet"/>
-            <xs:enumeration value=""/>
-            ... etc... -->
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="resource_type">
-        <!-- = map_storage.xsd > mapid_resource_attr_type -->
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="rdacWork"/>
-            <xs:enumeration value="rdacExpression"/>
-            <xs:enumeration value="rdacManifestation"/>
-            <!-- Not yet in test storage instance
-            <xs:enumeration value="rdacItem"/>
-            <xs:enumeration value="rdacAgent"/>
-            <xs:enumeration value=""/>
-            -->
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="format_type">
-        <!-- = map_storage.xsd > format_type -->
-        <xs:restriction base="xs:string">
-            <!-- mapid enumerations here will need updating -->
-            <xs:enumeration value="monograph"/>
-            <!-- below are for testing, to do delete from schema later -->
-            <xs:enumeration value="test_literal_props"/>
-            <xs:enumeration value="test_uri_or_lookup_props"/>
-            <xs:enumeration value="test_nested_resource_props"/>
-            <xs:enumeration value="test_all_props"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="user_type">
-        <!-- = map_storage.xsd > user_type -->
-        <xs:restriction base="xs:string">
-            <!-- enumerations here will need updating -->
-            <xs:enumeration value="default"/>
-            <xs:enumeration value="ries07"/>
-            <xs:enumeration value="mcm104"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
     <xs:simpleType name="author_type">
         <!-- tried some annotation, shows up in the editor on mouseover in the sinopia_maps.xml instance -->
         <xs:annotation>
@@ -116,6 +61,8 @@
     </xs:simpleType>
     
     <!-- ****html_profiles**** -->
+    
+    <!-- DRAFT / UNDONE STUFF HERE -->
     <xs:complexType name="html_profiles_type">
         <xs:sequence>
             <xs:element name="html_profile" type="html_profile_type" minOccurs="1" maxOccurs="unbounded"/>
