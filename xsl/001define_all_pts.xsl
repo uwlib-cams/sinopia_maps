@@ -4,18 +4,18 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
     xmlns:sinopia="http://sinopia.io/vocabulary/"
-    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/"
-    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
     xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <xsl:include href="multiple_properties.xsl"/>
-    <xsl:include href="define_literal_pts.xsl"/>
-    <xsl:include href="define_uri_pts.xsl"/>
-    <xsl:include href="define_lookup_pts.xsl"/>
-    <xsl:include href="define_nested_resource_pts.xsl"/>
+    <xsl:include href="001multiple_properties.xsl"/>
+    <xsl:include href="001define_literal_pts.xsl"/>
+    <xsl:include href="001define_uri_pts.xsl"/>
+    <xsl:include href="001define_lookup_pts.xsl"/>
+    <xsl:include href="001define_nested_resource_pts.xsl"/>
     
     <!-- (there must be a better way to reuse a function than copying and renaming in each file??) -->
     <xsl:function name="bmrxml:rda_iri_slug_define_all">
