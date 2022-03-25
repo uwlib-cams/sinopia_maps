@@ -13,8 +13,8 @@
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <xs:import namespace="http://www.w3.org/2001/XMLSchema"
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
-    <xs:import namespace="https://uwlib-cams.github.io/map_storage/" 
-        schemaLocation="https://uwlib-cams.github.io/map_storage/map_storage.xsd"/>
+    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/" 
+        schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
     
     <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
     
