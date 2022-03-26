@@ -18,6 +18,8 @@
    <xs:simpleType name="format_type">
       <xs:restriction base="xs:string">
          <xs:enumeration value="monograph"/>
+         <!-- format does not apply to some RTs (Agent, Bundle, etc.) -->
+         <xs:enumeration value="n/a"/>
          <!-- below are for testing, to do delete from schema later -->
          <xs:enumeration value="test_literal_props"/>
          <xs:enumeration value="test_uri_or_lookup_props"/>
