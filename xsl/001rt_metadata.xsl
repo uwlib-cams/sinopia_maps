@@ -11,7 +11,10 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <xsl:include href="reuse.xsl"/>
+    <xsl:function name="bmrxml:rda_iri_slug">
+        <xsl:param name="path_to_iri"/>
+        <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
+    </xsl:function>
 
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
