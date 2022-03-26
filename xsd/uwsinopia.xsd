@@ -1,261 +1,632 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-    xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
-    elementFormDefault="qualified"
-    vc:minVersion="1.1">
+<xs:schema xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+           xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1">
     
     <!-- IMPORT/INCLUDE -->
-    
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-        schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
-    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
-        schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
-    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/" 
-        schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
-    
-    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
-    
-    <xs:simpleType name="format_type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="monograph"/>
-            <!-- below are for testing, to do delete from schema later -->
-            <xs:enumeration value="test_literal_props"/>
-            <xs:enumeration value="test_uri_or_lookup_props"/>
-            <xs:enumeration value="test_nested_resource_props"/>
-            <xs:enumeration value="test_all_props"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="user_type">
+   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+              schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+   <xs:import namespace="http://www.w3.org/2001/XMLSchema"
+              schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+   <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
+              schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+   <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
+   <xs:simpleType name="format_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="monograph"/>
+         <!-- below are for testing, to do delete from schema later -->
+         <xs:enumeration value="test_literal_props"/>
+         <xs:enumeration value="test_uri_or_lookup_props"/>
+         <xs:enumeration value="test_nested_resource_props"/>
+         <xs:enumeration value="test_all_props"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="user_type">
         <!-- = map_storage.xsd > user_type -->
-        <xs:restriction base="xs:string">
+      <xs:restriction base="xs:string">
             <!-- enumerations here will need updating -->
-            <xs:enumeration value="default"/>
-            <xs:enumeration value="ries07"/>
-            <xs:enumeration value="mcm104"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- **************** sinopia **************** -->
-    
-    <xs:complexType name="sinopia_type">
-        <xs:sequence>
-            <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
-                maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <!-- *************** implementation_set *************** -->
-    
-    <xs:complexType name="implementation_set_type">
-        <xs:annotation>
-            <xs:documentation>Each implementation set can be used to store a single set of details for using the given property in Sinopia.</xs:documentation>
-            <xs:documentation>These details can include specifications for whether the property template should prompt entry of a literal vs. an IRI, whether it is repeatable, and so forth.</xs:documentation>
-            <xs:documentation>Each such setting is recorded in an element within the implementation set.</xs:documentation>
-            <xs:documentation>The same implementation set--that is, the same details for implementing a property--can be used in multiple resource templates.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence><!-- use all to eliminate ordering requirement? -->
-            <xs:element name="resource" type="uwmaps:resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
-            <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
-            <xs:element name="format" type="format_type" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="sinopia_prop_attributes" type="sinopia_prop_attributes_type"
-                minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
-        <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
-    </xs:complexType>
-    
-    <xs:complexType name="multiple_prop_type">
-        <xs:annotation>
-            <xs:documentation>The 'multiple_prop' element is used to create a drop-down property list in the property template.</xs:documentation>
-            <xs:documentation>When using the resource template, users can select from among the drop-down properties for use.</xs:documentation>
-            <xs:documentation>To include all subproperties of the 'prop' element property in the drop-down, use the 'multiple_prop' > 'all_subprops' child element, and enter the value 'true'.</xs:documentation>
-            <xs:documentation>To select properties to include in the drop-down, use 'property' elements (as many as needed) to provide property IRIs and labels.</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:choice>
-                <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-                <xs:element name="property" type="property_selection_type" minOccurs="1" maxOccurs="unbounded"/>
-            </xs:choice>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <!-- to do: constrain further, require text element content -->
-    <xs:complexType name="property_selection_type">
-        <xs:annotation>
-            <xs:documentation>Enter a property label as the text content of the 'property' element.</xs:documentation>
-            <xs:documentation>Enter the full, non-prefixed property IRI as the content of the 'property_iri' attribute.</xs:documentation>
-        </xs:annotation>
-        <xs:simpleContent>
-            <xs:extension base="xs:string">
-                <xs:attribute name="property_iri" type="xs:anyURI" use="required"/>
-                <xs:attribute ref="xml:lang" use="required"/>            
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
-    <!-- TO DO / xsd question: how to allow prop_info element only if
+         <xs:enumeration value="default"/>
+         <xs:enumeration value="ries07"/>
+         <xs:enumeration value="mcm104"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- **************** sinopia **************** -->
+   <xs:complexType name="sinopia_type">
+      <xs:sequence>
+         <xs:element name="implementation_set"
+                     type="implementation_set_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <!-- *************** implementation_set *************** -->
+   <xs:complexType name="implementation_set_type">
+      <xs:annotation>
+         <xs:documentation>Each implementation set can be used to store a single set of details for using the given property in Sinopia.</xs:documentation>
+         <xs:documentation>These details can include specifications for whether the property template should prompt entry of a literal vs. an IRI, whether it is repeatable, and so forth.</xs:documentation>
+         <xs:documentation>Each such setting is recorded in an element within the implementation set.</xs:documentation>
+         <xs:documentation>The same implementation set--that is, the same details for implementing a property--can be used in multiple resource templates.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence><!-- use all to eliminate ordering requirement? -->
+         <xs:element name="resource"
+                     type="uwmaps:resource_label_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+         <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
+         <xs:element name="format"
+                     type="format_type"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="user"
+                     type="user_type"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="multiple_prop"
+                     type="multiple_prop_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="form_order"
+                     type="form_order_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="remark"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="sinopia_prop_attributes"
+                     type="sinopia_prop_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="localid_implementation_set"
+                    type="uwmaps:localid_attr"
+                    use="required"/>
+   </xs:complexType>
+   <xs:complexType name="multiple_prop_type">
+      <xs:annotation>
+         <xs:documentation>The 'multiple_prop' element is used to create a drop-down property list in the property template.</xs:documentation>
+         <xs:documentation>When using the resource template, users can select from among the drop-down properties for use.</xs:documentation>
+         <xs:documentation>To include all subproperties of the 'prop' element property in the drop-down, use the 'multiple_prop' &gt; 'all_subprops' child element, and enter the value 'true'.</xs:documentation>
+         <xs:documentation>To select properties to include in the drop-down, use 'property' elements (as many as needed) to provide property IRIs and labels.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:choice>
+            <xs:element name="all_subprops"
+                        type="xs:boolean"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+            <xs:element name="property"
+                        type="property_selection_type"
+                        minOccurs="1"
+                        maxOccurs="unbounded"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <!-- to do: constrain further, require text element content -->
+   <xs:complexType name="property_selection_type">
+      <xs:annotation>
+         <xs:documentation>Enter a property label as the text content of the 'property' element.</xs:documentation>
+         <xs:documentation>Enter the full, non-prefixed property IRI as the content of the 'property_iri' attribute.</xs:documentation>
+      </xs:annotation>
+      <xs:simpleContent>
+         <xs:extension base="xs:string">
+            <xs:attribute name="property_iri" type="xs:anyURI" use="required"/>
+            <xs:attribute ref="xml:lang" use="required"/>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+   <!-- TO DO / xsd question: how to allow prop_info element only if
         @prop_selection = 'select_props' -->
-    <xs:complexType name="prop_info_type">
-        <xs:sequence>
-            <xs:element name="prop_option_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="prop_option_label" type="uwmaps:lang_string_type" minOccurs="1" maxOccurs="1"
-            />
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:simpleType name="form_order_type">
-        <xs:restriction base="xs:decimal">
-            <xs:minInclusive value="0.0"/>
-            <xs:maxInclusive value="1.0"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- remark: lang_string_type defined above -->
-    
-    <!-- ************ sinopia_prop_attributes ************ -->
-    <xs:complexType name="sinopia_prop_attributes_type">
-        <xs:sequence>
+   <xs:complexType name="prop_info_type">
+      <xs:sequence>
+         <xs:element name="prop_option_iri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="prop_option_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="form_order_type">
+      <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0.0"/>
+         <xs:maxInclusive value="1.0"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- remark: lang_string_type defined above -->
+   <!-- ************ sinopia_prop_attributes ************ -->
+   <xs:complexType name="sinopia_prop_attributes_type">
+      <xs:sequence>
             <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
-            <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
-            <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            <xs:element name="sinopia_prop_type" type="sinopia_prop_type_type" minOccurs="1"
-                maxOccurs="1"/>
-            <xs:element name="sinopia_prop_type_attributes" type="sinopia_prop_type_attributes_type"
-                minOccurs="1" maxOccurs="1"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:simpleType name="sinopia_prop_type_type">
-        <xs:restriction base="xs:string">
+         <xs:element name="language_suppressed"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="required"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="repeatable"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
+         <xs:element name="ordered"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="sinopia_prop_type"
+                     type="sinopia_prop_type_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="sinopia_prop_type_attributes"
+                     type="sinopia_prop_type_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="sinopia_prop_type_type">
+      <xs:restriction base="xs:string">
             <!-- Double-check that I'm up on the current Sinopia property type choices! -->
-            <xs:enumeration value="literal"/>
-            <xs:enumeration value="uri_or_lookup"/>
-            <xs:enumeration value="nested_resource"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- *********** sinopia_prop_type_attributes *********** -->
-    <xs:complexType name="sinopia_prop_type_attributes_type">
+         <xs:enumeration value="literal"/>
+         <xs:enumeration value="uri_or_lookup"/>
+         <xs:enumeration value="nested_resource"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- *********** sinopia_prop_type_attributes *********** -->
+   <xs:complexType name="sinopia_prop_type_attributes_type">
         <!-- to do / xsd wish list: allow one of following based on value of sinopia_prop_type_type above -->
-        <xs:choice>
-            <xs:element name="literal_attributes" type="literal_attributes_type" minOccurs="1"
-                maxOccurs="1"/>
-            <xs:element name="uri_attributes" type="uri_attributes_type" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="lookup_attributes" type="lookup_attributes_type" minOccurs="1"
-                maxOccurs="1"/>
-            <xs:element name="nested_resource_attributes" type="nested_resource_attributes_type"
-                minOccurs="1" maxOccurs="1"/>
-        </xs:choice>
-    </xs:complexType>
-    
-    <!-- ********** literal_attributes ********** -->
-    <xs:complexType name="literal_attributes_type">
-        <xs:sequence>
-            <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="1" maxOccurs="1"/>
-            <xs:choice>
-                <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
-                    maxOccurs="1"/>
-                <xs:element name="validation_datatype" type="validation_datatype_type" minOccurs="0"
-                    maxOccurs="1"/>
-                <xs:element name="date_default" type="xs:boolean" minOccurs="0"
-                    maxOccurs="1"/>
-                <xs:element name="userId_default" type="xs:boolean" minOccurs="0"
-                    maxOccurs="1"/>
-            </xs:choice>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <!-- literal_attributes: lang_string_type defined above -->
-    
-    <xs:simpleType name="validation_regex_type">
-        <xs:restriction base="xs:string">
+      <xs:choice>
+         <xs:element name="literal_attributes"
+                     type="literal_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="uri_attributes"
+                     type="uri_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="lookup_attributes"
+                     type="lookup_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="nested_resource_attributes"
+                     type="nested_resource_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+      </xs:choice>
+   </xs:complexType>
+   <!-- ********** literal_attributes ********** -->
+   <xs:complexType name="literal_attributes_type">
+      <xs:sequence>
+         <xs:element name="default_literal"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:choice>
+            <xs:element name="validation_regex"
+                        type="validation_regex_type"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+            <xs:element name="validation_datatype"
+                        type="validation_datatype_type"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+            <xs:element name="date_default"
+                        type="xs:boolean"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+            <xs:element name="userId_default"
+                        type="xs:boolean"
+                        minOccurs="0"
+                        maxOccurs="1"/>
+         </xs:choice>
+      </xs:sequence>
+   </xs:complexType>
+   <!-- literal_attributes: lang_string_type defined above -->
+   <xs:simpleType name="validation_regex_type">
+      <xs:restriction base="xs:string">
             <!-- how to validate a regex as a regex!?!? -->
         </xs:restriction>
-    </xs:simpleType>
-    
-    <xs:simpleType name="validation_datatype_type">
-        <xs:restriction base="xs:string">
+   </xs:simpleType>
+   <xs:simpleType name="validation_datatype_type">
+      <xs:restriction base="xs:string">
             <!-- can I have spaces in my enumerations?? -->
-            <xs:enumeration value="Date and time with or without timezone"/>
-            <xs:enumeration value="Date and time with required timezone"/>
-            <xs:enumeration value="Extended Date/Time Format (EDTF)"/>
-            <xs:enumeration value="Integer"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- ********** uri_attributes ********** -->
-    <xs:complexType name="uri_attributes_type">
-        <xs:sequence>
-            <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="default_uri_label" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"
-            />
-        </xs:sequence>
-    </xs:complexType>
-    
-    <!-- default_uri: iri_type defined above -->
-    <!-- default_uri_label: lang_string_type defined above -->
-    
-    <!-- ********** lookup_attributes ********** -->
-    <xs:complexType name="lookup_attributes_type">
-        <xs:sequence>
-            <xs:element name="authorities" type="authorities_type" minOccurs="1"
-                maxOccurs="unbounded"/>
-            <xs:element name="lookup_default_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="lookup_default_iri_label" type="uwmaps:lang_string_type" minOccurs="0"
-                maxOccurs="1"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:complexType name="authorities_type">
-        <xs:sequence>
-            <xs:element name="authority_urn" type="authority_urn_type" minOccurs="1"
-                maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <!-- https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json -->
-    <!-- enumerate labels for data entry, replace with URNs when outputting RTs -->
-    <xs:simpleType name="authority_urn_type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="urn:ld4p:sinopia"/>
-            <xs:enumeration value="urn:ld4p:sinopia:bibframe:instance"/>
-            <xs:enumeration value="urn:ld4p:qa:names"/>
-            <xs:enumeration value="urn:ld4p:qa:gettyulan"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- lookup_default_iri: iri_type defined above -->
-    <!-- lookup_default_iri_label: lang_string_type defined above -->
-    
-    <!-- ********** nested_resource_attributes ********** -->
-    <xs:complexType name="nested_resource_attributes_type">
-        <xs:sequence>
-            <xs:element name="rt_id" type="rt_id_type"/>
-        </xs:sequence>
-    </xs:complexType>
-    
-    <xs:simpleType name="rt_id_type">
-        <xs:restriction base="xs:string">
+         <xs:enumeration value="Date and time with or without timezone"/>
+         <xs:enumeration value="Date and time with required timezone"/>
+         <xs:enumeration value="Extended Date/Time Format (EDTF)"/>
+         <xs:enumeration value="Integer"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- ********** uri_attributes ********** -->
+   <xs:complexType name="uri_attributes_type">
+      <xs:sequence>
+         <xs:element name="default_uri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="default_uri_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <!-- default_uri: iri_type defined above -->
+   <!-- default_uri_label: lang_string_type defined above -->
+   <!-- ********** lookup_attributes ********** -->
+   <xs:complexType name="lookup_attributes_type">
+      <xs:sequence>
+         <xs:element name="authorities"
+                     type="authorities_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+         <xs:element name="lookup_default_iri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="lookup_default_iri_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="authorities_type">
+      <xs:sequence>
+         <xs:element name="authority_urn"
+                     type="authority_urn_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <!-- https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json -->
+   <!-- enumerate labels for data entry, replace with URNs when outputting RTs -->
+   <xs:simpleType name="authority_urn_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="Sinopia resources"/>
+         <xs:enumeration value="Sinopia BIBFRAME instance resources"/>
+         <xs:enumeration value="Sinopia BIBFRAME work resources"/>
+         <xs:enumeration value="Sinopia BIBFRAME item resources"/>
+         <xs:enumeration value="Sinopia BIBFRAME admin metadata resources"/>
+         <xs:enumeration value="Sinopia templates"/>
+         <xs:enumeration value="AGROVOC (QA)"/>
+         <xs:enumeration value="CERL (QA)"/>
+         <xs:enumeration value="CERL person (QA)"/>
+         <xs:enumeration value="CERL corporate_body (QA)"/>
+         <xs:enumeration value="CERL imprint (QA)"/>
+         <xs:enumeration value="DBPEDIA_(QA)"/>
+         <xs:enumeration value="Discogs"/>
+         <xs:enumeration value="Discogs Releases"/>
+         <xs:enumeration value="Discogs Masters"/>
+         <xs:enumeration value="GEONAMES all (QA)"/>
+         <xs:enumeration value="GEONAMES area (QA)"/>
+         <xs:enumeration value="GEONAMES place (QA)"/>
+         <xs:enumeration value="GEONAMES area_and_place (QA)"/>
+         <xs:enumeration value="GEONAMES water (QA)"/>
+         <xs:enumeration value="GEONAMES park (QA)"/>
+         <xs:enumeration value="GEONAMES road (QA)"/>
+         <xs:enumeration value="GEONAMES spot (QA)"/>
+         <xs:enumeration value="GEONAMES terrain (QA)"/>
+         <xs:enumeration value="GEONAMES undersea (QA)"/>
+         <xs:enumeration value="GEONAMES vegetation (QA)"/>
+         <xs:enumeration value="GETTY_AAT all terms (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities__Disciplines (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities__Events (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities__Functions (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities__Physical_and_Mental (QA)"/>
+         <xs:enumeration value="GETTY_AAT Activities__Processes_and_Techniques (QA)"/>
+         <xs:enumeration value="GETTY_AAT Agents (QA)"/>
+         <xs:enumeration value="GETTY_AAT Agents__Living_Organisms (QA)"/>
+         <xs:enumeration value="GETTY_AAT Agents__Organizations (QA)"/>
+         <xs:enumeration value="GETTY_AAT Agents__People (QA)"/>
+         <xs:enumeration value="GETTY_AAT Associated_Concepts (QA)"/>
+         <xs:enumeration value="GETTY_AAT Associated_Concepts__Associated_Concepts (QA)"/>
+         <xs:enumeration value="GETTY_AAT Brand_Names (QA)"/>
+         <xs:enumeration value="GETTY_AAT Brand_Names__Brand_Names (QA)"/>
+         <xs:enumeration value="GETTY_AAT Materials (QA)"/>
+         <xs:enumeration value="GETTY_AAT Materials__Materials (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Built_Environment (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Components (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Furnishings_and_Equipment (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Object_Genres (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Object_Groupings and Systems (QA)"/>
+         <xs:enumeration value="GETTY_AAT Objects__Visual_and_Verbal_Communication (QA)"/>
+         <xs:enumeration value="GETTY_AAT Physical_Attributes (QA)"/>
+         <xs:enumeration value="GETTY_AAT Physical_Attributes__Attributes_and_Properties (QA)"/>
+         <xs:enumeration value="GETTY_AAT Physical_Attributes__Color (QA)"/>
+         <xs:enumeration value="GETTY_AAT Physical_Attributes__Conditions_and_Effects (QA)"/>
+         <xs:enumeration value="GETTY_AAT Physical_Attributes__Design_Elements (QA)"/>
+         <xs:enumeration value="GETTY_AAT Styles_and_Periods (QA)"/>
+         <xs:enumeration value="GETTY_AAT Styles_and_Periods__Styles_and_Periods (QA)"/>
+         <xs:enumeration value="GETTY_TGN (QA)"/>
+         <xs:enumeration value="GETTY_ULAN (QA)"/>
+         <xs:enumeration value="GETTY_ULAN person (QA)"/>
+         <xs:enumeration value="GETTY_ULAN organization (QA)"/>
+         <xs:enumeration value="ISNI (QA)"/>
+         <xs:enumeration value="Ligatus (QA)"/>
+         <xs:enumeration value="LOC carriers [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC content types [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC description conventions [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC frequencies [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC issuance [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC authentication action [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC aspect ratio [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC intended audience [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC broadcast standard [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC sound and capture storage [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC color content [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC media types [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC encoding format [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC encoding level [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC file type [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC font size [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC generation list [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC government publication type [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC groove width, pitch, cutting [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC illustrative content [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC layout [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC notated music form [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC music notation [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC playback [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC playing speed [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC polarity [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC presentation format [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC production method [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC projection [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC punctuation conventions [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC recording medium [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC recording type [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC reduction ratio [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC regional encoding [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC relief [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC scale [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC script [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC sound content [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC special playback characteristics [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC status [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC supplemental content [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC tactile [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC tape configuration [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC technique [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC video format [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC relators [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC resource components [vocabularies] (QA)"/>
+         <xs:enumeration value="LOC cultural heritage organizations (QA)"/>
+         <xs:enumeration value="LOC demographics (QA)"/>
+         <xs:enumeration value="LOC performance (QA)"/>
+         <xs:enumeration value="LOC all genres (QA)"/>
+         <xs:enumeration value="LOC active [genres] (QA)"/>
+         <xs:enumeration value="LOC deprecated [genres] (QA)"/>
+         <xs:enumeration value="LOC all names (QA)"/>
+         <xs:enumeration value="LOC person [names (rwo)] (QA)"/>
+         <xs:enumeration value="LOC organization [names (rwo)] (QA)"/>
+         <xs:enumeration value="LOC family [names (rwo)] (QA)"/>
+         <xs:enumeration value="LOC geographic [names] (QA)"/>
+         <xs:enumeration value="LOC conference [names] (QA)"/>
+         <xs:enumeration value="LOC all subjects (QA)"/>
+         <xs:enumeration value="MESH subjects (QA)"/>
+         <xs:enumeration value="MESH publication types (QA)"/>
+         <xs:enumeration value="NALT (QA)"/>
+         <xs:enumeration value="OCLCFAST (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Topic (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Event Name (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Personal Name (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Corporate Name (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Geographic (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Meeting (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Period (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Form (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Uniform Title (QA) - cache"/>
+         <xs:enumeration value="OCLCFAST Topic (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Geographic (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Event Name (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Personal Name (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Corporate Name (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Uniform Title (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Period (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Form (QA) - direct"/>
+         <xs:enumeration value="OCLCFAST Meeting (QA) - direct"/>
+         <xs:enumeration value="RDA Registry aspect ratio designation (QA)"/>
+         <xs:enumeration value="RDA Registry bibliographic format (QA)"/>
+         <xs:enumeration value="RDA Registry broadcast standard (QA)"/>
+         <xs:enumeration value="RDA Registry carrier type (QA)"/>
+         <xs:enumeration value="RDA Registry cartographic data type (QA)"/>
+         <xs:enumeration value="RDA Registry colour content (QA)"/>
+         <xs:enumeration value="RDA Registry configuration of playback channels (QA)"/>
+         <xs:enumeration value="RDA Registry content type (QA)"/>
+         <xs:enumeration value="RDA Registry file type (QA)"/>
+         <xs:enumeration value="RDA Registry font size (QA)"/>
+         <xs:enumeration value="RDA Registry form of musical notation (QA)"/>
+         <xs:enumeration value="RDA Registry form of notated movement (QA)"/>
+         <xs:enumeration value="RDA Registry form of tactile notation (QA)"/>
+         <xs:enumeration value="RDA Registry format of notated music (QA)"/>
+         <xs:enumeration value="RDA Registry frequency (QA)"/>
+         <xs:enumeration value="RDA Registry gender (QA)"/>
+         <xs:enumeration value="RDA Registry generation (QA)"/>
+         <xs:enumeration value="RDA Registry groove pitch of an analog cylinder (QA)"/>
+         <xs:enumeration value="RDA Registry groove width of an analog disc (QA)"/>
+         <xs:enumeration value="RDA Registry illustrative content (QA)"/>
+         <xs:enumeration value="RDA Registry layout (QA)"/>
+         <xs:enumeration value="RDA Registry material (QA)"/>
+         <xs:enumeration value="RDA Registry media type (QA)"/>
+         <xs:enumeration value="RDA Registry mode of issuance (QA)"/>
+         <xs:enumeration value="RDA Registry polarity (QA)"/>
+         <xs:enumeration value="RDA Registry presentation format (QA)"/>
+         <xs:enumeration value="RDA Registry production method (QA)"/>
+         <xs:enumeration value="RDA Registry recording medium (QA)"/>
+         <xs:enumeration value="RDA Registry recording sources (QA)"/>
+         <xs:enumeration value="RDA Registry reduction ratio designation (QA)"/>
+         <xs:enumeration value="RDA Registry regional encoding (QA)"/>
+         <xs:enumeration value="RDA Registry scale designation (QA)"/>
+         <xs:enumeration value="RDA Registry sound content (QA)"/>
+         <xs:enumeration value="RDA Registry special playback characteristics (QA)"/>
+         <xs:enumeration value="RDA Registry status of identification (QA)"/>
+         <xs:enumeration value="RDA Registry terms (QA)"/>
+         <xs:enumeration value="RDA Registry track configuration (QA)"/>
+         <xs:enumeration value="RDA Registry type of binding (QA)"/>
+         <xs:enumeration value="RDA Registry type of recording (QA)"/>
+         <xs:enumeration value="RDA Registry video format (QA)"/>
+         <xs:enumeration value="SHAREVDE PCC Opus (QA) - cache"/>
+         <xs:enumeration value="SHAREVDE PCC Work (QA) - cache"/>
+         <xs:enumeration value="SHAREVDE PCC Instance (QA) - cache"/>
+         <xs:enumeration value="SHAREVDE ALBERTA (QA)"/>
+         <xs:enumeration value="SHAREVDE ALBERTA work (QA)"/>
+         <xs:enumeration value="SHAREVDE ALBERTA superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE ALBERTA instance (QA)"/>
+         <xs:enumeration value="SHAREVDE CHICAGO (QA)"/>
+         <xs:enumeration value="SHAREVDE CHICAGO work (QA)"/>
+         <xs:enumeration value="SHAREVDE CHICAGO superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE CHICAGO instance (QA)"/>
+         <xs:enumeration value="SHAREVDE CORNELL (QA)"/>
+         <xs:enumeration value="SHAREVDE CORNELL work (QA)"/>
+         <xs:enumeration value="SHAREVDE CORNELL superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE CORNELL instance (QA)"/>
+         <xs:enumeration value="SHAREVDE CU BOULDER (QA)"/>
+         <xs:enumeration value="SHAREVDE CU BOULDER work (QA)"/>
+         <xs:enumeration value="SHAREVDE CU BOULDER superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE CU BOULDER instance (QA)"/>
+         <xs:enumeration value="SHAREVDE DUKE (QA)"/>
+         <xs:enumeration value="SHAREVDE DUKE work (QA)"/>
+         <xs:enumeration value="SHAREVDE DUKE superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE DUKE instance (QA)"/>
+         <xs:enumeration value="SHAREVDE FRICK (QA)"/>
+         <xs:enumeration value="SHAREVDE FRICK work (QA)"/>
+         <xs:enumeration value="SHAREVDE FRICK superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE FRICK instance (QA)"/>
+         <xs:enumeration value="SHAREVDE HARRYRANSOM (QA)"/>
+         <xs:enumeration value="SHAREVDE HARRYRANSOM work (QA)"/>
+         <xs:enumeration value="SHAREVDE HARRYRANSOM superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE HARRYRANSOM instance (QA)"/>
+         <xs:enumeration value="SHAREVDE HARVARD (QA)"/>
+         <xs:enumeration value="SHAREVDE HARVARD work (QA)"/>
+         <xs:enumeration value="SHAREVDE HARVARD superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE HARVARD instance (QA)"/>
+         <xs:enumeration value="SHAREVDE MICHIGAN (QA)"/>
+         <xs:enumeration value="SHAREVDE MICHIGAN work (QA)"/>
+         <xs:enumeration value="SHAREVDE MICHIGAN superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE MICHIGAN instance (QA)"/>
+         <xs:enumeration value="SHAREVDE MINNESOTA (QA)"/>
+         <xs:enumeration value="SHAREVDE MINNESOTA work (QA)"/>
+         <xs:enumeration value="SHAREVDE MINNESOTA superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE MINNESOTA instance (QA)"/>
+         <xs:enumeration value="SHAREVDE NLM (QA)"/>
+         <xs:enumeration value="SHAREVDE NLM work (QA)"/>
+         <xs:enumeration value="SHAREVDE NLM superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE NLM instance (QA)"/>
+         <xs:enumeration value="SHAREVDE NORTHWESTERN (QA)"/>
+         <xs:enumeration value="SHAREVDE NORTHWESTERN work (QA)"/>
+         <xs:enumeration value="SHAREVDE NORTHWESTERN superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE NORTHWESTERN instance (QA)"/>
+         <xs:enumeration value="SHAREVDE PRINCETON (QA)"/>
+         <xs:enumeration value="SHAREVDE PRINCETON work (QA)"/>
+         <xs:enumeration value="SHAREVDE PRINCETON superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE PRINCETON instance (QA)"/>
+         <xs:enumeration value="SHAREVDE STANFORD (QA)"/>
+         <xs:enumeration value="SHAREVDE STANFORD work (QA)"/>
+         <xs:enumeration value="SHAREVDE STANFORD superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE STANFORD instance (QA)"/>
+         <xs:enumeration value="SHAREVDE TEXASAM (QA)"/>
+         <xs:enumeration value="SHAREVDE TEXASAM work (QA)"/>
+         <xs:enumeration value="SHAREVDE TEXASAM superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE TEXASAM instance (QA)"/>
+         <xs:enumeration value="SHAREVDE UCDAVIS work (QA)"/>
+         <xs:enumeration value="SHAREVDE UCDAVIS superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE UCDAVIS instance (QA)"/>
+         <xs:enumeration value="SHAREVDE UCSD (QA)"/>
+         <xs:enumeration value="SHAREVDE UCSD work (QA)"/>
+         <xs:enumeration value="SHAREVDE UCSD superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE UCSD instance (QA)"/>
+         <xs:enumeration value="SHAREVDE UPENN (QA)"/>
+         <xs:enumeration value="SHAREVDE UPENN work (QA)"/>
+         <xs:enumeration value="SHAREVDE UPENN superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE UPENN instance (QA)"/>
+         <xs:enumeration value="SHAREVDE UWASHINGTON (QA)"/>
+         <xs:enumeration value="SHAREVDE UWASHINGTON work (QA)"/>
+         <xs:enumeration value="SHAREVDE UWASHINGTON superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE UWASHINGTON instance (QA)"/>
+         <xs:enumeration value="SHAREVDE YALE (QA)"/>
+         <xs:enumeration value="SHAREVDE YALE work (QA)"/>
+         <xs:enumeration value="SHAREVDE YALE superwork (QA)"/>
+         <xs:enumeration value="SHAREVDE YALE instance (QA)"/>
+         <xs:enumeration value="Wikidata (QA)"/>
+         <xs:enumeration value="Publisher Cities"/>
+         <xs:enumeration value="MARC relator terms"/>
+         <xs:enumeration value="carrier"/>
+         <xs:enumeration value="class schedule used"/>
+         <xs:enumeration value="color"/>
+         <xs:enumeration value="content type"/>
+         <xs:enumeration value="description authentication"/>
+         <xs:enumeration value="description conventions"/>
+         <xs:enumeration value="encoding level"/>
+         <xs:enumeration value="illustrative content"/>
+         <xs:enumeration value="intended audience"/>
+         <xs:enumeration value="language"/>
+         <xs:enumeration value="media type"/>
+         <xs:enumeration value="mode of issuance"/>
+         <xs:enumeration value="material"/>
+         <xs:enumeration value="aspect ratio"/>
+         <xs:enumeration value="broadcast standard"/>
+         <xs:enumeration value="file type"/>
+         <xs:enumeration value="form of musical notation"/>
+         <xs:enumeration value="format of notated music"/>
+         <xs:enumeration value="frequency"/>
+         <xs:enumeration value="generation"/>
+         <xs:enumeration value="genre/form scheme"/>
+         <xs:enumeration value="groove characteristics"/>
+         <xs:enumeration value="layout"/>
+         <xs:enumeration value="playback channels"/>
+         <xs:enumeration value="playing speed"/>
+         <xs:enumeration value="polarity"/>
+         <xs:enumeration value="presentation format"/>
+         <xs:enumeration value="projection"/>
+         <xs:enumeration value="production method"/>
+         <xs:enumeration value="recording medium"/>
+         <xs:enumeration value="regional encoding"/>
+         <xs:enumeration value="relief"/>
+         <xs:enumeration value="scale"/>
+         <xs:enumeration value="sound capture and storage"/>
+         <xs:enumeration value="sound content"/>
+         <xs:enumeration value="special playback characteristics"/>
+         <xs:enumeration value="subject schemes"/>
+         <xs:enumeration value="status"/>
+         <xs:enumeration value="type of recording"/>
+         <xs:enumeration value="propertyAttribute"/>
+         <xs:enumeration value="uriAttribute"/>
+         <xs:enumeration value="property type"/>
+         <xs:enumeration value="authorities"/>
+         <xs:enumeration value="resourceAttribute"/>
+         <xs:enumeration value="literal validation data type"/>
+         <xs:enumeration value="literalPropertyAttribute"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- lookup_default_iri: iri_type defined above -->
+   <!-- lookup_default_iri_label: lang_string_type defined above -->
+   <!-- ********** nested_resource_attributes ********** -->
+   <xs:complexType name="nested_resource_attributes_type">
+      <xs:sequence>
+         <xs:element name="rt_id" type="rt_id_type"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="rt_id_type">
+      <xs:restriction base="xs:string">
             <!-- UPDATING THESE ENUMERATIONS
             List of enumerations = list of all RT IDs
             see sinopia_maps.xml -->
             <!-- could RT IDs be taken from sinopia_maps.xml? see map_storage issue #5 -->
             <!-- the following is for testing to do delete later-->
-            <xs:enumeration value="WAU:rdacAgent:rdacAgent:ries07"/>
-        </xs:restriction>
-    </xs:simpleType>
-    
-    <!-- *********** guidance *********** -->
-    <!-- this may end up going elsewhere, a storage instance at uwl_sinopia_maps... -->
-    
+         <xs:enumeration value="WAU:rdacAgent:rdacAgent:ries07"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <!-- *********** guidance *********** -->
+   <!-- this may end up going elsewhere, a storage instance at uwl_sinopia_maps... -->
 </xs:schema>
