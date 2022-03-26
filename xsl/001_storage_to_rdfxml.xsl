@@ -18,7 +18,7 @@
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../../sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
             <!-- vars -->
             <!-- to do account for multiple prop_sets output to RT, see also $sorted_properties below -->
             <xsl:variable name="prop_set" select="uwsinopia:prop_set"/>
@@ -32,11 +32,8 @@
                     $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
-                        (: [!] fn:document won't work for pulling from multiple prop_sets,
-                        need fn:collection, etc. [!] 
-                        also doc XPath will need to change once I'm not using test prop_sets :)
-                        (: I'd also rather access prop_sets via HTTP :)
-                        document(concat('../../../map_storage/test_prop_set_', $prop_set, '.xml'))/
+                        (: [!] doc XPath is for using TEST prop_sets :)
+                        document(concat('../../map_storage/test_prop_set_', $prop_set, '.xml'))/
                         uwmaps:prop_set/uwmaps:prop
                         [uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:resource = $resource]
@@ -50,7 +47,7 @@
 
             <!-- to do change result-document path for production -->
             <!-- RT NAMING CONVENTIONS: colons for RT ID, underscores for RT filename, spaces for RT label -->
-            <xsl:result-document href="../../docs/rdf/{translate($rt_id, ':', '_')}.rdf">
+            <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
                         <xsl:with-param name="resource" select="$resource"/>

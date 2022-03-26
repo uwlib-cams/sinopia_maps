@@ -14,7 +14,7 @@
     <!-- Store RDA Registry prop files in vars (just a couple for testing; 13 total for implementation later) -->
     <!-- TO DO iterate over these docs, don't repeat result-doc elements as below -->
     <xsl:variable name="get_prop_sets"
-        select="document('https://github.com/uwlib-cams/map_storage/raw/main/get_prop_sets.xml')"/>
+        select="document('https://github.com/uwlib-cams/map_storage/raw/main/xml/get_prop_sets.xml')"/>
 
     <xsl:template name="multiple_property_iris">
         <xsl:param name="prop"/>
