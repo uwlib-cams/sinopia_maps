@@ -223,19 +223,13 @@
         </xs:sequence>
     </xs:complexType>
     
+    <!-- https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json -->
+    <!-- enumerate labels for data entry, replace with URNs when outputting RTs -->
     <xs:simpleType name="authority_urn_type">
         <xs:restriction base="xs:string">
-            <!-- to do enumerate here -->
-            <!-- Options: 
-                1. Confirm that authorities URNs still come from 
-                https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json , grab from there
-                enter all possible options in a test RT and copy URNs 
-            -->
             <xs:enumeration value="urn:ld4p:sinopia"/>
             <xs:enumeration value="urn:ld4p:sinopia:bibframe:instance"/>
-            <!-- ... lots still to add, starting from the top -->
             <xs:enumeration value="urn:ld4p:qa:names"/>
-            <!-- ... -->
             <xs:enumeration value="urn:ld4p:qa:gettyulan"/>
         </xs:restriction>
     </xs:simpleType>
