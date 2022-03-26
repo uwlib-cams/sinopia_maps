@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sinopia_maps xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ 
-    https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
+    xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
         <!-- ACK can't pull from multiple propSets with current sorted_properties setup -->
         <rt>
@@ -14,5 +13,6 @@
             <user>ries07</user>
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
+        <!-- leaving off here with validation woes... -->
     </rts>
 </sinopia_maps>
