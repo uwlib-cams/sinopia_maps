@@ -11,64 +11,9 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <xsl:function name="bmrxml:rda_iri_slug">
-        <xsl:param name="path_to_iri"/>
-        <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
-    </xsl:function>
-    
-    <!-- *****metadata for the RT is output from this template***** -->
-    <xsl:template name="rt_metadata">
-        <xsl:param name="resource"/>
-        <xsl:param name="suppressible"/>
-        <xsl:param name="optional_classes"/>
-        <xsl:param name="format"/>
-        <xsl:param name="user"/>
-        <xsl:param name="rt_id"/>
-        <xsl:param name="sorted_properties"/>
-        <rdf:Description
-            rdf:about="{concat('https://api.development.sinopia.io/resource/', $rt_id)}">
-            <!-- to do output remark in RT description -->
-            <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
-            <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-            <xsl:call-template name="rt_hasClass">
-                <xsl:with-param name="resource" select="$resource"/>
-            </xsl:call-template>
-            <sinopia:hasResourceId>
-                <xsl:value-of select="$rt_id"/>
-            </sinopia:hasResourceId>
-            <rdfs:label>
-                <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
-                <xsl:value-of select="translate($rt_id, ':', ' ')"/>
-            </rdfs:label>
-            <sinopia:hasAuthor>
-                <xsl:value-of select="uwsinopia:author"/>
-            </sinopia:hasAuthor>
-            <sinopia:hasDate>
-                <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
-            </sinopia:hasDate>
-            <!-- output resource attribute = suppressible if present -->
-            <!-- TO DO: should not be able to output suppressible RT if more than one prop has been marked for inclusion -->
-            <!-- [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
-            <xsl:if test="matches($suppressible, 'true|1')">
-                <sinopia:hasResourceAttribute
-                    rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
-            </xsl:if>
-            <!-- output optional resource classes if present -->
-            <xsl:if test="$optional_classes/node()">
-                <xsl:for-each select="$optional_classes/optional_class">
-                    <sinopia:hasOptionalClass rdf:resource="{.}"/>
-                </xsl:for-each>
-            </xsl:if>
-            <!-- [!] TO DO use of rda_iri_slug is RDA-Registry-specific, need other choices in future -->
-            <sinopia:hasPropertyTemplate rdf:nodeID="{
-                concat(bmrxml:rda_iri_slug($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri),
-                '_order')}"/>
-        </rdf:Description>
-    </xsl:template>
-
+    <!-- these choices = uwsinopia.xsd > resource_label_type enumerations -->
     <xsl:template name="rt_hasClass">
         <xsl:param name="resource"/>
-        <!-- these choices = uwsinopia.xsd > resource_label_type enumerations -->
         <xsl:choose>
             <xsl:when test="$resource = 'rdaWork'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
@@ -112,10 +57,72 @@
             <xsl:when test="$resource = 'provBundle'">
                 <sinopia:hasClass rdf:resource="http://www.w3.org/ns/prov#Bundle"/>
             </xsl:when>
-            <!-- to do update for additional resource types for description -->
             <!-- No sinopia:hasClass triple in RT may result in error and prevent loading? -->
             <xsl:otherwise/>
         </xsl:choose>
     </xsl:template>
-
+    
+    <!-- *****metadata for the RT is output from this template***** -->
+    <xsl:template name="rt_metadata">
+        <xsl:param name="resource"/>
+        <xsl:param name="suppressible"/>
+        <xsl:param name="optional_classes"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
+        <xsl:param name="rt_id"/>
+        <xsl:param name="sorted_properties"/>
+        <rdf:Description
+            rdf:about="{concat('https://api.development.sinopia.io/resource/', $rt_id)}">
+            <!-- to do output remark in RT description -->
+            <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+            <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
+            <xsl:call-template name="rt_hasClass">
+                <xsl:with-param name="resource" select="$resource"/>
+            </xsl:call-template>
+            <sinopia:hasResourceId>
+                <xsl:value-of select="$rt_id"/>
+            </sinopia:hasResourceId>
+            <rdfs:label>
+                <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
+                <xsl:value-of select="translate($rt_id, ':', ' ')"/>
+            </rdfs:label>
+            <sinopia:hasAuthor>
+                <xsl:value-of select="uwsinopia:author"/>
+            </sinopia:hasAuthor>
+            <sinopia:hasDate>
+                <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
+            </sinopia:hasDate>
+            <!-- output resource attribute = suppressible if present -->
+            <!-- TO DO: should *not* be able to output suppressible RT if more than one prop has been marked for inclusion -->
+            <!-- [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
+            <xsl:if test="matches($suppressible, 'true|1')">
+                <sinopia:hasResourceAttribute
+                    rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
+            </xsl:if>
+            <!-- output optional resource classes if present -->
+            <xsl:if test="$optional_classes/node()">
+                <xsl:for-each select="$optional_classes/optional_class">
+                    <sinopia:hasOptionalClass rdf:resource="{.}"/>
+                </xsl:for-each>
+            </xsl:if>
+            <!-- [!] xsl:when needed for each possible property base uri -->
+            <xsl:choose>
+                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/')">
+                    <sinopia:hasPropertyTemplate rdf:nodeID="{
+                        concat('rda_', translate(substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'Elements/'), '/', '_'), '_order')}"/>
+                </xsl:when>
+                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://purl.org/dc/terms/')">
+                    <sinopia:hasPropertyTemplate rdf:nodeID="{
+                        concat('dcterms_', substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://purl.org/dc/terms/'), '_order')}"/>
+                </xsl:when>
+                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://www.w3.org/ns/prov#')">
+                    <sinopia:hasPropertyTemplate rdf:nodeID="{
+                        concat('prov_', substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://www.w3.org/ns/prov#'), '_order')}"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>ERROR - PROP BASE URI NOT RECOGNIZED</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </rdf:Description>
+    </xsl:template>
 </xsl:stylesheet>
