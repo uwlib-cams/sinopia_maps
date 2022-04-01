@@ -39,7 +39,7 @@
             <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
             <xs:element name="prop_set" type="uwmaps:prop_set_label_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
-            <xs:element name="resource" type="uwmaps:resource_label_type"/>
+            <xs:element name="resource" type="resource_label_type"/>
             <!-- RE: suppressible: suppressible RTs must not contain any more than one PT! will produce error in sinopia -->
             <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <!-- may want to further constrain values for optional_class later... -->

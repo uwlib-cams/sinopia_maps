@@ -15,6 +15,24 @@
    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
               schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
+   <xs:simpleType name="resource_label_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="rdaWork"/>
+         <xs:enumeration value="rdaAgent"/>
+         <xs:enumeration value="rdaItem"/>
+         <xs:enumeration value="rdaPerson"/>
+         <xs:enumeration value="rdaCorporateBody"/>
+         <xs:enumeration value="rdaExpression"/>
+         <xs:enumeration value="rdaManifestation"/>
+         <xs:enumeration value="rdaFamily"/>
+         <xs:enumeration value="rdaPlace"/>
+         <xs:enumeration value="rdaTimespan"/>
+         <xs:enumeration value="rdaCollectiveAgent"/>
+         <xs:enumeration value="rdaNomen"/>
+         <xs:enumeration value="rdaEntity"/>
+         <xs:enumeration value="provBundle"/>
+      </xs:restriction>
+   </xs:simpleType>
    <xs:simpleType name="format_type">
       <xs:restriction base="xs:string">
          <xs:enumeration value="monograph"/>
