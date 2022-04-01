@@ -20,20 +20,17 @@
         <xsl:for-each
             select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
             <!-- vars -->
-            <!-- to do account for multiple prop_sets output to RT, see also $sorted_properties below -->
-            <xsl:variable name="prop_set" select="uwsinopia:prop_set"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
-            <!-- to do remove 'TEST' in rt_id to output for production -->
             <xsl:variable name="rt_id" select="
+                    (: TO DO REMOVE TEST FLAG FROM RT IDs FOR PRODUCTION :)
                     concat('TEST:WAU:',
                     format-date(current-date(), '[Y0001]-[M01]-[D01]'), ':',
                     $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
-                        (: [!] doc XPath is for using TEST prop_sets :)
-                        document(concat('../../map_storage/test_prop_set_', $prop_set, '.xml'))/
+                        collection('../../map_storage/?select=*.xml')/
                         uwmaps:prop_set/uwmaps:prop
                         [uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:resource = $resource]
@@ -44,8 +41,6 @@
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
-
-            <!-- to do change result-document path for production -->
             <!-- RT NAMING CONVENTIONS: colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
