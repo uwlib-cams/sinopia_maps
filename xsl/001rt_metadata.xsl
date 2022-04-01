@@ -15,7 +15,7 @@
         <xsl:param name="path_to_iri"/>
         <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
     </xsl:function>
-
+    
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
         <xsl:param name="resource"/>
@@ -68,7 +68,7 @@
 
     <xsl:template name="rt_hasClass">
         <xsl:param name="resource"/>
-        <!-- these choices == schema definition for xs:simpleType mapid_resource_attr -->
+        <!-- these choices = uwsinopia.xsd > resource_label_type enumerations -->
         <xsl:choose>
             <xsl:when test="$resource = 'rdaWork'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
@@ -109,8 +109,10 @@
             <xsl:when test="$resource = 'rdaEntity'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10013"/>
             </xsl:when>
+            <xsl:when test="$resource = 'provBundle'">
+                <sinopia:hasClass rdf:resource="http://www.w3.org/ns/prov#Bundle"/>
+            </xsl:when>
             <!-- to do update for additional resource types for description -->
-            <!-- (some kind of admin metadata resource, etc... -->
             <!-- No sinopia:hasClass triple in RT may result in error and prevent loading? -->
             <xsl:otherwise/>
         </xsl:choose>
