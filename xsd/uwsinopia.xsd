@@ -185,9 +185,15 @@
                <xs:element name="date_default" type="xs:boolean" maxOccurs="1"/>
                <xs:element name="userId_default" type="xs:boolean" maxOccurs="1"/>
             </xs:choice>
-            <xs:element name="default_literal" type="uwmaps:lang_string_type" maxOccurs="1"/>
-            <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="validation_datatype" type="validation_datatype_type" minOccurs="0" maxOccurs="1"/>
+            <xs:sequence>
+               <xs:element name="default_literal" type="uwmaps:lang_string_type" maxOccurs="1"/>
+               <xs:choice>
+                  <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
+                     maxOccurs="1"/>
+                  <xs:element name="validation_datatype" type="validation_datatype_type"
+                     minOccurs="0" maxOccurs="1"/>
+               </xs:choice>
+            </xs:sequence>
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
