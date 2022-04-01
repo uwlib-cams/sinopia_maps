@@ -73,7 +73,7 @@
       </xs:annotation>
       <xs:sequence><!-- use all to eliminate ordering requirement? -->
          <xs:element name="resource"
-                     type="uwmaps:resource_label_type"
+                     type="resource_label_type"
                      minOccurs="1"
                      maxOccurs="unbounded"/>
          <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
