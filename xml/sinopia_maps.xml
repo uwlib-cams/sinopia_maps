@@ -5,7 +5,6 @@
     <rts>
         <!-- ACK can't pull from multiple propSets with current sorted_properties setup -->
         <rt>
-            <prop_set>rdae_p20k</prop_set>
             <resource>rdaExpression</resource>
             <optional_class>https://schema.org/Thing</optional_class>
             <optional_class>http://rdaregistry.info/Elements/c/C10013</optional_class>
@@ -14,10 +13,8 @@
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
         <rt>
-            <prop_set>dcterms</prop_set>
-            <prop_set>prov</prop_set>
             <resource>provBundle</resource>
-            <format>n/a</format>
+            <format>na</format>
             <user>ries07</user>
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
