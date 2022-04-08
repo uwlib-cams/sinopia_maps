@@ -30,6 +30,7 @@
                     $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
+                        (: BEWARE local filepath in XPath [!] :)
                         collection('../../map_storage/?select=*.xml')/
                         uwmaps:prop_set/uwmaps:prop
                         [uwmaps:sinopia/uwsinopia:implementation_set
@@ -41,7 +42,7 @@
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
-            <!-- RT NAMING CONVENTIONS: colons for RT ID, underscores for RT filename, spaces for RT label -->
+            <!-- RT NAMING CONVENTIONS: colons in RT ID, underscores in RT filename, spaces in RT label -->
             <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">

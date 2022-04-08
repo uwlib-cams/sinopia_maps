@@ -105,24 +105,8 @@
                     <sinopia:hasOptionalClass rdf:resource="{.}"/>
                 </xsl:for-each>
             </xsl:if>
-            <!-- [!] xsl:when needed for each possible property base uri -->
-            <xsl:choose>
-                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://rdaregistry.info/Elements/')">
-                    <sinopia:hasPropertyTemplate rdf:nodeID="{
-                        concat('rda_', translate(substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'Elements/'), '/', '_'), '_order')}"/>
-                </xsl:when>
-                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://purl.org/dc/terms/')">
-                    <sinopia:hasPropertyTemplate rdf:nodeID="{
-                        concat('dcterms_', substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://purl.org/dc/terms/'), '_order')}"/>
-                </xsl:when>
-                <xsl:when test="starts-with($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://www.w3.org/ns/prov#')">
-                    <sinopia:hasPropertyTemplate rdf:nodeID="{
-                        concat('prov_', substring-after($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, 'http://www.w3.org/ns/prov#'), '_order')}"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:text>ERROR - PROP BASE URI NOT RECOGNIZED</xsl:text>
-                </xsl:otherwise>
-            </xsl:choose>
+            <sinopia:hasPropertyTemplate rdf:nodeID="{concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
+                translate('/.#', '') => substring-after('http:'), '_order')}"/>
         </rdf:Description>
     </xsl:template>
 </xsl:stylesheet>

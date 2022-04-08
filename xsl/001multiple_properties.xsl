@@ -84,7 +84,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- when - for other-ontology PTs (TO DO LATER) -->
+            <!-- when - for other-ontology PTs (TO DO LATER or never) -->
             <xsl:otherwise>
                 <xsl:text>ERROR - MULTIPLE-PROPERTY PTs NOT CONFIGURED FOR THIS SOURCE</xsl:text>
             </xsl:otherwise>
@@ -177,7 +177,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-- for other-ontology PTs (TO DO LATER) -->
+            <!-- for other-ontology PTs (TO DO LATER or never) -->
             <xsl:otherwise>
                 <xsl:text>>ERROR - MULTIPLE-PROPERTY PTs NOT CONFIGURED FOR THIS SOURCE</xsl:text>
             </xsl:otherwise>

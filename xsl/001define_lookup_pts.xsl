@@ -11,20 +11,16 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <!-- (there must be a better way to reuse a function than copying and renaming in each file??) -->
-    <xsl:function name="bmrxml:rda_iri_slug_define_lookup">
-        <xsl:param name="path_to_iri"/>
-        <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
-    </xsl:function>
-    
     <!-- output uri or lookup > lookup PT attributes -->
     <xsl:template name="define_lookup_pts">
         <xsl:param name="prop"/>
         <rdf:Description
-            rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_lookup($prop/uwmaps:prop_iri/@iri),
+            rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
+            translate('/.#', '') => substring-after('http:'),
             '_lookup_attributes')}">
             <!-- hard-code rdf:type for this node sinopia:LookupPropertyTemplate-->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+            <!-- TO DO BELOW -->
             <xsl:for-each select="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
                 uwsinopia:sinopia_prop_type_attributes/uwsinopia:lookup_attributes/uwsinopia:authorities/uwsinopia:authority_urn">

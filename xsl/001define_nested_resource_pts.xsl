@@ -11,17 +11,12 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <!-- (there must be a better way to reuse a function than copying and renaming in each file??) -->
-    <xsl:function name="bmrxml:rda_iri_slug_define_nested">
-        <xsl:param name="path_to_iri"/>
-        <xsl:value-of select="translate(substring-after($path_to_iri, 'Elements/'), '/', '_')"/>
-    </xsl:function>
-    
     <!-- output nested resource PT attributes -->
     <xsl:template name="define_nested_resource_pts">
         <xsl:param name="prop"/>
         <rdf:Description
-            rdf:nodeID="{concat(bmrxml:rda_iri_slug_define_nested($prop/uwmaps:prop_iri/@iri),
+            rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
+            translate('/.#', '') => substring-after('http:'),
             '_resource_attributes')}">
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
