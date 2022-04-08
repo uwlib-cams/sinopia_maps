@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-   xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-   targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
-   vc:minVersion="1.1">
+           xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+           elementFormDefault="qualified"
+           vc:minVersion="1.1">
 
    <!-- IMPORT/INCLUDE -->
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-      schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+              schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
-      schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+              schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
-      schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+              schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
    <xs:simpleType name="resource_label_type">
       <!-- enumerations = 001rt_metadata.xsl > template name="rt_hasClass" -->
@@ -57,8 +58,10 @@
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>
-         <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
-            maxOccurs="unbounded"/>
+         <xs:element name="implementation_set"
+                     type="implementation_set_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
    <!-- *************** implementation_set *************** -->
@@ -76,17 +79,39 @@
       </xs:annotation>
       <xs:sequence>
          <!-- use all to eliminate ordering requirement? -->
-         <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="resource"
+                     type="resource_label_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
          <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
-         <xs:element name="format" type="format_type" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="sinopia_prop_attributes" type="sinopia_prop_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
+         <xs:element name="format"
+                     type="format_type"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="user"
+                     type="user_type"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+         <xs:element name="multiple_prop"
+                     type="multiple_prop_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="form_order"
+                     type="form_order_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="remark"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
+         <xs:element name="sinopia_prop_attributes"
+                     type="sinopia_prop_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
       </xs:sequence>
-      <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
+      <xs:attribute name="localid_implementation_set"
+                    type="uwmaps:localid_attr"
+                    use="required"/>
    </xs:complexType>
    <xs:complexType name="multiple_prop_type">
       <xs:annotation>
@@ -102,9 +127,14 @@
       </xs:annotation>
       <xs:sequence>
          <xs:choice>
-            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="property" type="property_selection_type" minOccurs="1"
-               maxOccurs="unbounded"/>
+            <xs:element name="all_subprops"
+                        type="xs:boolean"
+                        minOccurs="1"
+                        maxOccurs="1"/>
+            <xs:element name="property"
+                        type="property_selection_type"
+                        minOccurs="1"
+                        maxOccurs="unbounded"/>
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
@@ -127,9 +157,14 @@
         @prop_selection = 'select_props' -->
    <xs:complexType name="prop_info_type">
       <xs:sequence>
-         <xs:element name="prop_option_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="prop_option_label" type="uwmaps:lang_string_type" minOccurs="1"
-            maxOccurs="1"/>
+         <xs:element name="prop_option_iri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="prop_option_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:simpleType name="form_order_type">
@@ -143,16 +178,35 @@
    <xs:complexType name="sinopia_prop_attributes_type">
       <xs:sequence>
          <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
-         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
-            default="0"/>
-         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="language_suppressed"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="required"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="repeatable"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
          <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
-         <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="sinopia_prop_type" type="sinopia_prop_type_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="sinopia_prop_type_attributes" type="sinopia_prop_type_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
+         <xs:element name="ordered"
+                     type="xs:boolean"
+                     minOccurs="0"
+                     maxOccurs="1"
+                     default="0"/>
+         <xs:element name="sinopia_prop_type"
+                     type="sinopia_prop_type_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="sinopia_prop_type_attributes"
+                     type="sinopia_prop_type_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:simpleType name="sinopia_prop_type_type">
@@ -167,13 +221,22 @@
    <xs:complexType name="sinopia_prop_type_attributes_type">
       <!-- to do / xsd wish list: allow one of following based on value of sinopia_prop_type_type above -->
       <xs:choice>
-         <xs:element name="literal_attributes" type="literal_attributes_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="uri_attributes" type="uri_attributes_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="lookup_attributes" type="lookup_attributes_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="nested_resource_attributes" type="nested_resource_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
+         <xs:element name="literal_attributes"
+                     type="literal_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="uri_attributes"
+                     type="uri_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="lookup_attributes"
+                     type="lookup_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="nested_resource_attributes"
+                     type="nested_resource_attributes_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
       </xs:choice>
    </xs:complexType>
    <!-- ********** literal_attributes ********** -->
@@ -188,10 +251,14 @@
             <xs:sequence>
                <xs:element name="default_literal" type="uwmaps:lang_string_type" maxOccurs="1"/>
                <xs:choice>
-                  <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
-                     maxOccurs="1"/>
-                  <xs:element name="validation_datatype" type="validation_datatype_type"
-                     minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="validation_regex"
+                              type="validation_regex_type"
+                              minOccurs="0"
+                              maxOccurs="1"/>
+                  <xs:element name="validation_datatype"
+                              type="validation_datatype_type"
+                              minOccurs="0"
+                              maxOccurs="1"/>
                </xs:choice>
             </xs:sequence>
          </xs:choice>
@@ -215,9 +282,14 @@
    <!-- ********** uri_attributes ********** -->
    <xs:complexType name="uri_attributes_type">
       <xs:sequence>
-         <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="default_uri_label" type="uwmaps:lang_string_type" minOccurs="0"
-            maxOccurs="1"/>
+         <xs:element name="default_uri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="default_uri_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <!-- default_uri: iri_type defined above -->
@@ -225,16 +297,26 @@
    <!-- ********** lookup_attributes ********** -->
    <xs:complexType name="lookup_attributes_type">
       <xs:sequence>
-         <xs:element name="authorities" type="authorities_type" minOccurs="1" maxOccurs="unbounded"/>
-         <xs:element name="lookup_default_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="lookup_default_iri_label" type="uwmaps:lang_string_type" minOccurs="0"
-            maxOccurs="1"/>
+         <xs:element name="authorities"
+                     type="authorities_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+         <xs:element name="lookup_default_iri"
+                     type="uwmaps:iri_type"
+                     minOccurs="1"
+                     maxOccurs="1"/>
+         <xs:element name="lookup_default_iri_label"
+                     type="uwmaps:lang_string_type"
+                     minOccurs="0"
+                     maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="authorities_type">
       <xs:sequence>
-         <xs:element name="authority_urn" type="authority_urn_type" minOccurs="1"
-            maxOccurs="unbounded"/>
+         <xs:element name="authority_urn"
+                     type="authority_urn_type"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
    <!-- https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json -->
@@ -247,7 +329,21 @@
          <xs:enumeration value="Sinopia BIBFRAME item resources"/>
          <xs:enumeration value="Sinopia BIBFRAME admin metadata resources"/>
          <xs:enumeration value="Sinopia templates"/>
+         <xs:enumeration value="Sinopia RDA monograph manifestation"/>
+         <xs:enumeration value="Sinopia RDA monograph expression"/>
+         <xs:enumeration value="Sinopia RDA monograph work"/>
          <xs:enumeration value="AGROVOC (QA)"/>
+         <xs:enumeration value="Bibbi authorities"/>
+         <xs:enumeration value="Bibbi authorities Topic"/>
+         <xs:enumeration value="Bibbi authorities Geographic"/>
+         <xs:enumeration value="Bibbi authorities Event Name"/>
+         <xs:enumeration value="Bibbi authorities Person"/>
+         <xs:enumeration value="Bibbi authorities Person-Subject"/>
+         <xs:enumeration value="Bibbi authorities Corporation"/>
+         <xs:enumeration value="Bibbi authorities Corporation-Subject"/>
+         <xs:enumeration value="Bibbi authorities Uniform Title"/>
+         <xs:enumeration value="Bibbi authorities Work"/>
+         <xs:enumeration value="Bibbi authorities Form"/>
          <xs:enumeration value="CERL (QA)"/>
          <xs:enumeration value="CERL person (QA)"/>
          <xs:enumeration value="CERL corporate_body (QA)"/>
@@ -302,6 +398,8 @@
          <xs:enumeration value="GETTY_ULAN (QA)"/>
          <xs:enumeration value="GETTY_ULAN person (QA)"/>
          <xs:enumeration value="GETTY_ULAN organization (QA)"/>
+         <xs:enumeration value="Homosaurus"/>
+         <xs:enumeration value="Humord"/>
          <xs:enumeration value="ISNI (QA)"/>
          <xs:enumeration value="Ligatus (QA)"/>
          <xs:enumeration value="LOC carriers [vocabularies] (QA)"/>
@@ -367,6 +465,7 @@
          <xs:enumeration value="MESH subjects (QA)"/>
          <xs:enumeration value="MESH publication types (QA)"/>
          <xs:enumeration value="NALT (QA)"/>
+         <xs:enumeration value="Norwegian thesaurus on Genre and Form"/>
          <xs:enumeration value="OCLCFAST (QA) - cache"/>
          <xs:enumeration value="OCLCFAST Topic (QA) - cache"/>
          <xs:enumeration value="OCLCFAST Event Name (QA) - cache"/>
