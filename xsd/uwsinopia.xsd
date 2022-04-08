@@ -40,7 +40,8 @@
          <xs:enumeration value="na"/>
          <!-- below are for testing, to do delete from schema later -->
          <xs:enumeration value="test_literal_props"/>
-         <xs:enumeration value="test_uri_or_lookup_props"/>
+         <xs:enumeration value="test_uri_props"/>
+         <xs:enumeration value="test_lookup_props"/>
          <xs:enumeration value="test_nested_resource_props"/>
          <xs:enumeration value="test_all_props"/>
       </xs:restriction>
