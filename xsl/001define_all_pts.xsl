@@ -46,7 +46,7 @@
             translate('/.#', '') => substring-after('http:'), '_define')}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- output multiple-property dropdown, or not -->
+            <!-- is it a multiple-prop PT? -->
             <xsl:choose>
                 <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
                     [uwsinopia:resource = $resource]

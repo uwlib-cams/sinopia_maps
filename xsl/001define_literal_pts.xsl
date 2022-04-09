@@ -6,8 +6,7 @@
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-    xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:reg="http://metadataregistry.org/uri/profile/regap/" 
     exclude-result-prefixes="xs"
     version="3.0">
     
