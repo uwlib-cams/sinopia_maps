@@ -13,6 +13,9 @@
     
     <!-- output uri or lookup > uri PT attributes -->
     <xsl:template name="define_uri_pts">
+        <xsl:param name="resource"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:param name="prop"/>
         <rdf:Description
             rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
@@ -21,25 +24,40 @@
             <!-- hard-code rdf:type for this node sinopia:UriPropertyTemplate-->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
             <!-- provide default uri -->
-            <sinopia:hasDefault rdf:resource="{
-                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-                uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}"
-            />
+            <sinopia:hasDefault rdf:resource="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
+                uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}"/>
         </rdf:Description>
         <!-- if label for default uri is provided in storage instance, output to RT -->
         <xsl:if test="
-            $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-            uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label">
-            <rdf:Description rdf:about="{
-                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-                uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}">
-                <rdfs:label xml:lang="{
-                    $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-                    uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label/@xml:lang}">
+            $prop/uwmaps:sinopia/uwsinopia:implementation_set
+            [uwsinopia:resource = $resource]
+            [uwsinopia:format = $format]
+            [uwsinopia:user = $user]
+            /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
+            uwsinopia:uri_attributes/uwsinopia:default_uri_label/text()">
+            <rdf:Description rdf:about="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
+                uwsinopia:uri_attributes/uwsinopia:default_uri/@iri}">
+                <rdfs:label xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
+                    uwsinopia:uri_attributes/uwsinopia:default_uri_label/@xml:lang}">
                     <xsl:value-of select="
-                        $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-                        uwsinopia:sinopia_prop_type_attributes/uwsinopia:uri_attributes/uwsinopia:default_uri_label"
-                    />
+                        $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:resource = $resource]
+                        [uwsinopia:format = $format]
+                        [uwsinopia:user = $user]
+                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
+                        uwsinopia:uri_attributes/uwsinopia:default_uri_label"/>
                 </rdfs:label>
             </rdf:Description>
         </xsl:if>

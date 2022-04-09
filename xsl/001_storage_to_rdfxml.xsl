@@ -7,7 +7,7 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:fn="http://www.w3.org/2005/xpath-functions" 
     exclude-result-prefixes="xs"
     version="3.0">
 
@@ -30,7 +30,7 @@
                     $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
-                        (: BEWARE local filepath in XPath [!] :)
+                        (: BEWARE local filepath to map_storage instances in XPath [!] :)
                         collection('../../map_storage/?select=*.xml')/
                         uwmaps:prop_set/uwmaps:prop
                         [uwmaps:sinopia/uwsinopia:implementation_set
@@ -38,7 +38,11 @@
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]]">
                     <xsl:sort select="
-                            uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:form_order"/>
+                            uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:form_order"/>
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
@@ -46,7 +50,6 @@
             <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
-                        <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="suppressible" select="uwsinopia:suppressible"/>
                         <xsl:with-param name="optional_classes">
                             <xsl:for-each select="uwsinopia:optional_class">
@@ -55,12 +58,16 @@
                                 </optional_class>
                             </xsl:for-each>
                         </xsl:with-param>
+                        <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
                     <xsl:call-template name="create_ordering">
+                        <xsl:with-param name="resource" select="$resource"/>
+                        <xsl:with-param name="format" select="$format"/>
+                        <xsl:with-param name="user" select="$user"/>
                         <xsl:with-param name="sorted_property" select="$sorted_properties"/>
                     </xsl:call-template>
                 </rdf:RDF>

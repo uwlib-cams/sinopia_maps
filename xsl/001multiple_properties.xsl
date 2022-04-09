@@ -7,7 +7,7 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:fn="http://www.w3.org/2005/xpath-functions" 
     exclude-result-prefixes="xs"
     version="3.0">
 
@@ -17,6 +17,9 @@
         select="document('https://github.com/uwlib-cams/map_storage/raw/main/xml/get_prop_sets.xml')"/>
 
     <xsl:template name="multiple_property_iris">
+        <xsl:param name="resource"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:param name="prop"/>
         <!-- determine whether the prop is RDA or some other -->
         <!-- then get either selected iris (each uwmaps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
@@ -26,23 +29,33 @@
                 <xsl:choose>
                     <!-- when the implementation set contains a list of props, put each in the PT -->
                     <xsl:when test="
-                            $prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                            uwsinopia:multiple_prop/uwsinopia:property/node()">
+                            $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:multiple_prop/uwsinopia:property/node()">
                         <!-- don't forget the iri for the 'main' property*! -->
                         <!-- *that is, the property in the prop_set where the implementation_set has been recorded -->
                         <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
                         <xsl:for-each select="
-                                $prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                                uwsinopia:multiple_prop/uwsinopia:property">
+                                $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                                [uwsinopia:resource = $resource]
+                                [uwsinopia:format = $format]
+                                [uwsinopia:user = $user]
+                                /uwsinopia:multiple_prop/uwsinopia:property">
                             <sinopia:hasPropertyUri rdf:resource="{@property_iri}"/>
                         </xsl:for-each>
                     </xsl:when>
                     <!-- when the implementation set says to to put all subprops in the PT, get these and put them in -->
                     <xsl:when test="
-                            matches($prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                            uwsinopia:multiple_prop/uwsinopia:all_subprops, 'true|1')">
+                            matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:multiple_prop/uwsinopia:all_subprops, 'true|1')">
                         <!-- don't forget iri for the 'main' property! -->
                         <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
+                        <!-- var for use in retrieving IRIs from RDA Registry docs -->
                         <xsl:variable name="rda_set_source">
                             <xsl:choose>
                                 <xsl:when
@@ -92,17 +105,23 @@
     </xsl:template>
 
     <xsl:template name="multiple_property_labels">
+        <xsl:param name="resource"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:param name="prop"/>
         <!-- determine whether the prop is RDA or some other -->
         <!-- then get either selected prop labels (each uwmaps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
         <xsl:choose>
-            <!-- for RDA PTs -->
+            <!-- for RDA PTs [!] only RDA PTs supported for multiple prop at this time! -->
             <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info')">
                 <xsl:choose>
                     <!-- when the implementation set contains a list of props with labels, put each in the PT -->
                     <xsl:when test="
-                            $prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                            uwsinopia:multiple_prop/uwsinopia:property/node()">
+                            $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:multiple_prop/uwsinopia:property/node()">
                         <!-- label for the 'main' property -->
                         <rdf:Description rdf:about="{$prop/uwmaps:prop_iri/@iri}">
                             <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
@@ -111,8 +130,11 @@
                         </rdf:Description>
                         <!-- labels for all listed properties -->
                         <xsl:for-each select="
-                                $prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                                uwsinopia:multiple_prop/uwsinopia:property">
+                                $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                                [uwsinopia:resource = $resource]
+                                [uwsinopia:format = $format]
+                                [uwsinopia:user = $user]
+                                /uwsinopia:multiple_prop/uwsinopia:property">
                             <rdf:Description rdf:about="{@property_iri}">
                                 <rdfs:label xml:lang="{@xml:lang}">
                                     <xsl:value-of select="."/>
@@ -122,8 +144,11 @@
                     </xsl:when>
                     <!-- when the implementation set says to to put all subprops in the PT, get labels for all of these and put them in -->
                     <xsl:when test="
-                            matches($prop/uwmaps:sinopia/uwsinopia:implementation_set/
-                            uwsinopia:multiple_prop/uwsinopia:all_subprops, 'true|1')">
+                            matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:multiple_prop/uwsinopia:all_subprops, 'true|1')">
                         <!-- label for the 'main' property -->
                         <rdf:Description rdf:about="{$prop/uwmaps:prop_iri/@iri}">
                             <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">

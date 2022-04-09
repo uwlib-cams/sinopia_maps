@@ -13,6 +13,9 @@
     
     <!-- output nested resource PT attributes -->
     <xsl:template name="define_nested_resource_pts">
+        <xsl:param name="resource"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:param name="prop"/>
         <rdf:Description
             rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 

@@ -7,7 +7,7 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:fn="http://www.w3.org/2005/xpath-functions" 
     exclude-result-prefixes="xs"
     version="3.0">
     
@@ -15,6 +15,9 @@
 
     <!-- *****create ordering bnodes***** -->
     <xsl:template name="create_ordering">
+        <xsl:param name="resource"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:param name="sorted_property"/>
         <!-- create the 'ordering' bnode for each PT -->
         <xsl:for-each select="$sorted_property">
@@ -35,6 +38,9 @@
                 </xsl:choose>
             </rdf:Description>
             <xsl:call-template name="define_all_pts">
+                <xsl:with-param name="resource" select="$resource"/>
+                <xsl:with-param name="format" select="$format"/>
+                <xsl:with-param name="user" select="$user"/>
                 <xsl:with-param name="prop" select="."/>
             </xsl:call-template>
         </xsl:for-each>
