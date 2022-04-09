@@ -6,7 +6,6 @@
 
     <xsl:variable name="authorities_xml" select="(document('../xml/authorityConfig.xml')/data)"/>
 
-
     <xsl:mode on-no-match="shallow-copy"/>
 
     <xsl:template match="xs:simpleType[@name = 'authority_urn_type']">
