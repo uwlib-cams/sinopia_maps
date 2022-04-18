@@ -7,7 +7,7 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" 
+    xmlns:fn="http://www.w3.org/2005/xpath-functions" 
     exclude-result-prefixes="xs"
     version="3.0">
     
@@ -24,8 +24,13 @@
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="
-                $prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:sinopia_prop_attributes/
-                uwsinopia:sinopia_prop_type_attributes/uwsinopia:nested_resource_attributes/uwsinopia:rt_id">
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:sinopia_prop_attributes/
+                uwsinopia:sinopia_prop_type_attributes/uwsinopia:nested_resource_attributes
+                /uwsinopia:prop_instance/uwsinopia:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>
