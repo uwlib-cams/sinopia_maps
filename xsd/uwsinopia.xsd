@@ -76,19 +76,28 @@
             property--can be used in multiple resource templates.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
+         <!-- all RTs must have ID components: resource / format / user -->
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
+         <!-- All implementation_sets must include form_order -->
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
+         <!-- optional: multiple_prop / remark_url / remark / language_suppressed / required / repeatable -->
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
-         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
-            default="0"/>
-         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
-         <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:choice>
+            <xs:sequence>
+               <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+            </xs:sequence>
+            <xs:sequence>
+               <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+               <xs:element name="repeatable" type="xs:boolean" maxOccurs="1" default="0"/>
+               <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+            </xs:sequence>
+         </xs:choice>
          <xs:choice>
             <xs:element name="literal_pt" type="literal_attributes_type"/>
             <xs:element name="uri_pt" type="uri_attributes_type"/>
