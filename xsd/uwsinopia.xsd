@@ -36,9 +36,8 @@
    <xs:simpleType name="format_type">
       <xs:restriction base="xs:string">
          <xs:enumeration value="monograph"/>
-         <!-- format does not apply to some RTs (Agent, Bundle, etc.) -->
          <xs:enumeration value="na"/>
-         <!-- below are for testing, to do delete from schema later -->
+         <!-- FOR TESTING, to do delete later -->
          <xs:enumeration value="test_literal_props"/>
          <xs:enumeration value="test_uri_props"/>
          <xs:enumeration value="test_lookup_props"/>
@@ -52,6 +51,7 @@
          <!-- enumerations here will need updating -->
          <xs:enumeration value="default"/>
          <xs:enumeration value="ries07"/>
+         <xs:enumeration value="tgis"/>
          <xs:enumeration value="mcm104"/>
       </xs:restriction>
    </xs:simpleType>
