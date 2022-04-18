@@ -11,11 +11,11 @@
     exclude-result-prefixes="xs"
     version="3.0">
     
-    <xsl:include href="001multiple_properties.xsl"/>
-    <xsl:include href="001define_literal_pts.xsl"/>
-    <xsl:include href="001define_uri_pts.xsl"/>
-    <xsl:include href="001define_lookup_pts.xsl"/>
-    <xsl:include href="001define_nested_resource_pts.xsl"/>
+    <xsl:include href="001_05_multiple_properties.xsl"/>
+    <xsl:include href="001_06_define_literal_pts.xsl"/>
+    <xsl:include href="001_07_define_uri_pts.xsl"/>
+    <xsl:include href="001_08_define_lookup_pts.xsl"/>
+    <xsl:include href="001_09_define_nested_resource_pts.xsl"/>
     
     <xsl:template name="pt_hasPropertyType">
         <xsl:param name="sinopia_prop_type"/>
