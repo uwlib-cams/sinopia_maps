@@ -78,9 +78,9 @@
       <xs:sequence>
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
-         <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="sinopia_prop_attributes" type="sinopia_prop_attributes_type"
             minOccurs="1" maxOccurs="1"/>
