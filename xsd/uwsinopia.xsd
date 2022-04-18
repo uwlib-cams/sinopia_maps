@@ -76,10 +76,8 @@
             property--can be used in multiple resource templates.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-         <!-- use all to eliminate ordering requirement? -->
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
-         <!-- Resource templates such as Agent, Timespan, etc. may not need format specs, so minOccurs should be 0? -->
-         <xs:element name="format" type="format_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
