@@ -88,16 +88,8 @@
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
          <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:choice>
-            <xs:sequence>
-               <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            </xs:sequence>
-            <xs:sequence>
-               <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-               <xs:element name="repeatable" type="xs:boolean" maxOccurs="1" default="0"/>
-               <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-            </xs:sequence>
-         </xs:choice>
+         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="repeatable" type="repeatable_type" maxOccurs="1" default="0"/>
          <xs:choice>
             <xs:element name="literal_pt" type="literal_attributes_type"/>
             <xs:element name="uri_pt" type="uri_attributes_type"/>
@@ -107,6 +99,13 @@
       </xs:sequence>
       <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
    </xs:complexType>
+   <!-- form_order_type -->
+   <xs:simpleType name="form_order_type">
+      <xs:restriction base="xs:decimal">
+         <xs:minInclusive value="0.0"/>
+         <xs:maxInclusive value="1.0"/>
+      </xs:restriction>
+   </xs:simpleType>
    <!-- multiple_prop element / subelements -->
    <xs:complexType name="multiple_prop_type">
       <xs:annotation>
@@ -143,21 +142,14 @@
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
-   <!-- TO DO / xsd question: how to allow prop_info element only if
-        @prop_selection = 'select_props' -->
-   <xs:complexType name="prop_info_type">
-      <xs:sequence>
-         <xs:element name="prop_option_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="prop_option_label" type="uwmaps:lang_string_type" minOccurs="1"
-            maxOccurs="1"/>
-      </xs:sequence>
+   <!-- repeatable_type -->
+   <xs:complexType name="repeatable_type">
+      <xs:simpleContent>
+         <xs:extension base="xs:string">
+            <xs:attribute name="ordered" type="xs:boolean"/>
+         </xs:extension>
+      </xs:simpleContent>
    </xs:complexType>
-   <xs:simpleType name="form_order_type">
-      <xs:restriction base="xs:decimal">
-         <xs:minInclusive value="0.0"/>
-         <xs:maxInclusive value="1.0"/>
-      </xs:restriction>
-   </xs:simpleType>
    <!-- remark: lang_string_type defined above -->
    <!-- ********** literal_pt element / subelements ********** -->
    <xs:complexType name="literal_attributes_type">
