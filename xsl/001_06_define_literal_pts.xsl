@@ -22,35 +22,58 @@
             '_literal_attributes')}">
             <!-- hard-code rdf:type for this node sinopia:LiteralPropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-            <!-- output default literal -->
-            <sinopia:hasDefault xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
-                [uwsinopia:resource = $resource]
-                [uwsinopia:format = $format]
-                [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:literal_attributes/uwsinopia:default_literal/@xml:lang}">
-                <xsl:value-of select="
+            <!-- user ID, date, or specified literal by default? -->
+            <xsl:choose>
+                <xsl:when test="
+                    matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:literal_pt/uwsinopia:date_default, 'true|1')">
+                    <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
+                </xsl:when>
+                <xsl:when test="
+                    matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:literal_pt/uwsinopia:userId_default, 'true|1')">
+                    <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
+                </xsl:when>
+                <xsl:when test="
                     $prop/uwmaps:sinopia/uwsinopia:implementation_set
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
-                    /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                    uwsinopia:literal_attributes/uwsinopia:default_literal"/>
-            </sinopia:hasDefault>
-            <!-- bring in validation datatype if one exists -->
+                    /uwsinopia:literal_pt/uwsinopia:default_literal">
+                    <!-- output default literal -->
+                    <sinopia:hasDefault xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:resource = $resource]
+                        [uwsinopia:format = $format]
+                        [uwsinopia:user = $user]
+                        /uwsinopia:literal_pt/uwsinopia:default_literal/@xml:lang}">
+                        <xsl:value-of select="
+                            $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]
+                            /uwsinopia:literal_pt/uwsinopia:default_literal"/>
+                    </sinopia:hasDefault>
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+            <!-- output validation datatype if one exists -->
             <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:literal_attributes/uwsinopia:validation_datatype/text()">
+                /uwsinopia:literal_pt/uwsinopia:validation_datatype/text()">
                 <xsl:choose>
                     <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                        uwsinopia:literal_attributes/uwsinopia:validation_datatype = 
+                        /uwsinopia:literal_pt/uwsinopia:validation_datatype = 
                         'Date and time with or without timezone'">
                         <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
                     </xsl:when>
@@ -58,8 +81,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                        uwsinopia:literal_attributes/uwsinopia:validation_datatype = 
+                        /uwsinopia:literal_pt/uwsinopia:validation_datatype = 
                         'Date and time with required timezone'">
                         <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
                     </xsl:when>
@@ -67,8 +89,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                        uwsinopia:literal_attributes/uwsinopia:validation_datatype = 
+                        /uwsinopia:literal_pt/uwsinopia:validation_datatype = 
                         'Extended Date/Time Format (EDTF)'">
                         <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
                     </xsl:when>
@@ -76,51 +97,27 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                        uwsinopia:literal_attributes/uwsinopia:validation_datatype = 
+                        /uwsinopia:literal_pt/uwsinopia:validation_datatype = 
                         'Integer'">
                         <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
                     </xsl:when>
-                    <xsl:otherwise>ERROR - UNKNOWN VALIDATION DATATYPE PROVIDED</xsl:otherwise>
+                    <xsl:otherwise>ERROR - UNKNOWN VALIDATION DATATYPE LABEL PROVIDED</xsl:otherwise>
                 </xsl:choose>
             </xsl:if>
-            <!-- output literal property attribute > validation regex if one exists see sinopia_maps #9 -->
+            <!-- output validation regex if one exists -->
             <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:literal_attributes/uwsinopia:validation_regex/text()">
+                /uwsinopia:literal_pt/uwsinopia:validation_regex/text()">
                 <sinopia:hasValidationRegex xml:lang="zxx">
                     <xsl:value-of select="$prop/uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                        uwsinopia:literal_attributes/uwsinopia:validation_regex"/>
+                        /uwsinopia:literal_pt/uwsinopia:validation_regex"/>
                 </sinopia:hasValidationRegex>
-            </xsl:if>
-            <!-- output literal property attribute > date default -->
-            <xsl:if test="matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
-                [uwsinopia:resource = $resource]
-                [uwsinopia:format = $format]
-                [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:literal_attributes/uwsinopia:date_default, 'true|1')">
-                <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
-                <!-- should I be outputting the rdfs:label triple as well? Will it be missed in the Sinopia UI? -->
-            </xsl:if>
-            <!-- output literal property attribute > user ID default -->
-            <xsl:if test="matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
-                [uwsinopia:resource = $resource]
-                [uwsinopia:format = $format]
-                [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:literal_attributes/uwsinopia:userId_default, 'true|1')">
-                <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
-                <!-- should I be outputting the rdfs:label triple as well? Will it be missed in the Sinopia UI? -->
             </xsl:if>
         </rdf:Description>
     </xsl:template>
-    
 </xsl:stylesheet>

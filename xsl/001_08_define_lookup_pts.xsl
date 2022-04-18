@@ -32,8 +32,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/uwsinopia:sinopia_prop_type_attributes/
-                uwsinopia:lookup_attributes/uwsinopia:authorities/uwsinopia:authority_urn">
+                /uwsinopia:lookup_pt/uwsinopia:authorities/uwsinopia:authority_urn">
                 <xsl:variable name="label" select="."/>
                 <sinopia:hasAuthority rdf:resource="{$authorities_xml/fn:array/fn:map[fn:string[@key = 'label'] = $label]/fn:string[@key = 'uri']}"/>
             </xsl:for-each>

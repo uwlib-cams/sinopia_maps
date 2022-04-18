@@ -13,8 +13,8 @@
 
     <xsl:output method="xml" indent="yes"/>
 
-    <xsl:include href="001rt_metadata.xsl"/>
-    <xsl:include href="001create_ordering.xsl"/>
+    <xsl:include href="001_02_rt_metadata.xsl"/>
+    <xsl:include href="001_03_create_ordering.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each

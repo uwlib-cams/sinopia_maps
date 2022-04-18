@@ -28,9 +28,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:sinopia_prop_attributes/
-                uwsinopia:sinopia_prop_type_attributes/uwsinopia:nested_resource_attributes
-                /uwsinopia:prop_instance/uwsinopia:rt_id">
+                /uwsinopia:nested_resource_pt/uwsinopia:prop_instance/uwsinopia:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>
