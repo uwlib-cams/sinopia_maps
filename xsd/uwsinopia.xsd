@@ -581,13 +581,14 @@
    <!-- ********** nested_resource_attributes ********** -->
    <xs:complexType name="nested_resource_attributes_type">
       <xs:sequence>
-         <xs:element name="prop_instance" type="prop_instance_type"/>
+         <xs:element name="prop_instance" type="prop_instance_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
 
    <xs:complexType name="prop_instance_type">
       <xs:sequence>
-         <xs:element name="rt_id" type="rt_id_type"/>
+         <!-- I'm not sure how assigning more than 1 nested RT ID affects repeatability of prop IRIs... -->
+         <xs:element name="rt_id" type="rt_id_type" minOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 
