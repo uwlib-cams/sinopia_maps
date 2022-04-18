@@ -82,11 +82,23 @@
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="sinopia_prop_attributes" type="sinopia_prop_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
+         <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
+         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
+            default="0"/>
+         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
+         <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:choice>
+            <xs:element name="literal_pt" type="literal_attributes_type"/>
+            <xs:element name="uri_pt" type="uri_attributes_type"/>
+            <xs:element name="lookup_pt" type="lookup_attributes_type"/>
+            <xs:element name="nested_resource_pt" type="nested_resource_attributes_type"/>
+         </xs:choice>
       </xs:sequence>
       <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
    </xs:complexType>
+   <!-- multiple_prop element / subelements -->
    <xs:complexType name="multiple_prop_type">
       <xs:annotation>
          <xs:documentation>The 'multiple_prop' element is used to create a drop-down property list
@@ -138,44 +150,7 @@
       </xs:restriction>
    </xs:simpleType>
    <!-- remark: lang_string_type defined above -->
-   <!-- ************ sinopia_prop_attributes ************ -->
-   <xs:complexType name="sinopia_prop_attributes_type">
-      <xs:sequence>
-         <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
-         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
-            default="0"/>
-         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <!-- to do: wishlist [?] ordered = true|1 should *only* be allowable if repeatable = true|1; is this possible? -->
-         <xs:element name="ordered" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="sinopia_prop_type" type="sinopia_prop_type_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="sinopia_prop_type_attributes" type="sinopia_prop_type_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
-      </xs:sequence>
-   </xs:complexType>
-   <xs:simpleType name="sinopia_prop_type_type">
-      <xs:restriction base="xs:string">
-         <!-- Double-check that I'm up on the current Sinopia property type choices! -->
-         <xs:enumeration value="literal"/>
-         <xs:enumeration value="uri_or_lookup"/>
-         <xs:enumeration value="nested_resource"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <!-- *********** sinopia_prop_type_attributes *********** -->
-   <xs:complexType name="sinopia_prop_type_attributes_type">
-      <!-- to do / xsd wish list: allow one of following based on value of sinopia_prop_type_type above -->
-      <xs:choice>
-         <xs:element name="literal_attributes" type="literal_attributes_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="uri_attributes" type="uri_attributes_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="lookup_attributes" type="lookup_attributes_type" minOccurs="1"
-            maxOccurs="1"/>
-         <xs:element name="nested_resource_attributes" type="nested_resource_attributes_type"
-            minOccurs="1" maxOccurs="1"/>
-      </xs:choice>
-   </xs:complexType>
-   <!-- ********** literal_attributes ********** -->
+   <!-- ********** literal_pt element / subelements ********** -->
    <xs:complexType name="literal_attributes_type">
       <xs:sequence>
          <xs:choice>
@@ -210,7 +185,7 @@
          <xs:enumeration value="Integer"/>
       </xs:restriction>
    </xs:simpleType>
-   <!-- ********** uri_attributes ********** -->
+   <!-- ********** uri_pt element / subelements ********** -->
    <xs:complexType name="uri_attributes_type">
       <xs:sequence>
          <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
@@ -220,7 +195,7 @@
    </xs:complexType>
    <!-- default_uri: iri_type defined above -->
    <!-- default_uri_label: lang_string_type defined above -->
-   <!-- ********** lookup_attributes ********** -->
+   <!-- ********** lookup_pt element / subelements ********** -->
    <xs:complexType name="lookup_attributes_type">
       <xs:sequence>
          <xs:element name="authorities" type="authorities_type" minOccurs="1" maxOccurs="unbounded"/>
@@ -576,7 +551,7 @@
    </xs:simpleType>
    <!-- lookup_default_iri: iri_type defined above -->
    <!-- lookup_default_iri_label: lang_string_type defined above -->
-   <!-- ********** nested_resource_attributes ********** -->
+   <!-- ********** nested_resource_pt element / subelements ********** -->
    <xs:complexType name="nested_resource_attributes_type">
       <xs:sequence>
          <xs:element name="prop_instance" type="prop_instance_type" minOccurs="1" maxOccurs="1"/>
@@ -602,6 +577,5 @@
          <xs:enumeration value="wau:test:20220108:rdacCorporateBody:rdacCorporateBody:ries07"/>
       </xs:restriction>
    </xs:simpleType>
-   <!-- *********** guidance *********** -->
-   <!-- this may end up going elsewhere, a storage instance at uwl_sinopia_maps... -->
+   <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
 </xs:schema>
