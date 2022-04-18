@@ -178,7 +178,6 @@
       </xs:choice>
    </xs:complexType>
    <!-- ********** literal_attributes ********** -->
-   <!-- TESTING HERE!!! -->
    <xs:complexType name="literal_attributes_type">
       <xs:sequence>
          <xs:choice>
@@ -582,9 +581,16 @@
    <!-- ********** nested_resource_attributes ********** -->
    <xs:complexType name="nested_resource_attributes_type">
       <xs:sequence>
+         <xs:element name="prop_instance" type="prop_instance_type"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="prop_instance_type">
+      <xs:sequence>
          <xs:element name="rt_id" type="rt_id_type"/>
       </xs:sequence>
    </xs:complexType>
+
    <xs:simpleType name="rt_id_type">
       <xs:restriction base="xs:string">
          <!-- UPDATING THESE ENUMERATIONS
@@ -592,7 +598,8 @@
             see sinopia_maps.xml -->
          <!-- could RT IDs be taken from sinopia_maps.xml? see map_storage issue #5 -->
          <!-- the following is for testing to do delete later-->
-         <xs:enumeration value="WAU:rdacAgent:rdacAgent:ries07"/>
+         <xs:enumeration value="wau:test:20220108:agent"/>
+         <xs:enumeration value="wau:test:20220108:rdacCorporateBody:rdacCorporateBody:ries07"/>
       </xs:restriction>
    </xs:simpleType>
    <!-- *********** guidance *********** -->
