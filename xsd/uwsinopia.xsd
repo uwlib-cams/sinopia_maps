@@ -162,21 +162,16 @@
             <xs:sequence>
                <xs:element name="default_literal" type="uwmaps:lang_string_type" maxOccurs="1"/>
                <xs:choice>
-                  <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
-                     maxOccurs="1"/>
                   <xs:element name="validation_datatype" type="validation_datatype_type"
                      minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
+                     maxOccurs="1"/>
                </xs:choice>
             </xs:sequence>
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
    <!-- literal_attributes: lang_string_type defined above -->
-   <xs:simpleType name="validation_regex_type">
-      <xs:restriction base="xs:string">
-         <!-- how to validate a regex as a regex!?!? -->
-      </xs:restriction>
-   </xs:simpleType>
    <xs:simpleType name="validation_datatype_type">
       <xs:restriction base="xs:string">
          <!-- can I have spaces in my enumerations?? -->
@@ -184,6 +179,11 @@
          <xs:enumeration value="Date and time with required timezone"/>
          <xs:enumeration value="Extended Date/Time Format (EDTF)"/>
          <xs:enumeration value="Integer"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="validation_regex_type">
+      <xs:restriction base="xs:string">
+         <!-- how to validate a regex as a regex!?!? -->
       </xs:restriction>
    </xs:simpleType>
    <!-- ********** uri_pt element / subelements ********** -->
