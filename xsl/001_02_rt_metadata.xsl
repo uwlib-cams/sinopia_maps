@@ -92,13 +92,14 @@
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
-            <!-- output resource attribute = suppressible if present -->
-            <!-- TO DO: should *not* be able to output suppressible RT if more than one prop has been marked for inclusion -->
-            <!-- [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
+            <!-- TO DO: output resource attribute = suppressible if present
+            should *not* be able to output suppressible RT if more than one prop has been marked for inclusion
+            [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT
             <xsl:if test="matches($suppressible, 'true|1')">
                 <sinopia:hasResourceAttribute
                     rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
             </xsl:if>
+            -->
             <!-- output optional resource classes if present -->
             <xsl:if test="$optional_classes/node()">
                 <xsl:for-each select="$optional_classes/optional_class">
