@@ -5,7 +5,6 @@
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
    targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
    vc:minVersion="1.1">
-
    <!-- IMPORT/INCLUDE -->
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
       schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
@@ -15,6 +14,9 @@
       schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
    <xs:simpleType name="resource_label_type">
+      <xs:annotation>
+         <xs:documentation/>
+      </xs:annotation>
       <!-- enumerations = 001rt_metadata.xsl > template name="rt_hasClass" -->
       <xs:restriction base="xs:string">
          <xs:enumeration value="rdaWork"/>
@@ -87,9 +89,11 @@
          <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
-         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
+            default="0"/>
          <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
-         <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1" default="0"/>
+         <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1"
+            default="0"/>
          <xs:choice>
             <xs:element name="literal_pt" type="literal_attributes_type"/>
             <xs:element name="uri_pt" type="uri_attributes_type"/>
@@ -558,7 +562,6 @@
          <xs:element name="prop_instance" type="prop_instance_type" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
-
    <xs:complexType name="prop_instance_type">
       <xs:sequence>
          <!-- TO DO I'm not sure how assigning more than 1 nested RT ID affects repeatability of prop IRIs... -->
@@ -566,16 +569,9 @@
          <xs:element name="rt_id" type="rt_id_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
-
    <xs:simpleType name="rt_id_type">
       <xs:restriction base="xs:string">
-         <!-- UPDATING THESE ENUMERATIONS
-            List of enumerations = list of all RT IDs
-            see sinopia_maps.xml -->
-         <!-- could RT IDs be taken from sinopia_maps.xml? see map_storage issue #5 -->
-         <!-- the following is for testing to do delete later-->
-         <xs:enumeration value="wau:test:20220108:agent"/>
-         <xs:enumeration value="wau:test:20220108:rdacCorporateBody:rdacCorporateBody:ries07"/>
+         <xs:enumeration value="WAU:rdaManifestation:test_nested_resource_props:ries07"/>
       </xs:restriction>
    </xs:simpleType>
    <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
