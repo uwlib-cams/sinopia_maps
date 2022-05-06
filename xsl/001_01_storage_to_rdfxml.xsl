@@ -24,10 +24,7 @@
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
             <xsl:variable name="rt_id" select="
-                    (: TO DO REMOVE TEST FLAG FROM RT IDs FOR PRODUCTION :)
-                    concat('TEST:WAU:',
-                    format-date(current-date(), '[Y0001]-[M01]-[D01]'), ':',
-                    $resource, ':', $format, ':', $user)"/>
+                    concat('WAU:', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                         (: BEWARE local filepath to map_storage instances in XPath [!] :)
