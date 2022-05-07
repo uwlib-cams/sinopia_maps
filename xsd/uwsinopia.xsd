@@ -571,7 +571,8 @@
    </xs:complexType>
    <xs:simpleType name="rt_id_type">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="WAU:rdaManifestation:test_nested_resource_props:ries07"/>
+         <xs:enumeration value="WAU:RT:rdaManifestation:test_nested_resource_props:ries07"/>
+         <xs:enumeration value="WAU:RT:rdaAgent:na:ries07"/>
       </xs:restriction>
    </xs:simpleType>
    <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
