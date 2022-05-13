@@ -36,6 +36,7 @@
     
     <xs:complexType name="rt_type">
         <xs:sequence>
+            <xs:element name="institution" type="institution_type"/>
             <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
             <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
             <xs:element name="resource" type="resource_label_type"/>
@@ -49,6 +50,15 @@
             <!-- may wish to add RT-level admin metadata here at some point, remark would go here in the sinopia_maps.xml instance -->
         </xs:sequence>
     </xs:complexType>
+    
+    <xs:simpleType name="institution_type">
+        <xs:annotation>
+            <xs:documentation/>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WAU"/>
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:simpleType name="author_type">
         <!-- tried some annotation, shows up in the editor on mouseover in the sinopia_maps.xml instance -->
