@@ -36,16 +36,14 @@
     
     <xs:complexType name="rt_type">
         <xs:sequence>
-            <xs:element name="institution" type="institution_type"/>
-            <!-- TO DO need some kind of ID which can be referenced by html_profile elements -->
-            <!-- [?] does it *really* make sense to prompt entry of anything other than an IRI for resource_type?? -->
-            <xs:element name="resource" type="resource_label_type"/>
+            <xs:element name="institution" type="institution_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="resource" type="resource_label_type" minOccurs="0" maxOccurs="1"/>
             <!-- RE: suppressible: suppressible RTs must not contain any more than one PT! will produce error in sinopia -->
             <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <!-- may want to further constrain values for optional_class later... -->
             <xs:element name="optional_class" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="format" type="format_type"/>
-            <xs:element name="user" type="user_type"/>
+            <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- may wish to add RT-level admin metadata here at some point, remark would go here in the sinopia_maps.xml instance -->
         </xs:sequence>
