@@ -20,11 +20,12 @@
         <xsl:for-each
             select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
             <!-- vars -->
+            <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
             <xsl:variable name="rt_id" select="
-                    concat('WAU:RT:', $resource, ':', $format, ':', $user)"/>
+                    concat($institution, ':UWSINOPIA:', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                         (: BEWARE local filepath to map_storage instances in XPath [!] :)
