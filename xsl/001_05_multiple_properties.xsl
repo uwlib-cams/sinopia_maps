@@ -34,7 +34,7 @@
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
-                            /uwsinopia:multiple_prop/uwsinopia:property/node()">
+                            /uwsinopia:multiple_prop/uwsinopia:property_selection/node()">
                         <!-- don't forget the iri for the 'main' property*! -->
                         <!-- *that is, the property in the prop_set where the implementation_set has been recorded -->
                         <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
@@ -43,7 +43,7 @@
                                 [uwsinopia:resource = $resource]
                                 [uwsinopia:format = $format]
                                 [uwsinopia:user = $user]
-                                /uwsinopia:multiple_prop/uwsinopia:property">
+                                /uwsinopia:multiple_prop/uwsinopia:property_selection">
                             <sinopia:hasPropertyUri rdf:resource="{@property_iri}"/>
                         </xsl:for-each>
                     </xsl:when>
@@ -96,7 +96,7 @@
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
-                            /uwsinopia:multiple_prop/uwsinopia:property/node()">
+                            /uwsinopia:multiple_prop/uwsinopia:property_selection/node()">
                         <!-- label for the 'main' property -->
                         <rdf:Description rdf:about="{$prop/uwmaps:prop_iri/@iri}">
                             <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
@@ -109,7 +109,7 @@
                                 [uwsinopia:resource = $resource]
                                 [uwsinopia:format = $format]
                                 [uwsinopia:user = $user]
-                                /uwsinopia:multiple_prop/uwsinopia:property">
+                                /uwsinopia:multiple_prop/uwsinopia:property_selection">
                             <rdf:Description rdf:about="{@property_iri}">
                                 <rdfs:label xml:lang="{@xml:lang}">
                                     <xsl:value-of select="."/>
