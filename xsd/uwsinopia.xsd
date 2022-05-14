@@ -134,10 +134,10 @@
    <!-- to do: constrain further, require text element content -->
    <xs:complexType name="property_selection_type">
       <xs:annotation>
-         <xs:documentation>Enter a property label as the text content of the 'property'
-            element.</xs:documentation>
          <xs:documentation>Enter the full, non-prefixed property IRI as the content of the
             'property_iri' attribute.</xs:documentation>
+         <xs:documentation>Enter a property label as the text content of the 'property'
+            element.</xs:documentation>
       </xs:annotation>
       <xs:simpleContent>
          <xs:extension base="xs:string">
@@ -559,13 +559,6 @@
    <!-- ********** nested_resource_pt element / subelements ********** -->
    <xs:complexType name="nested_resource_attributes_type">
       <xs:sequence>
-         <xs:element name="prop_instance" type="prop_instance_type" minOccurs="1" maxOccurs="1"/>
-      </xs:sequence>
-   </xs:complexType>
-   <xs:complexType name="prop_instance_type">
-      <xs:sequence>
-         <!-- TO DO I'm not sure how assigning more than 1 nested RT ID affects repeatability of prop IRIs... -->
-         <!-- [!] TO DO this schema does nothing to ensure that nested RT IDs in each prop_instance are different -->
          <xs:element name="rt_id" type="rt_id_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
