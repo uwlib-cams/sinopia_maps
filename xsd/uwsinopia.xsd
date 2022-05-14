@@ -15,7 +15,15 @@
    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
    <xs:simpleType name="resource_label_type">
       <xs:annotation>
-         <xs:documentation/>
+         <xs:documentation>Elements with this type are used in multiple places in both `prop_set`
+            instances and in brief resource-template descriptions in
+            `sinopia_maps.xml`.</xs:documentation>
+         <xs:documentation>When creating a new resource-template description in `sinopia_maps.xml`,
+            enter the resource which your template should be used to describe.</xs:documentation>
+         <xs:documentation>When entering an `implementation_set` &gt; `resource` value in `prop_set`
+            instances to output properties to your template, enter the same resource. </xs:documentation>
+         <xs:documentation>Note that resource value options are human-readable labels for a variety
+            of instances of rdfs:Class, not the IRIs for these.</xs:documentation>
       </xs:annotation>
       <!-- enumerations = 001rt_metadata.xsl > template name="rt_hasClass" -->
       <xs:restriction base="xs:string">
@@ -36,6 +44,11 @@
       </xs:restriction>
    </xs:simpleType>
    <xs:simpleType name="format_type">
+      <xs:annotation>
+         <xs:documentation>
+            <!-- to do -->
+         </xs:documentation>
+      </xs:annotation>
       <xs:restriction base="xs:string">
          <xs:enumeration value="monograph"/>
          <xs:enumeration value="na"/>
@@ -48,7 +61,11 @@
       </xs:restriction>
    </xs:simpleType>
    <xs:simpleType name="user_type">
-      <!-- = map_storage.xsd > user_type -->
+      <xs:annotation>
+         <xs:documentation>
+            <!-- to do -->
+         </xs:documentation>
+      </xs:annotation>
       <xs:restriction base="xs:string">
          <!-- enumerations here will need updating -->
          <xs:enumeration value="default"/>
@@ -90,8 +107,20 @@
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
          <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
-            default="0"/>
-         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
+            default="0">
+            <xs:annotation>
+               <xs:documentation>To indicate that any value provided for a given property template
+                  will not have linguistic content, enter the `language_suppressed` element with
+                  value 'true' or '1'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0">
+            <xs:annotation>
+               <xs:documentation>To indicate that a value must be provided for a given property
+                  template, enter the `required` element with value 'true' or
+                  '1'.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
          <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1"
             default="0"/>
          <xs:choice>
@@ -105,6 +134,16 @@
    </xs:complexType>
    <!-- form_order_type -->
    <xs:simpleType name="form_order_type">
+      <xs:annotation>
+         <xs:documentation>The form_order type value determines where this property template will
+            appear in the resource template.</xs:documentation>
+         <xs:documentation>Enter a decimal value between 0.0 and 1.0--any number of decimal places
+            may be used.</xs:documentation>
+         <xs:documentation>Property templates with *lower* form_order values will appear before
+            those with *higher* values.</xs:documentation>
+         <xs:documentation>For example, property templates (by form_order value) would appear in the
+            following order: 0.001, 0.01, 0.5.</xs:documentation>
+      </xs:annotation>
       <xs:restriction base="xs:decimal">
          <xs:minInclusive value="0.0"/>
          <xs:maxInclusive value="1.0"/>
@@ -113,19 +152,32 @@
    <!-- multiple_prop element / subelements -->
    <xs:complexType name="multiple_prop_type">
       <xs:annotation>
-         <xs:documentation>The 'multiple_prop' element is used to create a drop-down property list
-            in the property template.</xs:documentation>
-         <xs:documentation>When using the resource template, users can select from among the
-            drop-down properties for use.</xs:documentation>
+         <xs:documentation>Enter the 'multiple_prop' element to create a drop-down property
+            selection in the property template.</xs:documentation>
+         <xs:documentation>When using the resource template for description, this will allow users
+            to select from among the drop-down properties for use.</xs:documentation>
+         <xs:documentation>Do not enter any text content in this element; use *either* the
+            `all_subprops` subelement, or one or more `property_selection` subelements to specify
+            which properties should be made available in the property template.</xs:documentation>
          <xs:documentation>To include all subproperties of the 'prop' element property in the
-            drop-down, use the 'multiple_prop' &gt; 'all_subprops' child element, and enter the
-            value 'true'.</xs:documentation>
-         <xs:documentation>To select properties to include in the drop-down, use 'property' elements
-            (as many as needed) to provide property IRIs and labels.</xs:documentation>
+            drop-down, enter the `multiple_prop` &gt; 'all_subprops' child element with text content
+            'true'.</xs:documentation>
+         <xs:documentation>To select specific properties to include in the drop-down, use one or
+            more 'property_selection' elements (as many as needed) to provide property IRIs and
+            labels.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
          <xs:choice>
-            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1">
+               <xs:annotation>
+                  <xs:documentation>When the `multiple_prop` &gt; `all_subprops` element is entered,
+                     all properties existing the source document which are subproperties of the
+                     `prop` element's property will be output as options in the property
+                     template.</xs:documentation>
+                  <xs:documentation>[! NOTE 2022-05-13] Tthe `all_subprops` element may only be used
+                     in RDA Registry prop_set instances.</xs:documentation>
+               </xs:annotation>
+            </xs:element>
             <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
                maxOccurs="unbounded"/>
          </xs:choice>
@@ -148,9 +200,16 @@
    </xs:complexType>
    <!-- repeatable_type -->
    <xs:complexType name="repeatable_type">
+      <xs:annotation>
+         <xs:documentation>To indicate that a multiple values may be entered for a given property template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
+      </xs:annotation>
       <xs:simpleContent>
          <xs:extension base="xs:string">
-            <xs:attribute name="ordered" type="xs:boolean"/>
+            <xs:attribute name="ordered" type="xs:boolean">
+               <xs:annotation>
+                  <xs:documentation>To indicate that the order of multiple values for a repeatable property should be preserved, use the `ordered` attribute with value 'true' or '1'.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
