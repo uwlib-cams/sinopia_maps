@@ -126,7 +126,7 @@
       <xs:sequence>
          <xs:choice>
             <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-            <xs:element name="property" type="property_selection_type" minOccurs="1"
+            <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
                maxOccurs="unbounded"/>
          </xs:choice>
       </xs:sequence>
