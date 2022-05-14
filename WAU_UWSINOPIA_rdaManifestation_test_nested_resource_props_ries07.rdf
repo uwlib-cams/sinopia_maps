@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
+         xmlns:sinopia="http://sinopia.io/vocabulary/"
+         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+   <rdf:Description rdf:about="https://api.development.sinopia.io/resource/WAU:UWSINOPIA:rdaManifestation:test_nested_resource_props:ries07">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+      <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
+      <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
+      <sinopia:hasResourceId>WAU:UWSINOPIA:rdaManifestation:test_nested_resource_props:ries07</sinopia:hasResourceId>
+      <rdfs:label>WAU UWSINOPIA rdaManifestation test_nested_resource_props ries07</rdfs:label>
+      <sinopia:hasAuthor>Benjamin Riesenberg - ries07@uw.edu</sinopia:hasAuthor>
+      <sinopia:hasDate>2022-05-13</sinopia:hasDate>
+      <sinopia:hasPropertyTemplate rdf:nodeID="purlorgdctermstitle_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="purlorgdctermstitle_order">
+      <rdf:first rdf:nodeID="purlorgdctermstitle_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30069_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="purlorgdctermstitle_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <sinopia:hasPropertyUri rdf:resource="http://purl.org/dc/terms/title"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+      <rdfs:label xml:lang="en">Title</rdfs:label>
+      <sinopia:hasLiteralAttributes rdf:nodeID="purlorgdctermstitle_literal_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="purlorgdctermstitle_literal_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+      <sinopia:hasDefault xml:lang="en">Test resource title</sinopia:hasDefault>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30069_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30069_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30069_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30069"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
+      <rdfs:label xml:lang="en">has book designer agent</rdfs:label>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="rdaregistryinfoElementsmP30069_resource_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30069_resource_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
+      <sinopia:hasResourceTemplateId rdf:resource="wau:test:20220108:agent"/>
+      <sinopia:hasResourceTemplateId rdf:resource="wau:test:20220108:rdacCorporateBody:rdacCorporateBody:ries07"/>
+   </rdf:Description>
+</rdf:RDF>
