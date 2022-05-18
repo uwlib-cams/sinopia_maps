@@ -17,7 +17,11 @@
     <xs:include schemaLocation="uwsinopia.xsd"/>
     
     <!-- ***** sinopia_maps***** -->
-    <xs:element name="sinopia_maps" type="sinopia_maps_type"/>
+    <xs:element name="sinopia_maps" type="sinopia_maps_type">
+        <xs:annotation>
+            <xs:documentation>Root element of the `sinopia_maps.xml` instance</xs:documentation>
+        </xs:annotation>
+    </xs:element>
     
     <xs:complexType name="sinopia_maps_type">
         <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
@@ -29,12 +33,19 @@
     
     <!-- **** rts **** -->
     <xs:complexType name="rts_type">
+        <xs:annotation>
+            <xs:documentation>No text content; contains multiple `rt` elements</xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="rt" type="rt_type" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="rt_type">
+        <xs:annotation>
+            <xs:documentation>No text content; contains resource template information</xs:documentation>
+            <xs:documentation>Child element content from `institution`, `resource`, `format`, and `user` comprises resource template ID</xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="institution" type="institution_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="1"/>
