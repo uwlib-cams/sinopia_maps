@@ -41,7 +41,11 @@
             <!-- RE: suppressible: suppressible RTs must not contain any more than one PT! will produce error in sinopia -->
             <xs:element name="suppressible" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             <!-- may want to further constrain values for optional_class later... -->
-            <xs:element name="optional_class" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="optional_class" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>To provide catalogers the option to assign an optional class the the resource which the template will describe, enter a class IRI as text content for the `optional_class` element.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
