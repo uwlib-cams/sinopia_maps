@@ -223,7 +223,7 @@
                <xs:element name="userId_default" type="xs:boolean" maxOccurs="1"/>
             </xs:choice>
             <xs:sequence>
-               <xs:element name="default_literal" type="uwmaps:lang_string_type" maxOccurs="1"/>
+               <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
                <xs:choice>
                   <xs:element name="validation_datatype" type="validation_datatype_type"
                      minOccurs="0" maxOccurs="1"/>
@@ -252,7 +252,7 @@
    <!-- ********** uri_pt element / subelements ********** -->
    <xs:complexType name="uri_attributes_type">
       <xs:sequence>
-         <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="default_uri_label" type="uwmaps:lang_string_type" minOccurs="0"
             maxOccurs="1"/>
       </xs:sequence>
@@ -263,7 +263,7 @@
    <xs:complexType name="lookup_attributes_type">
       <xs:sequence>
          <xs:element name="authorities" type="authorities_type" minOccurs="1" maxOccurs="unbounded"/>
-         <xs:element name="lookup_default_iri" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="lookup_default_iri" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="lookup_default_iri_label" type="uwmaps:lang_string_type" minOccurs="0"
             maxOccurs="1"/>
       </xs:sequence>
