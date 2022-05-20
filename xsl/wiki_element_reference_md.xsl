@@ -5,7 +5,7 @@
     xmlns:bmrxml="https://briesenberg07.github.io/xml_stack/" exclude-result-prefixes="xs math"
     version="3.0">
 
-    <xsl:output method="text" indent="0"/>
+    <xsl:output method="html" indent="1"/>
 
     <!-- to do: get enumerations -->
 
@@ -72,57 +72,54 @@
                 document(concat('https://github.com/uwlib-cams/', $repo, '/raw/main/xsd/', $document, '.xsd'))
                 /xs:schema//xs:simpleType[@name = $type]"/>
         <!-- REQUIRED/OPTIONAL -->
-        <xsl:choose>
-            <xsl:when test="$selected_element/@minOccurs = '1'">
-                <xsl:text>
-- ***REQUIRED***
-                </xsl:text>
-            </xsl:when>
-            <xsl:when test="$selected_element/@minOccurs = '0'">
-                <xsl:text>
-- ***OPTIONAL***
-                </xsl:text>
-            </xsl:when>
-        </xsl:choose>
-        <!-- REPEATABLE / NOT REPEATABLE -->
-        <xsl:choose>
-            <xsl:when test="$selected_element/@maxOccurs = '1'">
-                <xsl:text>
-- ***NOT REPEATABLE***
-                </xsl:text>
-            </xsl:when>
-            <xsl:when test="$selected_element/@maxOccurs = 'unbounded'">
-                <xsl:text>
-- ***REPEATABLE***
-                </xsl:text>
-            </xsl:when>
-        </xsl:choose>
-        <!-- Get annotation/documentation elements -->
-        <xsl:choose>
-            <xsl:when test="$selected_type/xs:annotation/xs:documentation/text()">
-                <xsl:for-each select="$selected_type/xs:annotation/xs:documentation">
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:value-of select="normalize-space(concat('- ', .))"/>
-                </xsl:for-each>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>
-- *schema documentation under construction*
-                </xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
-        <!-- get enumeration elements -->
-        <xsl:choose>
-            <xsl:when test="$selected_type/xs:restriction/xs:enumeration">
-                <xsl:text>
-- **ENUMERATIONS**
-                </xsl:text>
-                <xsl:for-each select="$selected_type/xs:restriction/xs:enumeration">
-                    <xsl:value-of select="normalize-space(concat('&#009;- ', @value))"/>
-                </xsl:for-each>
-            </xsl:when>
-            <xsl:otherwise/>
-        </xsl:choose>
+        <html>
+        <ul>
+            <xsl:choose>
+                <xsl:when test="$selected_element/@minOccurs = '1'">
+                    <li>REQUIRED</li>
+                </xsl:when>
+                <xsl:when test="$selected_element/@minOccurs = '0'">
+                    <li>OPTIONAL</li>
+                </xsl:when>
+            </xsl:choose>
+            <!-- REPEATABLE / NOT REPEATABLE -->
+            <xsl:choose>
+                <xsl:when test="$selected_element/@maxOccurs = '1'">
+                    <li>NOT REPEATABLE</li>
+                </xsl:when>
+                <xsl:when test="$selected_element/@maxOccurs = 'unbounded'">
+                    <li>REPEATABLE</li>
+                </xsl:when>
+            </xsl:choose>
+            <!-- Get annotation/documentation elements -->
+            <xsl:choose>
+                <xsl:when test="$selected_type/xs:annotation/xs:documentation/text()">
+                    <xsl:for-each select="$selected_type/xs:annotation/xs:documentation">
+                        <li>
+                            <xsl:value-of select="."/>
+                        </li>
+                    </xsl:for-each>
+                </xsl:when>
+                <xsl:otherwise>
+                    <li>schema documentation under construction</li>
+                </xsl:otherwise>
+            </xsl:choose>
+            <!-- get enumeration elements -->
+            <xsl:choose>
+                <xsl:when test="$selected_type/xs:restriction/xs:enumeration">
+                    <li>ENUMERATIONS:</li>
+                    <ul>
+                        <xsl:for-each select="$selected_type/xs:restriction/xs:enumeration">
+                            <li>
+                                <xsl:value-of select="@value"/>
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:when>
+                <xsl:otherwise/>
+            </xsl:choose>
+        </ul>
+        </html>
     </xsl:function>
 
     <!-- xs:complexTypes -->
@@ -139,62 +136,7 @@
         <!-- [!] NOTE filepath to output [!] -->
         <xsl:result-document href="../../sinopia_maps.wiki/element_reference.md">
             <xsl:text>
-# ELEMENT REFERENCE
-DRAFT documentation - *please provide documentation feedback [here](https://github.com/uwlib-cams/sinopia_maps/issues/new?assignees=briesenberg07&amp;labels=documentation&amp;template=documentation.md&amp;title=documentation+work+needed)*
 
-## OVERVIEW: SINOPIA_MAPS STRUCTURE
-- [sinopia_maps](#sinopia_maps)
-    - [rts](#rts)
-        - [rt](#rt)
-            - [institution](#institution)
-            - [resource](#resource)
-            - [suppressible](#suppressible)
-            - [optional_class](#optional_class)
-            - [format](#format)
-            - [user](#user)
-            - [author](#author)
-
-## OVERVIEW: PROP_SET STRUCTURE
-- [prop_set](#prop_set)
-    - [prop_set_label](#prop_set_label)
-    - [prop](#prop) / [\@localid_prop](#localid_prop)
-        - [prop_iri](#prop_iri) / [\@iri](#iri)
-        - [prop_label](#prop_label)
-        - [prop_domain](#prop_domain) / [\@iri](#iri)
-        - [prop_domain_includes](#prop_domain_includes) / [\@iri](#iri)
-        - [prop_range](#prop_range) / [\@iri](#iri)
-        - [prop_range_includes](#prop_range_includes) / [\@iri](#iri)
-        - [prop_related_url](#prop_related_url) / [\@iri](#iri)
-        - [sinopia](#sinopia)
-            - [implementation_set](#implementation_set) / [\@localid_implementation_set](#localid_implementation_set)
-                - [resource](#resource)
-                - [format](#format)
-                - [user](#user)
-                - [form_order](#form_order)
-                - [multiple_prop](#multiple_prop)
-                    - [all_subprops](#all_subprops)
-                    - [property_selection](#property_selection)
-                - [remark_url](#remark_url)
-                - [remark](#remark) / [\@xml:lang](#xmllang)
-                - [language_suppressed](#language_suppressed)
-                - [required](#required)
-                - [repeatable](#repeatable)
-                - [literal_pt](#literal_pt)
-                    - [date_default](#date_default)
-                    - [userId_default](#userId_default)
-                    - [default_literal](#default_literal)
-                    - [validation_datatype](#validation_datatype)
-                    - [validation_regex](#validation_regex)
-                - [uri_pt](#uri_pt)
-                    - [default_uri](#default_uri) / [\@iri](#iri)
-                    - [default_uri_label](#default_uri_label) / [\@xml:lang](#xmllang)
-                - [lookup_pt](#lookup_pt)
-                    - [authorities](#authorities)
-                        - [authority_urn](#authority_urn)
-                    - [lookup_default_iri](#lookup_default_iri) / [\@iri](#iri)
-                    - [lookup_default_iri_label](#lookup_default_iri_label) / [\@xml:lang](#xmllang)
-                - [nested_resource_pt](#nested_resource_pt)
-                    - [rt_id](#rt_id)
             </xsl:text>
             <xsl:text>
 ## ELEMENT DETAILS - SINOPIA_MAPS
@@ -209,7 +151,8 @@ DRAFT documentation - *please provide documentation feedback [here](https://gith
 
             <xsl:text>
 ### institution</xsl:text>
-            <xsl:value-of select="bmrxml:simpleType('sinopia_maps', 'sinopia_maps', 'institution', 'institution_type')"/>
+            <xsl:value-of
+                select="bmrxml:simpleType('sinopia_maps', 'sinopia_maps', 'institution', 'institution_type')"/>
             <xsl:text>
 ### resource</xsl:text>
 
