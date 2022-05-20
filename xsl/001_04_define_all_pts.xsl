@@ -38,6 +38,7 @@
 
     <!-- ****create defining bnode for all property types**** -->
     <xsl:template name="define_all_pts">
+        <!-- add institution -->
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -46,15 +47,17 @@
             translate('/.#', '') => substring-after('http:'), '_define')}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- is it a multiple-prop PT? -->
+            <!-- **output multiple-prop IRIs if applicable** -->
             <xsl:choose>
                 <xsl:when test="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:multiple_prop/node()">
                     <xsl:call-template name="multiple_property_iris">
+                        <!-- add institution -->
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
@@ -68,6 +71,7 @@
             <xsl:call-template name="pt_hasPropertyType">
                 <xsl:with-param name="implementation_set" select="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]"/>
@@ -79,6 +83,7 @@
             <!-- languageSuppressed -->
             <xsl:if test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -90,6 +95,7 @@
             <!-- required -->
             <xsl:if test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -100,6 +106,7 @@
             <!-- repeatable -->
             <xsl:if test="
                     $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -110,6 +117,7 @@
             <!-- ordered -->
             <xsl:if test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -122,6 +130,7 @@
             <xsl:choose>
                 <xsl:when test="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -133,6 +142,7 @@
                 <!-- *** uri PTs *** -->
                 <xsl:when test="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -143,6 +153,7 @@
                 </xsl:when>
                 <xsl:when test="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -154,6 +165,7 @@
                 <!-- *** nested-resource PTs *** -->
                 <xsl:when test="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -172,11 +184,13 @@
             <!-- see stylesheet define_literal_pts -->
             <xsl:when test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:literal_pt/node()">
                 <xsl:call-template name="define_literal_pts">
+                    <!-- add institution -->
                     <xsl:with-param name="resource" select="$resource"/>
                     <xsl:with-param name="format" select="$format"/>
                     <xsl:with-param name="user" select="$user"/>
@@ -187,11 +201,13 @@
             <!-- see stylesheet define_uri_pts -->
             <xsl:when test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:uri_pt/node()">
                 <xsl:call-template name="define_uri_pts">
+                    <!-- add institution -->
                     <xsl:with-param name="resource" select="$resource"/>
                     <xsl:with-param name="format" select="$format"/>
                     <xsl:with-param name="user" select="$user"/>
@@ -202,11 +218,13 @@
             <!-- see stylesheet define_lookup_pts -->
             <xsl:when test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:lookup_pt/node()">
                 <xsl:call-template name="define_lookup_pts">
+                    <!-- add institution -->
                     <xsl:with-param name="resource" select="$resource"/>
                     <xsl:with-param name="format" select="$format"/>
                     <xsl:with-param name="user" select="$user"/>
@@ -217,11 +235,13 @@
             <!-- see stylesheet define_nested_resource_pts -->
             <xsl:when test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:nested_resource_pt/node()">
                 <xsl:call-template name="define_nested_resource_pts">
+                    <!-- add institution -->
                     <xsl:with-param name="resource" select="$resource"/>
                     <xsl:with-param name="format" select="$format"/>
                     <xsl:with-param name="user" select="$user"/>
@@ -230,14 +250,16 @@
             </xsl:when>
             <xsl:otherwise/>
         </xsl:choose>
-        <!-- output multiple-property labels if a multiple-property PT -->
+        <!-- **output multiple-prop labels if applicable** -->
         <xsl:if test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:multiple_prop/node()">
             <xsl:call-template name="multiple_property_labels">
+                <!-- add institution -->
                 <xsl:with-param name="resource" select="$resource"/>
                 <xsl:with-param name="format" select="$format"/>
                 <xsl:with-param name="user" select="$user"/>

@@ -16,6 +16,7 @@
     
     <!-- output uri or lookup > lookup PT attributes -->
     <xsl:template name="define_lookup_pts">
+        <!-- add institution -->
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -36,6 +37,7 @@
                 <xsl:variable name="label" select="."/>
                 <sinopia:hasAuthority rdf:resource="{$authorities_xml/fn:array/fn:map[fn:string[@key = 'label'] = $label]/fn:string[@key = 'uri']}"/>
             </xsl:for-each>
+            <!-- TO DO: output default iri for lookup PTs if applicable -->
         </rdf:Description>
         <!-- map_storage doesn't allow for assigning labels to authority URNs, so no URN label output -->
     </xsl:template>

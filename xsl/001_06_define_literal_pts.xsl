@@ -12,6 +12,7 @@
     
     <!-- output literal PT attributes -->
     <xsl:template name="define_literal_pts">
+        <!-- add institution -->
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -26,6 +27,7 @@
             <xsl:choose>
                 <xsl:when test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -34,6 +36,7 @@
                 </xsl:when>
                 <xsl:when test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -42,18 +45,21 @@
                 </xsl:when>
                 <xsl:when test="
                     $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    (: add institution :)
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
                     /uwsinopia:literal_pt/uwsinopia:default_literal">
                     <!-- output default literal -->
                     <sinopia:hasDefault xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:literal_pt/uwsinopia:default_literal/@xml:lang}">
                         <xsl:value-of select="
                             $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            (: add institution :)
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
@@ -64,12 +70,14 @@
             </xsl:choose>
             <!-- output validation datatype if one exists -->
             <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:literal_pt/uwsinopia:validation_datatype/text()">
                 <xsl:choose>
                     <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -78,6 +86,7 @@
                         <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
                     </xsl:when>
                     <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -86,6 +95,7 @@
                         <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
                     </xsl:when>
                     <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -94,6 +104,7 @@
                         <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
                     </xsl:when>
                     <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
@@ -106,12 +117,14 @@
             </xsl:if>
             <!-- output validation regex if one exists -->
             <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                (: add institution :)
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:literal_pt/uwsinopia:validation_regex/text()">
                 <sinopia:hasValidationRegex xml:lang="zxx">
                     <xsl:value-of select="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        (: add institution :)
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
