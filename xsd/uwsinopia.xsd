@@ -12,6 +12,7 @@
       schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
       schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+   <xs:include schemaLocation="sinopia_maps.xsd"/>
    <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
    <xs:simpleType name="resource_label_type">
       <xs:annotation>
@@ -96,6 +97,7 @@
       </xs:annotation>
       <xs:sequence>
          <!-- all RTs must have ID components: resource / format / user -->
+         <xs:element name="institution" type="institution_type"/>
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
