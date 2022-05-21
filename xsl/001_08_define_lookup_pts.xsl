@@ -38,8 +38,49 @@
                 <xsl:variable name="label" select="."/>
                 <sinopia:hasAuthority rdf:resource="{$authorities_xml/fn:array/fn:map[fn:string[@key = 'label'] = $label]/fn:string[@key = 'uri']}"/>
             </xsl:for-each>
-            <!-- TO DO: output default iri for lookup PTs if applicable -->
+            <!-- output default IRI value if applicable -->
+            <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri/@iri">
+                <sinopia:hasDefault rdf:resource="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri/@iri}"/>
+            </xsl:if>
         </rdf:Description>
+        <!-- output label for default IRI value if applicable -->
+        <xsl:if test="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+            [uwsinopia:institution = $institution]
+            [uwsinopia:resource = $resource]
+            [uwsinopia:format = $format]
+            [uwsinopia:user = $user]
+            /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label">
+            <rdf:Description rdf:about="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri/@iri}">
+                <rdfs:label xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label/@xml:lang}">
+                    <xsl:value-of select="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:institution = $institution]
+                        [uwsinopia:resource = $resource]
+                        [uwsinopia:format = $format]
+                        [uwsinopia:user = $user]
+                        /uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label"/>
+                </rdfs:label>
+            </rdf:Description>
+        </xsl:if>
         <!-- map_storage doesn't allow for assigning labels to authority URNs, so no URN label output -->
     </xsl:template>
     
