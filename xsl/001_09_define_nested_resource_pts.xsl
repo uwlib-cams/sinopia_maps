@@ -13,6 +13,7 @@
     
     <!-- output nested resource PT attributes -->
     <xsl:template name="define_nested_resource_pts">
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -25,6 +26,7 @@
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]

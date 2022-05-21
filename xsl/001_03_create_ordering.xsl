@@ -15,7 +15,7 @@
 
     <!-- *****create ordering bnodes***** -->
     <xsl:template name="create_ordering">
-        <!-- add institution -->
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -39,7 +39,7 @@
                 </xsl:choose>
             </rdf:Description>
             <xsl:call-template name="define_all_pts">
-                <!-- add institution -->
+                <xsl:with-param name="institution" select="$institution"/>
                 <xsl:with-param name="resource" select="$resource"/>
                 <xsl:with-param name="format" select="$format"/>
                 <xsl:with-param name="user" select="$user"/>

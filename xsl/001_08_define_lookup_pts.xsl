@@ -16,7 +16,7 @@
     
     <!-- output uri or lookup > lookup PT attributes -->
     <xsl:template name="define_lookup_pts">
-        <!-- add institution -->
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -30,6 +30,7 @@
             <!-- TO DO BELOW -->
             <xsl:for-each select="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]

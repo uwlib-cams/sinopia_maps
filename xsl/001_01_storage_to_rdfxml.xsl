@@ -21,6 +21,7 @@
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
+            <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:variable name="rt_id" select="
                 concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
@@ -29,12 +30,13 @@
                         collection('../../map_storage/?select=*.xml')/
                         uwmaps:prop_set/uwmaps:prop
                         [uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:institution = $institution]
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]]">
                     <xsl:sort select="
                             uwmaps:sinopia/uwsinopia:implementation_set
-                            (: add institution :)
+                            [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
@@ -42,6 +44,7 @@
                     <xsl:copy-of select="."/>
                 </xsl:for-each>
             </xsl:variable>
+            <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
@@ -53,7 +56,7 @@
                                 </optional_class>
                             </xsl:for-each>
                         </xsl:with-param>
-                        <!-- add institution -->
+                        <xsl:with-param name="institution" select="$institution"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
@@ -61,7 +64,7 @@
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
                     <xsl:call-template name="create_ordering">
-                        <!-- add institution -->
+                        <xsl:with-param name="institution" select="$institution"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>

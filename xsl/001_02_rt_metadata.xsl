@@ -64,6 +64,7 @@
     
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="suppressible"/>
         <xsl:param name="optional_classes"/>
@@ -93,13 +94,8 @@
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>
             <!-- TO DO: output resource attribute = suppressible if present
-            should *not* be able to output suppressible RT if more than one prop has been marked for inclusion
-            [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT
-            <xsl:if test="matches($suppressible, 'true|1')">
-                <sinopia:hasResourceAttribute
-                    rdf:resource="http://sinopia.io/vocabulary/resourceAttribute/suppressible"/>
-            </xsl:if>
-            -->
+                should *not* be able to output suppressible RT if more than one prop has been marked for inclusion
+                [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
             <!-- output optional resource classes if present -->
             <xsl:if test="$optional_classes/node()">
                 <xsl:for-each select="$optional_classes/optional_class">

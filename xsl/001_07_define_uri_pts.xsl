@@ -13,6 +13,7 @@
     
     <!-- output uri or lookup > uri PT attributes -->
     <xsl:template name="define_uri_pts">
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -26,13 +27,13 @@
             <!-- provide default uri if applicable -->
             <xsl:if test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                (: add institution :)
+                [uwsinopia:institution = $institution]
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:uri_pt/uwsinopia:default_uri/@iri">
                 <sinopia:hasDefault rdf:resource="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
-                    (: add institution :)
+                    [uwsinopia:institution = $institution]
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
@@ -42,26 +43,26 @@
         <!-- if label for default uri is provided in storage instance, output to RT -->
         <xsl:if test="
             $prop/uwmaps:sinopia/uwsinopia:implementation_set
-            (: add institution :)
+            [uwsinopia:institution = $institution]
             [uwsinopia:resource = $resource]
             [uwsinopia:format = $format]
             [uwsinopia:user = $user]
             /uwsinopia:uri_pt/uwsinopia:default_uri_label/text()">
             <rdf:Description rdf:about="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
-                (: add institution :)
+                [uwsinopia:institution = $institution]
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:uri_pt/uwsinopia:default_uri/@iri}">
                 <rdfs:label xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
-                    (: add institution :)
+                    [uwsinopia:institution = $institution]
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
                     /uwsinopia:uri_pt/uwsinopia:default_uri_label/@xml:lang}">
                     <xsl:value-of select="
                         $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                        (: add institution :)
+                        [uwsinopia:institution = $institution]
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]

@@ -15,7 +15,7 @@
         select="document('https://github.com/uwlib-cams/map_storage/raw/main/xml/get_prop_sets.xml')"/>
 
     <xsl:template name="multiple_property_iris">
-        <!-- add institution -->
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -32,7 +32,7 @@
                     <!-- when the implementation set contains a list of props, put each in the PT -->
                     <xsl:when test="
                             $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                            (: add institution :)
+                            [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
@@ -42,7 +42,7 @@
                         <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
                         <xsl:for-each select="
                                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                                (: add institution :)
+                                [uwsinopia:institution = $institution]
                                 [uwsinopia:resource = $resource]
                                 [uwsinopia:format = $format]
                                 [uwsinopia:user = $user]
@@ -54,7 +54,7 @@
                     <!-- [!] all_subprops feature only available for RDA Registry sources -->
                     <xsl:when test="
                             matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
-                            (: add institution :)
+                            [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
@@ -83,7 +83,7 @@
     </xsl:template>
 
     <xsl:template name="multiple_property_labels">
-        <!-- add institution -->
+        <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
@@ -100,7 +100,7 @@
                     <!-- when the implementation set contains a list of props with labels, put each in the PT -->
                     <xsl:when test="
                             $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                            (: add institution :)
+                            [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
@@ -114,7 +114,7 @@
                         <!-- labels for all listed properties -->
                         <xsl:for-each select="
                                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                                (: add institution :)
+                                [uwsinopia:institution = $institution]
                                 [uwsinopia:resource = $resource]
                                 [uwsinopia:format = $format]
                                 [uwsinopia:user = $user]
@@ -129,7 +129,7 @@
                     <!-- when the implementation set says to to put all subprops in the PT, get labels for all of these and put them in -->
                     <xsl:when test="
                             matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
-                            (: add institution :)
+                            [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
