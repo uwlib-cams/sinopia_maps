@@ -22,7 +22,7 @@
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
             <xsl:variable name="rt_id" select="
-                    concat($institution, ':UWSINOPIA:', $resource, ':', $format, ':', $user)"/>
+                concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                         (: [!] BEWARE local filepath to map_storage instances in XPath [!] :)
@@ -34,6 +34,7 @@
                         [uwsinopia:user = $user]]">
                     <xsl:sort select="
                             uwmaps:sinopia/uwsinopia:implementation_set
+                            (: add institution :)
                             [uwsinopia:resource = $resource]
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
