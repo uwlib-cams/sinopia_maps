@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
-
+        <!--
         <rt>
             <institution>WAU</institution>
             <resource>rdaManifestation</resource>
@@ -19,7 +19,6 @@
             <user>tgis</user>
             <author>T Gerontakos</author>
         </rt>
-<!--
         <rt>
             <resource>rdaManifestation</resource>
             <format>test_lookup_props</format>
@@ -30,7 +29,7 @@
         <rt>
             <institution>WAU</institution>
             <resource>rdaManifestation</resource>
-            <format>test_nested_resource_props</format>
+            <format>test_all_props</format>
             <user>ries07</user>
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
