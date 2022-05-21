@@ -221,8 +221,8 @@
       <xs:sequence>
          <xs:choice>
             <xs:choice>
-               <xs:element name="date_default" type="xs:boolean" maxOccurs="1"/>
-               <xs:element name="userId_default" type="xs:boolean" maxOccurs="1"/>
+               <xs:element name="date_default" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+               <xs:element name="userId_default" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             </xs:choice>
             <xs:sequence>
                <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
