@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+    xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" 
+    elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    
+    <xs:simpleType name="user_type">
+        <xs:annotation>
+            <xs:documentation>Specifying a user for a resource template allows for further customization of templates.</xs:documentation>
+            <xs:documentation>'Default' templates created for use by UW Libraries catalogers will have user 'CAMS'.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CAMS"/>
+            <xs:enumeration value="ries07"/>
+            <xs:enumeration value="tgis"/>
+            <xs:enumeration value="mcm104"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

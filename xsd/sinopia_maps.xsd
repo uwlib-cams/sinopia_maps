@@ -7,14 +7,18 @@
     elementFormDefault="qualified"
     vc:minVersion="1.1">
     
-    <!-- IMPORT/INCLUDE -->
+    <!-- IMPORT -->
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
         schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
     <xs:import namespace="http://www.w3.org/2001/XMLSchema"
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
     <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/" 
         schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+    <!-- INCLUDE -->
     <xs:include schemaLocation="uwsinopia.xsd"/>
+    <xs:include schemaLocation="resources.xsd"/>
+    <xs:include schemaLocation="formats.xsd"/>
+    <xs:include schemaLocation="user.xsd"/>
     
     <!-- ***** sinopia_maps***** -->
     <xs:element name="sinopia_maps" type="sinopia_maps_type">

@@ -5,76 +5,18 @@
    xmlns:xs="http://www.w3.org/2001/XMLSchema"
    targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
    vc:minVersion="1.1">
-   <!-- IMPORT/INCLUDE -->
+   <!-- IMPORT -->
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
       schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
       schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
       schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+   <!-- INCLUDE -->
    <xs:include schemaLocation="sinopia_maps.xsd"/>
-   <!--  ***** REUSE THESE TYPES, INCLUDING IN OTHER NAMESPACES ***** -->
-   <xs:simpleType name="resource_label_type">
-      <xs:annotation>
-         <xs:documentation>Elements with this type are used in multiple places in both `prop_set`
-            instances and in brief resource-template descriptions in
-            `sinopia_maps.xml`.</xs:documentation>
-         <xs:documentation>When creating a new resource-template description in `sinopia_maps.xml`,
-            enter the resource which your template should be used to describe.</xs:documentation>
-         <xs:documentation>When entering an `implementation_set` &gt; `resource` value in `prop_set`
-            instances to output properties to your template, enter the same resource. </xs:documentation>
-         <xs:documentation>Note that resource value options are human-readable labels for a variety
-            of instances of rdfs:Class, not the IRIs for these.</xs:documentation>
-      </xs:annotation>
-      <!-- enumerations = 001rt_metadata.xsl > template name="rt_hasClass" -->
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="rdaWork"/>
-         <xs:enumeration value="rdaAgent"/>
-         <xs:enumeration value="rdaItem"/>
-         <xs:enumeration value="rdaPerson"/>
-         <xs:enumeration value="rdaCorporateBody"/>
-         <xs:enumeration value="rdaExpression"/>
-         <xs:enumeration value="rdaManifestation"/>
-         <xs:enumeration value="rdaFamily"/>
-         <xs:enumeration value="rdaPlace"/>
-         <xs:enumeration value="rdaTimespan"/>
-         <xs:enumeration value="rdaCollectiveAgent"/>
-         <xs:enumeration value="rdaNomen"/>
-         <xs:enumeration value="rdaEntity"/>
-         <xs:enumeration value="provBundle"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:simpleType name="format_type">
-      <xs:annotation>
-         <xs:documentation>
-            <!-- to do -->
-         </xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string">
-         <xs:enumeration value="monograph"/>
-         <xs:enumeration value="na"/>
-         <!-- FOR TESTING, to do delete later -->
-         <xs:enumeration value="test_literal_props"/>
-         <xs:enumeration value="test_uri_props"/>
-         <xs:enumeration value="test_lookup_props"/>
-         <xs:enumeration value="test_nested_resource_props"/>
-         <xs:enumeration value="test_all_props"/>
-      </xs:restriction>
-   </xs:simpleType>
-   <xs:simpleType name="user_type">
-      <xs:annotation>
-         <xs:documentation>
-            <!-- to do -->
-         </xs:documentation>
-      </xs:annotation>
-      <xs:restriction base="xs:string">
-         <!-- enumerations here will need updating -->
-         <xs:enumeration value="default"/>
-         <xs:enumeration value="ries07"/>
-         <xs:enumeration value="tgis"/>
-         <xs:enumeration value="mcm104"/>
-      </xs:restriction>
-   </xs:simpleType>
+   <xs:include schemaLocation="resources.xsd"/>
+   <xs:include schemaLocation="formats.xsd"/>
+   <xs:include schemaLocation="user.xsd"/>
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>

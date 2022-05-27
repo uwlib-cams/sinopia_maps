@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
+    vc:minVersion="1.1">
+    
+    <xs:simpleType name="format_type">
+        <xs:annotation>
+            <xs:documentation>
+                <!-- to do -->
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="monograph"/>
+            <xs:enumeration value="na"/>
+            <!-- FOR TESTING, to do delete later -->
+            <xs:enumeration value="test_literal_props"/>
+            <xs:enumeration value="test_uri_props"/>
+            <xs:enumeration value="test_lookup_props"/>
+            <xs:enumeration value="test_nested_resource_props"/>
+            <xs:enumeration value="test_all_props"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>
