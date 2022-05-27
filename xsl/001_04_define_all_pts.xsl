@@ -134,7 +134,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:literal_pt/node()">
+                        /uwsinopia:literal_pt">
                     <sinopia:hasLiteralAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_literal_attributes')}"/>
@@ -146,7 +146,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:uri_pt/node()">
+                        /uwsinopia:uri_pt">
                     <sinopia:hasUriAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_uri_attributes')}"/>
@@ -158,7 +158,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:lookup_pt/node()">
+                        /uwsinopia:lookup_pt">
                     <sinopia:hasLookupAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_lookup_attributes')}"/>
@@ -170,7 +170,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:nested_resource_pt/node()">
+                        /uwsinopia:nested_resource_pt">
                     <sinopia:hasResourceAttributes
                         rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
@@ -189,7 +189,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:literal_pt/node()">
+                /uwsinopia:literal_pt">
                 <xsl:call-template name="define_literal_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -206,7 +206,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:uri_pt/node()">
+                /uwsinopia:uri_pt">
                 <xsl:call-template name="define_uri_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -223,7 +223,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:lookup_pt/node()">
+                /uwsinopia:lookup_pt">
                 <xsl:call-template name="define_lookup_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -240,7 +240,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:nested_resource_pt/node()">
+                /uwsinopia:nested_resource_pt">
                 <xsl:call-template name="define_nested_resource_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -258,7 +258,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:multiple_prop/node()">
+                /uwsinopia:multiple_prop">
             <xsl:call-template name="multiple_property_labels">
                 <xsl:with-param name="institution" select="$institution"/>
                 <xsl:with-param name="resource" select="$resource"/>

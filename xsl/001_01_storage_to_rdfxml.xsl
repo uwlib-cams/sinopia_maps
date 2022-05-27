@@ -22,8 +22,9 @@
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
             <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
+            <!-- [!] TO DO remove 'TEST' from ID for production -->
             <xsl:variable name="rt_id" select="
-                concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
+                concat('TEST:UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                         (: [!] BEWARE local filepath to map_storage instances in XPath [!] :)
