@@ -18,7 +18,7 @@
     <xs:include schemaLocation="uwsinopia.xsd"/>
     <xs:include schemaLocation="resources.xsd"/>
     <xs:include schemaLocation="formats.xsd"/>
-    <xs:include schemaLocation="user.xsd"/>
+    <xs:include schemaLocation="users.xsd"/>
     
     <!-- ***** sinopia_maps***** -->
     <xs:element name="sinopia_maps" type="sinopia_maps_type">

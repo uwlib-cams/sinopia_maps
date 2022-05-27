@@ -16,7 +16,7 @@
    <xs:include schemaLocation="sinopia_maps.xsd"/>
    <xs:include schemaLocation="resources.xsd"/>
    <xs:include schemaLocation="formats.xsd"/>
-   <xs:include schemaLocation="user.xsd"/>
+   <xs:include schemaLocation="users.xsd"/>
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>
@@ -38,12 +38,11 @@
             property--can be used in multiple resource templates.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-         <!-- all RTs must have ID components: resource / format / user -->
-         <xs:element name="institution" type="institution_type"/>
+         <!-- all RTs must have ID components: institution / resource / format / user -->
+         <xs:element name="institution" type="institution_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
-         <!-- All implementation_sets must include form_order -->
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
          <!-- optional: multiple_prop / remark_url / remark / language_suppressed / required / repeatable -->
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
