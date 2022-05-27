@@ -145,13 +145,16 @@
    <!-- repeatable_type -->
    <xs:complexType name="repeatable_type">
       <xs:annotation>
-         <xs:documentation>To indicate that a multiple values may be entered for a given property template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
+         <xs:documentation>To indicate that a multiple values may be entered for a given property
+            template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
       </xs:annotation>
       <xs:simpleContent>
          <xs:extension base="xs:string">
             <xs:attribute name="ordered" type="xs:boolean">
                <xs:annotation>
-                  <xs:documentation>To indicate that the order of multiple values for a repeatable property should be preserved, use the `ordered` attribute with value 'true' or '1'.</xs:documentation>
+                  <xs:documentation>To indicate that the order of multiple values for a repeatable
+                     property should be preserved, use the `ordered` attribute with value 'true' or
+                     '1'.</xs:documentation>
                </xs:annotation>
             </xs:attribute>
          </xs:extension>
@@ -167,7 +170,8 @@
                <xs:element name="userId_default" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             </xs:choice>
             <xs:sequence>
-               <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
+               <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="0"
+                  maxOccurs="1"/>
                <xs:choice>
                   <xs:element name="validation_datatype" type="validation_datatype_type"
                      minOccurs="0" maxOccurs="1"/>

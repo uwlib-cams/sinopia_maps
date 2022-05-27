@@ -28,7 +28,7 @@
     </xs:element>
     
     <xs:complexType name="sinopia_maps_type">
-        <!-- may wish to add a mechanism for assembling RTs into a WEMI/WEM 'profile' -->
+        <!-- may wish to add a mechanism for assembling RTs into a multi-entity profile or description set??  -->
         <xs:sequence>
             <xs:element name="rts" type="rts_type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="html_profiles" type="html_profiles_type" minOccurs="0" maxOccurs="unbounded"/>
