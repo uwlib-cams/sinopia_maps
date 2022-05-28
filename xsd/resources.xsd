@@ -18,7 +18,7 @@
             <xs:documentation>Note that resource value options are human-readable labels for a variety
                 of instances of rdfs:Class, not the IRIs for these.</xs:documentation>
         </xs:annotation>
-        <!-- sync with 001rt_metadata.xsl > template name="rt_hasClass" -->
+        <!-- sync with 001rt_metadata.xsl > template @name="rt_hasClass" -->
         <xs:restriction base="xs:string">
             <xs:enumeration value="rdaWork"/>
             <xs:enumeration value="rdaAgent"/>
