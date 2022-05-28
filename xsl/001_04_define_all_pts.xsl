@@ -17,26 +17,26 @@
     <xsl:template name="pt_hasPropertyType">
         <xsl:param name="implementation_set"/>
         <xsl:choose>
-            <xsl:when test="$implementation_set/uwsinopia:literal_pt/node()">
+            <xsl:when test="$implementation_set/uwsinopia:literal_pt">
                 <sinopia:hasPropertyType
                     rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
             </xsl:when>
-            <xsl:when test="$implementation_set/uwsinopia:uri_pt/node()">
+            <xsl:when test="$implementation_set/uwsinopia:uri_pt">
                 <sinopia:hasPropertyType
                     rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
             </xsl:when>
-            <xsl:when test="$implementation_set/uwsinopia:lookup_pt/node()">
+            <xsl:when test="$implementation_set/uwsinopia:lookup_pt">
                 <sinopia:hasPropertyType
                     rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
             </xsl:when>
-            <xsl:when test="$implementation_set/uwsinopia:nested_resource_pt/node()">
+            <xsl:when test="$implementation_set/uwsinopia:nested_resource_pt">
                 <sinopia:hasPropertyType
                     rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
             </xsl:when>
         </xsl:choose>
     </xsl:template>
 
-    <!-- ****create defining bnode for all property types**** -->
+    <!-- ****create defining bnode - all PT types**** -->
     <xsl:template name="define_all_pts">
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
