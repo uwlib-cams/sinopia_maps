@@ -47,15 +47,19 @@
             translate('/.#', '') => substring-after('http:'), '_define')}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- **output multiple-prop IRIs if applicable** -->
+            <!-- ** output property label ** -->
+            <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
+                <xsl:value-of select="$prop/uwmaps:prop_label"/>
+            </rdfs:label>
+            <!-- ** output property IRI, or multiple-prop IRIs if applicable ** -->
             <xsl:choose>
                 <xsl:when test="
-                        $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                        [uwsinopia:institution = $institution]
-                        [uwsinopia:resource = $resource]
-                        [uwsinopia:format = $format]
-                        [uwsinopia:user = $user]
-                        /uwsinopia:multiple_prop/node()">
+                    $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:multiple_prop/node()">
                     <xsl:call-template name="multiple_property_iris">
                         <xsl:with-param name="institution" select="$institution"/>
                         <xsl:with-param name="resource" select="$resource"/>
@@ -68,17 +72,6 @@
                     <sinopia:hasPropertyUri rdf:resource="{$prop/uwmaps:prop_iri/@iri}"/>
                 </xsl:otherwise>
             </xsl:choose>
-            <xsl:call-template name="pt_hasPropertyType">
-                <xsl:with-param name="implementation_set" select="
-                        $prop/uwmaps:sinopia/uwsinopia:implementation_set
-                        [uwsinopia:institution = $institution]
-                        [uwsinopia:resource = $resource]
-                        [uwsinopia:format = $format]
-                        [uwsinopia:user = $user]"/>
-            </xsl:call-template>
-            <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
-                <xsl:value-of select="$prop/uwmaps:prop_label"/>
-            </rdfs:label>
             <!-- *** output top-level/general PT attributes *** -->
             <!-- languageSuppressed -->
             <xsl:if test="
@@ -125,6 +118,15 @@
                 <sinopia:hasPropertyAttribute
                     rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/ordered"/>
             </xsl:if>
+            <!-- ** output PT type ** -->
+            <xsl:call-template name="pt_hasPropertyType">
+                <xsl:with-param name="implementation_set" select="
+                    $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]"/>
+            </xsl:call-template>
             <!-- *** *** output bnodes for defaults by prop type and subtype *** *** -->
             <!-- *** literal PTs *** -->
             <xsl:choose>
@@ -134,7 +136,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:literal_pt">
+                        /uwsinopia:literal_pt/node()">
                     <sinopia:hasLiteralAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_literal_attributes')}"/>
@@ -146,7 +148,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:uri_pt">
+                        /uwsinopia:uri_pt/node()">
                     <sinopia:hasUriAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_uri_attributes')}"/>
@@ -158,7 +160,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:lookup_pt">
+                        /uwsinopia:lookup_pt/node()">
                     <sinopia:hasLookupAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
                     '_lookup_attributes')}"/>
@@ -170,7 +172,7 @@
                         [uwsinopia:resource = $resource]
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
-                        /uwsinopia:nested_resource_pt">
+                        /uwsinopia:nested_resource_pt/node()">
                     <sinopia:hasResourceAttributes
                         rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
                     translate('/.#', '') => substring-after('http:'),
@@ -189,7 +191,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:literal_pt">
+                /uwsinopia:literal_pt/node()">
                 <xsl:call-template name="define_literal_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -206,7 +208,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:uri_pt">
+                /uwsinopia:uri_pt/node()">
                 <xsl:call-template name="define_uri_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -223,7 +225,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:lookup_pt">
+                /uwsinopia:lookup_pt/node()">
                 <xsl:call-template name="define_lookup_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
@@ -240,7 +242,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:nested_resource_pt">
+                /uwsinopia:nested_resource_pt/node()">
                 <xsl:call-template name="define_nested_resource_pts">
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>

@@ -2,17 +2,14 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
-    xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-    xmlns:fn="http://www.w3.org/2005/xpath-functions" 
-    exclude-result-prefixes="xs"
-    version="3.0">
-    
-    <!-- these choices = uwsinopia.xsd > resource_label_type enumerations -->
+    xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xs" version="3.0">
+
     <xsl:template name="rt_hasClass">
+        <!-- sync with resources.xsd > xs:simpleType @name="resource_label_type" > enumerations -->
         <xsl:param name="resource"/>
         <xsl:choose>
             <xsl:when test="$resource = 'rdaWork'">
@@ -57,11 +54,10 @@
             <xsl:when test="$resource = 'provBundle'">
                 <sinopia:hasClass rdf:resource="http://www.w3.org/ns/prov#Bundle"/>
             </xsl:when>
-            <!-- No sinopia:hasClass triple in RT may result in error and prevent loading? -->
-            <xsl:otherwise/>
+            <xsl:otherwise>ERROR - RT CLASS OPTIONS - ERROR</xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
+
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
         <xsl:param name="institution"/>
@@ -77,12 +73,18 @@
             <!-- to do output remark in RT description -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
             <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-            <xsl:call-template name="rt_hasClass">
-                <xsl:with-param name="resource" select="$resource"/>
-            </xsl:call-template>
             <sinopia:hasResourceId>
                 <xsl:value-of select="$rt_id"/>
             </sinopia:hasResourceId>
+            <xsl:call-template name="rt_hasClass">
+                <xsl:with-param name="resource" select="$resource"/>
+            </xsl:call-template>
+            <!-- output optional resource classes if present -->
+            <xsl:if test="$optional_classes/node()">
+                <xsl:for-each select="$optional_classes/optional_class">
+                    <sinopia:hasOptionalClass rdf:resource="{.}"/>
+                </xsl:for-each>
+            </xsl:if>
             <rdfs:label>
                 <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
                 <xsl:value-of select="translate($rt_id, ':', ' ')"/>
@@ -96,13 +98,8 @@
             <!-- TO DO: output resource attribute = suppressible if present
                 should *not* be able to output suppressible RT if more than one prop has been marked for inclusion
                 [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
-            <!-- output optional resource classes if present -->
-            <xsl:if test="$optional_classes/node()">
-                <xsl:for-each select="$optional_classes/optional_class">
-                    <sinopia:hasOptionalClass rdf:resource="{.}"/>
-                </xsl:for-each>
-            </xsl:if>
-            <sinopia:hasPropertyTemplate rdf:nodeID="{concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
+            <sinopia:hasPropertyTemplate
+                rdf:nodeID="{concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
                 translate('/.#', '') => substring-after('http:'), '_order')}"/>
         </rdf:Description>
     </xsl:template>
