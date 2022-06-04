@@ -68,6 +68,7 @@
         <xsl:param name="user"/>
         <xsl:param name="rt_id"/>
         <xsl:param name="sorted_properties"/>
+        <!-- [!] TO DO pass in platform when running transformation -->
         <rdf:Description
             rdf:about="{concat('https://api.development.sinopia.io/resource/', $rt_id)}">
             <!-- to do output remark in RT description -->
