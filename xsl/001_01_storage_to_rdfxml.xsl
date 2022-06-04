@@ -9,6 +9,9 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xs" version="3.0">
 
     <xsl:output method="xml" indent="yes"/>
+    
+    <xsl:param name="test"/>
+    <xsl:param name="platform"/>
 
     <xsl:include href="001_02_rt_metadata.xsl"/>
     <xsl:include href="001_03_create_ordering.xsl"/>
@@ -24,7 +27,7 @@
             <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
             <!-- [!] TO DO remove 'TEST' from ID for production -->
             <xsl:variable name="rt_id" select="
-                concat('TEST:UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
+                concat($test, 'UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                         (: [!] BEWARE local filepath to map_storage instances in XPath [!] :)
@@ -49,6 +52,7 @@
             <xsl:result-document href="../{translate($rt_id, ':', '_')}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
+                        <xsl:with-param name="platform" select="$platform"/>
                         <xsl:with-param name="suppressible" select="uwsinopia:suppressible"/>
                         <xsl:with-param name="optional_classes">
                             <xsl:for-each select="uwsinopia:optional_class">
