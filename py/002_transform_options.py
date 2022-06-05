@@ -5,11 +5,10 @@ import os
 jar = "~/saxon11/saxon-he-11.1.jar"
 xsl = "xsl/001_01_storage_to_rdfxml.xsl"
 
-# say hello
 def intro():
     print(dedent(f"""
-    BUILDING RESOURCE TEMPLATES FROM prop_set INSTANCES
-    {'=' * 51}\n"""))
+    BUILDING RESOURCE TEMPLATES FROM prop_set INSTANCE DATA
+    {'=' * 55}\n"""))
 
 # only including testing options right now
 def transform(jar, xsl, test, platform):
