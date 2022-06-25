@@ -570,9 +570,9 @@
    </xs:complexType>
    <xs:simpleType name="rt_id_type">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaPlace:na:CAMS"/>
+         <xs:enumeration value="TEST:UWSINOPIA:WAU:rdaWork:monograph:CAMS"/>
+         <xs:enumeration value="TEST:UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
+         <xs:enumeration value="TEST:UWSINOPIA:WAU:rdaPlace:na:CAMS"/>
       </xs:restriction>
    </xs:simpleType>
    <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
