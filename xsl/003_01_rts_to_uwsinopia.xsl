@@ -7,7 +7,7 @@
     <xsl:output method="xml" indent="1"/>
     
     <!-- [!] RT IDs must match -->
-    <xsl:param name="test" select="'TEST:'"/>
+    <xsl:param name="test"/>
 
     <xsl:variable name="sinopia_maps_xml" select="document('../xml/sinopia_maps.xml')"/>
 
