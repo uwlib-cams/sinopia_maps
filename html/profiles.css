@@ -1,0 +1,50 @@
+html {
+    font-family: monospace ;
+}
+table {
+    margin-bottom: 25px ; 
+    border-spacing: 10px ;
+}
+tbody tr:nth-child(odd) {
+    background-color: #D3D3D3 ;
+}
+tbody tr:nth-child(even) {
+    background-color: #F8F8F8 ;
+}
+li {
+    line-height: 1.5 ;
+}
+.profileInfo {
+	text-align: center ;
+}
+.profileInfo thead {
+    font-size: 120% ;
+    background-color: #b0dfe5 ;
+}
+.rtList h2 span {
+    background-color: #d0f0c0 ;
+}
+.rtInfo {
+    padding-left: 25px ;
+}
+.rtInfo thead {
+    font-size: 120% ;
+    background-color: #d0f0c0 ;
+}
+.ptList {
+    padding-left: 50px ;
+}
+.ptList h3 span {
+    background-color: #fcf4a3 ;
+}
+.ptInfo {
+    padding-left: 75px ;
+}
+.ptInfo h4 span {
+    font-size: 110% ;
+    background-color: #fcf4a3 ;
+}
+.backlink {
+    font-weight: bold ;
+    background-color: #F8F8F8 ;
+}
