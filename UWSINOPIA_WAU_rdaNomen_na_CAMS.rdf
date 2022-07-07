@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaNomen:na:CAMS">
+        <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+        <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
+        <sinopia:hasResourceId>UWSINOPIA:WAU:rdaNomen:na:CAMS</sinopia:hasResourceId>
+        <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10012"/>
+        <rdfs:label>UWSINOPIA WAU rdaNomen na CAMS</rdfs:label>
+        <sinopia:hasAuthor>UW CAMS - mcm104@uw.edu</sinopia:hasAuthor>
+        <sinopia:hasDate>2022-07-07</sinopia:hasDate>
+        <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsnP80068_order"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
+        <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80068_define"/>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_define">
+        <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+        <rdfs:label xml:lang="en">has nomen string</rdfs:label>
+        <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80068"/>
+        <sinopia:hasPropertyAttribute
+            rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+        <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    </rdf:Description>
+</rdf:RDF>
