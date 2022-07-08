@@ -31,7 +31,7 @@
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:nested_resource_pt/uwsinopia:prop_instance/uwsinopia:rt_id">
+                /uwsinopia:nested_resource_pt/uwsinopia:rt_id">
                 <sinopia:hasResourceTemplateId rdf:resource="{concat($test, .)}"/>
             </xsl:for-each>
         </rdf:Description>
