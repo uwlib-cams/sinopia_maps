@@ -69,6 +69,7 @@
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
                     <xsl:call-template name="create_ordering">
+                        <xsl:with-param name="test" select="$test"/>
                         <xsl:with-param name="institution" select="$institution"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>

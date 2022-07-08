@@ -13,6 +13,7 @@
     
     <!-- output nested resource PT attributes -->
     <xsl:template name="define_nested_resource_pts">
+        <xsl:param name="test"/>
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
@@ -31,7 +32,7 @@
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:nested_resource_pt/uwsinopia:prop_instance/uwsinopia:rt_id">
-                <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
+                <sinopia:hasResourceTemplateId rdf:resource="{concat($test, .)}"/>
             </xsl:for-each>
         </rdf:Description>
     </xsl:template>

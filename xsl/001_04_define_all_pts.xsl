@@ -38,6 +38,7 @@
 
     <!-- ****create defining bnode - all PT types**** -->
     <xsl:template name="define_all_pts">
+        <xsl:param name="test"/>
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
@@ -244,6 +245,7 @@
                 [uwsinopia:user = $user]
                 /uwsinopia:nested_resource_pt/node()">
                 <xsl:call-template name="define_nested_resource_pts">
+                    <xsl:with-param name="test" select="$test"/>
                     <xsl:with-param name="institution" select="$institution"/>
                     <xsl:with-param name="resource" select="$resource"/>
                     <xsl:with-param name="format" select="$format"/>
