@@ -7,8 +7,9 @@ xsl = "xsl/001_01_storage_to_rdfxml.xsl"
 
 def intro():
     print(dedent(f"""
-    BUILDING RESOURCE TEMPLATES FROM prop_set INSTANCE DATA
-    {'=' * 55}"""))
+        BUILDING RESOURCE TEMPLATES FROM prop_set INSTANCE DATA
+        {'=' * 55}
+        """))
 
 def transform(jar, xsl, test, platform):
     os.system(f"java -cp {jar} net.sf.saxon.Transform -s:{xsl} -xsl:{xsl} test={test} platform={platform}")
