@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
          xmlns:sinopia="http://sinopia.io/vocabulary/"
          xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:fn="http://www.w3.org/2005/xpath-functions">
+         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaExpression:monograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -476,7 +476,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20039_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20039_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20212_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20059_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20039_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -564,22 +564,6 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20023">
       <rdfs:label xml:lang="en">has storyteller agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20212_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementseP20212_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20059_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20212_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is merged to form expression</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20212"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementseP20212_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20212_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20059_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20059_define"/>
@@ -954,7 +938,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20105_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20105_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20108_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20100_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20105_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -998,22 +982,6 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20120">
       <rdfs:label xml:lang="en">has guide expression</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20108_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementseP20108_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20100_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20108_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has concordance expression</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20108"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementseP20108_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20108_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20100_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20100_define"/>
