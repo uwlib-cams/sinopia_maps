@@ -74,6 +74,21 @@
                 </xsl:otherwise>
             </xsl:choose>
             <!-- *** output top-level/general PT attributes *** -->
+            <!-- http://sinopia.io/vocabulary/hasRemarkUrl -->
+            <xsl:if test="
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:remark_url/@iri">
+                <sinopia:hasRemarkUrl rdf:resource="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:remark_url/@iri}"/>
+            </xsl:if>
             <!-- languageSuppressed -->
             <xsl:if test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
