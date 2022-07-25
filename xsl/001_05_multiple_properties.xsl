@@ -71,7 +71,7 @@
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:text>ERROR - NEITHER PROPERTY ELEMENTS OR ALL_SUBPROPS ELEMENT IN SOURCE</xsl:text>
+                        <xsl:text>ERROR - NEITHER PROPERTY_SELECTION OR ALL_SUBPROPS</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
@@ -152,7 +152,7 @@
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:text>ERROR - NEITHER PROPERTY ELEMENTS OR ALL_SUBPROPS ELEMENT IN SOURCE</xsl:text>
+                        <xsl:text>ERROR - NEITHER PROPERTY_SELECTION OR ALL_SUBPROPS</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
