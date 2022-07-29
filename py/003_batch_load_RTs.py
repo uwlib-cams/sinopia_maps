@@ -141,7 +141,7 @@ def upload_list(jwt, platform, RT_list):
 		status_code = post_to_sinopia.status_code
 		if status_code == 409:
 			# conflict; something already exists at this URI, so put (i.e. overwrite) instead of post
-			overwrite_in_sinopia = requests.put(URI, data=data.encode('utf-8'), headers=headers)
+			overwrite_in_sinopia = requests.put(new_URI, data=data.encode('utf-8'), headers=headers)
 			print(f"{RT}: {overwrite_in_sinopia.status_code}")
 		else:
 			print(f"{RT}: {status_code}")
