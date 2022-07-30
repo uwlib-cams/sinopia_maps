@@ -148,7 +148,7 @@
             template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
       </xs:annotation>
       <xs:simpleContent>
-         <xs:extension base="xs:string">
+         <xs:extension base="xs:boolean">
             <xs:attribute name="ordered" type="xs:boolean">
                <xs:annotation>
                   <xs:documentation>To indicate that the order of multiple values for a repeatable
