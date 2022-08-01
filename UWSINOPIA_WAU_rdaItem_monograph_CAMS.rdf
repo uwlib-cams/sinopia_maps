@@ -13,7 +13,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10003"/>
       <rdfs:label>UWSINOPIA WAU rdaItem monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-07-29</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-01</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -351,6 +351,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has facsimile of item</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40089"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40090"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-df0a6c8e-ed76-3682-8ee0-81fd4827f02b"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -362,6 +363,9 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40089">
       <rdfs:label xml:lang="en">has facsimile of item</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40090">
+      <rdfs:label xml:lang="en">has preservation facsimile of item</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40091_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40091_define"/>
