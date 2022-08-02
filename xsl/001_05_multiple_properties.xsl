@@ -67,7 +67,27 @@
                                 document($rda_set_source)/rdf:RDF/rdf:Description
                                 [rdfs:subPropertyOf/@rdf:resource = $prop/uwmaps:prop_iri/@iri]
                                 [not(reg:status[@rdf:resource = 'http://metadataregistry.org/uri/RegStatus/1008'])]">
-                            <sinopia:hasPropertyUri rdf:resource="{@rdf:about}"/>
+                            <xsl:variable name="iri" select="@rdf:about"/>
+                            <xsl:choose>
+                                <xsl:when test="collection('../../map_storage/?select=*.xml')/
+                                    uwmaps:prop_set/uwmaps:prop[uwmaps:prop_iri/@iri=$iri]
+                                    [uwmaps:sinopia/uwsinopia:implementation_set
+                                    [uwsinopia:institution = $institution]
+                                    [uwsinopia:resource = $resource]
+                                    [uwsinopia:format = $format]
+                                    [uwsinopia:user = $user]]">
+                                    <!-- <xsl:comment> &lt;sinopia:hasPropertyUri rdf:resource="<xsl:value-of select="$iri"/>"/&gt;</xsl:comment> -->
+                                    <xsl:comment>
+                              <xsl:text>USE PT FOR </xsl:text>
+                              <xsl:value-of select="collection('../../map_storage/?select=*.xml')/
+                                    uwmaps:prop_set/uwmaps:prop[uwmaps:prop_iri/@iri = $iri]
+                                      /uwmaps:prop_label[@xml:lang = 'en']"/>
+                          </xsl:comment>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <sinopia:hasPropertyUri rdf:resource="{@rdf:about}"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </xsl:for-each>
                     </xsl:when>
                     <xsl:otherwise>
