@@ -33,22 +33,28 @@
                                         <xsl:variable name="prop_uri" select="@rdf:resource"/>
                                         <xsl:choose>
                                             <xsl:when test="/rdf:RDF/rdf:Description[not(@rdf:nodeID=$node_id)]/sinopia:hasPropertyUri/@rdf:resource=$prop_uri">
-                                                <xsl:variable name="node_id_list" as="node()*">
+                                                <xsl:variable name="node_id_list" as="xs:string*">
                                                     <xsl:for-each select="/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_uri]">
                                                         <xsl:copy-of select="@rdf:nodeID"/>
                                                     </xsl:for-each>
                                                 </xsl:variable>
                                                 <xsl:choose>
                                                     <xsl:when test="$node_id = $node_id_list[1]">
+                                                        <!-- <xsl:comment> it's the first! </xsl:comment> -->
                                                         <xsl:copy-of select="."/>
+                                                        <!-- <xsl:comment> end of first </xsl:comment> -->
                                                     </xsl:when>
                                                     <xsl:otherwise>
-                                                        <xsl:comment> <xsl:copy-of select="."/> </xsl:comment>
+                                                        <!-- <xsl:comment> it's not the first </xsl:comment> -->
+                                                        <xsl:comment> &lt;sinopia:hasPropertyUri rdf:resource="<xsl:value-of select="@rdf:resource"/>"/&gt; </xsl:comment>
+                                                        <!-- <xsl:comment> end of NOT first</xsl:comment> -->
                                                     </xsl:otherwise>
                                                 </xsl:choose>
                                             </xsl:when>
                                             <xsl:otherwise>
+                                                <!-- <xsl:comment> it doesn't repeat anywhere </xsl:comment> -->
                                                 <xsl:copy-of select="."/>
+                                                <!-- <xsl:comment> end of not repeat</xsl:comment> -->
                                             </xsl:otherwise>
                                         </xsl:choose>
                                     </xsl:for-each>
@@ -60,6 +66,9 @@
                                     </xsl:if>
                                     <xsl:if test="sinopia:hasPropertyType">
                                         <xsl:copy-of select="sinopia:hasPropertyType"/>
+                                    </xsl:if>
+                                    <xsl:if test="sinopia:hasResourceAttributes">
+                                        <xsl:copy-of select="sinopia:hasResourceAttributes"></xsl:copy-of>
                                     </xsl:if>
                                     <xsl:if test="sinopia:hasLookupAttributes">
                                         <xsl:copy-of select="sinopia:hasLookupAttributes"/>
@@ -74,9 +83,5 @@
                 </rdf:RDF>
             </xsl:result-document>
         </xsl:for-each>
-        <!-- for hasPropertyUri in prop template -->
-        <!-- if value of hasPropertyUri is also in a different prop template -->
-        <!-- if current hasPropertyUri is NOT the first instance with this URI -->
-        <!-- comment it out -->
     </xsl:template>
 </xsl:stylesheet>
