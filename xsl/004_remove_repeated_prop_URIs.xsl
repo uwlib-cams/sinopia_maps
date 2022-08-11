@@ -11,8 +11,6 @@
     exclude-result-prefixes="xs"
     version="2.0">
     <xsl:template match="/">
-        <!-- for each RDF file -->
-        <!-- Collection of RDF files -->
         <xsl:variable name="rdf_files" as="xs:string*">
             <xsl:for-each select="collection('../?select=*.rdf')/rdf:RDF/rdf:Description/sinopia:hasResourceId">
                 <xsl:copy-of select="replace(., ':', '_')"/>
@@ -40,24 +38,27 @@
                                                 </xsl:variable>
                                                 <xsl:choose>
                                                     <xsl:when test="$node_id = $node_id_list[1]">
-                                                        <!-- <xsl:comment> it's the first! </xsl:comment> -->
                                                         <xsl:copy-of select="."/>
-                                                        <!-- <xsl:comment> end of first </xsl:comment> -->
                                                     </xsl:when>
                                                     <xsl:otherwise>
-                                                        <!-- <xsl:comment> it's not the first </xsl:comment> -->
-                                                        <xsl:comment> &lt;sinopia:hasPropertyUri rdf:resource="<xsl:value-of select="@rdf:resource"/>"/&gt; </xsl:comment>
-                                                        <!-- <xsl:comment> end of NOT first</xsl:comment> -->
+                                                        <xsl:variable name="prop_label" as="xs:string">
+                                                            <xsl:copy-of select="collection('../../map_storage/?select=*.xml')/uwmaps:prop_set/uwmaps:prop[uwmaps:prop_iri/@iri=$prop_uri]/uwmaps:prop_label[@xml:lang='en']"/>
+                                                        </xsl:variable>
+                                                        <xsl:comment>
+                                                            <xsl:text>USE PT FOR </xsl:text>
+                                                            <xsl:value-of select="$prop_label"/>
+                                                        </xsl:comment>
                                                     </xsl:otherwise>
                                                 </xsl:choose>
                                             </xsl:when>
                                             <xsl:otherwise>
-                                                <!-- <xsl:comment> it doesn't repeat anywhere </xsl:comment> -->
                                                 <xsl:copy-of select="."/>
-                                                <!-- <xsl:comment> end of not repeat</xsl:comment> -->
                                             </xsl:otherwise>
                                         </xsl:choose>
                                     </xsl:for-each>
+                                    <xsl:if test="comment()">
+                                        <xsl:copy-of select="comment()"/>
+                                    </xsl:if>
                                     <xsl:if test="sinopia:hasRemarkUrl">
                                         <xsl:copy-of select="sinopia:hasRemarkUrl"/>
                                     </xsl:if>
