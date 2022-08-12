@@ -13,7 +13,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
       <rdfs:label>UWSINOPIA WAU rdaWork monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-08-02</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-12</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_order">
@@ -1503,7 +1503,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10133_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10133_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10341_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10133_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -1533,5 +1533,259 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10136">
       <rdfs:label xml:lang="en">is video screenplay based on work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10341_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10341_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10196_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10341_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is transformation by style of</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10341"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10186"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10143"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10185"/>
+      <!--USE PT FOR is imitation of work-->
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b117f453-cda9-312c-8b0b-db902f1daae8"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10341_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10341_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10341">
+      <rdfs:label xml:lang="en">is transformation by style of</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10186">
+      <rdfs:label xml:lang="en">is paraphrase of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10143">
+      <rdfs:label xml:lang="en">is free translation of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10185">
+      <rdfs:label xml:lang="en">is remake of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10196">
+      <rdfs:label xml:lang="en">is imitation of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10196_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10196_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10148_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10196_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is imitation of work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10196"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10197"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-ab271595-9e4c-39cd-8c02-80113c9e2962"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10196_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10196_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10196">
+      <rdfs:label xml:lang="en">is imitation of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10197">
+      <rdfs:label xml:lang="en">is parody of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10148_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10148_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10109_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10148_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has derivative work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10148"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10089"/>
+      <!--USE PT FOR is adapted as work-->
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10119"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10171"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10167"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10033"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10028"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-401407f9-2bff-3ff0-a120-c547783ca439"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10148_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10148_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10148">
+      <rdfs:label xml:lang="en">has derivative work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10089">
+      <rdfs:label xml:lang="en">is abstracted in work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10155">
+      <rdfs:label xml:lang="en">is adapted as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10119">
+      <rdfs:label xml:lang="en">is expanded as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10171">
+      <rdfs:label xml:lang="en">is digested as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10167">
+      <rdfs:label xml:lang="en">is abridged as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10033">
+      <rdfs:label xml:lang="en">is set to music as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10028">
+      <rdfs:label xml:lang="en">is modified by variation as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10109_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10109_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10155_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10109_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has summary</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10109"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10107"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-d32fd842-3845-313d-aaae-60521e4df6ae"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10109_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10109_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10109">
+      <rdfs:label xml:lang="en">has summary</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10107">
+      <rdfs:label xml:lang="en">has abstract</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10155_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10155_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10095_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10155_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is adapted as work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10155"/>
+      <!--USE PT FOR is adapted as screenplay work-->
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10251"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10091"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10025"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10016"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10113"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10236"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10289"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10076"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10098"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10034"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10085"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10023"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10249"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10087"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10235"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-878f9600-ea71-3fc3-b718-6b129307b807"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10155_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10155_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10155">
+      <rdfs:label xml:lang="en">is adapted as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10095">
+      <rdfs:label xml:lang="en">is adapted as screenplay work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10251">
+      <rdfs:label xml:lang="en">is adapted as graphic novel work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10091">
+      <rdfs:label xml:lang="en">is adapted as choreography work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10025">
+      <rdfs:label xml:lang="en">is adapted as motion picture work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10016">
+      <rdfs:label xml:lang="en">is dramatized as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10113">
+      <rdfs:label xml:lang="en">is adapted as libretto work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10236">
+      <rdfs:label xml:lang="en">is adapted as opera work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10289">
+      <rdfs:label xml:lang="en">is adapted as oratorio work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10076">
+      <rdfs:label xml:lang="en">is adapted as radio program work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10098">
+      <rdfs:label xml:lang="en">is adapted as radio script work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10034">
+      <rdfs:label xml:lang="en">is adapted as novel work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10085">
+      <rdfs:label xml:lang="en">is adapted as television program work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10023">
+      <rdfs:label xml:lang="en">is adapted in verse as work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10249">
+      <rdfs:label xml:lang="en">is adapted as video game work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10087">
+      <rdfs:label xml:lang="en">is adapted as video work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10235">
+      <rdfs:label xml:lang="en">is adapted as musical theatre work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10095_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10095_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10095_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is adapted as screenplay work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10095"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10094"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10096"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10097"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-277d72a0-6bf7-3a16-9383-9f0d857abeaf"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10095_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10095_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10095">
+      <rdfs:label xml:lang="en">is adapted as screenplay work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10094">
+      <rdfs:label xml:lang="en">is adapted as motion picture screenplay work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10096">
+      <rdfs:label xml:lang="en">is adapted as television screenplay work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10097">
+      <rdfs:label xml:lang="en">is adapted as video screenplay work</rdfs:label>
    </rdf:Description>
 </rdf:RDF>

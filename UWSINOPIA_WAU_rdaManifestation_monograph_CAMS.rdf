@@ -13,7 +13,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-08-02</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-12</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
@@ -312,7 +312,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30154_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30154_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30142_order"/>
+      <rdf:rest rdf:nodeID="_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30154_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -321,6 +321,28 @@
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3a036743-f303-3327-9fac-25be1f6cf028"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has LC Classification Part A</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasLcClassificationPartA"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30142_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has LC Classification Part B</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasLcClassificationPartB"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30142_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30142_define"/>
@@ -763,7 +785,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30119_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30119_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30208_order"/>
+      <rdf:rest rdf:nodeID="_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30119_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -779,6 +801,17 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30113">
       <rdfs:label xml:lang="en">has parallel statement of responsibility relating to series</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30208_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has University Of Washington Note.</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasUniversityOfWashingtonNote"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30208_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30208_define"/>
@@ -904,7 +937,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30146_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30146_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30327_order"/>
+      <rdf:rest rdf:nodeID="_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30146_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -913,6 +946,55 @@
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-2e047c4a-393b-35d0-bf77-4ddf00900f31"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has SuDoc Classification Number</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasSuDocClassificationNumber"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has NLM Classification Part A</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasNlmClassificationPartA"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has NLM Classification Part B</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasNlmClassificationPartB"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30327_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has Contributor Agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasContributorAgent"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="_resource_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_resource_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
+      <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30327_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30327_define"/>
@@ -1302,7 +1384,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30300_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30300_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30300_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -1323,5 +1405,22 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30301">
       <rdfs:label xml:lang="en">is preservation facsimile of item of</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_order">
+      <rdf:first rdf:nodeID="_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Held By</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#heldBy"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="_resource_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="_resource_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
+      <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
 </rdf:RDF>
