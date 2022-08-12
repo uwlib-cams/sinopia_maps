@@ -60,7 +60,6 @@
 
     <!-- *****metadata for the RT is output from this template***** -->
     <xsl:template name="rt_metadata">
-        <xsl:param name="platform"/>
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="suppressible"/>
@@ -71,7 +70,7 @@
         <xsl:param name="sorted_properties"/>
         <!-- [!] TO DO pass in platform when running transformation -->
         <rdf:Description
-            rdf:about="{concat('https://api.', $platform, 'sinopia.io/resource/', $rt_id)}">
+            rdf:about="{concat('https://api.sinopia.io/resource/', $rt_id)}">
             <!-- to do output remark in RT description -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
             <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
