@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
          xmlns:sinopia="http://sinopia.io/vocabulary/"
          xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:fn="http://www.w3.org/2005/xpath-functions">
+         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaExpression:monograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -13,7 +13,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10006"/>
       <rdfs:label>UWSINOPIA WAU rdaExpression monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-07-29</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-12</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementseP20231_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20231_order">
@@ -165,6 +165,16 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has contributor agent to amalgamation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20328"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20283"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20329"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20426"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20367"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20040"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20033"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20330"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20259"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20058"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20280"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4b46a7ed-4e39-369c-93ba-13c661469708"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
       <sinopia:hasResourceAttributes rdf:nodeID="rdaregistryinfoElementseP20328_resource_attributes"/>
@@ -175,6 +185,36 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20328">
       <rdfs:label xml:lang="en">has contributor agent to amalgamation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20283">
+      <rdfs:label xml:lang="en">has colourist agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20329">
+      <rdfs:label xml:lang="en">has contributor agent to performance</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20426">
+      <rdfs:label xml:lang="en">has contributor collective agent to amalgamation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20367">
+      <rdfs:label xml:lang="en">has contributor person to amalgamation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20040">
+      <rdfs:label xml:lang="en">has court reporter agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20033">
+      <rdfs:label xml:lang="en">has draftsman agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20330">
+      <rdfs:label xml:lang="en">has editor agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20259">
+      <rdfs:label xml:lang="en">has letterer agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20058">
+      <rdfs:label xml:lang="en">has minute taker agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20280">
+      <rdfs:label xml:lang="en">has software developer agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20001_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20001_define"/>
@@ -429,6 +469,13 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has reviser agent</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20327"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20049"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20029"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20287"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20289"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20406"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20347"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20034"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b61fa966-4cfd-3b96-8035-0b457b08aaad"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -440,6 +487,27 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20327">
       <rdfs:label xml:lang="en">has reviser agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20049">
+      <rdfs:label xml:lang="en">has abridger agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20029">
+      <rdfs:label xml:lang="en">has arranger agent of music</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20287">
+      <rdfs:label xml:lang="en">has censor agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20289">
+      <rdfs:label xml:lang="en">has restorationist agent of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20406">
+      <rdfs:label xml:lang="en">has reviser collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20347">
+      <rdfs:label xml:lang="en">has reviser person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20034">
+      <rdfs:label xml:lang="en">has transcriber agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20038_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20038_define"/>
@@ -466,6 +534,24 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has performer agent</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20039"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20012"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20021"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20011"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20014"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20016"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20015"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20020"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20017"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20022"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20013"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20019"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20410"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20351"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20054"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20018"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20025"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20024"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20023"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-f657feb9-3fbc-3387-8b01-c0924211c5a9"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -477,6 +563,60 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20039">
       <rdfs:label xml:lang="en">has performer agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20012">
+      <rdfs:label xml:lang="en">has actor agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20021">
+      <rdfs:label xml:lang="en">has commentator agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20011">
+      <rdfs:label xml:lang="en">has conductor agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20014">
+      <rdfs:label xml:lang="en">has dancer agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20016">
+      <rdfs:label xml:lang="en">has host agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20015">
+      <rdfs:label xml:lang="en">has instructor agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20020">
+      <rdfs:label xml:lang="en">has instrumentalist agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20017">
+      <rdfs:label xml:lang="en">has moderator agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20022">
+      <rdfs:label xml:lang="en">has narrator agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20013">
+      <rdfs:label xml:lang="en">has onscreen presenter agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20019">
+      <rdfs:label xml:lang="en">has panelist agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20410">
+      <rdfs:label xml:lang="en">has performer collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20351">
+      <rdfs:label xml:lang="en">has performer person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20054">
+      <rdfs:label xml:lang="en">has presenter agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20018">
+      <rdfs:label xml:lang="en">has puppeteer agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20025">
+      <rdfs:label xml:lang="en">has singer agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20024">
+      <rdfs:label xml:lang="en">has speaker agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20023">
+      <rdfs:label xml:lang="en">has storyteller agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20059_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20059_define"/>
@@ -554,6 +694,15 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is preceded by expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20154"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20137"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20199"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20149"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20201"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20138"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20198"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20168"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20334"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20167"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-03ef2a9c-ee7e-3320-a20d-f884467f3eee"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -566,6 +715,33 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20154">
       <rdfs:label xml:lang="en">is preceded by expression</rdfs:label>
    </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20137">
+      <rdfs:label xml:lang="en">is absorption of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20199">
+      <rdfs:label xml:lang="en">is replacement of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20149">
+      <rdfs:label xml:lang="en">is continuation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20201">
+      <rdfs:label xml:lang="en">is merger of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20138">
+      <rdfs:label xml:lang="en">is absorption in part of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20198">
+      <rdfs:label xml:lang="en">is replacement in part of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20168">
+      <rdfs:label xml:lang="en">is separated from expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20334">
+      <rdfs:label xml:lang="en">has prequel expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20167">
+      <rdfs:label xml:lang="en">is split from expression</rdfs:label>
+   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20169_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20169_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20204_order"/>
@@ -574,6 +750,15 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is succeeded by expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20169"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20200"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20191"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20076"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20075"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20143"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20144"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20212"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20101"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20335"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-39372338-43ee-3168-a4e3-c695a37c63dc"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -585,6 +770,33 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20169">
       <rdfs:label xml:lang="en">is succeeded by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20200">
+      <rdfs:label xml:lang="en">is split into expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20191">
+      <rdfs:label xml:lang="en">is continued by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20076">
+      <rdfs:label xml:lang="en">is replaced by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20075">
+      <rdfs:label xml:lang="en">is replaced in part by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20143">
+      <rdfs:label xml:lang="en">is absorbed by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20144">
+      <rdfs:label xml:lang="en">is absorbed in part by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20212">
+      <rdfs:label xml:lang="en">is merged to form expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20101">
+      <rdfs:label xml:lang="en">is separated into expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20335">
+      <rdfs:label xml:lang="en">has sequel expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20204_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20204_define"/>
@@ -645,6 +857,21 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is adaptation of expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20152"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20123"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20256"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20183"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20125"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20129"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20190"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20133"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20240"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20281"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20127"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20126"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20128"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20124"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20134"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20239"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-ad1fcd50-7a30-338a-83cf-a9e27843e99a"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -656,6 +883,51 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20152">
       <rdfs:label xml:lang="en">is adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20123">
+      <rdfs:label xml:lang="en">is dramatization of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20256">
+      <rdfs:label xml:lang="en">is graphic novelization of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20183">
+      <rdfs:label xml:lang="en">is choreographic adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20125">
+      <rdfs:label xml:lang="en">is motion picture adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20129">
+      <rdfs:label xml:lang="en">is screenplay based on expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20190">
+      <rdfs:label xml:lang="en">is libretto based on expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20133">
+      <rdfs:label xml:lang="en">is radio script based on expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20240">
+      <rdfs:label xml:lang="en">is opera adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20281">
+      <rdfs:label xml:lang="en">is oratorio adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20127">
+      <rdfs:label xml:lang="en">is radio adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20126">
+      <rdfs:label xml:lang="en">is novelization of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20128">
+      <rdfs:label xml:lang="en">is television adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20124">
+      <rdfs:label xml:lang="en">is verse adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20134">
+      <rdfs:label xml:lang="en">is video adaptation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20239">
+      <rdfs:label xml:lang="en">is musical theatre adaptation of expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20135_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20135_define"/>
@@ -716,6 +988,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is imitation of expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20195"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20196"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3b61e219-261b-3e88-9562-1512fc43e337"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -727,6 +1000,9 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20195">
       <rdfs:label xml:lang="en">is imitation of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20196">
+      <rdfs:label xml:lang="en">is parody of expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20186_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20186_define"/>
@@ -872,6 +1148,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is imitated as expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20114"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20142"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4453733c-d7de-3bc8-a341-94ac72779f29"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -883,6 +1160,9 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20114">
       <rdfs:label xml:lang="en">is imitated as expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20142">
+      <rdfs:label xml:lang="en">is parodied as expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20087_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20087_define"/>
@@ -943,6 +1223,13 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is augmentation of expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20192"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20089"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20146"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20148"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20083"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20151"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20177"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20147"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b59f7a55-a6d0-378d-97b3-f90ca0836dc2"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -955,6 +1242,27 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20192">
       <rdfs:label xml:lang="en">is augmentation of expression</rdfs:label>
    </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20089">
+      <rdfs:label xml:lang="en">is appendix to expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20146">
+      <rdfs:label xml:lang="en">is errata to expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20148">
+      <rdfs:label xml:lang="en">is illustrations for expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20083">
+      <rdfs:label xml:lang="en">is cadenza composed for expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20151">
+      <rdfs:label xml:lang="en">is supplement to expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20177">
+      <rdfs:label xml:lang="en">is addenda to expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20147">
+      <rdfs:label xml:lang="en">is guide to expression</rdfs:label>
+   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20105_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20105_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementseP20100_order"/>
@@ -963,6 +1271,13 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is augmented by expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20105"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20118"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20093"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20094"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20080"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20172"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20109"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20120"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-2d1dd766-f032-3f15-80e7-1aadd8e0f7b4"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -974,6 +1289,27 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20105">
       <rdfs:label xml:lang="en">is augmented by expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20118">
+      <rdfs:label xml:lang="en">has appendix expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20093">
+      <rdfs:label xml:lang="en">has errata expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20094">
+      <rdfs:label xml:lang="en">has illustrations expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20080">
+      <rdfs:label xml:lang="en">has cadenza expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20172">
+      <rdfs:label xml:lang="en">has supplement expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20109">
+      <rdfs:label xml:lang="en">has addenda expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20120">
+      <rdfs:label xml:lang="en">has guide expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20100_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20100_define"/>
@@ -1034,6 +1370,9 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is screenplay for expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20102"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20173"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20174"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20175"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0a06760e-4adc-308e-906a-7955fc5a9903"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -1045,6 +1384,15 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20102">
       <rdfs:label xml:lang="en">is screenplay for expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20173">
+      <rdfs:label xml:lang="en">is screenplay for motion picture expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20174">
+      <rdfs:label xml:lang="en">is screenplay for television program expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20175">
+      <rdfs:label xml:lang="en">is screenplay for video expression</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20176_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20176_define"/>
