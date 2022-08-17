@@ -40,10 +40,17 @@ def fix_multi_props(file):
 				else:
 					"""There is not a PT for this property OR this is THE PT for this property"""
 					if prop_URI in hasPropertyUri_list:
-						comment_info_tuple = get_comment_info(rdf_RDF, rdf_Description, prop_URI)
-						comment_index = comment_info_tuple[0]
+						# remove original triple
 						rdf_Description.remove(sinopia_hasPropertyUri)
+
+						# generate text of comment
+						comment_info_tuple = get_comment_info(rdf_RDF, rdf_Description, prop_URI)
 						comment = create_comment(comment_info_tuple)
+
+						# generate location of comment within rdf:Description
+						comment_index = comment_info_tuple[0]
+
+						# insert comment at given location
 						rdf_Description.insert(comment_index, comment)
 					else:
 						hasPropertyUri_list.append(prop_URI)
