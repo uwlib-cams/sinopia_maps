@@ -12,7 +12,6 @@
     
     <xsl:param name="test"/>
     <xsl:param name="oxygenPath"/>
-    <xsl:param name="platform"/>
 
     <xsl:include href="001_02_rt_metadata.xsl"/>
     <xsl:include href="001_03_create_ordering.xsl"/>
@@ -52,7 +51,6 @@
             <xsl:result-document href="{concat($oxygenPath, translate($rt_id, ':', '_'))}.rdf">
                 <rdf:RDF>
                     <xsl:call-template name="rt_metadata">
-                        <xsl:with-param name="platform" select="$platform"/>
                         <xsl:with-param name="suppressible" select="uwsinopia:suppressible"/>
                         <xsl:with-param name="optional_classes">
                             <xsl:for-each select="uwsinopia:optional_class">
