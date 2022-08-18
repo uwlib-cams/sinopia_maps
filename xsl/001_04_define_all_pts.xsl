@@ -44,8 +44,19 @@
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="prop"/>
-        <rdf:Description rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-            translate('/.#', '') => substring-after('http:'), '_define')}">
+        <xsl:variable name="node_ID" as="xs:string">
+            <xsl:choose>
+                <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                    <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                        translate('/.#', '') => substring-after('https:'), '_define')"></xsl:copy-of>
+                </xsl:when>
+                <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                    <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                        translate('/.#', '') => substring-after('http:'), '_define')"></xsl:copy-of>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <rdf:Description rdf:nodeID="{$node_ID}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
             <!-- ** output property label ** -->
@@ -153,9 +164,21 @@
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:literal_pt/node()">
-                    <sinopia:hasLiteralAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-                    translate('/.#', '') => substring-after('http:'),
-                    '_literal_attributes')}"/>
+                    <xsl:variable name="literal_attributes_node_ID" as="xs:string">
+                        <xsl:choose>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('https:'),
+                                    '_literal_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('http:'),
+                                    '_literal_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <sinopia:hasLiteralAttributes rdf:nodeID="{$literal_attributes_node_ID}"/>
                 </xsl:when>
                 <!-- *** uri PTs *** -->
                 <xsl:when test="
@@ -165,9 +188,21 @@
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:uri_pt/node()">
-                    <sinopia:hasUriAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-                    translate('/.#', '') => substring-after('http:'),
-                    '_uri_attributes')}"/>
+                    <xsl:variable name="uri_attributes_node_ID" as="xs:string">
+                        <xsl:choose>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('https:'),
+                                    '_uri_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('http:'),
+                                    '_uri_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <sinopia:hasUriAttributes rdf:nodeID="{$uri_attributes_node_ID}"/>
                 </xsl:when>
                 <!-- *** lookup PTs *** -->
                 <xsl:when test="
@@ -177,9 +212,21 @@
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:lookup_pt/node()">
-                    <sinopia:hasLookupAttributes rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-                    translate('/.#', '') => substring-after('http:'),
-                    '_lookup_attributes')}"/>
+                    <xsl:variable name="lookup_attributes_node_ID" as="xs:string">
+                        <xsl:choose>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('https:'),
+                                    '_lookup_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('http:'),
+                                    '_lookup_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <sinopia:hasLookupAttributes rdf:nodeID="{$lookup_attributes_node_ID}"/>
                 </xsl:when>
                 <!-- *** nested-resource PTs *** -->
                 <xsl:when test="
@@ -189,10 +236,22 @@
                         [uwsinopia:format = $format]
                         [uwsinopia:user = $user]
                         /uwsinopia:nested_resource_pt/node()">
+                    <xsl:variable name="resource_attributes_node_ID" as="xs:string">
+                        <xsl:choose>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('https:'),
+                                    '_resource_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                            <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                                <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                                    translate('/.#', '') => substring-after('http:'),
+                                    '_resource_attributes')"></xsl:copy-of>
+                            </xsl:when>
+                        </xsl:choose>
+                    </xsl:variable>
                     <sinopia:hasResourceAttributes
-                        rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-                    translate('/.#', '') => substring-after('http:'),
-                    '_resource_attributes')}"/>
+                        rdf:nodeID="{$resource_attributes_node_ID}"/>
                 </xsl:when>
                 <xsl:otherwise/>
             </xsl:choose>

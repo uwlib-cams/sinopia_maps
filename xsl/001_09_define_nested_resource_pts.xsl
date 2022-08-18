@@ -19,10 +19,22 @@
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="prop"/>
+        <xsl:variable name="node_ID" as="xs:string">
+            <xsl:choose>
+                <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                    <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                        translate('/.#', '') => substring-after('https:'),
+                        '_resource_attributes')"></xsl:copy-of>
+                </xsl:when>
+                <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                    <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
+                        translate('/.#', '') => substring-after('http:'),
+                        '_resource_attributes')"></xsl:copy-of>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
         <rdf:Description
-            rdf:nodeID="{concat($prop/uwmaps:prop_iri/@iri => 
-            translate('/.#', '') => substring-after('http:'),
-            '_resource_attributes')}">
+            rdf:nodeID="{$node_ID}">
             <!-- hard-code rdf:type for this node sinopia:ResourcePropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
             <xsl:for-each select="

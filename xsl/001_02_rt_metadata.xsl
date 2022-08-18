@@ -99,9 +99,20 @@
             <!-- TO DO: output resource attribute = suppressible if present
                 should *not* be able to output suppressible RT if more than one prop has been marked for inclusion
                 [!] CAUTION [!] Sinopia RTs which are suppressible may not have any more than one PT -->
+            <xsl:variable name="node_ID" as="xs:string">
+                <xsl:choose>
+                    <xsl:when test="substring-before($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, '//') = 'https:'">
+                        <xsl:copy-of select="concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
+                            translate('/.#', '') => substring-after('https:'), '_order')"></xsl:copy-of>
+                    </xsl:when>
+                    <xsl:when test="substring-before($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri, '//') = 'http:'">
+                        <xsl:copy-of select="concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
+                            translate('/.#', '') => substring-after('http:'), '_order')"></xsl:copy-of>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
             <sinopia:hasPropertyTemplate
-                rdf:nodeID="{concat($sorted_properties[position() = 1]/uwmaps:prop_iri/@iri => 
-                translate('/.#', '') => substring-after('http:'), '_order')}"/>
+                rdf:nodeID="{$node_ID}"/>
         </rdf:Description>
     </xsl:template>
 </xsl:stylesheet>
