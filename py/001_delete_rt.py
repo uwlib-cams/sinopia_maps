@@ -25,7 +25,7 @@ def prompt_platform(jwt):
 	prompt_resources(jwt, sinopia_platform)
 
 def prompt_resources(jwt, platform):
-	resources = input("Delete a single resource or a list?\n('single' or 'list'\n> ")
+	resources = input("Delete a single resource or a list?\n'single' or 'list'\n> ")
 	if resources == 'single':
 		resource_id = input("Enter resource ID here:\n> ")
 		delete_single(jwt, platform, resource_id)
