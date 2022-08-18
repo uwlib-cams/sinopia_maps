@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
-         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:monograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -13,7 +8,8 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
       <rdfs:label>UWSINOPIA WAU rdaWork monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-08-12</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-17</sinopia:hasDate>
+
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_order">
@@ -190,18 +186,17 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has creator agent of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10065"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10393"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10062"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10058"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10061"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10052"/>
+
+      <!--USE PT FOR has aggregator agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10062"/>
+      <!--USE PT FOR has artist agent--><!--USE PT FOR has author agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10052"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10305"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10060"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10053"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10071"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10484"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10048"/>
+
+      <!--USE PT FOR has creator collective agent of work--><!--USE PT FOR has creator person of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10048"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10051"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10066"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10068"/>
@@ -216,8 +211,9 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10064"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10050"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10306"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10629"/>
+
+      <!--USE PT FOR has researcher agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10629"/>
+
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-6277a869-961d-379f-8ae8-7ec159052a26"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -553,17 +549,17 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has creator collective agent of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10484"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10495"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10485"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10498"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10483"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10482"/>
+
+      <!--USE PT FOR has aggregator collective agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10485"/>
+      <!--USE PT FOR has artist collective agent--><!--USE PT FOR has author collective agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10482"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10500"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10481"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10489"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10505"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
+
+      <!--USE PT FOR has creator corporate body of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10461"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10488"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10502"/>
@@ -686,13 +682,12 @@
       <rdfs:label xml:lang="en">has creator person of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10407"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10448"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
+
+      <!--USE PT FOR has aggregator person--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10035"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10438"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10451"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10436"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10044"/>
+      <!--USE PT FOR has artist person--><!--USE PT FOR has author person--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10044"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10435"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10453"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10434"/>
@@ -851,14 +846,13 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10311"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10070"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10287"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10065"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
+
+      <!--USE PT FOR has creator agent of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10049"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10046"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10315"/>
+      <!--USE PT FOR has issuing agent--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10315"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10312"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10067"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10319"/>
+      <!--USE PT FOR has sponsoring agent of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10319"/>
+
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-31ea511f-ce06-3adc-a598-f55044a75e9c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1071,8 +1065,8 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10314"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10507"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10533"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10506"/>
+      <!--USE PT FOR has creator corporate body of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10506"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10527"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10007"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10550"/>
@@ -1153,9 +1147,8 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has researcher agent</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10463"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10416"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-babe2f7b-70db-3f6a-8e9b-8a8263f3eaa6"/>
+      <!--USE PT FOR has researcher collective agent--><!--USE PT FOR has researcher person--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-babe2f7b-70db-3f6a-8e9b-8a8263f3eaa6"/>
+
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
       <sinopia:hasResourceAttributes rdf:nodeID="rdaregistryinfoElementswP10293_resource_attributes"/>
    </rdf:Description>
@@ -1255,8 +1248,8 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related expression of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10308"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10078"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10258"/>
+      <!--USE PT FOR has expression of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10258"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10628"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dd16b811-6ce6-3312-8cdd-7a64741da0ee"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
@@ -1357,8 +1350,8 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has source work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10190"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10142"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10184"/>
+      <!--USE PT FOR is adaptation of work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10184"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10139"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10193"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10125"/>
@@ -1435,8 +1428,8 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10128"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10138"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10250"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10133"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10189"/>
+      <!--USE PT FOR is screenplay based on work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10189"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10137"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10233"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10234"/>
@@ -1545,8 +1538,8 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10186"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10143"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10185"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10196"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b117f453-cda9-312c-8b0b-db902f1daae8"/>
+      <!--USE PT FOR is imitation of work--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b117f453-cda9-312c-8b0b-db902f1daae8"/>
+
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10341_lookup_attributes"/>
@@ -1605,8 +1598,8 @@
       <rdfs:label xml:lang="en">has derivative work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10148"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10089"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10155"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10119"/>
+      <!--USE PT FOR is adapted as work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10119"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10171"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10167"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10033"/>
@@ -1678,8 +1671,8 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is adapted as work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10155"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10095"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10251"/>
+      <!--USE PT FOR is adapted as screenplay work--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10251"/>
+
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10091"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10025"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10016"/>
@@ -1789,3 +1782,4 @@
       <rdfs:label xml:lang="en">is adapted as video screenplay work</rdfs:label>
    </rdf:Description>
 </rdf:RDF>
+
