@@ -1,7 +1,5 @@
-
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:fn="http://www.w3.org/2005/xpath-functions">
-
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaManifestation:monograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -9,13 +7,11 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-
-      <sinopia:hasDate>2022-08-17</sinopia:hasDate>
-
+      <sinopia:hasDate>2022-08-18</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30139_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30156_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_define">
@@ -33,7 +29,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30156_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30156_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30156_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30128_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30156_define">
@@ -58,7 +54,7 @@
       <rdfs:label xml:lang="en">has parallel title proper</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30128_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30128_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30128_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30105_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30128_define">
@@ -70,7 +66,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30105_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30105_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30105_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30088_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30105_define">
@@ -89,7 +85,7 @@
       <rdfs:label xml:lang="en">has parallel statement of responsibility relating to title proper</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30088_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30088_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30088_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30111_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30088_define">
@@ -113,7 +109,7 @@
       <rdfs:label xml:lang="en">has parallel place of publication</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30111_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30111_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30111_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30176_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30111_define">
@@ -125,7 +121,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30176_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30176_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30176_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30004_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30176_define">
@@ -149,7 +145,7 @@
       <rdfs:label xml:lang="en">has parallel name of publisher</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30004_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30004_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30004_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30011_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30004_define">
@@ -166,7 +162,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaNomen:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30011_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30011_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30011_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30133_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30011_define">
@@ -182,7 +178,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30133_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30133_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30133_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30007_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30133_define">
@@ -201,7 +197,7 @@
       <rdfs:label xml:lang="en">has parallel designation of edition</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30007_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30007_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30007_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30182_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30007_define">
@@ -218,7 +214,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30182_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30182_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30182_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30137_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30182_define">
@@ -230,7 +226,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30137_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30137_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30137_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30169_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30137_define">
@@ -297,7 +293,7 @@
       <rdfs:label xml:lang="en">has note on numbering of sequence</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30169_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30169_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30169_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30154_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30169_define">
@@ -309,8 +305,8 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30154_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30154_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30154_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30154_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -320,22 +316,22 @@
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has LC Classification Part A</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasLcClassificationPartA"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30142_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has LC Classification Part B</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasLcClassificationPartB"/>
@@ -343,7 +339,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30142_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30142_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30142_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30157_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30142_define">
@@ -362,7 +358,7 @@
       <rdfs:label xml:lang="en">has parallel other title information</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30157_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30157_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30157_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30014_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30157_define">
@@ -386,7 +382,7 @@
       <rdfs:label xml:lang="en">has parallel title of series</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30014_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30014_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30014_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30083_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30014_define">
@@ -403,7 +399,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaNomen:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30083_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30083_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30083_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30106_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30083_define">
@@ -420,7 +416,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30106_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30106_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30106_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30143_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30106_define">
@@ -432,7 +428,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30143_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30143_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30143_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30003_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30143_define">
@@ -451,7 +447,7 @@
       <rdfs:label xml:lang="en">has parallel other title information of series</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30003_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30003_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30003_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30002_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30003_define">
@@ -471,7 +467,7 @@
       <rdfs:label xml:lang="en">single unit</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30002_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30002_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30002_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30001_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30002_define">
@@ -492,7 +488,7 @@
       <rdfs:label xml:lang="en">unmediated</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30001_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30001_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30001_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30335_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30001_define">
@@ -513,7 +509,7 @@
       <rdfs:label xml:lang="en">volume</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30335_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30335_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30335_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30305_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30335_define">
@@ -531,7 +527,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:subjects"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30305_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30305_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30305_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30121_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30305_define">
@@ -549,7 +545,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:subjects"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30121_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30121_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30121_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30118_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30121_define">
@@ -568,7 +564,7 @@
       <rdfs:label xml:lang="en">has parallel statement of responsibility relating to edition</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30118_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30118_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30118_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30086_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30118_define">
@@ -587,7 +583,7 @@
       <rdfs:label xml:lang="en">has parallel statement of responsibility relating to named revision of edition</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30086_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30086_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30086_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30174_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30086_define">
@@ -611,7 +607,7 @@
       <rdfs:label xml:lang="en">has parallel place of production</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30174_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30174_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30174_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30009_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30174_define">
@@ -635,7 +631,7 @@
       <rdfs:label xml:lang="en">has parallel name of producer</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30009_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30009_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30009_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30173_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30009_define">
@@ -652,7 +648,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30173_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30173_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30173_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30085_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30173_define">
@@ -676,7 +672,7 @@
       <rdfs:label xml:lang="en">has parallel name of distributor</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30085_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30085_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30085_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30008_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30085_define">
@@ -700,7 +696,7 @@
       <rdfs:label xml:lang="en">has parallel place of distribution</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30008_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30008_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30008_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30087_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30008_define">
@@ -717,7 +713,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30087_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30087_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30087_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30175_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30087_define">
@@ -741,7 +737,7 @@
       <rdfs:label xml:lang="en">has parallel place of manufacture</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30175_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30175_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30175_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30010_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30175_define">
@@ -765,7 +761,7 @@
       <rdfs:label xml:lang="en">has parallel name of manufacturer</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30010_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30010_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30010_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30119_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30010_define">
@@ -782,8 +778,8 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30119_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30119_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30119_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasUniversityOfWashingtonNote_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30119_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -800,11 +796,11 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30113">
       <rdfs:label xml:lang="en">has parallel statement of responsibility relating to series</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasUniversityOfWashingtonNote_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasUniversityOfWashingtonNote_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30208_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasUniversityOfWashingtonNote_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has University Of Washington Note.</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasUniversityOfWashingtonNote"/>
@@ -812,7 +808,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30208_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30208_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30208_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30084_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30208_define">
@@ -833,7 +829,7 @@
       <rdfs:label xml:lang="en">paper</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30084_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30084_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30084_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30187_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30084_define">
@@ -854,7 +850,7 @@
       <rdfs:label xml:lang="en">ink</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30187_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30187_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30187_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30155_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30187_define">
@@ -871,7 +867,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:production_method"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30155_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30155_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30155_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30197_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30155_define">
@@ -888,7 +884,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:layout"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30197_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30197_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30197_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30199_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30197_define">
@@ -905,7 +901,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:bibliographic_format"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30199_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30199_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30199_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30309_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30199_define">
@@ -922,7 +918,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:font_size"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30309_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30309_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30309_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30146_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30309_define">
@@ -934,8 +930,8 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30146_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30146_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30146_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30146_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -945,57 +941,57 @@
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has SuDoc Classification Number</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasSuDocClassificationNumber"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has NLM Classification Part A</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasNlmClassificationPartA"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has NLM Classification Part B</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasNlmClassificationPartB"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30327_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Has Contributor Agent</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasContributorAgent"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
-      <sinopia:hasResourceAttributes rdf:nodeID="_resource_attributes"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_resource_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_resource_attributes">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasContributorAgent_resource_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30327_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30327_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30327_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30267_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30327_define">
@@ -1059,7 +1055,7 @@
       <rdfs:label xml:lang="en">has contributor person to aggregate</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30267_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30267_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30267_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30081_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30267_define">
@@ -1076,7 +1072,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30081_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30081_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30081_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30080_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30081_define">
@@ -1093,7 +1089,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30080_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30080_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30080_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30082_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30080_define">
@@ -1110,7 +1106,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30082_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30082_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30082_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30253_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30082_define">
@@ -1182,7 +1178,7 @@
       <rdfs:label xml:lang="en">has printmaker agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30253_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30253_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30253_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30048_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30253_define">
@@ -1199,7 +1195,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30048_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30048_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30048_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30027_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30048_define">
@@ -1216,7 +1212,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30027_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30027_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30027_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30024_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30027_define">
@@ -1233,7 +1229,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30024_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30024_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30024_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30026_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30024_define">
@@ -1250,7 +1246,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30026_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30026_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30026_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30039_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30026_define">
@@ -1267,7 +1263,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30039_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30039_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30039_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30038_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30039_define">
@@ -1284,7 +1280,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30038_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30038_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30038_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30022_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30038_define">
@@ -1301,7 +1297,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30022_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30022_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30022_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30046_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30022_define">
@@ -1318,7 +1314,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30046_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30046_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30046_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30019_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30046_define">
@@ -1335,7 +1331,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30019_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30019_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30019_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30025_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30019_define">
@@ -1352,7 +1348,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30025_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30025_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30025_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30310_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30025_define">
@@ -1369,7 +1365,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30310_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30310_define"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30310_order"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30300_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30310_define">
@@ -1381,8 +1377,8 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30300_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30300_define"/>
-      <rdf:rest rdf:nodeID="_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30300_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4heldBy_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30300_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -1404,23 +1400,21 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30301">
       <rdfs:label xml:lang="en">is preservation facsimile of item of</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_order">
-      <rdf:first rdf:nodeID="_define"/>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4heldBy_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4heldBy_order"/>
       <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_define">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4heldBy_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">Held By</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#heldBy"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
-      <sinopia:hasResourceAttributes rdf:nodeID="_resource_attributes"/>
+      <sinopia:hasResourceAttributes rdf:nodeID="doiorg106069uwlib55d4heldBy_resource_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="_resource_attributes">
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4heldBy_resource_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourcePropertyTemplate"/>
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
-
 </rdf:RDF>
-
