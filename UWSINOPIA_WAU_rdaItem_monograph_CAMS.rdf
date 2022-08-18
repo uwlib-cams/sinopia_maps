@@ -11,7 +11,7 @@
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40049_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40048_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_define">
@@ -29,7 +29,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40048_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40048_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40048_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40048_define">
@@ -41,7 +41,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasSuDocClassificationNumber_define">
@@ -52,7 +52,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_define">
@@ -63,7 +63,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartB_define">
@@ -74,7 +74,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartA_define">
@@ -85,7 +85,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40028_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasNlmClassificationPartB_define">
@@ -96,7 +96,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40028_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40028_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40028_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40162_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40028_define">
@@ -108,7 +108,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40162_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40162_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40162_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasPhysicalSubLocation_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40162_define">
@@ -125,7 +125,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaPlace:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasPhysicalSubLocation_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasPhysicalSubLocation_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasPhysicalSubLocation_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasBarcode_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasPhysicalSubLocation_define">
@@ -136,7 +136,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasBarcode_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasBarcode_order"/>
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasBarcode_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40050_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasBarcode_define">
@@ -147,7 +147,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40050_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40050_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40050_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40032_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40050_define">
@@ -159,7 +159,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40032_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40032_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40032_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40029_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40032_define">
@@ -176,7 +176,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40029_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40029_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40029_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40034_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40029_define">
@@ -193,7 +193,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40034_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40034_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40034_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40009_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40034_define">
@@ -210,7 +210,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40009_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40009_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40009_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40047_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40009_define">
@@ -226,7 +226,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40047_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40047_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40047_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40019_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40047_define">
@@ -238,7 +238,7 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40019_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40019_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40019_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40093_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40019_define">
@@ -262,7 +262,7 @@
       <rdfs:label xml:lang="en">has donor agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40093_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40093_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40093_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40013_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40093_define">
@@ -279,7 +279,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40013_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40013_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40013_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40012_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40013_define">
@@ -296,7 +296,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40012_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40012_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40012_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40015_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40012_define">
@@ -313,7 +313,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40015_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40015_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40015_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40016_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40015_define">
@@ -330,7 +330,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40016_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40016_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40016_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40014_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40016_define">
@@ -347,7 +347,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40014_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40014_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40014_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40024_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40014_define">
@@ -364,7 +364,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40024_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40024_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40024_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40092_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40024_define">
@@ -381,7 +381,7 @@
       <sinopia:hasResourceTemplateId rdf:resource="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40092_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40092_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40092_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40088_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40092_define">
@@ -398,7 +398,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40088_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40088_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40088_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40089_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40088_define">
@@ -415,7 +415,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40089_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40089_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40089_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40091_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40089_define">
@@ -439,7 +439,7 @@
       <rdfs:label xml:lang="en">has preservation facsimile of item</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40091_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40091_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40091_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40020_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40091_define">
@@ -456,7 +456,7 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40020_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40020_order"/>
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40020_define"/>
       <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40020_define">
