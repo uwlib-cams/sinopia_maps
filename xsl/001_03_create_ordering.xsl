@@ -24,7 +24,7 @@
         <!-- create the 'ordering' bnode for each PT -->
         <xsl:for-each select="$sorted_property">
             <xsl:variable name="current_position" select="position()"/>
-            <xsl:variable name="node_ID" as="xs:string">
+            <xsl:variable name="order_node_ID" as="xs:string">
                 <xsl:choose>
                     <xsl:when test="substring-before(uwmaps:prop_iri/@iri, '//') = 'https:'">
                         <xsl:copy-of select="concat(uwmaps:prop_iri/@iri => 
@@ -36,9 +36,21 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:variable>
+            <xsl:variable name="first_node_ID" as="xs:string">
+                <xsl:choose>
+                    <xsl:when test="substring-before(uwmaps:prop_iri/@iri, '//') = 'https:'">
+                        <xsl:copy-of select="concat(uwmaps:prop_iri/@iri => 
+                            translate('/.#', '') => substring-after('https:'), '_define')"></xsl:copy-of>
+                    </xsl:when>
+                    <xsl:when test="substring-before(uwmaps:prop_iri/@iri, '//') = 'http:'">
+                        <xsl:copy-of select="concat(uwmaps:prop_iri/@iri => 
+                            translate('/.#', '') => substring-after('http:'), '_define')"></xsl:copy-of>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:variable>
             <!-- create bnode to order PTs with first, rest -->
-            <rdf:Description rdf:nodeID="{$node_ID}">
-                <rdf:first rdf:nodeID="{$node_ID}"/>
+            <rdf:Description rdf:nodeID="{$order_node_ID}">
+                <rdf:first rdf:nodeID="{$first_node_ID}"/>
                 <xsl:choose>
                     <xsl:when test="position() != last()">
                         <xsl:variable name="rest_node_ID" as="xs:string">
