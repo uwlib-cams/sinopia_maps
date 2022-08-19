@@ -95,15 +95,6 @@ def get_comment_info(rdf_RDF, rdf_Description, prop_URI):
 			index_ID[tag_text_tuple] = index_num
 		index_num += 1
 
-	match_key = ('{http://sinopia.io/vocabulary/}hasPropertyUri', prop_URI)
-	try:
-		comment_index = index_ID[match_key]
-	except:
-		print(f"match key: {match_key}")
-		for key in index_ID.keys():
-			print(key)
-		input()
-
 	for rdf_Desc in rdf_RDF:
 		if '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about' in rdf_Desc.attrib.keys():
 			if rdf_Desc.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] == prop_URI:
