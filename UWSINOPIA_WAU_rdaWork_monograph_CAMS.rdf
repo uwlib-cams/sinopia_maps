@@ -8,36 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaWork monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
       <sinopia:hasDate>2022-08-23</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10273_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10273_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is evaluation of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10273"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10275"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10274"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0ec6dcab-e507-3740-bbb9-ef8d01cf859d"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10273_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10273">
-      <rdfs:label xml:lang="en">is evaluation of manifestation</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10275">
-      <rdfs:label xml:lang="en">is critique of manifestation</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10274">
-      <rdfs:label xml:lang="en">is review of manifestation</rdfs:label>
+      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10331_define"/>
@@ -2339,7 +2310,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10279_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10279_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10271_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10273_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10279_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -2365,6 +2336,35 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10280">
       <rdfs:label xml:lang="en">is review of expression</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10273_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10271_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is evaluation of manifestation</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10273"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10275"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10274"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0ec6dcab-e507-3740-bbb9-ef8d01cf859d"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10273_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10273_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10273">
+      <rdfs:label xml:lang="en">is evaluation of manifestation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10275">
+      <rdfs:label xml:lang="en">is critique of manifestation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10274">
+      <rdfs:label xml:lang="en">is review of manifestation</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10271_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10271_define"/>
