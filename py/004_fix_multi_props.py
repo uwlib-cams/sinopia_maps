@@ -95,13 +95,16 @@ def get_comment_info(rdf_RDF, rdf_Description, prop_URI):
 			index_ID[tag_text_tuple] = index_num
 		index_num += 1
 
+	match_key = ('{http://sinopia.io/vocabulary/}hasPropertyUri', prop_URI)
+	comment_index = index_ID[match_key]
+
 	for rdf_Desc in rdf_RDF:
 		if '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about' in rdf_Desc.attrib.keys():
 			if rdf_Desc.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] == prop_URI:
 				label_object = rdf_Desc.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
 				prop_label = label_object[0].text
 
-	return comment_index, prop_label
+	return index_num, prop_label
 
 def locate_RTs():
 	sinopia_maps_repo = os.listdir('..')
