@@ -19,7 +19,7 @@ def locate_RTs(RT_type):
 			if file[0:17] == "UWSINOPIA_WAU_rda" and file[-4:] == ".rdf":
 				RT_list.append(file)
 		elif RT_type == "3":
-			if file[0:17] == "UWSINOPIA_WAU_rda" or file[0:22] == "TEST_UWSINOPIA_WAU_rda" and file[-4:] == ".rdf":
+			if (file[0:17] == "UWSINOPIA_WAU_rda" or file[0:22] == "TEST_UWSINOPIA_WAU_rda") and file[-4:] == ".rdf":
 				RT_list.append(file)
 
 	return RT_list
