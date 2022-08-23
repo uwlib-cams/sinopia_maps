@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
-         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:fn="http://www.w3.org/2005/xpath-functions">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaExpression:monograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -13,7 +7,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10006"/>
       <rdfs:label>UWSINOPIA WAU rdaExpression monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-08-19</sinopia:hasDate>
+      <sinopia:hasDate>2022-08-23</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementseP20231_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20231_order">
@@ -282,6 +276,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20189_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20141_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20141_define"/>
@@ -299,6 +294,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20141_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20171_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20171_define"/>
@@ -316,6 +312,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20171_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20002_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20002_define"/>
@@ -634,6 +631,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20059_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20205_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20205_define"/>
@@ -651,6 +649,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20205_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20298_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20298_define"/>
@@ -668,6 +667,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20298_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20299_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20299_define"/>
@@ -685,6 +685,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20299_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20154_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20154_define"/>
@@ -711,6 +712,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20154_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20154">
       <rdfs:label xml:lang="en">is preceded by expression</rdfs:label>
@@ -767,6 +769,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20169_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20169">
       <rdfs:label xml:lang="en">is succeeded by expression</rdfs:label>
@@ -814,6 +817,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20204_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20121_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20121_define"/>
@@ -831,6 +835,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20121_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20193_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20193_define"/>
@@ -848,6 +853,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20193_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20152_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20152_define"/>
@@ -880,6 +886,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20152_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20152">
       <rdfs:label xml:lang="en">is adaptation of expression</rdfs:label>
@@ -945,6 +952,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20135_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20184_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20184_define"/>
@@ -962,6 +970,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20184_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20140_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20140_define"/>
@@ -979,6 +988,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20140_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20195_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20195_define"/>
@@ -997,6 +1007,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20195_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20195">
       <rdfs:label xml:lang="en">is imitation of expression</rdfs:label>
@@ -1020,6 +1031,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20186_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20203_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20203_define"/>
@@ -1037,6 +1049,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20203_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20166_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20166_define"/>
@@ -1054,6 +1067,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20166_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20255_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20255_define"/>
@@ -1071,6 +1085,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20255_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20067_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20067_define"/>
@@ -1088,6 +1103,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20067_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20170_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20170_define"/>
@@ -1105,6 +1121,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20170_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20115_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20115_define"/>
@@ -1122,6 +1139,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20115_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20119_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20119_define"/>
@@ -1139,6 +1157,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20119_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20114_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20114_define"/>
@@ -1157,6 +1176,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20114_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20114">
       <rdfs:label xml:lang="en">is imitated as expression</rdfs:label>
@@ -1180,6 +1200,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20087_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20181_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20181_define"/>
@@ -1197,6 +1218,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20181_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20211_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20211_define"/>
@@ -1214,6 +1236,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20211_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20192_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20192_define"/>
@@ -1238,6 +1261,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20192_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20192">
       <rdfs:label xml:lang="en">is augmentation of expression</rdfs:label>
@@ -1286,6 +1310,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20105_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20105">
       <rdfs:label xml:lang="en">is augmented by expression</rdfs:label>
@@ -1327,6 +1352,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20100_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20254_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20254_define"/>
@@ -1344,6 +1370,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20254_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20084_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20084_define"/>
@@ -1361,6 +1388,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20084_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20102_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20102_define"/>
@@ -1381,6 +1409,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20102_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/e/P20102">
       <rdfs:label xml:lang="en">is screenplay for expression</rdfs:label>
@@ -1410,6 +1439,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20176_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20145_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20145_define"/>
@@ -1427,6 +1457,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20145_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20074_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementseP20074_define"/>
@@ -1444,5 +1475,6 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20074_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
 </rdf:RDF>
