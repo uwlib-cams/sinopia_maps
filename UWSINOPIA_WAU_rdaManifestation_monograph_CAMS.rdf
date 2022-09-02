@@ -7,7 +7,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-08-23</sinopia:hasDate>
+      <sinopia:hasDate>2022-09-02</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
@@ -36,8 +36,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30156_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has title proper</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30156"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30203"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30156"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30203"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4b9291c5-f525-37fd-b661-c469e763ce8a"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
@@ -60,8 +60,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30128_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has variant title of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30128"/>
+      <rdfs:label xml:lang="en">has variant title of manifestation [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30128"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-f8142e73-8120-32a4-909a-e1c5b691e3e0"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -72,9 +72,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30105_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has statement of responsibility relating to title proper</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30105"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30116"/>
+      <rdfs:label xml:lang="en">has statement of responsibility relating to title proper [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30105"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30116"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-93929207-c91d-3970-b325-af8fd9dd2956"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -92,8 +92,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30088_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has place of publication</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30088"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30092"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30088"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30092"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b569c353-c792-3617-8c83-d974466ccc02"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -115,8 +115,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30111_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has publication statement</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30111"/>
+      <rdfs:label xml:lang="en">has publication statement [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30111"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0f7b5665-dec5-371a-8b7b-d49f1c5080a7"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -128,8 +128,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30176_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has name of publisher</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30176"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30095"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30176"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30095"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-8fb9e501-1ef9-3b1f-9afa-078737576947"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -152,7 +152,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30004_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has identifier for manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30004"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30004"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-95f6a60f-3d2b-32d8-9486-cf810708d4ba"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -169,7 +169,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30011_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has date of publication</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30011"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30011"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-26b84eaa-054e-3c8c-8933-8760b9b2046f"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
       <sinopia:hasResourceAttributes rdf:nodeID="rdaregistryinfoElementsmP30011_resource_attributes"/>
@@ -184,9 +184,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30133_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has designation of edition</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30133"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30013"/>
+      <rdfs:label xml:lang="en">has designation of edition [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30133"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30013"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3f4a6575-8253-3866-a8f6-ce255dcb094c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -204,7 +204,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30007_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has copyright date</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30007"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30007"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-452cb3af-3c8e-3c20-8d59-2362ad325a09"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -220,8 +220,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30182_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has extent of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30182"/>
+      <rdfs:label xml:lang="en">has extent of manifestation [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30182"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-8754c7a9-c38c-3735-9cf9-865df717f81b"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -232,21 +232,21 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30137_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has note on manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30137"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30063"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30059"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30053"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30214"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30055"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30050"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30260"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30054"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30058"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30064"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30057"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30052"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30062"/>
+      <rdfs:label xml:lang="en">has note on manifestation [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30137"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30063"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30059"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30053"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30214"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30055"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30050"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30260"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30054"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30058"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30064"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30057"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30052"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30062"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-2f069b6a-bc80-3498-ba25-28ec7d8672c2"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -299,8 +299,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30169_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has dimensions</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30169"/>
+      <rdfs:label xml:lang="en">has dimensions [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30169"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-cc95f0fd-c059-334d-b240-c7379e396c7d"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -345,9 +345,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30142_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has other title information</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30142"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30151"/>
+      <rdfs:label xml:lang="en">has other title information [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30142"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30151"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-d12e7ee9-4a94-3ea6-8bb5-5e3ec97a91e9"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -365,8 +365,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30157_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has title of series</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30157"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30204"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30157"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30204"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0338d0e4-e62e-377f-80f8-f7b06b2f11a4"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -389,7 +389,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30014_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has numbering within sequence</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30014"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30014"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-04e52191-96ac-3870-ac6a-de37540f45f5"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -406,7 +406,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30083_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has publisher agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30083"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30083"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dca98326-8bca-346f-9b5e-a262632daee5"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -422,8 +422,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30106_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has series statement</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30106"/>
+      <rdfs:label xml:lang="en">has series statement [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30106"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-60344275-5627-3f0e-9a61-438b6d27a5fa"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -434,9 +434,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30143_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has other title information of series</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30143"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30152"/>
+      <rdfs:label xml:lang="en">has other title information of series [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30143"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30152"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-fb17363e-47f7-3220-aef9-256796432ab9"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -551,9 +551,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30121_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has statement of responsibility relating to edition</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30121"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30115"/>
+      <rdfs:label xml:lang="en">has statement of responsibility relating to edition [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30121"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30115"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dcdb7f9e-3b2f-3819-8c00-1a5e6a1339ed"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -570,9 +570,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30118_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has statement of responsibility relating to named revision of edition</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30118"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30112"/>
+      <rdfs:label xml:lang="en">has statement of responsibility relating to named revision of edition [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30118"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30112"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-25f4533f-8def-3228-a74f-4a1f0d57426f"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -590,8 +590,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30086_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has place of production</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30086"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30091"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30086"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30091"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-6bd2f401-d85e-3cdc-9151-b0ff84c51806"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -614,8 +614,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30174_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has name of producer</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30174"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30094"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30174"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30094"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-afdb9990-0d14-33ef-83f0-e514f188e95f"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -638,7 +638,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30009_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has date of production</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30009"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30009"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-34b5a5fd-dede-3020-97f6-6b4e1111568c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -655,8 +655,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30173_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has name of distributor</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30173"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30017"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30173"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30017"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-d34564b0-6a8a-384f-b966-a9638b234d89"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -679,8 +679,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30085_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has place of distribution</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30085"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30089"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30085"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30089"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-5e4b0696-b177-34a4-9671-7cb0cdec37bd"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -703,7 +703,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30008_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has date of distribution</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30008"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30008"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-65ea44c3-a78e-3883-9d14-6ef34c77067a"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -720,8 +720,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30087_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has place of manufacture</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30087"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30090"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30087"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30090"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-d9676281-26fe-3751-ae5a-d45689d80171"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -744,8 +744,8 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30175_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has name of manufacturer</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30175"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30049"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30175"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30049"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-2a4d1fa1-84b7-32a4-95d3-2ea1cba8642b"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -768,7 +768,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30010_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has date of manufacture</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30010"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30010"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-f6396d3f-6883-3ad2-84f1-d0714cfd42a0"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -784,9 +784,9 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30119_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has statement of responsibility relating to series</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30119"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30113"/>
+      <rdfs:label xml:lang="en">has statement of responsibility relating to series [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30119"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30113"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-03903371-8ef8-3e8a-88c9-45421e6de05b"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -924,8 +924,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30309_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has type of binding</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30309"/>
+      <rdfs:label xml:lang="en">has type of binding [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30309"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4b9320ad-5cf8-31b7-aad2-7d4b60070bbb"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -936,8 +936,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30146_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has restriction on use of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30146"/>
+      <rdfs:label xml:lang="en">has restriction on use of manifestation [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30146"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-2e047c4a-393b-35d0-bf77-4ddf00900f31"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -998,18 +998,18 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30327_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has contributor agent to aggregate</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30327"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30315"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30316"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30333"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30326"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30311"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30332"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30331"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30321"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30328"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30365"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30336"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30327"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30315"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30316"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30333"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30326"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30311"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30332"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30331"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30321"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30328"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30365"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30336"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1062,7 +1062,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30267_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related agent of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30267"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30267"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dcb88128-0780-3036-be8c-91c7e5ef395c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1079,7 +1079,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30081_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has producer agent of unpublished manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30081"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30081"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-33581eab-6f3d-3f32-9cd5-4a3ec5f58a15"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1096,7 +1096,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30080_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has distributor agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30080"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30080"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1113,11 +1113,11 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30082_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has manufacturer agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30082"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30071"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30390"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30361"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30078"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30082"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30071"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30390"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30361"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/object/P30078"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-18a8b4c4-155c-31cc-858e-cabd60df787f"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/resource"/>
@@ -1346,8 +1346,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30310_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has binding of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30310"/>
+      <rdfs:label xml:lang="en">has binding of manifestation [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30310"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b4d8d599-1bbe-30d0-bda2-a041c821225f"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
