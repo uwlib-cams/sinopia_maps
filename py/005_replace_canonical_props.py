@@ -58,7 +58,8 @@ def locate_RTs():
 
 	return RT_list
 
-def replace_uri(rdf_RDF, prop_type):
+def replace_uri(rdf_Description, prop_type, nested_RT=False):
+	change_label = (False, "")
 	sinopia_hasPropertyUri_list = rdf_Description.findall('{http://sinopia.io/vocabulary/}hasPropertyUri')
 
 	for sinopia_hasPropertyUri in sinopia_hasPropertyUri_list:
@@ -70,13 +71,25 @@ def replace_uri(rdf_RDF, prop_type):
 			prop_iri = prop_stem + prop_num
 			if prop_iri in object_prop_list:
 				sinopia_hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] = prop_iri
+				change_label = (True, "object")
 		elif prop_type == "datatype":
 			prop_stem = prop_stem + 'datatype/'
 			prop_iri = prop_stem + prop_num
 			if prop_iri in datatype_prop_list:
 				sinopia_hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] = prop_iri
+				change_label = (True, "datatype")
+	if change_label[0] == True and nested_RT == False:
+		rdfs_label_list = rdf_Description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
+		for rdfs_label in rdfs_label_list:
+			rdfs_label_text = rdfs_label.text
+			if change_label[1] == "object":
+				new_rdfs_label = rdfs_label_text + ' [REQUIRES URI]'
+				rdfs_label.text = new_rdfs_label
+			elif change_label[1] == "datatype":
+				new_rdfs_label = rdfs_label_text + ' [REQUIRES LITERAL]'
+				rdfs_label.text = new_rdfs_label
 
-	return rdf_RDF
+	return rdf_Description
 
 ###
 
@@ -95,12 +108,12 @@ for RT in RT_list:
 				"""URI or lookup"""
 				if len(rdf_Description.findall('{http://sinopia.io/vocabulary/}hasLookupAttributes')) == 0:
 					"""URI"""
-					rdf_RDF = replace_uri(rdf_RDF, "object")
+					rdf_Description = replace_uri(rdf_Description, "object")
 			elif property_type == 'http://sinopia.io/vocabulary/propertyType/resource':
 				"""Nested resource"""
-				rdf_RDF = replace_uri(rdf_RDF, "object")
+				rdf_Description = replace_uri(rdf_Description, "object", True)
 			elif property_type == 'http://sinopia.io/vocabulary/propertyType/literal':
 				"""Literal"""
-				rdf_RDF = replace_uri(rdf_RDF, "datatype")
+				rdf_Description = replace_uri(rdf_Description, "datatype")
 
 	tree.write(f'../{RT}', xml_declaration=True, encoding="UTF-8")
