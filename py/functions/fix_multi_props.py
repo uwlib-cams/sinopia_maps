@@ -98,9 +98,18 @@ def get_comment_info(rdf_RDF, rdf_Description, prop_URI):
 	match_key = ('{http://sinopia.io/vocabulary/}hasPropertyUri', prop_URI)
 	comment_index = index_ID[match_key]
 
+	if prop_URI[-13:-6] == 'object/':
+		canonical_prop = prop_URI.split('object/')
+		canonical_prop = "".join(canonical_prop)
+	elif prop_URI[-15:-6] == 'datatype/':
+		canonical_prop = prop_URI.split('datatype/')
+		canonical_prop = "".join(canonical_prop)
+	else:
+		canonical_prop = prop_URI
+
 	for rdf_Desc in rdf_RDF:
 		if '{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about' in rdf_Desc.attrib.keys():
-			if rdf_Desc.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] == prop_URI:
+			if rdf_Desc.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] == canonical_prop:
 				label_object = rdf_Desc.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
 				prop_label = label_object[0].text
 
