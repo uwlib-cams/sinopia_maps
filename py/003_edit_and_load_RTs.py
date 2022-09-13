@@ -1,8 +1,13 @@
 """Step 1: Run XSLT transformation"""
 import os
 
+# Test RTs
+os.system('java -cp ~/saxon11/saxon-he-11.1.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl test="TEST:"')
+# Non-test RTs
 os.system('java -cp ~/saxon11/saxon-he-11.1.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
+# Move to top-level folder
 os.system('mv UWSINOPIA_WAU_rda* ../')
+os.system('mv TEST_UWSINOPIA_WAU_rda* ../')
 
 """Step 2: Convert canonical IRIs to object/datatype IRIs"""
 import functions.replace_canonical_props
