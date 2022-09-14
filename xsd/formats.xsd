@@ -5,7 +5,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
     vc:minVersion="1.1">
-    
+
     <xs:simpleType name="format_type">
         <xs:annotation>
             <xs:documentation>
@@ -13,11 +13,16 @@
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <xs:enumeration value="na"/>
+            <!-- resource formats -->
             <xs:enumeration value="monograph"/>
+            <!-- standalone/nested -->
+            <xs:enumeration value="standalone"/>
+            <xs:enumeration value="nested"/>
+            <!-- if format is not applicable -->
+            <xs:enumeration value="na"/>
             <!-- FOR TESTING, to do delete later -->
             <xs:enumeration value="test_all_props"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
 </xs:schema>
