@@ -7,7 +7,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation monograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS LDT - mcm104@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-09-13</sinopia:hasDate>
+      <sinopia:hasDate>2022-09-27</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
@@ -311,11 +311,11 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30154_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has uniform resource locator</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30154"/>
+      <rdfs:label xml:lang="en">has uniform resource locator [REQUIRES LITERAL]</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/datatype/P30154"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3a036743-f303-3327-9fac-25be1f6cf028"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_order">
       <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasLcClassificationPartA_define"/>
