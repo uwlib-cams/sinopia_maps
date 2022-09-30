@@ -8,13 +8,13 @@
     exclude-result-prefixes="xs"
     version="2.0">
 
-    <xsl:include href="create_human_readable_RTs-formatStrings.xsl"/>
-    <xsl:include href="create_human_readable_RTs-readComments.xsl"/>
-    <xsl:include href="create_human_readable_RTs-qaSources.xsl"/>
+    <xsl:include href="004_02_create_human_readable_RTs-formatStrings.xsl"/>
+    <xsl:include href="004_03_create_human_readable_RTs-readComments.xsl"/>
+    <xsl:include href="004_04_create_human_readable_RTs-qaSources.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
@@ -24,7 +24,7 @@
                 select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
             <xsl:choose>
                 <xsl:when test="$format!='na'">
-                    <xsl:result-document href="{$file_name}.html">
+                    <xsl:result-document href="../html/mockups/{$file_name}.html">
                         <html>
                             <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -74,7 +74,7 @@
                     </xsl:result-document>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:result-document href="{$file_name}.html">
+                    <xsl:result-document href="../html/mockups/{$file_name}.html">
                         <html>
                             <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -135,7 +135,7 @@
         <xsl:param name="user"/>
         <xsl:param name="author"/>
         <xsl:for-each
-            select="document('../../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
             <table class="profileInfo">
                 <thead>
                     <tr>
@@ -215,7 +215,7 @@
                         </span>
                     </h2>
                     <ul>
-                        <xsl:for-each select="document('../../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
+                        <xsl:for-each select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
                             <xsl:variable name="section_id"
                                 select="concat($institution, 'RT', uwsinopia:resource)"/>
                             <li>
@@ -329,7 +329,7 @@
                     <th scope="row">Resource IRI</th>
                     <td>
                         <xsl:variable name="rdf_about" select="concat('https://api.sinopia.io/resource/', $resource_id)"/>
-                        <xsl:variable name="class_IRI" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasClass/@rdf:resource"/>
+                        <xsl:variable name="class_IRI" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasClass/@rdf:resource"/>
                         <a href="{$class_IRI}"><xsl:value-of select="$class_IRI"/></a>
                     </td>
                 </tr>
@@ -337,7 +337,7 @@
                     <th scope="row">Label</th>
                     <td>
                         <xsl:variable name="rdf_about" select="concat('https://api.sinopia.io/resource/', $resource_id)"/>
-                        <xsl:variable name="rt_label" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/rdfs:label"/>
+                        <xsl:variable name="rt_label" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/rdfs:label"/>
                         <xsl:value-of select="$rt_label"/>
                     </td>
                 </tr>
@@ -345,7 +345,7 @@
                     <th scope="row">ID</th>
                     <td>
                         <xsl:variable name="rdf_about" select="concat('https://api.sinopia.io/resource/', $resource_id)"/>
-                        <xsl:variable name="rt_id" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasResourceId"/>
+                        <xsl:variable name="rt_id" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasResourceId"/>
                         <xsl:value-of select="$rt_id"/>
                     </td>
                 </tr>
@@ -353,7 +353,7 @@
                     <th scope="row">Author</th>
                     <td>
                         <xsl:variable name="rdf_about" select="concat('https://api.sinopia.io/resource/', $resource_id)"/>
-                        <xsl:variable name="author" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasAuthor"/>
+                        <xsl:variable name="author" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasAuthor"/>
                         <xsl:value-of select="$author"/>
                     </td>
                 </tr>
@@ -361,7 +361,7 @@
                     <th scope="row">Last Updated</th>
                     <td>
                         <xsl:variable name="rdf_about" select="concat('https://api.sinopia.io/resource/', $resource_id)"/>
-                        <xsl:variable name="date" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasDate"/>
+                        <xsl:variable name="date" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$rdf_about]/sinopia:hasDate"/>
                         <xsl:value-of select="$date"/>
                     </td>
                 </tr>
@@ -403,7 +403,7 @@
             <ul id="BT">
                 <xsl:variable name="file_name"
                     select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
-                <xsl:for-each select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
+                <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
                     <xsl:variable name="label_without_note" as="xs:string">
                         <xsl:choose>
                             <xsl:when test="contains(rdfs:label, '[')">
@@ -447,7 +447,7 @@
             </ul>
             <xsl:variable name="file_name"
                 select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
-            <xsl:for-each select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
+            <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
                 <xsl:variable name="label_without_note" as="xs:string">
                     <xsl:choose>
                         <xsl:when test="contains(rdfs:label, '[')">
@@ -477,16 +477,16 @@
         <xsl:variable name="prop_id" select="replace($prop_label, ' ', '')"/>
         <section class="ptInfo" id="{$prop_id}">
             <h4>
-                <span>Property Template: <xsl:value-of select="$prop_label"/> <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">(*)</xsl:if></span>
+                <span>Property Template: <xsl:value-of select="$prop_label"/> <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">(*)</xsl:if></span>
             </h4>
             <ul>
                 <li>Property IRI: <a href="{$prop_URI}"><xsl:value-of select="$prop_URI"/></a></li>
                 <xsl:if test="contains($prop_URI, 'rdaregistry')">
-                    <xsl:variable name="toolit" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasRemarkUrl/@rdf:resource"/>
+                    <xsl:variable name="toolit" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasRemarkUrl/@rdf:resource"/>
                     <li>RDA Toolkit URL: <a href="{$toolit}"><xsl:value-of select="$toolit"/></a></li>
                 </xsl:if>
                 <xsl:choose>
-                    <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">
+                    <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">
                         <li>Mandatory</li>
                     </xsl:when>
                     <xsl:otherwise>
@@ -494,7 +494,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:choose>
-                    <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/repeatable'">
+                    <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/repeatable'">
                         <li>Repeatable</li>
                     </xsl:when>
                     <xsl:otherwise>
@@ -502,12 +502,12 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <xsl:choose>
-                    <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/literal'">
+                    <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/literal'">
                         <li>Property type: literal</li>
                     </xsl:when>
-                    <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/uri'">
+                    <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/uri'">
                         <xsl:choose>
-                            <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes">
+                            <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes">
                                 <li>Property type: lookup</li>
                             </xsl:when>
                             <xsl:otherwise>
@@ -515,30 +515,30 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
-                    <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/resource'">
+                    <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyType/@rdf:resource='http://sinopia.io/vocabulary/propertyType/resource'">
                         <li>Property type: nested resource</li>
                     </xsl:when>
                 </xsl:choose>
-                <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasLookupAttributes or sinopia:hasLiteralAttributes or sinopia:hasResourceAttributes]">
+                <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasLookupAttributes or sinopia:hasLiteralAttributes or sinopia:hasResourceAttributes]">
                     <li>Value constraint(s):
                         <ul>
-                            <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasLookupAttributes or sinopia:hasLiteralAttributes]">
+                            <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasLookupAttributes or sinopia:hasLiteralAttributes]">
                                 <xsl:variable name="attributes_id">
                                     <xsl:choose>
-                                        <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID">
-                                            <xsl:value-of select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID"/>
+                                        <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID">
+                                            <xsl:value-of select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID"/>
                                         </xsl:when>
-                                        <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLiteralAttributes/@rdf:nodeID">
-                                            <xsl:value-of select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLiteralAttributes/@rdf:nodeID"/>
+                                        <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLiteralAttributes/@rdf:nodeID">
+                                            <xsl:value-of select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLiteralAttributes/@rdf:nodeID"/>
                                         </xsl:when>
                                     </xsl:choose>
                                 </xsl:variable>
-                                <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault">
+                                <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault">
                                     <li>Default: 
                                         <xsl:choose>
-                                            <xsl:when test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault/@rdf:resource">
-                                                <xsl:variable name="default_uri" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault/@rdf:resource"/>
-                                                <xsl:variable name="default_label" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$default_uri]"/>
+                                            <xsl:when test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault/@rdf:resource">
+                                                <xsl:variable name="default_uri" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$attributes_id]/sinopia:hasDefault/@rdf:resource"/>
+                                                <xsl:variable name="default_label" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:about=$default_uri]"/>
                                                 <a href="{$default_uri}"><xsl:value-of select="$default_label"/></a>
                                             </xsl:when>
                                             <!-- Option for literal default values... I don't think we currently have any...? -->
@@ -546,11 +546,11 @@
                                     </li>
                                 </xsl:if>
                             </xsl:if>
-                            <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes">
-                                <xsl:variable name="lookup_attributes_id" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID"/>
+                            <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes">
+                                <xsl:variable name="lookup_attributes_id" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID"/>
                                 <li>Value lookup source(s):
                                     <ul>
-                                        <xsl:for-each select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$lookup_attributes_id]/sinopia:hasAuthority">
+                                        <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$lookup_attributes_id]/sinopia:hasAuthority">
                                             <li>
                                                 <xsl:call-template name="qaLinks">
                                                     <xsl:with-param name="node" select="@rdf:resource"/>
@@ -560,9 +560,9 @@
                                     </ul>
                                 </li>
                             </xsl:if>
-                            <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasResourceAttributes">
-                                <xsl:variable name="resource_attributes_id" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasResourceAttributes/@rdf:nodeID"/>
-                                <xsl:variable name="nested_resource_ID" select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$resource_attributes_id]/sinopia:hasResourceTemplateId/@rdf:resource"/>
+                            <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasResourceAttributes">
+                                <xsl:variable name="resource_attributes_id" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasResourceAttributes/@rdf:nodeID"/>
+                                <xsl:variable name="nested_resource_ID" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$resource_attributes_id]/sinopia:hasResourceTemplateId/@rdf:resource"/>
                                 <xsl:variable name="nested_resource_URL_institution" select="substring-before(substring-after($nested_resource_ID, 'UWSINOPIA:'), ':')"/>
                                 <xsl:variable name="nested_resource_URL_resource" select="substring-before(substring-after($nested_resource_ID, concat($nested_resource_URL_institution, ':')), ':')"/>
                                 <xsl:variable name="nested_resource_URL_format" select="substring-before(substring-after($nested_resource_ID, concat($nested_resource_URL_resource, ':')), ':')"/>
@@ -574,10 +574,10 @@
                         </ul>
                     </li>
                 </xsl:if>
-                <xsl:if test="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasPropertyUri[position()!=1]]">
+                <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI][sinopia:hasPropertyUri[position()!=1]]">
                     <li>Other properties included in this property template:
                         <ul>
-                            <xsl:for-each select="document(concat('../../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyUri[position()!=1]">
+                            <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyUri[position()!=1]">
                                 <xsl:variable name="subprop_URI" select="@rdf:resource"/>
                                 <xsl:variable name="entity">
                                     <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
@@ -595,7 +595,7 @@
                                 </xsl:variable>
                                 <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
                                 <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about=$subprop_URI or @rdf:about=replace($subprop_URI, 'object/', '') or @rdf:about=replace($subprop_URI, 'datatype/', '')]/rdfs:label[@xml:lang='en']"/>
-                                <xsl:variable name="toolkit_url" select="document('../../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber=$prefixed_prop]/rdaToolkitURL/@uri"/>
+                                <xsl:variable name="toolkit_url" select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber=$prefixed_prop]/rdaToolkitURL/@uri"/>
                                 <li><xsl:value-of select="$subprop_label"/> [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]</li>
                             </xsl:for-each>
                         </ul>
