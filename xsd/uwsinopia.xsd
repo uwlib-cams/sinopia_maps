@@ -573,10 +573,11 @@
          <xs:enumeration value="UWSINOPIA:WAU:rdaWork:monograph:CAMS"/>
          <xs:enumeration value="UWSINOPIA:WAU:rdaExpression:monograph:CAMS"/>
          <xs:enumeration value="UWSINOPIA:WAU:rdaManifestation:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaTimespan:na:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaPlace:na:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaAgent:na:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaNomen:na:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaItem:monograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaAgent:nested:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaNomen:nested:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaPlace:nested:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaTimespan:nested:CAMS"/>
       </xs:restriction>
    </xs:simpleType>
    <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
