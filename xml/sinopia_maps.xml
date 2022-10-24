@@ -3,6 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
+        <!-- WEMI TEMPLATES -->
         <rt>
             <institution>WAU</institution>
             <resource>rdaWork</resource>
@@ -31,63 +32,74 @@
             <user>CAMS</user>
             <author>UW CAMS LDT - mcm104@uw.edu</author>
         </rt>
+        
+        <!-- AGENT TEMPLATES -->
         <rt>
             <institution>WAU</institution>
             <resource>rdaAgent</resource>
-            <format>na</format>
+            <format>nested</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
+        
+       <!-- NOMEN TEMPLATES -->        
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaNomen</resource>
+            <format>nested</format>
+            <user>CAMS</user>
+            <author>UW CAMS - mcm104@uw.edu</author>
+        </rt>
+        
+        <!-- PLACE TEMPLATES -->
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaPlace</resource>
+            <format>nested</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        <!-- TIMESPAN TEMPLATES -->
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaTimespan</resource>
+            <format>nested</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        
+        <!-- ...future templates -->
         <!--
         <rt>
             <institution>WAU</institution>
             <resource>rdaCollectiveAgent</resource>
-            <format>na</format>
+            <format>nested</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
         <rt>
             <institution>WAU</institution>
             <resource>rdaPerson</resource>
-            <format>na</format>
+            <format>nested</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
         <rt>
             <institution>WAU</institution>
             <resource>rdaCorporateBody</resource>
-            <format>na</format>
+            <format>nested</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
         <rt>
             <institution>WAU</institution>
             <resource>rdaFamily</resource>
-            <format>na</format>
+            <format>nested</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
          -->
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaTimespan</resource>
-            <format>na</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaPlace</resource>
-            <format>na</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaNomen</resource>
-            <format>na</format>
-            <user>CAMS</user>
-            <author>UW CAMS - mcm104@uw.edu</author>
-        </rt>
     </rts>
 </sinopia_maps>
