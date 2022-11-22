@@ -13,15 +13,18 @@
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            <!-- resource formats -->
-            <xs:enumeration value="monograph"/>
+            
             <!-- standalone/nested -->
             <xs:enumeration value="standalone"/>
             <xs:enumeration value="nested"/>
+            
+            <!-- resource formats -->
+            <xs:enumeration value="printMonograph"/>
+            <!-- ... -->
+            
             <!-- if format is not applicable -->
             <xs:enumeration value="na"/>
-            <!-- FOR TESTING, to do delete later -->
-            <xs:enumeration value="test_all_props"/>
+            
         </xs:restriction>
     </xs:simpleType>
 
