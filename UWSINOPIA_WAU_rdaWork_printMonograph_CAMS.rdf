@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:monograph:CAMS">
+   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:printMonograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:monograph:CAMS</sinopia:hasResourceId>
+      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:printMonograph:CAMS</sinopia:hasResourceId>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
-      <rdfs:label>UWSINOPIA WAU rdaWork monograph CAMS</rdfs:label>
+      <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
       <sinopia:hasDate>2022-11-22</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10331_order"/>

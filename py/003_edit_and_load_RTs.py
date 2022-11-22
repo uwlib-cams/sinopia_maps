@@ -1,18 +1,28 @@
-# NOTES
-	# Run this from sinopia_maps/py 
-	# 2022-11-22: Script now asks for version, but still assumes that Saxon is:
-		# 1) in user's WSL home directory
-		# 2) in a directory named 'saxon11'
-
-"""Step 1: Run XSLT transformation"""
 import os
 from textwrap import dedent
 
-saxon_prompt = dedent("""
+"""Step 0: A couple of caveats"""
+caveats = 'yes'
+print(dedent("""Please note:
+1) The terminal should be open in the sinopia_maps/py directory when running this script
+2) The script assumes that Saxon HE is located in the user's home directory"""))
+caveats_okay = input("OK to proceed? (yes or no): ")
+if caveats_okay.lower() == 'yes':
+	pass
+else:
+	exit(0)
+
+"""Step 1: Run XSLT transformation"""
+saxon_dir_prompt = dedent("""Enter the name of the directory in which the Saxon HE .jar file is stored
+For example: 'saxon', 'saxon11', etc.
+> """)
+saxon_dir = input(saxon_dir_prompt)
+
+saxon_version_prompt = dedent("""
 Enter the Saxon HE version number you'll use for the transformation
 For example: '11.1', '11.4', etc.
->""")
-saxon_version = input(saxon_prompt)
+> """)
+saxon_version = input(saxon_version_prompt)
 
 def prompt_resources():
 	resources = input("Update test resource templates?\n[1] Update test RTs only\n[2] Update non-test RTs only\n[3] Update all RTs\n> ")
