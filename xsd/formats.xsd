@@ -25,6 +25,8 @@
             <!-- if format is not applicable -->
             <xs:enumeration value="na"/>
             
+            <!-- for testing -->
+            <xs:enumeration value="test"/>
         </xs:restriction>
     </xs:simpleType>
 
