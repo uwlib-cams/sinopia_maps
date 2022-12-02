@@ -7,7 +7,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10002"/>
       <rdfs:label>UWSINOPIA WAU rdaAgent nested CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2022-11-22</sinopia:hasDate>
+      <sinopia:hasDate>2022-12-01</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsaP50378_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_order">
@@ -16,8 +16,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has appellation of agent [REQUIRES LITERAL]</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/datatype/P50378"/>
+      <rdfs:label xml:lang="en">has appellation of agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50378"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-c210adcc-037f-3058-b00b-023cd0eb20c2"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
