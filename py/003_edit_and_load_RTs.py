@@ -1,7 +1,7 @@
 import os
 from textwrap import dedent
 
-"""Step 0: A couple of caveats"""
+"""CAVEATS"""
 caveats = 'yes'
 print(dedent("""Please note:
 1) The terminal should be open in the sinopia_maps/py directory when running this script
@@ -12,7 +12,7 @@ if caveats_okay.lower() == 'yes':
 else:
 	exit(0)
 
-"""Step 1: Run XSLT transformation"""
+"""Run XSLT transformation"""
 saxon_dir_prompt = dedent("""Enter the name of the directory in which the Saxon HE .jar file is stored
 For example: 'saxon', 'saxon11', etc.
 > """)
@@ -56,11 +56,8 @@ else:
 	os.system('mv TEST_UWSINOPIA_WAU_rda* ../')
 	os.system('mv UWSINOPIA_WAU_rda* ../')
 
-"""Step 2: Convert canonical IRIs to object/datatype IRIs"""
-import functions.replace_canonical_props
-
-"""Step 3: Fix multiple prop IRIs"""
+"""Eliminate repeating property IRIs"""
 import functions.fix_multi_props
 
-"""Step 4: Load RTs to Sinopia"""
+"""Load RTs to selected Sinopia environment"""
 import functions.batch_load_RTs
