@@ -39,6 +39,8 @@ def delete_single(jwt, platform, resource_id):
 	print(delete_from_sinopia.status_code)
 
 def delete_list(jwt, platform, resource_list):
+# TO DO for delete_list:
+	# strip URI base from list entries (it's easier to just copy IRIs than select and copy just IDs/slugs)
 	to_delete = open(resource_list, 'r')
 	to_delete = to_delete.read().split('\n')
 	for resource in to_delete:
