@@ -37,20 +37,20 @@ resources = prompt_resources()
 
 if resources == 1:
 	# Test RTs
-	os.system(f'java -cp ~/saxon11/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl test="TEST:"')
+	os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl test="TEST:"')
 
 	# Move to top-level folder
 	os.system('mv TEST_UWSINOPIA_WAU_rda* ../')
 elif resources == 2:
 	# Non-test RTs
-	os.system(f'java -cp ~/saxon11/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
+	os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
 
 	# Move to top-level folder
 	os.system('mv UWSINOPIA_WAU_rda* ../')
 else:
 	# Both
-	os.system(f'java -cp ~/saxon11/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl test="TEST:"')
-	os.system(f'java -cp ~/saxon11/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
+	os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl test="TEST:"')
+	os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
 
 	# Move to top-level folder
 	os.system('mv TEST_UWSINOPIA_WAU_rda* ../')
