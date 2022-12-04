@@ -13,7 +13,6 @@
     
     <!-- output nested resource PT attributes -->
     <xsl:template name="define_nested_resource_pts">
-        <xsl:param name="test"/>
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
@@ -24,12 +23,12 @@
                 <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
                     <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
                         translate('/.#', '') => substring-after('https:'),
-                        '_resource_attributes')"></xsl:copy-of>
+                        '_resource_attributes')"/>
                 </xsl:when>
                 <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
                     <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
                         translate('/.#', '') => substring-after('http:'),
-                        '_resource_attributes')"></xsl:copy-of>
+                        '_resource_attributes')"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
@@ -44,7 +43,7 @@
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
                 /uwsinopia:nested_resource_pt/uwsinopia:rt_id">
-                <sinopia:hasResourceTemplateId rdf:resource="{concat($test, .)}"/>
+                <sinopia:hasResourceTemplateId rdf:resource="{.}"/>
             </xsl:for-each>
         </rdf:Description>
     </xsl:template>

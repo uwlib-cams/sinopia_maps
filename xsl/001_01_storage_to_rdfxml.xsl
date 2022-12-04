@@ -10,7 +10,6 @@
 
     <xsl:output method="xml" indent="yes"/>
     
-    <xsl:param name="test"/>
     <xsl:param name="oxygenPath"/>
 
     <xsl:include href="001_02_rt_metadata.xsl"/>
@@ -26,7 +25,7 @@
             <xsl:variable name="user" select="uwsinopia:user"/>
             <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:variable name="rt_id" select="
-                concat($test, 'UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
+                concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
             <xsl:variable name="sorted_properties" as="node()*">
                 <xsl:for-each select="
                     (: [!] CAUTION local path to prop_set instances, using local data :)
@@ -67,7 +66,6 @@
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
                     <xsl:call-template name="create_ordering">
-                        <xsl:with-param name="test" select="$test"/>
                         <xsl:with-param name="institution" select="$institution"/>
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>

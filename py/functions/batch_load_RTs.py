@@ -12,16 +12,8 @@ def locate_RTs(RT_type):
 	sinopia_maps_repo = os.listdir('..')
 	RT_list = []
 	for file in sinopia_maps_repo:
-		if RT_type == "1":
-			if file[0:22] == "TEST_UWSINOPIA_WAU_rda" and file[-4:] == ".rdf":
+		if file[0:14] == "UWSINOPIA_WAU_" and file[-4:] == ".rdf":
 				RT_list.append(file)
-		elif RT_type == "2":
-			if file[0:17] == "UWSINOPIA_WAU_rda" and file[-4:] == ".rdf":
-				RT_list.append(file)
-		elif RT_type == "3":
-			if (file[0:17] == "UWSINOPIA_WAU_rda" or file[0:22] == "TEST_UWSINOPIA_WAU_rda") and file[-4:] == ".rdf":
-				RT_list.append(file)
-
 	return RT_list
 
 def sort_list(RT_list):
@@ -70,7 +62,10 @@ def sort_list(RT_list):
 
 	return upload_order
 
-	# mcm104 note: currently, second_group is empty; if second_group later is NOT empty, i.e. there are RTs that are referenced by others AND reference RTs themselves, the RTs in this group may need to be ordered more narrowly; leaving for now as it is not currently an issue
+# mcm104 NOTE: currently, second_group is empty; if second_group later is NOT empty, 
+	# i.e. there are RTs that are referenced by others AND reference RTs themselves, 
+	# the RTs in this group may need to be ordered more narrowly; 
+	# leaving for now as it is not currently an issue
 
 def format_json(username, uri, json_file):
 	with open(json_file, 'r') as RT:
@@ -84,7 +79,7 @@ def format_json(username, uri, json_file):
 
 def intro():
 	print(dedent(f"""
-		LOADING RESOURCE TEMPLATES INTO SINOPIA
+		LOADING RESOURCE TEMPLATES TO SINOPIA
 		{'=' * 40}
 		"""))
 
@@ -106,10 +101,8 @@ def prompt_platform(jwt):
 	prompt_resources(jwt, sinopia_platform)
 
 def prompt_resources(jwt, platform):
-	resources = input("Upload test resource templates?\n[1] Upload test RTs only\n[2] Upload non-test RTs only\n[3] Upload all RTs\n> ")
-	acceptable_responses = ["1", "2", "3"]
-	if resources not in acceptable_responses:
-		print("Input not recognized.")
+	resources = input("Ready to upload all RTs?\n'YES'/'NO'\n> ")
+	if resources.lower() != 'yes':
 		quit()
 	else:
 		RT_list = locate_RTs(resources)
@@ -151,7 +144,12 @@ def upload_list(jwt, platform, RT_list):
 intro()
 prompt_jwt()
 
-# 204 = No Content success (deleted)
-# 400 = Bad Request
-# 401 = Unauthorized
-# 404 = Not found
+# https://www.rfc-editor.org/rfc/rfc9110.html#name-overview-of-status-codes
+# 2xx SUCCESSFUL
+	# 200 = OK, request has succeeded
+	# 201 = Created, request has been fulfilled and has resulted in one or more new resources being created
+	# 204 = No Content success (deleted)
+# 4xx CLIENT ERROR
+	# 400 = Bad Request
+	# 401 = Unauthorized
+	# 404 = Not Found
