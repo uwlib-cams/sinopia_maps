@@ -9,23 +9,15 @@
     <xs:simpleType name="format_type">
         <xs:annotation>
             <xs:documentation>
-                <!-- to do -->
+                <!-- ... -->
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            
-            <!-- standalone/nested -->
             <xs:enumeration value="standalone"/>
             <xs:enumeration value="nested"/>
-            
-            <!-- resource formats -->
             <xs:enumeration value="printMonograph"/>
-            <!-- ... -->
-            
-            <!-- if format is not applicable -->
+            <xs:enumeration value="metadata_nested"/>
             <xs:enumeration value="na"/>
-            
-            <!-- for testing -->
             <xs:enumeration value="test"/>
         </xs:restriction>
     </xs:simpleType>
