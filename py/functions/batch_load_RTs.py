@@ -8,38 +8,43 @@ from textwrap import dedent
 
 ###
 
-def locate_RTs(RT_type):
+# get list of RTs - must be in sinopia_maps/py 
+def locate_RTs():
 	sinopia_maps_repo = os.listdir('..')
 	RT_list = []
 	for file in sinopia_maps_repo:
+		#if file is a UWSINOPIA resource of type rdf, add to list
 		if file[0:14] == "UWSINOPIA_WAU_" and file[-4:] == ".rdf":
 				RT_list.append(file)
+	#return list of RTs
 	return RT_list
 
-def sort_list(RT_list):
+#ensures referenced RTs are uploaded before RTs that reference them
+def sort_list(RT_list): 
 	is_referenced_by = {}
 	references = {}
 
 	for RT in RT_list:
-		RT = RT[0:-4] # remove file extension
-		RT = RT.replace('_', ':')
+		RT = RT[0:-4]
+		RT = RT.replace('_', ':') 
+		# declare arrays 
 		is_referenced_by[RT] = []
 		references[RT] = []
 
 	for RT in RT_list:
 		g = Graph()
-		g.load(f'../{RT}', format='xml')
+		g.parse(RT, format='xml') #i think this works? 
+		
+		RT_id = RT[0:-4].replace('_', ':') #rename to match sinopia format
 
-		RT_id = RT[0:-4].replace('_', ':')
-
-		for s, p, o in g:
+		for s, p, o in g: #for subject, predicate, object in graph
 			if p == URIRef("http://sinopia.io/vocabulary/hasResourceTemplateId"):
 				referenced_rt = "{}".format(o)
 				if RT_id not in is_referenced_by[referenced_rt]:
 					is_referenced_by[referenced_rt].append(RT_id)
 				if referenced_rt not in references[RT_id]:
 					references[RT_id].append(referenced_rt)
-
+	
 	upload_order = {"first_group": [], "second_group": [], "last_group": []}
 	# first_group = is referenced by other RTs, does not reference any RTs itself
 	# second_group = is referenced by other RTs, does reference other RTs
@@ -60,12 +65,12 @@ def sort_list(RT_list):
 				# does reference other RTs
 				upload_order["second_group"].append(RT)
 
-	return upload_order
+	return upload_order #return order as dict with keys first_group, second_group, last_groupu
 
 # mcm104 NOTE: currently, second_group is empty; if second_group later is NOT empty, 
-	# i.e. there are RTs that are referenced by others AND reference RTs themselves, 
-	# the RTs in this group may need to be ordered more narrowly; 
-	# leaving for now as it is not currently an issue
+# 	i.e. there are RTs that are referenced by others AND reference RTs themselves, 
+# 	the RTs in this group may need to be ordered more narrowly; 
+# 	leaving for now as it is not currently an issue
 
 def format_json(username, uri, json_file):
 	with open(json_file, 'r') as RT:
@@ -83,11 +88,13 @@ def intro():
 		{'=' * 40}
 		"""))
 
+# get jwt
 def prompt_jwt():
 	jwt = input("Enter JWT here:\n> ")
 	prompt_platform(jwt)
 
-def prompt_platform(jwt):
+# get platform
+def prompt_platform(jwt): 
 	sinopia_platform = input("Load to Development, Stage, or Production?\n[1] Development\n[2] Stage\n[3] Production\n> ")
 	if sinopia_platform == "1":
 		sinopia_platform = "development."
@@ -100,23 +107,31 @@ def prompt_platform(jwt):
 		quit()
 	prompt_resources(jwt, sinopia_platform)
 
+# get resources
 def prompt_resources(jwt, platform):
 	resources = input("Ready to upload all RTs?\n'YES'/'NO'\n> ")
 	if resources.lower() != 'yes':
 		quit()
 	else:
-		RT_list = locate_RTs(resources)
+		# get RTs and upload
+		RT_list = locate_RTs()
 		upload_list(jwt, platform, RT_list)
 
 def upload_list(jwt, platform, RT_list):
 	user = input("Enter Sinopia user name here:\n> ")
-
+	
+	#sort RT_list using dict
 	sorted_dict = sort_list(RT_list)
+	#put sorted RTs from dict into an array 
+	sorted_RT_list = list(sorted_dict.values())[0]
 
-	for RT in RT_list:
+	print(sorted_RT_list)
+
+	for RT in sorted_RT_list:
 		g = Graph()
-		g.load(f"../{RT}", format="xml")
-		for s, p, o in g:
+		g.parse(RT, format='xml')
+		
+		for s, p, o in g: #for subject, predicate, object in graph 
 			if isinstance(s, rdflib.term.URIRef) == True:
 				if s[0:31] == "https://api.development.sinopia" or s[0:25] == "https://api.stage.sinopia" or s[0:19] == "https://api.sinopia":
 					RT_id = s.split('/')[-1]
@@ -127,6 +142,7 @@ def upload_list(jwt, platform, RT_list):
 		format_json(user, new_URI, f"../{RT.split('.')[0]}.json")
 
 		open_RT = open(f"../{RT.split('.')[0]}.json")
+		
 		data = open_RT.read()
 
 		headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
