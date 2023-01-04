@@ -1,6 +1,8 @@
 import os
 from textwrap import dedent
 
+from functions.update_html import *
+
 """CAVEATS"""
 
 caveats = 'yes'
@@ -33,6 +35,10 @@ def prompt_proceed():
 
 prompt_proceed()
 
+""" update html"""
+
+update_html(saxon_dir, saxon_version)
+
 os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
 
 # Move to top-level folder
@@ -45,3 +51,4 @@ import functions.fix_multi_props
 """Load RTs to selected Sinopia environment"""
 
 import functions.batch_load_RTs
+
