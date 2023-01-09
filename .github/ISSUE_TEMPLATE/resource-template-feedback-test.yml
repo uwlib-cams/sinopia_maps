@@ -11,7 +11,7 @@ body:
     attributes:
       label: Resource Template Label or ID
       description: "The resource template label is displayed at the top left of the Sinopia data entry form, and will look something like: UWSINOPIA WAU rdaWork monograph CAMS"
-    validations:
+    validation:
       required: true
   - type: textarea
     id: problem_description
@@ -21,7 +21,7 @@ body:
       - The property template for [prop IRI or label] is set up for literals, it should be set up for URIs or lookups
       - The lookup source for [prop IRI or label] is wrong, please use this lookup source instead
       - [prop IRI or label] is needed in this template but it isn't here"
-      validations:
+      validation:
         required: true
   - type: textarea
     id: relevant_details
