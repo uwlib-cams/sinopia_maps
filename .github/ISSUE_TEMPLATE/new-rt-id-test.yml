@@ -1,7 +1,7 @@
 name: NEW RT ID TEST
 description: new RT ID - requesting schema updates
 title: new RT ID - requesting schema updates
-label: xsd
+labels: xsd
 assignees:
   - briesenberg07
 
@@ -16,6 +16,6 @@ body:
       required: true
   - type: input
     id: link_to_commit
-    attribute:
+    attributes:
       label: Link to commit
       description: if possible, add the link to the commit adding the new <rt> to [sinopia_maps.xml](https://github.com/uwlib-cams/sinopia_maps/blob/main/xml/sinopia_maps.xml)
