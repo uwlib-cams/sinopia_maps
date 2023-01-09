@@ -10,7 +10,7 @@ body:
     id: rt_id
     attributes:
       label: Resource Template ID
-      description: enter the <resource>, <format>, and <user> components of your RT ID
+      description: enter the `<resource>`, `<format>`, and `<user>` components of your RT ID
       placeholder: <resource>, <format>, <user>
     validations:
       required: true
@@ -18,4 +18,4 @@ body:
     id: link_to_commit
     attributes:
       label: Link to commit
-      description: if possible, add the link to the commit adding the new <rt> to [sinopia_maps.xml](https://github.com/uwlib-cams/sinopia_maps/blob/main/xml/sinopia_maps.xml)
+      description: if possible, add the link to the commit adding the new `<rt>` to [sinopia_maps.xml](https://github.com/uwlib-cams/sinopia_maps/blob/main/xml/sinopia_maps.xml)
