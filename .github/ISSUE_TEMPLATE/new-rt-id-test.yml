@@ -1,0 +1,20 @@
+name: NEW RT ID
+description: new RT ID - requesting schema updates
+title: new RT ID - requesting schema updates
+labels: xsd
+assignees: briesenberg07
+
+body:
+  - type: input
+    id: rt_id
+    attributes:
+      label: Resource Template ID
+      description: enter the <resource>, <format>, and <user> components of your RT ID
+      placeholder: <resource>, <format>, <user>
+    validations:
+      required: true
+  - type: input
+    id: link_to_commit
+    attribute:
+      label: Link to commit
+      description: if possible, add the link to the commit adding the new <rt> to [sinopia_maps.xml](https://github.com/uwlib-cams/sinopia_maps/blob/main/xml/sinopia_maps.xml) 
