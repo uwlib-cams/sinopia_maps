@@ -17,10 +17,10 @@ body:
     id: problem_description
     attributes:
       label: Problem using the resource template, or request a change
-      placeholder: "Some examples:
-      - The property template for [prop IRI or label] is set up for literals, it should be set up for URIs or lookups
-      - The lookup source for [prop IRI or label] is wrong, please use this lookup source instead
-      - [prop IRI or label] is needed in this template but it isn't here"
+      placeholder: "Some examples:\n
+      - The property template for [prop IRI or label] is set up for literals, it should be set up for URIs or lookups\n
+      - The lookup source for [prop IRI or label] is wrong, please use this lookup source instead\n
+      - [prop IRI or label] is needed in this template but it isn't here\n"
     validations:
       required: true
   - type: textarea
