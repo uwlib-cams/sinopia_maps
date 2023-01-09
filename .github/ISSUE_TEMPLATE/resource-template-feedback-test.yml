@@ -21,8 +21,8 @@ body:
       - The property template for [prop IRI or label] is set up for literals, it should be set up for URIs or lookups
       - The lookup source for [prop IRI or label] is wrong, please use this lookup source instead
       - [prop IRI or label] is needed in this template but it isn't here"
-      validations:
-        required: true
+    validations:
+      required: true
   - type: textarea
     id: relevant_details
     attributes:
