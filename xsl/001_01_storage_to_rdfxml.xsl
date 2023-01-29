@@ -11,13 +11,14 @@
     <xsl:output method="xml" indent="yes"/>
     
     <xsl:param name="oxygenPath"/>
+    <xsl:param name="platform"/>
 
     <xsl:include href="001_02_rt_metadata.xsl"/>
     <xsl:include href="001_03_create_ordering.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[@output_load = 'true']">
             <!-- vars -->
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
@@ -62,6 +63,7 @@
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
+                        <xsl:with-param name="platform"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>

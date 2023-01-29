@@ -7,14 +7,16 @@
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     exclude-result-prefixes="xs"
     version="2.0">
+    
+    <xsl:output method="html"/>
 
-    <xsl:include href="004_02_create_human_readable_RTs-formatStrings.xsl"/>
-    <xsl:include href="004_03_create_human_readable_RTs-readComments.xsl"/>
-    <xsl:include href="004_04_create_human_readable_RTs-qaSources.xsl"/>
+    <xsl:include href="004_02_formatStrings.xsl"/>
+    <xsl:include href="004_03_readComments.xsl"/>
+    <xsl:include href="004_04_qaSources.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[@output_load = 'true']">
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
