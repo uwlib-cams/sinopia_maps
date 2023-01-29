@@ -3,59 +3,67 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
-        <!-- WEMI TEMPLATES -->
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaWork</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-		<rt>
-            <institution>WAU</institution>
-            <resource>rdaExpression</resource>
-		    <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS LDT - mcm104@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaManifestation</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS LDT - mcm104@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaItem</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS LDT - mcm104@uw.edu</author>
-        </rt>
+        <!-- WEMI TEMPLATE SETS -->
+        <!-- [!] WEMI RT IDs in main branch [!] -->
         
         <!-- AGENT TEMPLATES -->
+
         <rt>
             <institution>WAU</institution>
             <resource>rdaAgent</resource>
-            <format>nested</format>
+            <format>standalone</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaCollectiveAgent</resource>
+            <format>standalone</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaPerson</resource>
+            <format>standalone</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaCorporateBody</resource>
+            <format>standalone</format>
+            <user>CAMS</user>
+            <author>UW CAMS - ries07@uw.edu</author>
+        </rt>
+        
+        <rt>
+            <institution>WAU</institution>
+            <resource>rdaFamily</resource>
+            <format>standalone</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
         
        <!-- NOMEN TEMPLATES -->        
+
         <rt>
             <institution>WAU</institution>
             <resource>rdaNomen</resource>
-            <format>nested</format>
+            <format>standalone</format>
             <user>CAMS</user>
             <author>UW CAMS - mcm104@uw.edu</author>
         </rt>
         
         <!-- PLACE TEMPLATES -->
+
         <rt>
             <institution>WAU</institution>
             <resource>rdaPlace</resource>
-            <format>nested</format>
+            <format>standalone</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>
@@ -64,12 +72,12 @@
         <rt>
             <institution>WAU</institution>
             <resource>rdaTimespan</resource>
-            <format>nested</format>
+            <format>standalone</format>
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
+        </rt>       
         
-        <!-- TEST TEMPLATEs -->
+        <!-- TEST TEMPLATES -->
         
         <rt>
             <institution>WAU</institution>
@@ -85,7 +93,7 @@
             <user>cspayne</user>
             <author>Cypress Payne - cspayne@uw.edu</author>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>test</resource>
             <format>test</format>
@@ -93,36 +101,5 @@
             <author>Benjamin Riesenberg - ries07@uw.edu</author>
         </rt>
         
-        <!-- ...future templates -->
-        <!--
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaCollectiveAgent</resource>
-            <format>nested</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaPerson</resource>
-            <format>nested</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaCorporateBody</resource>
-            <format>nested</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaFamily</resource>
-            <format>nested</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-         -->
     </rts>
 </sinopia_maps>
