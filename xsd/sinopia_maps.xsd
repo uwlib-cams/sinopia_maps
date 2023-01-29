@@ -66,7 +66,12 @@
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
             <!-- may wish to add RT-level admin metadata here at some point, remark would go here in the sinopia_maps.xml instance -->
         </xs:sequence>
+        <xs:attribute name="output_load"/>
     </xs:complexType>
+    
+    <xs:simpleType name="output_load">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
     
     <xs:simpleType name="institution_type">
         <xs:annotation>
