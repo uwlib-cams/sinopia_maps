@@ -564,13 +564,16 @@
                             </xsl:if>
                             <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes">
                                 <xsl:variable name="lookup_attributes_id" select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasLookupAttributes/@rdf:nodeID"/>
-                                <li>Value lookup source(s):
+                                <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                                     <ul>
                                         <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[@rdf:nodeID=$lookup_attributes_id]/sinopia:hasAuthority">
                                             <li>
-                                                <xsl:call-template name="qaLinks">
-                                                    <xsl:with-param name="node" select="@rdf:resource"/>
+                                                <xsl:call-template name="lookup_details">
+                                                    <xsl:with-param name="uri" select="@rdf:resource"/>
                                                 </xsl:call-template>
+                                                <!-- <xsl:call-template name="qaLinks">
+                                                    <xsl:with-param name="node" select="@rdf:resource"/>
+                                                </xsl:call-template> -->
                                             </li>
                                         </xsl:for-each>
                                     </ul>
