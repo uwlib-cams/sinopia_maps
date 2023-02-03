@@ -1003,6 +1003,14 @@
     "component": "lookup"
   },
   {
+    "label": "LOC MARC countries (QA)",
+    "uri": "urn:ld4p:qa:locmarccountries",
+    "authority": "loccountries_ld4l_cache",
+    "subauthority": "",
+    "language": "en",
+    "component": "lookup"
+  },
+  {
     "label": "LOC demographics (QA)",
     "uri": "urn:ld4p:qa:demographics",
     "authority": "locdemographics_ld4l_cache",
@@ -1111,6 +1119,14 @@
     "uri": "urn:ld4p:qa:mesh:publication_type",
     "authority": "mesh_nlm_ld4l_cache",
     "subauthority": "publication_type",
+    "language": "en",
+    "component": "lookup"
+  },
+  {
+    "label": "MESH geographic (QA)",
+    "uri": "urn:ld4p:qa:mesh:geographic",
+    "authority": "mesh_nlm_ld4l_cache",
+    "subauthority": "geographic",
     "language": "en",
     "component": "lookup"
   },
