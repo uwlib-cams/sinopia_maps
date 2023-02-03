@@ -9,7 +9,8 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xs" version="3.0">
 
     <xsl:template name="rt_hasClass">
-        <!-- [!] resources.xsd > xs:simpleType @name="resource_label_type" > enumerations [!] -->
+        <!-- [!] THESE OPTIONS MUST MATCH 
+            resources.xsd > xs:simpleType @name="resource_label_type" > enumerations [!] -->
         <xsl:param name="resource"/>
         <xsl:choose>
             <xsl:when test="$resource = 'rdaWork'">

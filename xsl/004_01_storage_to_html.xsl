@@ -41,12 +41,13 @@
                             <body>
                                 <h1 id="profile">
                                     <xsl:text>University of Washington Libraries Sinopia Resource Template(s) for </xsl:text>
-                                    <xsl:call-template name="resource_titleCase">
+                                    <xsl:call-template name="format_resources">
                                         <xsl:with-param name="resource" select="$resource"/>
                                     </xsl:call-template>
                                     <xsl:text> </xsl:text>
-                                    <xsl:call-template name="titleCase">
+                                    <xsl:call-template name="format_formats">
                                         <xsl:with-param name="format" select="$format"/>
+                                        <xsl:with-param name="case" select="'title'"/>
                                     </xsl:call-template>
                                 </h1>
                                 <xsl:call-template name="rt_list">
@@ -82,8 +83,9 @@
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                                 <title>
                                     <xsl:text>UW Sinopia resource template | </xsl:text>
-                                    <xsl:call-template name="titleCase">
+                                    <xsl:call-template name="format_formats">
                                         <xsl:with-param name="format" select="$resource"/>
+                                        <xsl:with-param name="case" select="'title'"/>
                                     </xsl:call-template>
                                 </title>
                                 <link href="mockups.css" rel="stylesheet" type="text/css"/>
@@ -93,12 +95,13 @@
                             <body>
                                 <h1 id="profile">
                                     <xsl:text>University of Washington Libraries Sinopia Resource Template(s) for </xsl:text>
-                                    <xsl:call-template name="resource_titleCase">
+                                    <xsl:call-template name="format_resources">
                                         <xsl:with-param name="resource" select="$resource"/>
                                     </xsl:call-template>
                                     <xsl:text> </xsl:text>
-                                    <xsl:call-template name="titleCase">
+                                    <xsl:call-template name="format_formats">
                                         <xsl:with-param name="format" select="$format"/>
+                                        <xsl:with-param name="case" select="'title'"/>
                                     </xsl:call-template>
                                 </h1>
                                 <xsl:call-template name="rt_list">
@@ -124,6 +127,7 @@
                                 </xsl:call-template>
                                 <script type="text/javascript" src="create_human_readable_RTs-collapsible.js">&amp;#160;</script>
                             </body>
+                            
                         </html>
                     </xsl:result-document>
                 </xsl:otherwise>
@@ -145,12 +149,13 @@
                             <xsl:text>RT: </xsl:text>
                             <xsl:value-of select="$institution"/>
                             <xsl:text> RT RDA for </xsl:text>
-                            <xsl:call-template name="resource_titleCase">
+                            <xsl:call-template name="format_resources">
                                 <xsl:with-param name="resource" select="uwsinopia:resource"/>
                             </xsl:call-template>
                             <xsl:text> </xsl:text>
-                            <xsl:call-template name="titleCase">
+                            <xsl:call-template name="format_formats">
                                 <xsl:with-param name="format" select="$format"/>
+                                <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </th>
                     </tr>
@@ -181,7 +186,7 @@
                         <th scope="row">Description</th>
                         <td>
                             <xsl:text>Resource templates and property templates for </xsl:text>
-                            <xsl:call-template name="lowerCase">
+                            <xsl:call-template name="format_formats">
                                 <xsl:with-param name="format" select="$format"/>
                             </xsl:call-template>
                         </td>
@@ -211,8 +216,9 @@
                     <h2 id="rtList">
                         <span>
                             <xsl:text>Resource Templates for </xsl:text>
-                            <xsl:call-template name="titleCase">
+                            <xsl:call-template name="format_formats">
                                 <xsl:with-param name="format" select="$format"/>
+                                <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </span>
                     </h2>
@@ -226,12 +232,13 @@
                                         <b><xsl:text>UW Sinopia </xsl:text>
                                         <xsl:value-of select="$institution"/>
                                         <xsl:text> RT </xsl:text>
-                                        <xsl:call-template name="resource_titleCase">
+                                        <xsl:call-template name="format_resources">
                                             <xsl:with-param name="resource" select="uwsinopia:resource"/>
                                         </xsl:call-template>
                                         <xsl:text> </xsl:text>
-                                        <xsl:call-template name="titleCase">
+                                        <xsl:call-template name="format_formats">
                                             <xsl:with-param name="format" select="$format"/>
+                                            <xsl:with-param name="case" select="'title'"/>
                                         </xsl:call-template></b>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -240,12 +247,13 @@
                                             <xsl:text>UW Sinopia </xsl:text>
                                             <xsl:value-of select="$institution"/>
                                             <xsl:text> RT </xsl:text>
-                                            <xsl:call-template name="resource_titleCase">
+                                            <xsl:call-template name="format_resources">
                                                 <xsl:with-param name="resource" select="uwsinopia:resource"/>
                                             </xsl:call-template>
                                             <xsl:text> </xsl:text>
-                                            <xsl:call-template name="titleCase">
+                                            <xsl:call-template name="format_formats">
                                                 <xsl:with-param name="format" select="$format"/>
+                                                <xsl:with-param name="case" select="'title'"/>
                                             </xsl:call-template>
                                         </a>
                                     </xsl:otherwise>
@@ -260,8 +268,9 @@
                     <h2 id="rtList">
                         <span>
                             <xsl:text>Resource Template for </xsl:text>
-                            <xsl:call-template name="titleCase">
+                            <xsl:call-template name="format_formats">
                                 <xsl:with-param name="format" select="$resource"/>
+                                <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </span>
                     </h2>
@@ -273,12 +282,13 @@
                                 <xsl:text>UW Sinopia </xsl:text>
                                 <xsl:value-of select="$institution"/>
                                 <xsl:text> RT </xsl:text>
-                                <xsl:call-template name="resource_titleCase">
+                                <xsl:call-template name="format_resources">
                                     <xsl:with-param name="resource" select="uwsinopia:resource"/>
                                 </xsl:call-template>
                                 <xsl:text> </xsl:text>
-                                <xsl:call-template name="titleCase">
+                                <xsl:call-template name="format_formats">
                                     <xsl:with-param name="format" select="$resource"/>
+                                    <xsl:with-param name="case" select="'title'"/>
                                 </xsl:call-template>
                             </a>
                         </li>
@@ -307,19 +317,21 @@
                         <xsl:text>Resource Template: </xsl:text>
                         <xsl:value-of select="$institution"/>
                         <xsl:text> RT </xsl:text>
-                        <xsl:call-template name="resource_titleCase">
+                        <xsl:call-template name="format_resources">
                             <xsl:with-param name="resource" select="$resource"/>
                         </xsl:call-template>
                         <xsl:text> for </xsl:text>
                         <xsl:choose>
                             <xsl:when test="$format!='na'">
-                                <xsl:call-template name="titleCase">
+                                <xsl:call-template name="format_formats">
                                     <xsl:with-param name="format" select="$format"/>
+                                    <xsl:with-param name="case" select="'title'"/>
                                 </xsl:call-template>
                             </xsl:when>
                             <xsl:otherwise>
-                                <xsl:call-template name="titleCase">
+                                <xsl:call-template name="format_formats">
                                     <xsl:with-param name="format" select="$resource"/>
+                                    <xsl:with-param name="case" select="'title'"/>
                                 </xsl:call-template>
                             </xsl:otherwise>
                         </xsl:choose>
@@ -385,19 +397,21 @@
                 <xsl:text>Property Templates in </xsl:text>
                 <xsl:value-of select="$institution"/>
                 <xsl:text> RT </xsl:text>
-                <xsl:call-template name="resource_titleCase">
+                <xsl:call-template name="format_resources">
                     <xsl:with-param name="resource" select="$resource"/>
                 </xsl:call-template>
                 <xsl:text> for </xsl:text>
                 <xsl:choose>
                     <xsl:when test="$format!='na'">
-                        <xsl:call-template name="titleCase">
+                        <xsl:call-template name="format_formats">
                             <xsl:with-param name="format" select="$format"/>
+                            <xsl:with-param name="case" select="'title'"/>
                         </xsl:call-template>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:call-template name="titleCase">
+                        <xsl:call-template name="format_formats">
                             <xsl:with-param name="format" select="$resource"/>
+                            <xsl:with-param name="case" select="'title'"/>
                         </xsl:call-template>
                     </xsl:otherwise>
                 </xsl:choose>
