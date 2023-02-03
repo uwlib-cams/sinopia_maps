@@ -13,6 +13,7 @@
     <xsl:include href="004_02_formatStrings.xsl"/>
     <xsl:include href="004_03_readComments.xsl"/>
     <xsl:include href="004_04_qaSources.xsl"/>
+    <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each
@@ -71,6 +72,10 @@
                                     <xsl:with-param name="format" select="$format"/>
                                     <xsl:with-param name="user" select="$user"/>
                                     <xsl:with-param name="author" select="$author"/>
+                                </xsl:call-template>
+                                <xsl:call-template name="CC0-footer">
+                                    <xsl:with-param name="resource_title" select="translate($file_name, '_', ' ')"/>
+                                    <xsl:with-param name="org" select="'cams'"/>
                                 </xsl:call-template>
                                 <!-- I don't understand the escaped characters here -->
                                 <script type="text/javascript" src="create_human_readable_RTs-collapsible.js">&amp;#160;</script>
