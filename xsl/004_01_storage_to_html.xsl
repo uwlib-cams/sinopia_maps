@@ -34,7 +34,8 @@
                                     <xsl:value-of
                                         select="concat('UW Sinopia resource templates | ', $format)"/>
                                 </title>
-                                <link href="mockups.css" rel="stylesheet" type="text/css"/>
+                                <link href="https://uwlib-cams.github.io/webviews/css/rda3r_templates.css" 
+                                    rel="stylesheet" type="text/css"/>
                                 <link href="https://uwlib-cams.github.io/webviews/images/book.png"
                                     rel="icon" type="image/png"/>
                             </head>
@@ -71,6 +72,7 @@
                                     <xsl:with-param name="user" select="$user"/>
                                     <xsl:with-param name="author" select="$author"/>
                                 </xsl:call-template>
+                                <!-- I don't understand the escaped characters here -->
                                 <script type="text/javascript" src="create_human_readable_RTs-collapsible.js">&amp;#160;</script>
                             </body>
                         </html>
