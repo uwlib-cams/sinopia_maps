@@ -67,12 +67,10 @@
         <xsl:param name="optional_classes"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
-        <xsl:param name="platform"/>
         <xsl:param name="rt_id"/>
         <xsl:param name="sorted_properties"/>
-        <!-- [!] TO DO pass in platform when running transformation -->
         <rdf:Description
-            rdf:about="{concat('https://api.', $platform, 'sinopia.io/resource/', $rt_id)}">
+            rdf:about="{concat('https://api.sinopia.io/resource/', $rt_id)}">
             <!-- to do output remark in RT description -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
             <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
