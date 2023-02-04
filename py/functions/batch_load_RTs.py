@@ -10,6 +10,7 @@ from textwrap import dedent
 
 # get list of RTs - must be in sinopia_maps/py 
 def locate_RTs():
+	# filepath would need to change if running from repo top level
 	sinopia_maps_repo = os.listdir('..')
 	RT_list = []
 	for file in sinopia_maps_repo:
@@ -138,7 +139,9 @@ def upload_list(jwt, platform, RT_list):
 					new_URI = f"https://api.{platform}sinopia.io/resource/{RT_id}"
 					g.remove((s, p, o))
 					g.add((URIRef(new_URI), p, o))
+		# filepath needs to change if running from repo top level
 		g.serialize(f"../{RT.split('.')[0]}.json", format='json-ld')
+		# filepath needs to change if running from repo top level
 		format_json(user, new_URI, f"../{RT.split('.')[0]}.json")
 
 		open_RT = open(f"../{RT.split('.')[0]}.json")
