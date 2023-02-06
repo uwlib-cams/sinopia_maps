@@ -44,4 +44,4 @@ import functions.fix_multi_props
 update_html(saxon_dir, saxon_version)
 
 """Load RTs to selected Sinopia environment"""
-import functions.batch_load_RTs
+import py.functions.batch_load_nested_RTs
