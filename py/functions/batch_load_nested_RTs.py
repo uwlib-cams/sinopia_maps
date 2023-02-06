@@ -137,8 +137,6 @@ def upload_list(jwt, platform, RT_list):
 	#put sorted RTs from dict into an array 
 	sorted_RT_list = list(sorted_dict.values())[0]
 
-	print(sorted_RT_list)
-
 	for RT in sorted_RT_list:
 		g = Graph()
 		g.parse(RT, format='xml')
