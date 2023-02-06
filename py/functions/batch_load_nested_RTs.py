@@ -7,6 +7,17 @@ import requests
 from textwrap import dedent
 
 ###
+# SUMMARY
+# Per testing, RTA nesting RTB cannot be loaded via the API before RTB is loaded, 
+# so this code sorts resource templates into three groups for loading:
+# 1) RTs which are nested in RTs in 2 or 3, which do not nest
+# 2) RTs which are nested in RTs in 3, which nest RTs in 1
+# 3) RTs which are not nested, which nest RTs in 2 or 1
+# NOTES
+# In testing 2023-02 it was not functional for use loading only one RT
+###
+
+
 
 # get list of RTs - must be in sinopia_maps/py 
 def locate_RTs():
