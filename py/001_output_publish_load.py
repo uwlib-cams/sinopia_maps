@@ -168,7 +168,7 @@ OUTPUT HTML RESOURCE TEMPLATES
 for RT in RT_list:
     g = rdflib.Graph()
     g.parse(RT, format = 'xml')
-    g.serialize(f"{RT + '.jsonld'}", format = 'json-ld') # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+    g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
 
 # losing it here - still to do:
     # Alter the RT IRIs if for Stage or Dev
