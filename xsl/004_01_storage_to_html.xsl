@@ -27,7 +27,7 @@
                 select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
             <xsl:choose>
                 <xsl:when test="$format!='na'">
-                    <xsl:result-document href="../html/{$file_name}.html">
+                    <xsl:result-document href="html/{$file_name}.html">
                         <html>
                             <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
