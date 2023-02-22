@@ -165,17 +165,34 @@ OUTPUT HTML RESOURCE TEMPLATES
 
 """ SERIALIZE JSON, (ADD SINOPIA ADMIN METADATA, LOAD TO A SINOPIA PLATFORM) """
 
+prepped_RTs = {}
+for RT in RT_list:
+	prepped_RTs[RT] = ""
+
+
 for RT in RT_list:
     g = rdflib.Graph()
     g.parse(RT, format = 'xml')
     g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+    for s, p, o in g:
+	    if isinstance(s, rdflib.term.URIRef) == True:
+		   	if s[0:19] == "https://api.sinopia":
+
+
+
+
+# save RT ID as var
+# save json-ld as var
+# wrap as object with Sinopia admin metadata
+
+
 
 # losing it here - still to do:
     # Alter the RT IRIs if for Stage or Dev
         # MCM used rdflib in a way i can't quite follow
     # Wrap RT as object with Sinopia admin metadata:
         # { 
-        #   "data": json.load(RT) ,
+        #   "data": prepped_iri_rt ,
         #   "user": user ,
         #   "group": "washington" ,
         #   "editGroups": [] ,
