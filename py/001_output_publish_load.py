@@ -2,6 +2,10 @@ import os
 from textwrap import dedent
 import lxml.etree as ET
 import rdflib
+import json
+from datetime import datetime
+import requests
+import sys
 
 """ PRELIMINARIES """
 
@@ -166,49 +170,41 @@ OUTPUT HTML RESOURCE TEMPLATES
 """ SERIALIZE JSON, (ADD SINOPIA ADMIN METADATA, LOAD TO A SINOPIA PLATFORM) """
 
 prepped_RTs = {}
-for RT in RT_list:
-	prepped_RTs[RT] = ""
-
 
 for RT in RT_list:
+    # print(RT)
     g = rdflib.Graph()
     g.parse(RT, format = 'xml')
-    g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+    # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+    g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') 
+    
+    # edit RT IRI for loading
     for s, p, o in g:
-	    if isinstance(s, rdflib.term.URIRef) == True:
-		   	if s[0:19] == "https://api.sinopia":
+        if isinstance(s, rdflib.term.URIRef) == True:
+            if s[0:19] == "https://api.sinopia":
+                RT_id = s.split('/')[-1]
+                new_IRI = f"https://api.{platform}sinopia.io/resource/{RT_id}" # pass this to format_json as iri
+                g.remove((s, p, o))
+                g.add((rdflib.URIRef(new_IRI), p, o))
+    prepped_RTs[new_IRI] = RT
 
+def format_json(user, iri, json_file):
+    with open(f"{json_file.split('.')[0] + '.jsonld'}", 'r') as RT:
+        original_data = json.load(RT)
+        currentTime = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'
+        RT_id = iri.split('/')[-1]
+        return json.dumps({"data": original_data, "user": user, "group": "washington", "editGroups": [], "templateId": "sinopia:template:resource", "types": [ "http://sinopia.io/vocabulary/ResourceTemplate" ], "bfAdminMetadataRefs": [], "sinopiaLocalAdminMetadataForRefs": [], "bfItemRefs": [], "bfInstanceRefs": [], "bfWorkRefs": [], "id": RT_id, "uri": iri, "timestamp": currentTime})
 
-
-
-# save RT ID as var
-# save json-ld as var
-# wrap as object with Sinopia admin metadata
-
-
-
-# losing it here - still to do:
-    # Alter the RT IRIs if for Stage or Dev
-        # MCM used rdflib in a way i can't quite follow
-    # Wrap RT as object with Sinopia admin metadata:
-        # { 
-        #   "data": prepped_iri_rt ,
-        #   "user": user ,
-        #   "group": "washington" ,
-        #   "editGroups": [] ,
-        #   "templateId": "sinopia:template:resource" ,
-        #   "types": [ "http://sinopia.io/vocabulary/ResourceTemplate" ] ,
-        #   "bfAdminMetadataRefs": [] ,
-        #   "sinopiaLocalAdminMetadataForRefs": [] ,
-        #   "bfItemRefs": [] ,
-        #   "bfInstanceRefs": [] ,
-        #   "bfWorkRefs": [] ,
-        #   "id": RT_id ,
-        #   "uri": uri ,
-        #   "timestamp": currentTime
-        # } 
-    # Load (each) RT to selected platform
-    # Get a status code
-
-
-
+for RT in prepped_RTs:
+    # 'wrap' RT with Sinopia admin metadata
+    prepped_RTs[RT] = format_json(user, RT, prepped_RTs[RT])
+    # loading
+    headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
+    post_to_sinopia = requests.post(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
+    status_code = post_to_sinopia.status_code
+    if status_code == 409:
+        # conflict; something already exists at this URI, so put (i.e. overwrite) instead of post
+        overwrite_in_sinopia = requests.put(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
+        print(f"{RT}: {overwrite_in_sinopia.status_code}")
+    else:
+        print(f"{RT}: {status_code}")
