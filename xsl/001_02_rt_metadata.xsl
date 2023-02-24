@@ -9,7 +9,8 @@
     xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xs" version="3.0">
 
     <xsl:template name="rt_hasClass">
-        <!-- [!] sync with resources.xsd > xs:simpleType @name="resource_label_type" > enumerations [!] -->
+        <!-- [!] THESE OPTIONS MUST MATCH 
+            resources.xsd > xs:simpleType @name="resource_label_type" > enumerations [!] -->
         <xsl:param name="resource"/>
         <xsl:choose>
             <xsl:when test="$resource = 'rdaWork'">
@@ -51,8 +52,8 @@
             <xsl:when test="$resource = 'rdaEntity'">
                 <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10013"/>
             </xsl:when>
-            <xsl:when test="$resource = 'provBundle'">
-                <sinopia:hasClass rdf:resource="http://www.w3.org/ns/prov#Bundle"/>
+            <xsl:when test="$resource = 'test'">
+                <sinopia:hasClass rdf:resource="http://example.com/Test"/>
             </xsl:when>
             <xsl:otherwise>ERROR - RT CLASS OPTIONS - ERROR</xsl:otherwise>
         </xsl:choose>
@@ -68,7 +69,6 @@
         <xsl:param name="user"/>
         <xsl:param name="rt_id"/>
         <xsl:param name="sorted_properties"/>
-        <!-- [!] TO DO pass in platform when running transformation -->
         <rdf:Description
             rdf:about="{concat('https://api.sinopia.io/resource/', $rt_id)}">
             <!-- to do output remark in RT description -->

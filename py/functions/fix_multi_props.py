@@ -4,10 +4,11 @@ import os
 ###
 
 def locate_RTs():
+	# filepath would change if moving to run from repo top-level
 	sinopia_maps_repo = os.listdir('..')
 	RT_list = []
 	for file in sinopia_maps_repo:
-		if (file[0:17] == "UWSINOPIA_WAU_rda" or file[0:22] == "TEST_UWSINOPIA_WAU_rda") and file[-4:] == ".rdf":
+		if (file[0:17] == "UWSINOPIA_WAU_rda") and file[-4:] == ".rdf":
 			RT_list.append(file)
 
 	return RT_list
@@ -18,8 +19,9 @@ def property_template_test(rdf_RDF, rdf_Description, prop_URI, locked_in_propURI
 	current_node_ID = rdf_Description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']
 	theoretical_prop_node_ID = prop_URI.strip('http://')
 	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('.', '')
-	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('object', '')
-	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('datatype', '')
+	# no need to process object and datatype props any longer
+	# theoretical_prop_node_ID = theoretical_prop_node_ID.replace('object', '')
+	# theoretical_prop_node_ID = theoretical_prop_node_ID.replace('datatype', '')
 	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('/', '') + "_define"
 
 	if current_node_ID == theoretical_prop_node_ID:
@@ -65,7 +67,8 @@ def fix_multi_props(file):
 							if tpl[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
 								if tpl[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']:
 									comment_index = index_num
-						rdf_Description.remove(subelement)
+						rdf_Description.remove(subelement)\
+						# would like to add newline following commented prop IRI
 						rdf_Description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
 					else:
 						if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:

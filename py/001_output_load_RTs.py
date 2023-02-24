@@ -1,20 +1,18 @@
 import os
+from functions.update_html import *
 from textwrap import dedent
 
-"""CAVEATS"""
-
-caveats = 'yes'
-print(dedent("""Please note:
-1) The terminal should be open in the sinopia_maps/py directory when running this script
-2) The script assumes that Saxon HE is located in the user's home directory (~)"""))
-caveats_okay = input("OK to proceed? (yes or no): ")
-if caveats_okay.lower() == 'yes':
+"""Confirm directories"""
+print(dedent("""Please confirm:
+	1) The terminal must be open in the sinopia_maps/py directory when running this script
+	2) The Saxon processor .jar file must be located in the user's home directory (~)"""))
+confirm = input("OK to proceed? (yes or no): ")
+if confirm.lower() == 'yes':
 	pass
 else:
 	exit(0)
 
 """Setup and run XSLT transformation"""
-
 saxon_dir_prompt = dedent("""Enter the name of the directory in which the Saxon HE .jar file is stored
 For example: 'saxon', 'saxon11', etc.
 > """)
@@ -33,15 +31,17 @@ def prompt_proceed():
 
 prompt_proceed()
 
+# filepaths would change if changing to run from repo top-level
 os.system(f'java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar net.sf.saxon.Transform -t -s:../xsl/001_01_storage_to_rdfxml.xsl -xsl:../xsl/001_01_storage_to_rdfxml.xsl')
 
-# Move to top-level folder
+# Move to top-level folder (might be unnecessary if changing to run from repo top-level)
 os.system('mv UWSINOPIA_WAU_rda* ../')
 
 """Eliminate repeating property IRIs"""
-
 import functions.fix_multi_props
 
-"""Load RTs to selected Sinopia environment"""
+""" update html"""
+update_html(saxon_dir, saxon_version)
 
-import functions.batch_load_RTs
+"""Load RTs to selected Sinopia environment"""
+import py.functions.batch_load_nested_RTs
