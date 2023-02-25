@@ -28,14 +28,6 @@ For example: '11.1', '11.4', etc.
 > """)
 saxon_version = input(saxon_version_prompt)
 
-proceed_prompt = dedent("""Ready to output, publish, and load RTs? (Yes or No)
-> """)
-proceed = input(proceed_prompt)
-if proceed.lower() == "yes":
-    pass
-else:
-    exit(0)
-
 sinopia_platform = ""
 platform_prompt = dedent("""Load to which Sinopia environment?
 Development, Stage, or Production?\n[1] Development\n[2] Stage\n[3] Production\n> """)
@@ -55,6 +47,14 @@ user = input(user_prompt)
 
 jwt_prompt = "Enter a Java web token for the Sinopia environment you will load RTs to\n> "
 jwt = input(jwt_prompt)
+
+proceed_prompt = dedent("""Ready to output, publish, and load RTs? (Yes or No)
+> """)
+proceed = input(proceed_prompt)
+if proceed.lower() == "yes":
+    pass
+else:
+    exit(0)
 
 """ OUTPUT RDF RESOURCE TEMPLATES """
 
