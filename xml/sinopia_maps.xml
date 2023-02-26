@@ -13,48 +13,6 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
         
-        <!-- AGENT TEMPLATES -->
-
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaAgent</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaCollectiveAgent</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-		    <author>UW CAMS - panzhuo@uw.edu</author>
-        </rt>
-        
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaPerson</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-            <author>UW CAMS - panzhuo@uw.edu</author>
-        </rt>
-        
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaCorporateBody</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-            <author>UW CAMS - panzhuo@uw.edu</author>
-        </rt>
-        
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaFamily</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        
        <!-- NOMEN TEMPLATES -->        
 
         <rt>
@@ -100,14 +58,7 @@
             <user>cspayne</user>
             <author>Cypress Payne - cspayne@uw.edu</author>
         </rt>
-        <rt output_load="true">
-            <institution>WAU</institution>
-            <resource>rdaAgent</resource>
-            <format>test</format>
-            <user>ries07</user>
-            <author>Benjamin Riesenberg - ries07@uw.edu</author>
-        </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaPlace</resource>
             <format>test</format>
