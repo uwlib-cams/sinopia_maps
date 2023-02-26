@@ -4,7 +4,6 @@
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
         <!-- WEMI TEMPLATES -->
-        
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaManifestation</resource>
@@ -12,17 +11,6 @@
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-        
-        <!-- PLACE TEMPLATES -->
-
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaPlace</resource>
-            <format>standalone</format>
-            <user>CAMS</user>
-            <author>UW CAMS - ries07@uw.edu</author>
-        </rt>
-        
         <!-- TIMESPAN TEMPLATES -->
         <rt>
             <institution>WAU</institution>
@@ -31,9 +19,7 @@
             <user>CAMS</user>
             <author>UW CAMS - ries07@uw.edu</author>
         </rt>       
-        
         <!-- TEST TEMPLATES -->
-        
         <rt>
             <institution>WAU</institution>
             <resource>rdaPlace</resource>
@@ -47,14 +33,6 @@
             <format>test</format>
             <user>cspayne</user>
             <author>Cypress Payne - cspayne@uw.edu</author>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaPlace</resource>
-            <format>test</format>
-            <user>ries07</user>
-            <author>Benjamin Riesenberg - ries07@uw.edu</author>
-        </rt>
-        
+        </rt>        
     </rts>
 </sinopia_maps>
