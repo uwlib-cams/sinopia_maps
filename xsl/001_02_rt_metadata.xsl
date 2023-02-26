@@ -91,7 +91,16 @@
                 <xsl:value-of select="translate($rt_id, ':', ' ')"/>
             </rdfs:label>
             <sinopia:hasAuthor>
-                <xsl:value-of select="uwsinopia:author"/>
+                <xsl:for-each select="uwsinopia:author">
+                    <xsl:choose>
+                        <xsl:when test="position() != last()">
+                            <xsl:value-of select="concat(., ', ')"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:value-of select="."/>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
             </sinopia:hasAuthor>
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
