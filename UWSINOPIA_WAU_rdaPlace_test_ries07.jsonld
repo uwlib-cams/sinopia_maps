@@ -1,19 +1,10 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/p/P70045",
+    "@id": "http://rdaregistry.info/Elements/p/P70001",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has authorized access point for place"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/p/P70020",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has identifier for place"
+        "@value": "has name of place"
       }
     ]
   },
@@ -41,13 +32,13 @@
       {
         "@list": [
           {
-            "@id": "_:Nc01f65a76798455fa5460b96697557d9"
+            "@id": "_:Nbca48382bae84fb78caf5ece4c299abd"
           },
           {
-            "@id": "_:N87bd106dba6e40d6bff654c92d1c192a"
+            "@id": "_:N5b09f10a137643b4b14bd25db958260c"
           },
           {
-            "@id": "_:Na7e0654ef93f4ba2ba284c629d926350"
+            "@id": "_:N445840f6741a4e3189552003de4a4dfb"
           }
         ]
       }
@@ -69,7 +60,7 @@
     ]
   },
   {
-    "@id": "_:Nc01f65a76798455fa5460b96697557d9",
+    "@id": "_:Nbca48382bae84fb78caf5ece4c299abd",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -102,7 +93,7 @@
     ]
   },
   {
-    "@id": "_:N87bd106dba6e40d6bff654c92d1c192a",
+    "@id": "_:N5b09f10a137643b4b14bd25db958260c",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -140,13 +131,13 @@
     ]
   },
   {
-    "@id": "_:Na7e0654ef93f4ba2ba284c629d926350",
+    "@id": "_:N445840f6741a4e3189552003de4a4dfb",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nd04e4781bd074c14b9c03d4791554590"
+        "@id": "_:N5a5c981eb8c74a61b79281454c3ae84c"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -177,7 +168,7 @@
     ]
   },
   {
-    "@id": "_:Nd04e4781bd074c14b9c03d4791554590",
+    "@id": "_:N5a5c981eb8c74a61b79281454c3ae84c",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -191,20 +182,11 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/p/P70018",
+    "@id": "http://rdaregistry.info/Elements/p/P70045",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has access point for place"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/p/P70001",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has name of place"
+        "@value": "has authorized access point for place"
       }
     ]
   },
@@ -218,11 +200,29 @@
     ]
   },
   {
+    "@id": "http://rdaregistry.info/Elements/p/P70020",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has identifier for place"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/p/P70019",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "has appellation of place"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/p/P70018",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has access point for place"
       }
     ]
   }
