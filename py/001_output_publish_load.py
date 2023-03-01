@@ -183,7 +183,7 @@ for RT in RT_list:
         if isinstance(s, rdflib.term.URIRef) == True:
             if s[0:19] == "https://api.sinopia":
                 RT_id = s.split('/')[-1]
-                new_IRI = f"https://api.{platform}sinopia.io/resource/{RT_id}" # pass this to format_json as iri
+                new_IRI = f"https://api.{sinopia_platform}sinopia.io/resource/{RT_id}" # pass this to format_json as iri
                 g.remove((s, p, o))
                 g.add((rdflib.URIRef(new_IRI), p, o))
     prepped_RTs[new_IRI] = RT
@@ -208,3 +208,13 @@ for RT in prepped_RTs:
         print(f"{RT}: {overwrite_in_sinopia.status_code}")
     else:
         print(f"{RT}: {status_code}")
+
+# https://www.rfc-editor.org/rfc/rfc9110.html#name-overview-of-status-codes
+# 2xx SUCCESSFUL
+	# 200 = OK, request has succeeded
+	# 201 = Created, request has been fulfilled and has resulted in one or more new resources being created
+	# 204 = No Content success (deleted)
+# 4xx CLIENT ERROR
+	# 400 = Bad Request
+	# 401 = Unauthorized
+	# 404 = Not Found
