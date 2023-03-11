@@ -99,6 +99,28 @@
                     [uwsinopia:user = $user]
                     /uwsinopia:remark_url/@iri}"/>
             </xsl:if>
+            <!-- http://sinopia.io/vocabulary/hasRemark -->
+            <xsl:if test="
+                $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                [uwsinopia:institution = $institution]
+                [uwsinopia:resource = $resource]
+                [uwsinopia:format = $format]
+                [uwsinopia:user = $user]
+                /uwsinopia:remark">
+                <sinopia:hasRemark xml:lang="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]
+                    /uwsinopia:remark/@xml:lang}">
+                    <xsl:value-of select="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:institution = $institution]
+                        [uwsinopia:resource = $resource]
+                        [uwsinopia:format = $format]
+                        [uwsinopia:user = $user]
+                        /uwsinopia:remark"/>
+                </sinopia:hasRemark>
+            </xsl:if>
             <!-- languageSuppressed -->
             <xsl:if test="
                     matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
