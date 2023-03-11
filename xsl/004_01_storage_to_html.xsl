@@ -9,6 +9,8 @@
     version="2.0">
     
     <xsl:output method="html"/>
+    
+    <xsl:param name="oxygenPath"/>
 
     <xsl:include href="004_02_formatStrings.xsl"/>
     <xsl:include href="004_03_readComments.xsl"/>
@@ -27,7 +29,7 @@
                 select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
             <xsl:choose>
                 <xsl:when test="$format!='na'">
-                    <xsl:result-document href="html/{$file_name}.html">
+                    <xsl:result-document href="{concat($oxygenPath, 'html/', $file_name, '.html')}">
                         <html>
                             <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -84,7 +86,7 @@
                     </xsl:result-document>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:result-document href="../html/{$file_name}.html">
+                    <xsl:result-document href="{concat($oxygenPath, 'html/', $file_name, '.html')}">
                         <html>
                             <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -427,8 +429,10 @@
             <ul id="BT">
                 <xsl:variable name="file_name"
                     select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
-                <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
+                <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/
+                    rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
                     <xsl:variable name="label_without_note" as="xs:string">
+                        <!-- BMR 2023-03-10: I don't think we add bracketed info to PT labels anymore -->
                         <xsl:choose>
                             <xsl:when test="contains(rdfs:label, '[')">
                                 <li><xsl:value-of select="substring-before(rdfs:label, '[')"/></li>
@@ -442,7 +446,11 @@
                     <xsl:choose>
                         <xsl:when test="sinopia:hasPropertyUri[position()!=1]">
                             <li>
-                                <a href="#{$pt_id}"><xsl:value-of select="$label_without_note"/></a>&#160;<span class="caret"> </span>
+                                <a href="#{$pt_id}">
+                                    <xsl:value-of select="$label_without_note"/>
+                                </a>
+                                <xsl:text>&#160;</xsl:text>
+                                <span class="caret"/> 
                                 <ul class="nested">
                                     <xsl:for-each select="sinopia:hasPropertyUri[position()!=1]">
                                         <xsl:variable name="subprop_URI" select="@rdf:resource"/>
@@ -451,28 +459,49 @@
                                             <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
                                         </xsl:variable>
                                         <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
-                                        <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about=$subprop_URI or @rdf:about=replace($subprop_URI, 'object/', '') or @rdf:about=replace($subprop_URI, 'datatype/', '')]/rdfs:label[@xml:lang='en']"/>
-                                        <li><xsl:value-of select="$subprop_label"/></li>
+                                        <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/
+                                            rdf:Description[@rdf:about=$subprop_URI]/rdfs:label[@xml:lang='en']"/>
+                                        <li>
+                                            <xsl:value-of select="$subprop_label"/>
+                                        </li>
                                     </xsl:for-each>
                                     <xsl:call-template name="add_comments">
-                                        <xsl:with-param name="nodeID" select="@rdf:nodeID"></xsl:with-param>
+                                        <xsl:with-param name="nodeID" select="@rdf:nodeID"/>
                                     </xsl:call-template>
                                 </ul>
                             </li>
                         </xsl:when>
                         <xsl:otherwise>
-                            <li><a href="#{$pt_id}"><xsl:value-of select="$label_without_note"/></a></li>
+                            <li>
+                                <a href="#{$pt_id}">
+                                    <xsl:value-of select="$label_without_note"/>
+                                </a>
+                            </li>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:for-each>
                 <xsl:variable name="rt_id" select="concat($institution, 'RT', $resource)"/>
-                <li><span class="backlink"><a href="#{$rt_id}"><strong>RETURN TO RESOURCE TEMPLATE TOP</strong></a></span></li>
-                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+                <li>
+                    <span class="backlink">
+                        <a href="#{$rt_id}">
+                            <strong>RETURN TO RESOURCE TEMPLATE TOP</strong>
+                        </a>
+                    </span>
+                </li>
+                <li>
+                    <span class="backlink">
+                        <a href="#profile">
+                            <strong>RETURN TO PROFILE TOP</strong>
+                        </a>
+                    </span>
+                </li>
             </ul>
             <xsl:variable name="file_name"
                 select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
-            <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
+            <xsl:for-each select="document(concat('../', $file_name, '.rdf'))/rdf:RDF/
+                rdf:Description[rdf:type/@rdf:resource='http://sinopia.io/vocabulary/PropertyTemplate']">
                 <xsl:variable name="label_without_note" as="xs:string">
+                    <!-- BMR 2023-03-10: as above, don't think we have any labels with bracketed notes anymore -->
                     <xsl:choose>
                         <xsl:when test="contains(rdfs:label, '[')">
                             <li><xsl:value-of select="substring-before(rdfs:label, '[')"/></li>
@@ -501,8 +530,22 @@
         <xsl:variable name="prop_id" select="replace($prop_label, ' ', '')"/>
         <section class="ptInfo" id="{$prop_id}">
             <h4>
-                <span>Property Template: <xsl:value-of select="$prop_label"/> <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/@rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">(*)</xsl:if></span>
+                <span>
+                    <xsl:text>Property Template: </xsl:text>
+                    <xsl:value-of select="$prop_label"/> 
+                    <xsl:if test="document(concat('../', $file_name, '.rdf'))/rdf:RDF/
+                        rdf:Description[sinopia:hasPropertyUri/@rdf:resource=$prop_URI]/sinopia:hasPropertyAttribute/
+                        @rdf:resource='http://sinopia.io/vocabulary/propertyAttribute/required'">
+                        <xsl:text>(*)</xsl:text></xsl:if>
+                </span>
             </h4>
+            <xsl:if test="sinopia:hasRemark">
+                <p>
+                    <span class="ptInfoRemark">
+                        <xsl:value-of select="sinopia:hasRemark"/>
+                    </span>
+                </p>
+            </xsl:if>
             <ul>
                 <li>Property IRI: <a href="{$prop_URI}"><xsl:value-of select="$prop_URI"/></a></li>
                 <xsl:if test="contains($prop_URI, 'rdaregistry')">

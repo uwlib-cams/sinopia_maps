@@ -1,5 +1,11 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
+         xmlns:sinopia="http://sinopia.io/vocabulary/"
+         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaManifestation:printMonograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -7,7 +13,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2023-02-25</sinopia:hasDate>
+      <sinopia:hasDate>2023-03-10</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
@@ -45,6 +51,7 @@
       <rdfs:label xml:lang="en">has title proper</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30156"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-4b9291c5-f525-37fd-b661-c469e763ce8a"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel title proper as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
@@ -58,6 +65,7 @@
       <rdfs:label xml:lang="en">has statement of responsibility relating to title proper</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30105"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-93929207-c91d-3970-b325-af8fd9dd2956"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel statement of responsibility relating to title proper as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -70,6 +78,7 @@
       <rdfs:label xml:lang="en">has variant title of manifestation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30128"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-f8142e73-8120-32a4-909a-e1c5b691e3e0"/>
+      <sinopia:hasRemark xml:lang="en"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -82,6 +91,7 @@
       <rdfs:label xml:lang="en">has other title information</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30142"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-d12e7ee9-4a94-3ea6-8bb5-5e3ec97a91e9"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel other title information as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -118,6 +128,7 @@
       <rdfs:label xml:lang="en">has designation of edition</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30133"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3f4a6575-8253-3866-a8f6-ce255dcb094c"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel designation of edition as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -130,6 +141,7 @@
       <rdfs:label xml:lang="en">has designation of named revision of edition</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30132"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-bff10bfe-3a8b-3895-a3f4-09a81b7678df"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel designation of named revision of edition as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -142,6 +154,7 @@
       <rdfs:label xml:lang="en">has statement of responsibility relating to edition</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30121"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dcdb7f9e-3b2f-3819-8c00-1a5e6a1339ed"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel statement of responsibility relating to edition as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -154,6 +167,7 @@
       <rdfs:label xml:lang="en">has statement of responsibility relating to named revision of edition</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30118"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-25f4533f-8def-3228-a74f-4a1f0d57426f"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel statement of responsibility relating to named revision of edition as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -178,6 +192,7 @@
       <rdfs:label xml:lang="en">has place of publication</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30088"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b569c353-c792-3617-8c83-d974466ccc02"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel place of publication as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -190,6 +205,7 @@
       <rdfs:label xml:lang="en">has name of publisher</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30176"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-8fb9e501-1ef9-3b1f-9afa-078737576947"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel name of publisher as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -238,6 +254,7 @@
       <rdfs:label xml:lang="en">has title of series</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30157"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0338d0e4-e62e-377f-80f8-f7b06b2f11a4"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel title of series as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -262,6 +279,7 @@
       <rdfs:label xml:lang="en">has other title information of series</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30143"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-fb17363e-47f7-3220-aef9-256796432ab9"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel other title information of series as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -274,6 +292,7 @@
       <rdfs:label xml:lang="en">has statement of responsibility relating to series</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30119"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-03903371-8ef8-3e8a-88c9-45421e6de05b"/>
+      <sinopia:hasRemark xml:lang="en">Record a parallel statement of responsibility relating to series as a repeat value of this element</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -580,7 +599,9 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related agent of manifestation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30267"/>
-      <!--http://rdaregistry.info/Elements/m/P30327--><!--http://rdaregistry.info/Elements/m/P30329--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30080"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30327"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30329"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30080"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30271"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30268"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30215"/>
@@ -699,7 +720,9 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30311"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30332"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30331"/>
-      <!--http://rdaregistry.info/Elements/m/P30321--><!--http://rdaregistry.info/Elements/m/P30328--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30365"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30321"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30328"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30365"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30336"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
@@ -831,7 +854,8 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related manifestation of manifestation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30048"/>
-      <!--http://rdaregistry.info/Elements/m/P30024--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30027"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30024"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30027"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30033"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30020"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b716f212-6108-3c94-8067-2b46828562c2"/>
@@ -906,7 +930,8 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30265"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30310"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30253"/>
-      <!--http://rdaregistry.info/Elements/m/P30135--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30334"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30135"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30334"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30466"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-cacc38d6-cae9-371c-8ee7-28e19f2dd52c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
