@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
-         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaManifestation:printMonograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -599,9 +593,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related agent of manifestation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30267"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30327"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30329"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30080"/>
+      <!--http://rdaregistry.info/Elements/m/P30327--><!--http://rdaregistry.info/Elements/m/P30329--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30080"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30271"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30268"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30215"/>
@@ -720,9 +712,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30311"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30332"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30331"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30321"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30328"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30365"/>
+      <!--http://rdaregistry.info/Elements/m/P30321--><!--http://rdaregistry.info/Elements/m/P30328--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30365"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30336"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
@@ -854,8 +844,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related manifestation of manifestation</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30048"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30024"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30027"/>
+      <!--http://rdaregistry.info/Elements/m/P30024--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30027"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30033"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30020"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-b716f212-6108-3c94-8067-2b46828562c2"/>
@@ -930,8 +919,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30265"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30310"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30253"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30135"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30334"/>
+      <!--http://rdaregistry.info/Elements/m/P30135--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30334"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30466"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-cacc38d6-cae9-371c-8ee7-28e19f2dd52c"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
