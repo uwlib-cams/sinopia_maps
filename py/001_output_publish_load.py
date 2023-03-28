@@ -2,6 +2,7 @@ import os
 from textwrap import dedent
 import lxml.etree as ET
 import rdflib
+from rdflib import *
 import json
 from datetime import datetime
 import requests
@@ -175,8 +176,6 @@ for RT in RT_list:
     # print(RT)
     g = rdflib.Graph()
     g.parse(RT, format = 'xml')
-    # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
-    g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') 
     
     # edit RT IRI for loading
     for s, p, o in g:
@@ -186,6 +185,8 @@ for RT in RT_list:
                 new_IRI = f"https://api.{sinopia_platform}sinopia.io/resource/{RT_id}" # pass this to format_json as iri
                 g.remove((s, p, o))
                 g.add((rdflib.URIRef(new_IRI), p, o))
+    # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+    g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') 
     prepped_RTs[new_IRI] = RT
 
 def format_json(user, iri, json_file):
@@ -198,13 +199,14 @@ def format_json(user, iri, json_file):
 for RT in prepped_RTs:
     # 'wrap' RT with Sinopia admin metadata
     prepped_RTs[RT] = format_json(user, RT, prepped_RTs[RT])
+    data = prepped_RTs[RT]
     # loading
     headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
-    post_to_sinopia = requests.post(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
+    post_to_sinopia = requests.post(RT, data = data.encode('utf-8'), headers=headers)
     status_code = post_to_sinopia.status_code
     if status_code == 409:
         # conflict; something already exists at this URI, so put (i.e. overwrite) instead of post
-        overwrite_in_sinopia = requests.put(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
+        overwrite_in_sinopia = requests.put(RT, data = data.encode('utf-8'), headers=headers)
         print(f"{RT}: {overwrite_in_sinopia.status_code}")
     else:
         print(f"{RT}: {status_code}")
