@@ -14,16 +14,14 @@
         </xs:annotation>
         <xs:restriction base="xs:string">
             
-            <!-- standalone/nested -->
+            <!-- standalone -->
             <xs:enumeration value="standalone"/>
-            <xs:enumeration value="nested"/>
 
             <!-- augmenting aggregates and non-aggregates, just use 'printMonograph' or other -->
             <xs:enumeration value="printMonograph"/>
             <!-- ... -->
+            <!-- collection aggregates and parallel aggregates ?? -->
             
-            <!-- collection aggregates and parallel aggregates ??
-            <xs:enumeration value="aggregate:printMonograph"/> -->
             <!-- formats for Nomens -->
             <xs:enumeration value="accessPoint"/>
             <xs:enumeration value="identifier"/>
