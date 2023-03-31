@@ -7,7 +7,7 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
       <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2023-03-30</sinopia:hasDate>
+      <sinopia:hasDate>2023-03-31</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_order">
@@ -20,6 +20,9 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10078"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10072"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57"/>
+      <sinopia:hasRemark xml:lang="en">For a collection or a parallel aggregate, use this template to describe an aggregating work. Relate the aggregating work to a manifestation using "has manifestation of work".
+               
+For an augmentation aggregate, use this template to describe a work realized by the primary expression. Relate the work to the primary expression using "has expression of work".</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -317,7 +320,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10357_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10357_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10348_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10357_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -332,5 +335,373 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:locvocabs:mscript"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10348_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10348_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10358_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10348_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has colour content of representative expression</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10348"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-470f2c8a-76be-3b84-9260-045bba14fd0d"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10348_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10348_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:colour_content"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10358_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10358_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10061_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10358_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has sound content of representative expression</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10358"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-1620b3cd-723c-3649-903f-2da57b63cc86"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10358_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10358_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:sound_content"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10061_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10393_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has author agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10061"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10483"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10530"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10525"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10524"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10526"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10523"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10577"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10572"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10571"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10573"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10570"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10478"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10477"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10479"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10476"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10436"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10431"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10430"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10432"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10429"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10205"/>
+      <!--http://rdaregistry.info/Elements/w/P10525--><!--http://rdaregistry.info/Elements/w/P10572--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10204"/>
+      <!--http://rdaregistry.info/Elements/w/P10478--><!--http://rdaregistry.info/Elements/w/P10524--><!--http://rdaregistry.info/Elements/w/P10525--><!--http://rdaregistry.info/Elements/w/P10572--><!--http://rdaregistry.info/Elements/w/P10571--><!--http://rdaregistry.info/Elements/w/P10431--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10255"/>
+      <!--http://rdaregistry.info/Elements/w/P10477--><!--http://rdaregistry.info/Elements/w/P10524--><!--http://rdaregistry.info/Elements/w/P10571--><!--http://rdaregistry.info/Elements/w/P10526--><!--http://rdaregistry.info/Elements/w/P10430--><!--http://rdaregistry.info/Elements/w/P10573--><!--http://rdaregistry.info/Elements/w/P10479--><!--http://rdaregistry.info/Elements/w/P10526--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10203"/>
+      <!--http://rdaregistry.info/Elements/w/P10573--><!--http://rdaregistry.info/Elements/w/P10432--><!--http://rdaregistry.info/Elements/w/P10523--><!--http://rdaregistry.info/Elements/w/P10476--><!--http://rdaregistry.info/Elements/w/P10523--><!--http://rdaregistry.info/Elements/w/P10570--><!--http://rdaregistry.info/Elements/w/P10570--><!--http://rdaregistry.info/Elements/w/P10429--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-038aa9a0-8606-3cb6-b2c8-6cd22fdcee45"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10061_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10061">
+      <rdfs:label xml:lang="en">has author agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10483">
+      <rdfs:label xml:lang="en">has author collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10530">
+      <rdfs:label xml:lang="en">has author corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
+      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
+      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
+      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
+      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10577">
+      <rdfs:label xml:lang="en">has author family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
+      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
+      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
+      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
+      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10478">
+      <rdfs:label xml:lang="en">has librettist collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
+      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
+      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10477">
+      <rdfs:label xml:lang="en">has lyricist collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
+      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
+      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10479">
+      <rdfs:label xml:lang="en">has rapporteur collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
+      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
+      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10476">
+      <rdfs:label xml:lang="en">has screenwriter collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
+      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
+      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10436">
+      <rdfs:label xml:lang="en">has author person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10431">
+      <rdfs:label xml:lang="en">has librettist person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10430">
+      <rdfs:label xml:lang="en">has lyricist person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10432">
+      <rdfs:label xml:lang="en">has rapporteur person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10429">
+      <rdfs:label xml:lang="en">has screenwriter person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10205">
+      <rdfs:label xml:lang="en">has librettist agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10478">
+      <rdfs:label xml:lang="en">has librettist collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
+      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
+      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10431">
+      <rdfs:label xml:lang="en">has librettist person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10204">
+      <rdfs:label xml:lang="en">has lyricist agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10477">
+      <rdfs:label xml:lang="en">has lyricist collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
+      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
+      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10430">
+      <rdfs:label xml:lang="en">has lyricist person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10255">
+      <rdfs:label xml:lang="en">has rapporteur agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10479">
+      <rdfs:label xml:lang="en">has rapporteur collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
+      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
+      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10432">
+      <rdfs:label xml:lang="en">has rapporteur person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10203">
+      <rdfs:label xml:lang="en">has screenwriter agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10476">
+      <rdfs:label xml:lang="en">has screenwriter collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
+      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
+      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10429">
+      <rdfs:label xml:lang="en">has screenwriter person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10393_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has aggregator agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10393"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10495"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10542"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10538"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10636"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10589"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10585"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10637"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10491"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10635"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10448"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10444"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10638"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10055"/>
+      <!--http://rdaregistry.info/Elements/w/P10538--><!--http://rdaregistry.info/Elements/w/P10585--><!--http://rdaregistry.info/Elements/w/P10491--><!--http://rdaregistry.info/Elements/w/P10538--><!--http://rdaregistry.info/Elements/w/P10585--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10634"/>
+      <!--http://rdaregistry.info/Elements/w/P10636--><!--http://rdaregistry.info/Elements/w/P10636--><!--http://rdaregistry.info/Elements/w/P10637--><!--http://rdaregistry.info/Elements/w/P10636--><!--http://rdaregistry.info/Elements/w/P10444--><!--http://rdaregistry.info/Elements/w/P10635--><!--http://rdaregistry.info/Elements/w/P10637--><!--http://rdaregistry.info/Elements/w/P10636--><!--http://rdaregistry.info/Elements/w/P10637--><!--http://rdaregistry.info/Elements/w/P10635--><!--http://rdaregistry.info/Elements/w/P10637--><!--http://rdaregistry.info/Elements/w/P10636--><!--http://rdaregistry.info/Elements/w/P10637--><!--http://rdaregistry.info/Elements/w/P10638--><!--http://rdaregistry.info/Elements/w/P10638--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-445ef14c-4f26-3a34-9d46-ed2ec5f350e8"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10393_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10393">
+      <rdfs:label xml:lang="en">has aggregator agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10495">
+      <rdfs:label xml:lang="en">has aggregator collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10542">
+      <rdfs:label xml:lang="en">has aggregator corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
+      <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10589">
+      <rdfs:label xml:lang="en">has aggregator family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
+      <rdfs:label xml:lang="en">has compiler family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10491">
+      <rdfs:label xml:lang="en">has compiler collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
+      <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
+      <rdfs:label xml:lang="en">has compiler family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10635">
+      <rdfs:label xml:lang="en">has collection registrar collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10448">
+      <rdfs:label xml:lang="en">has aggregator person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10444">
+      <rdfs:label xml:lang="en">has compiler person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10638">
+      <rdfs:label xml:lang="en">has collection registrar person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10055">
+      <rdfs:label xml:lang="en">has compiler agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10491">
+      <rdfs:label xml:lang="en">has compiler collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
+      <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
+      <rdfs:label xml:lang="en">has compiler family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10635">
+      <rdfs:label xml:lang="en">has collection registrar collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10444">
+      <rdfs:label xml:lang="en">has compiler person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10638">
+      <rdfs:label xml:lang="en">has collection registrar person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10634">
+      <rdfs:label xml:lang="en">has collection registrar agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10635">
+      <rdfs:label xml:lang="en">has collection registrar collective agent</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10636">
+      <rdfs:label xml:lang="en">has collection registrar corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10637">
+      <rdfs:label xml:lang="en">has collection registrar family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10638">
+      <rdfs:label xml:lang="en">has collection registrar person</rdfs:label>
    </rdf:Description>
 </rdf:RDF>
