@@ -111,18 +111,15 @@
       </xs:annotation>
       <xs:sequence>
          <xs:choice>
-            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1">
+            <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
+               maxOccurs="unbounded">
                <xs:annotation>
-                  <xs:documentation>When the `multiple_prop` &gt; `all_subprops` element is entered,
-                     all properties existing the source document which are subproperties of the
-                     `prop` element's property will be output as options in the property
-                     template.</xs:documentation>
-                  <xs:documentation>[! NOTE 2022-05-13] Tthe `all_subprops` element may only be used
-                     in RDA Registry prop_set instances.</xs:documentation>
+                  <xs:documentation>Use the property_selection element to enter a specific list of properties to include as options in the property template.</xs:documentation>
+                  <xs:documentation>Include a property IRI, and language tag as attribute values, and a property label as child text.</xs:documentation>
                </xs:annotation>
             </xs:element>
-            <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
-               maxOccurs="unbounded"/>
+            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="all_all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
