@@ -82,7 +82,7 @@ print(dedent(f"""{'=' * 20}
 OUTPUT RDF/XML RESOURCE TEMPLATES
 {'=' * 20}"""))
 
-# FIX REPEATING PROPERTY IRIS
+# FIX REPEATING PROPERTY IRIS AND LABELS
 
 # function returns list of resource templates 
 def locate_RTs():
@@ -93,7 +93,8 @@ def locate_RTs():
             RT_list.append(file)
     return RT_list
 
-# function determines if there are multiple instances of a property template 
+# function determines if there are multiple instances of a property within a property template 
+# variables: rdf_RDF - root of lxml etree, rdf_description - property template
 def property_template_test(rdf_RDF, rdf_description, prop_URI, locked_in_propURI_list):
 	comment_it_out = True
 	current_node_id = rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']
@@ -106,6 +107,7 @@ def property_template_test(rdf_RDF, rdf_description, prop_URI, locked_in_propURI
 
 	if current_node_id == theoretical_prop_node_id:
 		# This is THE property template for this property; keep it in
+		# This means that the prop_URI is the URI for the property it is a child of 
 		comment_it_out = False
 	else:
 		# See if there is a different property template for this property
@@ -114,60 +116,92 @@ def property_template_test(rdf_RDF, rdf_description, prop_URI, locked_in_propURI
 			# There is no property template for this property, so it can remain as a subproperty where it is
 			comment_it_out = False
 
-	# Make sure this URI isn't a repeat from a previous PT
+	# Make sure this URI isn't a repeat from within the PT or from a previous PT 
 	if comment_it_out == False and prop_URI in locked_in_propURI_list:
 		comment_it_out = True
 
 	return comment_it_out
 
-# function to comment out repeating property IRIs
+# fix multiprops works for repeating property URIs both within a property template
+# and in the resource template as a whole. 
+# this is because locked_in_propURI_list eventually contains every prop URI and will remove any that are repeats
 def fix_multi_props(file):
 	locked_in_propURI_list = []
 	tree = ET.parse(file)
 	rdf_RDF = tree.getroot()
 
-	for rdf_description in rdf_RDF:
+	for rdf_Description in rdf_RDF:
 		# Determine if rdf:Description contains multiple instances of sinopia:hasPropertyUri
-		sinopia_hasPropertyURI_list = rdf_description.findall('{http://sinopia.io/vocabulary/}hasPropertyUri')
-		if len(sinopia_hasPropertyURI_list) > 1:
-			# Get index number for each subelement of rdf:Description
-			rdf_description_dict = {}
+		sinopia_hasPropertyUri_list = rdf_Description.findall('{http://sinopia.io/vocabulary/}hasPropertyUri')
+		if len(sinopia_hasPropertyUri_list) > 1:
+			# index each subelement of rdf:Description and store in dictionary 
+			rdf_Description_dict = {}
 			index_num = 0
-			for subelement in rdf_description:
-				rdf_description_dict[index_num] = (subelement.tag, subelement.attrib)
+			for subelement in rdf_Description:
+				rdf_Description_dict[index_num] = (subelement.tag, subelement.attrib)
 				index_num += 1
 
-			for subelement in rdf_description:
+			# determine if property is a repeat 
+			for subelement in rdf_Description:
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
-                    # determine if subelemement should be commented out 
-					comment_it_out = property_template_test(rdf_RDF, rdf_description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], locked_in_propURI_list)
+					comment_it_out = property_template_test(rdf_RDF, rdf_Description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], locked_in_propURI_list)
 					if comment_it_out == True:
-						for index_num in rdf_description_dict:
-							tpl = rdf_description_dict[index_num]
+						# check that it is the correct property to commment out 
+						for index_num in rdf_Description_dict:
+							tpl = rdf_Description_dict[index_num]
 							if tpl[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
 								if tpl[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']:
 									comment_index = index_num
-						rdf_description.remove(subelement)\
-						# would like to add newline following commented prop IRI
-						rdf_description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
+						# comment out property 
+						rdf_Description.remove(subelement)
+						rdf_Description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
+						# add new line under comment 
+						ET.indent(rdf_RDF)
+						print(f"Commented out repeating property URI {subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']}")
 					else:
+						# if not a repeate, add to locked_in_propURI_list for reference 
 						if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:
 							locked_in_propURI_list.append(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
 
-		elif len(sinopia_hasPropertyURI_list) == 1:
-			for hasPropertyURI in sinopia_hasPropertyURI_list:
-				if hasPropertyURI.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:
-					locked_in_propURI_list.append(hasPropertyURI.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
+		elif len(sinopia_hasPropertyUri_list) == 1:
+			for hasPropertyUri in sinopia_hasPropertyUri_list:
+				if hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:
+					locked_in_propURI_list.append(hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
 
 	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
+	
+# function to comment out duplicate triples 
+def fix_duplicate_triples(file):
+	locked_in_label_list = []
+	tree = ET.parse(file)
+	rdf_RDF = tree.getroot()
 
-# run fix_multi_props for each resource template 
+	for rdf_Description in rdf_RDF: 
+		to_remove = False
+		#get label from property template 
+		sinopia_hasLabel_list = rdf_Description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
+		#if label is the only child of pt and label is already in list,
+		# then this is a duplicate - remove property template 
+		if len(sinopia_hasLabel_list) == 1:
+			for label in rdf_Description:
+				if label.text not in locked_in_label_list:
+					locked_in_label_list.append(label.text)
+				else:
+					if len(rdf_Description.getchildren()) == 1:
+						to_remove = True
+			if to_remove == True:
+				rdf_RDF.remove(rdf_Description)
+				print(f'Duplicate of {label.text} removed')
+
+	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
+	
 RT_list = locate_RTs()
 for RT in RT_list:
     fix_multi_props(f'{RT}')
+    fix_duplicate_triples(f'{RT}')
 
 print(dedent(f"""{'=' * 20}
-COMMENTED OUT REPEATING PROPERTY IRIS IN RESOURCE TEMPLATES
+COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
 {'=' * 20}"""))
 
 # OUTPUT HTML RESOURCE TEMPLATES 
