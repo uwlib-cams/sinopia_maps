@@ -114,8 +114,10 @@
             <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
                maxOccurs="unbounded">
                <xs:annotation>
-                  <xs:documentation>Use the property_selection element to enter a specific list of properties to include as options in the property template.</xs:documentation>
-                  <xs:documentation>Include a property IRI, and language tag as attribute values, and a property label as child text.</xs:documentation>
+                  <xs:documentation>Use the property_selection element to enter a specific list of
+                     properties to include as options in the property template.</xs:documentation>
+                  <xs:documentation>Include a property IRI, and language tag as attribute values,
+                     and a property label as child text.</xs:documentation>
                </xs:annotation>
             </xs:element>
             <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
@@ -228,9 +230,9 @@
          <xs:enumeration value="Sinopia BIBFRAME item resources"/>
          <xs:enumeration value="Sinopia BIBFRAME admin metadata resources"/>
          <xs:enumeration value="Sinopia templates"/>
-         <xs:enumeration value="Sinopia RDA monograph manifestation"/>
-         <xs:enumeration value="Sinopia RDA monograph expression"/>
-         <xs:enumeration value="Sinopia RDA monograph work"/>
+         <xs:enumeration value="Sinopia RDA manifestation"/>
+         <xs:enumeration value="Sinopia RDA expression"/>
+         <xs:enumeration value="Sinopia RDA work"/>
          <xs:enumeration value="AGROVOC (QA)"/>
          <xs:enumeration value="Bibbi authorities"/>
          <xs:enumeration value="Bibbi authorities Topic"/>
