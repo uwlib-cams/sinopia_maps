@@ -47,18 +47,18 @@
             <xsl:choose>
                 <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'https:'">
                     <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
-                        translate('/.#', '') => substring-after('https:'), '_define')"></xsl:copy-of>
+                        translate('/.#', '') => substring-after('https:'), '_define')"/>
                 </xsl:when>
                 <xsl:when test="substring-before($prop/uwmaps:prop_iri/@iri, '//') = 'http:'">
                     <xsl:copy-of select="concat($prop/uwmaps:prop_iri/@iri => 
-                        translate('/.#', '') => substring-after('http:'), '_define')"></xsl:copy-of>
+                        translate('/.#', '') => substring-after('http:'), '_define')"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
         <rdf:Description rdf:nodeID="{$node_ID}">
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-            <!-- ** output property label ** -->
+            <!-- ** output property-template label ** -->
             <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
                 <xsl:value-of select="$prop/uwmaps:prop_label"/>
             </rdfs:label>
