@@ -14,6 +14,7 @@
         schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
     <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/" 
         schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+    
     <!-- INCLUDE -->
     <xs:include schemaLocation="uwsinopia.xsd"/>
     <xs:include schemaLocation="resources.xsd"/>
@@ -31,7 +32,6 @@
         <!-- may wish to add a mechanism for assembling RTs into a multi-entity profile or description set??  -->
         <xs:sequence>
             <xs:element name="rts" type="rts_type" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="html_profiles" type="html_profiles_type" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
@@ -64,14 +64,10 @@
             <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="1"/>
             <xs:element name="author" type="author_type" minOccurs="1" maxOccurs="unbounded"/>
-            <!-- may wish to add RT-level admin metadata here at some point, remark would go here in the sinopia_maps.xml instance -->
+            <xs:element name="rt_remark" type="rt_remark_type" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="output_load"/>
     </xs:complexType>
-    
-    <xs:simpleType name="output_load">
-        <xs:restriction base="xs:boolean"/>
-    </xs:simpleType>
     
     <xs:simpleType name="institution_type">
         <xs:annotation>
@@ -90,17 +86,16 @@
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
     
-    <!-- ****html_profiles**** -->
-    
-    <!-- DRAFT / UNDONE STUFF HERE -->
-    <xs:complexType name="html_profiles_type">
-        <xs:sequence>
-            <xs:element name="html_profile" type="html_profile_type" minOccurs="1" maxOccurs="unbounded"/>
-        </xs:sequence>
+    <xs:complexType name="rt_remark_type">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
     
-    <xs:complexType name="html_profile_type">
-        <!-- html profile elements should "bundle" rts together, using some kind of reference for the rt -->
-    </xs:complexType>
+    <xs:simpleType name="output_load">
+        <xs:restriction base="xs:boolean"/>
+    </xs:simpleType>
     
 </xs:schema>

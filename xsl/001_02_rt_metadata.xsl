@@ -67,6 +67,7 @@
         <xsl:param name="optional_classes"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
+        <xsl:param name="rt_remark"/>
         <xsl:param name="rt_id"/>
         <xsl:param name="sorted_properties"/>
         <rdf:Description
@@ -102,6 +103,9 @@
                     </xsl:choose>
                 </xsl:for-each>
             </sinopia:hasAuthor>
+            <sinopia:hasRemark xml:lang="{$rt_remark/@xml:lang}">
+                <xsl:value-of select="$rt_remark"/>
+            </sinopia:hasRemark>
             <sinopia:hasDate>
                 <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>
             </sinopia:hasDate>

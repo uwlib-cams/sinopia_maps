@@ -23,6 +23,7 @@
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
+            <xsl:variable name="rt_remark" select="uwsinopia:rt_remark"/>
             <!-- colons for RT ID, underscores for RT filename, spaces for RT label -->
             <xsl:variable name="rt_id" select="
                 concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
@@ -62,6 +63,7 @@
                         <xsl:with-param name="resource" select="$resource"/>
                         <xsl:with-param name="format" select="$format"/>
                         <xsl:with-param name="user" select="$user"/>
+                        <xsl:with-param name="rt_remark" select="$rt_remark"/>
                         <xsl:with-param name="rt_id" select="$rt_id"/>
                         <xsl:with-param name="sorted_properties" select="$sorted_properties"/>
                     </xsl:call-template>
