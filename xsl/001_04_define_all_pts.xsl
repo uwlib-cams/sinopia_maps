@@ -59,9 +59,35 @@
             <!-- hard-code rdf:type sinopia:PropertyTemplate -->
             <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
             <!-- ** output property-template label ** -->
-            <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
-                <xsl:value-of select="$prop/uwmaps:prop_label"/>
-            </rdfs:label>
+            <xsl:choose>
+                <xsl:when test="
+                    $prop/uwmaps:sinopia/uwsinopia:implementation_set
+                    [uwsinopia:institution = $institution]
+                    [uwsinopia:resource = $resource]
+                    [uwsinopia:format = $format]
+                    [uwsinopia:user = $user]/
+                    uwsinopia:alt_pt_label">
+                    <rdfs:label xml:lang="{$prop/
+                        uwmaps:sinopia/uwsinopia:implementation_set
+                        [uwsinopia:institution = $institution]
+                        [uwsinopia:resource = $resource]
+                        [uwsinopia:format = $format]
+                        [uwsinopia:user = $user]/
+                        uwsinopia:alt_pt_label/@xml:lang}">
+                        <xsl:value-of select="$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                            [uwsinopia:institution = $institution]
+                            [uwsinopia:resource = $resource]
+                            [uwsinopia:format = $format]
+                            [uwsinopia:user = $user]/
+                            uwsinopia:alt_pt_label"/>
+                    </rdfs:label>
+                </xsl:when>
+                <xsl:otherwise>
+                    <rdfs:label xml:lang="{$prop/uwmaps:prop_label/@xml:lang}">
+                        <xsl:value-of select="$prop/uwmaps:prop_label"/>
+                    </rdfs:label>
+                </xsl:otherwise>
+            </xsl:choose>
             <!-- ** output property IRI, or multiple-prop IRIs if applicable ** -->
             <xsl:choose>
                 <xsl:when test="
