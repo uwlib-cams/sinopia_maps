@@ -38,13 +38,15 @@
             property--can be used in multiple resource templates.</xs:documentation>
       </xs:annotation>
       <xs:sequence>
-         <!-- all RTs must have ID components: institution / resource / format / user -->
+         <!-- REQUIRED: institution / resource / format / user -->
          <xs:element name="institution" type="institution_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
-         <!-- optional: multiple_prop / remark_url / remark / language_suppressed / required / repeatable -->
+         <!-- OPTIONAL: alt_pt_label / multiple_prop / remark_url / remark / 
+            language_suppressed / required / repeatable -->
+         <xs:element name="alt_pt_label" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
@@ -66,6 +68,7 @@
          </xs:element>
          <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1"
             default="0"/>
+         <!-- REQUIRED: EITHER literal_pt / uri_pt / lookup_pt / nested_resource_pt (+ subelements) -->
          <xs:choice>
             <xs:element name="literal_pt" type="literal_attributes_type"/>
             <xs:element name="uri_pt" type="uri_attributes_type"/>
