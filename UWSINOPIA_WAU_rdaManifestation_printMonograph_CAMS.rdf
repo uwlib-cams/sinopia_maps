@@ -7,7 +7,8 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10007"/>
       <rdfs:label>UWSINOPIA WAU rdaManifestation printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2023-03-31</sinopia:hasDate>
+      <sinopia:hasRemark xml:lang=""/>
+      <sinopia:hasDate>2023-04-09</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30139_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_order">
@@ -27,8 +28,8 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30139_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+      <sinopia:hasAuthority rdf:resource=""/>
+      <sinopia:hasAuthority rdf:resource=""/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30139">
       <rdfs:label xml:lang="en">has expression manifested</rdfs:label>
@@ -999,7 +1000,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30048_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasAuthority rdf:resource=""/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:bibframe:instance"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30048">
@@ -1036,7 +1037,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30024_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasAuthority rdf:resource=""/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:bibframe:instance"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30024">
@@ -1073,7 +1074,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30265_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+      <sinopia:hasAuthority rdf:resource=""/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/m/P30265">
       <rdfs:label xml:lang="en">has related work of manifestation</rdfs:label>
@@ -1108,7 +1109,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30266_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
+      <sinopia:hasAuthority rdf:resource=""/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30103_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30103_define"/>

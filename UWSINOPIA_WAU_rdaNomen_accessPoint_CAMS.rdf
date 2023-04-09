@@ -7,7 +7,8 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10012"/>
       <rdfs:label>UWSINOPIA WAU rdaNomen accessPoint CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasDate>2023-03-31</sinopia:hasDate>
+      <sinopia:hasRemark xml:lang=""/>
+      <sinopia:hasDate>2023-04-09</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsnP80068_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
@@ -39,7 +40,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80027_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
+      <sinopia:hasAuthority rdf:resource=""/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80027">
       <rdfs:label xml:lang="en">is access point for work of</rdfs:label>
@@ -163,7 +164,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80139_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasAuthority rdf:resource=""/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80073_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80073_define"/>
