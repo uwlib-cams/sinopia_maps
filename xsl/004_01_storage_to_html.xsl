@@ -391,7 +391,11 @@
                     </td>
                 </tr>
                 <tr class="backlink">
-                    <th scope="row" colspan="2"><a href="#profile">RETURN TO TOP</a></th>
+                    <th scope="row" colspan="2">
+                        <a href="https://uwlib-cams.github.io/sinopia_maps/">
+                            <xsl:text>RETURN TO SINOPIA_MAPS INDEX</xsl:text>
+                        </a>
+                    </th>
                 </tr>
             </tbody>
         </table>
@@ -493,6 +497,13 @@
                     <span class="backlink">
                         <a href="#profile">
                             <strong>RETURN TO PROFILE TOP</strong>
+                        </a>
+                    </span>
+                </li>
+                <li>
+                    <span class="backlink">
+                        <a href="https://uwlib-cams.github.io/sinopia_maps/">
+                            <strong>RETURN TO SINOPIA_MAPS INDEX</strong>
                         </a>
                     </span>
                 </li>
@@ -674,6 +685,13 @@
                 </xsl:if>
                 <li><span class="backlink"><a href="#{$pt_list_id}"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                 <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+                <li>
+                    <span class="backlink">
+                        <a href="https://uwlib-cams.github.io/sinopia_maps/">
+                            <strong>RETURN TO SINOPIA_MAPS INDEX</strong>
+                        </a>
+                    </span>
+                </li>
             </ul>
         </section>
     </xsl:template>
