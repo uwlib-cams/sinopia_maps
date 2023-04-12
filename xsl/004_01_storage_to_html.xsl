@@ -6,7 +6,7 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     exclude-result-prefixes="xs"
-    version="2.0">
+    version="3.0">
     
     <xsl:output method="html"/>
     
@@ -19,7 +19,8 @@
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[matches(@output_load, 'true|1')]">
+            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
+            uwsinopia:rt[matches(@output_load, 'true|1')]">
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
@@ -48,7 +49,7 @@
                                     <xsl:call-template name="format_resources">
                                         <xsl:with-param name="resource" select="$resource"/>
                                     </xsl:call-template>
-                                    <xsl:text> </xsl:text>
+                                    <xsl:text> - </xsl:text>
                                     <xsl:call-template name="format_formats">
                                         <xsl:with-param name="format" select="$format"/>
                                         <xsl:with-param name="case" select="'title'"/>

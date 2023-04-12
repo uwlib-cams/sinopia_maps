@@ -1,60 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- NOTES:
-  https://hackmd.io/@ries07/S1h-Yae9L
-  -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="3.0">
-
-    <xsl:template name="format_formats">
-        <xsl:param name="case"/>
-        <xsl:param name="format"/>
-        <!-- [!] THESE OPTIONS MUST MATCH
-            formats.xsd > xs:simpleType @name="format_type" > enumerations [!] -->
-        <xsl:choose>
-            <xsl:when test="$format = 'standalone'">
-                <xsl:choose>
-                    <xsl:when test="$case = 'title'">
-                        <xsl:text>Standalone Template</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="$case = 'sentence'">
-                        <xsl:text>standalone template</xsl:text>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="$format = 'nested'">
-                <xsl:choose>
-                    <xsl:when test="$case = 'title'">
-                        <xsl:text>Nested Template</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="$case = 'sentence'">
-                        <xsl:text>nested template</xsl:text>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="$format = 'printMonograph'">
-                <xsl:choose>
-                    <xsl:when test="$case = 'title'">
-                        <xsl:text>Print Monograph</xsl:text>
-                    </xsl:when>
-                    <xsl:when test="$case = 'sentence'">
-                        <xsl:text>print monograph</xsl:text>
-                    </xsl:when>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="$format = 'na'">
-                <xsl:text>N/A</xsl:text>
-            </xsl:when>
-            <xsl:when test="$format = 'test'">
-                <xsl:text>TEST</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <strong>
-                    <xsl:text>UNKNOWN FORMAT VALUE (!)</xsl:text>
-                </strong>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
+    exclude-result-prefixes="xs"
+    version="3.0">
+    
     <xsl:template name="format_resources">
         <xsl:param name="resource"/>
         <!-- [!] THESE OPTIONS MUST MATCH
@@ -100,13 +53,81 @@
                 <xsl:text>RDA Entity</xsl:text>
             </xsl:when>
             <xsl:when test="$resource = 'test'">
-                <xsl:text>TEST template (no valid class)</xsl:text>
+                <xsl:text>TEST</xsl:text>
             </xsl:when>
-            <xsl:otherwise>
-                <strong>
-                    <xsl:text>UNKNOWN RESOURCE VALUE (!)</xsl:text>
-                </strong>
-            </xsl:otherwise>
+            <xsl:otherwise/>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="format_formats">
+        <xsl:param name="case"/>
+        <xsl:param name="format"/>
+        <!-- [!] THESE OPTIONS MUST MATCH
+            formats.xsd > xs:simpleType @name="format_type" > enumerations [!] -->
+        <xsl:choose>
+            <xsl:when test="$format = 'standalone'">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'">
+                        <xsl:text>Standalone Template</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$case = 'sentence'">
+                        <xsl:text>standalone template</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$format = 'printMonograph'">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'">
+                        <xsl:text>Print Monograph</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$case = 'sentence'">
+                        <xsl:text>print monograph</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$format = 'aggregating_printMonograph'">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'">
+                        <xsl:text>Print Monograph (Aggregating)</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$case = 'sentence'">
+                        <xsl:text>print monograph (aggregating)</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$format = 'accessPoint'">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'">
+                        <xsl:text>Access Point</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$case = 'sentence'">
+                        <xsl:text>access point</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$format = 'identifier'">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'">
+                        <xsl:text>Identifier</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="$case = 'sentence'">
+                        <xsl:text>identifier</xsl:text>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            <xsl:when test="$format = 'na'"/>
+            <xsl:when test="$format = 'test'">
+                <xsl:text>TEST</xsl:text>
+            </xsl:when>
+            <!-- 
+            <xsl:when test="$format = ''">
+                <xsl:choose>
+                    <xsl:when test="$case = 'title'"></xsl:when>
+                    <xsl:when test="$case = 'sentence'"></xsl:when>
+                </xsl:choose>
+            </xsl:when>
+            -->
+            <xsl:otherwise/>
         </xsl:choose>
     </xsl:template>
 

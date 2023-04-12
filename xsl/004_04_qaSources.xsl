@@ -28,8 +28,4 @@
         <xsl:value-of select="$uri"/>
     </xsl:template>
     
-    <!-- ADDITIONAL NOTE:
-    * What about the lookups that use a URL rather than a URN. Should we now be using a different property "type" value for these
-    (This last is not a stylesheet issue but a profile issue) -->
-    
 </xsl:stylesheet>
