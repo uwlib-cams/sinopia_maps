@@ -150,7 +150,6 @@ def fix_multi_props(file):
 
 			# determine if property is a repeat 
 			for subelement in rdf_description:
-
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
 					#determine if propUri should be kept, commented out, or deleted 
 					action = property_template_test(rdf_root, rdf_description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], used_propUri_list, pt_used_propUri_list)
@@ -162,12 +161,10 @@ def fix_multi_props(file):
 						# check that it is the correct uri to delete
 						for index_num in rdf_description_dict:
 							test = rdf_description_dict[index_num]
-							if test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
-								if test[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']:
+							if (test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri') and (test[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']):
 									comment_index = index_num
 						# delete uri
 						rdf_description.remove(subelement)
-						#print(f"Deleted repeating property URI {subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']} in {rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']}")
 					
 					if action[0] == True and action[1] == False:
 						# check that it is the correct uri to commment out 
@@ -181,8 +178,7 @@ def fix_multi_props(file):
 						rdf_description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
 						# add new line under comment 
 						ET.indent(rdf_root)
-						#print(f"Commented out repeating property URI {subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']} in {rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']}")
-					
+
 					else:
 						# if not a repeat, add to used_propUri_list for reference 
 						if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in used_propUri_list:
@@ -198,26 +194,25 @@ def fix_multi_props(file):
 	
 # function to comment out duplicate triples 
 def fix_duplicate_triples(file):
-	used_label_list = []
+	locked_in_label_list = []
 	tree = ET.parse(file)
 	rdf_root = tree.getroot()
 
 	for rdf_description in rdf_root: 
 		to_remove = False
 		#get label from property template 
-		hasLabel_list = rdf_description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
+		sinopia_hasLabel_list = rdf_description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
 		#if label is the only child of pt and label is already in list,
 		# then this is a duplicate - remove property template 
-		if len(hasLabel_list) == 1:
+		if len(sinopia_hasLabel_list) == 1:
 			for label in rdf_description:
-				if label.text not in used_label_list:
-					used_label_list.append(label.text)
+				if label.text not in locked_in_label_list:
+					locked_in_label_list.append(label.text)
 				else:
 					if len(rdf_description.getchildren()) == 1:
 						to_remove = True
 			if to_remove == True:
 				rdf_root.remove(rdf_description)
-				#print(f'Duplicate of {label.text} removed')
 
 	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
 	
