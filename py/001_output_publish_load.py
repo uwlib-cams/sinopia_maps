@@ -1,7 +1,7 @@
 # This program is designed to output RDF/XML, JSON-LD, and HTML serializations of Resource Templates
 # and upload these RTs to a Sinopia environment
 # for details see https://github.com/uwlib-cams/sinopia_maps/wiki/manage_03_output_publish_load
-# last updated: 3/30/2023
+# last updated: 4/14/2023
 
 import os
 from textwrap import dedent
@@ -94,10 +94,9 @@ def locate_RTs():
     return RT_list
 
 # function determines if there are multiple instances of a property within a property template 
-# variables: rdf_root - root of lxml etree, rdf_description - property template
 def property_template_test(rdf_root, rdf_description, prop_URI, used_propUri_list, pt_used_propUri_list):
 	comment_it_out = True
-	delete = False
+	delete = False 
 	action = [True, False]
 	
 	current_node_id = rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']
@@ -113,6 +112,7 @@ def property_template_test(rdf_root, rdf_description, prop_URI, used_propUri_lis
 		if prop_URI in pt_used_propUri_list:
 			#This means this prop_URI has already been handled once in this property template - either kept or commented out 
 			delete = True
+
 		# See if there is a different property template for this property
 		look_for_PT_list = rdf_root.findall('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Description[@{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID="' + theoretical_prop_node_id + '"]')
 		if len(look_for_PT_list) == 0:
@@ -125,9 +125,7 @@ def property_template_test(rdf_root, rdf_description, prop_URI, used_propUri_lis
 	action = [comment_it_out, delete]
 	return action 
 
-# fix multiprops works for repeating property URIs both within a property template
-# and in the resource template as a whole. 
-# this is because used_propUri_list eventually contains every prop URI and will remove any that are repeats
+# this function removes repeated hasPropertyUri instances, commenting out or deleting unnecessary repeats 
 def fix_multi_props(file):
 	# list of propUri's that already appear in RT
 	used_propUri_list = []
@@ -151,23 +149,21 @@ def fix_multi_props(file):
 			# determine if property is a repeat 
 			for subelement in rdf_description:
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
-					#determine if propUri should be kept, commented out, or deleted 
+					# determine if propUri should be kept, commented out, or deleted 
 					action = property_template_test(rdf_root, rdf_description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], used_propUri_list, pt_used_propUri_list)
 					
+					# add URI to list of URIs in this property template 
 					if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in pt_used_propUri_list:	
 							pt_used_propUri_list.append(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
 					
+					# check if delete is true 
 					if action[1] == True:
-						# check that it is the correct uri to delete
-						for index_num in rdf_description_dict:
-							test = rdf_description_dict[index_num]
-							if (test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri') and (test[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']):
-									comment_index = index_num
 						# delete uri
 						rdf_description.remove(subelement)
 					
+					# check if comment is true 
 					if action[0] == True and action[1] == False:
-						# check that it is the correct uri to commment out 
+						# get correct index for inserting comment 
 						for index_num in rdf_description_dict:
 							test = rdf_description_dict[index_num]
 							if test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
