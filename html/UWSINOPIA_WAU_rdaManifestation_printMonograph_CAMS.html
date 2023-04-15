@@ -10,8 +10,9 @@
       <section class="rtList">
          <h2 id="rtList"><span>Resource Templates for Print Monograph</span></h2>
          <ul>
-            <li><b>UW Sinopia WAU RT RDA Manifestation Print Monograph</b></li>
             <li><a href="UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html">UW Sinopia WAU RT RDA Work Print Monograph</a></li>
+            <li><a href="UWSINOPIA_WAU_rdaExpression_printMonograph_CAMS.html">UW Sinopia WAU RT RDA Expression Print Monograph</a></li>
+            <li><b>UW Sinopia WAU RT RDA Manifestation Print Monograph</b></li>
          </ul>
       </section>
       <table class="rtInfo" id="WAURTrdaManifestation">
@@ -39,7 +40,7 @@
             </tr>
             <tr>
                <th scope="row">Last Updated</th>
-               <td>2023-04-11</td>
+               <td>2023-04-14</td>
             </tr>
             <tr class="backlink">
                <th scope="row" colspan="2"><a href="https://uwlib-cams.github.io/sinopia_maps/">RETURN TO SINOPIA_MAPS INDEX</a></th>
@@ -49,7 +50,7 @@
       <section class="ptList">
          <h3 id="WAURTrdaManifestationptList"><span>Property Templates in WAU RT RDA Manifestation for Print Monograph</span></h3>
          <ul id="BT">
-            <li><a href="#hasexpressionmanifested">has expression manifested</a>&nbsp;<span class="caret"></span><ul class="nested">
+            <li><a href="#hasexpressionorworkmanifested">has expression or work manifested</a>&nbsp;<span class="caret"></span><ul class="nested">
                   <li>has work manifested</li>
                </ul>
             </li>
@@ -85,6 +86,17 @@
             <li><a href="#hasnumberingwithinsequence">has numbering within sequence</a></li>
             <li><a href="#hasothertitleinformationofseries">has other title information of series</a></li>
             <li><a href="#hasstatementofresponsibilityrelatingtoseries">has statement of responsibility relating to series</a></li>
+            <li><a href="#hasnumberingofsequence">has numbering of sequence</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has first alphanumeric designation of sequence</li>
+                  <li>has first chronological designation of sequence</li>
+                  <li>has last alphanumeric designation of sequence</li>
+                  <li>has last chronological designation of sequence</li>
+                  <li>has first alphanumeric designation of alternative sequence</li>
+                  <li>has first chronological designation of alternative sequence</li>
+                  <li>has last alphanumeric designation of alternative sequence</li>
+                  <li>has last chronological designation of alternative sequence</li>
+               </ul>
+            </li>
             <li><a href="#hasmodeofissuance">has mode of issuance</a></li>
             <li><a href="#hasnoteonmanifestation">has note on manifestation</a></li>
             <li><a href="#hasmediatype">has media type</a></li>
@@ -104,89 +116,496 @@
             <li><a href="#hastypeofbinding">has type of binding</a></li>
             <li><a href="#hasrestrictiononaccesstomanifestation">has restriction on access to manifestation</a></li>
             <li><a href="#hasrestrictiononuseofmanifestation">has restriction on use of manifestation</a></li>
-            <li><a href="#hasrelatedagentofmanifestation">has related agent of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>has contributor agent to aggregate</li>
-                  <li>has creator agent of manifestation</li>
-                  <li>has distributor agent</li>
-                  <li>has related collective agent of manifestation</li>
-                  <li>has related person of manifestation</li>
-                  <li>has papermaker agent</li>
+            <li><a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has producer collective agent of unpublished manifestation</li>
+                  <li>has producer corporate body of unpublished manifestation</li>
+                  <li>has producer family of unpublished manifestation</li>
+                  <li>has producer person of unpublished manifestation</li>
+               </ul>
+            </li>
+            <li><a href="#haspublisheragent">has publisher agent</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has publisher collective agent</li>
+                  <li>has publisher corporate body</li>
+                  <li>has publisher family</li>
+                  <li>has publisher person</li>
+               </ul>
+            </li>
+            <li><a href="#hasdistributoragent">has distributor agent</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has distributor collective agent</li>
+                  <li>has distributor corporate body</li>
+                  <li>has distributor family</li>
+                  <li>has distributor person</li>
+               </ul>
+            </li>
+            <li><a href="#hasmanufactureragent">has manufacturer agent</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has braille embosser agent</li>
+                  <li>has braille embosser collective agent</li>
+                  <li>has braille embosser corporate body</li>
+                  <li>has braille embosser family</li>
+                  <li>has braille embosser person</li>
+                  <li>has manufacturer collective agent</li>
+                  <li>has manufacturer corporate body</li>
+                  <li>has printer corporate body</li>
+                  <li>has manufacturer family</li>
+                  <li>has printer family</li>
+                  <li>has printer collective agent</li>
+                  <li>has manufacturer person</li>
+                  <li>has printer person</li>
+                  <li>has printer agent</li>
+                  <li><i>For "has braille embosser collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
                </ul>
             </li>
             <li><a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
                   <li>has book designer agent</li>
+                  <li>has book designer collective agent</li>
+                  <li>has book designer corporate body</li>
+                  <li>has book designer family</li>
+                  <li>has book designer person</li>
                   <li>has caster agent</li>
+                  <li>has caster collective agent</li>
+                  <li>has caster corporate body</li>
+                  <li>has caster family</li>
+                  <li>has caster person</li>
                   <li>has creator collective agent of manifestation</li>
+                  <li>has creator corporate body of manifestation</li>
+                  <li>has platemaker corporate body</li>
+                  <li>has collotyper corporate body</li>
+                  <li>has printmaker corporate body</li>
+                  <li>has engraver corporate body</li>
+                  <li>has etcher corporate body</li>
+                  <li>has lithographer corporate body</li>
+                  <li>has broadcaster corporate body</li>
+                  <li>has creator family of manifestation</li>
+                  <li>has platemaker family</li>
+                  <li>has collotyper family</li>
+                  <li>has printmaker family</li>
+                  <li>has engraver family</li>
+                  <li>has etcher family</li>
+                  <li>has lithographer family</li>
+                  <li>has broadcaster family</li>
+                  <li>has platemaker collective agent</li>
+                  <li>has collotyper collective agent</li>
+                  <li>has printmaker collective agent</li>
+                  <li>has engraver collective agent</li>
+                  <li>has etcher collective agent</li>
+                  <li>has lithographer collective agent</li>
+                  <li>has broadcaster collective agent</li>
                   <li>has creator person of manifestation</li>
-                  <li>has manufacturer agent</li>
+                  <li>has platemaker person</li>
+                  <li>has collotyper person</li>
+                  <li>has printmaker person</li>
+                  <li>has engraver person</li>
+                  <li>has etcher person</li>
+                  <li>has lithographer person</li>
+                  <li>has broadcaster person</li>
                   <li>has platemaker agent</li>
+                  <li>has collotyper agent</li>
                   <li>has printmaker agent</li>
-                  <li>has producer agent of unpublished manifestation</li>
-                  <li>has publisher agent</li>
+                  <li>has engraver agent</li>
+                  <li>has etcher agent</li>
+                  <li>has lithographer agent</li>
+                  <li>has broadcaster agent</li>
+                  <li><i>For "has book designer collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has book designer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has book designer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has book designer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has book designer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has manufacturer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has book designer person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has caster person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has collotyper corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has platemaker corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has braille embosser collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has platemaker family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has manufacturer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has collotyper family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has braille embosser collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has collotyper family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has manufacturer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has braille embosser person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer collective agent", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer corporate body", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer family", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has printer person", see "<a href="#hasmanufactureragent">has manufacturer agent</a>".</i></li>
+                  <li><i>For "has collotyper collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has platemaker collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has platemaker corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has platemaker family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has platemaker person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has collotyper person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printmaker corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printmaker family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has producer corporate body of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has printmaker collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has producer collective agent of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has lithographer collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has producer family of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has producer corporate body of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has etcher collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has producer family of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has lithographer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printmaker corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printmaker family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has printmaker person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has engraver person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has etcher person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has lithographer person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has producer agent of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has producer collective agent of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has producer corporate body of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has producer person of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has producer family of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has publisher collective agent", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has producer person of unpublished manifestation", see "<a href="#hasproduceragentofunpublishedmanifestation">has producer agent of unpublished manifestation</a>".</i></li>
+                  <li><i>For "has publisher agent", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has publisher corporate body", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has publisher corporate body", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has publisher family", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has publisher collective agent", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has publisher family", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster collective agent", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has publisher corporate body", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster corporate body", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has publisher person", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has publisher family", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster family", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has publisher person", see "<a href="#haspublisheragent">has publisher agent</a>".</i></li>
+                  <li><i>For "has broadcaster person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
+                  <li><i>For "has broadcaster person", see "<a href="#hascreatoragentofmanifestation">has creator agent of manifestation</a>".</i></li>
                </ul>
             </li>
-            <li><a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>has contributor agent of cartography</li>
-                  <li>has contributor agent of choreography</li>
-                  <li>has contributor agent of computer content</li>
-                  <li>has contributor agent of moving image</li>
-                  <li>has contributor agent of music</li>
-                  <li>has contributor agent of object</li>
-                  <li>has contributor agent of speech</li>
-                  <li>has contributor agent of still image</li>
-                  <li>has contributor agent of text</li>
-                  <li>has contributor collective agent to aggregate</li>
-                  <li>has contributor person to aggregate</li>
+            <li><a href="#haspapermakeragent">has papermaker agent</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has papermaker collective agent</li>
+                  <li>has papermaker corporate body</li>
+                  <li>has papermaker family</li>
+                  <li>has papermaker person</li>
                </ul>
             </li>
             <li><a href="#hascontributoragentoftext">has contributor agent of text</a>&nbsp;<span class="caret"></span><ul class="nested">
                   <li>has contributor collective agent of text</li>
+                  <li>has contributor corporate body of text</li>
+                  <li>has contributor family of text</li>
                   <li>has contributor person of text</li>
                </ul>
             </li>
             <li><a href="#hascontributoragentofstillimage">has contributor agent of still image</a>&nbsp;<span class="caret"></span><ul class="nested">
                   <li>has contributor collective agent of still image</li>
+                  <li>has contributor corporate body of still image</li>
+                  <li>has contributor family of still image</li>
                   <li>has contributor person of still image</li>
                </ul>
             </li>
-            <li><a href="#hasrelatedmanifestationofmanifestation">has related manifestation of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>has equivalent manifestation</li>
-                  <li>is accompanied by manifestation</li>
-                  <li>has part manifestation</li>
-                  <li>is part of manifestation</li>
+            <li><a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has contributor agent of cartography</li>
+                  <li>has contributor collective agent of cartography</li>
+                  <li>has contributor corporate body of cartography</li>
+                  <li>has surveyor corporate body</li>
+                  <li>has contributor family of cartography</li>
+                  <li>has surveyor family</li>
+                  <li>has surveyor collective agent</li>
+                  <li>has contributor person of cartography</li>
+                  <li>has surveyor person</li>
+                  <li>has surveyor agent</li>
+                  <li>has contributor agent of choreography</li>
+                  <li>has contributor collective agent of choreography</li>
+                  <li>has contributor corporate body of choreography</li>
+                  <li>has contributor family of choreography</li>
+                  <li>has contributor person of choreography</li>
+                  <li>has contributor agent of computer content</li>
+                  <li>has contributor collective agent of computer content</li>
+                  <li>has contributor corporate body of computer content</li>
+                  <li>has contributor family of computer content</li>
+                  <li>has contributor person of computer content</li>
+                  <li>has contributor agent of moving image</li>
+                  <li>has contributor collective agent of moving image</li>
+                  <li>has contributor corporate body of moving image</li>
+                  <li>has contributor family of moving image</li>
+                  <li>has contributor person of moving image</li>
+                  <li>has contributor agent of music</li>
+                  <li>has contributor collective agent of music</li>
+                  <li>has contributor corporate body of music</li>
+                  <li>has contributor family of music</li>
+                  <li>has contributor person of music</li>
+                  <li>has contributor agent of object</li>
+                  <li>has contributor collective agent of object</li>
+                  <li>has contributor corporate body of object</li>
+                  <li>has contributor family of object</li>
+                  <li>has contributor person of object</li>
+                  <li>has contributor agent of speech</li>
+                  <li>has contributor collective agent of speech</li>
+                  <li>has contributor corporate body of speech</li>
+                  <li>has contributor family of speech</li>
+                  <li>has contributor person of speech</li>
+                  <li>has contributor collective agent to aggregate</li>
+                  <li>has contributor corporate body to aggregate</li>
+                  <li>has contributor family to aggregate</li>
+                  <li>has contributor person to aggregate</li>
+                  <li><i>For "has contributor agent of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor agent of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has surveyor collective agent", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor collective agent", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor collective agent of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor corporate body", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor corporate body", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor collective agent of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor corporate body", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has surveyor corporate body", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor family", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor family", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor collective agent of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor corporate body of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor collective agent of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor corporate body of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor family", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor family", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor corporate body", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor corporate body of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor corporate body of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor corporate body of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor corporate body of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor family of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor family of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor family", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor family of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor family of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor family of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor family of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor family of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has surveyor person", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of cartography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has surveyor person", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of choreography", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of computer content", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of moving image", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of music", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of object", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor person of speech", see "<a href="#hascontributoragenttoaggregate">has contributor agent to aggregate</a>".</i></li>
+                  <li><i>For "has contributor person of still image", see "<a href="#hascontributoragentofstillimage">has contributor agent of still image</a>".</i></li>
+                  <li><i>For "has contributor person of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
+                  <li><i>For "has contributor person of text", see "<a href="#hascontributoragentoftext">has contributor agent of text</a>".</i></li>
                </ul>
             </li>
-            <li><a href="#hasequivalentmanifestation">has equivalent manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>is reproduced as manifestation</li>
-                  <li>is reproduction of manifestation of</li>
-                  <li>is also issued as</li>
-                  <li>has mirror site</li>
+            <li><a href="#hasrelatedagentofmanifestation">has related agent of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has related collective agent of manifestation</li>
+                  <li>has related corporate body of manifestation</li>
+                  <li>has related family of manifestation</li>
+                  <li>has related person of manifestation</li>
                </ul>
             </li>
-            <li><a href="#hasrelatedworkofmanifestation">has related work of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>has binding of manifestation</li>
-                  <li>is subject manifestation of</li>
-                  <li>has work manifested</li>
-                  <li>is source consulted of</li>
-                  <li>has index</li>
+            <li><a href="#isalsoissuedas">is also issued as</a></li>
+            <li><a href="#isreproducedasmanifestation">is reproduced as manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has digital transfer of manifestation</li>
+                  <li>has electronic reproduction of manifestation</li>
+                  <li>has facsimile of manifestation</li>
+                  <li>has preservation facsimile of manifestation</li>
+                  <li>is reprinted as manifestation</li>
                </ul>
             </li>
+            <li><a href="#isreproductionofmanifestationof">is reproduction of manifestation of</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>is facsimile of manifestation of</li>
+                  <li>is preservation facsimile of manifestation of</li>
+                  <li>is reprint of manifestation of</li>
+               </ul>
+            </li>
+            <li><a href="#hasequivalentmanifestation">has equivalent manifestation</a></li>
+            <li><a href="#haspartmanifestation">has part manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has insert</li>
+                  <li>has facsimile part</li>
+                  <li>has subcollection</li>
+               </ul>
+            </li>
+            <li><a href="#ispartofmanifestation">is part of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>is inserted in</li>
+                  <li>is facsimile part of</li>
+                  <li>is subcollection of</li>
+               </ul>
+            </li>
+            <li><a href="#isaccompaniedbymanifestation">is accompanied by manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>is on carrier unit with</li>
+               </ul>
+            </li>
+            <li><a href="#hasrelatedmanifestationofmanifestation">has related manifestation of manifestation</a></li>
+            <li><a href="#issubjectmanifestationof">is subject manifestation of</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>is manifestation described by</li>
+                  <li>is manifestation analysed in</li>
+                  <li>is manifestation commentary in</li>
+                  <li>is manifestation described with metadata by</li>
+                  <li>is manifestation evaluated by</li>
+               </ul>
+            </li>
+            <li><a href="#hasbindingofmanifestation">has binding of manifestation</a></li>
+            <li><a href="#hasindex">has index</a></li>
+            <li><a href="#issourceconsultedof">is source consulted of</a></li>
+            <li><a href="#hasrelatedworkofmanifestation">has related work of manifestation</a></li>
             <li><a href="#hasrelatedexpressionofmanifestation">has related expression of manifestation</a></li>
             <li><a href="#hasexemplarofmanifestation">has exemplar of manifestation</a></li>
             <li><a href="#isreproductionofitemof">is reproduction of item of</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>is digital transfer of item of</li>
-                  <li>is electronic reproduction of item of</li>
                   <li>is facsimile of item of</li>
+                  <li>is preservation facsimile of item of</li>
                   <li>is reprint of item of</li>
                </ul>
             </li>
             <li><a href="#hasrelateditemofmanifestation">has related item of manifestation</a></li>
+            <li><a href="#isreferencesourceof">is reference source of</a></li>
+            <li><a href="#hasrelatednomenofmanifestation">has related nomen of manifestation</a></li>
+            <li><a href="#hasrelatedplaceofmanifestation">has related place of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has place of manifestation</li>
+               </ul>
+            </li>
+            <li><a href="#hasrelatedtimespanofmanifestation">has related timespan of manifestation</a>&nbsp;<span class="caret"></span><ul class="nested">
+                  <li>has date of manifestation</li>
+               </ul>
+            </li>
             <li><span class="backlink"><a href="#WAURTrdaManifestation"><strong>RETURN TO RESOURCE TEMPLATE TOP</strong></a></span></li>
             <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
             <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
          </ul>
-         <section class="ptInfo" id="hasexpressionmanifested">
-            <h4><span>Property Template: has expression manifested(*)</span></h4>
+         <section class="ptInfo" id="hasexpressionorworkmanifested">
+            <h4><span>Property Template: has expression or work manifested(*)</span></h4>
             <ul>
                <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30139">http://rdaregistry.info/Elements/m/P30139</a></li>
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-7917b114-5614-3571-94a6-2284a4339575">https://access.rdatoolkit.org/en-US_ala-7917b114-5614-3571-94a6-2284a4339575</a></li>
@@ -656,6 +1075,33 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
+         <section class="ptInfo" id="hasnumberingofsequence">
+            <h4><span>Property Template: has numbering of sequence</span></h4>
+            <p><span class="ptInfoRemark">Use when describing a multipart monograph as a whole</span></p>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30165">http://rdaregistry.info/Elements/m/P30165</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-60c04672-d204-3662-9256-eee264aea813">https://access.rdatoolkit.org/en-US_ala-60c04672-d204-3662-9256-eee264aea813</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: literal</li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has first alphanumeric designation of sequence [<a href="http://rdaregistry.info/Elements/m/P30147">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7c2ce6e6-bafa-3d0a-9a00-fb4cea733861">RDA TOOLKIT</a>]</li>
+                     <li>has first chronological designation of sequence [<a href="http://rdaregistry.info/Elements/m/P30149">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e4074ae5-6546-3bb1-b63c-dc20a49874bc">RDA TOOLKIT</a>]</li>
+                     <li>has last alphanumeric designation of sequence [<a href="http://rdaregistry.info/Elements/m/P30148">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f5d4b8c6-06cc-318d-90b1-b6daa36457db">RDA TOOLKIT</a>]</li>
+                     <li>has last chronological designation of sequence [<a href="http://rdaregistry.info/Elements/m/P30150">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-2bf0b677-e77e-3d33-bae7-ad607aabd1c0">RDA TOOLKIT</a>]</li>
+                     <li>has first alphanumeric designation of alternative sequence [<a href="http://rdaregistry.info/Elements/m/P30097">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-301166b0-9d00-3373-b77a-29b78890c231">RDA TOOLKIT</a>]</li>
+                     <li>has first chronological designation of alternative sequence [<a href="http://rdaregistry.info/Elements/m/P30099">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-47f9af0b-6258-369d-978c-e988d9141116">RDA TOOLKIT</a>]</li>
+                     <li>has last alphanumeric designation of alternative sequence [<a href="http://rdaregistry.info/Elements/m/P30098">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-45174b60-a655-3bb6-a2cc-c17ab0837162">RDA TOOLKIT</a>]</li>
+                     <li>has last chronological designation of alternative sequence [<a href="http://rdaregistry.info/Elements/m/P30100">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-fecf5ba4-bd85-3ff6-9572-35ebfb30d118">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
          <section class="ptInfo" id="hasmodeofissuance">
             <h4><span>Property Template: has mode of issuance</span></h4>
             <ul>
@@ -1054,6 +1500,443 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
+         <section class="ptInfo" id="hasproduceragentofunpublishedmanifestation">
+            <h4><span>Property Template: has producer agent of unpublished manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30081">http://rdaregistry.info/Elements/m/P30081</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-33581eab-6f3d-3f32-9cd5-4a3ec5f58a15">https://access.rdatoolkit.org/en-US_ala-33581eab-6f3d-3f32-9cd5-4a3ec5f58a15</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has producer collective agent of unpublished manifestation [<a href="http://rdaregistry.info/Elements/m/P30389">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1c241ff2-dd0d-3c0d-8dba-c58d240a54de">RDA TOOLKIT</a>]</li>
+                     <li>has producer corporate body of unpublished manifestation [<a href="http://rdaregistry.info/Elements/m/P30418">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-238baf60-4b88-3492-8c74-564219e21030">RDA TOOLKIT</a>]</li>
+                     <li>has producer family of unpublished manifestation [<a href="http://rdaregistry.info/Elements/m/P30447">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f6be4395-a761-34c1-91da-dd7f43947565">RDA TOOLKIT</a>]</li>
+                     <li>has producer person of unpublished manifestation [<a href="http://rdaregistry.info/Elements/m/P30360">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b999d8d4-8424-3223-9d69-f3ce63ffc766">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="haspublisheragent">
+            <h4><span>Property Template: has publisher agent</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30083">http://rdaregistry.info/Elements/m/P30083</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-dca98326-8bca-346f-9b5e-a262632daee5">https://access.rdatoolkit.org/en-US_ala-dca98326-8bca-346f-9b5e-a262632daee5</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has publisher collective agent [<a href="http://rdaregistry.info/Elements/m/P30391">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9bbda4f3-7407-3bcd-b6b8-dd934349601a">RDA TOOLKIT</a>]</li>
+                     <li>has publisher corporate body [<a href="http://rdaregistry.info/Elements/m/P30420">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a5b41a13-97a8-3263-a3b4-994e6395ceb8">RDA TOOLKIT</a>]</li>
+                     <li>has publisher family [<a href="http://rdaregistry.info/Elements/m/P30449">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7a6f4a8f-3d12-32a0-89c2-185f7279dbda">RDA TOOLKIT</a>]</li>
+                     <li>has publisher person [<a href="http://rdaregistry.info/Elements/m/P30362">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e4e22111-816f-300a-a3df-7c6b1ba74f76">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasdistributoragent">
+            <h4><span>Property Template: has distributor agent</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30080">http://rdaregistry.info/Elements/m/P30080</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11">https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has distributor collective agent [<a href="http://rdaregistry.info/Elements/m/P30388">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-280bbab1-8a41-3095-9a1a-ca9d9aa6f59d">RDA TOOLKIT</a>]</li>
+                     <li>has distributor corporate body [<a href="http://rdaregistry.info/Elements/m/P30417">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-99b6249e-8570-39b3-9114-264b49fe9eda">RDA TOOLKIT</a>]</li>
+                     <li>has distributor family [<a href="http://rdaregistry.info/Elements/m/P30446">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d40f201a-3013-3653-8836-adf30a162f57">RDA TOOLKIT</a>]</li>
+                     <li>has distributor person [<a href="http://rdaregistry.info/Elements/m/P30359">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a3ee54ff-0fb8-3ee6-a3ad-5b57e625cb11">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasmanufactureragent">
+            <h4><span>Property Template: has manufacturer agent</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30082">http://rdaregistry.info/Elements/m/P30082</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-18a8b4c4-155c-31cc-858e-cabd60df787f">https://access.rdatoolkit.org/en-US_ala-18a8b4c4-155c-31cc-858e-cabd60df787f</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has braille embosser agent [<a href="http://rdaregistry.info/Elements/m/P30071">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9fb1809d-e11c-32b2-8f41-7d93238d571f">RDA TOOLKIT</a>]</li>
+                     <li>has braille embosser collective agent [<a href="http://rdaregistry.info/Elements/m/P30380">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8047616d-bfc6-3c80-a923-3483e4b0daff">RDA TOOLKIT</a>]</li>
+                     <li>has braille embosser corporate body [<a href="http://rdaregistry.info/Elements/m/P30409">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-88e2c818-408d-3aba-9676-e8b318084653">RDA TOOLKIT</a>]</li>
+                     <li>has braille embosser family [<a href="http://rdaregistry.info/Elements/m/P30438">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-42b95452-5a28-3ac2-b231-afe2e554bdd2">RDA TOOLKIT</a>]</li>
+                     <li>has braille embosser person [<a href="http://rdaregistry.info/Elements/m/P30351">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-36bf0c3d-3063-39be-bf76-35aab2778a9c">RDA TOOLKIT</a>]</li>
+                     <li>has manufacturer collective agent [<a href="http://rdaregistry.info/Elements/m/P30390">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-ea0569fa-4419-3b35-9223-64141bac21f9">RDA TOOLKIT</a>]</li>
+                     <li>has manufacturer corporate body [<a href="http://rdaregistry.info/Elements/m/P30419">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-843acec5-c7db-3bee-bb35-7b0eb3e33945">RDA TOOLKIT</a>]</li>
+                     <li>has printer corporate body [<a href="http://rdaregistry.info/Elements/m/P30416">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-93170ec8-e5d0-3f27-933c-332a626b0f4a">RDA TOOLKIT</a>]</li>
+                     <li>has manufacturer family [<a href="http://rdaregistry.info/Elements/m/P30448">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-15f918dd-7cda-33e0-8091-2f38cfcea8ec">RDA TOOLKIT</a>]</li>
+                     <li>has printer family [<a href="http://rdaregistry.info/Elements/m/P30445">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b628af6b-b7fb-3d58-85af-55c704b61eaf">RDA TOOLKIT</a>]</li>
+                     <li>has printer collective agent [<a href="http://rdaregistry.info/Elements/m/P30387">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d00cf4d2-229f-375c-a290-ed6f3066b3e0">RDA TOOLKIT</a>]</li>
+                     <li>has manufacturer person [<a href="http://rdaregistry.info/Elements/m/P30361">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e3deaacb-e95c-36c2-9f02-29537d950b72">RDA TOOLKIT</a>]</li>
+                     <li>has printer person [<a href="http://rdaregistry.info/Elements/m/P30358">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9a9ef073-e291-3682-803d-c958b31f4672">RDA TOOLKIT</a>]</li>
+                     <li>has printer agent [<a href="http://rdaregistry.info/Elements/m/P30078">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bba329e2-24d7-3fc5-82d2-4ef3e89c16df">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hascreatoragentofmanifestation">
+            <h4><span>Property Template: has creator agent of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30329">http://rdaregistry.info/Elements/m/P30329</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3">https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has book designer agent [<a href="http://rdaregistry.info/Elements/m/P30069">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1a345ab1-2fd2-3596-811a-6df8bb10c8d1">RDA TOOLKIT</a>]</li>
+                     <li>has book designer collective agent [<a href="http://rdaregistry.info/Elements/m/P30378">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-89722b58-7663-3cfe-86b1-57c3e7e70d76">RDA TOOLKIT</a>]</li>
+                     <li>has book designer corporate body [<a href="http://rdaregistry.info/Elements/m/P30407">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5d75cf9f-0ae8-3a91-99c5-dba95cb15456">RDA TOOLKIT</a>]</li>
+                     <li>has book designer family [<a href="http://rdaregistry.info/Elements/m/P30436">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-46f4f3af-aecc-3ea4-a965-b460c7ef3a21">RDA TOOLKIT</a>]</li>
+                     <li>has book designer person [<a href="http://rdaregistry.info/Elements/m/P30349">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5da8617c-ee44-31c4-96e8-1d4ce02a39dc">RDA TOOLKIT</a>]</li>
+                     <li>has caster agent [<a href="http://rdaregistry.info/Elements/m/P30073">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a14abd27-3277-39ba-b49a-72984f713fd5">RDA TOOLKIT</a>]</li>
+                     <li>has caster collective agent [<a href="http://rdaregistry.info/Elements/m/P30382">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4bbba7ae-bce3-3c1b-af48-42d5762a7241">RDA TOOLKIT</a>]</li>
+                     <li>has caster corporate body [<a href="http://rdaregistry.info/Elements/m/P30411">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-03f5e3a7-6f99-3681-b3f8-dfda460c4f8d">RDA TOOLKIT</a>]</li>
+                     <li>has caster family [<a href="http://rdaregistry.info/Elements/m/P30440">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-aab381b0-3f9f-3854-9c0a-238c10658c20">RDA TOOLKIT</a>]</li>
+                     <li>has caster person [<a href="http://rdaregistry.info/Elements/m/P30353">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e4a512cb-e0a8-3282-9007-422c5e5a18e7">RDA TOOLKIT</a>]</li>
+                     <li>has creator collective agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30392">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1908bf96-1c91-3517-aab0-46e2f12eb942">RDA TOOLKIT</a>]</li>
+                     <li>has creator corporate body of manifestation [<a href="http://rdaregistry.info/Elements/m/P30421">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c1ff85a6-80e2-3dd0-b8a0-13fe9ff98897">RDA TOOLKIT</a>]</li>
+                     <li>has platemaker corporate body [<a href="http://rdaregistry.info/Elements/m/P30413">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-02b0f85f-9be9-3001-a988-d3a24a1037bd">RDA TOOLKIT</a>]</li>
+                     <li>has collotyper corporate body [<a href="http://rdaregistry.info/Elements/m/P30415">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f9d829f7-fb5c-3f02-992f-8e4158095c66">RDA TOOLKIT</a>]</li>
+                     <li>has printmaker corporate body [<a href="http://rdaregistry.info/Elements/m/P30410">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d4a3c922-302d-3249-8d9e-dc9507a55149">RDA TOOLKIT</a>]</li>
+                     <li>has engraver corporate body [<a href="http://rdaregistry.info/Elements/m/P30408">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c2ef7475-b5ea-3259-a339-b59df8643612">RDA TOOLKIT</a>]</li>
+                     <li>has etcher corporate body [<a href="http://rdaregistry.info/Elements/m/P30414">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c0317ab3-17e3-34cc-b814-ea5891ca51b2">RDA TOOLKIT</a>]</li>
+                     <li>has lithographer corporate body [<a href="http://rdaregistry.info/Elements/m/P30412">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-995d3001-d756-371e-8b6e-57c998a7dd94">RDA TOOLKIT</a>]</li>
+                     <li>has broadcaster corporate body [<a href="http://rdaregistry.info/Elements/m/P30405">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7b5b2ad5-f0f8-3909-a284-9fd50e8615d3">RDA TOOLKIT</a>]</li>
+                     <li>has creator family of manifestation [<a href="http://rdaregistry.info/Elements/m/P30450">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8fbda8fd-61f2-36cc-b00d-04b0bd35cffb">RDA TOOLKIT</a>]</li>
+                     <li>has platemaker family [<a href="http://rdaregistry.info/Elements/m/P30442">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0509c49f-f60d-3d4b-97d7-48547ec05601">RDA TOOLKIT</a>]</li>
+                     <li>has collotyper family [<a href="http://rdaregistry.info/Elements/m/P30444">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-77d20dba-5ac5-30ae-b50c-19fb480b9f46">RDA TOOLKIT</a>]</li>
+                     <li>has printmaker family [<a href="http://rdaregistry.info/Elements/m/P30439">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-027d4ce7-85ef-340c-89fd-bc83608390bc">RDA TOOLKIT</a>]</li>
+                     <li>has engraver family [<a href="http://rdaregistry.info/Elements/m/P30437">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-054f27ae-269a-34e6-af77-ec93c7d2f9de">RDA TOOLKIT</a>]</li>
+                     <li>has etcher family [<a href="http://rdaregistry.info/Elements/m/P30443">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d204e328-8e2a-35ab-88c7-eb6282756ef7">RDA TOOLKIT</a>]</li>
+                     <li>has lithographer family [<a href="http://rdaregistry.info/Elements/m/P30441">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-23d6bcc5-fd5c-3e31-a629-a64a33065431">RDA TOOLKIT</a>]</li>
+                     <li>has broadcaster family [<a href="http://rdaregistry.info/Elements/m/P30434">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5b6e92ed-43bc-319c-ac23-4bf36422f2e4">RDA TOOLKIT</a>]</li>
+                     <li>has platemaker collective agent [<a href="http://rdaregistry.info/Elements/m/P30384">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-db9e2488-81ef-367a-89a1-11921373c255">RDA TOOLKIT</a>]</li>
+                     <li>has collotyper collective agent [<a href="http://rdaregistry.info/Elements/m/P30386">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-55196f24-13f8-350d-88d3-0ed8a64424cf">RDA TOOLKIT</a>]</li>
+                     <li>has printmaker collective agent [<a href="http://rdaregistry.info/Elements/m/P30381">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5e2d3cea-b389-370c-82a6-0f48467806e9">RDA TOOLKIT</a>]</li>
+                     <li>has engraver collective agent [<a href="http://rdaregistry.info/Elements/m/P30379">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f7c0e45c-4891-3b21-a9da-ce2655ab0927">RDA TOOLKIT</a>]</li>
+                     <li>has etcher collective agent [<a href="http://rdaregistry.info/Elements/m/P30385">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-dbc8907a-60c4-3432-853d-838bba19ff1c">RDA TOOLKIT</a>]</li>
+                     <li>has lithographer collective agent [<a href="http://rdaregistry.info/Elements/m/P30383">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-38b7c1c6-844e-39df-9d6c-468a1e574a76">RDA TOOLKIT</a>]</li>
+                     <li>has broadcaster collective agent [<a href="http://rdaregistry.info/Elements/m/P30376">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-24655058-9013-3038-a8bc-66cc61c8d0cf">RDA TOOLKIT</a>]</li>
+                     <li>has creator person of manifestation [<a href="http://rdaregistry.info/Elements/m/P30363">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-552343bd-e2a2-3960-a35e-dac0e8877199">RDA TOOLKIT</a>]</li>
+                     <li>has platemaker person [<a href="http://rdaregistry.info/Elements/m/P30355">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-032276f0-4a9d-3b88-a1c4-1e307adcdd4c">RDA TOOLKIT</a>]</li>
+                     <li>has collotyper person [<a href="http://rdaregistry.info/Elements/m/P30357">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e9d3c2e6-ebec-3b0c-99a8-bae1529dd53f">RDA TOOLKIT</a>]</li>
+                     <li>has printmaker person [<a href="http://rdaregistry.info/Elements/m/P30352">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5ad90c98-7457-36f0-bf3a-3f8a8b99be0f">RDA TOOLKIT</a>]</li>
+                     <li>has engraver person [<a href="http://rdaregistry.info/Elements/m/P30350">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cd5f9e74-e189-3314-af78-477ba0b09f81">RDA TOOLKIT</a>]</li>
+                     <li>has etcher person [<a href="http://rdaregistry.info/Elements/m/P30356">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-497a947e-aa8f-310d-9129-613eba9e743d">RDA TOOLKIT</a>]</li>
+                     <li>has lithographer person [<a href="http://rdaregistry.info/Elements/m/P30354">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8f4f48e1-addc-34f1-b051-5f3ac5a56265">RDA TOOLKIT</a>]</li>
+                     <li>has broadcaster person [<a href="http://rdaregistry.info/Elements/m/P30347">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-292c4806-685b-3bbd-8dee-7e8de0b0c6f6">RDA TOOLKIT</a>]</li>
+                     <li>has platemaker agent [<a href="http://rdaregistry.info/Elements/m/P30075">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8c7d4489-ce59-3e38-82d6-b04270d372c9">RDA TOOLKIT</a>]</li>
+                     <li>has collotyper agent [<a href="http://rdaregistry.info/Elements/m/P30077">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1fcfdfea-fe76-34ed-83a6-8a28f557105d">RDA TOOLKIT</a>]</li>
+                     <li>has printmaker agent [<a href="http://rdaregistry.info/Elements/m/P30072">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b845dc6b-2620-3368-bbb2-613d3c7e0992">RDA TOOLKIT</a>]</li>
+                     <li>has engraver agent [<a href="http://rdaregistry.info/Elements/m/P30070">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-48a59b9d-fd8a-3f69-9990-b9b7b4a1010d">RDA TOOLKIT</a>]</li>
+                     <li>has etcher agent [<a href="http://rdaregistry.info/Elements/m/P30076">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-35cb5c5e-6fbe-3bd9-9eed-e3bc0229145f">RDA TOOLKIT</a>]</li>
+                     <li>has lithographer agent [<a href="http://rdaregistry.info/Elements/m/P30074">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a30b624b-51d7-3594-b975-0784e15d04cc">RDA TOOLKIT</a>]</li>
+                     <li>has broadcaster agent [<a href="http://rdaregistry.info/Elements/m/P30067">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0b7c01ac-429e-3b23-bc42-df07b9483502">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="haspapermakeragent">
+            <h4><span>Property Template: has papermaker agent</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30215">http://rdaregistry.info/Elements/m/P30215</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-9c55e0af-5e08-3b3d-a607-59a3c1571053">https://access.rdatoolkit.org/en-US_ala-9c55e0af-5e08-3b3d-a607-59a3c1571053</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has papermaker collective agent [<a href="http://rdaregistry.info/Elements/m/P30393">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-eac0d9e4-16f6-37c5-af7c-a7b722ae0a10">RDA TOOLKIT</a>]</li>
+                     <li>has papermaker corporate body [<a href="http://rdaregistry.info/Elements/m/P30422">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c2d67efc-baed-36e0-8cba-baa6cc3ffb09">RDA TOOLKIT</a>]</li>
+                     <li>has papermaker family [<a href="http://rdaregistry.info/Elements/m/P30451">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4cd23088-0f29-34d9-9b57-f27b85afbcb6">RDA TOOLKIT</a>]</li>
+                     <li>has papermaker person [<a href="http://rdaregistry.info/Elements/m/P30364">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-2adaab12-50c6-3c57-9387-9df070474044">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hascontributoragentoftext">
+            <h4><span>Property Template: has contributor agent of text</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30328">http://rdaregistry.info/Elements/m/P30328</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59">https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has contributor collective agent of text [<a href="http://rdaregistry.info/Elements/m/P30373">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6dc5d818-e50a-36e2-9203-264abf24654b">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of text [<a href="http://rdaregistry.info/Elements/m/P30402">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-685ca62e-9d1b-31c4-9ede-d78181d932de">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of text [<a href="http://rdaregistry.info/Elements/m/P30431">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e9244957-b1db-361d-adab-d21c9964b8e2">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of text [<a href="http://rdaregistry.info/Elements/m/P30344">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-ebff9d51-d1bc-34bf-b055-ebaaec37e7d0">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hascontributoragentofstillimage">
+            <h4><span>Property Template: has contributor agent of still image</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30321">http://rdaregistry.info/Elements/m/P30321</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da">https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has contributor collective agent of still image [<a href="http://rdaregistry.info/Elements/m/P30372">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7d7c14d9-fdbb-3c64-8205-b30131fcfe6c">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of still image [<a href="http://rdaregistry.info/Elements/m/P30401">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e5e1aeed-9ca4-3d80-9aed-c40a95d20d8d">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of still image [<a href="http://rdaregistry.info/Elements/m/P30430">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4e5128fd-5c52-3b5d-8bbb-80b860b02a3c">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of still image [<a href="http://rdaregistry.info/Elements/m/P30343">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-931a95b2-5e36-36d9-aaf2-b30e1f9f910c">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hascontributoragenttoaggregate">
+            <h4><span>Property Template: has contributor agent to aggregate</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30327">http://rdaregistry.info/Elements/m/P30327</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0">https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has contributor agent of cartography [<a href="http://rdaregistry.info/Elements/m/P30315">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3b5b3f5a-ded0-3d8b-9e4f-564036ba28cd">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of cartography [<a href="http://rdaregistry.info/Elements/m/P30367">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c8cf1ba8-9d82-3334-a94f-0f76849fb0b0">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of cartography [<a href="http://rdaregistry.info/Elements/m/P30396">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-aba5d6d3-c4d7-3a70-bab2-61a328a768a3">RDA TOOLKIT</a>]</li>
+                     <li>has surveyor corporate body [<a href="http://rdaregistry.info/Elements/m/P30395">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4b7b0ac5-74cb-3161-957d-a237faace2b5">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of cartography [<a href="http://rdaregistry.info/Elements/m/P30425">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6be24032-f8d5-3dc8-928e-aa42c0910f3a">RDA TOOLKIT</a>]</li>
+                     <li>has surveyor family [<a href="http://rdaregistry.info/Elements/m/P30424">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5e2e5b78-f6e5-3b2c-ae91-2b04bcaff090">RDA TOOLKIT</a>]</li>
+                     <li>has surveyor collective agent [<a href="http://rdaregistry.info/Elements/m/P30366">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3044a8ec-5ff0-3038-a8b2-0105a73f82a7">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of cartography [<a href="http://rdaregistry.info/Elements/m/P30338">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3fafc54a-f2e7-364f-8f32-dfb1c24a2f5f">RDA TOOLKIT</a>]</li>
+                     <li>has surveyor person [<a href="http://rdaregistry.info/Elements/m/P30337">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-66cf36b9-86bf-316a-90f8-d93fba8f85dd">RDA TOOLKIT</a>]</li>
+                     <li>has surveyor agent [<a href="http://rdaregistry.info/Elements/m/P30312">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-af406383-5273-3d68-b39f-4d0d784f9ebf">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of choreography [<a href="http://rdaregistry.info/Elements/m/P30316">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-52d0b08b-8ceb-385a-82bb-7118f778cf67">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of choreography [<a href="http://rdaregistry.info/Elements/m/P30368">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8c14c4de-f568-3407-8dd2-8cc155c7b2f9">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of choreography [<a href="http://rdaregistry.info/Elements/m/P30397">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7dfe2e00-69ca-345b-8679-35eb79c2ade6">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of choreography [<a href="http://rdaregistry.info/Elements/m/P30426">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bc3223f0-c8ee-3868-a072-0ea78b6e3497">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of choreography [<a href="http://rdaregistry.info/Elements/m/P30339">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1a02f360-dd6e-3019-aabe-17f1bdb4b240">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of computer content [<a href="http://rdaregistry.info/Elements/m/P30333">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bf6ff648-9afd-3f7c-b567-8dcfa2a33082">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of computer content [<a href="http://rdaregistry.info/Elements/m/P30375">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-130e070c-b9a3-32d8-a725-3f64b1d54e61">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of computer content [<a href="http://rdaregistry.info/Elements/m/P30404">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5e0f0eca-7796-34ef-ab0c-b92658b00421">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of computer content [<a href="http://rdaregistry.info/Elements/m/P30433">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-274f70b8-9328-3efc-bc75-35eb4ec640c2">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of computer content [<a href="http://rdaregistry.info/Elements/m/P30346">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c5c6fa90-b9a1-388d-bd7a-c8ef1d9b7d34">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of moving image [<a href="http://rdaregistry.info/Elements/m/P30326">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e0dc787a-93ef-36c3-8d9e-effe60cd3d89">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of moving image [<a href="http://rdaregistry.info/Elements/m/P30369">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-2acb5031-34ee-3f4b-995f-083b58e346df">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of moving image [<a href="http://rdaregistry.info/Elements/m/P30398">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bac41f3e-69a8-376b-b16c-44aa35527f57">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of moving image [<a href="http://rdaregistry.info/Elements/m/P30427">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-180f4851-53fd-3f06-9fbd-a77b96e27838">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of moving image [<a href="http://rdaregistry.info/Elements/m/P30340">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c2b2c1ab-8890-3197-9e84-936327e6aead">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of music [<a href="http://rdaregistry.info/Elements/m/P30311">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cc3677be-149e-30ff-96be-09876f21d107">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of music [<a href="http://rdaregistry.info/Elements/m/P30370">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cb9012c2-d387-3b1e-b15c-1dcd383bd68d">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of music [<a href="http://rdaregistry.info/Elements/m/P30399">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3b1a8b9f-5997-3858-b9ed-8454f7c17bae">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of music [<a href="http://rdaregistry.info/Elements/m/P30428">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7abd2740-4871-3604-8f4b-d9dadd894135">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of music [<a href="http://rdaregistry.info/Elements/m/P30341">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-756f23e3-4171-3b9b-b731-9efb2fe199a9">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of object [<a href="http://rdaregistry.info/Elements/m/P30332">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6f00d2ad-78b1-326d-9e77-0057edc2a0f1">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of object [<a href="http://rdaregistry.info/Elements/m/P30374">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1a811961-ec79-3a73-b84f-0b82ff2e7875">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of object [<a href="http://rdaregistry.info/Elements/m/P30403">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-48753ecb-21bb-3eb1-b729-746cc73eea52">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of object [<a href="http://rdaregistry.info/Elements/m/P30432">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-208501be-4a52-3eb8-b319-886cfb038b75">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of object [<a href="http://rdaregistry.info/Elements/m/P30345">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e5d1026e-ba1d-344b-a2df-25f56ff505e1">RDA TOOLKIT</a>]</li>
+                     <li>has contributor agent of speech [<a href="http://rdaregistry.info/Elements/m/P30331">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1aefb69c-0ed8-3ce3-9227-3c3e125a2d0c">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent of speech [<a href="http://rdaregistry.info/Elements/m/P30371">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-30a2b5d7-7092-3f9c-b0ec-27d85e2700fc">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body of speech [<a href="http://rdaregistry.info/Elements/m/P30400">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8fa10242-deb3-3d50-955c-b49b6ed1fb0b">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family of speech [<a href="http://rdaregistry.info/Elements/m/P30429">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-95f77cec-4050-3e02-ae35-ce53f1267fde">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person of speech [<a href="http://rdaregistry.info/Elements/m/P30342">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-14eacba5-90c1-394f-8d36-980635e31e75">RDA TOOLKIT</a>]</li>
+                     <li>has contributor collective agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30365">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-97cddbc2-cad1-32df-8258-85c31ad261ee">RDA TOOLKIT</a>]</li>
+                     <li>has contributor corporate body to aggregate [<a href="http://rdaregistry.info/Elements/m/P30394">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-de768411-e389-3684-93e2-f962e2a3aea2">RDA TOOLKIT</a>]</li>
+                     <li>has contributor family to aggregate [<a href="http://rdaregistry.info/Elements/m/P30423">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8496afd9-52ea-3fca-aabe-7204a134abf8">RDA TOOLKIT</a>]</li>
+                     <li>has contributor person to aggregate [<a href="http://rdaregistry.info/Elements/m/P30336">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e6b18f05-5c15-3e42-972a-75678432209f">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
          <section class="ptInfo" id="hasrelatedagentofmanifestation">
             <h4><span>Property Template: has related agent of manifestation</span></h4>
             <ul>
@@ -1081,12 +1964,10 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>has contributor agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30327">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0">RDA TOOLKIT</a>]</li>
-                     <li>has creator agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30329">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3">RDA TOOLKIT</a>]</li>
-                     <li>has distributor agent [<a href="http://rdaregistry.info/Elements/m/P30080">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11">RDA TOOLKIT</a>]</li>
                      <li>has related collective agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30271">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3eceaaca-1bf6-31d4-b2df-deb71984025f">RDA TOOLKIT</a>]</li>
+                     <li>has related corporate body of manifestation [<a href="http://rdaregistry.info/Elements/m/P30270">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-fc6ba0a7-eaf8-319f-9535-ffc480bb87b0">RDA TOOLKIT</a>]</li>
+                     <li>has related family of manifestation [<a href="http://rdaregistry.info/Elements/m/P30269">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6655e15a-6ecb-32b2-b454-645a2ac3126d">RDA TOOLKIT</a>]</li>
                      <li>has related person of manifestation [<a href="http://rdaregistry.info/Elements/m/P30268">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-20871c54-5082-3097-9789-fad37f5057b1">RDA TOOLKIT</a>]</li>
-                     <li>has papermaker agent [<a href="http://rdaregistry.info/Elements/m/P30215">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9c55e0af-5e08-3b3d-a607-59a3c1571053">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1094,11 +1975,11 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
-         <section class="ptInfo" id="hascreatoragentofmanifestation">
-            <h4><span>Property Template: has creator agent of manifestation</span></h4>
+         <section class="ptInfo" id="isalsoissuedas">
+            <h4><span>Property Template: is also issued as</span></h4>
             <ul>
-               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30329">http://rdaregistry.info/Elements/m/P30329</a></li>
-               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-dcb88128-0780-3036-be8c-91c7e5ef395c https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3">https://access.rdatoolkit.org/en-US_ala-dcb88128-0780-3036-be8c-91c7e5ef395c https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3</a></li>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30026">http://rdaregistry.info/Elements/m/P30026</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-b63395e4-bf33-38a4-bcb6-7f60c9698552">https://access.rdatoolkit.org/en-US_ala-b63395e4-bf33-38a4-bcb6-7f60c9698552</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
                <li>Property type: lookup</li>
@@ -1108,40 +1989,9 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
                         </ul>
                      </li>
-                  </ul>
-               </li>
-               <li>Other properties included in this property template:
-                  
-                  <ul>
-                     <li>has contributor agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30327">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0">RDA TOOLKIT</a>]</li>
-                     <li>has creator agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30329">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3">RDA TOOLKIT</a>]</li>
-                     <li>has distributor agent [<a href="http://rdaregistry.info/Elements/m/P30080">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11">RDA TOOLKIT</a>]</li>
-                     <li>has related collective agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30271">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3eceaaca-1bf6-31d4-b2df-deb71984025f">RDA TOOLKIT</a>]</li>
-                     <li>has related person of manifestation [<a href="http://rdaregistry.info/Elements/m/P30268">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-20871c54-5082-3097-9789-fad37f5057b1">RDA TOOLKIT</a>]</li>
-                     <li>has papermaker agent [<a href="http://rdaregistry.info/Elements/m/P30215">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9c55e0af-5e08-3b3d-a607-59a3c1571053">RDA TOOLKIT</a>]</li>
-                     <li>has book designer agent [<a href="http://rdaregistry.info/Elements/m/P30069">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1a345ab1-2fd2-3596-811a-6df8bb10c8d1">RDA TOOLKIT</a>]</li>
-                     <li>has caster agent [<a href="http://rdaregistry.info/Elements/m/P30073">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a14abd27-3277-39ba-b49a-72984f713fd5">RDA TOOLKIT</a>]</li>
-                     <li>has creator collective agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30392">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1908bf96-1c91-3517-aab0-46e2f12eb942">RDA TOOLKIT</a>]</li>
-                     <li>has creator person of manifestation [<a href="http://rdaregistry.info/Elements/m/P30363">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-552343bd-e2a2-3960-a35e-dac0e8877199">RDA TOOLKIT</a>]</li>
-                     <li>has manufacturer agent [<a href="http://rdaregistry.info/Elements/m/P30082">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-18a8b4c4-155c-31cc-858e-cabd60df787f">RDA TOOLKIT</a>]</li>
-                     <li>has platemaker agent [<a href="http://rdaregistry.info/Elements/m/P30075">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8c7d4489-ce59-3e38-82d6-b04270d372c9">RDA TOOLKIT</a>]</li>
-                     <li>has printmaker agent [<a href="http://rdaregistry.info/Elements/m/P30072">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b845dc6b-2620-3368-bbb2-613d3c7e0992">RDA TOOLKIT</a>]</li>
-                     <li>has producer agent of unpublished manifestation [<a href="http://rdaregistry.info/Elements/m/P30081">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-33581eab-6f3d-3f32-9cd5-4a3ec5f58a15">RDA TOOLKIT</a>]</li>
-                     <li>has publisher agent [<a href="http://rdaregistry.info/Elements/m/P30083">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-dca98326-8bca-346f-9b5e-a262632daee5">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1149,11 +1999,11 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
-         <section class="ptInfo" id="hascontributoragenttoaggregate">
-            <h4><span>Property Template: has contributor agent to aggregate</span></h4>
+         <section class="ptInfo" id="isreproducedasmanifestation">
+            <h4><span>Property Template: is reproduced as manifestation</span></h4>
             <ul>
-               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30327">http://rdaregistry.info/Elements/m/P30327</a></li>
-               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-dcb88128-0780-3036-be8c-91c7e5ef395c https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0">https://access.rdatoolkit.org/en-US_ala-dcb88128-0780-3036-be8c-91c7e5ef395c https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0</a></li>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30039">http://rdaregistry.info/Elements/m/P30039</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-cd3d801c-f0d6-32a5-ae54-de169aa61a5e">https://access.rdatoolkit.org/en-US_ala-cd3d801c-f0d6-32a5-ae54-de169aa61a5e</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
                <li>Property type: lookup</li>
@@ -1163,18 +2013,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
                         </ul>
                      </li>
                   </ul>
@@ -1182,23 +2021,11 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>has contributor agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30327">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0">RDA TOOLKIT</a>]</li>
-                     <li>has creator agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30329">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bb8df5e6-dd5c-3066-a32a-aa0cdb5a7bd3">RDA TOOLKIT</a>]</li>
-                     <li>has distributor agent [<a href="http://rdaregistry.info/Elements/m/P30080">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-4092aab4-d4ef-3820-9503-81ba1ec19b11">RDA TOOLKIT</a>]</li>
-                     <li>has related collective agent of manifestation [<a href="http://rdaregistry.info/Elements/m/P30271">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3eceaaca-1bf6-31d4-b2df-deb71984025f">RDA TOOLKIT</a>]</li>
-                     <li>has related person of manifestation [<a href="http://rdaregistry.info/Elements/m/P30268">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-20871c54-5082-3097-9789-fad37f5057b1">RDA TOOLKIT</a>]</li>
-                     <li>has papermaker agent [<a href="http://rdaregistry.info/Elements/m/P30215">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9c55e0af-5e08-3b3d-a607-59a3c1571053">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of cartography [<a href="http://rdaregistry.info/Elements/m/P30315">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3b5b3f5a-ded0-3d8b-9e4f-564036ba28cd">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of choreography [<a href="http://rdaregistry.info/Elements/m/P30316">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-52d0b08b-8ceb-385a-82bb-7118f778cf67">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of computer content [<a href="http://rdaregistry.info/Elements/m/P30333">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bf6ff648-9afd-3f7c-b567-8dcfa2a33082">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of moving image [<a href="http://rdaregistry.info/Elements/m/P30326">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e0dc787a-93ef-36c3-8d9e-effe60cd3d89">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of music [<a href="http://rdaregistry.info/Elements/m/P30311">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cc3677be-149e-30ff-96be-09876f21d107">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of object [<a href="http://rdaregistry.info/Elements/m/P30332">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6f00d2ad-78b1-326d-9e77-0057edc2a0f1">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of speech [<a href="http://rdaregistry.info/Elements/m/P30331">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1aefb69c-0ed8-3ce3-9227-3c3e125a2d0c">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of still image [<a href="http://rdaregistry.info/Elements/m/P30321">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of text [<a href="http://rdaregistry.info/Elements/m/P30328">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59">RDA TOOLKIT</a>]</li>
-                     <li>has contributor collective agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30365">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-97cddbc2-cad1-32df-8258-85c31ad261ee">RDA TOOLKIT</a>]</li>
-                     <li>has contributor person to aggregate [<a href="http://rdaregistry.info/Elements/m/P30336">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e6b18f05-5c15-3e42-972a-75678432209f">RDA TOOLKIT</a>]</li>
+                     <li>has digital transfer of manifestation [<a href="http://rdaregistry.info/Elements/m/P30029">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8fed2726-0d36-3a09-9745-88901df4e443">RDA TOOLKIT</a>]</li>
+                     <li>has electronic reproduction of manifestation [<a href="http://rdaregistry.info/Elements/m/P30016">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e85714dd-247d-39d7-8631-5322ac924afd">RDA TOOLKIT</a>]</li>
+                     <li>has facsimile of manifestation [<a href="http://rdaregistry.info/Elements/m/P30031">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5f41752f-44f5-30d8-b17c-9a424a3d5637">RDA TOOLKIT</a>]</li>
+                     <li>has preservation facsimile of manifestation [<a href="http://rdaregistry.info/Elements/m/P30021">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3d720548-f247-3dcc-9f00-fd4584a88fd9">RDA TOOLKIT</a>]</li>
+                     <li>is reprinted as manifestation [<a href="http://rdaregistry.info/Elements/m/P30038">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0c96bf50-cb2c-32ed-a67e-f05576ab0b3e">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1206,11 +2033,11 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
-         <section class="ptInfo" id="hascontributoragentoftext">
-            <h4><span>Property Template: has contributor agent of text</span></h4>
+         <section class="ptInfo" id="isreproductionofmanifestationof">
+            <h4><span>Property Template: is reproduction of manifestation of</span></h4>
             <ul>
-               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30328">http://rdaregistry.info/Elements/m/P30328</a></li>
-               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0 https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59">https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0 https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59</a></li>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30043">http://rdaregistry.info/Elements/m/P30043</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-f2183d7c-7677-3b6d-835f-615839185e15">https://access.rdatoolkit.org/en-US_ala-f2183d7c-7677-3b6d-835f-615839185e15</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
                <li>Property type: lookup</li>
@@ -1220,18 +2047,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
                         </ul>
                      </li>
                   </ul>
@@ -1239,19 +2055,9 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>has contributor agent of cartography [<a href="http://rdaregistry.info/Elements/m/P30315">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3b5b3f5a-ded0-3d8b-9e4f-564036ba28cd">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of choreography [<a href="http://rdaregistry.info/Elements/m/P30316">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-52d0b08b-8ceb-385a-82bb-7118f778cf67">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of computer content [<a href="http://rdaregistry.info/Elements/m/P30333">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bf6ff648-9afd-3f7c-b567-8dcfa2a33082">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of moving image [<a href="http://rdaregistry.info/Elements/m/P30326">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e0dc787a-93ef-36c3-8d9e-effe60cd3d89">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of music [<a href="http://rdaregistry.info/Elements/m/P30311">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cc3677be-149e-30ff-96be-09876f21d107">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of object [<a href="http://rdaregistry.info/Elements/m/P30332">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6f00d2ad-78b1-326d-9e77-0057edc2a0f1">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of speech [<a href="http://rdaregistry.info/Elements/m/P30331">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1aefb69c-0ed8-3ce3-9227-3c3e125a2d0c">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of still image [<a href="http://rdaregistry.info/Elements/m/P30321">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of text [<a href="http://rdaregistry.info/Elements/m/P30328">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59">RDA TOOLKIT</a>]</li>
-                     <li>has contributor collective agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30365">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-97cddbc2-cad1-32df-8258-85c31ad261ee">RDA TOOLKIT</a>]</li>
-                     <li>has contributor person to aggregate [<a href="http://rdaregistry.info/Elements/m/P30336">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e6b18f05-5c15-3e42-972a-75678432209f">RDA TOOLKIT</a>]</li>
-                     <li>has contributor collective agent of text [<a href="http://rdaregistry.info/Elements/m/P30373">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6dc5d818-e50a-36e2-9203-264abf24654b">RDA TOOLKIT</a>]</li>
-                     <li>has contributor person of text [<a href="http://rdaregistry.info/Elements/m/P30344">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-ebff9d51-d1bc-34bf-b055-ebaaec37e7d0">RDA TOOLKIT</a>]</li>
+                     <li>is facsimile of manifestation of [<a href="http://rdaregistry.info/Elements/m/P30047">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-a8671732-4aed-3b2c-9b6e-310e4617a9cf">RDA TOOLKIT</a>]</li>
+                     <li>is preservation facsimile of manifestation of [<a href="http://rdaregistry.info/Elements/m/P30045">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d39dfc9d-eb29-38c8-b639-235c671369b9">RDA TOOLKIT</a>]</li>
+                     <li>is reprint of manifestation of [<a href="http://rdaregistry.info/Elements/m/P30093">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d83588be-4edb-309c-8ace-ac9bc6311d2b">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1259,11 +2065,11 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
-         <section class="ptInfo" id="hascontributoragentofstillimage">
-            <h4><span>Property Template: has contributor agent of still image</span></h4>
+         <section class="ptInfo" id="hasequivalentmanifestation">
+            <h4><span>Property Template: has equivalent manifestation</span></h4>
             <ul>
-               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30321">http://rdaregistry.info/Elements/m/P30321</a></li>
-               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0 https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da">https://access.rdatoolkit.org/en-US_ala-0e27dec8-c1fe-3cfd-af40-857b72882cc0 https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da</a></li>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30024">http://rdaregistry.info/Elements/m/P30024</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940">https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
                <li>Property type: lookup</li>
@@ -1273,18 +2079,31 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC person [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:person</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC organization [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:organization</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC family [names (rwo)] (QA)</strong> : urn:ld4p:qa:names:family</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_ULAN (QA)</strong> : urn:ld4p:qa:gettyulan</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">ISNI (QA)</strong> : urn:ld4p:qa:isni</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="haspartmanifestation">
+            <h4><span>Property Template: has part manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30033">http://rdaregistry.info/Elements/m/P30033</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-ccf4bc18-3097-36d5-bed1-2fffd68bcee8">https://access.rdatoolkit.org/en-US_ala-ccf4bc18-3097-36d5-bed1-2fffd68bcee8</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
                         </ul>
                      </li>
                   </ul>
@@ -1292,19 +2111,71 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>has contributor agent of cartography [<a href="http://rdaregistry.info/Elements/m/P30315">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-3b5b3f5a-ded0-3d8b-9e4f-564036ba28cd">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of choreography [<a href="http://rdaregistry.info/Elements/m/P30316">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-52d0b08b-8ceb-385a-82bb-7118f778cf67">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of computer content [<a href="http://rdaregistry.info/Elements/m/P30333">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bf6ff648-9afd-3f7c-b567-8dcfa2a33082">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of moving image [<a href="http://rdaregistry.info/Elements/m/P30326">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e0dc787a-93ef-36c3-8d9e-effe60cd3d89">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of music [<a href="http://rdaregistry.info/Elements/m/P30311">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cc3677be-149e-30ff-96be-09876f21d107">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of object [<a href="http://rdaregistry.info/Elements/m/P30332">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-6f00d2ad-78b1-326d-9e77-0057edc2a0f1">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of speech [<a href="http://rdaregistry.info/Elements/m/P30331">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1aefb69c-0ed8-3ce3-9227-3c3e125a2d0c">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of still image [<a href="http://rdaregistry.info/Elements/m/P30321">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-1d396a3a-95d9-3b5a-abfa-99403a0c32da">RDA TOOLKIT</a>]</li>
-                     <li>has contributor agent of text [<a href="http://rdaregistry.info/Elements/m/P30328">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-5c9edbfd-2f9f-38e3-a6ac-02e817a9ad59">RDA TOOLKIT</a>]</li>
-                     <li>has contributor collective agent to aggregate [<a href="http://rdaregistry.info/Elements/m/P30365">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-97cddbc2-cad1-32df-8258-85c31ad261ee">RDA TOOLKIT</a>]</li>
-                     <li>has contributor person to aggregate [<a href="http://rdaregistry.info/Elements/m/P30336">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-e6b18f05-5c15-3e42-972a-75678432209f">RDA TOOLKIT</a>]</li>
-                     <li>has contributor collective agent of still image [<a href="http://rdaregistry.info/Elements/m/P30372">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7d7c14d9-fdbb-3c64-8205-b30131fcfe6c">RDA TOOLKIT</a>]</li>
-                     <li>has contributor person of still image [<a href="http://rdaregistry.info/Elements/m/P30343">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-931a95b2-5e36-36d9-aaf2-b30e1f9f910c">RDA TOOLKIT</a>]</li>
+                     <li>has insert [<a href="http://rdaregistry.info/Elements/m/P30022">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0166236d-ccd3-3df3-a81d-1d8b6cbe511c">RDA TOOLKIT</a>]</li>
+                     <li>has facsimile part [<a href="http://rdaregistry.info/Elements/m/P30046">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-715f5d09-8d7d-3542-be2d-9ca06c61f019">RDA TOOLKIT</a>]</li>
+                     <li>has subcollection [<a href="http://rdaregistry.info/Elements/m/P30458">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-aafca0c0-90e3-39af-a632-331d832642e5">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="ispartofmanifestation">
+            <h4><span>Property Template: is part of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30020">http://rdaregistry.info/Elements/m/P30020</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-9c0bb1f6-67aa-354a-af66-7c9325673c39">https://access.rdatoolkit.org/en-US_ala-9c0bb1f6-67aa-354a-af66-7c9325673c39</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>is inserted in [<a href="http://rdaregistry.info/Elements/m/P30025">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f800e7cb-837b-3702-9320-10249e3937da">RDA TOOLKIT</a>]</li>
+                     <li>is facsimile part of [<a href="http://rdaregistry.info/Elements/m/P30019">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c699e54f-0b4c-3a92-9448-ff1263286306">RDA TOOLKIT</a>]</li>
+                     <li>is subcollection of [<a href="http://rdaregistry.info/Elements/m/P30459">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-632ff372-1fb8-338a-949b-377c3c260569">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="isaccompaniedbymanifestation">
+            <h4><span>Property Template: is accompanied by manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30027">http://rdaregistry.info/Elements/m/P30027</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-c700044a-97ee-3f4b-8ac3-2139c2e827ca">https://access.rdatoolkit.org/en-US_ala-c700044a-97ee-3f4b-8ac3-2139c2e827ca</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>is on carrier unit with [<a href="http://rdaregistry.info/Elements/m/P30035">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f9305084-ad80-3d9e-8c28-e649bb4f5500">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1327,18 +2198,8 @@
                         
                         <ul>
                            <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME instance resources</strong> : urn:ld4p:sinopia:bibframe:instance</li>
                         </ul>
                      </li>
-                  </ul>
-               </li>
-               <li>Other properties included in this property template:
-                  
-                  <ul>
-                     <li>has equivalent manifestation [<a href="http://rdaregistry.info/Elements/m/P30024">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940">RDA TOOLKIT</a>]</li>
-                     <li>is accompanied by manifestation [<a href="http://rdaregistry.info/Elements/m/P30027">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c700044a-97ee-3f4b-8ac3-2139c2e827ca">RDA TOOLKIT</a>]</li>
-                     <li>has part manifestation [<a href="http://rdaregistry.info/Elements/m/P30033">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-ccf4bc18-3097-36d5-bed1-2fffd68bcee8">RDA TOOLKIT</a>]</li>
-                     <li>is part of manifestation [<a href="http://rdaregistry.info/Elements/m/P30020">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9c0bb1f6-67aa-354a-af66-7c9325673c39">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1346,11 +2207,11 @@
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
             </ul>
          </section>
-         <section class="ptInfo" id="hasequivalentmanifestation">
-            <h4><span>Property Template: has equivalent manifestation</span></h4>
+         <section class="ptInfo" id="issubjectmanifestationof">
+            <h4><span>Property Template: is subject manifestation of</span></h4>
             <ul>
-               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30024">http://rdaregistry.info/Elements/m/P30024</a></li>
-               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-b716f212-6108-3c94-8067-2b46828562c2 https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940">https://access.rdatoolkit.org/en-US_ala-b716f212-6108-3c94-8067-2b46828562c2 https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940</a></li>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30253">http://rdaregistry.info/Elements/m/P30253</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-7cb49d98-8dd6-36e3-aca8-4a167a2fb699">https://access.rdatoolkit.org/en-US_ala-7cb49d98-8dd6-36e3-aca8-4a167a2fb699</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
                <li>Property type: lookup</li>
@@ -1360,10 +2221,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME instance resources</strong> : urn:ld4p:sinopia:bibframe:instance</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME instance resources</strong> : urn:ld4p:sinopia:bibframe:instance</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA work</strong> : urn:ld4p:sinopia:rda:work</li>
                         </ul>
                      </li>
                   </ul>
@@ -1371,14 +2229,83 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>has equivalent manifestation [<a href="http://rdaregistry.info/Elements/m/P30024">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-19152c97-642c-3cd0-82db-630329ad2940">RDA TOOLKIT</a>]</li>
-                     <li>is accompanied by manifestation [<a href="http://rdaregistry.info/Elements/m/P30027">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-c700044a-97ee-3f4b-8ac3-2139c2e827ca">RDA TOOLKIT</a>]</li>
-                     <li>has part manifestation [<a href="http://rdaregistry.info/Elements/m/P30033">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-ccf4bc18-3097-36d5-bed1-2fffd68bcee8">RDA TOOLKIT</a>]</li>
-                     <li>is part of manifestation [<a href="http://rdaregistry.info/Elements/m/P30020">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9c0bb1f6-67aa-354a-af66-7c9325673c39">RDA TOOLKIT</a>]</li>
-                     <li>is reproduced as manifestation [<a href="http://rdaregistry.info/Elements/m/P30039">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-cd3d801c-f0d6-32a5-ae54-de169aa61a5e">RDA TOOLKIT</a>]</li>
-                     <li>is reproduction of manifestation of [<a href="http://rdaregistry.info/Elements/m/P30043">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f2183d7c-7677-3b6d-835f-615839185e15">RDA TOOLKIT</a>]</li>
-                     <li>is also issued as [<a href="http://rdaregistry.info/Elements/m/P30026">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b63395e4-bf33-38a4-bcb6-7f60c9698552">RDA TOOLKIT</a>]</li>
-                     <li>has mirror site [<a href="http://rdaregistry.info/Elements/m/P30028">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f20ae004-4439-34d2-b836-5b15e452779c">RDA TOOLKIT</a>]</li>
+                     <li>is manifestation described by [<a href="http://rdaregistry.info/Elements/m/P30254">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-51744638-bd0b-3aac-a958-4be04d024ce4">RDA TOOLKIT</a>]</li>
+                     <li>is manifestation analysed in [<a href="http://rdaregistry.info/Elements/m/P30255">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-66f6462a-ff5e-3666-94a6-c50118dd014b">RDA TOOLKIT</a>]</li>
+                     <li>is manifestation commentary in [<a href="http://rdaregistry.info/Elements/m/P30256">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-0565b74a-821c-3e48-b3c1-aa95829672a0">RDA TOOLKIT</a>]</li>
+                     <li>is manifestation described with metadata by [<a href="http://rdaregistry.info/Elements/m/P30462">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-fd17a747-1575-31cd-a2f7-c558ca7d8d07">RDA TOOLKIT</a>]</li>
+                     <li>is manifestation evaluated by [<a href="http://rdaregistry.info/Elements/m/P30258">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-f1ba1ba7-8440-3972-9fb7-baaa1d65ec62">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasbindingofmanifestation">
+            <h4><span>Property Template: has binding of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30310">http://rdaregistry.info/Elements/m/P30310</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-b4d8d599-1bbe-30d0-bda2-a041c821225f">https://access.rdatoolkit.org/en-US_ala-b4d8d599-1bbe-30d0-bda2-a041c821225f</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA work</strong> : urn:ld4p:sinopia:rda:work</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasindex">
+            <h4><span>Property Template: has index</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30466">http://rdaregistry.info/Elements/m/P30466</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-8deca123-404d-315d-ae74-b941b5740095">https://access.rdatoolkit.org/en-US_ala-8deca123-404d-315d-ae74-b941b5740095</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA work</strong> : urn:ld4p:sinopia:rda:work</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="issourceconsultedof">
+            <h4><span>Property Template: is source consulted of</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30334">http://rdaregistry.info/Elements/m/P30334</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-7258f598-731f-3bcc-ba9b-2339c38a15ef">https://access.rdatoolkit.org/en-US_ala-7258f598-731f-3bcc-ba9b-2339c38a15ef</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA work</strong> : urn:ld4p:sinopia:rda:work</li>
+                        </ul>
+                     </li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1403,16 +2330,6 @@
                            <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA work</strong> : urn:ld4p:sinopia:rda:work</li>
                         </ul>
                      </li>
-                  </ul>
-               </li>
-               <li>Other properties included in this property template:
-                  
-                  <ul>
-                     <li>has binding of manifestation [<a href="http://rdaregistry.info/Elements/m/P30310">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-b4d8d599-1bbe-30d0-bda2-a041c821225f">RDA TOOLKIT</a>]</li>
-                     <li>is subject manifestation of [<a href="http://rdaregistry.info/Elements/m/P30253">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7cb49d98-8dd6-36e3-aca8-4a167a2fb699">RDA TOOLKIT</a>]</li>
-                     <li>has work manifested [<a href="http://rdaregistry.info/Elements/m/P30135">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-2fe4041d-fd6c-3f4d-bc96-aa96fe876b27">RDA TOOLKIT</a>]</li>
-                     <li>is source consulted of [<a href="http://rdaregistry.info/Elements/m/P30334">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7258f598-731f-3bcc-ba9b-2339c38a15ef">RDA TOOLKIT</a>]</li>
-                     <li>has index [<a href="http://rdaregistry.info/Elements/m/P30466">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8deca123-404d-315d-ae74-b941b5740095">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -1490,9 +2407,8 @@
                <li>Other properties included in this property template:
                   
                   <ul>
-                     <li>is digital transfer of item of [<a href="http://rdaregistry.info/Elements/m/P30298">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-7a493b44-b02b-3958-b703-02d3473576e0">RDA TOOLKIT</a>]</li>
-                     <li>is electronic reproduction of item of [<a href="http://rdaregistry.info/Elements/m/P30299">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-8b3f2d81-e0b3-35a6-9cb2-bb0b0009bac4">RDA TOOLKIT</a>]</li>
                      <li>is facsimile of item of [<a href="http://rdaregistry.info/Elements/m/P30300">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-bab90bcb-bb61-3147-bc20-4d578ba75639">RDA TOOLKIT</a>]</li>
+                     <li>is preservation facsimile of item of [<a href="http://rdaregistry.info/Elements/m/P30301">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-afc67359-68fd-37f1-8c1e-610c3e2331f5">RDA TOOLKIT</a>]</li>
                      <li>is reprint of item of [<a href="http://rdaregistry.info/Elements/m/P30302">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-af5e470c-9834-32cc-9b39-2b334dd87bb7">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
@@ -1518,6 +2434,94 @@
                            <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME item resources</strong> : urn:ld4p:sinopia:bibframe:item</li>
                         </ul>
                      </li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="isreferencesourceof">
+            <h4><span>Property Template: is reference source of</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30457">http://rdaregistry.info/Elements/m/P30457</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-ba4995ba-0392-39f6-bf17-88026f8dd10e">https://access.rdatoolkit.org/en-US_ala-ba4995ba-0392-39f6-bf17-88026f8dd10e</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: URI</li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasrelatednomenofmanifestation">
+            <h4><span>Property Template: has related nomen of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30274">http://rdaregistry.info/Elements/m/P30274</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-528d5139-cad0-3e98-8215-cecd341ca2f0">https://access.rdatoolkit.org/en-US_ala-528d5139-cad0-3e98-8215-cecd341ca2f0</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: URI</li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasrelatedplaceofmanifestation">
+            <h4><span>Property Template: has related place of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30272">http://rdaregistry.info/Elements/m/P30272</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-125eb55c-1dd0-31d1-a45b-2469dc36b400">https://access.rdatoolkit.org/en-US_ala-125eb55c-1dd0-31d1-a45b-2469dc36b400</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GEONAMES all (QA)</strong> : urn:ld4p:qa:geonames</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_TGN (QA)</strong> : urn:ld4p:qa:gettytgn</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has place of manifestation [<a href="http://rdaregistry.info/Elements/m/P30279">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-52617a00-1288-3c27-b9cb-b83e9ec8541c">RDA TOOLKIT</a>]</li>
+                  </ul>
+               </li>
+               <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasrelatedtimespanofmanifestation">
+            <h4><span>Property Template: has related timespan of manifestation</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30273">http://rdaregistry.info/Elements/m/P30273</a></li>
+               <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-07aa8cd8-f4a9-3b6d-bc31-354c3f829afb">https://access.rdatoolkit.org/en-US_ala-07aa8cd8-f4a9-3b6d-bc31-354c3f829afb</a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
+               <li>Other properties included in this property template:
+                  
+                  <ul>
+                     <li>has date of manifestation [<a href="http://rdaregistry.info/Elements/m/P30278">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-2f35d016-6aa9-39dd-bbad-34d8b3b49f18">RDA TOOLKIT</a>]</li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
