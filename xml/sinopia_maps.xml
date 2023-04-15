@@ -4,13 +4,7 @@
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
         <!-- WEMI TEMPLATES -->
-        <rt output_load="true">
-            <institution>WAU</institution>
-            <resource>rdaManifestation</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS - panzhuo@uw.edu</author>
-        </rt>
+       
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaWork</resource>
@@ -19,7 +13,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing single works</rt_remark>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
             <format>printMonograph</format>
@@ -27,6 +21,14 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing expressions of single works</rt_remark>
         </rt>
+        <rt output_load="true">
+            <institution>WAU</institution>
+            <resource>rdaManifestation</resource>
+            <format>printMonograph</format>
+            <user>CAMS</user>
+            <author>UW CAMS - panzhuo@uw.edu</author>
+        </rt>
+        
         <!-- NOMEN TEMPLATES -->
         <rt output_load="true">
             <institution>WAU</institution>
