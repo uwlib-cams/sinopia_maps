@@ -109,16 +109,15 @@ def property_template_test(rdf_root, rdf_description, prop_URI, used_propUri_lis
 		# This means that the prop_URI is the URI for the property it is a child of 
 		comment_it_out = False
 	else:
-		if prop_URI in pt_used_propUri_list:
-			#This means this prop_URI has already been handled once in this property template - either kept or commented out 
-			delete = True
-
 		# See if there is a different property template for this property
 		look_for_PT_list = rdf_root.findall('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Description[@{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID="' + theoretical_prop_node_id + '"]')
 		if len(look_for_PT_list) == 0:
 			# There is no property template for this property, so it can remain as a subproperty where it is
 			comment_it_out = False
-	# Make sure this URI isn't a repeat from within the PT or from a previous PT 
+	if prop_URI in pt_used_propUri_list:
+		#This means this prop_URI has already been handled once in this property template - either kept or commented out 
+		delete = True
+	# Make sure this URI isn't a repeat from a previous PT 
 	if comment_it_out == False and prop_URI in used_propUri_list:
 		comment_it_out = True
 	
