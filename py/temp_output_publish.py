@@ -1,14 +1,21 @@
+# This program is designed to output RDF/XML, JSON-LD, and HTML serializations of Resource Templates
+# and upload these RTs to a Sinopia environment
+# for details see https://github.com/uwlib-cams/sinopia_maps/wiki/manage_03_output_publish_load
+# last updated: 4/6/2023
+
 import os
 from textwrap import dedent
 import lxml.etree as ET
 import rdflib
+from rdflib import *
 import json
 from datetime import datetime
 import requests
 import sys
 
-""" PRELIMINARIES """
+# PRELIMINARIES - ensure everything is set up
 
+# terminal must be open in sinopia_maps top level and saxon should be in home directory
 print(dedent("""Please confirm:
 1) Terminal is open in the sinopia_maps top-level directory
 2) Saxon processor .jar file is located in the user's home (~) directory"""))
@@ -18,6 +25,7 @@ if confirm.lower() == "yes":
 else:
     exit(0)
 
+# get location and version of saxon folder
 saxon_dir_prompt = dedent("""Enter the name of the directory in your home folder where your Saxon HE .jar file is stored
 For example: 'saxon', 'saxon11', etc.
 > """)
@@ -28,6 +36,7 @@ For example: '11.1', '11.4', etc.
 > """)
 saxon_version = input(saxon_version_prompt)
 
+# get desired sinopia platform for upload
 # sinopia_platform = ""
 # platform_prompt = dedent("""Load to which Sinopia environment?
 # Development, Stage, or Production?\n[1] Development\n[2] Stage\n[3] Production\n> """)
@@ -41,120 +50,187 @@ saxon_version = input(saxon_version_prompt)
 # else:
 #     print("Platform not recognized.")
 #     exit(0)
-    
+
+# # get sinopia username    
 # user_prompt = "Enter your username for the Sinopia environment you will load RTs to\n> "
 # user = input(user_prompt)
 
+# # get jwt for upload
 # jwt_prompt = "Enter a Java web token for the Sinopia environment you will load RTs to\n> "
 # jwt = input(jwt_prompt)
 
-proceed_prompt = dedent("""Ready to output and publish RTs? (Yes or No)
-> """)
-proceed = input(proceed_prompt)
-if proceed.lower() == "yes":
-    pass
-else:
-    exit(0)
+# proceed_prompt = dedent("""Ready to output, publish, and load RTs? (Yes or No)
+# > """)
+# proceed = input(proceed_prompt)
+# if proceed.lower() == "yes":
+#     pass
+# else:
+#     exit(0)
 
-""" OUTPUT RDF RESOURCE TEMPLATES """
+# # OUTPUT RDF RESOURCE TEMPLATES
 
-RDF_RT_stylesheet = "xsl/001_01_storage_to_rdfxml.xsl"
-os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
-net.sf.saxon.Transform -t 
--s:{RDF_RT_stylesheet} 
--xsl:{RDF_RT_stylesheet}"""
-os_command = os_command.replace('\n', '')
-os.system(os_command)
+# # run stylesheet to output rdf/xml
+# RDF_RT_stylesheet = "xsl/001_01_storage_to_rdfxml.xsl"
+# os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
+# net.sf.saxon.Transform -t 
+# -s:{RDF_RT_stylesheet} 
+# -xsl:{RDF_RT_stylesheet}"""
+# os_command = os_command.replace('\n', '')
+# os.system(os_command)
 
-print(dedent(f"""{'=' * 20}
-OUTPUT RDF/XML RESOURCE TEMPLATES
-{'=' * 20}"""))
+# print(dedent(f"""{'=' * 20}
+# OUTPUT RDF/XML RESOURCE TEMPLATES
+# {'=' * 20}"""))
 
-""" FIX REPEATING PROPERTY IRIS """
+# FIX REPEATING PROPERTY IRIS AND LABELS
 
+# function returns list of resource templates 
 def locate_RTs():
     sinopia_maps_repo = os.listdir()
     RT_list = []
     for file in sinopia_maps_repo:
-        if file[0:10] == "UWSINOPIA_" and file[-4:] == ".rdf":
+        if file == "UWSINOPIA_WAU_rdaWork_test_ries07.rdf":
             RT_list.append(file)
     return RT_list
 
-def property_template_test(rdf_RDF, rdf_Description, prop_URI, locked_in_propURI_list):
+# function determines if there are multiple instances of a property within a property template 
+# variables: rdf_root - root of lxml etree, rdf_description - property template
+def property_template_test(rdf_root, rdf_description, prop_URI, used_propUri_list, pt_used_propUri_list):
 	comment_it_out = True
-	current_node_ID = rdf_Description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']
-	theoretical_prop_node_ID = prop_URI.strip('http://')
-	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('.', '')
-	# no need to process object and datatype props any longer
-	# theoretical_prop_node_ID = theoretical_prop_node_ID.replace('object', '')
-	# theoretical_prop_node_ID = theoretical_prop_node_ID.replace('datatype', '')
-	theoretical_prop_node_ID = theoretical_prop_node_ID.replace('/', '') + "_define"
+	delete = False
+	action = [True, False]
+	
+	current_node_id = rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']
+	theoretical_prop_node_id = prop_URI.strip('http://')
+	theoretical_prop_node_id = theoretical_prop_node_id.replace('.', '')
+	theoretical_prop_node_id = theoretical_prop_node_id.replace('/', '') + "_define"
 
-	if current_node_ID == theoretical_prop_node_ID:
-		"""This is THE property template for this property; keep it in"""
+	if current_node_id == theoretical_prop_node_id:
+		# This is THE property template for this property; keep it in
+		# This means that the prop_URI is the URI for the property it is a child of 
 		comment_it_out = False
 	else:
-		"""See if there is a different property template for this property"""
-		look_for_PT_list = rdf_RDF.findall('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Description[@{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID="' + theoretical_prop_node_ID + '"]')
+		if prop_URI in pt_used_propUri_list:
+			#This means this prop_URI has already been handled once in this property template - either kept or commented out 
+			delete = True
+		# See if there is a different property template for this property
+		look_for_PT_list = rdf_root.findall('{http://www.w3.org/1999/02/22-rdf-syntax-ns#}Description[@{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID="' + theoretical_prop_node_id + '"]')
 		if len(look_for_PT_list) == 0:
-			"""There is no property template for this property, so it can remain as a subproperty where it is"""
+			# There is no property template for this property, so it can remain as a subproperty where it is
 			comment_it_out = False
-
-	"""Make sure this URI isn't a repeat from a previous PT"""
-	if comment_it_out == False and prop_URI in locked_in_propURI_list:
+	# Make sure this URI isn't a repeat from within the PT or from a previous PT 
+	if comment_it_out == False and prop_URI in used_propUri_list:
 		comment_it_out = True
+	
+	action = [comment_it_out, delete]
+	return action 
 
-	return comment_it_out
-
+# fix multiprops works for repeating property URIs both within a property template
+# and in the resource template as a whole. 
+# this is because used_propUri_list eventually contains every prop URI and will remove any that are repeats
 def fix_multi_props(file):
-	locked_in_propURI_list = []
+	# list of propUri's that already appear in RT
+	used_propUri_list = []
 	tree = ET.parse(file)
-	rdf_RDF = tree.getroot()
+	rdf_root = tree.getroot()
 
-	for rdf_Description in rdf_RDF:
+	for rdf_description in rdf_root:
 		# Determine if rdf:Description contains multiple instances of sinopia:hasPropertyUri
-		sinopia_hasPropertyUri_list = rdf_Description.findall('{http://sinopia.io/vocabulary/}hasPropertyUri')
-		if len(sinopia_hasPropertyUri_list) > 1:
-			# Get index number for each subelement of rdf:Description
-			rdf_Description_dict = {}
+		hasPropertyUri_list = rdf_description.findall('{http://sinopia.io/vocabulary/}hasPropertyUri')
+		# list of propUri's that already appear in property 
+		pt_used_propUri_list = [] 
+
+		if len(hasPropertyUri_list) > 1:
+			# index each subelement of rdf:Description and store in dictionary 
+			rdf_description_dict = {}
 			index_num = 0
-			for subelement in rdf_Description:
-				rdf_Description_dict[index_num] = (subelement.tag, subelement.attrib)
+			for subelement in rdf_description:
+				rdf_description_dict[index_num] = (subelement.tag, subelement.attrib)
 				index_num += 1
 
-			for subelement in rdf_Description:
+			# determine if property is a repeat 
+			for subelement in rdf_description:
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
-					comment_it_out = property_template_test(rdf_RDF, rdf_Description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], locked_in_propURI_list)
-					if comment_it_out == True:
-						for index_num in rdf_Description_dict:
-							tpl = rdf_Description_dict[index_num]
-							if tpl[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
-								if tpl[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']:
+					#determine if propUri should be kept, commented out, or deleted 
+					action = property_template_test(rdf_root, rdf_description, subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'], used_propUri_list, pt_used_propUri_list)
+					
+					if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in pt_used_propUri_list:	
+							pt_used_propUri_list.append(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
+					
+					if action[1] == True:
+						# check that it is the correct uri to delete
+						for index_num in rdf_description_dict:
+							test = rdf_description_dict[index_num]
+							if (test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri') and (test[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']):
 									comment_index = index_num
-						rdf_Description.remove(subelement)\
-						# would like to add newline following commented prop IRI
-						rdf_Description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
+						# delete uri
+						rdf_description.remove(subelement)
+						print(f"Deleted repeating property URI {subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']} in {rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']}")
+					
+					if action[0] == True and action[1] == False:
+						# check that it is the correct uri to commment out 
+						for index_num in rdf_description_dict:
+							test = rdf_description_dict[index_num]
+							if test[0] == '{http://sinopia.io/vocabulary/}hasPropertyUri':
+								if test[1]['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] == subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']:
+									comment_index = index_num
+						# comment out property 
+						rdf_description.remove(subelement)
+						rdf_description.insert(comment_index, ET.Comment(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']))
+						# add new line under comment 
+						ET.indent(rdf_root)
+						print(f"Commented out repeating property URI {subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']} in {rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}nodeID']}")
+					
 					else:
-						if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:
-							locked_in_propURI_list.append(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
+						# if not a repeat, add to used_propUri_list for reference 
+						if subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in used_propUri_list:
+							used_propUri_list.append(subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
+		
+		# only one hasPropertyUri in rdf_Description means this is THE uri for the property 
+		elif len(hasPropertyUri_list) == 1:
+			for hasPropertyUri in hasPropertyUri_list:
+				if hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in used_propUri_list:
+					used_propUri_list.append(hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
 
-		elif len(sinopia_hasPropertyUri_list) == 1:
-			for hasPropertyUri in sinopia_hasPropertyUri_list:
-				if hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in locked_in_propURI_list:
-					locked_in_propURI_list.append(hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
+	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
+	
+# function to comment out duplicate triples 
+def fix_duplicate_triples(file):
+	locked_in_label_list = []
+	tree = ET.parse(file)
+	rdf_root = tree.getroot()
+
+	for rdf_description in rdf_root: 
+		to_remove = False
+		#get label from property template 
+		sinopia_hasLabel_list = rdf_description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
+		#if label is the only child of pt and label is already in list,
+		# then this is a duplicate - remove property template 
+		if len(sinopia_hasLabel_list) == 1:
+			for label in rdf_description:
+				if label.text not in locked_in_label_list:
+					locked_in_label_list.append(label.text)
+				else:
+					if len(rdf_description.getchildren()) == 1:
+						to_remove = True
+			if to_remove == True:
+				rdf_root.remove(rdf_description)
+				print(f'Duplicate of {label.text} removed')
 
 	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
 	
 RT_list = locate_RTs()
 for RT in RT_list:
     fix_multi_props(f'{RT}')
+    fix_duplicate_triples(f'{RT}')
 
 print(dedent(f"""{'=' * 20}
-COMMENTED OUT REPEATING PROPERTY IRIS IN RESOURCE TEMPLATES
+COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
 {'=' * 20}"""))
 
-""" OUTPUT HTML RESOURCE TEMPLATES """
+# OUTPUT HTML RESOURCE TEMPLATES 
 
+# run stylesheet to output HTML
 HTML_RT_stylesheet = "xsl/004_01_storage_to_html.xsl"
 os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
 net.sf.saxon.Transform -t 
@@ -167,54 +243,62 @@ print(dedent(f"""{'=' * 20}
 OUTPUT HTML RESOURCE TEMPLATES
 {'=' * 20}"""))
 
-""" SERIALIZE JSON, (ADD SINOPIA ADMIN METADATA, LOAD TO A SINOPIA PLATFORM) """
+# # SERIALIZE JSON, (ADD SINOPIA ADMIN METADATA, LOAD TO A SINOPIA PLATFORM) 
 
 # prepped_RTs = {}
 
 # for RT in RT_list:
-#     # print(RT)
 #     g = rdflib.Graph()
 #     g.parse(RT, format = 'xml')
-#     # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
-#     g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld') 
     
 #     # edit RT IRI for loading
 #     for s, p, o in g:
 #         if isinstance(s, rdflib.term.URIRef) == True:
+# 			# update iri to match sinopia platform selected by user
 #             if s[0:19] == "https://api.sinopia":
 #                 RT_id = s.split('/')[-1]
-#                 new_IRI = f"https://api.{sinopia_platform}sinopia.io/resource/{RT_id}" # pass this to format_json as iri
+#                 # pass this to format_json as iri
+#                 new_IRI = f"https://api.{sinopia_platform}sinopia.io/resource/{RT_id}" 
 #                 g.remove((s, p, o))
 #                 g.add((rdflib.URIRef(new_IRI), p, o))
+                
+#     # write 'plain' (no sinopia admin metadata) RTs to top-level as json-ld
+#     g.serialize(f"{RT.split('.')[0] + '.jsonld'}", format = 'json-ld')
+     
+#     # prepped RTs dictionary contains resource templates as values with the RTs' IRIs as keys 
 #     prepped_RTs[new_IRI] = RT
 
-# def format_json(user, iri, json_file):
-#     with open(f"{json_file.split('.')[0] + '.jsonld'}", 'r') as RT:
-#         original_data = json.load(RT)
+# # function to correctly format json for upload to sinopia and return as string 
+# def format_json(user, IRI, json_file):
+#     with open(f"{json_file.split('.')[0] + '.jsonld'}", 'r') as RT_file:
+#         original_data = json.load(RT_file)
 #         currentTime = datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'
-#         RT_id = iri.split('/')[-1]
-#         return json.dumps({"data": original_data, "user": user, "group": "washington", "editGroups": [], "templateId": "sinopia:template:resource", "types": [ "http://sinopia.io/vocabulary/ResourceTemplate" ], "bfAdminMetadataRefs": [], "sinopiaLocalAdminMetadataForRefs": [], "bfItemRefs": [], "bfInstanceRefs": [], "bfWorkRefs": [], "id": RT_id, "uri": iri, "timestamp": currentTime})
+#         RT_id = IRI.split('/')[-1]
+#         return json.dumps({"data": original_data, "user": user, "group": "washington", "editGroups": [], "templateId": "sinopia:template:resource", "types": [ "http://sinopia.io/vocabulary/ResourceTemplate" ], "bfAdminMetadataRefs": [], "sinopiaLocalAdminMetadataForRefs": [], "bfItemRefs": [], "bfInstanceRefs": [], "bfWorkRefs": [], "id": RT_id, "uri": IRI, "timestamp": currentTime})
 
-# for RT in prepped_RTs:
-#     # 'wrap' RT with Sinopia admin metadata
-#     prepped_RTs[RT] = format_json(user, RT, prepped_RTs[RT])
-#     # loading
-#     headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
-#     post_to_sinopia = requests.post(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
-#     status_code = post_to_sinopia.status_code
-#     if status_code == 409:
+# for RT_IRI in prepped_RTs:
+#     # for each resource template 'wrap' RT content with Sinopia admin metadata and return to prepped_RTs as value in dict
+# 	prepped_RTs[RT_IRI] = format_json(user, RT_IRI, prepped_RTs[RT_IRI])
+#     #data for upload is this formatted json 
+# 	data = prepped_RTs[RT_IRI]
+    
+#     # post to sinopia environment and get status code
+# 	headers = {"Authorization": f"Bearer {jwt}", "Content-Type": "application/json"}
+# 	post_to_sinopia = requests.post(RT_IRI, data = data.encode('utf-8'), headers=headers)
+# 	status_code = post_to_sinopia.status_code
+# 	if status_code == 409:
 #         # conflict; something already exists at this URI, so put (i.e. overwrite) instead of post
-#         overwrite_in_sinopia = requests.put(RT, data = prepped_RTs[RT].encode('utf-8'), headers=headers)
-#         print(f"{RT}: {overwrite_in_sinopia.status_code}")
-#     else:
-#         print(f"{RT}: {status_code}")
+# 		overwrite_in_sinopia = requests.put(RT_IRI, data = data.encode('utf-8'), headers=headers)
+# 		print(f"{RT_IRI}: {overwrite_in_sinopia.status_code}")
+# 	else:
+# 		print(f"{RT_IRI}: {status_code}")
 
-# https://www.rfc-editor.org/rfc/rfc9110.html#name-overview-of-status-codes
-# 2xx SUCCESSFUL
-	# 200 = OK, request has succeeded
-	# 201 = Created, request has been fulfilled and has resulted in one or more new resources being created
-	# 204 = No Content success (deleted)
-# 4xx CLIENT ERROR
-	# 400 = Bad Request
-	# 401 = Unauthorized
-	# 404 = Not Found
+# # https://www.rfc-editor.org/rfc/rfc9110.html#name-overview-of-status-codes
+# # 2xx SUCCESSFUL
+# 	# 200 = OK, request has succeeded
+# 	# 201 = Created, request has been fulfilled and has resulted in one or more new resources being created
+# 	# 204 = No Content success (deleted)
+# # 4xx CLIENT ERROR
+# 	# 400 = Bad Request
+# 	# 401 = Unauthorized
+# 	# 404 = Not Found
