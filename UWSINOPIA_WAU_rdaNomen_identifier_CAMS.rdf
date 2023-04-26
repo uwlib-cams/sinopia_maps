@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaNomen:accessPoint:CAMS">
+   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaNomen:identifier:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaNomen:accessPoint:CAMS</sinopia:hasResourceId>
+      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaNomen:identifier:CAMS</sinopia:hasResourceId>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10012"/>
-      <rdfs:label>UWSINOPIA WAU rdaNomen accessPoint CAMS</rdfs:label>
+      <rdfs:label>UWSINOPIA WAU rdaNomen identifier CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
       <sinopia:hasDate>2023-04-25</sinopia:hasDate>
@@ -13,7 +13,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80068_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80079_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -24,42 +24,34 @@
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80079_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80079_define"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80049_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80049_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80078_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80079_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80049_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is authorized/variant access point for work/expression of</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80079"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80173"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80080"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80095"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80096"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-bc9a81fc-1f14-30d2-87b0-4ef2a2052acd"/>
+      <rdfs:label xml:lang="en">is identifier for work/expression of</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80049"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80172"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80046"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-a0732819-a43a-3a57-a999-359d8f4b8438"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80079_lookup_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80049_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80079_lookup_attributes">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80049_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80079">
-      <rdfs:label xml:lang="en">is authorized access point for work of</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80049">
+      <rdfs:label xml:lang="en">is identifier for work of</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80173">
-      <rdfs:label xml:lang="en">is authorized access point for work group of</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80172">
+      <rdfs:label xml:lang="en">is identifier for work group of</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80080">
-      <rdfs:label xml:lang="en">is variant access point for work of</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80095">
-      <rdfs:label xml:lang="en">is authorized access point for expression of</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80096">
-      <rdfs:label xml:lang="en">is variant access point for expression of</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80046">
+      <rdfs:label xml:lang="en">is identifier for expression of</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80078_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80078_define"/>
@@ -70,18 +62,17 @@
       <rdfs:label xml:lang="en">has category of nomen</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80078"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-dc32c4f9-c977-3aaf-b330-3cf873dbbfbb"/>
-      <sinopia:hasRemark xml:lang="en">Prefer one of the following terms: "access point"(rdaterm:1001), "authorized access point"(rdaterm:1012), "variant access point"(rdaterm:1102)</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80078_lookup_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80078_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:terms"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80069_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80066_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80070_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -89,31 +80,6 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80069"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-da6ba21b-69b7-3848-b438-fb0dbb9c859a"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsnP80069_uri_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_uri_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/authorities/names"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://id.loc.gov/authorities/names">
-      <rdfs:label xml:lang="en">Library of Congress Names</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80066_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80066_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsnP80070_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80066_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has language of nomen</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80066"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-f3320f54-ee67-3a9a-ae08-df452ff49dce"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80066_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80066_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="https://id.loc.gov/vocabulary/languages"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80070_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80070_define"/>
@@ -146,7 +112,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80168_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:status_of_identification"/>
+      <sinopia:hasAuthority rdf:resource="https://id.loc.gov/vocabulary/mstatus"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80071_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80071_define"/>

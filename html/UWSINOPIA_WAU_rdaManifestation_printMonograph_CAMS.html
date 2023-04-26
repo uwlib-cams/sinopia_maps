@@ -13,6 +13,7 @@
             <li><a href="UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html">UW Sinopia WAU RT RDA Work Print Monograph</a></li>
             <li><a href="UWSINOPIA_WAU_rdaExpression_printMonograph_CAMS.html">UW Sinopia WAU RT RDA Expression Print Monograph</a></li>
             <li><b>UW Sinopia WAU RT RDA Manifestation Print Monograph</b></li>
+            <li><a href="UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html">UW Sinopia WAU RT RDA Item Print Monograph</a></li>
          </ul>
       </section>
       <table class="rtInfo" id="WAURTrdaManifestation">
@@ -40,7 +41,7 @@
             </tr>
             <tr>
                <th scope="row">Last Updated</th>
-               <td>2023-04-14</td>
+               <td>2023-04-25</td>
             </tr>
             <tr class="backlink">
                <th scope="row" colspan="2"><a href="https://uwlib-cams.github.io/sinopia_maps/">RETURN TO SINOPIA_MAPS INDEX</a></th>
@@ -50,7 +51,7 @@
       <section class="ptList">
          <h3 id="WAURTrdaManifestationptList"><span>Property Templates in WAU RT RDA Manifestation for Print Monograph</span></h3>
          <ul id="BT">
-            <li><a href="#hasexpressionorworkmanifested">has expression or work manifested</a>&nbsp;<span class="caret"></span><ul class="nested">
+            <li><a href="#hasexpression/workmanifested">has expression/work manifested</a>&nbsp;<span class="caret"></span><ul class="nested">
                   <li>has work manifested</li>
                </ul>
             </li>
@@ -604,8 +605,8 @@
             <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
             <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
          </ul>
-         <section class="ptInfo" id="hasexpressionorworkmanifested">
-            <h4><span>Property Template: has expression or work manifested(*)</span></h4>
+         <section class="ptInfo" id="hasexpression/workmanifested">
+            <h4><span>Property Template: has expression/work manifested(*)</span></h4>
             <ul>
                <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30139">http://rdaregistry.info/Elements/m/P30139</a></li>
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-7917b114-5614-3571-94a6-2284a4339575">https://access.rdatoolkit.org/en-US_ala-7917b114-5614-3571-94a6-2284a4339575</a></li>
@@ -699,7 +700,18 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-95f6a60f-3d2b-32d8-9486-cf810708d4ba">https://access.rdatoolkit.org/en-US_ala-95f6a60f-3d2b-32d8-9486-cf810708d4ba</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: literal</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA nomen</strong> : urn:ld4p:sinopia:rda:nomen</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
@@ -1077,7 +1089,7 @@
          </section>
          <section class="ptInfo" id="hasnumberingofsequence">
             <h4><span>Property Template: has numbering of sequence</span></h4>
-            <p><span class="ptInfoRemark">Use when describing a multipart monograph as a whole</span></p>
+            <p><span class="ptInfoRemark">For describing a multipart monograph as a whole</span></p>
             <ul>
                <li>Property IRI: <a href="http://rdaregistry.info/Elements/m/P30165">http://rdaregistry.info/Elements/m/P30165</a></li>
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-60c04672-d204-3662-9256-eee264aea813">https://access.rdatoolkit.org/en-US_ala-60c04672-d204-3662-9256-eee264aea813</a></li>
@@ -1324,7 +1336,22 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-8bf95674-3203-3ba8-a55d-50a44343cb2d">https://access.rdatoolkit.org/en-US_ala-8bf95674-3203-3ba8-a55d-50a44343cb2d</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: URI</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC all subjects (QA)</strong> : urn:ld4p:qa:subjects</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">LOC all genres (QA)</strong> : urn:ld4p:qa:genres</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">GETTY_AAT all terms (QA)</strong> : urn:ld4p:qa:gettyaat</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">OCLCFAST Form (QA) - direct</strong> : urn:ld4p:qa:oclc_fast:form</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Wikidata (QA)</strong> : urn:wikidata</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
@@ -1481,7 +1508,7 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-83c70834-07c2-38f5-823d-579c4d77008d">https://access.rdatoolkit.org/en-US_ala-83c70834-07c2-38f5-823d-579c4d77008d</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: URI</li>
+               <li>Property type: literal</li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
@@ -1494,7 +1521,7 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-2e047c4a-393b-35d0-bf77-4ddf00900f31">https://access.rdatoolkit.org/en-US_ala-2e047c4a-393b-35d0-bf77-4ddf00900f31</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: URI</li>
+               <li>Property type: literal</li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
@@ -2375,7 +2402,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME item resources</strong> : urn:ld4p:sinopia:bibframe:item</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA item</strong> : urn:ld4p:sinopia:rda:item</li>
                         </ul>
                      </li>
                   </ul>
@@ -2399,7 +2426,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME item resources</strong> : urn:ld4p:sinopia:bibframe:item</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA item</strong> : urn:ld4p:sinopia:rda:item</li>
                         </ul>
                      </li>
                   </ul>
@@ -2431,7 +2458,7 @@
                      <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
                         
                         <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia BIBFRAME item resources</strong> : urn:ld4p:sinopia:bibframe:item</li>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA item</strong> : urn:ld4p:sinopia:rda:item</li>
                         </ul>
                      </li>
                   </ul>
@@ -2448,7 +2475,18 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-ba4995ba-0392-39f6-bf17-88026f8dd10e">https://access.rdatoolkit.org/en-US_ala-ba4995ba-0392-39f6-bf17-88026f8dd10e</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: URI</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA nomen</strong> : urn:ld4p:sinopia:rda:nomen</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
@@ -2461,7 +2499,18 @@
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-528d5139-cad0-3e98-8215-cecd341ca2f0">https://access.rdatoolkit.org/en-US_ala-528d5139-cad0-3e98-8215-cecd341ca2f0</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: URI</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s):
+                  
+                  <ul>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup Service</a>:
+                        
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA nomen</strong> : urn:ld4p:sinopia:rda:nomen</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </li>
                <li><span class="backlink"><a href="#WAURTrdaManifestationptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>

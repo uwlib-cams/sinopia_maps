@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:printMonograph:CAMS">
+   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:aggregating_printMonograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:printMonograph:CAMS</sinopia:hasResourceId>
+      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:aggregating_printMonograph:CAMS</sinopia:hasResourceId>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
-      <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
+      <rdfs:label>UWSINOPIA WAU rdaWork aggregating_printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasRemark xml:lang="en">For describing single works</sinopia:hasRemark>
+      <sinopia:hasRemark xml:lang="en">For describing aggregating works</sinopia:hasRemark>
       <sinopia:hasDate>2023-04-25</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
    </rdf:Description>
@@ -51,7 +51,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10086_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10086_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10401_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10086_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -61,26 +61,26 @@
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10331_define"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10401_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10332_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has authorized access point for work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10331"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-086aad00-3bd2-3cc1-8dd0-52a5353b227b"/>
+      <rdfs:label xml:lang="en">has authorized access point for work group</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10401"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-02cb1078-a733-3a1a-b20b-8be2ff0dc834"/>
       <sinopia:hasRemark xml:lang="en">Do not record an IRI for an authority record</sinopia:hasRemark>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10331_lookup_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_lookup_attributes">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10332_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10332_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10401_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10331_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10332_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -96,26 +96,43 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10401_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10002_order"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10331_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10400_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has authorized access point for work group</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10401"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-02cb1078-a733-3a1a-b20b-8be2ff0dc834"/>
+      <rdfs:label xml:lang="en">has authorized access point for work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10331"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-086aad00-3bd2-3cc1-8dd0-52a5353b227b"/>
       <sinopia:hasRemark xml:lang="en">Do not record an IRI for an authority record</sinopia:hasRemark>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10331_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10331_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10400_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10002_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has identifier for work group</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10400"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-5d7d0e35-b230-3fab-bd2c-8f34880ecfdc"/>
+      <sinopia:hasRemark xml:lang="en">Do not record an IRI for the work being described</sinopia:hasRemark>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10002_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10400_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -128,23 +145,6 @@
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10002_lookup_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10400_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has identifier for work group</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10400"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-5d7d0e35-b230-3fab-bd2c-8f34880ecfdc"/>
-      <sinopia:hasRemark xml:lang="en">Do not record an IRI for the work being described</sinopia:hasRemark>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
@@ -179,15 +179,12 @@
       <rdfs:label xml:lang="en">has extension plan</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10365"/>
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-8ba8340e-1266-322c-ac0b-24f2ec260084"/>
+      <sinopia:hasRemark xml:lang="en">For single unit monographs and multipart monographs issued simultaneously, record value "static plan"(rdaep:1001). For multipart monographs issued over time, record value "successive determinate plan"(rdaep:1004).</sinopia:hasRemark>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://rdaregistry.info/termList/RDAExtensionPlan/1001"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/termList/RDAExtensionPlan/1001">
-      <rdfs:label xml:lang="en">static plan</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10219_define"/>
@@ -411,7 +408,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10358_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10358_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10058_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10393_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10358_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -426,39 +423,24 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:sound_content"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10058_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10058_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10061_order"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10393_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10055_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10058_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has artist agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10058"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10498"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10545"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10522"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10520"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10521"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10592"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10569"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10567"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10568"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10475"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10473"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10474"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10451"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10428"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10426"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10427"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10254"/>
-      <!--http://rdaregistry.info/Elements/w/P10522--><!--http://rdaregistry.info/Elements/w/P10569--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10253"/>
-      <!--http://rdaregistry.info/Elements/w/P10475--><!--http://rdaregistry.info/Elements/w/P10522--><!--http://rdaregistry.info/Elements/w/P10569--><!--http://rdaregistry.info/Elements/w/P10520--><!--http://rdaregistry.info/Elements/w/P10428--><!--http://rdaregistry.info/Elements/w/P10567--><!--http://rdaregistry.info/Elements/w/P10473--><!--http://rdaregistry.info/Elements/w/P10520--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10202"/>
-      <!--http://rdaregistry.info/Elements/w/P10567--><!--http://rdaregistry.info/Elements/w/P10426--><!--http://rdaregistry.info/Elements/w/P10521--><!--http://rdaregistry.info/Elements/w/P10474--><!--http://rdaregistry.info/Elements/w/P10521--><!--http://rdaregistry.info/Elements/w/P10568--><!--http://rdaregistry.info/Elements/w/P10568--><!--http://rdaregistry.info/Elements/w/P10427--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-010f851d-1317-3f87-83aa-7430e4662d08"/>
+      <rdfs:label xml:lang="en">has aggregator agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10393"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10495"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10542"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10589"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10448"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-445ef14c-4f26-3a34-9d46-ed2ec5f350e8"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10058_lookup_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10393_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10058_lookup_attributes">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10393_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
@@ -467,618 +449,39 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10058">
-      <rdfs:label xml:lang="en">has artist agent</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10393">
+      <rdfs:label xml:lang="en">has aggregator agent</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10498">
-      <rdfs:label xml:lang="en">has artist collective agent</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10495">
+      <rdfs:label xml:lang="en">has aggregator collective agent</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10545">
-      <rdfs:label xml:lang="en">has artist corporate body</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10542">
+      <rdfs:label xml:lang="en">has aggregator corporate body</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10522">
-      <rdfs:label xml:lang="en">has book artist corporate body</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10589">
+      <rdfs:label xml:lang="en">has aggregator family</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10520">
-      <rdfs:label xml:lang="en">has calligrapher corporate body</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10448">
+      <rdfs:label xml:lang="en">has aggregator person</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10521">
-      <rdfs:label xml:lang="en">has sculptor corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10592">
-      <rdfs:label xml:lang="en">has artist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10569">
-      <rdfs:label xml:lang="en">has book artist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10567">
-      <rdfs:label xml:lang="en">has calligrapher family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10568">
-      <rdfs:label xml:lang="en">has sculptor family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10475">
-      <rdfs:label xml:lang="en">has book artist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10522">
-      <rdfs:label xml:lang="en">has book artist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10569">
-      <rdfs:label xml:lang="en">has book artist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10473">
-      <rdfs:label xml:lang="en">has calligrapher collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10520">
-      <rdfs:label xml:lang="en">has calligrapher corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10567">
-      <rdfs:label xml:lang="en">has calligrapher family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10474">
-      <rdfs:label xml:lang="en">has sculptor collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10521">
-      <rdfs:label xml:lang="en">has sculptor corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10568">
-      <rdfs:label xml:lang="en">has sculptor family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10451">
-      <rdfs:label xml:lang="en">has artist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10428">
-      <rdfs:label xml:lang="en">has book artist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10426">
-      <rdfs:label xml:lang="en">has calligrapher person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10427">
-      <rdfs:label xml:lang="en">has sculptor person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10254">
-      <rdfs:label xml:lang="en">has book artist agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10475">
-      <rdfs:label xml:lang="en">has book artist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10522">
-      <rdfs:label xml:lang="en">has book artist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10569">
-      <rdfs:label xml:lang="en">has book artist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10428">
-      <rdfs:label xml:lang="en">has book artist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10253">
-      <rdfs:label xml:lang="en">has calligrapher agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10473">
-      <rdfs:label xml:lang="en">has calligrapher collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10520">
-      <rdfs:label xml:lang="en">has calligrapher corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10567">
-      <rdfs:label xml:lang="en">has calligrapher family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10426">
-      <rdfs:label xml:lang="en">has calligrapher person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10202">
-      <rdfs:label xml:lang="en">has sculptor agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10474">
-      <rdfs:label xml:lang="en">has sculptor collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10521">
-      <rdfs:label xml:lang="en">has sculptor corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10568">
-      <rdfs:label xml:lang="en">has sculptor family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10427">
-      <rdfs:label xml:lang="en">has sculptor person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10061_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10052_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has author agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10061"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10483"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10530"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10525"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10524"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10526"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10523"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10577"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10572"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10571"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10573"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10570"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10478"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10477"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10479"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10476"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10436"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10431"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10430"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10432"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10429"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10205"/>
-      <!--http://rdaregistry.info/Elements/w/P10525--><!--http://rdaregistry.info/Elements/w/P10572--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10204"/>
-      <!--http://rdaregistry.info/Elements/w/P10478--><!--http://rdaregistry.info/Elements/w/P10524--><!--http://rdaregistry.info/Elements/w/P10525--><!--http://rdaregistry.info/Elements/w/P10572--><!--http://rdaregistry.info/Elements/w/P10571--><!--http://rdaregistry.info/Elements/w/P10431--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10255"/>
-      <!--http://rdaregistry.info/Elements/w/P10477--><!--http://rdaregistry.info/Elements/w/P10524--><!--http://rdaregistry.info/Elements/w/P10571--><!--http://rdaregistry.info/Elements/w/P10526--><!--http://rdaregistry.info/Elements/w/P10430--><!--http://rdaregistry.info/Elements/w/P10573--><!--http://rdaregistry.info/Elements/w/P10479--><!--http://rdaregistry.info/Elements/w/P10526--><sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10203"/>
-      <!--http://rdaregistry.info/Elements/w/P10573--><!--http://rdaregistry.info/Elements/w/P10432--><!--http://rdaregistry.info/Elements/w/P10523--><!--http://rdaregistry.info/Elements/w/P10476--><!--http://rdaregistry.info/Elements/w/P10523--><!--http://rdaregistry.info/Elements/w/P10570--><!--http://rdaregistry.info/Elements/w/P10570--><!--http://rdaregistry.info/Elements/w/P10429--><sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-038aa9a0-8606-3cb6-b2c8-6cd22fdcee45"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10061_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10061">
-      <rdfs:label xml:lang="en">has author agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10483">
-      <rdfs:label xml:lang="en">has author collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10530">
-      <rdfs:label xml:lang="en">has author corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
-      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
-      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
-      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
-      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10577">
-      <rdfs:label xml:lang="en">has author family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
-      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
-      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
-      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
-      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10478">
-      <rdfs:label xml:lang="en">has librettist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
-      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
-      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10477">
-      <rdfs:label xml:lang="en">has lyricist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
-      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
-      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10479">
-      <rdfs:label xml:lang="en">has rapporteur collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
-      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
-      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10476">
-      <rdfs:label xml:lang="en">has screenwriter collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
-      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
-      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10436">
-      <rdfs:label xml:lang="en">has author person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10431">
-      <rdfs:label xml:lang="en">has librettist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10430">
-      <rdfs:label xml:lang="en">has lyricist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10432">
-      <rdfs:label xml:lang="en">has rapporteur person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10429">
-      <rdfs:label xml:lang="en">has screenwriter person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10205">
-      <rdfs:label xml:lang="en">has librettist agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10478">
-      <rdfs:label xml:lang="en">has librettist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10525">
-      <rdfs:label xml:lang="en">has librettist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10572">
-      <rdfs:label xml:lang="en">has librettist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10431">
-      <rdfs:label xml:lang="en">has librettist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10204">
-      <rdfs:label xml:lang="en">has lyricist agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10477">
-      <rdfs:label xml:lang="en">has lyricist collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10524">
-      <rdfs:label xml:lang="en">has lyricist corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10571">
-      <rdfs:label xml:lang="en">has lyricist family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10430">
-      <rdfs:label xml:lang="en">has lyricist person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10255">
-      <rdfs:label xml:lang="en">has rapporteur agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10479">
-      <rdfs:label xml:lang="en">has rapporteur collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10526">
-      <rdfs:label xml:lang="en">has rapporteur corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10573">
-      <rdfs:label xml:lang="en">has rapporteur family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10432">
-      <rdfs:label xml:lang="en">has rapporteur person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10203">
-      <rdfs:label xml:lang="en">has screenwriter agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10476">
-      <rdfs:label xml:lang="en">has screenwriter collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10523">
-      <rdfs:label xml:lang="en">has screenwriter corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
-      <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10429">
-      <rdfs:label xml:lang="en">has screenwriter person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10052_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10052_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10071_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10052_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has cartographer agent of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10052"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10482"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10529"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10576"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10435"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-ae8716f5-e5bd-309f-9215-2d572fc35e79"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10052_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10052_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10052">
-      <rdfs:label xml:lang="en">has cartographer agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10482">
-      <rdfs:label xml:lang="en">has cartographer collective agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10529">
-      <rdfs:label xml:lang="en">has cartographer corporate body of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10576">
-      <rdfs:label xml:lang="en">has cartographer family of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10435">
-      <rdfs:label xml:lang="en">has cartographer person of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10071_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10071_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10048_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10071_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has consultant agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10071"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10505"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10552"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10599"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10458"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-7f8c6a91-698a-390d-8418-d376cf4ef77d"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10071_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10071_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10071">
-      <rdfs:label xml:lang="en">has consultant agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10505">
-      <rdfs:label xml:lang="en">has consultant collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10552">
-      <rdfs:label xml:lang="en">has consultant corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10599">
-      <rdfs:label xml:lang="en">has consultant family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10458">
-      <rdfs:label xml:lang="en">has consultant person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10048_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10048_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10059_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10048_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has dedicator agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10048"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10461"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10508"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10555"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10414"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-db4b5036-ec27-3824-85fb-ede93a7e49cf"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10048_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10048_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10048">
-      <rdfs:label xml:lang="en">has dedicator agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10461">
-      <rdfs:label xml:lang="en">has dedicator collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10508">
-      <rdfs:label xml:lang="en">has dedicator corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10555">
-      <rdfs:label xml:lang="en">has dedicator family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10414">
-      <rdfs:label xml:lang="en">has dedicator person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10059_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10059_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10057_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10059_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has interviewee agent of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10059"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10494"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10541"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10588"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10447"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-120b4917-343d-3727-ac1e-8b94e68a2a6c"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10059_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10059_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10059">
-      <rdfs:label xml:lang="en">has interviewee agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10494">
-      <rdfs:label xml:lang="en">has interviewee collective agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10541">
-      <rdfs:label xml:lang="en">has interviewee corporate body of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10588">
-      <rdfs:label xml:lang="en">has interviewee family of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10447">
-      <rdfs:label xml:lang="en">has interviewee person of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10057_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10057_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10056_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10057_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has interviewer agent of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10057"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10493"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10540"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10587"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10446"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-89e70d96-953c-3850-8df5-ba69e5a3d7d9"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10057_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10057_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10057">
-      <rdfs:label xml:lang="en">has interviewer agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10493">
-      <rdfs:label xml:lang="en">has interviewer collective agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10540">
-      <rdfs:label xml:lang="en">has interviewer corporate body of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10587">
-      <rdfs:label xml:lang="en">has interviewer family of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10446">
-      <rdfs:label xml:lang="en">has interviewer person of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10056_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10056_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10293_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10056_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has photographer agent of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10056"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10492"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10539"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10586"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10445"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-09efa4fc-9b32-3f33-a617-f20e07187dd6"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10056_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10056_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10056">
-      <rdfs:label xml:lang="en">has photographer agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10492">
-      <rdfs:label xml:lang="en">has photographer collective agent of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10539">
-      <rdfs:label xml:lang="en">has photographer corporate body of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10586">
-      <rdfs:label xml:lang="en">has photographer family of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10445">
-      <rdfs:label xml:lang="en">has photographer person of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10293_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10293_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10065_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10293_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has researcher agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10463"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10510"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10557"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10416"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-babe2f7b-70db-3f6a-8e9b-8a8263f3eaa6"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10293_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10293_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10293">
-      <rdfs:label xml:lang="en">has researcher agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10463">
-      <rdfs:label xml:lang="en">has researcher collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10510">
-      <rdfs:label xml:lang="en">has researcher corporate body</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10557">
-      <rdfs:label xml:lang="en">has researcher family</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10416">
-      <rdfs:label xml:lang="en">has researcher person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10065_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10065_define"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10055_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10055_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10070_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10065_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10055_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has creator agent of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10065"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10484"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-6277a869-961d-379f-8ae8-7ec159052a26"/>
+      <rdfs:label xml:lang="en">has compiler agent</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10055"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10491"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10538"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10585"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10444"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-407ee86b-091a-3606-bdc8-844ea5670e9d"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10065_lookup_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10055_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10065_lookup_attributes">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10055_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
@@ -1087,20 +490,20 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10065">
-      <rdfs:label xml:lang="en">has creator agent of work</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10055">
+      <rdfs:label xml:lang="en">has compiler agent</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10484">
-      <rdfs:label xml:lang="en">has creator collective agent of work</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10491">
+      <rdfs:label xml:lang="en">has compiler collective agent</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10531">
-      <rdfs:label xml:lang="en">has creator corporate body of work</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
+      <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10578">
-      <rdfs:label xml:lang="en">has creator family of work</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
+      <rdfs:label xml:lang="en">has compiler family</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10437">
-      <rdfs:label xml:lang="en">has creator person of work</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10444">
+      <rdfs:label xml:lang="en">has compiler person</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10070_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10070_define"/>
@@ -1783,7 +1186,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10290_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10290_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10147_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10122_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10290_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -1795,40 +1198,6 @@
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10290_lookup_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10290_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10147_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10147_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10019_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10147_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has part work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10147"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-6bc578be-fa3d-3499-a37a-f690b085d23e"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10147_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10147_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10019_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10122_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is part of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10019"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3462b350-01b0-33c6-b448-9d1b7d8dc1e9"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10019_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
    </rdf:Description>
@@ -2685,7 +2054,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10198_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10198_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10346_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10628_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10198_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -2699,23 +2068,6 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10198_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10346_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10346_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10628_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10346_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has representative expression</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10346"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-3e17d036-1357-3d95-9fb8-068fa1eec9d3"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10346_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10346_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10628_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10628_define"/>

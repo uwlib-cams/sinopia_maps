@@ -1,0 +1,537 @@
+[
+  {
+    "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaExpression:aggregating_printMonograph:CAMS",
+    "@type": [
+      "http://sinopia.io/vocabulary/ResourceTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthor": [
+      {
+        "@value": "UW CAMS - panzhuo@uw.edu"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasClass": [
+      {
+        "@id": "http://rdaregistry.info/Elements/c/C10006"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasDate": [
+      {
+        "@value": "2023-04-25"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyTemplate": [
+      {
+        "@list": [
+          {
+            "@id": "_:N6b15a909126a4fcf9fec8e524567bd15"
+          },
+          {
+            "@id": "_:N1393573fe70f428ba3746af26202cd0e"
+          },
+          {
+            "@id": "_:N87709889e63646b3b233881ca66767b7"
+          },
+          {
+            "@id": "_:N807f7deec6ce4058907a4f4820a60c74"
+          },
+          {
+            "@id": "_:N30485eca500042ca98d9236cdd220fd6"
+          },
+          {
+            "@id": "_:N88d226dbd96f46e98f3960dbb88b3ce1"
+          },
+          {
+            "@id": "_:N6b4c59476c67429f9c96de055d565e84"
+          },
+          {
+            "@id": "_:Nbbb849b8c7e3418dbeaaecf4fd259235"
+          },
+          {
+            "@id": "_:N823109e6cb7f46d38178c689a8eb6b23"
+          },
+          {
+            "@id": "_:Nd9ef443c5f16428ba62c793b8522801f"
+          }
+        ]
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "en",
+        "@value": "For describing aggregating expressions. Generally, do NOT use this template"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceId": [
+      {
+        "@value": "UWSINOPIA:WAU:rdaExpression:aggregating_printMonograph:CAMS"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceTemplate": [
+      {
+        "@value": "sinopia:template:resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UWSINOPIA WAU rdaExpression aggregating_printMonograph CAMS"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6b15a909126a4fcf9fec8e524567bd15",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:Nd85fa4f96df94f0390ce69c5f42cc601"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/required"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20231"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-7c8e2afe-1d71-3ae5-bb39-33b26d0d723a"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has work expressed"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd85fa4f96df94f0390ce69c5f42cc601",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:work"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1393573fe70f428ba3746af26202cd0e",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:Ne583ed1f684b4540a0b4b2106dbee01c"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/required"
+      },
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20059"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has manifestation of expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne583ed1f684b4540a0b4b2106dbee01c",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:manifestation"
+      }
+    ]
+  },
+  {
+    "@id": "_:N87709889e63646b3b233881ca66767b7",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/required"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20315"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-f0ea4e3a-fbe5-3135-bd95-1b5260f1e69e"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has preferred title of expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:N807f7deec6ce4058907a4f4820a60c74",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20316"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-de257390-c2dd-395e-9c80-262194bd5c58"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has variant title of expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:N30485eca500042ca98d9236cdd220fd6",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:N7c1ecc0e8d7a4aa5a8470da6d53a991d"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20313"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "en",
+        "@value": "Do not record an IRI for an authority record"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-7af61468-85ab-3d86-ad8d-4a1158edb7c7"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has authorized access point for expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:N7c1ecc0e8d7a4aa5a8470da6d53a991d",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:nomen"
+      }
+    ]
+  },
+  {
+    "@id": "_:N88d226dbd96f46e98f3960dbb88b3ce1",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:Nf0345e2320e948308526ecc52b162902"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20314"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "en",
+        "@value": "Do not record an IRI for an authority record"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-a9d30566-a1ef-3878-be3a-082a872ea553"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has variant access point for expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf0345e2320e948308526ecc52b162902",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:nomen"
+      }
+    ]
+  },
+  {
+    "@id": "_:N6b4c59476c67429f9c96de055d565e84",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:N20343acc3d4c4311ae3ac06c433fa18e"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20002"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "en",
+        "@value": "Do not record an IRI for the expression being described"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-fda05153-cd8b-3b9b-b68e-e2c1834b64df"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has identifier for expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:N20343acc3d4c4311ae3ac06c433fa18e",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:nomen"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nbbb849b8c7e3418dbeaaecf4fd259235",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20331"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-e94dd5de-fd5b-3a52-a023-af41c78078db"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasUriAttributes": [
+      {
+        "@id": "_:N68a94384a1644fb6aa32a9c3c8a536e0"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has category of expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:N68a94384a1644fb6aa32a9c3c8a536e0",
+    "@type": [
+      "http://sinopia.io/vocabulary/UriPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@id": "http://rdaregistry.info/termList/RDATerms/1126"
+      }
+    ]
+  },
+  {
+    "@id": "_:N823109e6cb7f46d38178c689a8eb6b23",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20071"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-9bcdee0a-0051-3aff-bb30-fdce5aa37216"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has note on expression"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nd9ef443c5f16428ba62c793b8522801f",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:N3c4e907b3b2c441ab1d6d29eaf1e01dc"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/e/P20319"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemarkUrl": [
+      {
+        "@id": "https://access.rdatoolkit.org/en-US_ala-39f1cb9a-19bc-3189-bbc6-24f2b48871f7"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "aggregates"
+      }
+    ]
+  },
+  {
+    "@id": "_:N3c4e907b3b2c441ab1d6d29eaf1e01dc",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:sinopia:rda:expression"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/termList/RDATerms/1126",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "aggregating expression"
+      }
+    ]
+  }
+]
