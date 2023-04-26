@@ -14,21 +14,6 @@
         </rt>
         <rt output_load="true">
             <institution>WAU</institution>
-            <resource>rdaExpression</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS - panzhuo@uw.edu</author>
-            <rt_remark xml:lang="en">For describing expressions of single works</rt_remark>
-        </rt>
-        <rt output_load="true">
-            <institution>WAU</institution>
-            <resource>rdaManifestation</resource>
-            <format>printMonograph</format>
-            <user>CAMS</user>
-            <author>UW CAMS - panzhuo@uw.edu</author>
-        </rt>
-        <rt output_load="true">
-            <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>aggregating_printMonograph</format>
             <user>CAMS</user>
@@ -38,10 +23,25 @@
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
+            <format>printMonograph</format>
+            <user>CAMS</user>
+            <author>UW CAMS - panzhuo@uw.edu</author>
+            <rt_remark xml:lang="en">For describing expressions of single works</rt_remark>
+        </rt>
+        <rt output_load="true">
+            <institution>WAU</institution>
+            <resource>rdaExpression</resource>
             <format>aggregating_printMonograph</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing aggregating expressions. Generally, do NOT use this template</rt_remark>
+        </rt>
+        <rt output_load="true">
+            <institution>WAU</institution>
+            <resource>rdaManifestation</resource>
+            <format>printMonograph</format>
+            <user>CAMS</user>
+            <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
         <rt output_load="true">
             <institution>WAU</institution>
