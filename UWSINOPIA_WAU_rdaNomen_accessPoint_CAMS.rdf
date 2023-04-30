@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaNomen accessPoint CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-04-25</sinopia:hasDate>
+      <sinopia:hasDate>2023-04-29</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsnP80068_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
@@ -131,6 +131,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80070_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:locvocabs:mscript"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80168_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80168_define"/>
@@ -203,9 +204,6 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80073">
-      <rdfs:label xml:lang="en">is assigned by agent</rdfs:label>
-   </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80074">
       <rdfs:label xml:lang="en">is assigned by collective agent</rdfs:label>
    </rdf:Description>
@@ -234,9 +232,11 @@
       <sinopia:hasRemarkUrl rdf:resource="https://access.rdatoolkit.org/en-US_ala-34aaca3b-f9f5-3dd0-935f-f722e6c65d88"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80009_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80009">
-      <rdfs:label xml:lang="en">has related nomen of nomen</rdfs:label>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80009_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80060">
       <rdfs:label xml:lang="en">has derivation</rdfs:label>
