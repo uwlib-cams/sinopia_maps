@@ -31,11 +31,11 @@
          <xs:element name="p" type="guidance_p_type" minOccurs="0" maxOccurs="unbounded"/>
          <!-- <xs:element name="ul" type="guidance_ul_type" minOccurs="0" maxOccurs="unbounded"/> -->
       </xs:all>
+      <xs:attribute name="rt_id" type="rt_id_type"/>
    </xs:complexType>
    <xs:complexType name="guidance_p_type" mixed="true">
       <xs:all>
-         <xs:element name="bold" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="italic" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
    </xs:complexType>
@@ -600,14 +600,9 @@
    </xs:complexType>
    <xs:simpleType name="rt_id_type">
       <xs:restriction base="xs:string">
-         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaExpression:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaManifestation:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaItem:monograph:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaAgent:nested:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaNomen:nested:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaPlace:nested:CAMS"/>
-         <xs:enumeration value="UWSINOPIA:WAU:rdaTimespan:nested:CAMS"/>
+         <!-- generate from sinopia_maps.xml -->
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:test:ries07"/>
+         <!-- ... -->
       </xs:restriction>
    </xs:simpleType>
 </xs:schema>
