@@ -20,10 +20,34 @@
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>
+         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
             maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
+   <!-- *************** guidance_set *************** -->
+   <xs:complexType name="guidance_set_type">
+      <xs:all>
+         <xs:element name="p" type="guidance_p_type" minOccurs="0" maxOccurs="unbounded"/>
+         <!-- <xs:element name="ul" type="guidance_ul_type" minOccurs="0" maxOccurs="unbounded"/> -->
+      </xs:all>
+   </xs:complexType>
+   <xs:complexType name="guidance_p_type" mixed="true">
+      <xs:all>
+         <xs:element name="bold" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="italic" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:all>
+   </xs:complexType>
+   <xs:element name="a">
+      <xs:complexType>
+         <xs:simpleContent>
+            <xs:extension base="xs:string">
+               <xs:attribute name="href" type="xs:anyURI"/>
+            </xs:extension>
+         </xs:simpleContent>
+      </xs:complexType>
+   </xs:element>
    <!-- *************** implementation_set *************** -->
    <xs:complexType name="implementation_set_type">
       <xs:annotation>
@@ -586,5 +610,4 @@
          <xs:enumeration value="UWSINOPIA:WAU:rdaTimespan:nested:CAMS"/>
       </xs:restriction>
    </xs:simpleType>
-   <!-- *********** [?] guidance elements / subelements for output to HTML [?] *********** -->
 </xs:schema>
