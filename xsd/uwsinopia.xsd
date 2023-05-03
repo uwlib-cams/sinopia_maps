@@ -38,7 +38,6 @@
    <xs:complexType name="guidance_p_type" mixed="true">
       <xs:all>
          <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
    </xs:complexType>
@@ -67,6 +66,7 @@
    </xs:element>
    <xs:complexType name="li" mixed="true">
       <xs:all>
+         <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
