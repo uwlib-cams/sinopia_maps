@@ -20,7 +20,8 @@
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>
-         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="1"
+            maxOccurs="unbounded"/>
          <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
             maxOccurs="unbounded"/>
       </xs:sequence>
@@ -29,13 +30,15 @@
    <xs:complexType name="guidance_set_type">
       <xs:all>
          <xs:element name="p" type="guidance_p_type" minOccurs="0" maxOccurs="unbounded"/>
-         <!-- <xs:element name="ul" type="guidance_ul_type" minOccurs="0" maxOccurs="unbounded"/> -->
+         <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type"/>
    </xs:complexType>
    <xs:complexType name="guidance_p_type" mixed="true">
       <xs:all>
          <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
    </xs:complexType>
@@ -48,6 +51,27 @@
          </xs:simpleContent>
       </xs:complexType>
    </xs:element>
+   <xs:element name="ul">
+      <xs:complexType>
+         <xs:all>
+            <xs:element name="li" type="li" minOccurs="1" maxOccurs="unbounded"/>
+         </xs:all>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ol">
+      <xs:complexType>
+         <xs:choice>
+            <xs:element name="li" type="li" minOccurs="1" maxOccurs="unbounded"/>
+         </xs:choice>
+      </xs:complexType>
+   </xs:element>
+   <xs:complexType name="li" mixed="true">
+      <xs:all>
+         <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:all>
+   </xs:complexType>
    <!-- *************** implementation_set *************** -->
    <xs:complexType name="implementation_set_type">
       <xs:annotation>

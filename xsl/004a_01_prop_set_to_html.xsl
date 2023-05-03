@@ -294,6 +294,21 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+    <xsl:template match="uwsinopia:ul">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="uwsinopia:ol">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="uwsinopia:li">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
     <xsl:template match="uwsinopia:a">
         <a href="{@href}">
             <xsl:value-of select="."/>
