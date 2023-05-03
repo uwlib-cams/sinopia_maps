@@ -234,8 +234,7 @@
                                             [uwsinopia:format = $format]
                                             [uwsinopia:user = $user]]
                                             /uwsinopia:guidance_set[@rt_id = $RT_ID]">
-                                        <xsl:copy-of copy-namespaces="no" validation="strip"
-                                            select="
+                                        <xsl:apply-templates select="
                                                 $sorted_properties/uwmaps:sinopia
                                                 [uwsinopia:implementation_set
                                                 [uwsinopia:institution = $institution]
@@ -246,8 +245,7 @@
                                         />
                                     </xsl:when>
                                     <xsl:otherwise>
-                                        <xsl:copy-of copy-namespaces="no" validation="strip"
-                                            select="
+                                        <xsl:apply-templates select="
                                                 uwmaps:sinopia
                                                 [uwsinopia:implementation_set
                                                 [uwsinopia:institution = $institution]
@@ -283,6 +281,23 @@
                 </html>
             </xsl:result-document>
         </xsl:for-each>
+    </xsl:template>
+    
+    <!-- ***** GUIDANCE_SET CHILD-ELEMENT TEMPLATES -->
+    <xsl:template match="uwsinopia:p">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="uwsinopia:strong">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="uwsinopia:a">
+        <a href="{@href}">
+            <xsl:value-of select="."/>
+        </a>
     </xsl:template>
 
 </xsl:stylesheet>
