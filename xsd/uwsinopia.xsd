@@ -20,32 +20,117 @@
    <!-- **************** sinopia **************** -->
    <xs:complexType name="sinopia_type">
       <xs:sequence>
-         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="1"
+         <xs:element name="toolkit" type="toolkit_type" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="0"
             maxOccurs="unbounded"/>
          <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
             maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
+   <xs:complexType name="toolkit_type">
+      <xs:attribute name="url" use="required">
+         <xs:simpleType>
+            <xs:restriction base="xs:anyURI">
+               <!-- IRI validation pattern -->
+               <xs:pattern value="https?://\S*"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:complexType>
    <!-- *************** guidance_set *************** -->
    <xs:complexType name="guidance_set_type">
+      <xs:sequence>
+         <xs:element name="general" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="entity_boundary" type="xs:boolean" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="recording_method" type="recording_method_type" minOccurs="0"
+            maxOccurs="unbounded"/>
+         <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
+            maxOccurs="unbounded"/>
+         <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="general_type">
       <xs:all>
-         <xs:element name="p" type="guidance_p_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="p" type="p_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
-      <xs:attribute name="rt_id" type="rt_id_type"/>
+      <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
-   <xs:complexType name="guidance_p_type" mixed="true">
+   <xs:complexType name="recording_method_type">
+      <xs:all>
+         <xs:element name="recording_method_option" type="recording_method_option_type"
+            minOccurs="1" maxOccurs="4"/>
+      </xs:all>
+      <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
+   </xs:complexType>
+   <xs:simpleType name="recording_method_option_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="unstructured description"/>
+         <xs:enumeration value="structured description"/>
+         <xs:enumeration value="identifier"/>
+         <xs:enumeration value="IRI"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="transcription_standard_extension">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="basic"/>
+         <xs:enumeration value="normalized"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="transcription_standard_type">
+      <xs:simpleContent>
+         <xs:extension base="transcription_standard_extension">
+            <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+   <xs:complexType name="mgds_type">
+      <xs:all>
+         <xs:element ref="ul" minOccurs="1" maxOccurs="1"/>
+      </xs:all>
+      <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
+   </xs:complexType>
+   <xs:complexType name="examples_type">
+      <xs:all>
+         <xs:element name="p" type="simple_p_type"/>
+      </xs:all>
+      <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
+   </xs:complexType>
+   <!-- 003_rt_ids_to_uwsinopia.xsl -->
+   <xs:simpleType name="rt_id_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="default"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:aggregating_printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaExpression:printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaExpression:aggregating_printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaManifestation:printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaItem:printMonograph:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaNomen:accessPoint:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaNomen:identifier:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaEntity:test:ries07"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaEntity:standalone:ries07"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:test:ries07"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:test:cspayne"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="p_type" mixed="true">
       <xs:all>
          <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
    </xs:complexType>
+   <xs:simpleType name="simple_p_type">
+      <xs:restriction base="xs:string"/>
+   </xs:simpleType>
    <xs:element name="a">
       <xs:complexType>
          <xs:simpleContent>
             <xs:extension base="xs:string">
-               <xs:attribute name="href" type="xs:anyURI"/>
+               <xs:attribute name="href" type="xs:anyURI" use="required"/>
             </xs:extension>
          </xs:simpleContent>
       </xs:complexType>
@@ -622,11 +707,4 @@
          <xs:element name="rt_id" type="rt_id_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:simpleType name="rt_id_type">
-      <xs:restriction base="xs:string">
-         <!-- generate from sinopia_maps.xml -->
-         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:test:ries07"/>
-         <!-- ... -->
-      </xs:restriction>
-   </xs:simpleType>
 </xs:schema>
