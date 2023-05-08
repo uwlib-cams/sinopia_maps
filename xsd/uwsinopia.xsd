@@ -261,7 +261,11 @@
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
-   <!-- to do: constrain further, require text element content -->
+   <xs:simpleType name="property_label">
+      <xs:restriction base="xs:string">
+         <xs:pattern value=".+"/>
+      </xs:restriction>
+   </xs:simpleType>
    <xs:complexType name="property_selection_type">
       <xs:annotation>
          <xs:documentation>Enter the full, non-prefixed property IRI as the content of the
@@ -270,7 +274,7 @@
             element.</xs:documentation>
       </xs:annotation>
       <xs:simpleContent>
-         <xs:extension base="xs:string">
+         <xs:extension base="property_label">
             <xs:attribute name="property_iri" type="xs:anyURI" use="required"/>
             <xs:attribute ref="xml:lang" use="required"/>
          </xs:extension>
