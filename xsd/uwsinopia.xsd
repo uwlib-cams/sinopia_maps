@@ -22,7 +22,7 @@
       <xs:sequence>
          <xs:element name="toolkit" type="toolkit_type" minOccurs="1" maxOccurs="1"/>
          <xs:element name="guidance_set" type="guidance_set_type" minOccurs="0"
-            maxOccurs="unbounded"/>
+            maxOccurs="1"/>
          <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
             maxOccurs="unbounded"/>
       </xs:sequence>
