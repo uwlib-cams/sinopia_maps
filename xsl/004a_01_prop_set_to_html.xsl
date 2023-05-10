@@ -9,17 +9,10 @@
 
     <xsl:output method="html"/>
     <xsl:param name="oxygenPath"/>
-    <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
 
-    <!-- GLOBAL VARS -->
-    <xsl:variable name="prop_list">
-        <a href="#prop_list">RETURN TO PROPERTY TEMPLATES LIST</a>
-    </xsl:variable>
-    <xsl:variable name="index">
-        <a href="https://uwlib-cams.github.io/sinopia_maps/">
-            <xsl:text>RETURN TO SINOPIA_MAPS INDEX</xsl:text>
-        </a>
-    </xsl:variable>
+    <xsl:include href="004a_02_pt_list.xsl"/>
+    <xsl:include href="004a_03_pt_detail.xsl"/>
+    <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
 
     <xsl:template match="/">
         <xsl:for-each select="
@@ -29,17 +22,17 @@
             <xsl:variable name="resource" select="uwsinopia:resource"/>
             <xsl:variable name="format" select="uwsinopia:format"/>
             <xsl:variable name="user" select="uwsinopia:user"/>
+            <xsl:variable name="rt_id">{concat('UWSINOPIA:', $institution, ':', $resource, ':',
+                $format, ':', $user)}</xsl:variable>
             <xsl:variable name="author">
                 <xsl:for-each select="uwsinopia:author">
                     <author>{.}</author>
                 </xsl:for-each>
             </xsl:variable>
             <xsl:variable name="rt_remark" select="uwsinopia:rt_remark[@xml:lang = 'en']"/>
-            <xsl:variable name="RT_ID" select="
-                    concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
-            <xsl:variable name="RT_RDFXML" select="
-                    document(concat('../', translate($RT_ID, ':', '_'), '.rdf'))"/>
-            <xsl:variable name="full_prop" as="node()*">
+            <xsl:variable name="rt_rdfxml" select="
+                    document(concat('../', translate($rt_id, ':', '_'), '.rdf'))"/>
+            <xsl:variable name="prop_info" as="node()*">
                 <xsl:for-each select="
                         collection('../../map_storage/?select=*.xml')/
                         uwmaps:prop_set/uwmaps:prop
@@ -55,13 +48,120 @@
                             [uwsinopia:format = $format]
                             [uwsinopia:user = $user]
                             /uwsinopia:form_order"/>
-                    <!-- TO DO don't copy over all guidance_set children and implementation_sets! 
-                        store only those that are needed in the var!! -->
-                    <xsl:copy-of select="."/>
+                    <xsl:element name="prop"
+                        namespace="https://uwlib-cams.github.io/map_storage/xsd/">
+                        <xsl:copy-of select="uwmaps:prop_iri"/>
+                        <xsl:copy-of select="uwmaps:prop_label"/>
+                        <!-- skip some prop info -->
+                        <xsl:element name="sinopia"
+                            namespace="https://uwlib-cams.github.io/map_storage/xsd/">
+                            <xsl:element name="toolkit"
+                                namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                <xsl:attribute name="url"
+                                    >{uwmaps:sinopia/uwsinopia:toolkit/@url}</xsl:attribute>
+                            </xsl:element>
+                            <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
+                                <xsl:element name="guidance_set"
+                                    namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general">
+                                        <xsl:element name="general"
+                                            namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                            <xsl:choose>
+                                                <xsl:when test="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general
+                                                        [@rt_id = $rt_id]">
+                                                  <xsl:copy-of select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set
+                                                            /uwsinopia:general[@rt_id = $rt_id]/node()"
+                                                  />
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                  <xsl:copy-of select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set
+                                                            /uwsinopia:general[@rt_id = 'default']/node()"
+                                                  />
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:element>
+                                    </xsl:if>
+                                    <!-- might not be working as I think it is -->
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary">
+                                        <xsl:copy-of
+                                            select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary"
+                                        />
+                                    </xsl:if>
+                                    <!-- 100% not working from here down -->
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method">
+                                        <xsl:choose>
+                                            <xsl:when test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method
+                                                    [@rt_id = $rt_id]">
+                                                <xsl:copy-of select="uwmaps:sinopia/uwsinopia:guidance_set
+                                                        /uwsinopia:recording_method[@rt_id = $rt_id]"/>
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:copy-of select="uwmaps:sinopia/uwsinopia:guidance_set
+                                                        /uwsinopia:recording_method[@rt_id = 'default']"/>
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:if>
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses">
+                                        <xsl:choose>
+                                            <xsl:when test="
+                                                    uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses
+                                                    [@rt_id = $rt_id]">
+                                                <xsl:copy-of select="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set
+                                                        /uwsinopia:ses[@rt_id = $rt_id]"
+                                                />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:copy-of select="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set
+                                                        /uwsinopia:ses[@rt_id = 'default']"
+                                                />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:if>
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard">
+                                        <xsl:choose>
+                                            <xsl:when test="
+                                                    uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard
+                                                    [@rt_id = $rt_id]">
+                                                <xsl:copy-of select="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard
+                                                        [@rt_id = $rt_id]"
+                                                />
+                                            </xsl:when>
+                                            <xsl:otherwise>
+                                                <xsl:copy-of select="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard
+                                                        [@rt_id = 'default']"
+                                                />
+                                            </xsl:otherwise>
+                                        </xsl:choose>
+                                    </xsl:if>
+                                    <!-- options -->
+                                    <!-- mgds -->
+                                    <!-- examples -->
+                                </xsl:element>
+                            </xsl:if>
+                            <xsl:copy-of select="
+                                    uwmaps:sinopia/uwsinopia:implementation_set
+                                    [uwsinopia:institution = $institution]
+                                    [uwsinopia:resource = $resource]
+                                    [uwsinopia:format = $format]
+                                    [uwsinopia:user = $user]"/>
+                        </xsl:element>
+                    </xsl:element>
                 </xsl:for-each>
             </xsl:variable>
             <xsl:result-document
-                href="{concat($oxygenPath, 'html/', translate($RT_ID, ':', '_'), '.html')}">
+                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), '.html')}">
                 <html>
                     <head>
                         <title>{concat(substring-after($resource, 'rda'), '_', $format, '_',
@@ -73,13 +173,13 @@
                             rel="icon" type="image/png"/>
                     </head>
                     <body>
-                        <h1>{$RT_ID}</h1>
+                        <h1>{$rt_id}</h1>
                         <!-- ***** RT DETAILS ***** -->
                         <table>
                             <thead>
                                 <tr>
                                     <th scope="row">RESOURCE TEMPLATE ID</th>
-                                    <td>{$RT_ID}</td>
+                                    <td>{$rt_id}</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -92,11 +192,11 @@
                                 <tr>
                                     <th scope="row">FOR DESCRIBING CLASS</th>
                                     <td>
-                                        <a href="{$RT_RDFXML/rdf:RDF/rdf:Description
-                                        [@rdf:about = concat('https://api.sinopia.io/resource/', $RT_ID)]
+                                        <a href="{$rt_rdfxml/rdf:RDF/rdf:Description
+                                        [@rdf:about = concat('https://api.sinopia.io/resource/', $rt_id)]
                                         /sinopia:hasClass/@rdf:resource}"
-                                            > {$RT_RDFXML/rdf:RDF/rdf:Description [@rdf:about =
-                                            concat('https://api.sinopia.io/resource/', $RT_ID)]
+                                            > {$rt_rdfxml/rdf:RDF/rdf:Description [@rdf:about =
+                                            concat('https://api.sinopia.io/resource/', $rt_id)]
                                             /sinopia:hasClass/@rdf:resource}</a>
                                     </td>
                                 </tr>
@@ -125,329 +225,36 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">LAST UPDATED</th>
-                                    <td>{$RT_RDFXML/rdf:RDF/rdf:Description [@rdf:about =
-                                        concat('https://api.sinopia.io/resource/', $RT_ID)]
+                                    <td>{$rt_rdfxml/rdf:RDF/rdf:Description [@rdf:about =
+                                        concat('https://api.sinopia.io/resource/', $rt_id)]
                                         /sinopia:hasDate}</td>
                                 </tr>
                             </tbody>
                         </table>
                         <span class="backlink">
                             <p>
-                                <xsl:copy-of select="$index"/>
+                                <a href="https://uwlib-cams.github.io/sinopia_maps/">
+                                    <xsl:text>RETURN TO SINOPIA_MAPS INDEX</xsl:text>
+                                </a>
                             </p>
                         </span>
-                        <!-- ***** PROPERTY TEMPLATE LIST ***** -->
-                        <h2 id="prop_list">PROPERTY TEMPLATES IN {$RT_ID}</h2>
-                        <ul>
-                            <xsl:for-each select="$full_prop">
-                                <li>
-                                    <xsl:if test="
-                                            uwmaps:sinopia/uwsinopia:implementation_set
-                                            [uwsinopia:institution = $institution]
-                                            [uwsinopia:resource = $resource]
-                                            [uwsinopia:format = $format]
-                                            [uwsinopia:user = $user]
-                                            /uwsinopia:alt_pt_label"
-                                        >{uwmaps:sinopia/uwsinopia:implementation_set
-                                        [uwsinopia:institution = $institution] [uwsinopia:resource =
-                                        $resource] [uwsinopia:format = $format] [uwsinopia:user =
-                                        $user] /uwsinopia:alt_pt_label ||': '}</xsl:if>
-                                    <a href="{concat('#', 
-                                                uwmaps:sinopia/uwsinopia:implementation_set
-                                                [uwsinopia:institution = $institution]
-                                                [uwsinopia:resource = $resource]
-                                                [uwsinopia:format = $format]
-                                                [uwsinopia:user = $user]
-                                                /@localid_implementation_set)}"
-                                        >{uwmaps:prop_label}</a>
-                                    <xsl:if test="
-                                            $full_prop/uwmaps:sinopia/uwsinopia:implementation_set
-                                            [uwsinopia:institution = $institution]
-                                            [uwsinopia:resource = $resource]
-                                            [uwsinopia:format = $format]
-                                            [uwsinopia:user = $user]
-                                            /uwsinopia:multiple_prop">
-                                        <xsl:variable name="localid_implementation_set" select="
-                                                uwmaps:sinopia/uwsinopia:implementation_set
-                                                [uwsinopia:institution = $institution]
-                                                [uwsinopia:resource = $resource]
-                                                [uwsinopia:format = $format]
-                                                [uwsinopia:user = $user]
-                                                /@localid_implementation_set"/>
-                                        <xsl:variable name="prop_iri" select="uwmaps:prop_iri/@iri"/>
-                                        <ul>
-                                            <xsl:for-each select="
-                                                    $RT_RDFXML/rdf:RDF/rdf:Description
-                                                    [rdf:type/@rdf:resource = 'http://sinopia.io/vocabulary/PropertyTemplate']
-                                                    [sinopia:hasPropertyUri[position() = 1]/@rdf:resource = $prop_iri]
-                                                    /sinopia:hasPropertyUri[position() > 1]">
-                                                <xsl:variable name="repeating_prop_iri"
-                                                  select="@rdf:resource"/>
-                                                <li>
-                                                  <a href="{concat('#',
-                                                      $localid_implementation_set)}"
-                                                  > {../..//rdf:Description[@rdf:about =
-                                                  $repeating_prop_iri] /rdfs:label[@xml:lang =
-                                                  'en']} </a>
-                                                </li>
-                                            </xsl:for-each>
-                                            <!-- TO DO read commented-out props and redirect -->
-                                        </ul>
-                                    </xsl:if>
-                                </li>
-                            </xsl:for-each>
-                        </ul>
-                        <span class="backlink">
-                            <p>
-                                <xsl:copy-of select="$index"/>
-                            </p>
-                        </span>
-                        <!-- ***** PROPERTY TEMPLATE DETAILS ***** -->
-                        <h2>PROPERTY TEMPLATE GUIDANCE AND CONFIGURATION</h2>
-                        <xsl:for-each select="$full_prop">
-                            <h3 id="{uwmaps:sinopia/uwsinopia:implementation_set
-                                [uwsinopia:institution = $institution]
-                                [uwsinopia:resource = $resource]
-                                [uwsinopia:format = $format]
-                                [uwsinopia:user = $user]
-                                /@localid_implementation_set}">
-                                <xsl:choose>
-                                    <xsl:when test="
-                                            uwmaps:sinopia/uwsinopia:implementation_set
-                                            [uwsinopia:institution = $institution]
-                                            [uwsinopia:resource = $resource]
-                                            [uwsinopia:format = $format]
-                                            [uwsinopia:user = $user]
-                                            /uwsinopia:alt_pt_label"
-                                        > {uwmaps:sinopia/uwsinopia:implementation_set
-                                        [uwsinopia:institution = $institution] [uwsinopia:resource =
-                                        $resource] [uwsinopia:format = $format] [uwsinopia:user =
-                                        $user] /uwsinopia:alt_pt_label} </xsl:when>
-                                    <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
-                                </xsl:choose>
-                            </h3>
-                            <p>SEE</p>
-                            <ul>
-                                <li>
-                                    <a href="{uwmaps:sinopia/uwsinopia:toolkit/@url}">RDA Toolkit element page</a>
-                                </li>
-                                <li>
-                                    <a href="{uwmaps:prop_iri/@iri}">RDA Registry property detail</a>
-                                </li>
-                            </ul>
-                            <!-- ***** GUIDANCE_SET ***** -->
-                            <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
-                                <h4>GUIDANCE</h4>
-                                <!-- general -->
-                                <xsl:choose>
-                                    <xsl:when test="
-                                            uwmaps:sinopia
-                                            [uwsinopia:implementation_set
-                                            [uwsinopia:institution = $institution]
-                                            [uwsinopia:resource = $resource]
-                                            [uwsinopia:format = $format]
-                                            [uwsinopia:user = $user]]
-                                            /uwsinopia:guidance_set/uwsinopia:general[@rt_id = $RT_ID]">
-                                        <xsl:apply-templates select="
-                                                $full_prop/uwmaps:sinopia
-                                                [uwsinopia:implementation_set
-                                                [uwsinopia:institution = $institution]
-                                                [uwsinopia:resource = $resource]
-                                                [uwsinopia:format = $format]
-                                                [uwsinopia:user = $user]]
-                                                /uwsinopia:guidance_set
-                                                /uwsinopia:general[@rt_id = $RT_ID]/node()"
-                                        />
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:apply-templates select="
-                                                uwmaps:sinopia
-                                                [uwsinopia:implementation_set
-                                                [uwsinopia:institution = $institution]
-                                                [uwsinopia:resource = $resource]
-                                                [uwsinopia:format = $format]
-                                                [uwsinopia:user = $user]]
-                                                /uwsinopia:guidance_set
-                                                /uwsinopia:general[@rt_id = 'default']/node()"
-                                        />
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                                <!-- entity_boundary -->
-                                <xsl:if test="
-                                        uwmaps:sinopia
-                                        [uwsinopia:implementation_set
-                                        [uwsinopia:institution = $institution]
-                                        [uwsinopia:resource = $resource]
-                                        [uwsinopia:format = $format]
-                                        [uwsinopia:user = $user]]
-                                        /uwsinopia:guidance_set
-                                        [matches(uwsinopia:entity_boundary, 'true|1')]">
-                                    <p>
-                                        <strong>NOTE: A significant difference in the value of this
-                                            element may indicate an entity boundary.</strong>
-                                    </p>
-                                </xsl:if>
-                                <!-- recording method -->
-                                <xsl:if test="
-                                        uwmaps:sinopia
-                                        [uwsinopia:implementation_set
-                                        [uwsinopia:institution = $institution]
-                                        [uwsinopia:resource = $resource]
-                                        [uwsinopia:format = $format]
-                                        [uwsinopia:user = $user]]
-                                        /uwsinopia:guidance_set
-                                        /uwsinopia:recording_method[@rt_id = $RT_ID or 'default']">
-                                    <h5>RECORDING METHOD(S)</h5>
-                                    <p>Use the following recording method or methods, in order of
-                                        preference (first choice, second choice, etc.)</p>
-                                    <ol>
-                                        <xsl:choose>
-                                            <xsl:when test="
-                                                    uwmaps:sinopia
-                                                    [uwsinopia:implementation_set
-                                                    [uwsinopia:institution = $institution]
-                                                    [uwsinopia:resource = $resource]
-                                                    [uwsinopia:format = $format]
-                                                    [uwsinopia:user = $user]]
-                                                    /uwsinopia:guidance_set
-                                                    /uwsinopia:recording_method[@rt_id = $RT_ID]">
-                                                <xsl:for-each select="
-                                                        uwmaps:sinopia
-                                                        [uwsinopia:implementation_set
-                                                        [uwsinopia:institution = $institution]
-                                                        [uwsinopia:resource = $resource]
-                                                        [uwsinopia:format = $format]
-                                                        [uwsinopia:user = $user]]
-                                                        /uwsinopia:guidance_set
-                                                        /uwsinopia:recording_method[@rt_id = $RT_ID]">
-                                                  <li>{.}</li>
-                                                </xsl:for-each>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <xsl:for-each select="
-                                                        uwmaps:sinopia
-                                                        [uwsinopia:implementation_set
-                                                        [uwsinopia:institution = $institution]
-                                                        [uwsinopia:resource = $resource]
-                                                        [uwsinopia:format = $format]
-                                                        [uwsinopia:user = $user]]
-                                                        /uwsinopia:guidance_set
-                                                        /uwsinopia:recording_method[@rt_id = 'default']">
-                                                  <li>{.}</li>
-                                                </xsl:for-each>
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </ol>
-                                </xsl:if>
-                                <!-- ses -->
-                                <xsl:if test="
-                                        uwmaps:sinopia
-                                        [uwsinopia:implementation_set
-                                        [uwsinopia:institution = $institution]
-                                        [uwsinopia:resource = $resource]
-                                        [uwsinopia:format = $format]
-                                        [uwsinopia:user = $user]]
-                                        /uwsinopia:guidance_set
-                                        /uwsinopia:ses[@rt_id = $RT_ID or 'default']">
-                                    <h5>SYNTAX ENCODING SCHEME(S)</h5>
-                                    <xsl:choose>
-                                        <xsl:when test="
-                                                uwmaps:sinopia
-                                                [uwsinopia:implementation_set
-                                                [uwsinopia:institution = $institution]
-                                                [uwsinopia:resource = $resource]
-                                                [uwsinopia:format = $format]
-                                                [uwsinopia:user = $user]]
-                                                /uwsinopia:guidance_set
-                                                /uwsinopia:ses[@rt_id = $RT_ID]">
-                                            <xsl:apply-templates select="
-                                                    $full_prop/uwmaps:sinopia
-                                                    [uwsinopia:implementation_set
-                                                    [uwsinopia:institution = $institution]
-                                                    [uwsinopia:resource = $resource]
-                                                    [uwsinopia:format = $format]
-                                                    [uwsinopia:user = $user]]
-                                                    /uwsinopia:guidance_set
-                                                    /uwsinopia:ses[@rt_id = $RT_ID]/node()"
-                                            />
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <xsl:apply-templates select="
-                                                    uwmaps:sinopia
-                                                    [uwsinopia:implementation_set
-                                                    [uwsinopia:institution = $institution]
-                                                    [uwsinopia:resource = $resource]
-                                                    [uwsinopia:format = $format]
-                                                    [uwsinopia:user = $user]]
-                                                    /uwsinopia:guidance_set
-                                                    /uwsinopia:ses[@rt_id = 'default']/node()"
-                                            />
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </xsl:if>
-                                
-                                <!-- transcription_standard -->
-                                <!-- mgds -->
-                                <!-- examples -->                       
-                                
-                            </xsl:if>
-                            <!-- END GUIDANCE -->
-                            <h4>CONFIGURATION</h4>
-                            <!-- ... -->
-                            <p>stuff will go here</p>
-                            <!-- ... -->
-                            <span class="backlink">
-                                <p>
-                                    <xsl:copy-of select="$prop_list"/>
-                                </p>
-                                <p>
-                                    <xsl:copy-of select="$index"/>
-                                </p>
-                            </span>
-                        </xsl:for-each>
-
-
+                        <xsl:call-template name="pt_list">
+                            <xsl:with-param name="rt_id" select="$rt_id"/>
+                            <xsl:with-param name="prop" select="$prop_info"/>
+                        </xsl:call-template>
+                        <xsl:call-template name="pt_detail">
+                            <xsl:with-param name="rt_id" select="$rt_id"/>
+                            <xsl:with-param name="prop" select="$prop_info"/>
+                        </xsl:call-template>
                         <xsl:call-template name="CC0-footer">
                             <xsl:with-param name="resource_title"
-                                select="translate($RT_ID, ':', '_')"/>
+                                select="translate($rt_id, ':', '_')"/>
                             <xsl:with-param name="org" select="'cams'"/>
                         </xsl:call-template>
                     </body>
                 </html>
             </xsl:result-document>
         </xsl:for-each>
-    </xsl:template>
-
-    <!-- ***** GUIDANCE_SET CHILD-ELEMENT TEMPLATES -->
-    <xsl:template match="uwsinopia:p">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="uwsinopia:strong">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="uwsinopia:ul">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="uwsinopia:ol">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="uwsinopia:li">
-        <xsl:element name="{local-name()}">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    <xsl:template match="uwsinopia:a">
-        <a href="{@href}">
-            <xsl:value-of select="."/>
-        </a>
     </xsl:template>
 
 </xsl:stylesheet>
