@@ -12,17 +12,21 @@
     <xsl:template name="pt_list">
         <xsl:param name="rt_id"/>
         <xsl:param name="prop"/>
-        <!-- ***** PROPERTY TEMPLATE LIST ***** -->
         <h2 id="prop_list">PROPERTY TEMPLATES IN {$rt_id}</h2>
         <ul>
             <xsl:for-each select="$prop">
                 <li>
                     <xsl:choose>
-                        <xsl:when test="$prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label"
-                            >{$prop/uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}</xsl:when>
-                        <xsl:otherwise>{$prop/uwmaps:prop_label}</xsl:otherwise>
+                        <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label"
+                            >{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}</xsl:when>
+                        <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
                     </xsl:choose>
                 </li>
+                
+                <!-- TO DO -->
+                <!-- link to details for each PT -->
+                <!-- INCLUDED PROPS if multiple_prop -->
+                <!-- decide how to display primary prop label if alt_label -->
                 
                 
                 <!--
