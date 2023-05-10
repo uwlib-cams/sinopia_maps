@@ -46,7 +46,7 @@
             maxOccurs="unbounded"/>
          <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
-            maxOccurs="unbounded"/>
+            maxOccurs="1"/>
          <!-- options -->
          <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
