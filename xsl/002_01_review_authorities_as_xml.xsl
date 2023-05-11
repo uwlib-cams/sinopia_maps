@@ -6,7 +6,7 @@
     <xsl:output method="xml" indent="1"/>
 
     <xsl:template match="/">
-        <xsl:apply-templates select="data"/>
+        <xsl:apply-templates select="document('../xml/authorityConfig.xml')/data"/>
     </xsl:template>
     
     <xsl:template match="data">

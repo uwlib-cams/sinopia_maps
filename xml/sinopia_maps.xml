@@ -4,7 +4,7 @@
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
         <!-- WEMI TEMPLATES -->
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>printMonograph</format>
@@ -12,7 +12,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing single works</rt_remark>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>aggregating_printMonograph</format>
@@ -20,7 +20,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing aggregating works</rt_remark>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
             <format>printMonograph</format>
@@ -28,7 +28,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing expressions of single works</rt_remark>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
             <format>aggregating_printMonograph</format>
@@ -36,14 +36,14 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing aggregating expressions. Generally, do NOT use this template</rt_remark>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaManifestation</resource>
             <format>printMonograph</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaItem</resource>
             <format>printMonograph</format>
@@ -52,27 +52,36 @@
         </rt>
         
         <!-- NOMEN TEMPLATES -->
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaNomen</resource>
             <format>accessPoint</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-        <rt output_load="true">
+        <rt>
             <institution>WAU</institution>
             <resource>rdaNomen</resource>
             <format>identifier</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
+<<<<<<< HEAD
         <!-- TESTING TEMPLATES -->
+=======
+        
+        <!-- TEST TEMPLATES -->
+>>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaEntity</resource>
             <format>test</format>
             <user>ries07</user>
             <author>ries07@uw.edu</author>
+<<<<<<< HEAD
+=======
+            <rt_remark xml:lang="en">This test template will match on default guidance_set elements.</rt_remark>
+>>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
         </rt>
         <rt output_load="true">
             <institution>WAU</institution>
@@ -80,18 +89,26 @@
             <format>standalone</format>
             <user>ries07</user>
             <author>ries07@uw.edu</author>
+<<<<<<< HEAD
         </rt>
         
         <!-- TO DELETE -->
+=======
+            <rt_remark xml:lang="en">This test template will match on custom guidance_set elements.</rt_remark>
+        </rt>
+>>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
         <rt>
+            <!-- TO DO: delete -->
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>test</format>
             <user>ries07</user>
             <author>ries07@uw.edu</author>
+            <author>some other person too</author>
             <rt_remark xml:lang="en">TEST TEMPLATE</rt_remark>
         </rt>
         <rt>
+            <!-- TO DO: delete -->
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>test</format>
