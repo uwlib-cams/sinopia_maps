@@ -3,6 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="https://uwlib-cams.github.io/sinopia_maps/xsd/ https://uwlib-cams.github.io/sinopia_maps/xsd/sinopia_maps.xsd">
     <rts>
+        
         <!-- WEMI TEMPLATES -->
         <rt>
             <institution>WAU</institution>
@@ -66,22 +67,16 @@
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-<<<<<<< HEAD
-        <!-- TESTING TEMPLATES -->
-=======
-        
+
         <!-- TEST TEMPLATES -->
->>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaEntity</resource>
             <format>test</format>
             <user>ries07</user>
             <author>ries07@uw.edu</author>
-<<<<<<< HEAD
-=======
             <rt_remark xml:lang="en">This test template will match on default guidance_set elements.</rt_remark>
->>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
+
         </rt>
         <rt output_load="true">
             <institution>WAU</institution>
@@ -89,16 +84,11 @@
             <format>standalone</format>
             <user>ries07</user>
             <author>ries07@uw.edu</author>
-<<<<<<< HEAD
+            <rt_remark xml:lang="en">This test template will match on custom guidance_set elements.</rt_remark>
         </rt>
         
         <!-- TO DELETE -->
-=======
-            <rt_remark xml:lang="en">This test template will match on custom guidance_set elements.</rt_remark>
-        </rt>
->>>>>>> b032b5aeb405ec61f8fa5a01b2fc212807e85c0b
         <rt>
-            <!-- TO DO: delete -->
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>test</format>
