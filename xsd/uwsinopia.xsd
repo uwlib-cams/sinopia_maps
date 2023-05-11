@@ -47,7 +47,7 @@
          <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
             maxOccurs="1"/>
-         <!-- options -->
+         <xs:element name="options" type="options_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
@@ -88,11 +88,16 @@
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
-   <xs:complexType name="mgds_type">
+   <xs:complexType name="options_type">
       <xs:all>
-         <xs:element ref="ul" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="a" minOccurs="1" maxOccurs="unbounded"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
+   </xs:complexType>
+   <xs:complexType name="mgds_type">
+      <xs:all>
+         <xs:element ref="a" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:all>
    </xs:complexType>
    <xs:complexType name="examples_type">
       <xs:all>
@@ -184,7 +189,6 @@
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
-         <!-- if language_suppressed == 1 *and* default literal has @xml:lang will anything break?? -->
          <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
             default="0">
             <xs:annotation>
