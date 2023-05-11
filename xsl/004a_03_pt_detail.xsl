@@ -59,14 +59,17 @@
                 <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses">
                     <h5>SYNTAX ENCODING SCHEME(S)</h5>
                     <xsl:apply-templates
-                        select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses/node()"
-                    />
+                        select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses/node()"/>
                 </xsl:if>
-                
-                <!--  -->
-                
-                
-                <p>more stuff to go here</p>
+
+                <!-- transcription_standard -->
+
+                <!-- options -->
+
+                <!-- mgds -->
+
+                <!-- examples -->
+
             </xsl:if>
 
             <h4>CONFIGURATION</h4>
