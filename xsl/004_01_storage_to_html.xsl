@@ -7,7 +7,6 @@
     exclude-result-prefixes="xs" version="3.0">
 
     <xsl:output method="html"/>
-
     <xsl:param name="oxygenPath"/>
 
     <xsl:include href="004_02_formatStrings.xsl"/>
@@ -172,7 +171,8 @@
                     </h2>
                     <ul>
                         <xsl:for-each
-                            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
+                            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt
+                            [uwsinopia:institution = $institution and uwsinopia:format = $format and uwsinopia:user = $user]">
                             <xsl:variable name="section_id"
                                 select="concat($institution, 'RT', uwsinopia:resource)"/>
                             <li>
@@ -190,7 +190,6 @@
                                                 <xsl:with-param name="format" select="$format"/>
                                                 <xsl:with-param name="case" select="'title'"/>
                                             </xsl:call-template>
-                                            <!-- Add USER RT ID component -->
                                         </b>
                                     </xsl:when>
                                     <xsl:otherwise>
@@ -209,7 +208,6 @@
                                                 <xsl:with-param name="format" select="$format"/>
                                                 <xsl:with-param name="case" select="'title'"/>
                                             </xsl:call-template>
-                                            <!-- Add USER RT ID component -->
                                         </a>
                                     </xsl:otherwise>
                                 </xsl:choose>
@@ -254,19 +252,18 @@
     </xsl:template>
 
     <xsl:template name="rtInfo">
+        <!-- this template pulls from RDF/XML -->
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
         <xsl:param name="user"/>
         <xsl:param name="author"/>
         <xsl:param name="rt_remark"/>
-
         <xsl:variable name="file_name"
             select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
         <xsl:variable name="resource_id"
             select="concat('UWSINOPIA:', $institution, ':', $resource, ':', $format, ':', $user)"/>
         <xsl:variable name="section_id" select="concat($institution, 'RT', uwsinopia:resource)"/>
-
         <table class="rtInfo" id="{$section_id}">
             <thead>
                 <tr>
@@ -365,7 +362,9 @@
             </tbody>
         </table>
     </xsl:template>
+    
     <xsl:template name="ptList">
+        <!-- this template iterates over RDF/XML -->
         <xsl:param name="institution"/>
         <xsl:param name="resource"/>
         <xsl:param name="format"/>
@@ -399,15 +398,21 @@
                     </xsl:choose>
                 </span>
             </h3>
-            <ul id="BT">
+            <!-- TO DO 
+                make better ids here and elsewhere (see also id 'profile') -->
+            <ul id="BT">  
                 <xsl:variable name="file_name"
                     select="concat('UWSINOPIA_', $institution, '_', $resource, '_', $format, '_', $user)"/>
                 <xsl:for-each select="
                         document(concat('../', $file_name, '.rdf'))/rdf:RDF/
                         rdf:Description[rdf:type/@rdf:resource = 'http://sinopia.io/vocabulary/PropertyTemplate']">
                     <xsl:variable name="label_without_note" as="xs:string">
-                        <!-- BMR 2023-03-10: I don't think we add bracketed info to PT labels anymore -->
                         <xsl:choose>
+                            <!-- TO DO: 
+                                remove processing for bracketed additions to PT labels
+                                confirm PT labelling for alt_pt_label PTs
+                                (rdfs:label for PT should be alt_pt_label where used,
+                                but what about 'main' property label?) -->
                             <xsl:when test="contains(rdfs:label, '[')">
                                 <li>
                                     <xsl:value-of select="substring-before(rdfs:label, '[')"/>
@@ -420,6 +425,8 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:variable>
+                    <!-- TO DO: 
+                        implement localid_implementation_set ids -->
                     <xsl:variable name="pt_id" select="replace($label_without_note, ' ', '')"/>
                     <xsl:choose>
                         <xsl:when test="sinopia:hasPropertyUri[position() != 1]">
@@ -430,6 +437,7 @@
                                 <xsl:text>&#160;</xsl:text>
                                 <span class="caret"/>
                                 <ul class="nested">
+                                    <!-- Here's how MCM got labels for multi_prop props -->
                                     <xsl:for-each select="sinopia:hasPropertyUri[position() != 1]">
                                         <xsl:variable name="subprop_URI" select="@rdf:resource"/>
                                         <xsl:variable name="entity">
@@ -455,6 +463,8 @@
                             </li>
                         </xsl:when>
                         <xsl:otherwise>
+                            <!-- TO DO: 
+                        implement localid_implementation_set ids -->
                             <li>
                                 <a href="#{$pt_id}">
                                     <xsl:value-of select="$label_without_note"/>
@@ -517,12 +527,15 @@
             </xsl:for-each>
         </section>
     </xsl:template>
+    
     <xsl:template name="pt_info">
         <xsl:param name="institution"/>
         <xsl:param name="prop_URI"/>
         <xsl:param name="prop_label"/>
         <xsl:param name="file_name"/>
         <xsl:param name="pt_list_id"/>
+        <!-- TO DO (here and elsewhere)
+        implement localid_implementation_set as HTML PT ids -->
         <xsl:variable name="prop_id" select="replace($prop_label, ' ', '')"/>
         <section class="ptInfo" id="{$prop_id}">
             <h4>
@@ -740,4 +753,5 @@
             </ul>
         </section>
     </xsl:template>
+    
 </xsl:stylesheet>

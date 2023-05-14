@@ -25,7 +25,7 @@
                 </li>
                 <!-- TO DO: 
                 link to details for each PT
-                if multiple_prop include all collapsible -->
+                if multiple_prop include all w. collapsible -->
             </xsl:for-each>
         </ul>
         <span class="backlink">
