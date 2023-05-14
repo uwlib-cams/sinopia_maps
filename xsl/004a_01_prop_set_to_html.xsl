@@ -32,6 +32,7 @@
             <xsl:variable name="rt_remark" select="uwsinopia:rt_remark[@xml:lang = 'en']"/>
             <xsl:variable name="rt_rdfxml" select="
                     document(concat('../', translate($rt_id, ':', '_'), '.rdf'))"/>
+            <!-- prop_info: select needed guidance_set elements, implementation_set for each prop/PT -->
             <xsl:variable name="prop_info" as="node()*">
                 <xsl:for-each select="
                         collection('../../map_storage/?select=*.xml')/
@@ -171,8 +172,56 @@
                                         </xsl:element>
                                     </xsl:if>
                                     <!-- options -->
-                                    <!-- mgds -->
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options">
+                                        <xsl:element name="options"
+                                            namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                            <xsl:choose>
+                                                <xsl:when test="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options
+                                                        [@rt_id = $rt_id]">
+                                                  <xsl:for-each select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options
+                                                            [@rt_id = $rt_id]/node()">
+                                                  <xsl:copy-of copy-namespaces="no" select="."/>
+                                                  </xsl:for-each>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                  <xsl:for-each select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options
+                                                            [@rt_id = 'default']/node()">
+                                                  <xsl:copy-of copy-namespaces="no" select="."/>
+                                                  </xsl:for-each>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:element>
+                                    </xsl:if>
+                                    <!-- TO DO mgds, following schema implementation -->
                                     <!-- examples -->
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples">
+                                        <xsl:element name="examples"
+                                            namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                            <xsl:choose>
+                                                <xsl:when test="
+                                                        uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples
+                                                        [@rt_id = $rt_id]">
+                                                  <xsl:for-each select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples
+                                                            [@rt_id = $rt_id]/node()">
+                                                  <xsl:copy-of copy-namespaces="no" select="."/>
+                                                  </xsl:for-each>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                  <xsl:for-each select="
+                                                            uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples
+                                                            [@rt_id = 'default']/node()">
+                                                  <xsl:copy-of copy-namespaces="no" select="."/>
+                                                  </xsl:for-each>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:element>
+                                    </xsl:if>
                                 </xsl:element>
                             </xsl:if>
                             <xsl:copy-of select="
@@ -186,7 +235,7 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:result-document
-                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), '.html')}">
+                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), 'a.html')}">
                 <html>
                     <head>
                         <title>{concat(substring-after($resource, 'rda'), '_', $format, '_',
@@ -201,13 +250,11 @@
                         <h1>{$rt_id}</h1>
                         <!-- ***** RT DETAILS ***** -->
                         <table>
-                            <thead>
+                            <tbody>
                                 <tr>
                                     <th scope="row">RESOURCE TEMPLATE ID</th>
                                     <td>{$rt_id}</td>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <xsl:if test="$rt_remark != ''">
                                     <tr>
                                         <th scope="row">RESOURCE TEMPLATE REMARK</th>
@@ -269,6 +316,7 @@
                         </xsl:call-template>
                         <xsl:call-template name="pt_detail">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
+                            <xsl:with-param name="rt_rdfxml" select="$rt_rdfxml"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
                         </xsl:call-template>
                         <xsl:call-template name="CC0-footer">

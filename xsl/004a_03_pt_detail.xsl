@@ -9,6 +9,7 @@
 
     <xsl:template name="pt_detail">
         <xsl:param name="rt_id"/>
+        <xsl:param name="rt_rdfxml"/>
         <xsl:param name="prop"/>
         <h2>PROPERTY TEMPLATE GUIDANCE AND CONFIGURATION</h2>
         <xsl:for-each select="$prop">
@@ -20,18 +21,15 @@
                     <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
                 </xsl:choose>
             </h3>
-            <p>SEE</p>
-            <ul>
-                <li>
-                    <a href="{uwmaps:sinopia/uwsinopia:toolkit/@url}">RDA Toolkit element page</a>
-                </li>
-                <li>
-                    <a href="{uwmaps:prop_iri/@iri}">RDA Registry property detail</a>
-                </li>
-            </ul>
+            
+            <!-- TO DO:
+            need all props available in PT here, with Toolkit link and Registry link for each -->
+            
             <!-- ******** GUIDANCE_SET ******** -->
             <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
                 <h4>GUIDANCE</h4>
+                <!-- TO DO
+                add remark if available -->
                 <!-- general -->
                 <xsl:apply-templates
                     select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general/node()"/>
@@ -61,19 +59,48 @@
                     <xsl:apply-templates
                         select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses/node()"/>
                 </xsl:if>
-
                 <!-- transcription_standard -->
-
+                <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard">
+                    <h5>TRANSCRIPTION STANDARD</h5>
+                    <xsl:choose>
+                        <xsl:when test="uwmaps:sinopia/uwsinopia:guidance_set
+                            /uwsinopia:transcription_standard = 'basic'">
+                            <p>Apply the <a 
+                                href="https://access.rdatoolkit.org/Guidance/GuidanceById/a250ac26-e281-4285-b68b-5934bfe12cdc"
+                                >guidelines on basic transcription</a>.</p>
+                        </xsl:when>
+                        <xsl:when test="uwmaps:sinopia/uwsinopia:guidance_set
+                            /uwsinopia:transcription_standard = 'normalized'">
+                            <p>Apply the <a 
+                                href="https://access.rdatoolkit.org/Guidance/GuidanceById/b399fc77-84c9-4fe8-bccb-59b4dd37f948"
+                                >guidelines on normalized transcription</a>.</p>
+                        </xsl:when>
+                        <xsl:otherwise><p>ERROR</p></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:if>
                 <!-- options -->
-
-                <!-- mgds -->
-
+                <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options">
+                    <h5>OPTION(S)</h5>
+                    <p>The following options may be applied:</p>
+                    <ul>
+                    <xsl:for-each select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options/uwsinopia:a">
+                        <li>
+                            <a href="{@href}">{.}</a>
+                        </li>
+                    </xsl:for-each>
+                    </ul>
+                </xsl:if>
+                <!-- TO DO mgds, following schema implementation -->
                 <!-- examples -->
-
+                <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples">
+                    <h5>EXAMPLE VALUE(S)</h5>
+                    <xsl:apply-templates select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples/node()"/>
+                </xsl:if>
             </xsl:if>
-
+            
+            <!-- ******** IMPLEMENTATION_SET ******** -->
             <h4>CONFIGURATION</h4>
-            <p>stuff will go here</p>
+            
             <span class="backlink">
                 <p>
                     <a href="#prop_list">RETURN TO PROPERTY TEMPLATES LIST</a>
