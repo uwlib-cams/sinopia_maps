@@ -5,7 +5,7 @@
     <rts>
         
         <!-- WEMI TEMPLATES -->
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>printMonograph</format>
@@ -13,7 +13,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing single works</rt_remark>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>aggregating_printMonograph</format>
@@ -21,7 +21,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing aggregating works</rt_remark>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
             <format>printMonograph</format>
@@ -29,7 +29,7 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing expressions of single works</rt_remark>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaExpression</resource>
             <format>aggregating_printMonograph</format>
@@ -37,14 +37,14 @@
             <author>UW CAMS - panzhuo@uw.edu</author>
             <rt_remark xml:lang="en">For describing aggregating expressions. Generally, do NOT use this template</rt_remark>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaManifestation</resource>
             <format>printMonograph</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaItem</resource>
             <format>printMonograph</format>
@@ -53,14 +53,14 @@
         </rt>
         
         <!-- NOMEN TEMPLATES -->
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaNomen</resource>
             <format>accessPoint</format>
             <user>CAMS</user>
             <author>UW CAMS - panzhuo@uw.edu</author>
         </rt>
-        <rt>
+        <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaNomen</resource>
             <format>identifier</format>
@@ -98,7 +98,6 @@
             <rt_remark xml:lang="en">TEST TEMPLATE</rt_remark>
         </rt>
         <rt>
-            <!-- TO DO: delete -->
             <institution>WAU</institution>
             <resource>rdaWork</resource>
             <format>test</format>
