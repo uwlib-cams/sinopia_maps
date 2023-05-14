@@ -10,8 +10,8 @@
     <xsl:output method="html"/>
     <xsl:param name="oxygenPath"/>
 
-    <xsl:include href="004a_02_pt_list.xsl"/>
-    <xsl:include href="004a_03_pt_detail.xsl"/>
+    <xsl:include href="004ref_02_pt_list.xsl"/>
+    <xsl:include href="004ref_03_pt_detail.xsl"/>
     <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
 
     <xsl:template match="/">
@@ -235,7 +235,7 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:result-document
-                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), 'a.html')}">
+                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), 'ref.html')}">
                 <html>
                     <head>
                         <title>{concat(substring-after($resource, 'rda'), '_', $format, '_',
