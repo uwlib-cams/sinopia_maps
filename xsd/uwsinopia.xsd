@@ -95,13 +95,11 @@
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
    <xs:complexType name="mgds_type">
-      <xs:all>
-         <xs:element ref="a" minOccurs="1" maxOccurs="unbounded"/>
-      </xs:all>
+      <!-- TO DO: ZP will provide data -->
    </xs:complexType>
    <xs:complexType name="examples_type">
       <xs:all>
-         <xs:element name="p" type="simple_p_type"/>
+         <xs:element name="p" type="simple_p_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
