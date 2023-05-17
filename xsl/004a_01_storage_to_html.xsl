@@ -9,9 +9,9 @@
     <xsl:output method="html"/>
     <xsl:param name="oxygenPath"/>
 
-    <xsl:include href="004_02_formatStrings.xsl"/>
-    <xsl:include href="004_03_readComments.xsl"/>
-    <xsl:include href="004_04_qaSources.xsl"/>
+    <xsl:include href="004a_02_formatStrings.xsl"/>
+    <xsl:include href="004a_03_readComments.xsl"/>
+    <xsl:include href="004a_04_qaSources.xsl"/>
     <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
 
     <xsl:template match="/">
