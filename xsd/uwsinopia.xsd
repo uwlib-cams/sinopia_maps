@@ -185,7 +185,7 @@
             language_suppressed / required / repeatable -->
          <xs:element name="alt_pt_label" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
             default="0">
