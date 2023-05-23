@@ -44,7 +44,7 @@
             </tr>
             <tr>
                <th scope="row">Last Updated</th>
-               <td>2023-04-29</td>
+               <td>2023-05-22</td>
             </tr>
             <tr class="backlink">
                <th scope="row" colspan="2"><a href="https://uwlib-cams.github.io/sinopia_maps/">RETURN TO SINOPIA_MAPS INDEX</a></th>
@@ -54,10 +54,8 @@
       <section class="ptList">
          <h3 id="WAURTrdaWorkptList"><span>Property Templates in WAU RT RDA Work for Print Monograph</span></h3>
          <ul id="BT">
-            <li><a href="#hasexpression/manifestationofwork">has expression/manifestation of work</a>&nbsp;<span class="caret"></span><ul class="nested">
-                  <li>has manifestation of work</li>
-               </ul>
-            </li>
+            <li><a href="#hasexpressionofwork">has expression of work</a></li>
+            <li><a href="#hasmanifestationofwork">has manifestation of work</a></li>
             <li><a href="#haspreferredtitleofwork">has preferred title of work</a></li>
             <li><a href="#hasvarianttitleofwork">has variant title of work</a></li>
             <li><a href="#hasauthorizedaccesspointforwork">has authorized access point for work</a></li>
@@ -546,8 +544,8 @@
             <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
             <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
          </ul>
-         <section class="ptInfo" id="hasexpression/manifestationofwork">
-            <h4><span>Property Template: has expression/manifestation of work(*)</span></h4>
+         <section class="ptInfo" id="hasexpressionofwork">
+            <h4><span>Property Template: has expression of work(*)</span></h4>
             <ul>
                <li>Property IRI: <a href="http://rdaregistry.info/Elements/w/P10078">http://rdaregistry.info/Elements/w/P10078</a></li>
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57">https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57</a></li>
@@ -560,14 +558,31 @@
                            Service</a>: 
                         <ul>
                            <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA expression</strong> : urn:ld4p:sinopia:rda:expression</li>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
                         </ul>
                      </li>
                   </ul>
                </li>
-               <li>Other properties included in this property template: 
+               <li><span class="backlink"><a href="#WAURTrdaWorkptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
+               <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
+               <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>
+            </ul>
+         </section>
+         <section class="ptInfo" id="hasmanifestationofwork">
+            <h4><span>Property Template: has manifestation of work</span></h4>
+            <ul>
+               <li>Property IRI: <a href="http://rdaregistry.info/Elements/w/P10072">http://rdaregistry.info/Elements/w/P10072</a></li>
+               <li>RDA Toolkit URL: <a href=""></a></li>
+               <li>Optional</li>
+               <li>Repeatable</li>
+               <li>Property type: lookup</li>
+               <li>Value constraint(s): 
                   <ul>
-                     <li>has manifestation of work [<a href="http://rdaregistry.info/Elements/w/P10072">RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e">RDA TOOLKIT</a>]</li>
+                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup
+                           Service</a>: 
+                        <ul>
+                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA manifestation</strong> : urn:ld4p:sinopia:rda:manifestation</li>
+                        </ul>
+                     </li>
                   </ul>
                </li>
                <li><span class="backlink"><a href="#WAURTrdaWorkptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
@@ -627,23 +642,12 @@
          </section>
          <section class="ptInfo" id="hasvariantaccesspointforwork">
             <h4><span>Property Template: has variant access point for work</span></h4>
-            <p><span class="ptInfoRemark">Do not record an IRI for an authority record</span></p>
             <ul>
                <li>Property IRI: <a href="http://rdaregistry.info/Elements/w/P10332">http://rdaregistry.info/Elements/w/P10332</a></li>
                <li>RDA Toolkit URL: <a href="https://access.rdatoolkit.org/en-US_ala-3975091a-4c88-332f-bc3e-a5c19e86d315">https://access.rdatoolkit.org/en-US_ala-3975091a-4c88-332f-bc3e-a5c19e86d315</a></li>
                <li>Optional</li>
                <li>Repeatable</li>
-               <li>Property type: lookup</li>
-               <li>Value constraint(s): 
-                  <ul>
-                     <li>Value lookup source(s) via the <a href="https://lookup.ld4l.org/">LD4P Authority Lookup
-                           Service</a>: 
-                        <ul>
-                           <li><strong xmlns:xs="http://www.w3.org/2001/XMLSchema">Sinopia RDA nomen</strong> : urn:ld4p:sinopia:rda:nomen</li>
-                        </ul>
-                     </li>
-                  </ul>
-               </li>
+               <li>Property type: literal</li>
                <li><span class="backlink"><a href="#WAURTrdaWorkptList"><strong>RETURN TO PROPERTY LIST</strong></a></span></li>
                <li><span class="backlink"><a href="#profile"><strong>RETURN TO PROFILE TOP</strong></a></span></li>
                <li><span class="backlink"><a href="https://uwlib-cams.github.io/sinopia_maps/"><strong>RETURN TO SINOPIA_MAPS INDEX</strong></a></span></li>

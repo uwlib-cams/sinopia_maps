@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
-         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
    <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaEntity:standalone:ries07">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
@@ -13,18 +7,37 @@
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10013"/>
       <rdfs:label>UWSINOPIA WAU rdaEntity standalone ries07</rdfs:label>
       <sinopia:hasAuthor>ries07@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-05-06</sinopia:hasDate>
+      <sinopia:hasRemark xml:lang="en">This test template will match on custom guidance_set elements.</sinopia:hasRemark>
+      <sinopia:hasDate>2023-05-22</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsxP00017_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsxP00017_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsxP00017_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsxP00020_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsxP00017_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has appellation of RDA entity</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/x/P00017"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40081"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-</rdf:RDF>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40081">
+      <rdfs:label xml:lang="en">has appellation of item</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsxP00020_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsxP00020_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsxP00020_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has authorized access point for RDA entity</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/x/P00020"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsxP00020_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsxP00020_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:discogs:master"/>
+   </rdf:Description>
+   </rdf:RDF>
