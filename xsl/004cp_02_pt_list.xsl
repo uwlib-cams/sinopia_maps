@@ -20,7 +20,7 @@
                 <li>
                     <xsl:choose>
                         <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
-                            <a href="{uwmaps/@localid_prop}">
+                            <a href="#{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
                                 <xsl:choose>
                                     <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label"
                                         >{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}</xsl:when>
@@ -30,7 +30,7 @@
                             <a>This is a multiprop</a>
                         </xsl:when>
                         <xsl:otherwise>
-                            <a href="{uwmaps/@localid_prop}">
+                            <a href="#{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
                             <xsl:choose>
                                 <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label"
                                     >{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}</xsl:when>

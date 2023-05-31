@@ -55,7 +55,6 @@
                         /uwsinopia:form_order"/>
                     <xsl:element name="prop"
                         namespace="https://uwlib-cams.github.io/map_storage/xsd/">
-                        <xsl:attribute name="localid_prop">{uwmaps/@localid_prop}</xsl:attribute>
                         <xsl:copy-of select="uwmaps:prop_iri"/>
                         <xsl:copy-of select="uwmaps:prop_label"/>
                         <!-- skip some prop info -->
@@ -66,6 +65,12 @@
                                 namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                 <xsl:attribute name="url"
                                     >{uwmaps:sinopia/uwsinopia:toolkit/@url}</xsl:attribute>
+                            </xsl:element>
+                            <xsl:element name="implementation_set"
+                                namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                <xsl:attribute name="localid_implementation_set">
+                                    {uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}
+                                </xsl:attribute>
                             </xsl:element>
                             <!-- guidance_set -->
                             <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
