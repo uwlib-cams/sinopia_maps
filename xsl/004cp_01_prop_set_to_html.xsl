@@ -66,12 +66,7 @@
                                 <xsl:attribute name="url"
                                     >{uwmaps:sinopia/uwsinopia:toolkit/@url}</xsl:attribute>
                             </xsl:element>
-                            <xsl:element name="implementation_set"
-                                namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-                                <xsl:attribute name="localid_implementation_set">
-                                    {uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}
-                                </xsl:attribute>
-                            </xsl:element>
+
                             <!-- guidance_set -->
                             <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
                                 <xsl:element name="guidance_set"
