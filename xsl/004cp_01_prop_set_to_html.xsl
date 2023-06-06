@@ -14,6 +14,7 @@
     <xsl:include href="004a_02_formatStrings.xsl"/>
     <xsl:include href="004cp_02_rt_info.xsl"/>
     <xsl:include href="004cp_03_pt_list.xsl"/>
+    <xsl:include href="004cp_04_pt_details.xsl"/>
     
     <xsl:template match="/">
         <!-- get all necessary variables from prop_set files -->
@@ -277,6 +278,11 @@
                             <xsl:with-param name="rt_remark" select="$rt_remark"/>
                         </xsl:call-template>
                         <xsl:call-template name="pt_list">
+                            <xsl:with-param name="rt_id" select="$rt_id"/>
+                            <xsl:with-param name="prop" select="$prop_info"/>
+                            <xsl:with-param name="file_name" select="$rt_rdfxml"/>
+                        </xsl:call-template>
+                        <xsl:call-template name="pt_details">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
                             <xsl:with-param name="file_name" select="$rt_rdfxml"/>
