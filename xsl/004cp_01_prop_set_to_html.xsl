@@ -242,7 +242,7 @@
             </xsl:variable>
             
             <xsl:result-document
-                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), 'cp.html')}">
+                href="{concat($oxygenPath, '../html/', translate($rt_id, ':', '_'), 'cp.html')}">
                 <html>
                     <head>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -279,6 +279,7 @@
                         <xsl:call-template name="pt_list">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
+                            <xsl:with-param name="file_name" select="$rt_rdfxml"/>
                         </xsl:call-template>
                         <script type="text/javascript" src="create_human_readable_RTs-collapsible.js"/>
                     </body>
