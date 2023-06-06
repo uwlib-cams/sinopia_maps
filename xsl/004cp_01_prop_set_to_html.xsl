@@ -12,7 +12,8 @@
     
     <!-- included xsl sheets -->
     <xsl:include href="004a_02_formatStrings.xsl"/>
-    <xsl:include href="004cp_02_pt_list.xsl"/>
+    <xsl:include href="004cp_02_rt_info.xsl"/>
+    <xsl:include href="004cp_03_pt_list.xsl"/>
     
     <xsl:template match="/">
         <!-- get all necessary variables from prop_set files -->
@@ -34,7 +35,7 @@
             </xsl:variable>
             <xsl:variable name="rt_remark" select="uwsinopia:rt_remark[@xml:lang = 'en']"/>
             <xsl:variable name="rt_rdfxml" select="
-                document(concat('../', translate($rt_id, ':', '_'), '.rdf'))"/>
+                concat('../', translate($rt_id, ':', '_'), '.rdf')"/>
             <!-- prop_info: select needed guidance_set elements, implementation_set for each prop/PT -->
             <xsl:variable name="prop_info" as="node()*">
                 <!-- for each prop in RT -->
@@ -270,6 +271,11 @@
                                 <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </h1>
+                        <xsl:call-template name="rt_info">
+                            <xsl:with-param name="file_name" select="$rt_rdfxml"/>
+                            <xsl:with-param name="rt_id" select="$rt_id"/>
+                            <xsl:with-param name="rt_remark" select="$rt_remark"/>
+                        </xsl:call-template>
                         <xsl:call-template name="pt_list">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
