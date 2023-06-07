@@ -17,47 +17,34 @@
             <h3 id="prop_list">Property Templates in {$rt_id}</h3>
             <ul>
                 <xsl:for-each select="$prop">
-                    <!-- TO DO decide how to display primary prop label if alt_label -->
-                    <li>
-                        <xsl:choose>
-                            <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
-                                <a href="#{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
-                                    <xsl:choose>
-                                        <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
-                                            {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}
-                                        </xsl:when>
-                                        <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
-                                    </xsl:choose>
-                                </a>
-                                
-                                <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
-                                <xsl:choose>
-                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
-                                        <xsl:call-template name="carat_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(0)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:call-template name="carat_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(1)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:otherwise>
-                                </xsl:choose>                             
-                            </xsl:when>
-                            <xsl:otherwise>
-                                <a href="#{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
-                                <xsl:choose>
-                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label"
-                                        >{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}</xsl:when>
-                                    <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
-                                </xsl:choose>
-                                </a>
-                            </xsl:otherwise>
-                        </xsl:choose>
+                    <li>              
+                        <a href="#{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
+                            <xsl:choose>
+                                <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
+                                    {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label}
+                                </xsl:when>
+                                <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
+                            </xsl:choose>
+                        </a>
+                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
+                            <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
+                            <xsl:choose>
+                                <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
+                                    <xsl:call-template name="carat_list">
+                                        <xsl:with-param name="file_name" select="$file_name"/>
+                                        <xsl:with-param name="alt_id" select="number(0)"/>
+                                        <xsl:with-param name="node_id" select="$node_id"/>
+                                    </xsl:call-template>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:call-template name="carat_list">
+                                        <xsl:with-param name="file_name" select="$file_name"/>
+                                        <xsl:with-param name="alt_id" select="number(1)"/>
+                                        <xsl:with-param name="node_id" select="$node_id"/>
+                                    </xsl:call-template>
+                                </xsl:otherwise>
+                            </xsl:choose> 
+                        </xsl:if>
                     </li>
                 </xsl:for-each>
                 <li>
@@ -76,11 +63,12 @@
         <xsl:param name="alt_id"/>
         <xsl:param name="node_id"/>
         
-        <xsl:if test="count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != 1]) gt 0">
+        <xsl:if test="($alt_id = number(1) and count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != 1]) gt 0)
+            or ($alt_id = number(0))">
             <xsl:text>&#160;</xsl:text>
             <span class="caret"/>
             <ul class="nested">
-                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != $alt_id]">
+                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() gt $alt_id]">
                     <xsl:variable name="subprop_URI" select="@rdf:resource"/>
                     <xsl:variable name="entity">
                         <xsl:variable name="remove_prop_ID"

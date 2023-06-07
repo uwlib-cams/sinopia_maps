@@ -148,8 +148,27 @@
                             </xsl:when>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:nested_resource_pt">
                                 <li>Property type: nested resource</li>
-                            </xsl:when>
+                            </xsl:when>                        
                         </xsl:choose>
+                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop"> 
+                            <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
+                                <xsl:choose>
+                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
+                                        <xsl:call-template name="subprop_list">
+                                            <xsl:with-param name="file_name" select="$file_name"/>
+                                            <xsl:with-param name="alt_id" select="number(0)"/>
+                                            <xsl:with-param name="node_id" select="$node_id"/>
+                                        </xsl:call-template>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:call-template name="subprop_list">
+                                            <xsl:with-param name="file_name" select="$file_name"/>
+                                            <xsl:with-param name="alt_id" select="number(1)"/>
+                                            <xsl:with-param name="node_id" select="$node_id"/>
+                                        </xsl:call-template>
+                                    </xsl:otherwise>
+                                </xsl:choose>   
+                        </xsl:if>
                         <li>
                             <span class="backlink">
                                 <a href="#prop_list">
@@ -178,7 +197,31 @@
         </strong>
         <xsl:text> : </xsl:text>
         <xsl:value-of
-            select="j:json-to-xml($authorities_xml)/j:array/j:map[j:string[@key = 'label'] = $label]/j:string[@key = 'uri']"
-        />
+            select="j:json-to-xml($authorities_xml)/j:array/j:map[j:string[@key = 'label'] = $label]/j:string[@key = 'uri']"/>
+    </xsl:template>
+    
+    <xsl:template name="subprop_list">
+        <xsl:param name="file_name"/>
+        <xsl:param name="alt_id"/>
+        <xsl:param name="node_id"/>
+        
+        <xsl:if test="($alt_id = number(1) and count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != 1]) gt 0)
+            or ($alt_id = number(0))">  
+            <li>Other properties included in this property template:</li>
+            <ul>
+                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() gt $alt_id]">
+                    <xsl:variable name="subprop_URI" select="@rdf:resource"/>
+                    <xsl:variable name="entity">
+                        <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
+                        <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                    </xsl:variable>
+                    <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
+                    <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+                    <li>
+                        <xsl:value-of select="$subprop_label"/>
+                    </li>
+                </xsl:for-each>
+            </ul>
+        </xsl:if>
     </xsl:template>
 </xsl:stylesheet>
