@@ -212,13 +212,24 @@
                 <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() gt $alt_id]">
                     <xsl:variable name="subprop_URI" select="@rdf:resource"/>
                     <xsl:variable name="entity">
-                        <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
+                        <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
                         <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
                     </xsl:variable>
+                    
+                    <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
+                    <xsl:variable name="subprop_uri" select="concat('http://www.rdaregistry.info/Elements/', $entity, '#', $url_end)"/>
                     <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
                     <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+                    
+                    <xsl:variable name="toolkit_url">
+                        <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
+                        <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
+                    </xsl:variable>
                     <li>
                         <xsl:value-of select="$subprop_label"/>
+                        [<a
+                            href="{$subprop_URI}">RDA REGISTRY</a>] [<a
+                                href="{$toolkit_url}">RDA TOOLKIT</a>]
                     </li>
                 </xsl:for-each>
             </ul>
