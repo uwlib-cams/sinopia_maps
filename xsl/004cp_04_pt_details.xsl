@@ -4,7 +4,9 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:j="http://www.w3.org/2005/xpath-functions"
+    exclude-result-prefixes="xs j" version="3.0"
     expand-text="true">
     
     <xsl:output method="html"/>
@@ -25,7 +27,7 @@
                                 </xsl:when>
                                 <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>                               
                             </xsl:choose>     
-                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementaiton_set/uwsinopia:required"> 
+                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:required"> 
                                 <xsl:text>(*)</xsl:text>
                             </xsl:if>
                         </span>
@@ -62,25 +64,85 @@
                         <xsl:choose>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt">
                                 <li>Property type: literal</li>
-                                
+                                <!-- NEEDS TESTING -->
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/*">
-                                    <li>Value constraint(s): 
-                                    </li>
+                                    <ul>
+                                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:date_default">
+                                             <li>Defaults to current date</li>
+                                         </xsl:if>
+                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:userId_default">
+                                             <li>Defaults to user id</li>
+                                         </xsl:if>
+                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:default_literal">
+                                             <li>Defaults to </li>
+                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:default_literal}
+                                         </xsl:if>
+                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype">
+                                             <li>Validation type: </li>
+                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
+                                         </xsl:if>
+                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype">
+                                             <li>Validation type: </li>
+                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
+                                        </xsl:if>
+                                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex">
+                                            <li>Validation regex: </li>
+                                            {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex}
+                                        </xsl:if>
+                                    </ul>
                                 </xsl:if>
                             </xsl:when>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt">
-                                <li>Property type: lookup</li>
-                                
-                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/*">
-                                    <li>Value constraint(s): 
-                                    </li>
+                                <li>Property type: lookup</li> 
+                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label">
+                                    <ul>
+                                        <li>Default:
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label}
+                                                <xsl:text> - </xsl:text>
+                                            </xsl:if>
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri/@iri}
+                                            </xsl:if>
+                                        </li>
+                                    </ul>
                                 </xsl:if>
+                                    <li>Value constraint(s): 
+                                        <ul>
+                                            <li>Value lookup source(s) via the <a
+                                                href="https://lookup.ld4l.org/">LD4P Authority Lookup
+                                                Service</a>: <ul>              
+                                                    <xsl:for-each select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:authorities/uwsinopia:authority_urn">
+                                                        <li>
+                                                            <xsl:call-template name="lookup_details">
+                                                                <xsl:with-param name="label" select="."/>
+                                                            </xsl:call-template>                                                     
+                                                        </li>
+                                                    </xsl:for-each>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
                             </xsl:when>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt">
+                                <!-- NEEDS TESTING -->
                                 <li>Property type: URI</li>
-                                
+                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri_label">
+                                    <ul>
+                                        <li>Default:
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri_label">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:_default_iri_label}
+                                                <xsl:text> - </xsl:text>
+                                            </xsl:if>
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri/@iri}
+                                            </xsl:if>
+                                        </li>
+                                    </ul>
+                                </xsl:if>
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/*">
                                     <li>Value constraint(s): 
+                                        
                                     </li>
                                 </xsl:if>
                             </xsl:when>
@@ -88,11 +150,35 @@
                                 <li>Property type: nested resource</li>
                             </xsl:when>
                         </xsl:choose>
-                        
-                        
+                        <li>
+                            <span class="backlink">
+                                <a href="#prop_list">
+                                    <strong>RETURN TO PROPERTY LIST</strong>
+                                </a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="backlink">
+                                <a href="#profile">
+                                    <strong>RETURN TO PROFILE TOP</strong>
+                                </a>
+                            </span>
+                        </li>
                     </ul>
                 </section>
             </xsl:for-each>
         </section>
+    </xsl:template>
+    
+    <xsl:template name="lookup_details">      
+        <xsl:param name="label"/>
+        <xsl:variable name="authorities_xml" select="(document('../xml/authorityConfig.xml')/data)"/>
+        <strong>
+            <xsl:value-of select="$label"/>
+        </strong>
+        <xsl:text> : </xsl:text>
+        <xsl:value-of
+            select="j:json-to-xml($authorities_xml)/j:array/j:map[j:string[@key = 'label'] = $label]/j:string[@key = 'uri']"
+        />
     </xsl:template>
 </xsl:stylesheet>

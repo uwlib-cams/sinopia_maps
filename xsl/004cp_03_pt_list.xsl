@@ -59,10 +59,14 @@
                             </xsl:otherwise>
                         </xsl:choose>
                     </li>
-                    <!-- TO DO: 
-                    link to details for each PT
-                    if multiple_prop include all w. collapsible -->
                 </xsl:for-each>
+                <li>
+                    <span class="backlink">
+                        <a href="#profile">
+                            <strong>RETURN TO PROFILE TOP</strong>
+                        </a>
+                    </span>
+                </li>
             </ul>
         </section>
     </xsl:template>
