@@ -19,7 +19,6 @@
     <xsl:template match="/">
         <!-- get all necessary variables from prop_set files -->
         <!-- for each RT -->
-        <!-- TEST change to sinopia_maps.xml before publishing -->
         <xsl:for-each select="
             document('../xml/test.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
             uwsinopia:rt[matches(@output_load, 'true|1')]">
@@ -60,6 +59,7 @@
                         <xsl:copy-of select="uwmaps:prop_iri"/>
                         <xsl:copy-of select="uwmaps:prop_label"/>
                         <!-- skip some prop info -->
+                        
                         <!-- switch to uwsinopia namespace from here down -->
                         <xsl:element name="sinopia"
                             namespace="https://uwlib-cams.github.io/map_storage/xsd/">
@@ -98,6 +98,7 @@
                                             </xsl:choose>
                                         </xsl:element>
                                     </xsl:if>
+                                    
                                     <!-- entity_boundary -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary">
@@ -105,6 +106,7 @@
                                             select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary"
                                         />
                                     </xsl:if>
+                                    
                                     <!-- recording_method -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method">
@@ -130,6 +132,7 @@
                                             </xsl:choose>
                                         </xsl:element>
                                     </xsl:if>
+                                    
                                     <!-- ses -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses">
@@ -155,6 +158,7 @@
                                             </xsl:choose>
                                         </xsl:element>
                                     </xsl:if>
+                                    
                                     <!-- transcription_standard -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard">
@@ -178,6 +182,7 @@
                                             </xsl:choose>
                                         </xsl:element>
                                     </xsl:if>
+                                    
                                     <!-- options -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options">
@@ -203,6 +208,7 @@
                                             </xsl:choose>
                                         </xsl:element>
                                     </xsl:if>
+                                    
                                     <!-- TO DO mgds, following schema implementation -->
                                     <!-- examples -->
                                     <xsl:if
@@ -231,6 +237,8 @@
                                     </xsl:if>
                                 </xsl:element>
                             </xsl:if>
+                            
+                            <!-- copy of implementation set -->
                             <xsl:copy-of select="
                                 uwmaps:sinopia/uwsinopia:implementation_set
                                 [uwsinopia:institution = $institution]
@@ -239,9 +247,11 @@
                                 [uwsinopia:user = $user]"/>
                         </xsl:element>
                     </xsl:element>
-                </xsl:for-each> <!-- for each prop in RT -->
+                </xsl:for-each>
             </xsl:variable>
             
+            <!-- HTML result doc -->
+            <!-- NOTE: Change extension before final publishing -->
             <xsl:result-document
                 href="{concat($oxygenPath, '../html/', translate($rt_id, ':', '_'), 'cp.html')}">
                 <html>
@@ -262,6 +272,7 @@
                     </head>
                     <body>
                         <h1 id="profile">
+                            <!-- Title -->
                             <xsl:text>University of Washington Libraries Sinopia Resource Template(s) for </xsl:text>
                             <xsl:call-template name="format_resources">
                                 <xsl:with-param name="resource" select="$resource"/>
@@ -272,16 +283,22 @@
                                 <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </h1>
+                        
+                        <!-- RT info table -->
                         <xsl:call-template name="rt_info">
                             <xsl:with-param name="file_name" select="$rt_rdfxml"/>
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="rt_remark" select="$rt_remark"/>
                         </xsl:call-template>
+                        
+                        <!-- list of PTs in RT -->
                         <xsl:call-template name="pt_list">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
                             <xsl:with-param name="file_name" select="$rt_rdfxml"/>
                         </xsl:call-template>
+                        
+                        <!-- details of each PT -->
                         <xsl:call-template name="pt_details">
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="prop" select="$prop_info"/>
@@ -290,10 +307,7 @@
                         <script type="text/javascript" src="create_human_readable_RTs-collapsible.js"/>
                     </body>
                 </html>
-                
-                
             </xsl:result-document>
-        </xsl:for-each> <!-- for each RT -->
-        
+        </xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>
