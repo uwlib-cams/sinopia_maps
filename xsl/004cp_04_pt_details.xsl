@@ -11,6 +11,8 @@
     
     <xsl:output method="html"/>
     
+    <xsl:include href="004cp_05_pt_guidance.xsl"/>
+    
     <!-- CONTAINS PT_DETAILS, LOOKUP_DETAILS, AND SUBPROP_LIST TEMPLATES -->
     
     <!-- template to generate all information about properties -->
@@ -19,7 +21,7 @@
         <xsl:param name="rt_id"/>
         <xsl:param name="prop"/>
         <xsl:param name="file_name"/>
-        <section class="ptList"> 
+        <section class="ptInfo"> 
             <xsl:for-each select="$prop">
                 <section class="ptInfo" id="{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
                     
@@ -47,6 +49,17 @@
                                 {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:remark}
                             </span>
                         </p>
+                    </xsl:if>
+                    
+                    <!-- include Guidance if available -->
+                    <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set">
+                        <span class="ptInfoGuidance">
+                            <b>Guidance and Configuration</b>
+                            <xsl:call-template name="pt_guidance">
+                                <xsl:with-param name="prop" select="$prop"/>
+                                <xsl:with-param name="rt_id" select="$rt_id"/>
+                            </xsl:call-template>
+                        </span>
                     </xsl:if>
                     <ul>
                         <li>Property IRI: <a href="{uwmaps:prop_iri/@iri}">{uwmaps:prop_iri/@iri}</a></li>
