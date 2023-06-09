@@ -288,6 +288,8 @@
                             <xsl:with-param name="file_name" select="$rt_rdfxml"/>
                             <xsl:with-param name="rt_id" select="$rt_id"/>
                             <xsl:with-param name="rt_remark" select="$rt_remark"/>
+                            <xsl:with-param name="format" select="$format"/>
+                            <xsl:with-param name="user" select="$user"/>
                         </xsl:call-template>
                         
                         <!-- list of PTs in RT -->

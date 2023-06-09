@@ -13,10 +13,11 @@
         <xsl:param name="file_name"/>
         <xsl:param name="rt_id"/>
         <xsl:param name="rt_remark"/>
+        <xsl:param name="format"/>
+        <xsl:param name="user"/>
         <xsl:variable name="rdf_about"
             select="concat('https://api.sinopia.io/resource/', $rt_id)"/> 
         <xsl:variable name="iri" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasClass/@rdf:resource"/>
-        <xsl:variable name="label" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/rdfs:label"/>
         <xsl:variable name="id" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasResourceId"/>
         <xsl:variable name="author" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasAuthor"/>
         <xsl:variable name="date" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasDate"/>
@@ -25,7 +26,7 @@
             <thead>
                 <tr>
                     <th colspan="2">
-                        <xsl:text>Resource Template: </xsl:text>
+                        <xsl:text>Resource Template ID: </xsl:text>
                         <xsl:value-of select="$rt_id"/>
                     </th>
                 </tr>
@@ -46,18 +47,18 @@
                         </a>
                     </td>
                 </tr>
+               <tr>
+                   <th scope="row">To describe</th>
+                   <td>
+                       <xsl:value-of select="$format"/>
+                   </td>
+               </tr> 
                 <tr>
-                    <th scope="row">Label</th>
+                    <th scope="row">For user/user group</th>
                     <td>
-                        <xsl:value-of select="$label"/>
+                        <xsl:value-of select="$user"/>
                     </td>
-                </tr>
-                <tr>
-                    <th scope="row">ID</th>
-                    <td>
-                        <xsl:value-of select="$id"/>
-                    </td>
-                </tr>
+                </tr>    
                 <tr>
                     <th scope="row">Author</th>
                     <td>
