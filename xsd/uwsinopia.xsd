@@ -47,7 +47,7 @@
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
             maxOccurs="1"/>
          <xs:element name="options" type="options_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
@@ -95,9 +95,10 @@
    </xs:complexType>
    <xs:complexType name="mgds_type">
       <xs:sequence>
-         <xs:element name="mgd" type="mgd_type"/>
+         <xs:element name="mgd" type="mgd_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
+   <!-- enumerate labels for data entry, replace with URNs when outputting RTs -->
    <xs:simpleType name="mgd_type">
       <xs:restriction base="xs:string">
          <xs:enumeration value="MG: Introduction"/>
