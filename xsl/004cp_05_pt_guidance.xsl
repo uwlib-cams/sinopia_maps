@@ -7,6 +7,8 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
     expand-text="true">
     
+    <!-- CONTAINS PT_GUIDANCE TEMPLATE -->
+    
     <xsl:template name="pt_guidance">
         <xsl:param name="prop"/>
         <xsl:param name="rt_id"/>
@@ -14,12 +16,10 @@
             <xsl:text>&#160;</xsl:text>
             <span class="caret"/>
             <ul class="nested">  
+                
+                <!-- general guidance -->
                 <xsl:apply-templates
                     select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general/node()"/>
-                <xsl:if
-                    test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary">
-                    <xsl:apply-templates select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary/node()"/>
-                </xsl:if>
                 
                 <!-- entity_boundary -->
                 <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:entity_boundary">
@@ -95,7 +95,7 @@
         </span>
     </xsl:template>
     
-    <!-- ***** GUIDANCE_SET CHILD-ELEMENT TEMPLATES -->
+    <!-- GUIDANCE_SET CHILD-ELEMENT TEMPLATES -->
     <xsl:template match="uwsinopia:p">
         <xsl:element name="{local-name()}">
             <xsl:apply-templates/>

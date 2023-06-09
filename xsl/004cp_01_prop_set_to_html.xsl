@@ -11,10 +11,10 @@
     <xsl:param name="oxygenPath"/>
     
     <!-- included xsl sheets -->
-    <xsl:include href="004a_02_formatStrings.xsl"/>
     <xsl:include href="004cp_02_rt_info.xsl"/>
     <xsl:include href="004cp_03_pt_list.xsl"/>
     <xsl:include href="004cp_04_pt_details.xsl"/>
+    <xsl:include href="004cp_06_format_string.xsl"/>
     
     <xsl:template match="/">
         <!-- get all necessary variables from prop_set files -->
@@ -210,6 +210,7 @@
                                     </xsl:if>
                                     
                                     <!-- TO DO mgds, following schema implementation -->
+                                    
                                     <!-- examples -->
                                     <xsl:if
                                         test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples">
@@ -259,9 +260,8 @@
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                         <title>
                             <xsl:text>UW Sinopia resource template | </xsl:text>
-                            <xsl:call-template name="format_formats">
-                                <xsl:with-param name="format" select="$resource"/>
-                                <xsl:with-param name="case" select="'title'"/>
+                            <xsl:call-template name="format_resource">
+                                <xsl:with-param name="resource" select="$resource"/>
                             </xsl:call-template>
                         </title>
                         <link
@@ -274,13 +274,12 @@
                         <h1 id="profile">
                             <!-- Title -->
                             <xsl:text>University of Washington Libraries Sinopia Resource Template(s) for </xsl:text>
-                            <xsl:call-template name="format_resources">
+                            <xsl:call-template name="format_resource">
                                 <xsl:with-param name="resource" select="$resource"/>
                             </xsl:call-template>
                             <xsl:text> </xsl:text>
-                            <xsl:call-template name="format_formats">
+                            <xsl:call-template name="format_format">
                                 <xsl:with-param name="format" select="$format"/>
-                                <xsl:with-param name="case" select="'title'"/>
                             </xsl:call-template>
                         </h1>
                         
