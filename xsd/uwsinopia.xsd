@@ -93,7 +93,12 @@
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
-   <xs:simpleType name="mgds_type">
+   <xs:complexType name="mgds_type">
+      <xs:sequence>
+         <xs:element name="mgd" type="mgd_type"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="mgd_type">
       <xs:restriction base="xs:string">
          <xs:enumeration value="MG: Introduction"/>
          <xs:enumeration value="MG: Access Point Syntax"/>

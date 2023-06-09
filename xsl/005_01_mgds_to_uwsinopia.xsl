@@ -8,8 +8,8 @@
 
     <xsl:mode on-no-match="shallow-copy"/>
 
-    <xsl:template match="xs:simpleType[@name = 'mgds_type']">
-        <xs:simpleType name="mgds_type">
+    <xsl:template match="xs:simpleType[@name = 'mgd_type']">
+        <xs:simpleType name="mgd_type">
             <xs:restriction base="xs:string">
                 <xsl:for-each select="fn:json-to-xml($mgds_xml)/fn:array/fn:map">
                     <xs:enumeration value="{fn:string[@key = 'title']}"/>
