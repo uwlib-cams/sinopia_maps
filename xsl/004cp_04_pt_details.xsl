@@ -79,20 +79,11 @@
                                 <li>Optional</li>
                             </xsl:otherwise>
                         </xsl:choose>
-                   
-                        
                         
                         <!-- indicate if repeatable/ordered -->
                         <xsl:choose>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:repeatable">
-                                <xsl:choose>
-                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:repeatable/@ordered">
-                                        <li>Reapeatable (ordered)</li>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <li>Repeatable</li>
-                                    </xsl:otherwise>
-                                </xsl:choose>                              
+                                <li>Repeatable</li>
                             </xsl:when>
                             <xsl:otherwise>
                                 <li>Not repeatable</li>
