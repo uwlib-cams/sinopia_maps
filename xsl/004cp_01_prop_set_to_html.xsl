@@ -15,6 +15,7 @@
     <xsl:include href="004cp_03_pt_list.xsl"/>
     <xsl:include href="004cp_04_pt_details.xsl"/>
     <xsl:include href="004cp_06_format_string.xsl"/>
+    <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
     
     <xsl:template match="/">
         <!-- get all necessary variables from prop_set files -->
@@ -305,6 +306,15 @@
                             <xsl:with-param name="prop" select="$prop_info"/>
                             <xsl:with-param name="file_name" select="$rt_rdfxml"/>
                         </xsl:call-template>
+                        
+                        <!-- footer -->
+                        <xsl:call-template name="CC0-footer">
+                            <xsl:with-param name="resource_title"
+                                select="translate($rt_id, '_', ' ')"/>
+                            <xsl:with-param name="org" select="'cams'"/>
+                        </xsl:call-template>
+                        
+                        <!-- js -->
                         <script type="text/javascript" src="create_human_readable_RTs-collapsible.js"/>
                     </body>
                 </html>
