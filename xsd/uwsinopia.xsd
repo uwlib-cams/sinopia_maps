@@ -21,8 +21,7 @@
    <xs:complexType name="sinopia_type">
       <xs:sequence>
          <xs:element name="toolkit" type="toolkit_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="0"
-            maxOccurs="1"/>
+         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
             maxOccurs="unbounded"/>
       </xs:sequence>
@@ -48,7 +47,7 @@
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
             maxOccurs="1"/>
          <xs:element name="options" type="options_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
@@ -95,8 +94,309 @@
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
    <xs:complexType name="mgds_type">
-      <!-- TO DO: ZP will provide data -->
+      <xs:sequence>
+         <xs:element name="mgd" type="mgd_type" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
    </xs:complexType>
+   <!-- enumerate labels for data entry, replace with URNs when outputting RTs -->
+   <xs:simpleType name="mgd_type">
+      <xs:restriction base="xs:string">
+         <xs:enumeration value="MG: Introduction"/>
+         <xs:enumeration value="MG: Access Point Syntax"/>
+         <xs:enumeration value="MG: Aggregates"/>
+         <xs:enumeration value="MG: Attributes: Agent"/>
+         <xs:enumeration value="MG: Basic Cataloging Decisions"/>
+         <xs:enumeration value="MG: Corporate Bodies"/>
+         <xs:enumeration value="MG: Expressions"/>
+         <xs:enumeration value="MG: Families"/>
+         <xs:enumeration value="MG: Fictitious and Real Non-Human Entities"/>
+         <xs:enumeration value="MG: Persons"/>
+         <xs:enumeration value="MG: Places"/>
+         <xs:enumeration value="MG: Relationships: Agent-Agent"/>
+         <xs:enumeration value="MG: Relationships: Agent-WEMI"/>
+         <xs:enumeration value="MG: Relationships: WEMI-WEMI"/>
+         <xs:enumeration value="MG: Reproductions-Photocopies"/>
+         <xs:enumeration value="MG: Serial Work and Integrating Work Decisions"/>
+         <xs:enumeration value="MG: Series-Subseries"/>
+         <xs:enumeration value="MG: Timespan"/>
+         <xs:enumeration value="MG: Transcription-Punctuation"/>
+         <xs:enumeration value="MG: Vocabulary Encoding Schemes"/>
+         <xs:enumeration value="MG: Works"/>
+         <xs:enumeration value="MG: Work: Access point for work: Constructing access points"/>
+         <xs:enumeration
+            value="MG: Work: Access point for work: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Access point for work: Additional elements and designations: Distinguishing characteristics"/>
+         <xs:enumeration
+            value="MG: Work: Authorized access point: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Authorized access point: Additional elements for creator of work"/>
+         <xs:enumeration value="MG: Work: Creator corporate body of work"/>
+         <xs:enumeration value="MG: Work: Dissertation or thesis information"/>
+         <xs:enumeration value="MG: Work: Frequency"/>
+         <xs:enumeration value="MG: Work: Note on metadata work: Complex see-also references"/>
+         <xs:enumeration value="MG: Work: Note on metadata work: Nonpublic general notes"/>
+         <xs:enumeration
+            value="MG: Work: Preferred title of work: Additional omissions and changes: Parts of works"/>
+         <xs:enumeration
+            value="MG: Work: Preferred title of work: Title not found in original language or is not applicable"/>
+         <xs:enumeration value="MG: Work: Source consulted: Subfield $u and $v"/>
+         <xs:enumeration
+            value="MG: Work: Variant access point for work: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Variant access point for work: Constitutions, charters, and other fundamental laws"/>
+         <xs:enumeration
+            value="MG: Resources: Authorized access points for an administrative regulation, etc."/>
+         <xs:enumeration
+            value="MG: Expression: Authorized access point for expression: Additional elements and designations"/>
+         <xs:enumeration value="MG: Expression: Language of expression"/>
+         <xs:enumeration value="MG: Expression: Revision of"/>
+         <xs:enumeration value="MG: Expression: Script"/>
+         <xs:enumeration value="MG: Expression: Summarization of content"/>
+         <xs:enumeration value="MG: Manifestation: Accessibility content"/>
+         <xs:enumeration value="MG: Manifestation: Carrier type"/>
+         <xs:enumeration value="MG: Manifestation: Contributor agent of still image"/>
+         <xs:enumeration value="MG: Manifestation: Date of manufacture: GPO publications"/>
+         <xs:enumeration value="MG: Manifestation: Date of production: Recording"/>
+         <xs:enumeration value="MG: Manifestation: Date of publication: CIP cataloging"/>
+         <xs:enumeration
+            value="MG: Manifestation: Date of publication: Date of publication not identified"/>
+         <xs:enumeration
+            value="MG: Manifestation: Date of publication: Sources of information: CIP cataloging"/>
+         <xs:enumeration value="MG: Manifestation: Distribution statement: CIP cataloging"/>
+         <xs:enumeration value="MG: Manifestation: Extent of manifestation: CIP cataloging"/>
+         <xs:enumeration value="MG: Manifestation: Extent of manifestation: Terms"/>
+         <xs:enumeration
+            value="MG: Manifestation: Identifier for manifestation: Two or more identifiers"/>
+         <xs:enumeration value="MG: Manifestation: Manufacture statement: CIP cataloging"/>
+         <xs:enumeration value="MG: Manifestation: Mode of issuance"/>
+         <xs:enumeration value="MG: Manifestation: Note on edition statement: Integrating resources"/>
+         <xs:enumeration value="MG: Manifestation: Note on edition statement: Multipart resources"/>
+         <xs:enumeration value="MG: Manifestation: Note on publication statement"/>
+         <xs:enumeration value="MG: Manifestation: Numbering within sequence"/>
+         <xs:enumeration value="MG: Manifestation: Other title information"/>
+         <xs:enumeration value="MG: Manifestation: Place of publication"/>
+         <xs:enumeration value="MG: Manifestation: Printer corporate body: Government printers"/>
+         <xs:enumeration value="MG: Manifestation: Printer corporate body: Privately printed works"/>
+         <xs:enumeration value="MG: Manifestation: Production statement"/>
+         <xs:enumeration
+            value="MG: Manifestation: Production statement: Recording changes in production statements"/>
+         <xs:enumeration
+            value="MG: Manifestation: Publication statement: Recording changes in publication statements"/>
+         <xs:enumeration
+            value="MG: Manifestation: Publication statement: Sources of information: CIP cataloging"/>
+         <xs:enumeration value="MG: Manifestation: Statement of responsibility: Two or more agents"/>
+         <xs:enumeration value="MG: Manifestation: Statement of responsibility relating to edition"/>
+         <xs:enumeration value="MG: Manifestation: Supplementary content"/>
+         <xs:enumeration value="MG: Manifestation: Title proper"/>
+         <xs:enumeration
+            value="MG: Manifestation: Uniform Resource Locator: Original URI no longer active"/>
+         <xs:enumeration value="MG: Manifestation: Variant title of manifestation"/>
+         <xs:enumeration
+            value="MG: Manifestation: Variant title of manifestation: Recording an unstructured description"/>
+         <xs:enumeration value="MG: Item: Modification of item"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Individual instance of an ongoing conference"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Initialisms and acronyms"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Place"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Ships"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Authorized access point for corporate body: Body whose name implies administrative subordination"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Authorized access point for corporate body: Heads of state, heads of government, etc."/>
+         <xs:enumeration value="MG: Corporate Body: Name of corporate body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Non-governmental body with name that includes the entire name of the higher or related body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Preferred name of corporate body: Minor changes of name"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Preferred name of corporate body: Proposed bodies"/>
+         <xs:enumeration value="MG: Corporate Body: Related corporate body of corporate body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Variant access point for corporate body: Base variant access point"/>
+         <xs:enumeration value="MG: Family: Address of family"/>
+         <xs:enumeration value="MG: Family: Authorized access point for family: General"/>
+         <xs:enumeration value="MG: Family: Authorized access point for family: Usage"/>
+         <xs:enumeration value="MG: Family: Category of family"/>
+         <xs:enumeration value="MG: Family: Definition and scope"/>
+         <xs:enumeration value="MG: Family: Family history"/>
+         <xs:enumeration value="MG: Family: Field of activity of family"/>
+         <xs:enumeration value="MG: Family: Hereditary term of honour"/>
+         <xs:enumeration value="MG: Family: Language of family"/>
+         <xs:enumeration value="MG: Family: Preferred name of family"/>
+         <xs:enumeration value="MG: Family: Prominent member of family"/>
+         <xs:enumeration value="MG: Family: Related place of family"/>
+         <xs:enumeration value="MG: Family: Related RDA entity of family"/>
+         <xs:enumeration value="MG: Family: Related timespan of family"/>
+         <xs:enumeration value="MG: Family: Variant access point for family"/>
+         <xs:enumeration value="MG: Family: Variant name of family"/>
+         <xs:enumeration value="MG: Work: Source consulted: Family"/>
+         <xs:enumeration value="MG: Person: Access point for person"/>
+         <xs:enumeration value="MG: Person: Alternate identity of person"/>
+         <xs:enumeration value="MG: Person: Preferred name of person"/>
+         <xs:enumeration value="MG: Person: Preferred name of person: Non-preferred script"/>
+         <xs:enumeration value="MG: Person: Profession or occupation"/>
+         <xs:enumeration value="MG: Person: Related timespan of person"/>
+         <xs:enumeration value="MG: Place: Access point for place: Choice of larger place"/>
+         <xs:enumeration value="MG: Place: Access point for place: Initial articles"/>
+         <xs:enumeration value="MG: Place: Access point for place: Places within cities, etc."/>
+         <xs:enumeration value="MG: Place: Access point for place: Treatment for certain places"/>
+         <xs:enumeration value="MG: Place: Authorized access point for place: Ambiguous entities"/>
+         <xs:enumeration value="MG: Place: Authorized access point for place: Change of name"/>
+         <xs:enumeration
+            value="MG: Place: Authorized access point for place: Places with the same name"/>
+         <xs:enumeration value="MG: Place: Category of place"/>
+         <xs:enumeration value="MG: Place: Identifier for place"/>
+         <xs:enumeration value="MG: Place: Jurisdiction governed of"/>
+         <xs:enumeration value="MG: Place: Location"/>
+         <xs:enumeration value="MG: Place: Name of place"/>
+         <xs:enumeration value="MG: Place: Note on place"/>
+         <xs:enumeration value="MG: Place: Part of place"/>
+         <xs:enumeration value="MG: Place: Part place"/>
+         <xs:enumeration value="MG: Place: Place of conference of"/>
+         <xs:enumeration value="MG: Place: Preferred name of place: Abbreviations"/>
+         <xs:enumeration value="MG: Place: Preferred name of place: Data provenance"/>
+         <xs:enumeration value="MG: Place: Preferred name of place: Different forms from GEOnet"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Names found in non-preferred script"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Names that include a category of corporate body"/>
+         <xs:enumeration value="MG: Place: Preferred name of place: Sources of information"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Tribal entities in the United States"/>
+         <xs:enumeration value="MG: Place: Related corporate body of place"/>
+         <xs:enumeration value="MG: Place: Related person of place"/>
+         <xs:enumeration value="MG: Place: Related place of place"/>
+         <xs:enumeration value="MG: Place: Related timespan of place"/>
+         <xs:enumeration value="MG: Place: Related work of place"/>
+         <xs:enumeration value="MG: Place: Subject place of"/>
+         <xs:enumeration value="MG: Place: Variant access point for place"/>
+         <xs:enumeration value="MG: Place: Variant name of place"/>
+         <xs:enumeration value="MG: Relationship labels: Introduction"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Work to Place"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Expression to Place"/>
+         <xs:enumeration value="MG: Relationship labels: Manifestation to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Manifestation to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Manifestation to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Item to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Item to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Item to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Person to Place"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Corporate body to Place"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Family to Place"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Work"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Expression"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Manifestation"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Item"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Person"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Corporate body"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Family"/>
+         <xs:enumeration value="MG: Relationship labels: Place to Place"/>
+         <xs:enumeration value="MG: Work: Analysis of expression"/>
+         <xs:enumeration value="MG: Work: Analysis of item"/>
+         <xs:enumeration value="MG: Work: Analysis of manifestation"/>
+         <xs:enumeration value="MG: Work: Analysis of work"/>
+         <xs:enumeration value="MG: Work: Commentary on expression"/>
+         <xs:enumeration value="MG: Work: Commentary on item"/>
+         <xs:enumeration value="MG: Work: Commentary on manifestation"/>
+         <xs:enumeration value="MG: Work: Commentary on work"/>
+         <xs:enumeration value="MG: Work: Critique of expression"/>
+         <xs:enumeration value="MG: Work: Critique of manifestation"/>
+         <xs:enumeration value="MG: Work: Critique of work"/>
+         <xs:enumeration value="MG: Work: Evaluation of expression"/>
+         <xs:enumeration value="MG: Work: Evaluation of manifestation"/>
+         <xs:enumeration value="MG: Work: Evaluation of work"/>
+         <xs:enumeration value="MG: Work: Review of expression"/>
+         <xs:enumeration value="MG: Work: Review of manifestation"/>
+         <xs:enumeration value="MG: Work: Review of work"/>
+         <xs:enumeration value="MG: Work: Subject"/>
+         <xs:enumeration value="MG: Work: Subject corporate body"/>
+         <xs:enumeration value="MG: Work: Subject expression"/>
+         <xs:enumeration value="MG: Work: Subject family"/>
+         <xs:enumeration value="MG: Work: Subject item"/>
+         <xs:enumeration value="MG: Work: Subject manifestation"/>
+         <xs:enumeration value="MG: Work: Subject person"/>
+         <xs:enumeration value="MG: Work: Subject place"/>
+         <xs:enumeration value="MG: Work: Subject work"/>
+         <xs:enumeration value="MG: Series: Authorized access point for work"/>
+         <xs:enumeration value="MG: Series: Category of work"/>
+         <xs:enumeration value="MG: Series: Date of work"/>
+         <xs:enumeration value="MG: Series: Entity boundary of work"/>
+         <xs:enumeration value="MG: Series: History of work"/>
+         <xs:enumeration value="MG: Series: Identifier for work"/>
+         <xs:enumeration value="MG: Series: ISSN"/>
+         <xs:enumeration value="MG: Series: Issue of"/>
+         <xs:enumeration value="MG: Series: Other distinguishing characteristic of work"/>
+         <xs:enumeration value="MG: Series: Place of origin of work"/>
+         <xs:enumeration value="MG: Series: Preferred title of work"/>
+         <xs:enumeration value="MG: Series: Preferred title of work: Series-like phrases"/>
+         <xs:enumeration value="MG: Series: Related corporate body of work"/>
+         <xs:enumeration value="MG: Series: Related RDA Entity of work"/>
+         <xs:enumeration value="MG: Series: Source consulted"/>
+         <xs:enumeration value="MG: Series: Variant access point for work"/>
+         <xs:enumeration value="MG: Series: Variant title of work"/>
+         <xs:enumeration value="MG: Series: Authorized access point for expression"/>
+         <xs:enumeration value="MG: Series: Content type"/>
+         <xs:enumeration value="MG: Series: Date of expression"/>
+         <xs:enumeration value="MG: Series: Designation of version"/>
+         <xs:enumeration value="MG: Series: Identifier for expression"/>
+         <xs:enumeration value="MG: Series: Language of expression"/>
+         <xs:enumeration value="MG: Series: Other distinguishing characteristic of expression"/>
+         <xs:enumeration value="MG: Series: Related RDA Entity of expression"/>
+         <xs:enumeration value="MG: Series: Variant access point for expression"/>
+         <xs:enumeration value="MG: Series: Variant title of expression"/>
+         <xs:enumeration value="MG: Series: Numbering within sequence"/>
+         <xs:enumeration value="MG: Series: Other title information of series"/>
+         <xs:enumeration value="MG: Series: Parallel other title information of series"/>
+         <xs:enumeration value="MG: Series: Parallel statement of responsibility"/>
+         <xs:enumeration value="MG: Series: Parallel title of series"/>
+         <xs:enumeration value="MG: Series: Series statement"/>
+         <xs:enumeration value="MG: Series: Series statement: Multiple series"/>
+         <xs:enumeration value="MG: Series: Statement of responsibility"/>
+         <xs:enumeration value="MG: Series: Title of series"/>
+         <xs:enumeration value="MG: Series: Non-RDA elements"/>
+      </xs:restriction>
+   </xs:simpleType>
    <xs:complexType name="examples_type">
       <xs:all>
          <xs:element name="p" type="simple_p_type" minOccurs="1" maxOccurs="unbounded"/>
@@ -202,7 +502,7 @@
                   '1'.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1"
+         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1"
             default="0"/>
          <!-- REQUIRED: EITHER literal_pt / uri_pt / lookup_pt / nested_resource_pt (+ subelements) -->
          <xs:choice>
@@ -280,24 +580,6 @@
          <xs:extension base="property_label">
             <xs:attribute name="property_iri" type="xs:anyURI" use="required"/>
             <xs:attribute ref="xml:lang" use="required"/>
-         </xs:extension>
-      </xs:simpleContent>
-   </xs:complexType>
-   <!-- repeatable_type -->
-   <xs:complexType name="repeatable_type">
-      <xs:annotation>
-         <xs:documentation>To indicate that a multiple values may be entered for a given property
-            template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
-      </xs:annotation>
-      <xs:simpleContent>
-         <xs:extension base="xs:boolean">
-            <xs:attribute name="ordered" type="xs:boolean">
-               <xs:annotation>
-                  <xs:documentation>To indicate that the order of multiple values for a repeatable
-                     property should be preserved, use the `ordered` attribute with value 'true' or
-                     '1'.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
