@@ -118,10 +118,6 @@
                                              <li>Validation type: </li>
                                              {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
                                          </xsl:if>
-                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype">
-                                             <li>Validation type: </li>
-                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
-                                        </xsl:if>
                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex">
                                             <li>Validation regex: </li>
                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex}
