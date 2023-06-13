@@ -502,7 +502,7 @@
                   '1'.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="repeatable" type="repeatable_type" minOccurs="0" maxOccurs="1"
+         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1"
             default="0"/>
          <!-- REQUIRED: EITHER literal_pt / uri_pt / lookup_pt / nested_resource_pt (+ subelements) -->
          <xs:choice>
@@ -580,24 +580,6 @@
          <xs:extension base="property_label">
             <xs:attribute name="property_iri" type="xs:anyURI" use="required"/>
             <xs:attribute ref="xml:lang" use="required"/>
-         </xs:extension>
-      </xs:simpleContent>
-   </xs:complexType>
-   <!-- repeatable_type -->
-   <xs:complexType name="repeatable_type">
-      <xs:annotation>
-         <xs:documentation>To indicate that a multiple values may be entered for a given property
-            template, enter the `repeatable` element with value 'true' or '1'.</xs:documentation>
-      </xs:annotation>
-      <xs:simpleContent>
-         <xs:extension base="xs:boolean">
-            <xs:attribute name="ordered" type="xs:boolean">
-               <xs:annotation>
-                  <xs:documentation>To indicate that the order of multiple values for a repeatable
-                     property should be preserved, use the `ordered` attribute with value 'true' or
-                     '1'.</xs:documentation>
-               </xs:annotation>
-            </xs:attribute>
          </xs:extension>
       </xs:simpleContent>
    </xs:complexType>
