@@ -4,7 +4,9 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    xmlns:j="http://www.w3.org/2005/xpath-functions"
+    exclude-result-prefixes="xs j" version="3.0"
     expand-text="true">
     
     <!-- CONTAINS PT_GUIDANCE TEMPLATE -->
@@ -83,7 +85,17 @@
                     </ul>
                 </xsl:if>
                 
-                <!-- TO DO mgds, following schema implementation -->
+                <!-- mgds -->
+                <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:mgds">
+                    <h5>METADATA GUIDANCE DOCUMENTATION</h5>
+                    <ul>
+                        <xsl:for-each select="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:mgds/uwsinopia:mgd">
+                            <xsl:call-template name="mgd_links">
+                                <xsl:with-param name="title" select="."/>
+                            </xsl:call-template>
+                        </xsl:for-each>
+                    </ul>
+                </xsl:if>
                 
                 <!-- examples -->
                 <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples">
@@ -93,6 +105,17 @@
                 
             </ul>
         </span>
+    </xsl:template>
+    
+    <!-- template for getting links for mgds guidance -->
+    <!-- pulls data from sinopia_maps/xml/mgd_docs.xml -->
+    <xsl:template name="mgd_links">      
+        <xsl:param name="title"/>
+        <xsl:variable name="mgd_docs" select="(document('../xml/mgd_docs.xml')/data)"/>
+        <xsl:variable name="uri" select="j:json-to-xml($mgd_docs)/j:array/j:map[j:string[@key = 'title'] = $title]/j:string[@key = 'uri']"/>
+        <li>
+            <a href="{$uri}">{$title}</a>
+        </li>
     </xsl:template>
     
     <!-- GUIDANCE_SET CHILD-ELEMENT TEMPLATES -->

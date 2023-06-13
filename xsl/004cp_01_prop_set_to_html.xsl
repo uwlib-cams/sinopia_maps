@@ -210,7 +210,18 @@
                                         </xsl:element>
                                     </xsl:if>
                                     
-                                    <!-- TO DO mgds, following schema implementation -->
+                                    <!-- mgds -->
+                                    <xsl:if
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:mgds">
+                                        <xsl:element name="mgds"
+                                            namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+                                            <xsl:for-each select="
+                                                uwmaps:sinopia/uwsinopia:guidance_set
+                                                /uwsinopia:mgds/uwsinopia:mgd">
+                                                <xsl:copy-of copy-namespaces="no" select="."/>
+                                            </xsl:for-each>
+                                        </xsl:element>
+                                    </xsl:if>
                                     
                                     <!-- examples -->
                                     <xsl:if

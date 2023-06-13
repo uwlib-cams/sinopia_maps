@@ -27,7 +27,6 @@
                     
                     <h4>
                         <span>
-                            <xsl:text>Property Template: </xsl:text>
                             <!-- use alt label if available -->
                             <xsl:choose>
                                 <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
