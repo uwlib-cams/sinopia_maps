@@ -7,7 +7,8 @@
     xmlns:sinopia="http://sinopia.io/vocabulary/"
     exclude-result-prefixes="xs"
     version="3.0">
-    
+
+    <!-- return format as text -->
     <xsl:template name="format_resources">
         <xsl:param name="resource"/>
         <!-- [!] THESE OPTIONS MUST MATCH
@@ -59,6 +60,7 @@
         </xsl:choose>
     </xsl:template>
     
+    <!-- return format as text - determine case -->
     <xsl:template name="format_formats">
         <xsl:param name="case"/>
         <xsl:param name="format"/>

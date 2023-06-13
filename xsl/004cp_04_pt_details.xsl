@@ -61,14 +61,16 @@
                             </xsl:call-template>
                         </span>
                     </xsl:if>
+                 
+                    <!-- if alt label is used, or prop has subprops, needs list -->
+                    <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
+                   <p>
+                    <xsl:call-template name="subprop_list">
+                        <xsl:with-param name="file_name" select="$file_name"/>
+                        <xsl:with-param name="node_id" select="$node_id"/>
+                    </xsl:call-template>
+                   </p>
                     <ul>
-                        <li>Property IRI: <a href="{uwmaps:prop_iri/@iri}">{uwmaps:prop_iri/@iri}</a></li>
-                        
-                        <!-- include toolkit url if available -->
-                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:remark_url">
-                            <li>RDA Toolkit URL: <a href="{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:remark_url/@iri}">{uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:remark_url/@iri}</a></li>
-                        </xsl:if>
-                        
                         <!-- mark as required or optional -->
                         <xsl:choose>
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:required">
@@ -78,6 +80,8 @@
                                 <li>Optional</li>
                             </xsl:otherwise>
                         </xsl:choose>
+                   
+                        
                         
                         <!-- indicate if repeatable/ordered -->
                         <xsl:choose>
@@ -195,32 +199,7 @@
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:nested_resource_pt">
                                 <li>Property type: nested resource</li>
                             </xsl:when>                        
-                        </xsl:choose>
-                        
-                        <!-- if alt label is used, or prop has subprops, needs list -->
-                        <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop"> 
-                            <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
-                                <xsl:choose>
-                                    <!-- call subprop_list template -->
-                                    <!-- if there is an alt label, list starts with first prop uri (param alt_id = 0) -->
-                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
-                                        <xsl:call-template name="subprop_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(0)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:when>
-                                    <!-- otherwise, list starts with second prop uri (param alt_id = 1) -->
-                                    <xsl:otherwise>
-                                        <xsl:call-template name="subprop_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(1)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:otherwise>
-                                </xsl:choose>   
-                        </xsl:if>
-                        
+                        </xsl:choose>                  
                         <!-- links -->
                         <li>
                             <span class="backlink">
@@ -259,16 +238,44 @@
     <!-- pulls data from rdf/xml files, rdaregistry, and map_storage/xml/RDA_alignments.xml -->
     <xsl:template name="subprop_list">
         <xsl:param name="file_name"/>
-        <xsl:param name="alt_id"/>
         <xsl:param name="node_id"/>
         
-        <!-- list is only generated if it is a multiprop (and it has subprops) OR if it has an alternate id -->
-        <xsl:if test="($alt_id = number(1) and count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != 1]) gt 0)
-            or ($alt_id = number(0))">  
-            <li>Other properties included in this property template:</li>
-            <ul>
-                <!-- list starts at first or second instance of hasPropertyUri, depending on value of alt_id (0 or 1) -->
-                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() gt $alt_id]">
+        <xsl:choose>
+            <!-- list is only generated if more than two properties -->
+            <xsl:when test="count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri) gt 1">  
+                Properties included in this property template:
+                <ul>
+                    <!-- list starts at first or second instance of hasPropertyUri, depending on value of alt_id (0 or 1) -->
+                    <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
+                        
+                        <!-- subprop_URI is registry link -->
+                        <xsl:variable name="subprop_URI" select="@rdf:resource"/>
+                        
+                        <!-- get all the pieces to find label and toolkit url -->
+                        <xsl:variable name="entity">
+                            <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
+                            <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                        </xsl:variable>
+                        
+                        <!-- get label from rdaregistry -->
+                        <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
+                        <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+    
+                        <!-- get toolkit url from RDA_alignments.xml -->
+                        <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
+                        <xsl:variable name="toolkit_url">
+                            <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
+                            <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
+                        </xsl:variable>
+                        <li>
+                            <xsl:value-of select="$subprop_label"/>
+                            [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
+                        </li>
+                    </xsl:for-each>
+                </ul>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
                     
                     <!-- subprop_URI is registry link -->
                     <xsl:variable name="subprop_URI" select="@rdf:resource"/>
@@ -282,7 +289,7 @@
                     <!-- get label from rdaregistry -->
                     <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
                     <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-
+                    
                     <!-- get toolkit url from RDA_alignments.xml -->
                     <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
                     <xsl:variable name="toolkit_url">
@@ -290,14 +297,11 @@
                         <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
                     </xsl:variable>
                     
-                    <li>
-                        <xsl:value-of select="$subprop_label"/>
-                        [<a
-                            href="{$subprop_URI}">RDA REGISTRY</a>] [<a
-                                href="{$toolkit_url}">RDA TOOLKIT</a>]
-                    </li>
+                    <xsl:value-of select="$subprop_label"/>
+                    [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
+                    
                 </xsl:for-each>
-            </ul>
-        </xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>          
     </xsl:template>
 </xsl:stylesheet>
