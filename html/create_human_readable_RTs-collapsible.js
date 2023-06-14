@@ -8,7 +8,6 @@ for (i = 0; i < toggler.length; i++) {
   });
 }
 
-/*
 window.addEventListener("hashchange", function(){
   var hash = (window.location.hash).substring(1)
   var el = document.getElementById(hash)
@@ -19,8 +18,8 @@ window.addEventListener("hashchange", function(){
       tog[i].classList.toggle("caret-down");
     }
   }
+  jump(hash)
 })
-*/
 
 window.addEventListener("DOMContentLoaded", function(){
   var hash = (window.location.hash).substring(1)
@@ -32,4 +31,10 @@ window.addEventListener("DOMContentLoaded", function(){
       tog[i].classList.toggle("caret-down");
     }
   }
+  jump(hash)
 })
+
+function jump(h){
+  var url = location.href;
+  location.href = "#"+h;              
+}
