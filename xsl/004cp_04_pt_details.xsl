@@ -111,16 +111,19 @@
                                              <li>Defaults to user id</li>
                                          </xsl:if>
                                          <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:default_literal">
-                                             <li>Defaults to </li>
-                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:default_literal}
+                                             <li>Defaults to: 
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:default_literal}
+                                             </li>
                                          </xsl:if>
                                          <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype">
-                                             <li>Validation type: </li>
-                                             {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
+                                             <li>Validation type: 
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_datatype}
+                                             </li>
                                          </xsl:if>
                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex">
-                                            <li>Validation regex: </li>
-                                            {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex}
+                                            <li>Validation regex: 
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:validation_regex}
+                                            </li>
                                         </xsl:if>
                                     </ul>
                                 </xsl:if>
@@ -165,15 +168,15 @@
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt">
                                 <!-- NEEDS TESTING -->
                                 <li>Property type: URI</li>
-                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri_label">
+                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri">
                                     <ul>
                                         <li>Default:
-                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri_label">
-                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:_default_iri_label}
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri_label">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri_label}
                                                 <xsl:text> - </xsl:text>
                                             </xsl:if>
-                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri">
-                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_iri/@iri}
+                                            <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri">
+                                                {uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri/@iri}
                                             </xsl:if>
                                         </li>
                                     </ul>

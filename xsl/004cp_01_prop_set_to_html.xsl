@@ -319,7 +319,7 @@
                         </xsl:call-template>
                         
                         <!-- footer -->
-                        <xsl:call-template name="CC0-footer">
+                        <xsl:call-template name="CC0-footer-rda-pages">
                             <xsl:with-param name="resource_title"
                                 select="translate($rt_id, '_', ' ')"/>
                             <xsl:with-param name="org" select="'cams'"/>
