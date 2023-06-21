@@ -61,7 +61,7 @@
                         </span>
                     </xsl:if>
                  
-                    <!-- if alt label is used, or prop has subprops, needs list -->
+                    <!-- show prop label with links -->
                     <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
                    <p>
                     <xsl:call-template name="subprop_list">
