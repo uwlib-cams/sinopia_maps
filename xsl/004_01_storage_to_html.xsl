@@ -77,7 +77,7 @@
                                     <xsl:with-param name="user" select="$user"/>
                                     <xsl:with-param name="author" select="$author"/>
                                 </xsl:call-template>
-                                <xsl:call-template name="CC0-footer">
+                                <xsl:call-template name="CC0-footer-rda-pages">
                                     <xsl:with-param name="resource_title"
                                         select="translate($file_name, '_', ' ')"/>
                                     <xsl:with-param name="org" select="'cams'"/>
