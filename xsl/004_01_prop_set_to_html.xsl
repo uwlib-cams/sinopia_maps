@@ -11,10 +11,10 @@
     <xsl:param name="oxygenPath"/>
     
     <!-- included xsl sheets -->
-    <xsl:include href="004cp_02_rt_info.xsl"/>
-    <xsl:include href="004cp_03_pt_list.xsl"/>
-    <xsl:include href="004cp_04_pt_details.xsl"/>
-    <xsl:include href="004cp_06_format_string.xsl"/>
+    <xsl:include href="004_02_rt_info.xsl"/>
+    <xsl:include href="004_03_pt_list.xsl"/>
+    <xsl:include href="004_04_pt_details.xsl"/>
+    <xsl:include href="004_06_format_string.xsl"/>
     <xsl:include href="https://uwlib-cams.github.io/webviews/xsl/CC0-footer.xsl"/>
     
     <xsl:template match="/">

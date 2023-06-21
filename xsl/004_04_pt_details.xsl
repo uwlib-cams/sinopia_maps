@@ -11,7 +11,7 @@
     
     <xsl:output method="html"/>
     
-    <xsl:include href="004cp_05_pt_guidance.xsl"/>
+    <xsl:include href="004_05_pt_guidance.xsl"/>
     
     <!-- CONTAINS PT_DETAILS, LOOKUP_DETAILS, AND SUBPROP_LIST TEMPLATES -->
     
