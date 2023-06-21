@@ -223,7 +223,7 @@ COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
 # OUTPUT HTML RESOURCE TEMPLATES 
 
 # run stylesheet to output HTML
-HTML_RT_stylesheet = "xsl/004_01_storage_to_html.xsl"
+HTML_RT_stylesheet = "xsl/004_01_prop_set_to_html.xsl"
 os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
 net.sf.saxon.Transform -t 
 -s:{HTML_RT_stylesheet} 
