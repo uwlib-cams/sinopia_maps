@@ -78,6 +78,7 @@
             <rt_remark xml:lang="en">This test template will match on default guidance_set elements.</rt_remark>
 
         </rt>
+        
         <rt output_load="true">
             <institution>WAU</institution>
             <resource>rdaEntity</resource>
@@ -86,7 +87,16 @@
             <author>ries07@uw.edu</author>
             <rt_remark xml:lang="en">This test template will match on custom guidance_set elements.</rt_remark>
         </rt>
-        
+
+        <rt output_load="true">
+            <institution>WAU</institution>
+            <resource>rdaAgent</resource>
+            <format>test</format>
+            <user>cspayne</user>
+            <author>cspayne@uw.edu</author>
+            <rt_remark xml:lang="en">This is a test template.</rt_remark>
+        </rt>
+
         <!-- TO DELETE -->
         <rt>
             <institution>WAU</institution>
@@ -96,13 +106,6 @@
             <author>ries07@uw.edu</author>
             <author>some other person too</author>
             <rt_remark xml:lang="en">TEST TEMPLATE</rt_remark>
-        </rt>
-        <rt>
-            <institution>WAU</institution>
-            <resource>rdaWork</resource>
-            <format>test</format>
-            <user>cspayne</user>
-            <author>cspayne@uw.edu</author>
         </rt>
     </rts>
 </sinopia_maps>

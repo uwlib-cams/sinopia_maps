@@ -1,0 +1,488 @@
+[
+  {
+    "@id": "http://rdaregistry.info/Elements/a/P50383",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has identifier for agent"
+      }
+    ]
+  },
+  {
+    "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaAgent:test:cspayne",
+    "@type": [
+      "http://sinopia.io/vocabulary/ResourceTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthor": [
+      {
+        "@value": "cspayne@uw.edu"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasClass": [
+      {
+        "@id": "http://rdaregistry.info/Elements/c/C10002"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasDate": [
+      {
+        "@value": "2023-06-14"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyTemplate": [
+      {
+        "@list": [
+          {
+            "@id": "_:N1ff682c7d17645d28197e9f467b5aceb"
+          },
+          {
+            "@id": "_:Nf92906ff71f1468088a6e7f3ca2c1368"
+          },
+          {
+            "@id": "_:N8dfa2dffaed24f5c80654738c47054e2"
+          },
+          {
+            "@id": "_:N4d22901ad0bb46379114ab6036658e83"
+          },
+          {
+            "@id": "_:N4477a7d5f9f246abb91b855a81d70128"
+          },
+          {
+            "@id": "_:Nf29e21319afc43318cc3ffbbc7ed5a2a"
+          },
+          {
+            "@id": "_:N07d91c201e264fc5b36d887992d30564"
+          },
+          {
+            "@id": "_:N8597042cd9544636a8a04fe95a3a7ca8"
+          }
+        ]
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "en",
+        "@value": "This is a test template."
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceId": [
+      {
+        "@value": "UWSINOPIA:WAU:rdaAgent:test:cspayne"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasResourceTemplate": [
+      {
+        "@value": "sinopia:template:resource"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "UWSINOPIA WAU rdaAgent test cspayne"
+      }
+    ]
+  },
+  {
+    "@id": "_:N1ff682c7d17645d28197e9f467b5aceb",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50374"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasUriAttributes": [
+      {
+        "@id": "_:Ne3f36326301641ddbf6c8bd491c536a4"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has access point for collective agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:Ne3f36326301641ddbf6c8bd491c536a4",
+    "@type": [
+      "http://sinopia.io/vocabulary/UriPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mscript/a"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf92906ff71f1468088a6e7f3ca2c1368",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50373"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasUriAttributes": [
+      {
+        "@id": "_:N13bedebee57e410cbd22ea463914b3ac"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has access point for agent"
+      }
+    ]
+  },
+  {
+    "@id": "_:N13bedebee57e410cbd22ea463914b3ac",
+    "@type": [
+      "http://sinopia.io/vocabulary/UriPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mscript/a"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8dfa2dffaed24f5c80654738c47054e2",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:N15ab08a108af4efaaefbab4007452e71"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50458"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is academic supervisor of"
+      }
+    ]
+  },
+  {
+    "@id": "_:N15ab08a108af4efaaefbab4007452e71",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:qa:agrovoc"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mscript/a"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4d22901ad0bb46379114ab6036658e83",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:N5014ac04d0c7431690e0b303f1199098"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50615"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is abridger person of"
+      }
+    ]
+  },
+  {
+    "@id": "_:N5014ac04d0c7431690e0b303f1199098",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasValidationRegex": [
+      {
+        "@language": "zxx",
+        "@value": "test regex yay"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4477a7d5f9f246abb91b855a81d70128",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:N9e052f2f61164543a24b887ec1d5067b"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P51068"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is abridger family of"
+      }
+    ]
+  },
+  {
+    "@id": "_:N9e052f2f61164543a24b887ec1d5067b",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralPropertyAttributes": [
+      {
+        "@id": "http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf29e21319afc43318cc3ffbbc7ed5a2a",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:Na13825d006774e7688a66cc66c7b16d9"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50917"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is abridger corporate body of"
+      }
+    ]
+  },
+  {
+    "@id": "_:Na13825d006774e7688a66cc66c7b16d9",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralPropertyAttributes": [
+      {
+        "@id": "http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"
+      }
+    ]
+  },
+  {
+    "@id": "_:N07d91c201e264fc5b36d887992d30564",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLookupAttributes": [
+      {
+        "@id": "_:Nf83fd33f45a843e593c5b1ba88309c91"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/uri"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50378"
+      },
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50379"
+      },
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50382"
+      },
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50383"
+      },
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50385"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "eng",
+        "@value": "ALT MULTI PROP APPELLATION"
+      }
+    ]
+  },
+  {
+    "@id": "_:Nf83fd33f45a843e593c5b1ba88309c91",
+    "@type": [
+      "http://sinopia.io/vocabulary/LookupPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasAuthority": [
+      {
+        "@id": "urn:ld4p:qa:bibbi_direct:form"
+      },
+      {
+        "@id": "urn:ld4p:qa:geonames"
+      },
+      {
+        "@id": "urn:ld4p:qa:cerl:person"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@id": "http://id.loc.gov/vocabulary/mscript/a"
+      }
+    ]
+  },
+  {
+    "@id": "_:N8597042cd9544636a8a04fe95a3a7ca8",
+    "@type": [
+      "http://sinopia.io/vocabulary/PropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasLiteralAttributes": [
+      {
+        "@id": "_:N640ad7666072456dba3457930771b8f3"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyAttribute": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/languageSuppressed"
+      },
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/required"
+      },
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyAttribute/repeatable"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyType": [
+      {
+        "@id": "http://sinopia.io/vocabulary/propertyType/literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasPropertyUri": [
+      {
+        "@id": "http://rdaregistry.info/Elements/a/P50157"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasRemark": [
+      {
+        "@language": "eng",
+        "@value": " This is a test of an alt label with a single prop"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "eng",
+        "@value": "ALT SINGLE PROP ABRIDGER AGENT OF"
+      }
+    ]
+  },
+  {
+    "@id": "_:N640ad7666072456dba3457930771b8f3",
+    "@type": [
+      "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
+    ],
+    "http://sinopia.io/vocabulary/hasDefault": [
+      {
+        "@language": "eng",
+        "@value": "test default literal"
+      }
+    ],
+    "http://sinopia.io/vocabulary/hasValidationDataType": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/a/P50378",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/a/P50382",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of person"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/a/P50385",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has name of agent"
+      }
+    ]
+  },
+  {
+    "@id": "http://id.loc.gov/vocabulary/mscript/a",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "eng",
+        "@value": "default uri label"
+      },
+      {
+        "@language": "eng",
+        "@value": "default iri label"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/a/P50379",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of collective agent"
+      }
+    ]
+  }
+]
