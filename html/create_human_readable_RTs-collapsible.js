@@ -1,5 +1,4 @@
 
-
 /* toggle carets when clicked */
 var toggler = document.getElementsByClassName("caret");
 var i;
