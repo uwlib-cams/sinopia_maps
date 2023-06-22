@@ -44,22 +44,21 @@
         <xsl:param name="qualifier"/>
         <xsl:choose>
             <!-- if format contains capital letter (e.g. printMonograph) -->
-            <xsl:when test="contains($format, '[A-Z]')">
+            <xsl:when test="matches($format, '[A-Z]')">
                 <xsl:variable name="formatted_format">
-                    <!-- add space before capital letter -->
-                    <xsl:variable name="first_word" select="replace(substring-before($format, '[A-Z]'), '/.*', '/.* ')"/>
-                    <xsl:variable name="First_word" select="concat(
-                        upper-case(substring($format, 1, 1)), substring($first_word,2)
-                        )"/>
-                    <xsl:variable name="Second_word" select="substring-after($format, $First_word)"/>
+                    <!-- separate words -->
+                    <xsl:variable name="two_words">
+                        <xsl:variable name="add_space" select="replace($format, '[A-Z]', ' $0')"/>
+                        <xsl:value-of select="concat(upper-case(substring($add_space, 1, 1)), substring($add_space, 2))"/>
+                    </xsl:variable>
                     <!-- add qualifier at end of string if it exists -->
                     <xsl:choose>
                         <xsl:when test="$qualifier != ''">
-                            <xsl:value-of select="concat($First_word, ' ', $Second_word, 
+                            <xsl:value-of select="concat($two_words,
                                 ' (', upper-case(substring($format, 1, 1)), substring($qualifier,2), ')')"/>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:value-of select="concat($First_word, ' ', $Second_word)"/>    
+                            <xsl:value-of select="$two_words"/>    
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -71,11 +70,9 @@
                     <xsl:choose>
                         <xsl:when test="$qualifier != ''">
                             <xsl:value-of select="concat(
-                                translate(substring($format, 1, 1),'[a-z]','[A-Z]'), 
-                                substring($format, 2), 
-                                ' (', replace(substring($qualifier, 1, 1),'[a-z]','[A-Z]'),
+                                upper-case(substring($format, 1, 1)), substring($format,2),
+                                ' (', upper-case(substring($qualifier, 1, 1)),
                                 substring($qualifier,2), ')')"/>
-                            <xsl:value-of select="rep"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="concat(

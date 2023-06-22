@@ -21,7 +21,7 @@
         <!-- get all necessary variables from prop_set files -->
         <!-- for each RT -->
         <xsl:for-each select="
-            document('../xml/test.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
+            document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
             uwsinopia:rt[matches(@output_load, 'true|1')]">
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>
@@ -266,14 +266,18 @@
             <!-- HTML result doc -->
             <!-- NOTE: Change extension before final publishing -->
             <xsl:result-document
-                href="{concat($oxygenPath, '../html/', translate($rt_id, ':', '_'), 'cp.html')}">
+                href="{concat($oxygenPath, '../html/', translate($rt_id, ':', '_'), '.html')}">
                 <html>
                     <head>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                         <title>
-                            <xsl:text>UW Sinopia resource template | </xsl:text>
+                            <xsl:text>UW Sinopia RT | </xsl:text>
                             <xsl:call-template name="format_resource">
                                 <xsl:with-param name="resource" select="$resource"/>
+                            </xsl:call-template>
+                            <xsl:text> - </xsl:text>
+                            <xsl:call-template name="format_format">
+                                <xsl:with-param name="format" select="$format"/>
                             </xsl:call-template>
                         </title>
                         <link
@@ -289,7 +293,7 @@
                             <xsl:call-template name="format_resource">
                                 <xsl:with-param name="resource" select="$resource"/>
                             </xsl:call-template>
-                            <xsl:text> </xsl:text>
+                            <xsl:text> - </xsl:text>
                             <xsl:call-template name="format_format">
                                 <xsl:with-param name="format" select="$format"/>
                             </xsl:call-template>
