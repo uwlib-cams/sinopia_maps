@@ -78,28 +78,24 @@
         <xsl:param name="node_id"/>
         
         <!-- drop down list is only generated if it is a multiprop (and it has subprops) OR if it has an alternate id -->
-        <xsl:if test="($alt_id = number(1) and count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() != 1]) gt 0)
-            or ($alt_id = number(0))">
-            <xsl:text>&#160;</xsl:text>
-            <span class="caret"/>
-            <ul class="nested">
-                <!-- list starts at first or second instance of hasPropertyUri, depending on value of alt_id (0 or 1) -->
-                <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri[position() gt $alt_id]">
-                    <xsl:variable name="subprop_URI" select="@rdf:resource"/>
-                    <xsl:variable name="entity">
-                        <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
-                        <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
-                    </xsl:variable>
-                    <xsl:variable name="rdaRegistry_xml"
-                        select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
-                    <xsl:variable name="subprop_label" select="
-                        document($rdaRegistry_xml)/rdf:RDF/
-                        rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-                    <li>
-                        <xsl:value-of select="$subprop_label"/>
-                    </li>
-                </xsl:for-each>
-            </ul>     
-        </xsl:if>
+        <xsl:text>&#160;</xsl:text>
+        <span class="caret"/>
+        <ul class="nested">
+            <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
+                <xsl:variable name="subprop_URI" select="@rdf:resource"/>
+                <xsl:variable name="entity">
+                    <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
+                    <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                </xsl:variable>
+                <xsl:variable name="rdaRegistry_xml"
+                    select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
+                <xsl:variable name="subprop_label" select="
+                    document($rdaRegistry_xml)/rdf:RDF/
+                    rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+                <li>
+                    <xsl:value-of select="$subprop_label"/>
+                </li>
+            </xsl:for-each>
+        </ul>     
     </xsl:template>
 </xsl:stylesheet>
