@@ -111,19 +111,23 @@
             </xsl:choose>
             <!-- *** output top-level/general PT attributes *** -->
             <!-- http://sinopia.io/vocabulary/hasRemarkUrl -->
+            <!-- NEEDS TESTING -->
             <xsl:if test="
                 $prop/uwmaps:sinopia/uwsinopia:implementation_set
                 [uwsinopia:institution = $institution]
                 [uwsinopia:resource = $resource]
                 [uwsinopia:format = $format]
                 [uwsinopia:user = $user]
-                /uwsinopia:remark_url/@iri">
-                <sinopia:hasRemarkUrl rdf:resource="{$prop/uwmaps:sinopia/uwsinopia:implementation_set
+                /@localid_implementation_set">
+                <xsl:variable name="id" select="concat('UWSINOPIA_', $institution,'_', $resource, '_', $format, '_', $user)"/>
+                <sinopia:hasRemarkUrl rdf:resource="{concat('https://uwlib-cams.github.io/sinopia_maps/html/', 
+                    $id,  '.html#',
+                    $prop/uwmaps:sinopia/uwsinopia:implementation_set
                     [uwsinopia:institution = $institution]
                     [uwsinopia:resource = $resource]
                     [uwsinopia:format = $format]
                     [uwsinopia:user = $user]
-                    /uwsinopia:remark_url/@iri}"/>
+                    /@localid_implementation_set)}"/>
             </xsl:if>
             <!-- http://sinopia.io/vocabulary/hasRemark -->
             <xsl:if test="
