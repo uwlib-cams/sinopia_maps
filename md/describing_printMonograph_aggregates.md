@@ -3,7 +3,7 @@
 - [Option A](#option-a): *Describe one or more of the expressions that are aggregated and the works realized by the expressions*
 - [Option B](#option-b): *Describe the aggregating work without describing any expression*
 - [Option C](#option-c): *Describe the aggregating work without describing the aggregating expression*
-- [Option D](#option-d-apply-with-caution): *Describe the aggregating work and the aggregating expression (&#x26a0; apply with caution)*
+- [Option D](#option-d-apply-with-caution): *Describe the aggregating work and the aggregating expression* (&#x26a0; apply with caution)
 
 ![A representation of aggregating and aggregated works](../images/overview.PNG)
 
@@ -37,7 +37,7 @@
 ![A representation of the relationship between an aggregating work and an aggretate manifestation](../images/option_b.PNG)
 
 ## Option C 
-***Describe the aggregating work without describing the aggregating expression. Also describe one or more of the expressions that are aggregated and the works realized by the expressions.**
+***Describe the aggregating work without describing the aggregating expression. Also describe one or more of the expressions that are aggregated and the works realized by the expressions.***
 - For guidance on describing the aggregating work, see Option B. 
 - For guidance on describing an aggregated expression and the work realized, see option A. 
 ### Recommended for: 
