@@ -187,7 +187,7 @@ def fix_multi_props(file):
 
 	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
 	
-# function to comment out duplicate triples 
+# function to delete duplicate triples 
 def fix_duplicate_triples(file):
 	locked_in_label_list = []
 	tree = ET.parse(file)
@@ -199,13 +199,12 @@ def fix_duplicate_triples(file):
 		sinopia_hasLabel_list = rdf_description.findall('{http://www.w3.org/2000/01/rdf-schema#}label')
 		#if label is the only child of pt and label is already in list,
 		# then this is a duplicate - remove property template 
-		if len(sinopia_hasLabel_list) == 1:
+		if len(rdf_description.getchildren()) == 1:
 			for label in rdf_description:
-				if label.text not in locked_in_label_list:
-					locked_in_label_list.append(label.text)
+				if label.text in locked_in_label_list:
+					to_remove = True
 				else:
-					if len(rdf_description.getchildren()) == 1:
-						to_remove = True
+					locked_in_label_list.append(label.text)
 			if to_remove == True:
 				rdf_root.remove(rdf_description)
 

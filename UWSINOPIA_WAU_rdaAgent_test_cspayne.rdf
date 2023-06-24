@@ -1,186 +1,180 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:reg="http://metadataregistry.org/uri/profile/regap/"
-         xmlns:sinopia="http://sinopia.io/vocabulary/"
-         xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-         xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaAgent:test:cspayne">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
-      <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaAgent:test:cspayne</sinopia:hasResourceId>
-      <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10002"/>
-      <rdfs:label>UWSINOPIA WAU rdaAgent test cspayne</rdfs:label>
-      <sinopia:hasAuthor>cspayne@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasRemark xml:lang="en">This is a test template.</sinopia:hasRemark>
-      <sinopia:hasDate>2023-06-23</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsaP50374_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50374_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50373_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has access point for collective agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50374"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50374_is_d2e361"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsaP50374_uri_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_uri_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50373_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50458_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50373"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50373_is_d2e278"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsaP50373_uri_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_uri_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://id.loc.gov/vocabulary/mscript/a">
-      <rdfs:label xml:lang="eng">default uri label</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50458_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50615_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is academic supervisor of</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50458"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50458_is_d2e237"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsaP50458_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:agrovoc"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50615_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP51068_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is abridger person of</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50615"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50615_is_d2e201"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50615_literal_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_literal_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-      <sinopia:hasValidationRegex xml:lang="zxx">test regex yay</sinopia:hasValidationRegex>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP51068_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50917_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is abridger family of</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P51068"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP51068_is_d2e165"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP51068_literal_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_literal_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-      <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50917_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50378_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">is abridger corporate body of</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50917"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50917_is_d2e128"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50917_literal_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_literal_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-      <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50378_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50157_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="eng">ALT MULTI PROP APPELLATION</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50378"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50373"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50379"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50382"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50383"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50385"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50378_is_d2e717"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsaP50378_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:bibbi_direct:form"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:geonames"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:cerl:person"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://id.loc.gov/vocabulary/mscript/a">
-      <rdfs:label xml:lang="eng">default iri label</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50378">
-      <rdfs:label xml:lang="en">has appellation of agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50373">
-      <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50379">
-      <rdfs:label xml:lang="en">has appellation of collective agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50382">
-      <rdfs:label xml:lang="en">has appellation of person</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50383">
-      <rdfs:label xml:lang="en">has identifier for agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50385">
-      <rdfs:label xml:lang="en">has name of agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50157_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="eng">ALT SINGLE PROP ABRIDGER AGENT OF</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50157"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50157_is_d2e20"/>
-      <sinopia:hasRemark xml:lang="eng"> This is a test of an alt label with a single prop</sinopia:hasRemark>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/languageSuppressed"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50157_literal_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_literal_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-      <sinopia:hasDefault xml:lang="eng">test default literal</sinopia:hasDefault>
-      <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-   </rdf:Description>
+<?xml version='1.0' encoding='UTF-8'?>
+<rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
+  <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaAgent:test:cspayne">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
+    <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
+    <sinopia:hasResourceId>UWSINOPIA:WAU:rdaAgent:test:cspayne</sinopia:hasResourceId>
+    <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10002"/>
+    <rdfs:label>UWSINOPIA WAU rdaAgent test cspayne</rdfs:label>
+    <sinopia:hasAuthor>cspayne@uw.edu</sinopia:hasAuthor>
+    <sinopia:hasRemark xml:lang="en">This is a test template.</sinopia:hasRemark>
+    <sinopia:hasDate>2023-06-23</sinopia:hasDate>
+    <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsaP50374_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50374_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50373_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">has access point for collective agent</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50374"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50374_is_d2e361"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsaP50374_uri_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_uri_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
+    <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50373_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50458_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50373"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50373_is_d2e278"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsaP50373_uri_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_uri_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
+    <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/mscript/a">
+    <rdfs:label xml:lang="eng">default uri label</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50458_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50615_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">is academic supervisor of</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50458"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50458_is_d2e237"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsaP50458_lookup_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50458_lookup_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+    <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:agrovoc"/>
+    <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50615_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP51068_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">is abridger person of</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50615"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50615_is_d2e201"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50615_literal_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50615_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasValidationRegex xml:lang="zxx">test regex yay</sinopia:hasValidationRegex>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP51068_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50917_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">is abridger family of</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P51068"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP51068_is_d2e165"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP51068_literal_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP51068_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/userIdDefault"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50917_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50378_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">is abridger corporate body of</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50917"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50917_is_d2e128"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50917_literal_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50917_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50378_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementsaP50157_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="eng">ALT MULTI PROP APPELLATION</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50378"/>
+    <!--http://rdaregistry.info/Elements/a/P50373-->
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50379"/>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50382"/>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50383"/>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50385"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50378_is_d2e717"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsaP50378_lookup_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_lookup_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+    <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:bibbi_direct:form"/>
+    <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:geonames"/>
+    <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:cerl:person"/>
+    <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/mscript/a"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://id.loc.gov/vocabulary/mscript/a">
+    <rdfs:label xml:lang="eng">default iri label</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50378">
+    <rdfs:label xml:lang="en">has appellation of agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50373">
+    <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50379">
+    <rdfs:label xml:lang="en">has appellation of collective agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50382">
+    <rdfs:label xml:lang="en">has appellation of person</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50383">
+    <rdfs:label xml:lang="en">has identifier for agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50385">
+    <rdfs:label xml:lang="en">has name of agent</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_order">
+    <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50157_define"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="eng">ALT SINGLE PROP ABRIDGER AGENT OF</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50157"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50157_is_d2e20"/>
+    <sinopia:hasRemark xml:lang="eng"> This is a test of an alt label with a single prop</sinopia:hasRemark>
+    <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/languageSuppressed"/>
+    <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
+    <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementsaP50157_literal_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasDefault xml:lang="eng">test default literal</sinopia:hasDefault>
+    <sinopia:hasValidationDataType rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+  </rdf:Description>
 </rdf:RDF>
