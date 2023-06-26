@@ -55,7 +55,7 @@
                     <xsl:choose>
                         <xsl:when test="$qualifier != ''">
                             <xsl:value-of select="concat($two_words,
-                                ' (', upper-case(substring($format, 1, 1)), substring($qualifier,2), ')')"/>
+                                ' (', upper-case(substring($qualifier, 1, 1)), substring($qualifier,2), ')')"/>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$two_words"/>    
