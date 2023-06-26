@@ -42,7 +42,7 @@
          <xs:element name="general" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="entity_boundary" type="xs:boolean" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="recording_method" type="recording_method_type" minOccurs="0"
-            maxOccurs="unbounded"/>
+            maxOccurs="4"/>
          <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
             maxOccurs="1"/>
@@ -481,11 +481,10 @@
          <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
          <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
-         <!-- OPTIONAL: alt_pt_label / multiple_prop / remark_url / remark / 
+         <!-- OPTIONAL: alt_pt_label / multiple_prop / remark / 
             language_suppressed / required / repeatable -->
          <xs:element name="alt_pt_label" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="remark_url" type="uwmaps:iri_type" minOccurs="1" maxOccurs="1"/>
          <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
             default="0">
