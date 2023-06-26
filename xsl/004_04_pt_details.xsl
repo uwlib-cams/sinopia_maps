@@ -53,7 +53,7 @@
                     <!-- include Guidance if available -->
                     <xsl:if test="uwmaps:sinopia/uwsinopia:guidance_set and uwmaps:sinopia/uwsinopia:guidance_set != ''">
                         <span class="ptInfoGuidance">
-                            <b>Guidance and Configuration</b>
+                            <b>Cataloging Guidance</b>
                             <xsl:call-template name="pt_guidance">
                                 <xsl:with-param name="prop" select="$prop"/>
                                 <xsl:with-param name="rt_id" select="$rt_id"/>
