@@ -42,7 +42,7 @@
          <xs:element name="general" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="entity_boundary" type="xs:boolean" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="recording_method" type="recording_method_type" minOccurs="0"
-            maxOccurs="4"/>
+            maxOccurs="1"/>
          <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
             maxOccurs="1"/>
