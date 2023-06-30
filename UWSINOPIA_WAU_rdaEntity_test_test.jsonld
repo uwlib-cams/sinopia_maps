@@ -23,7 +23,7 @@
       {
         "@list": [
           {
-            "@id": "_:N801b78b5847a4a6ea10433bd7671c545"
+            "@id": "_:Na595007c3c994af0850828500e6a2dcf"
           }
         ]
       }
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "@id": "_:N801b78b5847a4a6ea10433bd7671c545",
+    "@id": "_:Na595007c3c994af0850828500e6a2dcf",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -81,20 +81,20 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
     "@id": "http://rdaregistry.info/Elements/i/P40081",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "has appellation of item"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
       }
     ]
   }
