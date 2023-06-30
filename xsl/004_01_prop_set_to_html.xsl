@@ -266,7 +266,7 @@
             <!-- HTML result doc -->
             <!-- NOTE: Change extension before final publishing -->
             <xsl:result-document
-                href="{concat($oxygenPath, '../html/', translate($rt_id, ':', '_'), '.html')}">
+                href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), '.html')}">
                 <html>
                     <head>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
