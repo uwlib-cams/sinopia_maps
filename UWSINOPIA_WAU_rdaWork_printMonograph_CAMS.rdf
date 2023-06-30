@@ -8,7 +8,7 @@
     <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
     <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
     <sinopia:hasRemark xml:lang="en">For describing single works</sinopia:hasRemark>
-    <sinopia:hasDate>2023-06-29</sinopia:hasDate>
+    <sinopia:hasDate>2023-06-30</sinopia:hasDate>
     <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_order">
@@ -435,8 +435,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10058_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has artist agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10058"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10498"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10545"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10522"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10520"/>
@@ -445,16 +443,10 @@
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10569"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10567"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10568"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10475"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10473"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10474"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10451"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10428"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10426"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10427"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10254"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10253"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10202"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10058_is_d2e374"/>
     <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
     <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -468,12 +460,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10058">
-    <rdfs:label xml:lang="en">has artist agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10498">
-    <rdfs:label xml:lang="en">has artist collective agent</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10545">
     <rdfs:label xml:lang="en">has artist corporate body</rdfs:label>
@@ -499,15 +485,6 @@
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10568">
     <rdfs:label xml:lang="en">has sculptor family</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10475">
-    <rdfs:label xml:lang="en">has book artist collective agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10473">
-    <rdfs:label xml:lang="en">has calligrapher collective agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10474">
-    <rdfs:label xml:lang="en">has sculptor collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10451">
     <rdfs:label xml:lang="en">has artist person</rdfs:label>
   </rdf:Description>
@@ -520,15 +497,6 @@
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10427">
     <rdfs:label xml:lang="en">has sculptor person</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10254">
-    <rdfs:label xml:lang="en">has book artist agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10253">
-    <rdfs:label xml:lang="en">has calligrapher agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10202">
-    <rdfs:label xml:lang="en">has sculptor agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10061_define"/>
     <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10052_order"/>
@@ -536,8 +504,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10061_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has author agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10061"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10483"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10530"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10525"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10524"/>
@@ -548,19 +514,11 @@
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10571"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10573"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10570"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10478"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10477"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10479"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10476"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10436"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10431"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10430"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10432"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10429"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10205"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10204"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10255"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10203"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10061_is_d2e554"/>
     <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
     <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -574,12 +532,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10061">
-    <rdfs:label xml:lang="en">has author agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10483">
-    <rdfs:label xml:lang="en">has author collective agent</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10530">
     <rdfs:label xml:lang="en">has author corporate body</rdfs:label>
@@ -611,18 +563,6 @@
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10570">
     <rdfs:label xml:lang="en">has screenwriter family</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10478">
-    <rdfs:label xml:lang="en">has librettist collective agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10477">
-    <rdfs:label xml:lang="en">has lyricist collective agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10479">
-    <rdfs:label xml:lang="en">has rapporteur collective agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10476">
-    <rdfs:label xml:lang="en">has screenwriter collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10436">
     <rdfs:label xml:lang="en">has author person</rdfs:label>
   </rdf:Description>
@@ -638,18 +578,6 @@
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10429">
     <rdfs:label xml:lang="en">has screenwriter person</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10205">
-    <rdfs:label xml:lang="en">has librettist agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10204">
-    <rdfs:label xml:lang="en">has lyricist agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10255">
-    <rdfs:label xml:lang="en">has rapporteur agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10203">
-    <rdfs:label xml:lang="en">has screenwriter agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10052_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10052_define"/>
     <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10071_order"/>
@@ -657,8 +585,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10052_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has cartographer agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10052"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10482"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10529"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10576"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10435"/>
@@ -676,12 +602,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10052">
-    <rdfs:label xml:lang="en">has cartographer agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10482">
-    <rdfs:label xml:lang="en">has cartographer collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10529">
     <rdfs:label xml:lang="en">has cartographer corporate body of work</rdfs:label>
   </rdf:Description>
@@ -698,8 +618,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10071_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has consultant agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10071"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10505"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10552"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10599"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10458"/>
@@ -717,12 +635,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10071">
-    <rdfs:label xml:lang="en">has consultant agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10505">
-    <rdfs:label xml:lang="en">has consultant collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10552">
     <rdfs:label xml:lang="en">has consultant corporate body</rdfs:label>
   </rdf:Description>
@@ -739,8 +651,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10048_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has dedicator agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10048"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10461"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10508"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10555"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10414"/>
@@ -758,12 +668,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10048">
-    <rdfs:label xml:lang="en">has dedicator agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10461">
-    <rdfs:label xml:lang="en">has dedicator collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10508">
     <rdfs:label xml:lang="en">has dedicator corporate body</rdfs:label>
   </rdf:Description>
@@ -780,8 +684,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10059_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has interviewee agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10059"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10494"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10541"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10588"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10447"/>
@@ -799,12 +701,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10059">
-    <rdfs:label xml:lang="en">has interviewee agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10494">
-    <rdfs:label xml:lang="en">has interviewee collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10541">
     <rdfs:label xml:lang="en">has interviewee corporate body of work</rdfs:label>
   </rdf:Description>
@@ -821,8 +717,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10057_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has interviewer agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10057"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10493"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10540"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10587"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10446"/>
@@ -840,12 +734,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10057">
-    <rdfs:label xml:lang="en">has interviewer agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10493">
-    <rdfs:label xml:lang="en">has interviewer collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10540">
     <rdfs:label xml:lang="en">has interviewer corporate body of work</rdfs:label>
   </rdf:Description>
@@ -862,8 +750,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10056_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has photographer agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10056"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10492"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10539"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10586"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10445"/>
@@ -881,12 +767,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10056">
-    <rdfs:label xml:lang="en">has photographer agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10492">
-    <rdfs:label xml:lang="en">has photographer collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10539">
     <rdfs:label xml:lang="en">has photographer corporate body of work</rdfs:label>
   </rdf:Description>
@@ -903,8 +783,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10293_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has researcher agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10293"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10463"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10510"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10557"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10416"/>
@@ -922,12 +800,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10293">
-    <rdfs:label xml:lang="en">has researcher agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10463">
-    <rdfs:label xml:lang="en">has researcher collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10510">
     <rdfs:label xml:lang="en">has researcher corporate body</rdfs:label>
   </rdf:Description>
@@ -944,8 +816,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10065_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has creator agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10065"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10484"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
@@ -963,12 +833,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10065">
-    <rdfs:label xml:lang="en">has creator agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10484">
-    <rdfs:label xml:lang="en">has creator collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10531">
     <rdfs:label xml:lang="en">has creator corporate body of work</rdfs:label>
   </rdf:Description>
@@ -985,8 +849,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10070_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has addressee agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10070"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10460"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10507"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10554"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10413"/>
@@ -1004,12 +866,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10070">
-    <rdfs:label xml:lang="en">has addressee agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10460">
-    <rdfs:label xml:lang="en">has addressee collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10507">
     <rdfs:label xml:lang="en">has addressee corporate body</rdfs:label>
   </rdf:Description>
@@ -1026,8 +882,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10287_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has commissioning agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10287"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10486"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10533"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10580"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10439"/>
@@ -1045,12 +899,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10287">
-    <rdfs:label xml:lang="en">has commissioning agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10486">
-    <rdfs:label xml:lang="en">has commissioning collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10533">
     <rdfs:label xml:lang="en">has commissioning corporate body</rdfs:label>
   </rdf:Description>
@@ -1067,8 +915,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10069_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has dedicatee agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10069"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10459"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10506"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10553"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10412"/>
@@ -1086,12 +932,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10069">
-    <rdfs:label xml:lang="en">has dedicatee agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10459">
-    <rdfs:label xml:lang="en">has dedicatee collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10506">
     <rdfs:label xml:lang="en">has dedicatee corporate body of work</rdfs:label>
   </rdf:Description>
@@ -1108,8 +948,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10049_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has honouree agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10049"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10480"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10527"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10574"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10433"/>
@@ -1127,12 +965,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10049">
-    <rdfs:label xml:lang="en">has honouree agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10480">
-    <rdfs:label xml:lang="en">has honouree collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10527">
     <rdfs:label xml:lang="en">has honouree corporate body of work</rdfs:label>
   </rdf:Description>
@@ -1149,8 +981,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10046_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has issuing agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10046"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10503"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10550"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10597"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10456"/>
@@ -1168,12 +998,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10046">
-    <rdfs:label xml:lang="en">has issuing agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10503">
-    <rdfs:label xml:lang="en">has issuing collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10550">
     <rdfs:label xml:lang="en">has issuing corporate body</rdfs:label>
   </rdf:Description>
@@ -1190,8 +1014,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10067_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has sponsoring agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10067"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10604"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10605"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10606"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10607"/>
@@ -1209,12 +1031,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10067">
-    <rdfs:label xml:lang="en">has sponsoring agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10604">
-    <rdfs:label xml:lang="en">has sponsoring collective agent of work</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10605">
     <rdfs:label xml:lang="en">has sponsoring corporate body of work</rdfs:label>
   </rdf:Description>
@@ -1231,8 +1047,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10338_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">is description of agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10338"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10339"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10326"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10327"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10325"/>
@@ -1250,12 +1064,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10338">
-    <rdfs:label xml:lang="en">is description of agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10339">
-    <rdfs:label xml:lang="en">is description of collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10326">
     <rdfs:label xml:lang="en">is description of corporate body</rdfs:label>
   </rdf:Description>
@@ -1272,8 +1080,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10319_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has subject agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10319"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10320"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10263"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10262"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10261"/>
@@ -1291,12 +1097,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10319">
-    <rdfs:label xml:lang="en">has subject agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10320">
-    <rdfs:label xml:lang="en">has subject collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10263">
     <rdfs:label xml:lang="en">has subject corporate body</rdfs:label>
   </rdf:Description>
@@ -1313,8 +1113,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10311_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has related agent of work</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10311"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10315"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10314"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10313"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10312"/>
@@ -1331,12 +1129,6 @@
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
     <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
     <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10311">
-    <rdfs:label xml:lang="en">has related agent of work</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10315">
-    <rdfs:label xml:lang="en">has related collective agent of work</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10314">
     <rdfs:label xml:lang="en">has related corporate body of work</rdfs:label>

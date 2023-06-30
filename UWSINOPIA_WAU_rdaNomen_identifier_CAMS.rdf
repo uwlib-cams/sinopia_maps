@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaNomen identifier CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-06-29</sinopia:hasDate>
+      <sinopia:hasDate>2023-06-30</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsnP80068_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
@@ -161,8 +161,6 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80073_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">is assigned by agent</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80073"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80074"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80075"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80076"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80077"/>
@@ -179,12 +177,6 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80073">
-      <rdfs:label xml:lang="en">is assigned by agent</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80074">
-      <rdfs:label xml:lang="en">is assigned by collective agent</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/n/P80075">
       <rdfs:label xml:lang="en">is assigned by corporate body</rdfs:label>

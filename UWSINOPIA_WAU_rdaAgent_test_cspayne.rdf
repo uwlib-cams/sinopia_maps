@@ -8,7 +8,7 @@
     <rdfs:label>UWSINOPIA WAU rdaAgent test cspayne</rdfs:label>
     <sinopia:hasAuthor>cspayne@uw.edu</sinopia:hasAuthor>
     <sinopia:hasRemark xml:lang="en">This is a test template.</sinopia:hasRemark>
-    <sinopia:hasDate>2023-06-29</sinopia:hasDate>
+    <sinopia:hasDate>2023-06-30</sinopia:hasDate>
     <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsaP50374_order"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50374_order">
@@ -34,7 +34,6 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50373_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50373"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50373_is_d2e278"/>
     <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
     <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsaP50373_uri_attributes"/>
@@ -118,12 +117,8 @@
   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50378_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
     <rdfs:label xml:lang="eng">ALT MULTI PROP APPELLATION</rdfs:label>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50378"/>
     <!--http://rdaregistry.info/Elements/a/P50373-->
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50379"/>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50382"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50383"/>
-    <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/a/P50385"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaAgent_test_cspayne.html#uwmaps_rdaa_p50k_aP50378_is_d2e717"/>
     <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
     <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsaP50378_lookup_attributes"/>
@@ -138,23 +133,8 @@
   <rdf:Description rdf:about="http://id.loc.gov/vocabulary/mscript/a">
     <rdfs:label xml:lang="eng">default iri label</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50378">
-    <rdfs:label xml:lang="en">has appellation of agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50373">
-    <rdfs:label xml:lang="en">has access point for agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50379">
-    <rdfs:label xml:lang="en">has appellation of collective agent</rdfs:label>
-  </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50382">
     <rdfs:label xml:lang="en">has appellation of person</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50383">
-    <rdfs:label xml:lang="en">has identifier for agent</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://rdaregistry.info/Elements/a/P50385">
-    <rdfs:label xml:lang="en">has name of agent</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementsaP50157_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementsaP50157_define"/>

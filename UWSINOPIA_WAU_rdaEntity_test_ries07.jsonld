@@ -1,5 +1,23 @@
 [
   {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00021",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has preferred name of RDA entity"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/x/P00020",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -25,17 +43,17 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-06-29"
+        "@value": "2023-06-30"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:N55eac933e6d8418fa43e10e81fe35ab4"
+            "@id": "_:Ne31b284133424351828cd929a34597b6"
           },
           {
-            "@id": "_:N726865c9eb6346b480baf865926de684"
+            "@id": "_:N935be935b9044068b316882e295875b5"
           }
         ]
       }
@@ -63,7 +81,7 @@
     ]
   },
   {
-    "@id": "_:N55eac933e6d8418fa43e10e81fe35ab4",
+    "@id": "_:Ne31b284133424351828cd929a34597b6",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -108,13 +126,13 @@
     ]
   },
   {
-    "@id": "_:N726865c9eb6346b480baf865926de684",
+    "@id": "_:N935be935b9044068b316882e295875b5",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nca722c29b04f42bca9d9f7a77557484b"
+        "@id": "_:N77a9ff159bff4c2ea4432efe7ba3bda2"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -140,22 +158,13 @@
     ]
   },
   {
-    "@id": "_:Nca722c29b04f42bca9d9f7a77557484b",
+    "@id": "_:N77a9ff159bff4c2ea4432efe7ba3bda2",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasAuthority": [
       {
         "@id": "urn:discogs:master"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00016",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has access point for RDA entity"
       }
     ]
   },
@@ -169,20 +178,11 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "@id": "http://rdaregistry.info/Elements/x/P00016",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00021",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has preferred name of RDA entity"
+        "@value": "has access point for RDA entity"
       }
     ]
   },

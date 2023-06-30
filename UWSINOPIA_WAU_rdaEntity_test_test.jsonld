@@ -1,5 +1,23 @@
 [
   {
+    "@id": "http://rdaregistry.info/Elements/i/P40081",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of item"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
     "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaEntity:test:test",
     "@type": [
       "http://sinopia.io/vocabulary/ResourceTemplate"
@@ -16,14 +34,14 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-06-29"
+        "@value": "2023-06-30"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:Na595007c3c994af0850828500e6a2dcf"
+            "@id": "_:N784e17139c224901a620c8e2cb91a3a5"
           }
         ]
       }
@@ -51,7 +69,7 @@
     ]
   },
   {
-    "@id": "_:Na595007c3c994af0850828500e6a2dcf",
+    "@id": "_:N784e17139c224901a620c8e2cb91a3a5",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -73,24 +91,6 @@
         "@id": "https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaEntity_test_test.html#uwmaps_rdax_p00k_xP00017_is_d2e41"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/i/P40081",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of item"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",

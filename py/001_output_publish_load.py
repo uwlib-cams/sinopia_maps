@@ -185,7 +185,7 @@ def fix_multi_props(file):
 				if hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'] not in used_propUri_list:
 					used_propUri_list.append(hasPropertyUri.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource'])
 
-	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
+	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True)
 	
 # function to delete duplicate triples 
 def fix_duplicate_triples(file):
@@ -208,17 +208,57 @@ def fix_duplicate_triples(file):
 			if to_remove == True:
 				rdf_root.remove(rdf_description)
 
-	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True) # TEST pretty_print
-	
+	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True)
+
+# this function removes any agent subproperties in multiprops that are not person, corporate body, or family props
+def filter_agents(file):
+	propuri_count = 0; 	
+	tree = ET.parse(file)
+	rdf_root = tree.getroot()
+
+	def check_uri(uri):
+		agent_prop = False
+		for rdf_description in rdf_root:
+			# only one subelement means it is an rdfs:label
+			# if label contains agent, this prop needs to be removed from multiprop instances
+			if (len(rdf_description.getchildren()) == 1) and rdf_description.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}about'] == uri:
+				for subelement in rdf_description:
+					if 'agent' in subelement.text: 
+						rdf_root.remove(rdf_description)
+						agent_prop = True
+		return agent_prop	
+
+	for rdf_description in rdf_root:
+		# count hasPropertyUri elements
+		for subelement in rdf_description:
+				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
+					propuri_count = propuri_count + 1
+
+		# more than one hasPropertyUri elements -> multiprop
+		# remove agent subprops
+		if propuri_count > 1:
+			for subelement in rdf_description:
+				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
+					uri = subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']
+					agent_prop = check_uri(uri)
+					if agent_prop == True:
+						rdf_description.remove(subelement)
+		
+	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True)
+
 RT_list = locate_RTs()
 for RT in RT_list:
     fix_multi_props(f'{RT}')
     fix_duplicate_triples(f'{RT}')
+    filter_agents(f'{RT}')
+    
 
 print(dedent(f"""{'=' * 20}
 COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
 {'=' * 20}"""))
 
+
+	
 # OUTPUT HTML RESOURCE TEMPLATES 
 
 # run stylesheet to output HTML
