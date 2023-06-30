@@ -13,23 +13,20 @@
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
-            
-            <!-- standalone, if no format value is needed -->
-            <xs:enumeration value="standalone"/>
 
-            <!-- WEMI > print monographs -->
-            <!-- augmenting aggregates and non-aggregates, use 'printMonograph' -->
+            <!-- WEMI > print monograph formats -->
+            <!-- non-aggregates and augmenting aggregates: use 'printMonograph' -->
             <xs:enumeration value="printMonograph"/>
             <xs:enumeration value="aggregating_printMonograph"/>
             
-            <!-- Nomens -->
+            <!-- Nomen formats -->
             <xs:enumeration value="accessPoint"/>
             <xs:enumeration value="identifier"/>
 
-            <!-- if format is not applicable -->
+            <!-- format not applicable -->
             <xs:enumeration value="na"/>
             
-            <!-- for testing -->
+            <!-- -->
             <xs:enumeration value="test"/>
             
         </xs:restriction>
