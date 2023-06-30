@@ -13,6 +13,9 @@
             </xs:documentation>
         </xs:annotation>
         <xs:restriction base="xs:string">
+            
+            <!-- metadataWork -->
+            <xs:enumeration value="metadataWork"/>
 
             <!-- WEMI > print monograph formats -->
             <!-- non-aggregates and augmenting aggregates: use 'printMonograph' -->
