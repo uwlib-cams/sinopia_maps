@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: the result-document location is under the assumption that this stylesheet
+is being run through 001_output_publish_load.py - running the stylesheet on its own will
+save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
