@@ -92,9 +92,11 @@
                 <xsl:variable name="subprop_label" select="
                     document($rdaRegistry_xml)/rdf:RDF/
                     rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-                <li>
-                    <xsl:value-of select="$subprop_label"/>
-                </li>
+                <xsl:if test="not(contains($subprop_label, 'agent'))">
+                    <li>
+                        <xsl:value-of select="$subprop_label"/>
+                    </li>
+                </xsl:if>
             </xsl:for-each>
         </ul>     
     </xsl:template>

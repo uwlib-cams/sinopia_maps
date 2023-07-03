@@ -256,10 +256,13 @@
                             <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
                             <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
                         </xsl:variable>
-                        <li>
-                            <xsl:value-of select="$subprop_label"/>
-                            [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
-                        </li>
+                        
+                        <xsl:if test="not(contains($subprop_label, 'agent'))">
+                            <li>
+                                <xsl:value-of select="$subprop_label"/>
+                                [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
+                            </li>
+                        </xsl:if>
                     </xsl:for-each>
                 </ul>
             </xsl:when>
