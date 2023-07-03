@@ -6,7 +6,8 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
     xmlns:j="http://www.w3.org/2005/xpath-functions"
-    exclude-result-prefixes="xs j" version="3.0"
+    exclude-result-prefixes="xs j"
+    version="3.0"
     expand-text="true">
     
     <xsl:output method="html"/>
@@ -21,11 +22,13 @@
         <xsl:param name="rt_id"/>
         <xsl:param name="prop"/>
         <xsl:param name="file_name"/>
-        <section class="ptInfo"> 
+        <section> 
+            <h2>Property Template Details</h2>
+            <div class="ptInfo">
             <xsl:for-each select="$prop">
                 <section class="ptInfo" id="{uwmaps:sinopia/uwsinopia:implementation_set/@localid_implementation_set}">
                     
-                    <h4>
+                    <h3>
                         <span>
                             <!-- use alt label if available -->
                             <xsl:choose>
@@ -39,7 +42,7 @@
                                 <xsl:text>(*)</xsl:text>
                             </xsl:if>
                         </span>
-                    </h4>
+                    </h3>
                     
                     <!-- include remark if available -->
                     <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:remark">
@@ -63,12 +66,10 @@
                  
                     <!-- show prop label with links -->
                     <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
-                   <p>
                     <xsl:call-template name="subprop_list">
                         <xsl:with-param name="file_name" select="$file_name"/>
                         <xsl:with-param name="node_id" select="$node_id"/>
                     </xsl:call-template>
-                   </p>
                     <ul>
                         <!-- mark as required or optional -->
                         <xsl:choose>
@@ -100,8 +101,7 @@
                         <xsl:choose>
                             <!-- literal pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt">
-                                <li>Property type: literal</li>
-                                <!-- NEEDS TESTING -->
+                                <li>Property type: literal
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/*">
                                     <ul>
                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:date_default">
@@ -127,11 +127,12 @@
                                         </xsl:if>
                                     </ul>
                                 </xsl:if>
+                                </li>
                             </xsl:when>
                             
                             <!-- lookup pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt">
-                                <li>Property type: lookup</li> 
+                                <li>Property type: lookup
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label">
                                     <ul>
                                         <li>Default:
@@ -145,29 +146,30 @@
                                         </li>
                                     </ul>
                                 </xsl:if>
-                                    <li>Value constraint(s): 
-                                        <ul>
-                                            <li>Value lookup source(s) via the <a
-                                                href="https://lookup.ld4l.org/">LD4P Authority Lookup
-                                                Service</a>: <ul>              
-                                                    <xsl:for-each select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:authorities/uwsinopia:authority_urn">
-                                                        <li>
-                                                            <!-- list lookup authorities using lookup_details template -->
-                                                            <xsl:call-template name="lookup_details">
-                                                                <xsl:with-param name="label" select="."/>
-                                                            </xsl:call-template>                                                     
-                                                        </li>
-                                                    </xsl:for-each>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                </li>
+                                <li>Value constraint(s): 
+                                    <ul>
+                                        <li>Value lookup source(s) via the <a
+                                            href="https://lookup.ld4l.org/">LD4P Authority Lookup
+                                            Service</a>: <ul>              
+                                                <xsl:for-each select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:authorities/uwsinopia:authority_urn">
+                                                    <li>
+                                                        <!-- list lookup authorities using lookup_details template -->
+                                                        <xsl:call-template name="lookup_details">
+                                                            <xsl:with-param name="label" select="."/>
+                                                        </xsl:call-template>                                                     
+                                                    </li>
+                                                </xsl:for-each>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
                             </xsl:when>
                             
                             <!-- URI pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt">
                                 <!-- NEEDS TESTING -->
-                                <li>Property type: URI</li>
+                                <li>Property type: URI
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri">
                                     <ul>
                                         <li>Default:
@@ -181,6 +183,7 @@
                                         </li>
                                     </ul>
                                 </xsl:if>
+                                </li>
                             </xsl:when>
                             
                             <!-- nested resource -->
@@ -207,6 +210,7 @@
                     </ul>
                 </section>
             </xsl:for-each>
+            </div>
         </section>
     </xsl:template>
     
@@ -257,10 +261,16 @@
                             <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
                         </xsl:variable>
                         
+                        <!-- get property id -->
+                        <xsl:variable name="last_8_characters"
+                            select="substring-after($subprop_URI, 'http://rdaregistry.info/Elements/')"/>
+                        <xsl:variable name="prop_id"
+                            select="concat('rda', replace($last_8_characters, '/', ':'))"/>
+                        
                         <xsl:if test="not(contains($subprop_label, 'agent'))">
                             <li>
                                 <xsl:value-of select="$subprop_label"/>
-                                [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
+                                [<a href="{$subprop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
                             </li>
                         </xsl:if>
                     </xsl:for-each>
@@ -289,8 +299,14 @@
                         <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
                     </xsl:variable>
                     
+                    <!-- get property id -->
+                    <xsl:variable name="last_8_characters"
+                        select="substring-after($subprop_URI, 'http://rdaregistry.info/Elements/')"/>
+                    <xsl:variable name="prop_id"
+                        select="concat('rda', replace($last_8_characters, '/', ':'))"/>
+                    
                     <xsl:value-of select="$subprop_label"/>
-                    [<a href="{$subprop_URI}">RDA REGISTRY</a>] [<a href="{$toolkit_url}">RDA TOOLKIT</a>]
+                    [<a href="{$subprop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
                     
                 </xsl:for-each>
             </xsl:otherwise>

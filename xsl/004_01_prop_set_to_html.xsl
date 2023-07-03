@@ -3,11 +3,14 @@
 is being run through 001_output_publish_load.py - running the stylesheet on its own will
 save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sinopia="http://sinopia.io/vocabulary/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:sinopia="http://sinopia.io/vocabulary/"
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    exclude-result-prefixes="xs" 
+    version="3.0"
     expand-text="true">
     
     <xsl:output method="html"/>
@@ -267,10 +270,9 @@ save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
             </xsl:variable>
             
             <!-- HTML result doc -->
-            <!-- NOTE: Change extension before final publishing -->
             <xsl:result-document
                 href="{concat($oxygenPath, 'html/', translate($rt_id, ':', '_'), '.html')}">
-                <html>
+                <html lang="en">
                     <head>
                         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
                         <title>
@@ -284,7 +286,7 @@ save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
                             </xsl:call-template>
                         </title>
                         <link
-                            href="https://uwlib-cams.github.io/webviews/css/rda3r_templates.css"
+                            href="../../webviews/css/rda3r_templates.css"
                             rel="stylesheet" type="text/css"/>
                         <link href="https://uwlib-cams.github.io/webviews/images/book.png"
                             rel="icon" type="image/png"/>
@@ -333,7 +335,7 @@ save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
                         </xsl:call-template>
                         
                         <!-- js -->
-                        <script type="text/javascript" src="create_human_readable_RTs-collapsible.js"/>
+                        <script src="create_human_readable_RTs-collapsible.js"/>
                     </body>
                 </html>
             </xsl:result-document>

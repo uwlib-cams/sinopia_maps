@@ -4,7 +4,9 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    exclude-result-prefixes="xs" 
+    version="3.0"
     expand-text="true">
     
     <!-- basic info about RT (may add more here?)-->
@@ -22,6 +24,7 @@
         <xsl:variable name="author" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasAuthor"/>
         <xsl:variable name="date" select="document($file_name)/rdf:RDF/rdf:Description[@rdf:about = $rdf_about]/sinopia:hasDate"/>
        
+        <h2>Resource Template Details</h2>
         <table class="rtInfo">
             <thead>
                 <tr>

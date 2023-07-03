@@ -4,7 +4,9 @@
     xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
     xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" exclude-result-prefixes="xs" version="3.0"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
+    exclude-result-prefixes="xs"
+    version="3.0"
     expand-text="true">
     
     <!-- generates string from resource when resource is "rda[A-Z]*" -->
