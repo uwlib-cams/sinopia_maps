@@ -66,10 +66,12 @@
                  
                     <!-- show prop label with links -->
                     <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
+                    <p>
                     <xsl:call-template name="subprop_list">
                         <xsl:with-param name="file_name" select="$file_name"/>
                         <xsl:with-param name="node_id" select="$node_id"/>
                     </xsl:call-template>
+                    </p>
                     <ul>
                         <!-- mark as required or optional -->
                         <xsl:choose>
