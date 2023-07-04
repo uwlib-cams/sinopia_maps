@@ -10,26 +10,6 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>../map_storage/prop_set_uwRdaExtension.xml</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>prop_set_add_is_localid</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>XSL</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
-                            <scenarioAssociation>
-                                <field name="url">
                                     <String>../map_storage/prop_set_rdaw_p10k.xml</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -237,6 +217,26 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>../map_storage/prop_set_uwRdaExtension.xml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>prop_set_add_is_localid</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>XSL</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>xsl/003_rt_ids_to_uwsinopia.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
@@ -343,7 +343,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>file:/C:/Users/Benjamin/OneDrive%20-%20UW/gitrepos/map_storage/xsl/002_localid_implementation_set.xsl</String>
+                                    <String>xsl/002_localid_implementation_set.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
@@ -426,7 +426,7 @@
                                     <String></String>
                                 </field>
                                 <field name="inputXSLURL">
-                                    <String>file:/C:/Users/Benjamin/OneDrive%20-%20UW/gitrepos/map_storage/xsl/003_02_add_toolkit_URLs.xsl</String>
+                                    <String>xsl/003_02_add_toolkit_URLs.xsl</String>
                                 </field>
                                 <field name="inputXMLURL">
                                     <String>${currentFileURL}</String>
