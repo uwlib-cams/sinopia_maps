@@ -1,28 +1,10 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "@id": "http://rdaregistry.info/Elements/x/P00018",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00021",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has preferred name of RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00020",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has authorized access point for RDA entity"
+        "@value": "has identifier for RDA entity"
       }
     ]
   },
@@ -43,17 +25,17 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-06-30"
+        "@value": "2023-07-03"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:Ne31b284133424351828cd929a34597b6"
+            "@id": "_:N2c3afa6cfda9400087af4d921137420e"
           },
           {
-            "@id": "_:N935be935b9044068b316882e295875b5"
+            "@id": "_:N4910b533e64b4f449369044ce15af170"
           }
         ]
       }
@@ -81,7 +63,7 @@
     ]
   },
   {
-    "@id": "_:Ne31b284133424351828cd929a34597b6",
+    "@id": "_:N2c3afa6cfda9400087af4d921137420e",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -126,13 +108,13 @@
     ]
   },
   {
-    "@id": "_:N935be935b9044068b316882e295875b5",
+    "@id": "_:N4910b533e64b4f449369044ce15af170",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N77a9ff159bff4c2ea4432efe7ba3bda2"
+        "@id": "_:N75191d2e3ebd41358842489155ec9b98"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -158,7 +140,7 @@
     ]
   },
   {
-    "@id": "_:N77a9ff159bff4c2ea4432efe7ba3bda2",
+    "@id": "_:N75191d2e3ebd41358842489155ec9b98",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -178,6 +160,24 @@
     ]
   },
   {
+    "@id": "http://rdaregistry.info/Elements/x/P00019",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has name of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/x/P00016",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -187,11 +187,11 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00019",
+    "@id": "http://rdaregistry.info/Elements/x/P00021",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has name of RDA entity"
+        "@value": "has preferred name of RDA entity"
       }
     ]
   },
@@ -205,11 +205,11 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00018",
+    "@id": "http://rdaregistry.info/Elements/x/P00020",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has identifier for RDA entity"
+        "@value": "has authorized access point for RDA entity"
       }
     ]
   }

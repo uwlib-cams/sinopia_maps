@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaWork metadataWork CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-06-30</sinopia:hasDate>
+      <sinopia:hasDate>2023-07-03</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10002_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_order">
@@ -41,7 +41,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10353_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10353_define"/>
-      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10219_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10353_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -58,5 +58,42 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://id.loc.gov/vocabulary/languages/eng">
       <rdfs:label xml:lang="en">English</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10219_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10357_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has date of work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10219"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_metadataWork_CAMS.html#uwmaps_rdaw_p10k_wP10219_is_d2e1921"/>
+      <sinopia:hasRemark xml:lang="en">Literal value will default to today's date.</sinopia:hasRemark>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10219_literal_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_literal_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+      <sinopia:hasLiteralPropertyAttributes rdf:resource="http://sinopia.io/vocabulary/literalPropertyAttribute/dateDefault"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10357_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10357_define"/>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10357_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has script of representative expression</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10357"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_metadataWork_CAMS.html#uwmaps_rdaw_p10k_wP10357_is_d2e7468"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10357_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10357_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+      <sinopia:hasDefault rdf:resource="http://www.wikidata.org/entity/Q8229"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://www.wikidata.org/entity/Q8229">
+      <rdfs:label xml:lang="en">Latin script</rdfs:label>
    </rdf:Description>
 </rdf:RDF>

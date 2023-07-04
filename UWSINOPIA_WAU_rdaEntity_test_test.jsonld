@@ -1,14 +1,5 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/i/P40081",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of item"
-      }
-    ]
-  },
-  {
     "@id": "http://rdaregistry.info/Elements/x/P00017",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -34,14 +25,14 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-06-30"
+        "@value": "2023-07-03"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:N784e17139c224901a620c8e2cb91a3a5"
+            "@id": "_:N37c8ed03d2974892a1dd4badda1ceb5e"
           }
         ]
       }
@@ -69,7 +60,7 @@
     ]
   },
   {
-    "@id": "_:N784e17139c224901a620c8e2cb91a3a5",
+    "@id": "_:N37c8ed03d2974892a1dd4badda1ceb5e",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -95,6 +86,15 @@
       {
         "@language": "en",
         "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/i/P40081",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of item"
       }
     ]
   }
