@@ -1,64 +1,10 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/n/P80113",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is equivalent to"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80058",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has part nomen"
-      }
-    ]
-  },
-  {
     "@id": "http://rdaregistry.info/Elements/n/P80079",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "is authorized access point for work of"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80173",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is authorized access point for work group of"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80076",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is assigned by family"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80009",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has related nomen of nomen"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80061",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is derivation of"
       }
     ]
   },
@@ -79,47 +25,47 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-07-03"
+        "@value": "2023-07-07"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:N4c3b31cd88ad47a38f989dfd02fca9f3"
+            "@id": "_:N1d7cd185f6a14f268fdd510c319513d4"
           },
           {
-            "@id": "_:Nb11652e31a9d4db9b3cd3eed1901a151"
+            "@id": "_:N832506b590b347a18cefb3580c74ceb1"
           },
           {
-            "@id": "_:Nb0dd38a5a65d4ad7879adc421abddc66"
+            "@id": "_:N8c38a4f7b6904fbdb807f59e155ab44c"
           },
           {
-            "@id": "_:N65b20c27d1224f22a2e3b48a2bebc540"
+            "@id": "_:Na484cd59f53f44acb6865477150270a8"
           },
           {
-            "@id": "_:Nc6110459837f44b69f15b538c86a45bc"
+            "@id": "_:N0d4ced1b8e214a3196a39b540bd22c51"
           },
           {
-            "@id": "_:Ndffabe8ba1d64939836f3ed46a4885ed"
+            "@id": "_:Nd574830a85a64894a2687b8f69f5e81b"
           },
           {
-            "@id": "_:N83dadf482fd54fcc88058f945d873c21"
+            "@id": "_:N3c9de296c546487ca4435168d6854928"
           },
           {
-            "@id": "_:Nea6d71b06db0421aad12f7f7845dd7d5"
+            "@id": "_:Naed3493a93f14001984e377ec6a2f592"
           },
           {
-            "@id": "_:Naed52c7751944511a8a0ac020751d850"
+            "@id": "_:N95a7a051032b4c57bc716d00f25c91fe"
           },
           {
-            "@id": "_:N48c73696e5654c13af8f994581d6858d"
+            "@id": "_:N4f3b8429018d43cea02d3c4469c865f0"
           },
           {
-            "@id": "_:N7cc1300c62564eb9ba174ea09f4c24c9"
+            "@id": "_:N568f33c07526452eb8c9dfee877a5566"
           },
           {
-            "@id": "_:N64f6abfeb51947ecb2278cc47ac23406"
+            "@id": "_:N359e60de1e2b4cc195031aa610d5ea0b"
           }
         ]
       }
@@ -146,7 +92,7 @@
     ]
   },
   {
-    "@id": "_:N4c3b31cd88ad47a38f989dfd02fca9f3",
+    "@id": "_:N1d7cd185f6a14f268fdd510c319513d4",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -181,13 +127,13 @@
     ]
   },
   {
-    "@id": "_:Nb11652e31a9d4db9b3cd3eed1901a151",
+    "@id": "_:N832506b590b347a18cefb3580c74ceb1",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N488e63cde26a47a2bef76d4365221719"
+        "@id": "_:Ndf28aa920b234d07998439d45f19211d"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -224,7 +170,7 @@
     ]
   },
   {
-    "@id": "_:N488e63cde26a47a2bef76d4365221719",
+    "@id": "_:Ndf28aa920b234d07998439d45f19211d",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -238,13 +184,13 @@
     ]
   },
   {
-    "@id": "_:Nb0dd38a5a65d4ad7879adc421abddc66",
+    "@id": "_:N8c38a4f7b6904fbdb807f59e155ab44c",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nfc0afae5643f4c86826ecfbf737db98e"
+        "@id": "_:N6877483f2522421e90f447eb9886e255"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -281,7 +227,7 @@
     ]
   },
   {
-    "@id": "_:Nfc0afae5643f4c86826ecfbf737db98e",
+    "@id": "_:N6877483f2522421e90f447eb9886e255",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -295,7 +241,7 @@
     ]
   },
   {
-    "@id": "_:N65b20c27d1224f22a2e3b48a2bebc540",
+    "@id": "_:Na484cd59f53f44acb6865477150270a8",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -316,7 +262,7 @@
     ],
     "http://sinopia.io/vocabulary/hasUriAttributes": [
       {
-        "@id": "_:N0f20d6a8c03e4e1b9648f8d5934734ee"
+        "@id": "_:Na7a55a1a84e04f1d8bfa27f4910e2b11"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -327,7 +273,7 @@
     ]
   },
   {
-    "@id": "_:N0f20d6a8c03e4e1b9648f8d5934734ee",
+    "@id": "_:Na7a55a1a84e04f1d8bfa27f4910e2b11",
     "@type": [
       "http://sinopia.io/vocabulary/UriPropertyTemplate"
     ],
@@ -338,13 +284,13 @@
     ]
   },
   {
-    "@id": "_:Nc6110459837f44b69f15b538c86a45bc",
+    "@id": "_:N0d4ced1b8e214a3196a39b540bd22c51",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nf7300030666f4e309800f401326e0a0b"
+        "@id": "_:Ne6ddd03504144983a705204639ee20b4"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -375,7 +321,7 @@
     ]
   },
   {
-    "@id": "_:Nf7300030666f4e309800f401326e0a0b",
+    "@id": "_:Ne6ddd03504144983a705204639ee20b4",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -386,13 +332,13 @@
     ]
   },
   {
-    "@id": "_:Ndffabe8ba1d64939836f3ed46a4885ed",
+    "@id": "_:Nd574830a85a64894a2687b8f69f5e81b",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N5877bdefa3334e4ba24d9219877153e9"
+        "@id": "_:N6791912dbcf547759028e4dba4dff76e"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -423,7 +369,7 @@
     ]
   },
   {
-    "@id": "_:N5877bdefa3334e4ba24d9219877153e9",
+    "@id": "_:N6791912dbcf547759028e4dba4dff76e",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -437,13 +383,13 @@
     ]
   },
   {
-    "@id": "_:N83dadf482fd54fcc88058f945d873c21",
+    "@id": "_:N3c9de296c546487ca4435168d6854928",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N9bbf7113257d4f658c3c9a813f93998a"
+        "@id": "_:N96cdaecab06344928d079673a26b25d1"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -469,7 +415,7 @@
     ]
   },
   {
-    "@id": "_:N9bbf7113257d4f658c3c9a813f93998a",
+    "@id": "_:N96cdaecab06344928d079673a26b25d1",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -480,7 +426,7 @@
     ]
   },
   {
-    "@id": "_:Nea6d71b06db0421aad12f7f7845dd7d5",
+    "@id": "_:Naed3493a93f14001984e377ec6a2f592",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -512,13 +458,13 @@
     ]
   },
   {
-    "@id": "_:Naed52c7751944511a8a0ac020751d850",
+    "@id": "_:N95a7a051032b4c57bc716d00f25c91fe",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N02dd3ac757a84ae98cfcc75b8fbcd371"
+        "@id": "_:N767d4c5973824d91a5dd6b3d97ed95e2"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -549,7 +495,7 @@
     ]
   },
   {
-    "@id": "_:N02dd3ac757a84ae98cfcc75b8fbcd371",
+    "@id": "_:N767d4c5973824d91a5dd6b3d97ed95e2",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -560,13 +506,13 @@
     ]
   },
   {
-    "@id": "_:N48c73696e5654c13af8f994581d6858d",
+    "@id": "_:N4f3b8429018d43cea02d3c4469c865f0",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nf6ade61baf864a7981296ed5c5f7725c"
+        "@id": "_:N595804ed17c2487caf33b7aee7a85f5e"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -603,7 +549,7 @@
     ]
   },
   {
-    "@id": "_:Nf6ade61baf864a7981296ed5c5f7725c",
+    "@id": "_:N595804ed17c2487caf33b7aee7a85f5e",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -629,7 +575,7 @@
     ]
   },
   {
-    "@id": "_:N7cc1300c62564eb9ba174ea09f4c24c9",
+    "@id": "_:N568f33c07526452eb8c9dfee877a5566",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -667,13 +613,13 @@
     ]
   },
   {
-    "@id": "_:N64f6abfeb51947ecb2278cc47ac23406",
+    "@id": "_:N359e60de1e2b4cc195031aa610d5ea0b",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N7b2c9299d1624cb9b6d2450e6c756105"
+        "@id": "_:N61b26107c048448ba6047747e13c6ae3"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -716,22 +662,13 @@
     ]
   },
   {
-    "@id": "_:N7b2c9299d1624cb9b6d2450e6c756105",
+    "@id": "_:N61b26107c048448ba6047747e13c6ae3",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasAuthority": [
       {
         "@id": "urn:ld4p:sinopia:rda:nomen"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/n/P80059",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is part of nomen"
       }
     ]
   },
@@ -745,6 +682,42 @@
     ]
   },
   {
+    "@id": "http://id.loc.gov/authorities/names",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Library of Congress Names"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80009",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has related nomen of nomen"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80113",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is equivalent to"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80061",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is derivation of"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/n/P80095",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -754,20 +727,47 @@
     ]
   },
   {
+    "@id": "http://rdaregistry.info/Elements/n/P80058",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has part nomen"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80059",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is part of nomen"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80173",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is authorized access point for work group of"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/n/P80076",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is assigned by family"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/n/P80060",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "has derivation"
-      }
-    ]
-  },
-  {
-    "@id": "http://id.loc.gov/authorities/names",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Library of Congress Names"
       }
     ]
   },
