@@ -6,7 +6,7 @@
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" 
     xmlns:j="http://www.w3.org/2005/xpath-functions"
-    exclude-result-prefixes="xs j"
+    exclude-result-prefixes="xs sinopia uwmaps uwsinopia rdf rdfs j"
     version="3.0"
     expand-text="true">
     
