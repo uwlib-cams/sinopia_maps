@@ -201,12 +201,12 @@
     <rdfs:label xml:lang="en">has date of work</rdfs:label>
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10219"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10219_is_d2e1928"/>
-    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-    <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10219_lookup_attributes"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10219_literal_attributes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_lookup_attributes">
-    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-    <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10218_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10218_define"/>
@@ -332,12 +332,12 @@
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10398"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10398_is_d2e1887"/>
     <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-    <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10398_lookup_attributes"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10398_literal_attributes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10398_lookup_attributes">
-    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-    <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10398_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10217_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10217_define"/>

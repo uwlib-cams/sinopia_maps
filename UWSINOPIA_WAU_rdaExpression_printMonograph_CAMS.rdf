@@ -166,12 +166,12 @@
     <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/e/P20214"/>
     <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaExpression_printMonograph_CAMS.html#uwmaps_rdae_p20k_eP20214_is_d2e3204"/>
     <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-    <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementseP20214_lookup_attributes"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+    <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementseP20214_literal_attributes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20214_lookup_attributes">
-    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-    <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+  <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20214_literal_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+    <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementseP20006_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementseP20006_define"/>
