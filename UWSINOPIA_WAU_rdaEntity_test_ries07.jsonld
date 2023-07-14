@@ -1,41 +1,5 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00020",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has authorized access point for RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00018",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has identifier for RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00016",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has access point for RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00023",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has variant name of RDA entity"
-      }
-    ]
-  },
-  {
     "@id": "http://rdaregistry.info/Elements/x/P00022",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -68,10 +32,10 @@
       {
         "@list": [
           {
-            "@id": "_:N4c96b7cc470b4a32ad8822387891564d"
+            "@id": "_:N52835664adf94d9688aba08f8fa4617a"
           },
           {
-            "@id": "_:N4b380aed704e404eb7118066c7fea5b5"
+            "@id": "_:N25f9852274f44db59c630d6c0a49e493"
           }
         ]
       }
@@ -99,7 +63,7 @@
     ]
   },
   {
-    "@id": "_:N4c96b7cc470b4a32ad8822387891564d",
+    "@id": "_:N52835664adf94d9688aba08f8fa4617a",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -144,13 +108,13 @@
     ]
   },
   {
-    "@id": "_:N4b380aed704e404eb7118066c7fea5b5",
+    "@id": "_:N25f9852274f44db59c630d6c0a49e493",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nd8c7dc41fada4bb383d90de042d78ab1"
+        "@id": "_:N41e55c42362c4ad58876377ceba03c4c"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -176,7 +140,7 @@
     ]
   },
   {
-    "@id": "_:Nd8c7dc41fada4bb383d90de042d78ab1",
+    "@id": "_:N41e55c42362c4ad58876377ceba03c4c",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -187,11 +151,20 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "@id": "http://rdaregistry.info/Elements/x/P00018",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has appellation of RDA entity"
+        "@value": "has identifier for RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00016",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has access point for RDA entity"
       }
     ]
   },
@@ -205,11 +178,38 @@
     ]
   },
   {
+    "@id": "http://rdaregistry.info/Elements/x/P00020",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has authorized access point for RDA entity"
+      }
+    ]
+  },
+  {
     "@id": "http://rdaregistry.info/Elements/x/P00019",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "has name of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00023",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has variant name of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
       }
     ]
   }
