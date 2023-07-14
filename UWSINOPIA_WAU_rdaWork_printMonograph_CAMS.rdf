@@ -8,7 +8,7 @@
     <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
     <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
     <sinopia:hasRemark xml:lang="en">For describing single works</sinopia:hasRemark>
-    <sinopia:hasDate>2023-07-12</sinopia:hasDate>
+    <sinopia:hasDate>2023-07-14</sinopia:hasDate>
     <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_order">
@@ -1140,7 +1140,7 @@
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10192_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10192_define"/>
-    <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10108_order"/>
+    <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10192_define">
     <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -1185,6 +1185,23 @@
   </rdf:Description>
   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10152">
     <rdfs:label xml:lang="en">is illustrations for work</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order">
+    <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_define"/>
+    <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10108_order"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_define">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+    <rdfs:label xml:lang="en">Has Creator Characteristic</rdfs:label>
+    <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasCreatorCharacteristic"/>
+    <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_uwRdaExtension_hasCreatorCharacteristic_is_d2e20"/>
+    <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+    <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+    <sinopia:hasLookupAttributes rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_lookup_attributes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_lookup_attributes">
+    <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+    <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:demographics"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10108_order">
     <rdf:first rdf:nodeID="rdaregistryinfoElementswP10108_define"/>
