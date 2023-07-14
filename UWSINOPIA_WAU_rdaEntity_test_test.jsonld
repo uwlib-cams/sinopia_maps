@@ -16,14 +16,14 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-07-12"
+        "@value": "2023-07-14"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:N1276a4cd32af4b56b8df865d1ab5925d"
+            "@id": "_:Nce2f3cd2ecc04b12afd3d9447bcd70de"
           }
         ]
       }
@@ -51,7 +51,7 @@
     ]
   },
   {
-    "@id": "_:N1276a4cd32af4b56b8df865d1ab5925d",
+    "@id": "_:Nce2f3cd2ecc04b12afd3d9447bcd70de",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -81,20 +81,20 @@
     ]
   },
   {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
     "@id": "http://rdaregistry.info/Elements/i/P40081",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
         "@value": "has appellation of item"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
       }
     ]
   }

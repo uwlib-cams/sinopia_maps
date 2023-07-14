@@ -65,11 +65,13 @@
                     </xsl:if>
                  
                     <!-- show prop label with links -->
-                    <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
+                    <xsl:variable name="node_id" select="concat(translate(substring-after(uwmaps:prop_iri/@iri, '://'), '/.#', ''), '_define')"/>
                     <p>
-                    <xsl:call-template name="subprop_list">
+                    <xsl:call-template name="prop_list">
                         <xsl:with-param name="file_name" select="$file_name"/>
                         <xsl:with-param name="node_id" select="$node_id"/>
+                        <xsl:with-param name="prop" select="$prop"/>
+                        <xsl:with-param name="prop_iri" select="uwmaps:prop_iri/@iri"/>
                     </xsl:call-template>
                     </p>
                     <ul>
@@ -231,9 +233,11 @@
     
     <!-- template for generating list of subprops with registry and toolkit links -->
     <!-- pulls data from rdf/xml files, rdaregistry, and map_storage/xml/RDA_alignments.xml -->
-    <xsl:template name="subprop_list">
+    <xsl:template name="prop_list">
         <xsl:param name="file_name"/>
         <xsl:param name="node_id"/>
+        <xsl:param name="prop"/>
+        <xsl:param name="prop_iri"/>
         
         <xsl:choose>
             <!-- list is only generated if more than two properties -->
@@ -246,70 +250,96 @@
                         <!-- subprop_URI is registry link -->
                         <xsl:variable name="subprop_URI" select="@rdf:resource"/>
                         
-                        <!-- get all the pieces to find label and toolkit url -->
-                        <xsl:variable name="entity">
-                            <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
-                            <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
-                        </xsl:variable>
-                        
-                        <!-- get label from rdaregistry -->
-                        <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
-                        <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-    
-                        <!-- get toolkit url from RDA_alignments.xml -->
-                        <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
-                        <xsl:variable name="toolkit_url">
-                            <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
-                            <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
-                        </xsl:variable>
-                        
-                        <!-- get property id -->
-                        <xsl:variable name="last_8_characters"
-                            select="substring-after($subprop_URI, 'http://rdaregistry.info/Elements/')"/>
-                        <xsl:variable name="prop_id"
-                            select="concat('rda', replace($last_8_characters, '/', ':'))"/>
-                        
-                        <xsl:if test="not(contains($subprop_label, 'agent'))">
-                            <li>
-                                <xsl:value-of select="$subprop_label"/>
-                                [<a href="{$subprop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
-                            </li>
-                        </xsl:if>
+                        <xsl:choose>
+                            <xsl:when test="contains($subprop_URI, 'rdaregistry')">
+                               <!-- get all the pieces to find label and toolkit url -->
+                               <xsl:variable name="entity">
+                                   <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
+                                   <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                               </xsl:variable>
+                               
+                               <!-- get label from rdaregistry -->
+                               <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
+                               <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+           
+                               <!-- get toolkit url from RDA_alignments.xml -->
+                               <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
+                               <xsl:variable name="toolkit_url">
+                                   <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
+                                   <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
+                               </xsl:variable>
+                               
+                               <!-- get property id -->
+                               <xsl:variable name="last_8_characters"
+                                   select="substring-after($subprop_URI, 'http://rdaregistry.info/Elements/')"/>
+                               <xsl:variable name="prop_id"
+                                   select="concat('rda', replace($last_8_characters, '/', ':'))"/>
+                               
+                               <xsl:if test="not(contains($subprop_label, 'agent'))">
+                                   <li>
+                                       <xsl:value-of select="$subprop_label"/>
+                                       [<a href="{$subprop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
+                                   </li>
+                               </xsl:if>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
+                                    <xsl:for-each select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection">
+                                        <xsl:variable name="subprop_label" select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection"/>
+                                        <xsl:variable name="subprop_uri" select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection[@property_iri]"/>
+                                        <xsl:if test="not(contains($subprop_label, 'agent'))">
+                                            <li>
+                                                <xsl:value-of select="$subprop_label"/>
+                                                [<a href="{$subprop_URI}">UW RDA Application Profile Extension</a>]
+                                            </li>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:if>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:for-each>
                 </ul>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
+                   
+                    <!-- prop_URI is registry link (or link to uw extension -->
+                    <xsl:variable name="prop_URI" select="@rdf:resource"/>
                     
-                    <!-- subprop_URI is registry link -->
-                    <xsl:variable name="subprop_URI" select="@rdf:resource"/>
-                    
-                    <!-- get all the pieces to find label and toolkit url -->
-                    <xsl:variable name="entity">
-                        <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
-                        <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
-                    </xsl:variable>
-                    
-                    <!-- get label from rdaregistry -->
-                    <xsl:variable name="rdaRegistry_xml" select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
-                    <xsl:variable name="subprop_label" select="document($rdaRegistry_xml)/rdf:RDF/rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-                    
-                    <!-- get toolkit url from RDA_alignments.xml -->
-                    <xsl:variable name="url_end" select="concat('P', substring-after($subprop_URI, '/P'))"/>
-                    <xsl:variable name="toolkit_url">
-                        <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
-                        <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
-                    </xsl:variable>
-                    
-                    <!-- get property id -->
-                    <xsl:variable name="last_8_characters"
-                        select="substring-after($subprop_URI, 'http://rdaregistry.info/Elements/')"/>
-                    <xsl:variable name="prop_id"
-                        select="concat('rda', replace($last_8_characters, '/', ':'))"/>
-                    
-                    <xsl:value-of select="$subprop_label"/>
-                    [<a href="{$subprop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
-                    
+                    <xsl:choose>
+                        <xsl:when test="contains($prop_URI, 'rdaregistry')">
+                        
+                             <!-- get all the pieces to find label and toolkit url -->
+                             <xsl:variable name="entity">
+                                 <xsl:variable name="remove_prop_ID" select="substring-before($prop_URI, '/P')"/>                       
+                                 <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                             </xsl:variable>
+                             
+                             <!-- get toolkit url from RDA_alignments.xml -->
+                             <xsl:variable name="url_end" select="concat('P', substring-after($prop_URI, '/P'))"/>
+                             <xsl:variable name="toolkit_url">
+                                 <xsl:variable name="prop_number" select="concat('rda', $entity, ':', $url_end)"/>
+                                 <xsl:value-of select="document('../../map_storage/xml/RDA_alignments.xml')/alignmentPairs/alignmentPair[rdaPropertyNumber = $prop_number]/rdaToolkitURL/@uri"/>
+                             </xsl:variable>
+                             
+                             <!-- get property id -->
+                             <xsl:variable name="last_8_characters"
+                                 select="substring-after($prop_URI, 'http://rdaregistry.info/Elements/')"/>
+                             <xsl:variable name="prop_id"
+                                 select="concat('rda', replace($last_8_characters, '/', ':'))"/>
+                            
+                            <xsl:variable name="prop_label" select="$prop[uwmaps:prop_iri[@iri = $prop_iri]]/uwmaps:prop_label"/>
+                            <xsl:value-of select="$prop_label"/>
+                             [<a href="{$prop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
+                        </xsl:when>
+                        
+                        <xsl:otherwise>
+                            <xsl:variable name="prop_label" select="$prop[uwmaps:prop_iri[@iri = $prop_iri]]/uwmaps:prop_label"/>
+                            <xsl:value-of select="$prop_label"/>
+                            [<a href="{$prop_URI}">UW RDA Application Profile Extension</a>]
+                        </xsl:otherwise>
+                        
+                    </xsl:choose>
                 </xsl:for-each>
             </xsl:otherwise>
         </xsl:choose>          
