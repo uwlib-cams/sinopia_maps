@@ -1,5 +1,14 @@
 [
   {
+    "@id": "http://www.wikidata.org/entity/Q8229",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Latin script"
+      }
+    ]
+  },
+  {
     "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:metadataWork:CAMS",
     "@type": [
       "http://sinopia.io/vocabulary/ResourceTemplate"
@@ -16,26 +25,26 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-07-14"
+        "@value": "2023-07-19"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:Ne7b0a64df791478f866cbf055ee97b47"
+            "@id": "_:N38c449c83fe14c51bc2ecee0b02505dd"
           },
           {
-            "@id": "_:N76867c7b1e394ba79eddb81ef2d682aa"
+            "@id": "_:N52f11f50b1b74bda91c4e54720df5905"
           },
           {
-            "@id": "_:N67e9afed6a704d9db1b4b47a9f680429"
+            "@id": "_:N418e7353846a49429923897716161451"
           },
           {
-            "@id": "_:N1612fee52c50498e90d9ea948a74155f"
+            "@id": "_:N6c337f2441044448b6afccb5600d4264"
           },
           {
-            "@id": "_:Nb0e597852e264fb1a9c0218225fd3cc7"
+            "@id": "_:N97999f462e584d41bd5ce774b58b2769"
           }
         ]
       }
@@ -62,7 +71,7 @@
     ]
   },
   {
-    "@id": "_:Ne7b0a64df791478f866cbf055ee97b47",
+    "@id": "_:N38c449c83fe14c51bc2ecee0b02505dd",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -89,13 +98,13 @@
     ]
   },
   {
-    "@id": "_:N76867c7b1e394ba79eddb81ef2d682aa",
+    "@id": "_:N52f11f50b1b74bda91c4e54720df5905",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLiteralAttributes": [
       {
-        "@id": "_:Na0ddbcaeddf949eb90ea8b764f9e977d"
+        "@id": "_:Na0c441fe96af452dbe3e0a22a1c93d59"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -127,7 +136,7 @@
     ]
   },
   {
-    "@id": "_:Na0ddbcaeddf949eb90ea8b764f9e977d",
+    "@id": "_:Na0c441fe96af452dbe3e0a22a1c93d59",
     "@type": [
       "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
     ],
@@ -138,13 +147,13 @@
     ]
   },
   {
-    "@id": "_:N67e9afed6a704d9db1b4b47a9f680429",
+    "@id": "_:N418e7353846a49429923897716161451",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N6d0b0d4030de465a9ad8458ded2387c8"
+        "@id": "_:N53a8c670307245119a74f4b4b880f437"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -170,7 +179,7 @@
     ]
   },
   {
-    "@id": "_:N6d0b0d4030de465a9ad8458ded2387c8",
+    "@id": "_:N53a8c670307245119a74f4b4b880f437",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -186,13 +195,13 @@
     ]
   },
   {
-    "@id": "_:N1612fee52c50498e90d9ea948a74155f",
+    "@id": "_:N6c337f2441044448b6afccb5600d4264",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLiteralAttributes": [
       {
-        "@id": "_:Neaba3ba763514a608919c806ddd59a37"
+        "@id": "_:N720db289952f4670afd6ddf90c08f08e"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -224,7 +233,7 @@
     ]
   },
   {
-    "@id": "_:Neaba3ba763514a608919c806ddd59a37",
+    "@id": "_:N720db289952f4670afd6ddf90c08f08e",
     "@type": [
       "http://sinopia.io/vocabulary/LiteralPropertyTemplate"
     ],
@@ -235,13 +244,13 @@
     ]
   },
   {
-    "@id": "_:Nb0e597852e264fb1a9c0218225fd3cc7",
+    "@id": "_:N97999f462e584d41bd5ce774b58b2769",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nc96bf0dacbe34bdea7016d105adc323a"
+        "@id": "_:N3f51423807c946e0ab844fd2f5177d70"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -267,7 +276,7 @@
     ]
   },
   {
-    "@id": "_:Nc96bf0dacbe34bdea7016d105adc323a",
+    "@id": "_:N3f51423807c946e0ab844fd2f5177d70",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -279,15 +288,6 @@
     "http://sinopia.io/vocabulary/hasDefault": [
       {
         "@id": "http://www.wikidata.org/entity/Q8229"
-      }
-    ]
-  },
-  {
-    "@id": "http://www.wikidata.org/entity/Q8229",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Latin script"
       }
     ]
   },
