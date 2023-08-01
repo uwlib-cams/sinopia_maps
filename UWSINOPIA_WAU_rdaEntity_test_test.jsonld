@@ -9,6 +9,15 @@
     ]
   },
   {
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
     "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaEntity:test:test",
     "@type": [
       "http://sinopia.io/vocabulary/ResourceTemplate"
@@ -25,14 +34,14 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-07-19"
+        "@value": "2023-08-01"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:Naf62e74de1734859843c54b53dd84177"
+            "@id": "_:Nbcdc492b8d5e4625993d5d70d800c18d"
           }
         ]
       }
@@ -60,7 +69,7 @@
     ]
   },
   {
-    "@id": "_:Naf62e74de1734859843c54b53dd84177",
+    "@id": "_:Nbcdc492b8d5e4625993d5d70d800c18d",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -82,15 +91,6 @@
         "@id": "https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaEntity_test_test.html#uwmaps_rdax_p00k_xP00017_is_d2e41"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
