@@ -13,6 +13,7 @@ from datetime import datetime
 import requests
 import sys
 
+from sort_json import sort_json
 # PRELIMINARIES - ensure everything is set up
 
 # terminal must be open in sinopia_maps top level and saxon should be in home directory
@@ -309,6 +310,7 @@ def format_json(user, IRI, json_file):
         return json.dumps({"data": original_data, "user": user, "group": "washington", "editGroups": [], "templateId": "sinopia:template:resource", "types": [ "http://sinopia.io/vocabulary/ResourceTemplate" ], "bfAdminMetadataRefs": [], "sinopiaLocalAdminMetadataForRefs": [], "bfItemRefs": [], "bfInstanceRefs": [], "bfWorkRefs": [], "id": RT_id, "uri": IRI, "timestamp": currentTime})
 
 for RT_IRI in prepped_RTs:
+	sort_json(prepped_RTs[RT_IRI])
     # for each resource template 'wrap' RT content with Sinopia admin metadata and return to prepped_RTs as value in dict
 	prepped_RTs[RT_IRI] = format_json(user, RT_IRI, prepped_RTs[RT_IRI])
     #data for upload is this formatted json 
