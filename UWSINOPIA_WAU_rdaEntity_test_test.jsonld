@@ -1,23 +1,5 @@
 [
   {
-    "@id": "http://rdaregistry.info/Elements/i/P40081",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of item"
-      }
-    ]
-  },
-  {
-    "@id": "http://rdaregistry.info/Elements/x/P00017",
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has appellation of RDA entity"
-      }
-    ]
-  },
-  {
     "@id": "https://api.stage.sinopia.io/resource/UWSINOPIA:WAU:rdaEntity:test:test",
     "@type": [
       "http://sinopia.io/vocabulary/ResourceTemplate"
@@ -34,14 +16,14 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-08-01"
+        "@value": "2023-08-02"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:Nbcdc492b8d5e4625993d5d70d800c18d"
+            "@id": "_:N95ec2c0479e94ea194e28b086633a507"
           }
         ]
       }
@@ -69,7 +51,25 @@
     ]
   },
   {
-    "@id": "_:Nbcdc492b8d5e4625993d5d70d800c18d",
+    "@id": "http://rdaregistry.info/Elements/x/P00017",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of RDA entity"
+      }
+    ]
+  },
+  {
+    "@id": "http://rdaregistry.info/Elements/i/P40081",
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has appellation of item"
+      }
+    ]
+  },
+  {
+    "@id": "_:N95ec2c0479e94ea194e28b086633a507",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
