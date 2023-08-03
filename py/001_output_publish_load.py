@@ -14,6 +14,7 @@ import requests
 import sys
 
 from sort_json import sort_json
+from sort_multi_alphabet import sort_alphabetical
 # PRELIMINARIES - ensure everything is set up
 
 # terminal must be open in sinopia_maps top level and saxon should be in home directory
@@ -71,6 +72,10 @@ else:
 
 # OUTPUT RDF RESOURCE TEMPLATES
 
+print(dedent(f"""{'=' * 20}
+GENERATING RDF/XML RESOURCE TEMPLATES
+{'=' * 20}"""))
+
 # run stylesheet to output rdf/xml
 RDF_RT_stylesheet = "xsl/001_01_storage_to_rdfxml.xsl"
 os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
@@ -79,10 +84,6 @@ net.sf.saxon.Transform
 -xsl:{RDF_RT_stylesheet}"""
 os_command = os_command.replace('\n', '')
 os.system(os_command)
-
-print(dedent(f"""{'=' * 20}
-OUTPUT RDF/XML RESOURCE TEMPLATES
-{'=' * 20}"""))
 
 # FIX REPEATING PROPERTY IRIS AND LABELS
 
@@ -248,20 +249,26 @@ def filter_agents(file):
 		
 	tree.write(file, xml_declaration=True, encoding="UTF-8", pretty_print = True)
 
+print(dedent(f"""{'=' * 20}
+POST-PROCESSING RDF/XML TEMPLATES:
+COMMENTING OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
+FILTERING AGENT PROPERTY TEMPLATES
+SORTING RDF/XML DROP-DOWN PROPERTY TEMPLATES	     
+{'=' * 20}"""))
+
 RT_list = locate_RTs()
 for RT in RT_list:
     fix_multi_props(f'{RT}')
     fix_duplicate_triples(f'{RT}')
     filter_agents(f'{RT}')
-    
-
-print(dedent(f"""{'=' * 20}
-COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
-{'=' * 20}"""))
+    sort_alphabetical(f'{RT}')
 
 
 	
 # OUTPUT HTML RESOURCE TEMPLATES 
+print(dedent(f"""{'=' * 20}
+GENERATING HTML RESOURCE TEMPLATES
+{'=' * 20}"""))
 
 # run stylesheet to output HTML
 HTML_RT_stylesheet = "xsl/004_01_prop_set_to_html.xsl"
@@ -272,11 +279,11 @@ net.sf.saxon.Transform
 os_command = os_command.replace('\n', '')
 os.system(os_command)
 
-print(dedent(f"""{'=' * 20}
-OUTPUT HTML RESOURCE TEMPLATES
-{'=' * 20}"""))
-
 # SERIALIZE JSON, (ADD SINOPIA ADMIN METADATA, LOAD TO A SINOPIA PLATFORM) 
+print(dedent(f"""{'=' * 20}
+SERIALIZING AND SORTING JSON RESOURCE TEMPLATES
+POSTING TEMPLATES TO SINOPIA PLATFORM
+{'=' * 20}"""))
 
 prepped_RTs = {}
 
