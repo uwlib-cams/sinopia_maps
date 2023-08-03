@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaWork aggregating_printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang="en">For describing aggregating works</sinopia:hasRemark>
-      <sinopia:hasDate>2023-08-02</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-03</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
@@ -2222,14 +2222,14 @@
       <rdfs:label xml:lang="en">has subject timespan</rdfs:label>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10322_is_d2e8012"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10322_lookup_attributes"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10322_literal_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10322"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10602"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10322_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10322_literal_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+      <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10322">
       <rdfs:label xml:lang="en">has subject timespan</rdfs:label>
@@ -2247,11 +2247,11 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10317"/>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10317_is_d2e3797"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10317_lookup_attributes"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10317_literal_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10317_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10317_literal_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
+      <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
    </rdf:Description>
 </rdf:RDF>
