@@ -8,7 +8,7 @@ def sort_json(file):
     to_sort = {}
     add_at_end = []
     pts = []
-    print(len(original))
+    #print(len(original))
 
     for i in original:
         if '@type' in i.keys() and i['@type'][0] == "http://sinopia.io/vocabulary/PropertyTemplate":
@@ -21,9 +21,6 @@ def sort_json(file):
 
     keys = list(to_sort.keys())
     keys.sort()
-        # for i in keys:
-        #     sorted_value = to_sort[i]
-        #     print(sorted_value)
 
     final = []
         
@@ -36,7 +33,7 @@ def sort_json(file):
     for k in add_at_end:
         final.append(k)
 
-    print(len(final))
+    #print(len(final))
     with open(json_file, 'w') as f:
         json.dump(final, f, indent=2)
 

@@ -74,7 +74,7 @@ else:
 # run stylesheet to output rdf/xml
 RDF_RT_stylesheet = "xsl/001_01_storage_to_rdfxml.xsl"
 os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
-net.sf.saxon.Transform -t 
+net.sf.saxon.Transform 
 -s:{RDF_RT_stylesheet} 
 -xsl:{RDF_RT_stylesheet}"""
 os_command = os_command.replace('\n', '')
@@ -266,7 +266,7 @@ COMMENTED OUT REPEATING PROPERTY IRIS AND LABELS IN RESOURCE TEMPLATES
 # run stylesheet to output HTML
 HTML_RT_stylesheet = "xsl/004_01_prop_set_to_html.xsl"
 os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
-net.sf.saxon.Transform -t 
+net.sf.saxon.Transform 
 -s:{HTML_RT_stylesheet} 
 -xsl:{HTML_RT_stylesheet}"""
 os_command = os_command.replace('\n', '')
