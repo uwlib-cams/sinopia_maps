@@ -82,14 +82,11 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/n/P80069"/>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaNomen_accessPoint_CAMS.html#uwmaps_rdan_p80k_nP80069_is_d2e1644"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementsnP80069_uri_attributes"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsnP80069_lookup_attributes"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_uri_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://id.loc.gov/authorities/names"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://id.loc.gov/authorities/names">
-      <rdfs:label xml:lang="en">Library of Congress Names</rdfs:label>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:locvocabs:description_conventions"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80066_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80066_define"/>
