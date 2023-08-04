@@ -78,6 +78,7 @@
          <xs:element name="p" type="p_type" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
