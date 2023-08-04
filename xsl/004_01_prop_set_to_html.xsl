@@ -27,7 +27,7 @@ save new html rt templates in sinopia_maps/xsl/html NOT sinopia_maps/html -->
         <!-- get all necessary variables from prop_set files -->
         <!-- for each RT -->
         <xsl:for-each select="
-            document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
+            document('../../map_storage/xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/
             uwsinopia:rt[matches(@output_load, 'true|1')]">
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>

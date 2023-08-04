@@ -17,7 +17,7 @@
 
     <xsl:template match="/">
         <xsl:for-each
-            select="document('../xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[matches(@output_load, 'true|1')]">
+            select="document('../../map_storage/xml/sinopia_maps.xml')/uwsinopia:sinopia_maps/uwsinopia:rts/uwsinopia:rt[matches(@output_load, 'true|1')]">
             <!-- vars -->
             <xsl:variable name="institution" select="uwsinopia:institution"/>
             <xsl:variable name="resource" select="uwsinopia:resource"/>

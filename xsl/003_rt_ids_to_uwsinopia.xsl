@@ -6,7 +6,7 @@
     
     <xsl:output method="xml" indent="1"/>
 
-    <xsl:variable name="sinopia_maps_xml" select="document('../xml/sinopia_maps.xml')"/>
+    <xsl:variable name="sinopia_maps_xml" select="document('../../map_storage/xml/sinopia_maps.xml')"/>
     <xsl:mode on-no-match="shallow-copy"/>
 
     <xsl:template match="xs:simpleType[@name = 'rt_id_type']">
