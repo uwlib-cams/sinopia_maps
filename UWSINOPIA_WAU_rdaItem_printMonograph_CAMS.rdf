@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaItem printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-07</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-08</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -1015,14 +1015,13 @@
       <rdfs:label xml:lang="en">has location of item</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40162"/>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html#uwmaps_rdai_p40k_iP40162_is_d2e2477"/>
+      <sinopia:hasRemark xml:lang="en">Use location code to lookup Wikidata item for shelving location, enter code as literal if not available.</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsiP40162_lookup_attributes"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40162_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:geonames"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettytgn"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40077_order">
