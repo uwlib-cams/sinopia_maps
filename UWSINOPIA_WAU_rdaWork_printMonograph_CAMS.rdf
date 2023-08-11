@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang="en">For describing single works</sinopia:hasRemark>
-      <sinopia:hasDate>2023-08-08</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-11</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_order">
@@ -439,26 +439,35 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10312_lookup_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10413"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10035"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10451"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10436"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10428"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10426"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10435"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10439"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10444"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10458"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10412"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10414"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10286"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10284"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10433"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10447"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10446"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10456"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10044"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10431"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10430"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10036"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10457"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10445"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10045"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10432"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10312"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10416"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10001"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10429"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10427"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10607"/>
@@ -552,6 +561,33 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10261">
       <rdfs:label xml:lang="en">has subject person</rdfs:label>
    </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10444">
+      <rdfs:label xml:lang="en">has compiler person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10035">
+      <rdfs:label xml:lang="en">has appellee person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10286">
+      <rdfs:label xml:lang="en">has defendant person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10284">
+      <rdfs:label xml:lang="en">has degree committee member</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10044">
+      <rdfs:label xml:lang="en">has judge</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10036">
+      <rdfs:label xml:lang="en">has medium</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10457">
+      <rdfs:label xml:lang="en">has organizer person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10045">
+      <rdfs:label xml:lang="en">has praeses</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10001">
+      <rdfs:label xml:lang="en">has respondent</rdfs:label>
+   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10313_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10313_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10314_order"/>
@@ -570,6 +606,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10567"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10576"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10580"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10585"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10599"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10553"/>
@@ -580,6 +617,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10597"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10572"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10571"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10598"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10586"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10573"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10313"/>
@@ -677,6 +715,12 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10262">
       <rdfs:label xml:lang="en">has subject family</rdfs:label>
    </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
+      <rdfs:label xml:lang="en">has compiler family</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10598">
+      <rdfs:label xml:lang="en">has organizer family</rdfs:label>
+   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10314_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10314_define"/>
       <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order"/>
@@ -689,22 +733,26 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10314_lookup_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10507"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10005"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10545"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10530"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10522"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10520"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10529"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10533"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10538"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10552"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10506"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10508"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10285"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10527"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10541"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10540"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10550"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10525"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10524"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10551"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10539"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10526"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10314"/>
@@ -801,6 +849,18 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10263">
       <rdfs:label xml:lang="en">has subject corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
+      <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10005">
+      <rdfs:label xml:lang="en">has appellee corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10285">
+      <rdfs:label xml:lang="en">has defendant corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10551">
+      <rdfs:label xml:lang="en">has organizer corporate body</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order">
       <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_define"/>
