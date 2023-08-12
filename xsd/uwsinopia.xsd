@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-           xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
-           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/"
-           elementFormDefault="qualified"
-           vc:minVersion="1.1">
+   xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/"
+   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="https://uwlib-cams.github.io/sinopia_maps/xsd/" elementFormDefault="qualified"
+   vc:minVersion="1.1">
    <!-- IMPORT -->
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-              schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
+      schemaLocation="http://www.w3.org/2001/03/xml.xsd"/>
    <xs:import namespace="http://www.w3.org/2001/XMLSchema"
-              schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
+      schemaLocation="https://www.w3.org/2001/XMLSchema.xsd"/>
    <xs:import namespace="https://uwlib-cams.github.io/map_storage/xsd/"
-              schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
+      schemaLocation="https://uwlib-cams.github.io/map_storage/xsd/prop_set.xsd"/>
    <!-- INCLUDE -->
    <xs:include schemaLocation="sinopia_maps.xsd"/>
    <xs:include schemaLocation="resources.xsd"/>
@@ -22,14 +21,9 @@
    <xs:complexType name="sinopia_type">
       <xs:sequence>
          <xs:element name="toolkit" type="toolkit_type" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="guidance_set"
-                     type="guidance_set_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="implementation_set"
-                     type="implementation_set_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+         <xs:element name="guidance_set" type="guidance_set_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="implementation_set" type="implementation_set_type" minOccurs="1"
+            maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="toolkit_type">
@@ -45,32 +39,16 @@
    <!-- *************** guidance_set *************** -->
    <xs:complexType name="guidance_set_type">
       <xs:sequence>
-         <xs:element name="general"
-                     type="general_type"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="entity_boundary"
-                     type="xs:boolean"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="recording_method"
-                     type="recording_method_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="ses"
-                     type="general_type"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-         <xs:element name="transcription_standard"
-                     type="transcription_standard_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
+         <xs:element name="general" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="entity_boundary" type="xs:boolean" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="recording_method" type="recording_method_type" minOccurs="0"
+            maxOccurs="1"/>
+         <xs:element name="ses" type="general_type" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="transcription_standard" type="transcription_standard_type" minOccurs="0"
+            maxOccurs="1"/>
          <xs:element name="options" type="options_type" minOccurs="0" maxOccurs="1"/>
          <xs:element name="mgds" type="mgds_type" minOccurs="0" maxOccurs="1"/>
-         <xs:element name="examples"
-                     type="examples_type"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
+         <xs:element name="examples" type="examples_type" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="general_type">
@@ -84,10 +62,8 @@
    </xs:complexType>
    <xs:complexType name="recording_method_type">
       <xs:all>
-         <xs:element name="recording_method_option"
-                     type="recording_method_option_type"
-                     minOccurs="1"
-                     maxOccurs="4"/>
+         <xs:element name="recording_method_option" type="recording_method_option_type"
+            minOccurs="1" maxOccurs="4"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
@@ -148,22 +124,32 @@
          <xs:enumeration value="MG: Vocabulary Encoding Schemes"/>
          <xs:enumeration value="MG: Works"/>
          <xs:enumeration value="MG: Work: Access point for work: Constructing access points"/>
-         <xs:enumeration value="MG: Work: Access point for work: Additional elements and designations"/>
-         <xs:enumeration value="MG: Work: Access point for work: Additional elements and designations: Distinguishing characteristics"/>
-         <xs:enumeration value="MG: Work: Authorized access point: Additional elements and designations"/>
-         <xs:enumeration value="MG: Work: Authorized access point: Additional elements for creator of work"/>
+         <xs:enumeration
+            value="MG: Work: Access point for work: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Access point for work: Additional elements and designations: Distinguishing characteristics"/>
+         <xs:enumeration
+            value="MG: Work: Authorized access point: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Authorized access point: Additional elements for creator of work"/>
          <xs:enumeration value="MG: Work: Creator corporate body of work"/>
          <xs:enumeration value="MG: Work: Dissertation or thesis information"/>
          <xs:enumeration value="MG: Work: Frequency"/>
          <xs:enumeration value="MG: Work: Note on metadata work: Complex see-also references"/>
          <xs:enumeration value="MG: Work: Note on metadata work: Nonpublic general notes"/>
-         <xs:enumeration value="MG: Work: Preferred title of work: Additional omissions and changes: Parts of works"/>
-         <xs:enumeration value="MG: Work: Preferred title of work: Title not found in original language or is not applicable"/>
+         <xs:enumeration
+            value="MG: Work: Preferred title of work: Additional omissions and changes: Parts of works"/>
+         <xs:enumeration
+            value="MG: Work: Preferred title of work: Title not found in original language or is not applicable"/>
          <xs:enumeration value="MG: Work: Source consulted: Subfield $u and $v"/>
-         <xs:enumeration value="MG: Work: Variant access point for work: Additional elements and designations"/>
-         <xs:enumeration value="MG: Work: Variant access point for work: Constitutions, charters, and other fundamental laws"/>
-         <xs:enumeration value="MG: Resources: Authorized access points for an administrative regulation, etc."/>
-         <xs:enumeration value="MG: Expression: Authorized access point for expression: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Variant access point for work: Additional elements and designations"/>
+         <xs:enumeration
+            value="MG: Work: Variant access point for work: Constitutions, charters, and other fundamental laws"/>
+         <xs:enumeration
+            value="MG: Resources: Authorized access points for an administrative regulation, etc."/>
+         <xs:enumeration
+            value="MG: Expression: Authorized access point for expression: Additional elements and designations"/>
          <xs:enumeration value="MG: Expression: Language of expression"/>
          <xs:enumeration value="MG: Expression: Revision of"/>
          <xs:enumeration value="MG: Expression: Script"/>
@@ -174,12 +160,15 @@
          <xs:enumeration value="MG: Manifestation: Date of manufacture: GPO publications"/>
          <xs:enumeration value="MG: Manifestation: Date of production: Recording"/>
          <xs:enumeration value="MG: Manifestation: Date of publication: CIP cataloging"/>
-         <xs:enumeration value="MG: Manifestation: Date of publication: Date of publication not identified"/>
-         <xs:enumeration value="MG: Manifestation: Date of publication: Sources of information: CIP cataloging"/>
+         <xs:enumeration
+            value="MG: Manifestation: Date of publication: Date of publication not identified"/>
+         <xs:enumeration
+            value="MG: Manifestation: Date of publication: Sources of information: CIP cataloging"/>
          <xs:enumeration value="MG: Manifestation: Distribution statement: CIP cataloging"/>
          <xs:enumeration value="MG: Manifestation: Extent of manifestation: CIP cataloging"/>
          <xs:enumeration value="MG: Manifestation: Extent of manifestation: Terms"/>
-         <xs:enumeration value="MG: Manifestation: Identifier for manifestation: Two or more identifiers"/>
+         <xs:enumeration
+            value="MG: Manifestation: Identifier for manifestation: Two or more identifiers"/>
          <xs:enumeration value="MG: Manifestation: Manufacture statement: CIP cataloging"/>
          <xs:enumeration value="MG: Manifestation: Mode of issuance"/>
          <xs:enumeration value="MG: Manifestation: Note on edition statement: Integrating resources"/>
@@ -191,30 +180,46 @@
          <xs:enumeration value="MG: Manifestation: Printer corporate body: Government printers"/>
          <xs:enumeration value="MG: Manifestation: Printer corporate body: Privately printed works"/>
          <xs:enumeration value="MG: Manifestation: Production statement"/>
-         <xs:enumeration value="MG: Manifestation: Production statement: Recording changes in production statements"/>
-         <xs:enumeration value="MG: Manifestation: Publication statement: Recording changes in publication statements"/>
-         <xs:enumeration value="MG: Manifestation: Publication statement: Sources of information: CIP cataloging"/>
+         <xs:enumeration
+            value="MG: Manifestation: Production statement: Recording changes in production statements"/>
+         <xs:enumeration
+            value="MG: Manifestation: Publication statement: Recording changes in publication statements"/>
+         <xs:enumeration
+            value="MG: Manifestation: Publication statement: Sources of information: CIP cataloging"/>
          <xs:enumeration value="MG: Manifestation: Statement of responsibility: Two or more agents"/>
          <xs:enumeration value="MG: Manifestation: Statement of responsibility relating to edition"/>
          <xs:enumeration value="MG: Manifestation: Supplementary content"/>
          <xs:enumeration value="MG: Manifestation: Title proper"/>
-         <xs:enumeration value="MG: Manifestation: Uniform Resource Locator: Original URI no longer active"/>
+         <xs:enumeration
+            value="MG: Manifestation: Uniform Resource Locator: Original URI no longer active"/>
          <xs:enumeration value="MG: Manifestation: Variant title of manifestation"/>
-         <xs:enumeration value="MG: Manifestation: Variant title of manifestation: Recording an unstructured description"/>
+         <xs:enumeration
+            value="MG: Manifestation: Variant title of manifestation: Recording an unstructured description"/>
          <xs:enumeration value="MG: Item: Modification of item"/>
-         <xs:enumeration value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body"/>
-         <xs:enumeration value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Individual instance of an ongoing conference"/>
-         <xs:enumeration value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Initialisms and acronyms"/>
-         <xs:enumeration value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Place"/>
-         <xs:enumeration value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Ships"/>
-         <xs:enumeration value="MG: Corporate Body: Authorized access point for corporate body: Body whose name implies administrative subordination"/>
-         <xs:enumeration value="MG: Corporate Body: Authorized access point for corporate body: Heads of state, heads of government, etc."/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Individual instance of an ongoing conference"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Initialisms and acronyms"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Place"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Additional elements and designations in authorized access point for corporate body: Ships"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Authorized access point for corporate body: Body whose name implies administrative subordination"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Authorized access point for corporate body: Heads of state, heads of government, etc."/>
          <xs:enumeration value="MG: Corporate Body: Name of corporate body"/>
-         <xs:enumeration value="MG: Corporate Body: Non-governmental body with name that includes the entire name of the higher or related body"/>
-         <xs:enumeration value="MG: Corporate Body: Preferred name of corporate body: Minor changes of name"/>
-         <xs:enumeration value="MG: Corporate Body: Preferred name of corporate body: Proposed bodies"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Non-governmental body with name that includes the entire name of the higher or related body"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Preferred name of corporate body: Minor changes of name"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Preferred name of corporate body: Proposed bodies"/>
          <xs:enumeration value="MG: Corporate Body: Related corporate body of corporate body"/>
-         <xs:enumeration value="MG: Corporate Body: Variant access point for corporate body: Base variant access point"/>
+         <xs:enumeration
+            value="MG: Corporate Body: Variant access point for corporate body: Base variant access point"/>
          <xs:enumeration value="MG: Family: Address of family"/>
          <xs:enumeration value="MG: Family: Authorized access point for family: General"/>
          <xs:enumeration value="MG: Family: Authorized access point for family: Usage"/>
@@ -244,7 +249,8 @@
          <xs:enumeration value="MG: Place: Access point for place: Treatment for certain places"/>
          <xs:enumeration value="MG: Place: Authorized access point for place: Ambiguous entities"/>
          <xs:enumeration value="MG: Place: Authorized access point for place: Change of name"/>
-         <xs:enumeration value="MG: Place: Authorized access point for place: Places with the same name"/>
+         <xs:enumeration
+            value="MG: Place: Authorized access point for place: Places with the same name"/>
          <xs:enumeration value="MG: Place: Category of place"/>
          <xs:enumeration value="MG: Place: Identifier for place"/>
          <xs:enumeration value="MG: Place: Jurisdiction governed of"/>
@@ -257,10 +263,13 @@
          <xs:enumeration value="MG: Place: Preferred name of place: Abbreviations"/>
          <xs:enumeration value="MG: Place: Preferred name of place: Data provenance"/>
          <xs:enumeration value="MG: Place: Preferred name of place: Different forms from GEOnet"/>
-         <xs:enumeration value="MG: Place: Preferred name of place: Names found in non-preferred script"/>
-         <xs:enumeration value="MG: Place: Preferred name of place: Names that include a category of corporate body"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Names found in non-preferred script"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Names that include a category of corporate body"/>
          <xs:enumeration value="MG: Place: Preferred name of place: Sources of information"/>
-         <xs:enumeration value="MG: Place: Preferred name of place: Tribal entities in the United States"/>
+         <xs:enumeration
+            value="MG: Place: Preferred name of place: Tribal entities in the United States"/>
          <xs:enumeration value="MG: Place: Related corporate body of place"/>
          <xs:enumeration value="MG: Place: Related person of place"/>
          <xs:enumeration value="MG: Place: Related place of place"/>
@@ -391,10 +400,7 @@
    </xs:simpleType>
    <xs:complexType name="examples_type">
       <xs:all>
-         <xs:element name="p"
-                     type="simple_p_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+         <xs:element name="p" type="simple_p_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:all>
       <xs:attribute name="rt_id" type="rt_id_type" use="required"/>
    </xs:complexType>
@@ -419,10 +425,7 @@
    </xs:simpleType>
    <xs:complexType name="p_type" mixed="true">
       <xs:all>
-         <xs:element name="strong"
-                     type="xs:token"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
+         <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
       </xs:all>
    </xs:complexType>
@@ -454,10 +457,7 @@
    </xs:element>
    <xs:complexType name="li" mixed="true">
       <xs:all>
-         <xs:element name="strong"
-                     type="xs:token"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
+         <xs:element name="strong" type="xs:token" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="a" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ul" minOccurs="0" maxOccurs="unbounded"/>
          <xs:element ref="ol" minOccurs="0" maxOccurs="unbounded"/>
@@ -478,67 +478,32 @@
       </xs:annotation>
       <xs:sequence>
          <!-- REQUIRED: institution / resource / format / user -->
-         <xs:element name="institution"
-                     type="institution_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-         <xs:element name="resource"
-                     type="resource_label_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-         <xs:element name="format"
-                     type="format_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-         <xs:element name="user"
-                     type="user_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-         <xs:element name="form_order"
-                     type="form_order_type"
-                     minOccurs="1"
-                     maxOccurs="1"/>
+         <xs:element name="institution" type="institution_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="resource" type="resource_label_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="format" type="format_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="user" type="user_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="form_order" type="form_order_type" minOccurs="1" maxOccurs="1"/>
          <!-- OPTIONAL: alt_pt_label / multiple_prop / remark / 
             language_suppressed / required / repeatable -->
-         <xs:element name="alt_pt_label"
-                     type="uwmaps:lang_string_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="multiple_prop"
-                     type="multiple_prop_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="remark"
-                     type="uwmaps:lang_string_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="language_suppressed"
-                     type="xs:boolean"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     default="0">
+         <xs:element name="alt_pt_label" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="multiple_prop" type="multiple_prop_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="remark" type="uwmaps:lang_string_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="language_suppressed" type="xs:boolean" minOccurs="0" maxOccurs="1"
+            default="0">
             <xs:annotation>
                <xs:documentation>To indicate that any value provided for a given property template
                   will not have linguistic content, enter the `language_suppressed` element with
                   value 'true' or '1'.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="required"
-                     type="xs:boolean"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     default="0">
+         <xs:element name="required" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0">
             <xs:annotation>
                <xs:documentation>To indicate that a value must be provided for a given property
                   template, enter the `required` element with value 'true' or
                   '1'.</xs:documentation>
             </xs:annotation>
          </xs:element>
-         <xs:element name="repeatable"
-                     type="xs:boolean"
-                     minOccurs="0"
-                     maxOccurs="1"
-                     default="0"/>
+         <xs:element name="repeatable" type="xs:boolean" minOccurs="0" maxOccurs="1" default="0"/>
          <!-- REQUIRED: EITHER literal_pt / uri_pt / lookup_pt / nested_resource_pt (+ subelements) -->
          <xs:choice>
             <xs:element name="literal_pt" type="literal_attributes_type"/>
@@ -547,9 +512,7 @@
             <xs:element name="nested_resource_pt" type="nested_resource_attributes_type"/>
          </xs:choice>
       </xs:sequence>
-      <xs:attribute name="localid_implementation_set"
-                    type="uwmaps:localid_attr"
-                    use="required"/>
+      <xs:attribute name="localid_implementation_set" type="uwmaps:localid_attr" use="required"/>
    </xs:complexType>
    <!-- form_order_type -->
    <xs:simpleType name="form_order_type">
@@ -587,10 +550,8 @@
       </xs:annotation>
       <xs:sequence>
          <xs:choice>
-            <xs:element name="property_selection"
-                        type="property_selection_type"
-                        minOccurs="1"
-                        maxOccurs="unbounded">
+            <xs:element name="property_selection" type="property_selection_type" minOccurs="1"
+               maxOccurs="unbounded">
                <xs:annotation>
                   <xs:documentation>Use the property_selection element to enter a specific list of
                      properties to include as options in the property template.</xs:documentation>
@@ -598,14 +559,8 @@
                      and a property label as child text.</xs:documentation>
                </xs:annotation>
             </xs:element>
-            <xs:element name="all_subprops"
-                        type="xs:boolean"
-                        minOccurs="1"
-                        maxOccurs="1"/>
-            <xs:element name="all_all_subprops"
-                        type="xs:boolean"
-                        minOccurs="1"
-                        maxOccurs="1"/>
+            <xs:element name="all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="all_all_subprops" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
          </xs:choice>
       </xs:sequence>
    </xs:complexType>
@@ -634,29 +589,17 @@
       <xs:sequence>
          <xs:choice>
             <xs:choice>
-               <xs:element name="date_default"
-                           type="xs:boolean"
-                           minOccurs="0"
-                           maxOccurs="1"/>
-               <xs:element name="userId_default"
-                           type="xs:boolean"
-                           minOccurs="0"
-                           maxOccurs="1"/>
+               <xs:element name="date_default" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+               <xs:element name="userId_default" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
             </xs:choice>
             <xs:sequence>
-               <xs:element name="default_literal"
-                           type="uwmaps:lang_string_type"
-                           minOccurs="0"
-                           maxOccurs="1"/>
+               <xs:element name="default_literal" type="uwmaps:lang_string_type" minOccurs="0"
+                  maxOccurs="1"/>
                <xs:choice>
-                  <xs:element name="validation_datatype"
-                              type="validation_datatype_type"
-                              minOccurs="0"
-                              maxOccurs="1"/>
-                  <xs:element name="validation_regex"
-                              type="validation_regex_type"
-                              minOccurs="0"
-                              maxOccurs="1"/>
+                  <xs:element name="validation_datatype" type="validation_datatype_type"
+                     minOccurs="0" maxOccurs="1"/>
+                  <xs:element name="validation_regex" type="validation_regex_type" minOccurs="0"
+                     maxOccurs="1"/>
                </xs:choice>
             </xs:sequence>
          </xs:choice>
@@ -680,14 +623,9 @@
    <!-- ********** uri_pt element / subelements ********** -->
    <xs:complexType name="uri_attributes_type">
       <xs:sequence>
-         <xs:element name="default_uri"
-                     type="uwmaps:iri_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="default_uri_label"
-                     type="uwmaps:lang_string_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
+         <xs:element name="default_uri" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="default_uri_label" type="uwmaps:lang_string_type" minOccurs="0"
+            maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <!-- default_uri: iri_type defined above -->
@@ -695,26 +633,16 @@
    <!-- ********** lookup_pt element / subelements ********** -->
    <xs:complexType name="lookup_attributes_type">
       <xs:sequence>
-         <xs:element name="authorities"
-                     type="authorities_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
-         <xs:element name="lookup_default_iri"
-                     type="uwmaps:iri_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
-         <xs:element name="lookup_default_iri_label"
-                     type="uwmaps:lang_string_type"
-                     minOccurs="0"
-                     maxOccurs="1"/>
+         <xs:element name="authorities" type="authorities_type" minOccurs="1" maxOccurs="unbounded"/>
+         <xs:element name="lookup_default_iri" type="uwmaps:iri_type" minOccurs="0" maxOccurs="1"/>
+         <xs:element name="lookup_default_iri_label" type="uwmaps:lang_string_type" minOccurs="0"
+            maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="authorities_type">
       <xs:sequence>
-         <xs:element name="authority_urn"
-                     type="authority_urn_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+         <xs:element name="authority_urn" type="authority_urn_type" minOccurs="1"
+            maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
    <!-- https://github.com/LD4P/sinopia_editor/blob/master/static/authorityConfig.json -->
@@ -1066,10 +994,7 @@
    <!-- ********** nested_resource_pt element / subelements ********** -->
    <xs:complexType name="nested_resource_attributes_type">
       <xs:sequence>
-         <xs:element name="rt_id"
-                     type="rt_id_type"
-                     minOccurs="1"
-                     maxOccurs="unbounded"/>
+         <xs:element name="rt_id" type="rt_id_type" minOccurs="1" maxOccurs="unbounded"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>
