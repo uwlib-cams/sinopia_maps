@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaItem printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-11</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-15</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -20,6 +20,7 @@
       <rdfs:label xml:lang="en">has manifestation exemplified</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40049"/>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html#uwmaps_rdai_p40k_iP40049_is_d2e1327"/>
+      <sinopia:hasRemark xml:lang="en">This placeholder IRI and label must be replaced once the appropriate IRI has been minted.</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsiP40049_lookup_attributes"/>
@@ -27,6 +28,10 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasDefault rdf:resource="https://replace_this_iri"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="https://replace_this_iri">
+      <rdfs:label xml:lang="en">REPLACE THIS IRI</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40085_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40085_define"/>
