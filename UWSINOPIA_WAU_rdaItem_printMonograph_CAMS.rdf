@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaItem printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-15</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-16</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -818,7 +818,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40046_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40046_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40092_order"/>
+      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasCallNumber_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40046_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -832,6 +832,17 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40046_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:item"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCallNumber_order">
+      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasCallNumber_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsiP40092_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCallNumber_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">Has Call Number</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasCallNumber"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html#uwmaps_uwRdaExtension_hasCallNumber_is_d2e240"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40092_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40092_define"/>
