@@ -38,26 +38,12 @@
                             
                             <!-- if alt label is used, or prop has subprops, need drop-down list -->
                             <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
-                                <xsl:variable name="node_id" select="concat('rdaregistryinfoElements', translate(substring-after(uwmaps:prop_iri/@iri, 'Elements/'), '/', ''), '_define')"/>
-                                <xsl:choose>
-                                    <!-- call carat_list template -->
-                                    <!-- if there is an alt label, list starts with first prop uri (param alt_id = 0) -->
-                                    <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:alt_pt_label">
-                                        <xsl:call-template name="carat_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(0)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:when>
-                                    <!-- otherwise, list starts with second prop uri (param alt_id = 1) -->
-                                    <xsl:otherwise>
-                                        <xsl:call-template name="carat_list">
-                                            <xsl:with-param name="file_name" select="$file_name"/>
-                                            <xsl:with-param name="alt_id" select="number(1)"/>
-                                            <xsl:with-param name="node_id" select="$node_id"/>
-                                        </xsl:call-template>
-                                    </xsl:otherwise>
-                                </xsl:choose> 
+                                <xsl:variable name="node_id" select="concat(translate(substring-after(uwmaps:prop_iri/@iri, '://'), '/.#', ''), '_define')"/>
+                                <!-- call carat_list template -->
+                                <xsl:call-template name="carat_list">
+                                    <xsl:with-param name="file_name" select="$file_name"/>
+                                    <xsl:with-param name="node_id" select="$node_id"/>
+                                </xsl:call-template>
                             </xsl:if>
                         </li>
                     </xsl:for-each>
@@ -79,29 +65,47 @@
     <!-- pulls data from rdf/xml files and rdaregistry -->
     <xsl:template name="carat_list">
         <xsl:param name="file_name"/>
-        <xsl:param name="alt_id"/>
         <xsl:param name="node_id"/>
         
-        <!-- drop down list is only generated if it is a multiprop (and it has subprops) OR if it has an alternate id -->
+        <!-- drop down list is only generated if it is a multiprop (it has subprops) OR if it has an alternate id -->
         <xsl:text>&#160;</xsl:text>
         <span class="caret"/>
         <ul class="nested">
             <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
                 <xsl:variable name="subprop_URI" select="@rdf:resource"/>
-                <xsl:variable name="entity">
-                    <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
-                    <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
-                </xsl:variable>
-                <xsl:variable name="rdaRegistry_xml"
-                    select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
-                <xsl:variable name="subprop_label" select="
-                    document($rdaRegistry_xml)/rdf:RDF/
-                    rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
-                <xsl:if test="not(contains($subprop_label, 'agent'))">
-                    <li>
-                        <xsl:value-of select="$subprop_label"/>
-                    </li>
-                </xsl:if>
+                <xsl:choose>
+                    <!-- RDA prop -->
+                    <xsl:when test="starts-with($subprop_URI, 'http://rdaregistry.info')">
+                        <xsl:variable name="entity">
+                            <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>
+                            <xsl:value-of select="substring-after($remove_prop_ID, 'http://rdaregistry.info/Elements/')"/>
+                        </xsl:variable>
+                        <xsl:variable name="rdaRegistry_xml"
+                            select="concat('http://www.rdaregistry.info/xml/Elements/', $entity, '.xml')"/>
+                        <xsl:variable name="subprop_label" select="
+                            document($rdaRegistry_xml)/rdf:RDF/
+                            rdf:Description[@rdf:about = $subprop_URI]/rdfs:label[@xml:lang = 'en']"/>
+                        <xsl:if test="not(contains($subprop_label, 'agent'))">
+                            <li>
+                                <xsl:value-of select="$subprop_label"/>
+                            </li>
+                        </xsl:if>
+                        
+                    <!-- UW RDA ext. prop -->
+                    </xsl:when>
+                    <xsl:when test="starts-with($subprop_URI, 'https://doi.org/10.6069/uwlib.55.d.4')">
+                        <xsl:variable name="subprop_label" select="
+                            document('../../map_storage/prop_set_uwRdaExtension.xml')/uwmaps:prop_set/uwmaps:prop[uwmaps:prop_iri[@iri = $subprop_URI]]/uwmaps:prop_label"
+                        />
+                        <li>
+                            <xsl:value-of select="$subprop_label"/>
+                        </li>
+                    </xsl:when>
+                    
+                    <xsl:otherwise>
+                        <xsl:text>ERROR - MULTIPLE-PROPERTY PTs NOT CONFIGURED FOR THIS SOURCE</xsl:text>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:for-each>
         </ul>     
     </xsl:template>

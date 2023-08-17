@@ -232,7 +232,7 @@
     </xsl:template>
     
     <!-- template for generating list of subprops with registry and toolkit links -->
-    <!-- pulls data from rdf/xml files, rdaregistry, and map_storage/xml/RDA_alignments.xml -->
+    <!-- pulls data from rdf/xml files, prop_set files, rdaregistry, and map_storage/xml/RDA_alignments.xml -->
     <xsl:template name="prop_list">
         <xsl:param name="file_name"/>
         <xsl:param name="node_id"/>
@@ -244,14 +244,12 @@
             <xsl:when test="count(document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri) gt 1">  
                 Properties included in this property template:
                 <ul>
-                    <!-- list starts at first or second instance of hasPropertyUri, depending on value of alt_id (0 or 1) -->
-                    <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
-                        
+                    <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">   
                         <!-- subprop_URI is registry link -->
                         <xsl:variable name="subprop_URI" select="@rdf:resource"/>
-                        
                         <xsl:choose>
-                            <xsl:when test="contains($subprop_URI, 'rdaregistry')">
+                            <!-- RDA prop multiprop -->
+                            <xsl:when test="starts-with($subprop_URI, 'http://rdaregistry.info')">
                                <!-- get all the pieces to find label and toolkit url -->
                                <xsl:variable name="entity">
                                    <xsl:variable name="remove_prop_ID" select="substring-before($subprop_URI, '/P')"/>                       
@@ -282,19 +280,21 @@
                                    </li>
                                </xsl:if>
                             </xsl:when>
+                            
+                            <!-- UW RDA ext. prop link and label -->
+                            <xsl:when test="starts-with($subprop_URI, 'https://doi.org/10.6069/uwlib.55.d.4')">
+                                <!-- get label from uwRDaExtension prop_set -->
+                                <xsl:variable name="subprop_label" select="
+                                    document('../../map_storage/prop_set_uwRdaExtension.xml')/uwmaps:prop_set/uwmaps:prop[uwmaps:prop_iri[@iri = $subprop_URI]]/uwmaps:prop_label"
+                                    />
+                                <li>
+                                    <xsl:value-of select="$subprop_label"/>
+                                    [<a href="{$subprop_URI}">UW RDA Application Profile Extension</a>]
+                                </li>
+                            </xsl:when>
+                            
                             <xsl:otherwise>
-                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop">
-                                    <xsl:for-each select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection">
-                                        <xsl:variable name="subprop_label" select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection"/>
-                                        <xsl:variable name="subprop_uri" select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:multiple_prop/uwsinopia:property_selection[@property_iri]"/>
-                                        <xsl:if test="not(contains($subprop_label, 'agent'))">
-                                            <li>
-                                                <xsl:value-of select="$subprop_label"/>
-                                                [<a href="{$subprop_URI}">UW RDA Application Profile Extension</a>]
-                                            </li>
-                                        </xsl:if>
-                                    </xsl:for-each>
-                                </xsl:if>
+                                <xsl:text>ERROR - MULTIPLE-PROPERTY PTs NOT CONFIGURED FOR THIS SOURCE</xsl:text>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:for-each>
@@ -303,11 +303,12 @@
             <xsl:otherwise>
                 <xsl:for-each select="document($file_name)/rdf:RDF/rdf:Description[@rdf:nodeID = $node_id]/sinopia:hasPropertyUri">
                    
-                    <!-- prop_URI is registry link (or link to uw extension -->
+                    <!-- prop_URI is registry link (or link to uw extension) -->
                     <xsl:variable name="prop_URI" select="@rdf:resource"/>
                     
                     <xsl:choose>
-                        <xsl:when test="contains($prop_URI, 'rdaregistry')">
+                        <!-- RDA prop label and links -->
+                        <xsl:when test="starts-with($prop_URI, 'http://rdaregistry.info')">
                         
                              <!-- get all the pieces to find label and toolkit url -->
                              <xsl:variable name="entity">
@@ -333,12 +334,16 @@
                              [<a href="{$prop_URI}"><xsl:value-of select="$prop_id"/> RDA REGISTRY</a>] [<a href="{$toolkit_url}"><xsl:value-of select="$prop_id"/> RDA TOOLKIT</a>]
                         </xsl:when>
                         
-                        <xsl:otherwise>
+                        <!-- UW RDA ext. prop link and label -->
+                        <xsl:when test="starts-with($prop_URI, 'https://doi.org/10.6069/uwlib.55.d.4')">
                             <xsl:variable name="prop_label" select="$prop[uwmaps:prop_iri[@iri = $prop_iri]]/uwmaps:prop_label"/>
                             <xsl:value-of select="$prop_label"/>
                             [<a href="{$prop_URI}">UW RDA Application Profile Extension</a>]
-                        </xsl:otherwise>
+                        </xsl:when>
                         
+                        <xsl:otherwise>
+                            <xsl:text>ERROR - MULTIPLE-PROPERTY PTs NOT CONFIGURED FOR THIS SOURCE</xsl:text>
+                        </xsl:otherwise>
                     </xsl:choose>
                 </xsl:for-each>
             </xsl:otherwise>
