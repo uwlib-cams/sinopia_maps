@@ -27,7 +27,7 @@
         <!-- then get either selected iris (each uwmaps:property), or all subprop iris (iterate over corresponding RDA Reg file -->
         <xsl:choose>
             <!-- for RDA PTs -->
-            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info')">
+            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') or starts-with($prop/uwmaps:prop_iri/@iri, 'https://doi.org/10.6069/uwlib.55.d.4')">
                 <xsl:choose>
                     <!-- put each property_selection in the PT -->
                     <xsl:when test="
@@ -50,11 +50,11 @@
                             <sinopia:hasPropertyUri rdf:resource="{@property_iri}"/>
                         </xsl:for-each>
                     </xsl:when>
-                    <!-- all_all_subprops -->
+                    <!-- all_all_subprops - only available for RDA props-->
                     <!-- put all subprops of the 'main'* property in the PT, get these and put them in -->
                     <!-- *the prop in the prop_set where the implementation_set has been recorded -->
                     <!-- this may result in duplicates, remove these in post-processing -->
-                    <xsl:when test="
+                    <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') and
                             matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
                             [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
@@ -72,8 +72,8 @@
                             <sinopia:hasPropertyUri rdf:resource="{@rdf:about}"/>
                         </xsl:for-each>
                     </xsl:when>
-                    <!-- all_all_subprops -->
-                    <xsl:when test="
+                    <!-- all_all_subprops only available for RDA props-->
+                    <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') and
                         matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:institution = $institution]
                         [uwsinopia:resource = $resource]
@@ -133,7 +133,7 @@
         <!-- see comments above for multiple_property_iris, same pattern here -->
         <xsl:choose>
             <!-- for RDA PTs [!] only RDA PTs supported for multiple prop at this time! -->
-            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info')">
+            <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') or starts-with($prop/uwmaps:prop_iri/@iri, 'https://doi.org/10.6069/uwlib.55.d.4')">
                 <xsl:choose>
                     <!-- property_selection -->
                     <xsl:when test="
@@ -164,8 +164,8 @@
                             </rdf:Description>
                         </xsl:for-each>
                     </xsl:when>
-                    <!-- all_subprops -->
-                    <xsl:when test="
+                    <!-- all_subprops - only available for RDA props-->
+                    <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') and
                             matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
                             [uwsinopia:institution = $institution]
                             [uwsinopia:resource = $resource]
@@ -190,8 +190,8 @@
                             </rdf:Description>
                         </xsl:for-each>
                     </xsl:when>
-                    <!-- all_all_subprops -->
-                    <xsl:when test="
+                    <!-- all_all_subprops - only available for RDA props -->
+                    <xsl:when test="starts-with($prop/uwmaps:prop_iri/@iri, 'http://rdaregistry.info') and
                         matches($prop/uwmaps:sinopia/uwsinopia:implementation_set
                         [uwsinopia:institution = $institution]
                         [uwsinopia:resource = $resource]
