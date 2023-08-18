@@ -33,7 +33,7 @@
             </tr>
             <tr>
                <th scope="row">Last Updated</th>
-               <td>2023-08-17</td>
+               <td>2023-08-18</td>
             </tr>
             <tr class="backlink">
                <th scope="row" colspan="2"><a href="https://uwlib-cams.github.io/sinopia_maps/">RETURN TO SINOPIA_MAPS INDEX</a></th>
@@ -47,7 +47,11 @@
                <li><a href="#uwmaps_rdai_p40k_iP40049_is_d2e1327">has manifestation exemplified</a></li>
                <li><a href="#uwmaps_rdai_p40k_iP40085_is_d2e1624">has preferred title of item</a></li>
                <li><a href="#uwmaps_rdai_p40k_iP40086_is_d2e2409">has variant title of item</a></li>
-               <li><a href="#uwmaps_rdai_p40k_iP40001_is_d2e1125">has identifier for item</a></li>
+               <li><a href="#uwmaps_rdai_p40k_iP40001_is_d2e1125">has identifier for item</a>&nbsp;<span class="caret"></span><ul class="nested">
+                     <li>Has Barcode</li>
+                     <li>has identifier for item</li>
+                  </ul>
+               </li>
                <li><a href="#uwmaps_rdai_p40k_iP40026_is_d2e453">has custodial history of item</a></li>
                <li><a href="#uwmaps_rdai_p40k_iP40050_is_d2e1256">has immediate source of acquisition of item</a></li>
                <li><a href="#uwmaps_rdai_p40k_iP40047_is_d2e2190">has restriction on access to item</a></li>
@@ -246,14 +250,38 @@
                </ul>
             </section>
             <section class="ptInfo" id="uwmaps_rdai_p40k_iP40001_is_d2e1125">
-               <h3><span>has identifier for item</span></h3><span class="ptInfoGuidance"><b>Cataloging Guidance</b><span class="ptInfoGuidance">&nbsp;<span class="caret"></span><ul class="nested">
+               <h3><span>has identifier for item</span></h3>
+               <p><span class="ptInfoRemark">
+                     2023-08 RT TESTING: Use one of two options - see linked HTML guidance for details.
+                     </span></p><span class="ptInfoGuidance"><b>Cataloging Guidance</b><span class="ptInfoGuidance">&nbsp;<span class="caret"></span><ul class="nested">
                         
-                        <p>Use separate template <strong>UWSINOPIA WAU rdaNomen identifier CAMS</strong> to create an RDA Nomen resource. Then return to this resource template and use the
-                           lookup property template to find and select that resource. The Nomen resource IRI
-                           or nomen string value may be used as lookup search string.</p>
-                        </ul></span></span><p>has identifier for item
-                  [<a href="http://rdaregistry.info/Elements/i/P40001">rdai:P40001 RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d0654b23-e79b-3863-8016-d7d5882c58c8">rdai:P40001 RDA TOOLKIT</a>]
-                  </p>
+                        <p>TESTING <strong>UWSINOPIA:WAU:rdaItem:printMonograph:CAMS</strong> 2023-08:</p>
+                        
+                        <p>Two options are available for testing: </p>
+                        
+                        <ul>
+                           
+                           <li>Select property 'has identifier for item' from property options. Use separate template
+                              <strong>UWSINOPIA WAU rdaNomen identifier CAMS</strong> to create an RDA Nomen resource. Then return to this resource template and use the
+                              lookup property template to find and select that resource. The Nomen resource IRI
+                              or nomen string value may be used as lookup search string.</li>
+                           
+                           <li>Select property 'has barcode' from property options. Enter barcode in lookup search
+                              box and search. Do not click on any search results; select 'Enter "[barcode]" as literal'
+                              to enter the barcode as a literal value.</li>
+                           </ul>
+                        </ul></span></span><p>  
+                  Properties included in this property template:
+                  
+                  <ul>
+                     <li>Has Barcode
+                        [<a href="https://doi.org/10.6069/uwlib.55.d.4#hasBarcode">UW RDA Application Profile Extension</a>]
+                        </li>
+                     <li>has identifier for item
+                        [<a href="http://rdaregistry.info/Elements/i/P40001">rdai:P40001 RDA REGISTRY</a>] [<a href="https://access.rdatoolkit.org/en-US_ala-d0654b23-e79b-3863-8016-d7d5882c58c8">rdai:P40001 RDA TOOLKIT</a>]
+                        </li>
+                  </ul>
+               </p>
                <ul>
                   <li>Optional</li>
                   <li>Repeatable</li>

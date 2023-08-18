@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaItem printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-17</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-18</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -64,15 +64,23 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40001_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has identifier for item</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40001"/>
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html#uwmaps_rdai_p40k_iP40001_is_d2e1125"/>
+      <sinopia:hasRemark xml:lang="en">2023-08 RT TESTING: Use one of two options - see linked HTML guidance for details.</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsiP40001_lookup_attributes"/>
+      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasBarcode"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40001"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40001_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40001">
+      <rdfs:label xml:lang="en">has identifier for item</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="https://doi.org/10.6069/uwlib.55.d.4#hasBarcode">
+      <rdfs:label xml:lang="en">Has Barcode</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40026_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40026_define"/>
