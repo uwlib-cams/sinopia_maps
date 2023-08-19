@@ -29,8 +29,8 @@ else:
     exit(0)
 
 # get location and version of saxon folder
-saxon_dir_prompt = dedent("""Enter the name of the directory in your home folder where your Saxon HE .jar file is stored
-For example: 'saxon', 'saxon11', etc.
+saxon_dir_prompt = dedent("""Enter the full directory path of where your Saxon HE .jar file is stored
+For example: '~/saxon', 'C:/users/cpayn/saxon', etc.
 > """)
 saxon_dir = input(saxon_dir_prompt)
 
@@ -78,7 +78,7 @@ GENERATING RDF/XML RESOURCE TEMPLATES
 
 # run stylesheet to output rdf/xml
 RDF_RT_stylesheet = "xsl/001_01_storage_to_rdfxml.xsl"
-os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
+os_command = f"""java -cp {saxon_dir}/saxon-he-{saxon_version}.jar 
 net.sf.saxon.Transform 
 -s:{RDF_RT_stylesheet} 
 -xsl:{RDF_RT_stylesheet}"""
@@ -272,7 +272,7 @@ GENERATING HTML RESOURCE TEMPLATES
 
 # run stylesheet to output HTML
 HTML_RT_stylesheet = "xsl/004_01_prop_set_to_html.xsl"
-os_command = f"""java -cp ~/{saxon_dir}/saxon-he-{saxon_version}.jar 
+os_command = f"""java -cp {saxon_dir}/saxon-he-{saxon_version}.jar 
 net.sf.saxon.Transform 
 -s:{HTML_RT_stylesheet} 
 -xsl:{HTML_RT_stylesheet}"""
