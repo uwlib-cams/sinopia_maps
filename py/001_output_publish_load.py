@@ -20,7 +20,7 @@ from sort_multi_alphabet import sort_alphabetical
 # terminal must be open in sinopia_maps top level and saxon should be in home directory
 print(dedent("""Please confirm:
 1) Terminal is open in the sinopia_maps top-level directory
-2) Saxon processor .jar file is located in the user's home (~) directory
+2) You have the full directory path to where the Saxon processor .jar file is located ready
 3) You have a valid Java Web Token handy for the Sinopia environment you wish to load templates to"""))
 confirm = input("OK to proceed? (Yes or No):\n> ")
 if confirm.lower() == "yes":
