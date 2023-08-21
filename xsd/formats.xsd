@@ -22,6 +22,9 @@
             <xs:enumeration value="printMonograph"/>
             <xs:enumeration value="aggregating_printMonograph"/>
             
+            <!-- Collection -->
+            <xs:enumeration value="collection"/>
+
             <!-- Nomen formats -->
             <xs:enumeration value="accessPoint"/>
             <xs:enumeration value="identifier"/>
