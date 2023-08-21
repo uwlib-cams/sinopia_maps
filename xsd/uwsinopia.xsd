@@ -421,6 +421,8 @@
          <xs:enumeration value="UWSINOPIA:WAU:rdaEntity:test:test"/>
          <xs:enumeration value="UWSINOPIA:WAU:rdaWork:test:ries07"/>
          <xs:enumeration value="UWSINOPIA:WAU:rdaEntity:standalone:ries07"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaWork:collection:CAMS"/>
+         <xs:enumeration value="UWSINOPIA:WAU:rdaManifestation:collection:CAMS"/>
       </xs:restriction>
    </xs:simpleType>
    <xs:complexType name="p_type" mixed="true">
