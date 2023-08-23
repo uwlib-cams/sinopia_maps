@@ -283,7 +283,7 @@
                             </xsl:call-template>
                         </title>
                         <link
-                            href="../../webviews/css/rda3r_templates.css"
+                            href="https://uwlib-cams.github.io/webviews/css/rda3r_templates.css"
                             rel="stylesheet" type="text/css"/>
                         <link href="https://uwlib-cams.github.io/webviews/images/book.png"
                             rel="icon" type="image/png"/>
