@@ -908,6 +908,10 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40161_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasDefault rdf:resource="https://api.stage.sinopia.io/resource/93e193ab-9320-4c95-b9ab-3f3af1194bb6"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="https://api.stage.sinopia.io/resource/93e193ab-9320-4c95-b9ab-3f3af1194bb6">
+      <rdfs:label xml:lang="en">University of Washington Libraries Collection</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40071_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsiP40071_define"/>
