@@ -13,7 +13,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30135_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30135_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30134_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30156_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30135_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -33,15 +33,16 @@
    <rdf:Description rdf:about="https://replace_this_iri">
       <rdfs:label xml:lang="en">REPLACE THIS IRI</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30134_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30134_define"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30156_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30156_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30335_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30134_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30156_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has title of manifestation</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30134"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaManifestation_collection_CAMS.html#uwmaps_rdam_p30k_mP30134_is_d2e525"/>
+      <rdfs:label xml:lang="en">has title proper</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30156"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaManifestation_collection_CAMS.html#uwmaps_rdam_p30k_mP30156_is_d2e6750"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30335_order">

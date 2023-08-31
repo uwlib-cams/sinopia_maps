@@ -13,7 +13,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10072_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10088_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10223_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -33,15 +33,15 @@
    <rdf:Description rdf:about="https://replace_this_iri">
       <rdfs:label xml:lang="en">REPLACE THIS IRI</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10088_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10088_define"/>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10223_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10223_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10088_define">
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10223_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has title of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10088"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_collection_CAMS.html#uwmaps_rdaw_p10k_wP10088_is_d2e5555"/>
+      <rdfs:label xml:lang="en">has preferred title of work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10223"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_collection_CAMS.html#uwmaps_rdaw_p10k_wP10223_is_d2e6815"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_order">
