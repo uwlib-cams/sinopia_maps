@@ -8,12 +8,12 @@
       <rdfs:label>UWSINOPIA WAU rdaWork collection CAMS</rdfs:label>
       <sinopia:hasAuthor> UW CAMS - cspayne@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-28</sinopia:hasDate>
+      <sinopia:hasDate>2023-08-30</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10072_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10088_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -33,9 +33,20 @@
    <rdf:Description rdf:about="https://replace_this_iri">
       <rdfs:label xml:lang="en">REPLACE THIS IRI</rdfs:label>
    </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10088_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10088_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10088_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has title of work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10088"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_collection_CAMS.html#uwmaps_rdaw_p10k_wP10088_is_d2e5555"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
+   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10004_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10631_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10019_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -52,6 +63,22 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/termList/RDATerms/1210">
       <rdfs:label xml:lang="en">collection work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10019_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10631_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is part of work</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10019"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_collection_CAMS.html#uwmaps_rdaw_p10k_wP10019_is_d2e7596"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10019_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10019_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:work"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10631_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10631_define"/>

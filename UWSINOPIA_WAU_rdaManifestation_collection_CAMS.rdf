@@ -8,8 +8,19 @@
       <rdfs:label>UWSINOPIA WAU rdaManifestation collection CAMS</rdfs:label>
       <sinopia:hasAuthor> UW CAMS - cspayne@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-08-28</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30135_order"/>
+      <sinopia:hasDate>2023-08-30</sinopia:hasDate>
+      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsmP30134_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30134_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30134_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30135_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30134_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has title of manifestation</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30134"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaManifestation_collection_CAMS.html#uwmaps_rdam_p30k_mP30134_is_d2e525"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30135_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30135_define"/>
@@ -35,7 +46,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30335_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30335_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30461_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30459_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30335_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -52,6 +63,23 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/termList/RDATerms/1212">
       <rdfs:label xml:lang="en">collection manifestation</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30459_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30459_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementsmP30461_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30459_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">is subcollection of</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/m/P30459"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaManifestation_collection_CAMS.html#uwmaps_rdam_p30k_mP30459_is_d2e7136"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementsmP30459_lookup_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30459_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsmP30461_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsmP30461_define"/>
