@@ -105,7 +105,7 @@
                         <xsl:choose>
                             <!-- literal pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt">
-                                <li>Property type: literal
+                                <li>Property Template type: literal
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/*">
                                     <ul>
                                         <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:literal_pt/uwsinopia:date_default">
@@ -136,7 +136,7 @@
                             
                             <!-- lookup pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt">
-                                <li>Property type: lookup
+                                <li>Property Template type: lookup
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri or uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:lookup_pt/uwsinopia:lookup_default_iri_label">
                                     <ul>
                                         <li>Default:
@@ -173,7 +173,7 @@
                             <!-- URI pt -->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt">
                                 <!-- NEEDS TESTING -->
-                                <li>Property type: URI
+                                <li>Property Template type: URI
                                 <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:uri_pt/uwsinopia:default_uri">
                                     <ul>
                                         <li>Default:
@@ -193,7 +193,7 @@
                             <!-- nested resource -->
                             <!-- NOTE: currently not in use, so no details have been added here-->
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:nested_resource_pt">
-                                <li>Property type: nested resource</li>
+                                <li>Property Template type: nested resource</li>
                             </xsl:when>                        
                         </xsl:choose>                  
                         <!-- links -->
