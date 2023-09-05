@@ -1,10 +1,10 @@
 [
   {
-    "@id": "https://replace_this_iri",
+    "@id": "https://REPLACE_THIS_IRI",
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "REPLACE THIS IRI"
+        "@value": "REPLACE THIS LABEL"
       }
     ]
   },
@@ -25,26 +25,26 @@
     ],
     "http://sinopia.io/vocabulary/hasDate": [
       {
-        "@value": "2023-08-31"
+        "@value": "2023-09-05"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyTemplate": [
       {
         "@list": [
           {
-            "@id": "_:N7c9d3c32197945d99a992aec5872a0d0"
+            "@id": "_:Ne1d9b3cef88443ba94892adf601d3394"
           },
           {
-            "@id": "_:N32125aa303bf421da181668723a39cdc"
+            "@id": "_:Nb53d3a12d1884101a241bf7caaa37771"
           },
           {
-            "@id": "_:Ncb1f06fb2b9f44ce9529f96c493dd4fa"
+            "@id": "_:Na0951c6a21c74b018297895b673c9ce7"
           },
           {
-            "@id": "_:N0cd06e084e1a47acac475616a62dcfcc"
+            "@id": "_:N7ea794555f264073bdd253673bed4553"
           },
           {
-            "@id": "_:Nb61bd4d16a8240e4b65de031d7c3b846"
+            "@id": "_:Nc3ac75358bda45d0ae2164732c150089"
           }
         ]
       }
@@ -80,13 +80,13 @@
     ]
   },
   {
-    "@id": "_:N7c9d3c32197945d99a992aec5872a0d0",
+    "@id": "_:Ne1d9b3cef88443ba94892adf601d3394",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Ndc974cf040754525ac4a1b406e38b860"
+        "@id": "_:N2136c184f7b8410689920e90825ea9f0"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -107,7 +107,7 @@
     "http://sinopia.io/vocabulary/hasRemark": [
       {
         "@language": "en",
-        "@value": "Use lookup to replace this IRI once the appropriate IRI has been minted."
+        "@value": "Use lookup to replace this IRI and label once the appropriate IRI has been minted."
       }
     ],
     "http://sinopia.io/vocabulary/hasRemarkUrl": [
@@ -123,7 +123,7 @@
     ]
   },
   {
-    "@id": "_:N32125aa303bf421da181668723a39cdc",
+    "@id": "_:Nb53d3a12d1884101a241bf7caaa37771",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
@@ -155,13 +155,13 @@
     ]
   },
   {
-    "@id": "_:Ncb1f06fb2b9f44ce9529f96c493dd4fa",
+    "@id": "_:Na0951c6a21c74b018297895b673c9ce7",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N84beeec7e6a6401088a660c5d68bf460"
+        "@id": "_:N29060d46472e431183200843ae04fb29"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyType": [
@@ -187,13 +187,13 @@
     ]
   },
   {
-    "@id": "_:N0cd06e084e1a47acac475616a62dcfcc",
+    "@id": "_:N7ea794555f264073bdd253673bed4553",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:N7eff84d5ee5c48948b6033e56e3c8c50"
+        "@id": "_:N548e1cbfbbd9429593708ad3397ea7db"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -224,13 +224,13 @@
     ]
   },
   {
-    "@id": "_:Nb61bd4d16a8240e4b65de031d7c3b846",
+    "@id": "_:Nc3ac75358bda45d0ae2164732c150089",
     "@type": [
       "http://sinopia.io/vocabulary/PropertyTemplate"
     ],
     "http://sinopia.io/vocabulary/hasLookupAttributes": [
       {
-        "@id": "_:Nf82d155c745c49e0ae5bbdd3457869e4"
+        "@id": "_:N673c266678304eaa991ce4ed8cea14fe"
       }
     ],
     "http://sinopia.io/vocabulary/hasPropertyAttribute": [
@@ -261,7 +261,7 @@
     ]
   },
   {
-    "@id": "_:Ndc974cf040754525ac4a1b406e38b860",
+    "@id": "_:N2136c184f7b8410689920e90825ea9f0",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -272,12 +272,12 @@
     ],
     "http://sinopia.io/vocabulary/hasDefault": [
       {
-        "@id": "https://replace_this_iri"
+        "@id": "https://REPLACE_THIS_IRI"
       }
     ]
   },
   {
-    "@id": "_:N84beeec7e6a6401088a660c5d68bf460",
+    "@id": "_:N29060d46472e431183200843ae04fb29",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -293,7 +293,7 @@
     ]
   },
   {
-    "@id": "_:N7eff84d5ee5c48948b6033e56e3c8c50",
+    "@id": "_:N548e1cbfbbd9429593708ad3397ea7db",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
@@ -304,7 +304,7 @@
     ]
   },
   {
-    "@id": "_:Nf82d155c745c49e0ae5bbdd3457869e4",
+    "@id": "_:N673c266678304eaa991ce4ed8cea14fe",
     "@type": [
       "http://sinopia.io/vocabulary/LookupPropertyTemplate"
     ],
