@@ -79,7 +79,9 @@
                                     namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                     <!-- general -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general 
+                                        and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:general[@rt_id = 'default'])">
                                         <xsl:element name="general"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
@@ -113,7 +115,9 @@
                                     
                                     <!-- recording_method -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method 
+                                        and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:recording_method[@rt_id = 'default'])">
                                         <xsl:element name="recording_method"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
@@ -139,7 +143,9 @@
                                     
                                     <!-- ses -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses
+                                           and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:ses[@rt_id = 'default'])">
                                         <xsl:element name="ses"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
@@ -165,7 +171,9 @@
                                     
                                     <!-- transcription_standard -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard
+                                        and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:transcription_standard[@rt_id = 'default'])">
                                         <xsl:element name="transcription_standard"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
@@ -189,7 +197,9 @@
                                     
                                     <!-- options -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options
+                                        and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:options[@rt_id = 'default'])">
                                         <xsl:element name="options"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
@@ -228,7 +238,9 @@
                                     
                                     <!-- examples -->
                                     <xsl:if
-                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples">
+                                        test="uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples
+                                        and (uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples[@rt_id = $rt_id] 
+                                            or uwmaps:sinopia/uwsinopia:guidance_set/uwsinopia:examples[@rt_id = 'default'])">
                                         <xsl:element name="examples"
                                             namespace="https://uwlib-cams.github.io/sinopia_maps/xsd/">
                                             <xsl:choose>
