@@ -34,6 +34,9 @@
                                     </xsl:when>
                                     <xsl:otherwise>{uwmaps:prop_label}</xsl:otherwise>
                                 </xsl:choose>
+                                <xsl:if test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:required"> 
+                                    <xsl:text>(*)</xsl:text>
+                                </xsl:if>
                             </a>
                             
                             <!-- if alt label is used, or prop has subprops, need drop-down list -->
