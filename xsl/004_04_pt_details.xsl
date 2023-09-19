@@ -195,7 +195,11 @@
                             <xsl:when test="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:nested_resource_pt">
                                 <li>Property Template type: nested resource</li>
                             </xsl:when>                        
-                        </xsl:choose>                  
+                        </xsl:choose> 
+                        
+                        <!-- form order -->
+                        <li>Form order: <xsl:value-of select="uwmaps:sinopia/uwsinopia:implementation_set/uwsinopia:form_order"/></li>
+                        
                         <!-- links -->
                         <li>
                             <span class="backlink">
