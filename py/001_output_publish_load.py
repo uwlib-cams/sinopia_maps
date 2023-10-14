@@ -258,10 +258,10 @@ SORTING RDF/XML DROP-DOWN PROPERTY TEMPLATES
 
 RT_list = locate_RTs()
 for RT in RT_list:
-    fix_multi_props(f'{RT}')
-    fix_duplicate_triples(f'{RT}')
-    filter_agents(f'{RT}')
-    sort_alphabetical(f'{RT}')
+	fix_multi_props(f'{RT}')
+	fix_duplicate_triples(f'{RT}')
+	filter_agents(f'{RT}')
+	sort_alphabetical(f'{RT}')
 
 
 	
