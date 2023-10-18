@@ -22,16 +22,26 @@ def sort_alphabetical(file):
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
 					propuri_count = propuri_count + 1
 
-		# more than one hasPropertyUri elements -> multiprop
+		# more than one hasPropertyUri elements -> multiprop, sort sub-properties (ignoring initial 'is' and 'has')
 		if propuri_count > 1:
 			labels_uris = {}
 			for subelement in rdf_description:
 				if subelement.tag == '{http://sinopia.io/vocabulary/}hasPropertyUri':
 					uri = subelement.attrib['{http://www.w3.org/1999/02/22-rdf-syntax-ns#}resource']
+					
+					
 					label = get_label(uri)
-					labels_uris[label] = uri
+					# if there is a space in the label (there always is), ignore the first word
+					# set as keyword to sort by 
+					if " " in label: 
+						keyword = label.split(" ", 1)[1]
+					else:
+						keyword = label
+					labels_uris[keyword] = uri
+
 					rdf_description.remove(subelement)
 
+			# sort and re-add to rdf_description
 			for i in sorted(labels_uris.keys()):
 				# print(i + ": " + labels_uris[i])
 				subelem = ET.Element('{http://sinopia.io/vocabulary/}hasPropertyUri')
