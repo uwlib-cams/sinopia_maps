@@ -38,8 +38,8 @@
 
 ## Option C 
 ***Describe the aggregating work without describing the aggregating expression. Also describe one or more of the expressions that are aggregated and the works realized by the expressions.***
-- For guidance on describing the aggregating work, see Option B. 
-- For guidance on describing an aggregated expression and the work realized, see option A. 
+- For guidance on describing the aggregating work, see [Option B](#option-b). 
+- For guidance on describing an aggregated expression and the work realized, see [Option A](#option-a). 
 ### Recommended for: 
 - A collection aggregate where more than three (primary) expressions are aggregated, and a creator of one or more of the expressions or works that are aggregated is deemed useful to users. 
 - A parallel aggregate where more than three (primary) expressions are aggregated. When describing aggregated expressions, describe the original expression, if present, and at least the first derivative expression in the resource. 
@@ -55,7 +55,7 @@
 + Relate the aggregating expression to one or more of the expressions that are aggregated using Expression: aggregates. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-f2747cbc-74d2-3131-a94b-e30effad9d09/div_uwg_5tt_2fb). 
 + Relate an aggregated expression to the aggregating expression using Expression: aggregated by. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-f2747cbc-74d2-3131-a94b-e30effad9d09/div_q5k_5vt_2fb).
 - For guidance on describing the aggregating work, see Option B. 
-- Ror guidance on describing an aggregated expression and the work realized, see option A. 
+- Ror guidance on describing an aggregated expression and the work realized, see [Option A](#option-a). 
 ### Not recommended
 Only describe the aggregating expression when the same aggregating work (and hence the same aggregating expression) is manifested in multiple manifestations. Consider the possible minor differences in augmenting content when determining whether two aggregating works are the same. 
 
