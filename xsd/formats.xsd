@@ -21,6 +21,7 @@
             <!-- non-aggregates and augmenting aggregates: use 'printMonograph' -->
             <xs:enumeration value="printMonograph"/>
             <xs:enumeration value="aggregating_printMonograph"/>
+            <xs:enumeration value="aggregated_printMonograph"/>
             
             <!-- Collection -->
             <xs:enumeration value="collection"/>
