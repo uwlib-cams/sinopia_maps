@@ -1,38 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <rdf:RDF xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:reg="http://metadataregistry.org/uri/profile/regap/" xmlns:sinopia="http://sinopia.io/vocabulary/" xmlns:uwmaps="https://uwlib-cams.github.io/map_storage/xsd/" xmlns:uwsinopia="https://uwlib-cams.github.io/sinopia_maps/xsd/">
-   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:printMonograph:CAMS">
+   <rdf:Description rdf:about="https://api.sinopia.io/resource/UWSINOPIA:WAU:rdaWork:aggregated_printMonograph:CAMS">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/ResourceTemplate"/>
       <sinopia:hasResourceTemplate>sinopia:template:resource</sinopia:hasResourceTemplate>
-      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:printMonograph:CAMS</sinopia:hasResourceId>
+      <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:aggregated_printMonograph:CAMS</sinopia:hasResourceId>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
-      <rdfs:label>UWSINOPIA WAU rdaWork printMonograph CAMS</rdfs:label>
-      <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
-      <sinopia:hasRemark xml:lang="en">For describing single works</sinopia:hasRemark>
+      <rdfs:label>UWSINOPIA WAU rdaWork aggregated_printMonograph CAMS</rdfs:label>
+      <sinopia:hasAuthor>UW CAMS - ries07@uw.edu</sinopia:hasAuthor>
+      <sinopia:hasRemark xml:lang="en">For describing aggregating works</sinopia:hasRemark>
       <sinopia:hasDate>2023-10-31</sinopia:hasDate>
-      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10078_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10078_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has expression of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10078"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10078_is_d2e5598"/>
-      <sinopia:hasRemark xml:lang="en">Use lookup to replace this IRI and label once the appropriate IRI has been minted.</sinopia:hasRemark>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10078_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10078_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:expression"/>
-      <sinopia:hasDefault rdf:resource="https://REPLACE_THIS_IRI"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="https://REPLACE_THIS_IRI">
-      <rdfs:label xml:lang="en">REPLACE THIS LABEL</rdfs:label>
+      <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10072_define"/>
@@ -40,16 +17,29 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has manifestation of work</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10072"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10072_is_d2e5900"/>
+      <rdfs:label xml:lang="en">has manifestation or expression of work</rdfs:label>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10072_is_d2e6889"/>
+      <sinopia:hasRemark xml:lang="en">Use lookup to replace this IRI and label once the appropriate IRI has been minted.</sinopia:hasRemark>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10072_lookup_attributes"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10078"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10072"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:manifestation"/>
+      <sinopia:hasDefault rdf:resource="https://REPLACE_THIS_IRI"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="https://REPLACE_THIS_IRI">
+      <rdfs:label xml:lang="en">REPLACE THIS LABEL</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10072">
+      <rdfs:label xml:lang="en">has manifestation of work</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10078">
+      <rdfs:label xml:lang="en">has expression of work</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10223_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10223_define"/>
@@ -59,7 +49,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has preferred title of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10223"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10223_is_d2e5674"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10223_is_d2e5674"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/required"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -71,7 +61,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has variant title of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10086"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10086_is_d2e5069"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10086_is_d2e5069"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -83,7 +73,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has authorized access point for work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10331"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10331_is_d2e640"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10331_is_d2e640"/>
       <sinopia:hasRemark xml:lang="en">Do not record an IRI for an authority record</sinopia:hasRemark>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10331_lookup_attributes"/>
@@ -94,42 +84,25 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10332_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10332_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10401_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10002_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10332_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has variant access point for work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10332"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10332_is_d2e9169"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10332_is_d2e9169"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10401_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10002_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has authorized access point for work group</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10401"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10401_is_d2e707"/>
-      <sinopia:hasRemark xml:lang="en">Do not record an IRI for an authority record</sinopia:hasRemark>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10401_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
-   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10002_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10400_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10002_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has identifier for work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10002"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10002_is_d2e4896"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10002_is_d2e4896"/>
       <sinopia:hasRemark xml:lang="en">Do not record an IRI for the work being described</sinopia:hasRemark>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -139,32 +112,15 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10400_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10004_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has identifier for work group</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10400"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10400_is_d2e3076"/>
-      <sinopia:hasRemark xml:lang="en">Do not record an IRI for the work being described</sinopia:hasRemark>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10400_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:sinopia:rda:nomen"/>
-   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10004_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10365_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10219_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has category of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10004"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10004_is_d2e1127"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10004_is_d2e1127"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10004_lookup_attributes"/>
@@ -178,25 +134,6 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:terms"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10365_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10219_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has extension plan</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10365"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10365_is_d2e2564"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
-      <sinopia:hasDefault rdf:resource="http://rdaregistry.info/termList/RDAExtensionPlan/1001"/>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/termList/RDAExtensionPlan/1001">
-      <rdfs:label xml:lang="en">static plan</rdfs:label>
-   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10219_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10218_order"/>
@@ -205,7 +142,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has date of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10219"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10219_is_d2e1928"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10219_is_d2e1928"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
       <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10219_literal_attributes"/>
    </rdf:Description>
@@ -221,7 +158,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has place of origin of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10218"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10218_is_d2e5125"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10218_is_d2e5125"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10218_lookup_attributes"/>
@@ -234,25 +171,13 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10210_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10210_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10012_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10216_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10210_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has history of work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10210"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10210_is_d2e6016"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10012_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10012_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10216_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10012_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has numbering of part</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10012"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10012_is_d2e7228"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10210_is_d2e6016"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -264,7 +189,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has coverage of content</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10216"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10216_is_d2e8420"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10216_is_d2e8420"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10216_lookup_attributes"/>
@@ -283,7 +208,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has note on work</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10330"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10330_is_d2e6224"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10330_is_d2e6224"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
    </rdf:Description>
@@ -295,7 +220,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has subject</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10256"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10256_is_d2e8059"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10256_is_d2e8059"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10256_lookup_attributes"/>
@@ -312,13 +237,13 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10349_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10349_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10398_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10217_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10349_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has content type of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10349"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10349_is_d2e1689"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10349_is_d2e1689"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10349_lookup_attributes"/>
@@ -326,23 +251,6 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10349_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:content_type"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10398_order">
-      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10398_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10217_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10398_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">has date of representative expression</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10398"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10398_is_d2e1887"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
-      <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10398_literal_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10398_literal_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LiteralPropertyTemplate"/>
-      <sinopia:hasValidationDataType rdf:resource="http://id.loc.gov/datatypes/edtf/"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10217_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10217_define"/>
@@ -352,7 +260,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has intended audience of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10217"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10217_is_d2e1180"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10217_is_d2e1180"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10217_lookup_attributes"/>
@@ -372,7 +280,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has language of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10353"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10353_is_d2e4247"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10353_is_d2e4247"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10353_lookup_attributes"/>
@@ -389,7 +297,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has script of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10357"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10357_is_d2e7355"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10357_is_d2e7355"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10357_lookup_attributes"/>
@@ -406,7 +314,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has colour content of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10348"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10348_is_d2e1298"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10348_is_d2e1298"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10348_lookup_attributes"/>
@@ -423,7 +331,7 @@
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has sound content of representative expression</rdfs:label>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10358"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10358_is_d2e7551"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10358_is_d2e7551"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10358_lookup_attributes"/>
@@ -439,7 +347,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10312_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related person of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10312_is_d2e4085"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10312_is_d2e4085"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10312_lookup_attributes"/>
@@ -604,7 +512,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10313_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related family of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10313_is_d2e3732"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10313_is_d2e3732"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10313_lookup_attributes"/>
@@ -736,12 +644,12 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10314_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10314_define"/>
-      <rdf:rest rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10198_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10314_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related corporate body of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10314_is_d2e4341"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10314_is_d2e4341"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10314_lookup_attributes"/>
@@ -883,29 +791,6 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10017">
       <rdfs:label xml:lang="en">has enacting government</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_order">
-      <rdf:first rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10198_order"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_define">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
-      <rdfs:label xml:lang="en">Has Creator Characteristic</rdfs:label>
-      <sinopia:hasPropertyUri rdf:resource="https://doi.org/10.6069/uwlib.55.d.4#hasCreatorCharacteristic"/>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_uwRdaExtension_hasCreatorCharacteristic_is_d2e20"/>
-      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
-      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
-      <sinopia:hasLookupAttributes rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_lookup_attributes"/>
-   </rdf:Description>
-   <rdf:Description rdf:nodeID="doiorg106069uwlib55d4hasCreatorCharacteristic_lookup_attributes">
-      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:demographics"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:subjects"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyaat"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:fast"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:homosaurus_ld4l_cache"/>
-      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:mesh:subject"/>
-      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
-   </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10198_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10198_define"/>
       <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10308_order"/>
@@ -913,7 +798,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10198_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related work of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10198_is_d2e5502"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10198_is_d2e5502"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10198_lookup_attributes"/>
@@ -1633,7 +1518,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10308_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related expression of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10308_is_d2e3653"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10308_is_d2e3653"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10308_lookup_attributes"/>
@@ -1681,7 +1566,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10309_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related manifestation of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10309_is_d2e3754"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10309_is_d2e3754"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10309_lookup_attributes"/>
@@ -1725,7 +1610,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10310_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related item of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10310_is_d2e3896"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10310_is_d2e3896"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10310_lookup_attributes"/>
@@ -1761,7 +1646,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10318_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related nomen of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10318_is_d2e3855"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10318_is_d2e3855"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10318_lookup_attributes"/>
@@ -1789,7 +1674,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10316_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related place of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10316_is_d2e3566"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10316_is_d2e3566"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10316_lookup_attributes"/>
@@ -1819,7 +1704,7 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10317_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related timespan of work</rdfs:label>
-      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10317_is_d2e3649"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10317_is_d2e3649"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/literal"/>
       <sinopia:hasLiteralAttributes rdf:nodeID="rdaregistryinfoElementswP10317_literal_attributes"/>
