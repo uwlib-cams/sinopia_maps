@@ -12,17 +12,16 @@
 ![A representation of an aggregated work and expression, and an aggregate manifestation](../images/option_a.PNG)
 
 ***Describe one or more of the expressions that are aggregated and the works realized by the expressions.***
+### Recommended for
+- An augmentation aggregate with only one primary expression. 
+- A collection or parallel aggregate where no more than three (primary) expressions are aggregated. 
+### Details
 - Use template [UWSINOPIA:WAU:rdaExpression:printMonograph:CAMS](https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaExpression_printMonograph_CAMS.html) for describing an aggregated expression. 
 - Use template [UWSINOPIA:WAU:rdaWork:printMonograph:CAMS](https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_printMonograph_CAMS.html) for describing a work realized by an aggregated expression. 
 + Relate the manifestation to an aggregated expression using Manifestation: expression manifested. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/div_txc_vr1_ffb). 
 + Relate an aggregated expression to the manifestation using Expression: manifestation of expression. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-f2747cbc-74d2-3131-a94b-e30effad9d09/div_wb5_l2h_lhb). 
 + Relate an aggregated expression to the work realized by the expression using Expression: work expressed. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-f2747cbc-74d2-3131-a94b-e30effad9d09/div_tdm_wdh_lhb). 
 + Relate a work to an aggregated expression that realizes it using Work: expression of work. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-4d4d3f5b-8d94-3ee5-89d8-241a98366db4/div_msj_sfh_lhb). 
-### Use templates:
-- ...
-### Recommended for: 
-- An augmentation aggregate with only one primary expression. 
-- A collection or parallel aggregate where no more than three (primary) expressions are aggregated. 
 
 *Return to [top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)
 
@@ -57,7 +56,7 @@
 ![A representation of relationships between an aggregating work and one or more aggregated works and expressions](../images/option_c.PNG)
 
 ## Option D (Apply with caution) 
-![A representation of an aggregating work and expression, an aggregated work and expression, and an aggregate manifestation](../images/option_d.PNG)
+![Option D figure](../images/option_d.PNG)
 
 ***Describe the aggregating work and the aggregating expression.***
 - Use template [UWSINOPIA:WAU:rdaExpression:aggregating_printMonograph:CAMS](https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaExpression_aggregating_printMonograph_CAMS.html) for describing the aggregating expression. 
@@ -75,7 +74,9 @@ Only describe the aggregating expression when the same aggregating work (and hen
 
 
 ## Option E
-***...***
+![Option E figure](../images/option_e.PNG)
+
+***Describe the aggregating work, and a work or works that are realized by an expression or expressions which are aggregated***
 - ...
 ### Use templates:
 - ...
