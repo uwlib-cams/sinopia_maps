@@ -29,7 +29,7 @@
 + Relate a work to an aggregated expression that realizes it using Work: expression of work. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-4d4d3f5b-8d94-3ee5-89d8-241a98366db4/div_msj_sfh_lhb). 
 
 
-> *Return to [top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
+> ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
 
 ## Option B 
 ***Describe the aggregating work and the aggregate manifestation without describing any other expression(s) or work(s)***
@@ -49,7 +49,7 @@
 - Record a creator of one or more of the expressions or works that are aggregated using Manifestation: contributor agent to aggregate. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/div_pd1_wr1_ffb). 
 - Do not record a creator of one or more of the works that are aggregated as a creator of the aggregating work, unless they happen to be the same agent. 
 
-> *Return to [top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
+> ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
 
 ## Option C 
 ***Describe the aggregating work and aggregate manifestation, and describe one or more aggregated expressions and the works realized by these***
@@ -64,6 +64,8 @@
 ### Details
 - For guidance on describing the aggregating work, see [Option B](#option-b). 
 - For guidance on describing an aggregated expression and the work realized, see [Option A](#option-a). 
+
+> ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
 
 ## Option D
 **&#x26a0; apply with caution**  
@@ -87,6 +89,8 @@
 - For guidance on describing the aggregating work, see Option B. 
 - Ror guidance on describing an aggregated expression and the work realized, see [Option A](#option-a). 
 
+> ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
+
 ## Option E
 ***Describe the aggregating work and aggregate manifestation, and a work or works which are realized by an expression or expressions which are aggregated, but without descibing those expressions***
 ![Option E figure](../images/option_e.PNG)
@@ -94,3 +98,5 @@
 ### WEMI linking
 - Link the aggregating work to the aggregate manifestation using the shortcut element [has manifestation of work](https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e)
 - Link a work or works which are realized by an expression or expressions which are aggregated using this same element, [has manifestation of work](https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e) - for more information see RDA Toolkit > Guidance > Describing a manifestation > [Describing a manifestation that embodies two or more expressions](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/section_qfv_vc3_42b) > condition: "A manifestation is an aggregate" > [option](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/div_p12_yl4_j3b)
+
+> ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
