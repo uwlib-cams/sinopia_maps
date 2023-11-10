@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaItem printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-11-06</sinopia:hasDate>
+      <sinopia:hasDate>2023-11-07</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsiP40049_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40049_order">
@@ -298,7 +298,6 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40073_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
       <rdfs:label xml:lang="en">has related person of item</rdfs:label>
-      <!--http://rdaregistry.info/Elements/i/P40159-->
       <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaItem_printMonograph_CAMS.html#uwmaps_rdai_p40k_iP40075_is_d2e1819"/>
       <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
@@ -315,6 +314,7 @@
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40112"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40104"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40073"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40111"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/i/P40109"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsiP40073_lookup_attributes">
@@ -360,8 +360,8 @@
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40104">
       <rdfs:label xml:lang="en">has owner person</rdfs:label>
    </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40159">
-      <rdfs:label xml:lang="en">has restorationist of item</rdfs:label>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40111">
+      <rdfs:label xml:lang="en">has restorationist person of item</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/i/P40109">
       <rdfs:label xml:lang="en">has seller person</rdfs:label>
