@@ -13,6 +13,7 @@
 
 ## Option A 
 ***Describe the aggregate manifestation, one or more of the expressions that are aggregated, and the works realized by these aggregated expressions***
+
 ![A representation of an aggregated work and expression, and an aggregate manifestation](../images/option_a.PNG)
 
 ### WEMI linking
@@ -33,6 +34,7 @@
 
 ## Option B 
 ***Describe the aggregating work and the aggregate manifestation without describing any other expression(s) or work(s)***
+
 ![A representation of the relationship between an aggregating work and an aggretate manifestation](../images/option_b.PNG)
 
 ### WEMI linking
@@ -53,6 +55,7 @@
 
 ## Option C 
 ***Describe the aggregating work and aggregate manifestation, and describe one or more aggregated expressions and the works realized by these***
+
 ![Option C figure](../images/option_c.PNG)
 
 ### WEMI linking
@@ -70,6 +73,7 @@
 ## Option D
 **&#x26a0; apply with caution**  
 ***Describe the aggregating work, aggregating expression, and aggregate manifestation, describe one or more aggregated expressions and the work(s) realized by these***
+
 ![Option D figure](../images/option_d.PNG)
 
 ### WEMI linking
@@ -93,6 +97,7 @@
 
 ## Option E
 ***Describe the aggregating work and aggregate manifestation, and a work or works which are realized by an expression or expressions which are aggregated, but without descibing those expressions***
+
 ![Option E figure](../images/option_e.PNG)
 
 ### WEMI linking
