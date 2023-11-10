@@ -17,7 +17,7 @@
 ![A representation of an aggregated work and expression, and an aggregate manifestation](../images/option_a.PNG)
 
 ### WEMI linking
-- Link a work to its expression which using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
+- Link a work to its expression using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link an aggregated expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
 - Link the aggregate manifestation to the item using the element [has exemplar of manifestation](https://access.rdatoolkit.org/en-US_ala-03895ab3-dbcd-3f1c-b8ae-623c76d35f7f)
 
@@ -60,7 +60,7 @@
 
 ### WEMI linking
 - Link the aggregating work to the aggregate manifestation using the shortcut element [has manifestation of work](https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e)
-- Link a work to its aggregated expression which using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
+- Link a work to its aggregated expression using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link an aggregated expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
 - Link the aggregate manifestation to the item using the element [has exemplar of manifestation](https://access.rdatoolkit.org/en-US_ala-03895ab3-dbcd-3f1c-b8ae-623c76d35f7f)
 
@@ -80,7 +80,7 @@
 - Link the aggregating work to its aggregating expression using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link the aggregating expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
 - Link the aggregating expression to an aggregated expression or expressions using the element [aggregates](https://access.rdatoolkit.org/en-US_ala-bb5ed4f5-d28a-3fd1-8634-bcac85cb3287)
-- Link a work to its aggregated expression which using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
+- Link a work to its aggregated expression using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link an aggregated expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
 - Link the aggregate manifestation to the item using the element [has exemplar of manifestation](https://access.rdatoolkit.org/en-US_ala-03895ab3-dbcd-3f1c-b8ae-623c76d35f7f)
 
