@@ -79,6 +79,7 @@
 ### WEMI linking
 - Link the aggregating work to its aggregating expression using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link the aggregating expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
+- Link the aggregating expression to an aggregated expression or expressions using the element [aggregates](https://access.rdatoolkit.org/en-US_ala-bb5ed4f5-d28a-3fd1-8634-bcac85cb3287)
 - Link a work to its aggregated expression which using the element [has expression of work](https://access.rdatoolkit.org/en-US_ala-e23bf7e1-aa3e-3e8d-874e-9a16d0cdee57)
 - Link an aggregated expression to the aggregate manifestation using the element [has manifestation of expression](https://access.rdatoolkit.org/en-US_ala-36cea3ce-03c7-3286-a342-3255b55cb4f6)
 - Link the aggregate manifestation to the item using the element [has exemplar of manifestation](https://access.rdatoolkit.org/en-US_ala-03895ab3-dbcd-3f1c-b8ae-623c76d35f7f)
@@ -103,5 +104,8 @@
 ### WEMI linking
 - Link the aggregating work to the aggregate manifestation using the shortcut element [has manifestation of work](https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e)
 - Link a work or works which are realized by an expression or expressions which are aggregated using this same element, [has manifestation of work](https://access.rdatoolkit.org/en-US_ala-9a09be6d-e0f0-36db-8409-3460330b1f7e) - for more information see RDA Toolkit > Guidance > Describing a manifestation > [Describing a manifestation that embodies two or more expressions](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/section_qfv_vc3_42b) > condition: "A manifestation is an aggregate" > [option](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/div_p12_yl4_j3b)
+
+### Details
+🚧🚧🚧
 
 > ⬆ *[Return to top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)*
