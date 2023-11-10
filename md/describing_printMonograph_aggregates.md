@@ -1,17 +1,18 @@
 # Pre-cataloging decisions: choosing templates for describing aggregates
 
-- [Option A](#option-a): *Describe the aggregate manifestation, one or more of the expressions that are aggregated, and the works realized by the aggregated expressions*
-- [Option B](#option-b): *Describe the aggregate manifestation and the aggregating work without describing any other expression(s) or work(s)*
-- [Option C](#option-c): *Describe the aggregate manifestation and the aggregating work, describe one or more aggregated expressions and the works realized by these*
-- [Option D](#option-d-apply-with-caution): *Describe the aggregating work and aggregating expression, describe one or more aggregated expressions and the works realized by these* (&#x26a0; apply with caution)
-- [Option E](#option-e): *Describe the aggregating work, and a work or works that are realized by an expression or expressions which are aggregated*
+> - *[Option A](#option-a)*
+> - *[Option B](#option-b)*
+> - *[Option C](#option-c)*
+> - *[Option D](#option-d)*
+> - *[Option E](#option-e)*
 
 ![A representation of aggregating and aggregated works](../images/overview.PNG)
 
 ## Option A 
+***Describe the aggregate manifestation, one or more of the expressions that are aggregated, and the works realized by these aggregated expressions***
+
 ![A representation of an aggregated work and expression, and an aggregate manifestation](../images/option_a.PNG)
 
-***Describe one or more of the expressions that are aggregated and the works realized by the expressions.***
 ### Recommended for
 - An augmentation aggregate with only one primary expression. 
 - A collection or parallel aggregate where no more than three (primary) expressions are aggregated. 
@@ -26,9 +27,9 @@
 *Return to [top](#pre-cataloging-decisions-choosing-templates-for-describing-aggregates)
 
 ## Option B 
+***Describe the aggregating work and the aggregate manifestation without describing any other expression(s) or work(s)***
 ![A representation of the relationship between an aggregating work and an aggretate manifestation](../images/option_b.PNG)
 
-***Describe the aggregating work without describing any expression.***
 - Use template [UWSINOPIA:WAU:rdaWork:aggregating_printMonograph:CAMS](https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html) for describing the aggregating work. 
 + Relate the manifestation to the aggregating work using Manifestation: work manifested. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-cf0b18a4-5a55-3358-94b0-2d4fb5449314/div_gml_qm4_j3b).
 + Relate the aggregating work to the manifestation using Work: manifestation of work. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-4d4d3f5b-8d94-3ee5-89d8-241a98366db4/div_vfh_zfh_lhb).
@@ -44,7 +45,9 @@
 
 
 ## Option C 
-***Describe the aggregating work without describing the aggregating expression. Also describe one or more of the expressions that are aggregated and the works realized by the expressions.***
+***Describe the aggregating work and aggregate manifestation, and describe one or more aggregated expressions and the works realized by these***
+![Option C figure](../images/option_c.PNG)
+
 - For guidance on describing the aggregating work, see [Option B](#option-b). 
 - For guidance on describing an aggregated expression and the work realized, see [Option A](#option-a). 
 ### Use templates:
@@ -53,12 +56,12 @@
 - A collection aggregate where more than three (primary) expressions are aggregated, and a creator of one or more of the expressions or works that are aggregated is deemed useful to users. 
 - A parallel aggregate where more than three (primary) expressions are aggregated. When describing aggregated expressions, describe the original expression, if present, and at least the first derivative expression in the resource. 
 
-![A representation of relationships between an aggregating work and one or more aggregated works and expressions](../images/option_c.PNG)
 
-## Option D (Apply with caution) 
+## Option D
+**&#x26a0; apply with caution**  
+***Describe the aggregating work, aggregating expression, and aggregate manifestation, describe one or more aggregated expressions and the work(s) realized by these***
 ![Option D figure](../images/option_d.PNG)
 
-***Describe the aggregating work and the aggregating expression.***
 - Use template [UWSINOPIA:WAU:rdaExpression:aggregating_printMonograph:CAMS](https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaExpression_aggregating_printMonograph_CAMS.html) for describing the aggregating expression. 
 - Also describe one or more of the expressions that are aggregated and the works realized by the expressions. 
 + Relate the aggregating expression to the manifestation using Expression: manifestation of expression. See [Toolkit option](https://access.rdatoolkit.org/en-US_ala-f2747cbc-74d2-3131-a94b-e30effad9d09/div_wb5_l2h_lhb). 
@@ -74,9 +77,9 @@ Only describe the aggregating expression when the same aggregating work (and hen
 
 
 ## Option E
+***Describe the aggregating work and aggregate manifestation, and a work or works which are realized by an expression or expressions which are aggregated, but without descibing those expressions***
 ![Option E figure](../images/option_e.PNG)
 
-***Describe the aggregating work, and a work or works that are realized by an expression or expressions which are aggregated***
 - ...
 ### Use templates:
 - ...
