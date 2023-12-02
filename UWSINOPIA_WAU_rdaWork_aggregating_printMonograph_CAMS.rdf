@@ -6,9 +6,9 @@
       <sinopia:hasResourceId>UWSINOPIA:WAU:rdaWork:aggregating_printMonograph:CAMS</sinopia:hasResourceId>
       <sinopia:hasClass rdf:resource="http://rdaregistry.info/Elements/c/C10001"/>
       <rdfs:label>UWSINOPIA WAU rdaWork aggregating_printMonograph CAMS</rdfs:label>
-      <sinopia:hasAuthor>UW CAMS - panzhuo@uw.edu</sinopia:hasAuthor>
+      <sinopia:hasAuthor>UW CAMS, Zhuo Pan</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang="en">For describing aggregating works</sinopia:hasRemark>
-      <sinopia:hasDate>2023-11-14</sinopia:hasDate>
+      <sinopia:hasDate>2023-12-01</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
@@ -289,7 +289,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10256_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10256_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10349_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10448_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10256_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -309,6 +309,39 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:fast"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyaat"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10448_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10448_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10349_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10448_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has aggregator person, corporate body, or family</rdfs:label>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregating_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10448_is_d2e132"/>
+      <sinopia:hasPropertyAttribute rdf:resource="http://sinopia.io/vocabulary/propertyAttribute/repeatable"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10448_lookup_attributes"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10542"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10589"/>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10448"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10448_lookup_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:person"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:organization"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:names:family"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyulan"/>
+      <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:isni"/>
+      <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10448">
+      <rdfs:label xml:lang="en">has aggregator person</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10542">
+      <rdfs:label xml:lang="en">has aggregator corporate body</rdfs:label>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10589">
+      <rdfs:label xml:lang="en">has aggregator family</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10349_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10349_define"/>
@@ -444,7 +477,6 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10312_lookup_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10413"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10448"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10439"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10444"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10437"/>
@@ -467,9 +499,6 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10312">
       <rdfs:label xml:lang="en">has related person of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10448">
-      <rdfs:label xml:lang="en">has aggregator person</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10444">
       <rdfs:label xml:lang="en">has compiler person</rdfs:label>
@@ -513,7 +542,6 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10313_lookup_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10554"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10589"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10580"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10585"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10578"/>
@@ -536,9 +564,6 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10313">
       <rdfs:label xml:lang="en">has related family of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10589">
-      <rdfs:label xml:lang="en">has aggregator family</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10585">
       <rdfs:label xml:lang="en">has compiler family</rdfs:label>
@@ -582,7 +607,6 @@
       <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
       <sinopia:hasLookupAttributes rdf:nodeID="rdaregistryinfoElementswP10314_lookup_attributes"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10507"/>
-      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10542"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10533"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10538"/>
       <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10531"/>
@@ -605,9 +629,6 @@
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10314">
       <rdfs:label xml:lang="en">has related corporate body of work</rdfs:label>
-   </rdf:Description>
-   <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10542">
-      <rdfs:label xml:lang="en">has aggregator corporate body</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:about="http://rdaregistry.info/Elements/w/P10538">
       <rdfs:label xml:lang="en">has compiler corporate body</rdfs:label>
