@@ -74,6 +74,7 @@
                         <xsl:with-param name="prop_iri" select="uwmaps:prop_iri/@iri"/>
                     </xsl:call-template>
                     </p>
+                    <b>Configuration Details</b>
                     <ul>
                         <!-- mark as required or optional -->
                         <xsl:choose>
