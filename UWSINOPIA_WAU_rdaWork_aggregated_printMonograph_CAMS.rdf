@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaWork aggregated_printMonograph CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS, Zhuo Pan</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang="en">For describing aggregated works</sinopia:hasRemark>
-      <sinopia:hasDate>2023-12-01</sinopia:hasDate>
+      <sinopia:hasDate>2023-12-09</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementswP10072_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10072_order">
@@ -115,7 +115,7 @@
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10004_define"/>
-      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10219_order"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10365_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10004_define">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
@@ -134,6 +134,25 @@
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:gettyaat"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:rda_registry_ld4l_cache:terms"/>
       <sinopia:hasAuthority rdf:resource="urn:wikidata"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_order">
+      <rdf:first rdf:nodeID="rdaregistryinfoElementswP10365_define"/>
+      <rdf:rest rdf:nodeID="rdaregistryinfoElementswP10219_order"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_define">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/PropertyTemplate"/>
+      <rdfs:label xml:lang="en">has extension plan</rdfs:label>
+      <sinopia:hasPropertyUri rdf:resource="http://rdaregistry.info/Elements/w/P10365"/>
+      <sinopia:hasRemarkUrl rdf:resource="https://uwlib-cams.github.io/sinopia_maps/html/UWSINOPIA_WAU_rdaWork_aggregated_printMonograph_CAMS.html#uwmaps_rdaw_p10k_wP10365_is_d2e2564"/>
+      <sinopia:hasPropertyType rdf:resource="http://sinopia.io/vocabulary/propertyType/uri"/>
+      <sinopia:hasUriAttributes rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes"/>
+   </rdf:Description>
+   <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10365_uri_attributes">
+      <rdf:type rdf:resource="http://sinopia.io/vocabulary/UriPropertyTemplate"/>
+      <sinopia:hasDefault rdf:resource="http://rdaregistry.info/termList/RDAExtensionPlan/1001"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://rdaregistry.info/termList/RDAExtensionPlan/1001">
+      <rdfs:label xml:lang="en">static plan</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementswP10219_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementswP10219_define"/>

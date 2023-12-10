@@ -8,7 +8,7 @@
       <rdfs:label>UWSINOPIA WAU rdaNomen accessPoint CAMS</rdfs:label>
       <sinopia:hasAuthor>UW CAMS, Zhuo Pan</sinopia:hasAuthor>
       <sinopia:hasRemark xml:lang=""/>
-      <sinopia:hasDate>2023-12-01</sinopia:hasDate>
+      <sinopia:hasDate>2023-12-09</sinopia:hasDate>
       <sinopia:hasPropertyTemplate rdf:nodeID="rdaregistryinfoElementsnP80068_order"/>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80068_order">
@@ -87,6 +87,10 @@
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80069_lookup_attributes">
       <rdf:type rdf:resource="http://sinopia.io/vocabulary/LookupPropertyTemplate"/>
       <sinopia:hasAuthority rdf:resource="urn:ld4p:qa:locvocabs:description_conventions"/>
+      <sinopia:hasDefault rdf:resource="http://id.loc.gov/vocabulary/descriptionConventions/rda"/>
+   </rdf:Description>
+   <rdf:Description rdf:about="http://id.loc.gov/vocabulary/descriptionConventions/rda">
+      <rdfs:label xml:lang="en">Resource description and access</rdfs:label>
    </rdf:Description>
    <rdf:Description rdf:nodeID="rdaregistryinfoElementsnP80066_order">
       <rdf:first rdf:nodeID="rdaregistryinfoElementsnP80066_define"/>
