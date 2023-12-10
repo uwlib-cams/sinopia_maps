@@ -3,6 +3,9 @@
 
 ## Notes on aggregating work
 
+### Relationships 
+- An aggregating work is related to an aggregate manifestation with the property [has manifestation of work](http://rdaregistry.info/Elements/w/P10072)
+
 ### Use cases for describing an aggregating work
 - To record an [aggregator person](http://rdaregistry.info/Elements/w/P10448), [corporate body](http://rdaregistry.info/Elements/w/P10542), or [family](http://rdaregistry.info/Elements/w/P10589)
 - From [discussion](https://github.com/uwlib-cams/sinopia_maps/discussions/180#discussioncomment-7641895):
