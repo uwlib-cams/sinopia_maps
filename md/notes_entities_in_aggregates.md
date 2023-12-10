@@ -1,5 +1,5 @@
 # Aggregating work
-![aggregating work, aggregate manifestation, and item](images/aging_w.png)
+![aggregating work, aggregate manifestation, and item](../images/aging_w.png)
 
 ## Notes on aggregating work
 
