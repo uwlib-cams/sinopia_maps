@@ -4,14 +4,16 @@
     exclude-result-prefixes="xs fn" version="3.0">
     <xsl:output method="xml" indent="1"/>
 
-    <xsl:variable name="authorities_xml" select="(document('../xml/authorityConfig.xml')/data)"/>
+    <xsl:variable name="qa_sources" select=
+        "unparsed-text('https://raw.githubusercontent.com/LD4P/sinopia_editor/main/static/authorityConfig.json')
+        => fn:json-to-xml()"/>
 
     <xsl:mode on-no-match="shallow-copy"/>
 
     <xsl:template match="xs:simpleType[@name = 'authority_urn_type']">
         <xs:simpleType name="authority_urn_type">
             <xs:restriction base="xs:string">
-                <xsl:for-each select="fn:json-to-xml($authorities_xml)/fn:array/fn:map">
+                <xsl:for-each select="$qa_sources/fn:array/fn:map">
                     <xs:enumeration value="{fn:string[@key = 'label']}"/>
                 </xsl:for-each>
             </xs:restriction>
